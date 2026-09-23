@@ -563,14 +563,11 @@
 <!-- ══════════════════════════════════════════════════════════════
      [2] 화면 구조(HTML)
      ──────────────────────────────────────────────────────────────
-     글 내용 대부분은 이 아래 <script> 안의 데이터에 들어 있습니다.
-     여기(HTML)에 직접 적혀 있는 건 상단 메뉴, 히어로, 소개글,
-     각 섹션 제목, 연락처, 푸터 정도예요.
-
-     data-ko="..." data-en="..." 이 짝으로 붙어 있는 곳은
-     반드시 둘 다 고쳐야 KO / EN 버튼이 제대로 동작합니다.
-     (태그 사이에 보이는 글자는 화면에 처음 뜨는 값일 뿐이라,
-      data-ko 를 고치면 자동으로 덮어써집니다)
+     화면에 보이는 글자는 여기서 고치지 않습니다.
+       · 한국어 → content/ko.js      · 영어 → content/en.js
+     data-t="hero.intro" 처럼 표시된 곳에는 ko.js / en.js 의
+     page → hero → intro 글자가 자동으로 들어갑니다.
+     (태그 사이에 보이는 한국어는 페이지가 뜨기 직전 잠깐 보이는 값입니다)
      ══════════════════════════════════════════════════════════════ -->
 
 <!-- ── 아이콘 모음 (화면에 보이지 않는 원본) ───────────────────────
@@ -608,12 +605,12 @@
   <div class="wrap"><div class="bar-in lg">
     <a class="mark" href="#top">JINSEOK OH<span>.</span></a>
     <nav class="links" aria-label="섹션">
-      <a href="#about" data-ko="소개" data-en="About">소개</a>
-      <a href="#records" data-ko="기록 요약" data-en="Records">기록 요약</a>
-      <a href="#activities" data-ko="대외활동" data-en="Activities">대외활동</a>
-      <a href="#certs" data-ko="자격증" data-en="Certifications">자격증</a>
-      <a href="#awards" data-ko="장학·수상" data-en="Awards">장학·수상</a>
-      <a href="#contact" data-ko="연락처" data-en="Contact">연락처</a>
+      <a href="#about" data-t="nav.about">소개</a>
+      <a href="#records" data-t="nav.records">기록 요약</a>
+      <a href="#activities" data-t="nav.activities">대외활동</a>
+      <a href="#certs" data-t="nav.certs">자격증</a>
+      <a href="#awards" data-t="nav.awards">장학·수상</a>
+      <a href="#contact" data-t="nav.contact">연락처</a>
     </nav>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" id="btn-ko" aria-pressed="true">KO</button>
@@ -633,14 +630,14 @@
     <div class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow" data-ko="성균관대학교 컴퓨터교육과 · 2024학번" data-en="Computer Education, Sungkyunkwan University · Class of 2024">성균관대학교 컴퓨터교육과 · 2024학번</p>
+          <p class="eyebrow" data-t="hero.school">성균관대학교 컴퓨터교육과 · 2024학번</p>
           <h1><span class="ko" data-role="name">오진석</span></h1>
-          <p class="lede" data-ko="교육과 데이터를 잇는 일을 공부하고 있습니다. 학부 첫해에 GDSC와 멋쟁이사자처럼에서 운영진·PM으로 20건의 활동을 쌓았고, 지금은 데이터 분석과 어학 자격으로 그 기록을 이어가고 있습니다." data-en="I study the space where education meets data. In my first undergraduate year I ran communities and led projects at GDSC and LIKELION across 20 recorded activities, and I am now extending that record through data-analysis and language certifications.">교육과 데이터를 잇는 일을 공부하고 있습니다. 학부 첫해에 GDSC와 멋쟁이사자처럼에서 운영진·PM으로 20건의 활동을 쌓았고, 지금은 데이터 분석과 어학 자격으로 그 기록을 이어가고 있습니다.</p>
+          <p class="lede" data-t="hero.intro">교육과 데이터를 잇는 일을 공부하고 있습니다. 학부 첫해에 GDSC와 멋쟁이사자처럼에서 운영진·PM으로 20건의 활동을 쌓았고, 지금은 데이터 분석과 어학 자격으로 그 기록을 이어가고 있습니다.</p>
           <div class="chips" id="hero-chips"></div>
           <!-- 첫 화면 버튼 두 개 -->
           <div class="hero-cta">
-            <a class="gbtn solid" href="#activities"><span data-ko="대외활동 보기" data-en="See activities">대외활동 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
-            <a class="gbtn lg" href="#contact"><span data-ko="연락처" data-en="Contact">연락처</span></a>
+            <a class="gbtn solid" href="#activities"><span data-t="hero.buttonActivities">대외활동 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
+            <a class="gbtn lg" href="#contact"><span data-t="hero.buttonContact">연락처</span></a>
           </div>
         </div>
 
@@ -657,17 +654,17 @@
 
     <section id="about" class="tint">
       <div class="wrap">
-        <div class="shead"><h2 data-ko="소개" data-en="About">소개</h2></div>
+        <div class="shead"><h2 data-t="about.title">소개</h2></div>
         <div class="about">
-          <!-- ◀ 소개 본문 두 문단. 문단을 더 넣고 싶으면
-               <p data-ko="한국어" data-en="English"></p> 를 통째로 복사해
-               바로 아래에 붙이고 내용만 바꾸면 됩니다. -->
+          <!-- ◀ 소개 본문 두 문단. 글자는 ko.js / en.js 의 page → about 에 있습니다.
+               문단을 더 넣으려면 <p data-t="about.paragraph3"></p> 를 아래에 붙이고
+               ko.js · en.js 의 about 에 paragraph3 를 추가하세요. -->
           <div>
-            <p data-ko="컴퓨터교육과에서 배우는 것은 결국 “어떻게 가르칠 것인가”이고, 저는 그 답을 데이터에서 찾고 싶었습니다. 그래서 학부 첫해부터 기획하고 운영하는 자리에 계속 섰습니다. Google Developer Student Clubs에서는 Core 직급으로 Administration팀을 총괄하며 월간 글로벌 IT 화상강연의 연사 컨택을 맡았고, 그 경험을 이어 90명 규모의 해커톤 RE:ALThon을 주최해 3개 학교 SW중심사업단으로부터 약 800만 원의 투자를 유치했습니다." data-en="What a computer-education major really asks is how to teach - and I wanted to answer that with data. From my first undergraduate year I kept taking on planning and operating roles. At Google Developer Student Clubs I led the Administration team as a Core member and handled speaker outreach for the monthly global IT talks; building on that, I hosted RE:ALThon, a 90-person hackathon, and secured roughly 8 million KRW in funding from three university software programs."></p>
-            <p data-ko="멋쟁이사자처럼 12기와 4호선톤에서는 PM으로 팀을 이끌며 서비스를 기획하고 와이어프레임까지 직접 그렸습니다. 동시에 인도네시아 해외봉사 177시간, 월드비전 서신 번역 40시간처럼 사람을 만나는 일도 놓지 않았습니다. 지금은 군 복무 중이며, SQLD·ADsP로 데이터 자격을 갖추고 IELTS 8.0을 취득하며 다음 단계를 준비하고 있습니다." data-en="As PM for LIKELION's 12th cohort and the Line-4 Hackathon I led teams through service planning and drew the wireframes myself. Alongside that I kept doing work that puts me in front of people: 177 hours of overseas volunteering in Indonesia and 40 hours translating World Vision letters. I am currently completing military service, preparing for what comes next with SQLD and ADsP data certifications and an IELTS 8.0."></p>
+            <p data-t="about.paragraph1"></p>
+            <p data-t="about.paragraph2"></p>
           </div>
           <div>
-            <p class="subh" data-ko="기본 정보" data-en="Profile">기본 정보</p>
+            <p class="subh" data-t="about.profileTitle">기본 정보</p>
             <dl class="dl" id="profile-dl"></dl>
           </div>
         </div>
@@ -676,8 +673,8 @@
 
     <section id="records" class="band">
       <div class="wrap">
-        <div class="shead"><h2 data-ko="기록 요약" data-en="Records at a Glance">기록 요약</h2></div>
-        <p class="sdesc" data-ko="노션 Activity Records에 기록된 수치입니다. 봉사시간은 활동 설명에 명시된 시간을 합산했습니다." data-en="Figures drawn from my Notion Activity Records. Volunteer hours are the sum of the hours stated in each activity entry.">노션 Activity Records에 기록된 수치입니다. 봉사시간은 활동 설명에 명시된 시간을 합산했습니다.</p>
+        <div class="shead"><h2 data-t="records.title">기록 요약</h2></div>
+        <p class="sdesc" data-t="records.description">노션 Activity Records에 기록된 수치입니다. 봉사시간은 활동 설명에 명시된 시간을 합산했습니다.</p>
         <div class="tiles" id="tiles"></div>
       </div>
     </section>
@@ -685,10 +682,10 @@
     <section id="activities" class="tint">
       <div class="wrap">
         <div class="shead">
-          <h2 data-ko="대외활동" data-en="Activities">대외활동</h2>
-          <span class="count num" data-ko="20건" data-en="20 entries">20건</span>
+          <h2 data-t="activities.title">대외활동</h2>
+          <span class="count num" data-t="activities.count">20건</span>
         </div>
-        <p class="sdesc" data-ko="구분을 눌러 활동을 추려보고, 카드를 누르면 그 활동의 상세 기록으로 들어갑니다." data-en="Filter by category, and open any card for the full record of that activity.">구분을 눌러 활동을 추려보고, 카드를 누르면 그 활동의 상세 기록으로 들어갑니다.</p>
+        <p class="sdesc" data-t="activities.description">구분을 눌러 활동을 추려보고, 카드를 누르면 그 활동의 상세 기록으로 들어갑니다.</p>
         <div class="filters lg" id="filters" role="group" aria-label="구분"></div>
         <div class="tl" id="timeline"></div>
       </div>
@@ -697,10 +694,10 @@
     <section id="certs">
       <div class="wrap">
         <div class="shead">
-          <h2 data-ko="자격증" data-en="Certifications">자격증</h2>
-          <span class="count num" data-ko="7개" data-en="7 items">7개</span>
+          <h2 data-t="certs.title">자격증</h2>
+          <span class="count num" data-t="certs.count">7개</span>
         </div>
-        <p class="sdesc" data-ko="분야별로 묶었고, 각 묶음 안에서는 취득일 기준 최신순입니다." data-en="Grouped by field; most recent first within each group.">분야별로 묶었고, 각 묶음 안에서는 취득일 기준 최신순입니다.</p>
+        <p class="sdesc" data-t="certs.description">분야별로 묶었고, 각 묶음 안에서는 취득일 기준 최신순입니다.</p>
         <div id="cert-groups"></div>
       </div>
     </section>
@@ -708,15 +705,15 @@
     <section id="awards" class="tint">
       <div class="wrap">
         <div class="shead">
-          <h2 data-ko="장학 · 수상" data-en="Scholarships">장학 · 수상</h2>
-          <span class="count num" data-ko="3건" data-en="3 awards">3건</span>
+          <h2 data-t="awards.title">장학 · 수상</h2>
+          <span class="count num" data-t="awards.count">3건</span>
         </div>
-        <p class="sdesc" data-ko="모두 2024년 2학기 교내 선발입니다." data-en="All awarded on campus in the second semester of 2024.">모두 2024년 2학기 교내 선발입니다.</p>
+        <p class="sdesc" data-t="awards.description">모두 2024년 2학기 교내 선발입니다.</p>
         <div class="awards" id="award-list"></div>
         <p class="total">
-          <span data-ko="합계" data-en="Total">합계</span>
-          <b class="num">5,824,500</b>
-          <span data-ko="원" data-en="KRW">원</span>
+          <span data-t="awards.totalLabel">합계</span>
+          <b class="num" id="award-total">5,824,500</b>
+          <span data-t="awards.totalUnit">원</span>
         </p>
       </div>
     </section>
@@ -726,11 +723,11 @@
          두 군데 모두 바꿔야 합니다.
          ───────────────────────────────────────────────────────── -->
     <div class="wrap contact" id="contact">
-      <h2 data-ko="기록은 계속 쌓이는 중입니다." data-en="The record is still growing.">기록은 계속 쌓이는 중입니다.</h2>
-      <p data-ko="활동과 공부 과정은 네이버 블로그 ‘진석의 기록’에 정리하고 있습니다. 협업이나 궁금한 점이 있다면 편하게 연락 주세요." data-en="I write up what I learn on my Naver blog, Jinseok's Record. Feel free to reach out about collaboration or anything you'd like to ask.">활동과 공부 과정은 네이버 블로그 ‘진석의 기록’에 정리하고 있습니다. 협업이나 궁금한 점이 있다면 편하게 연락 주세요.</p>
+      <h2 data-t="contact.title">기록은 계속 쌓이는 중입니다.</h2>
+      <p data-t="contact.description">활동과 공부 과정은 네이버 블로그 ‘진석의 기록’에 정리하고 있습니다. 협업이나 궁금한 점이 있다면 편하게 연락 주세요.</p>
       <div class="cta">
         <a class="primary" href="mailto:kidariseok@gmail.com"><svg class="i"><use href="#ic-mail"/></svg><span>kidariseok@gmail.com</span></a>
-        <a href="https://blog.naver.com/kidariseok" target="_blank" rel="noopener"><svg class="i"><use href="#ic-pen"/></svg><span data-ko="네이버 블로그 ‘진석의 기록’" data-en="Naver Blog: Jinseok's Record">네이버 블로그 ‘진석의 기록’</span></a>
+        <a href="https://blog.naver.com/kidariseok" target="_blank" rel="noopener"><svg class="i"><use href="#ic-pen"/></svg><span data-t="contact.blog">네이버 블로그 ‘진석의 기록’</span></a>
       </div>
     </div>
   </div>
@@ -740,657 +737,75 @@
   <div class="wrap">
     <footer>
       <!-- ◀ 내용을 고친 날짜로 바꿔 주세요 -->
-      <span data-ko="오진석 · Activity Records" data-en="Jinseok Oh · Activity Records">오진석 · Activity Records</span>
-      <span class="num" data-ko="최종 갱신 2026.09.22" data-en="Last updated 22 Sep 2026">최종 갱신 2026.09.22</span>
+      <span data-t="footer.name">오진석 · Activity Records</span>
+      <span class="num" data-t="footer.updated">최종 갱신 2026.09.22</span>
     </footer>
   </div>
 </main>
 
+<script src="content/common.js"></script>
+<script src="content/ko.js"></script>
+<script src="content/en.js"></script>
 <script>
 (function(){
   "use strict";
 
   /* ══════════════════════════════════════════════════════════════
-     [3] 내용 데이터  ◀ 평소 고칠 일은 거의 다 여기에 있습니다
-
-     아래 목록만 고치면 화면은 알아서 다시 그려집니다.
-       [3-1] CAT         활동 구분(배지) 종류
-       [3-2] ACT         대외활동 20건  ← 가장 큼
-       [3-3] CERT_GROUPS 자격증 (그룹별)
-       [3-4] AWARDS      장학 · 수상
-       [3-5] TILES       '기록 요약'의 숫자 카드
-       [3-6] PROFILE     소개 옆 기본 정보 표
-       [3-7] CHIPS       이름 아래 관심사 태그
-       [3-8] T           버튼·라벨 글자
-
-     ★ 문법 규칙 세 가지만 지키면 됩니다
-       1. 따옴표 안의 글자만 고치세요. 바깥의 { } [ ] , : 는 그대로.
-       2. 글 안에 큰따옴표(")를 쓰고 싶으면 대신 ' 나 “ ” 를 쓰세요.
-       3. 항목과 항목 사이에는 쉼표(,). 마지막 항목 뒤에는 붙이지 않습니다.
-       → 고친 뒤 화면이 하얗게 비면 대부분 이 셋 중 하나입니다.
-          브라우저에서 F12 → Console 에 몇 번째 줄이 틀렸는지 나옵니다.
+     [3] 사이트 내용은 content 폴더의 세 파일에 있습니다  ◀ 평소 고칠 곳
+         content/ko.js      한국어 글자 (KO 버튼)
+         content/en.js      영어 글자 (EN 버튼)
+         content/common.js  날짜 · 사진 · 금액 · 숫자 (언어와 무관)
+     이 아래는 세 파일을 합쳐 화면에 쓰는 형태로 바꾸는 코드라
+     보통은 고칠 필요가 없습니다.
      ══════════════════════════════════════════════════════════════ */
+  var S = window.SITE || {}, C = S.common, KO = S.ko, EN = S.en;
+  if(!C || !KO || !EN){
+    // 세 파일 중 하나라도 문법 오류로 읽히지 않으면 화면 맨 위에 안내를 띄웁니다
+    document.body.insertAdjacentHTML("afterbegin",
+      '<p style="margin:0;padding:18px 24px;font:15px/1.6 sans-serif;background:#fff3f3;color:#a40000">' +
+      'content 폴더의 ' + (!C ? "common.js " : "") + (!KO ? "ko.js " : "") + (!EN ? "en.js " : "") +
+      '파일을 읽지 못했습니다. 쉼표 · 따옴표 · 괄호를 확인해 주세요. (브라우저에서 F12 → Console 에 몇 번째 줄인지 나옵니다)</p>');
+    return;
+  }
+  function both(fn){ return {ko: fn(KO), en: fn(EN)}; }
+  function fill(str, vals){ return String(str).replace(/\{(\w+)\}/g, function(m, k){ return vals[k] != null ? vals[k] : m; }); }
+  function pick(obj, path){ return path.split(".").reduce(function(o, k){ return o == null ? o : o[k]; }, obj); }
 
-  /* [3-1] 활동 구분 ─────────────────────────────────────────────
-     왼쪽(공모전 등)이 한국어 이름이자 ACT의 cat 값이고,
-     en 은 영어 이름, cls 는 배지 색(b1~b6)입니다.
-     구분을 새로 만들려면 한 줄 추가하고 cls 에 b1~b6 중 하나를 쓰세요. */
-  var CAT = {
-    "공모전":     {en:"Competition", cls:"b1", ic:"ic-trophy"},
-    "대외활동":   {en:"External",    cls:"b2", ic:"ic-globe"},
-    "봉사활동":   {en:"Volunteer",   cls:"b3", ic:"ic-heart"},
-    "교내동아리": {en:"Club",        cls:"b4", ic:"ic-code"},
-    "교내활동":   {en:"Campus",      cls:"b5", ic:"ic-flag"},
-    "강의":       {en:"Course",      cls:"b6", ic:"ic-cap"}
-  };
-
-  var NOTION = "https://app.notion.com/p/";   // 노션 링크 앞부분 (그대로 두세요)
-
-  /* [3-1b] 활동 사진 ───────────────────────────────────────────
-     왼쪽이 ACT 의 id, cover 는 목록 썸네일 + 상세 상단 배너,
-     shots 는 상세에서 옆으로 넘겨 보는 사진들입니다.
-     값은 img/ 폴더의 파일 이름(확장자 .webp 는 빼고)입니다.
-     사진을 추가하려면 img/ 에 넣고 여기에 이름만 적으면 됩니다. */
-  var IMG = {
-    "realthon":       {cover:"realthon_cover"},
-    "line4":          {cover:"line4_cover",   shots:["line4_01","line4_02","line4_03"]},
-    "ktng-overseas":  {cover:"ktng_cover",    shots:["ktng_01"]},
-    "creverse":       {cover:"creverse_cover",shots:["creverse_01","creverse_02","creverse_03"]},
-    "speech-mentors": {cover:"speech_cover",  shots:["speech_01","speech_02","speech_03","speech_04","speech_05"]},
-    "odyvice":        {cover:"odyvice_cover"},
-    "icists":         {cover:"icists_cover",  shots:["icists_01","icists_02"]},
-    "goormthon":      {cover:"goorm_cover",   shots:["goorm_01","goorm_02","goorm_03","goorm_04","goorm_05","goorm_06","goorm_07"]},
-    "ched":           {cover:"ched_cover",    shots:["ched_01"]},
-    "gdsc":           {cover:"gdsc_cover"}
-  };
+  var NOTION = C.notion;
+  var IMG = C.photos;
   function imgSrc(n){ return "img/" + n + ".webp"; }
-
-  /* [3-2] 대외활동 ──────────────────────────────────────────────
-     날짜(s)가 늦은 것부터 위에서 아래로 정렬되어 있습니다.
-     새 활동은 시간 순서에 맞는 위치에 끼워 넣으세요.
-
-     ┌ 한 건의 형태 ────────────────────────────────────────────┐
-     │ id   상세페이지 주소. 영문 소문자·숫자·하이픈만. 겹치면 안 됨 │
-     │      (#a/gdsc 처럼 주소에 붙습니다)                        │
-     │ s    시작일 "2024-03-02" 형식                             │
-     │ e    종료일. 하루짜리면 이 줄을 통째로 지우세요             │
-     │ cat  구분. 위 [3-1] CAT 에 있는 이름 그대로                │
-     │ nid  노션 페이지 id. 없으면 "" 로 두세요                   │
-     │ ko / en    활동 이름 (한국어 / 영어)                       │
-     │ dko / den  카드에 보이는 한 줄 요약                        │
-     │ d    상세 페이지 본문. 아래 블록을 순서대로 나열합니다       │
-     │      {t:"h",  ko:"소제목", en:"Heading"}                  │
-     │      {t:"p",  ko:"문단",  en:"Paragraph"}                 │
-     │      {t:"ul", ko:["항목1","항목2"], en:["a","b"]}          │
-     │      {t:"note",  ko:"회색 참고 상자", en:"..."}            │
-     │      {t:"files", items:["파일이름.pdf"]}                   │
-     │      {t:"link", href:"https://...", ko:"링크 글자", en:""} │
-     │      (p·ul 안에서는 <b>굵게</b> 를 쓸 수 있습니다)          │
-     └─────────────────────────────────────────────────────────┘
-
-     ┌ 새 활동 하나 추가하는 틀: 통째로 복사해서 쓰세요 ──────────┐
-       { id:"새주소", s:"2026-10-01", cat:"대외활동", nid:"",
-         ko:"활동 이름", en:"Activity name",
-         dko:"카드에 보일 한 줄 요약.", den:"One-line summary.",
-         d:[
-           {t:"h", ko:"한 일", en:"What I did"},
-           {t:"p", ko:"본문을 씁니다.", en:"Body text."}
-         ]},
-     └─────────────────────────────────────────────────────────┘
-     ※ 활동을 더하거나 빼면 위쪽 HTML의 "20건"과
-        [3-5] TILES 의 "20"도 같이 고쳐 주세요.               */
-  var ACT = [
-  { id:"intl-publication", s:"2026-09-03", cat:"강의", nid:"3d0dd7c9423e80cea77dcb29b860b857",
-    ko:"The Art and Science of International Publication: A Practical Roadmap from Research Development to Scholarly Impact",
-    en:"The Art and Science of International Publication: A Practical Roadmap from Research Development to Scholarly Impact",
-    dko:"국제 학술 출판 과정을 다룬 영어영문학과 특강에 참여함.",
-    den:"Attended a Department of English lecture on the process of international scholarly publication.",
-    d:[
-      {t:"h", ko:"제2언어 교육에서의 AI: 연구 동향", en:"AI in L2 education: where the research is going"},
-      {t:"p", ko:"언어의 네 가지 기술(Reading·Listening·Writing·Speaking)별로 AI 활용 연구가 갈라진다는 점에서 출발했습니다. 기술마다 기대와 한계가 전혀 달랐습니다.", en:"The lecture started from the observation that AI research splits along the four language skills - reading, listening, writing and speaking - and that expectations and limits differ sharply for each."},
-      {t:"ul",
-        ko:["<b>Writing</b>: 브레인스토밍, 명료성·문법·문장부호·문체 개선에 강점.",
-            "그러나 저자 고유의 목소리 상실(loss of authorial voice), 편향, 과의존, 환각 인용(hallucinated reference)이 뚜렷한 한계.",
-            "요약(summary)에 지나치게 의존하는 경향이 있어 교육적 적합성에는 회의적인 시각.",
-            "외국어 불안(Foreign Language Anxiety) 감소 효과가 보고되지만, 불안 감소가 반드시 긍정적인지는 따져볼 문제.",
-            "<b>Speaking</b>: 발음 연습(pronunciation practice) 영역에서 활용도가 높음."],
-        en:["<b>Writing</b> - strong at brainstorming and at improving clarity, grammar, punctuation and style.",
-            "But loss of authorial voice, bias, overreliance and hallucinated references remain clear limits.",
-            "A tendency to lean too heavily on summarisation leaves its educational fit open to question.",
-            "Reduced foreign-language anxiety is reported - though whether less anxiety is always a good thing is itself worth asking.",
-            "<b>Speaking</b> - heavily used for pronunciation practice."]},
-      {t:"h", ko:"이론적 배경", en:"Theoretical grounding"},
-      {t:"p", ko:"인문계 논문 작성에서 중요하게 작용하는 이론적 배경을 정리해 주셨습니다.", en:"The lecture laid out the theoretical frames that carry weight when writing in the humanities."},
-      {t:"ul",
-        ko:["<b>Input Hypothesis</b>: i + 1. 자료가 풍부한 고전적 틀.",
-            "<b>Output Hypothesis</b>: 입력을 실제로 산출할 기회를 줄 것.",
-            "<b>Noticing Hypothesis</b>: 단순 노출만으로 학습이 일어나지 않으며, 주의(attention)를 유도해 인식(awareness)으로 발전시켜야 함.",
-            "<b>Sociocultural Theory</b>: 교사와 주변 학생의 영향을 크게 봄. MKO(More Knowledgeable Other).",
-            "<b>Self-Regulated Theory</b>: 개별화 학습. 학습자가 스스로를 가장 잘 알기에 Proactive Agent가 되도록 내재적 동기를 제공."],
-        en:["<b>Input Hypothesis</b> - i + 1; the classic frame, with plenty of literature behind it.",
-            "<b>Output Hypothesis</b> - give learners the chance to actually produce what they have taken in.",
-            "<b>Noticing Hypothesis</b> - exposure alone does not produce learning; attention must be drawn, then developed into awareness.",
-            "<b>Sociocultural Theory</b> - weight on teachers and peers; the More Knowledgeable Other (MKO).",
-            "<b>Self-Regulated Theory</b> - individualised learning; learners know themselves best, so give intrinsic motivation and let them become proactive agents."]},
-      {t:"h", ko:"연구 방법론", en:"Research methods"},
-      {t:"p", ko:"좋은 결과가 나온다는 것은 이미 확인된 단계이고, 이제는 그 <b>과정</b>을 분석하는 것이 논문 소재가 되어가고 있다는 이야기가 인상 깊었습니다.", en:"What stuck with me: that AI produces good outcomes is already established - what makes a paper now is analysing the <b>process</b> behind them."},
-      {t:"ul",
-        ko:["Process Tracing Approach", "Retrodictive Modeling", "Latent Growth Curve Modeling (LGCM)"],
-        en:["Process tracing approach", "Retrodictive modeling", "Latent Growth Curve Modeling (LGCM)"]},
-      {t:"h", ko:"논문 작성 조언", en:"Advice on writing papers"},
-      {t:"ul",
-        ko:["선행 연구가 다루지 않은 빈틈(gap)을 채울 것: 이미 말해진 것을 반복하지 말 것.",
-            "인내가 핵심. 여러 편을 동시에 진행할 것.",
-            "새로운 솔루션을 제시하는 것보다, 이미 있는 연구를 반박해 보는 것도 접근하기 쉬운 주제 선정 방법."],
-        en:["Fill the gap - not something that has been said before.",
-            "Patience is the key; work on multiple papers at once.",
-            "Rebutting existing research is often an easier way into a topic than proposing a brand-new solution."]},
-      {t:"files", items:["Artificial_Intelligence_in_Second_and_Foreign_Language_(L2)_Education.pdf"]}
-    ]},
-
-  { id:"realthon", s:"2024-12-06", e:"2024-12-07", cat:"공모전", nid:"3bbdd7c9423e80ee8b8ef666a7e571d2",
-    ko:"RE:ALThon 주최", en:"RE:ALThon (host)",
-    dko:"성균관대 GDSC 대표로서 90명 규모의 해커톤을 주최하였으며, 3개 학교 SW중심사업단으로부터 약 800만원의 투자를 유치함.",
-    den:"As the SKKU GDSC lead, hosted a 90-person hackathon and secured roughly 8 million KRW in funding from three universities' software programs.",
-    d:[
-      {t:"h", ko:"준비 과정", en:"How it came together"},
-      {t:"p", ko:"<b>1. On-Offline 동시 진행 시도</b>", en:"<b>1. Trying to run it online and offline at once</b>"},
-      {t:"p", ko:"시간대가 비슷한 캐나다, 일본 등에 컨택을 시도했습니다. 링크드인을 통해 연결한 뒤 디스코드 등으로 실제 소통까지 이어갔지만, 일본 측 참여도 저하로 무산되었습니다.", en:"I reached out to Canada and Japan, whose time zones lined up reasonably well - connecting first on LinkedIn, then moving to Discord for real conversation. It fell through when participation on the Japanese side dropped off."},
-      {t:"p", ko:"<b>2. 국내 참여 대학 모집</b>", en:"<b>2. Recruiting partner universities in Korea</b>"},
-      {t:"p", ko:"GDSC 리드들이 모여 있는 Slack 채널이 있었습니다. 그 방에서 연세대, 고려대, 서강대 등에 직접 컨택해 고려대·서강대와 함께 오프라인으로 진행하기로 했습니다. 서울 인근에 모여 있는 대학들이라 온라인 소통은 물론 오프라인으로도 만나며 행사를 기획해 나갔습니다.", en:"There was a Slack channel where the GDSC leads gathered. From there I contacted Yonsei, Korea University and Sogang directly, and settled on running it offline together with Korea University and Sogang. Since all of us were clustered around Seoul, we planned the event in person as well as online."},
-      {t:"p", ko:"<b>3. 장소 협조 및 후원 문의</b>", en:"<b>3. Venue support and sponsorship</b>"},
-      {t:"p", ko:"3개 학교 SW중심사업단으로부터 약 800만 원의 투자를 유치했고, 행사는 90명 규모로 열렸습니다.", en:"I secured roughly 8 million KRW from the three universities' software programs, and the event ran at 90 participants."},
-      {t:"note", ko:"노션 원본에는 ‘2024 RE:ALThon (운영용)’, ‘RE:ALThon - GDG on Campus Korea (Prep)’ 두 개의 운영 문서가 하위 페이지로 함께 정리되어 있습니다.", en:"The Notion original keeps two working documents as sub-pages: \"2024 RE:ALThon (operations)\" and \"RE:ALThon - GDG on Campus Korea (Prep)\"."}
-    ]},
-
-  { id:"line4", s:"2024-11-16", cat:"공모전", nid:"3bbdd7c9423e80a2a597da537213f270",
-    ko:"멋쟁이사자처럼 4호선톤", en:"LIKELION Line-4 Hackathon",
-    dko:"PM으로서 프로젝트 기획 및 총괄을 담당하며, Figma를 활용해 디자이너 전달 전 화면 구조와 레이아웃을 정의하는 로우파이 와이어프레임을 제작함.",
-    den:"Served as PM, owning planning and overall direction, and built low-fidelity wireframes in Figma to define screen structure and layout before handoff to designers.",
-    d:[
-      {t:"p", ko:"4호선톤에서 총 5명 팀의 PM 역할을 맡게 되었습니다.", en:"At the Line-4 Hackathon I took the PM role for a team of five."},
-      {t:"p", ko:"프로젝트 기획과 총괄을 담당했고, 디자이너에게 전달하기 전 단계에서 화면 구조와 레이아웃을 정의하는 로우파이 와이어프레임을 Figma로 직접 제작했습니다.", en:"I owned the planning and the overall direction, and built the low-fidelity wireframes in Figma myself - defining screen structure and layout before anything went to the designers."},
-      {t:"note", ko:"노션 원본에는 현장 사진 3장이 함께 기록되어 있습니다.", en:"Three photos from the event are kept alongside this entry in the Notion original."}
-    ]},
-
-  { id:"ktng-overseas", s:"2024-10-29", e:"2025-01-17", cat:"봉사활동", nid:"3bbdd7c9423e800188c5c527021715d2",
-    ko:"KT&G 상상위더스 해외봉사단", en:"KT&G Sangsang Withus Overseas Volunteer Corps",
-    dko:"인도네시아 보고르 지역에 파견되어 177시간 동안 교육, 환경 개선 봉사를 함.",
-    den:"Deployed to Bogor, Indonesia for 177 hours of education and environmental-improvement volunteering.",
-    d:[
-      {t:"ul",
-        ko:["<b>역할</b>: 회계물품팀으로 활동",
-            "<b>실제 파견 일자</b>: 2025.01.08 ~ 2025.01.17",
-            "<b>활동 지역</b>: 인도네시아 보고르",
-            "<b>봉사 시간</b>: 177시간 (교육 봉사, 환경 개선)"],
-        en:["<b>Role</b> - accounting and supplies team",
-            "<b>Actual deployment</b> - 8-17 January 2025",
-            "<b>Location</b> - Bogor, Indonesia",
-            "<b>Hours</b> - 177 (education and environmental improvement)"]},
-      {t:"p", ko:"파견 전 준비 단계에서 문화교류 계획서와 교육봉사 계획서를 작성했고, 딱지치기·부채 꾸미기 등 현지에서 진행할 프로그램 자료를 직접 만들었습니다.", en:"In the run-up to deployment I wrote the cultural-exchange and education-volunteering plans, and produced the materials for the on-site programs myself - Korean ddakji and fan-decorating among them."},
-      {t:"files", items:["1조_문화교류_계획서_1130.docx","3차_1조_교육봉사_계획서-1.docx","상상위더스딱지치기_오진석.docx","상상위더스부채꾸미기_오진석.docx"]},
-      {t:"note", ko:"지원서는 노션에 별도 하위 페이지로 보관되어 있습니다.", en:"The application itself is kept as a separate sub-page in Notion."}
-    ]},
-
-  { id:"creverse", s:"2024-09-26", e:"2024-12-28", cat:"대외활동", nid:"3bbdd7c9423e8077b654e011ee7a5081",
-    ko:"크레버스 캠퍼스 크루 1기", en:"Creverse Campus Crew, 1st cohort",
-    dko:"마케팅 활동으로 인스타그램 홍보물 제작, 현 교육 시장 상황 파악 등을 담당함.",
-    den:"Handled marketing work including Instagram promotional assets and research into the current education market.",
-    d:[
-      {t:"p", ko:"크레버스 캠퍼스 크루 1기로 활동하며 마케팅 파트를 담당했습니다. 인스타그램 홍보물을 직접 제작하고, 현재 교육 시장의 상황을 파악하는 리서치를 맡았습니다.", en:"As part of the first Creverse Campus Crew cohort I handled marketing: producing Instagram promotional assets and researching the state of the education market."},
-      {t:"note", ko:"노션 원본에는 직접 제작한 홍보물 이미지 3장이 기록되어 있습니다.", en:"Three of the promotional assets I made are kept as images in the Notion original."}
-    ]},
-
-  { id:"edutech-expo", s:"2024-09-23", cat:"대외활동", nid:"3bbdd7c9423e802ebfe9ebd64f5b9d8d",
-    ko:"2024 에듀테크 박람회", en:"2024 EduTech Expo",
-    dko:"박람회에 참여하여 에듀테크 최신 동향을 파악하고 Adobe 특강을 듣는 등 주체적으로 지식을 확장해나감.",
-    den:"Attended the expo to follow the latest edtech trends and took an Adobe masterclass, broadening my knowledge on my own initiative.",
-    d:[
-      {t:"p", ko:"9월 23일, 코엑스에서 열린 에듀테크 박람회에 다녀왔습니다. 원래도 신청을 해뒀었는데 교육용멀티미디어 수업에서 다녀오라고 과제를 내주셔서 웃었던 기억이 있습니다.", en:"On 23 September I went to the EduTech Expo at COEX. I had already signed up on my own - and then my Educational Multimedia class set attending it as an assignment, which I found funny."},
-      {t:"p", ko:"에듀테크는 블루오션이라는 생각이었는데, 직접 가보니 천재교육, 앨리스스쿨 등 수많은 기업들이 이미 치열하게 경쟁하고 있는 시장이라는 생각이 들었습니다. 컴퓨터교육과인 만큼 에듀테크에서 강점을 가질 수 있을 것이란 생각이 들었기 때문에 더욱 흥미롭게 박람회를 봤고, 시간 가는 줄 모르고 4~5시간 동안 둘러봤습니다.", en:"I had thought of edtech as a blue ocean. Walking the floor, it looked more like a market where a great many companies - Chunjae Education, Alice School and others - are already competing hard. Because a computer-education major should have an edge here, I found it all the more interesting, and lost track of time for four or five hours."},
-      {t:"note", ko:"노션 원본에는 현장 사진 2장이 함께 기록되어 있습니다.", en:"Two photos from the floor are kept alongside this entry in Notion."}
-    ]},
-
-  { id:"speech-mentors", s:"2024-09-06", e:"2024-11-09", cat:"대외활동", nid:"3bbdd7c9423e80c8813cf352ed856ed9",
-    ko:"KT&G 상상유니브 글로벌 스피치 멘토단", en:"KT&G Sangsang Univ Global Speech Mentors",
-    dko:"재한 외국인 대상 스피치 멘토링을 진행하며 팀장을 맡음. 한국에 거주하는 파키스탄 분의 이야기를 듣고 대화를 나누며 문화 차이 인식 및 다문화 인식 제고를 위한 스피치를 준비함.",
-    den:"Led a team delivering speech mentoring to foreign residents in Korea. Through conversations with a Pakistani resident, prepared a speech on recognising cultural difference and raising multicultural awareness.",
-    d:[
-      {t:"p", ko:"팀장을 맡아 재한 외국인을 대상으로 한 스피치 멘토링을 진행했습니다. 한국에 거주하는 파키스탄 분의 이야기를 듣고 대화를 나누며, 문화 차이 인식과 다문화 인식 제고를 주제로 한 스피치를 함께 준비했습니다.", en:"I led a team running speech mentoring for foreign residents in Korea. Listening to and talking with a Pakistani resident here, we prepared a speech together on recognising cultural difference and raising multicultural awareness."},
-      {t:"h", ko:"대학생 멘토단 일정", en:"Mentor programme schedule"},
-      {t:"ul",
-        ko:["<b>발대식</b>: 9.6 (금) / 상상유니브",
-            "<b>1차 멘토링</b>: 9.9 ~ 9.26",
-            "<b>1차 멘토단 미팅</b>: 9.27 (금)",
-            "<b>2차 멘토링</b>: 9.28 ~ 10.10",
-            "<b>2차 멘토단 미팅</b>: 10.11 (금)",
-            "<b>3차 멘토링</b>: 10.11 ~ 10.31",
-            "<b>3차 멘토단 미팅</b>: 11.1 (금)",
-            "<b>행사일</b>: 11.9 (토)"],
-        en:["<b>Kick-off</b> - Fri 6 Sep, Sangsang Univ",
-            "<b>Mentoring round 1</b> - 9-26 Sep",
-            "<b>Mentor meeting 1</b> - Fri 27 Sep",
-            "<b>Mentoring round 2</b> - 28 Sep - 10 Oct",
-            "<b>Mentor meeting 2</b> - Fri 11 Oct",
-            "<b>Mentoring round 3</b> - 11-31 Oct",
-            "<b>Mentor meeting 3</b> - Fri 1 Nov",
-            "<b>Event day</b> - Sat 9 Nov"]},
-      {t:"note", ko:"멘토-멘티 멘토링은 팀별로 진행되었습니다.", en:"Mentor-mentee sessions ran team by team."}
-    ]},
-
-  { id:"odyvice", s:"2024-09-01", e:"2025-02-28", cat:"대외활동", nid:"3bbdd7c9423e8066ac60f53bfed2bc5f",
-    ko:"오디바이스 대학생 멘토", en:"Odyvice Undergraduate Mentor",
-    dko:"중고등학생 대상 학습, 멘탈 관리 등 다양한 부분에서 멘토링을 제공함.",
-    den:"Mentored middle and high school students on study methods, mental wellbeing and more.",
-    d:[
-      {t:"ul",
-        ko:["<b>활동명</b>: 오디바이스 대학생 멘토단",
-            "<b>기간 / 규모</b>: 약 5개월 (총 5시간, 상담 5회 완수)",
-            "<b>주요 역할</b>: 중·고등학생 대상 공부법 및 멘탈 관리법 조언"],
-        en:["<b>Programme</b> - Odyvice undergraduate mentor corps",
-            "<b>Span</b> - about five months; 5 hours, 5 sessions completed",
-            "<b>Role</b> - advising middle and high school students on study method and managing their state of mind"]},
-      {t:"h", ko:"주요 성과", en:"What it produced"},
-      {t:"ul",
-        ko:["<b>1:1 진로·진학 오디오 멘토링</b>: 중·고등학생을 대상으로 1:1 실시간 음성 상담을 제공. 학생부종합전형(생기부), 내신 관리, 면접 전략, 학업 고민 등을 실제 경험자 관점에서 맞춤형으로 코칭했습니다.",
-            "<b>교육 및 정보 격차 해소</b>: 고가의 대면 입시 컨설팅에 접근하기 어려운 지방 거주 학생이나 정보 격차를 겪는 학생들에게, 비대면 음성 기반의 저비용·고효율 솔루션을 제공했습니다."],
-        en:["<b>One-to-one audio mentoring on paths and admissions</b> - live voice sessions with middle and high school students, coaching them on the comprehensive admissions track, school records, interview strategy and study worries, from the point of view of someone who had recently been through it.",
-            "<b>Closing an information gap</b> - a low-cost, high-efficiency voice-based option for students outside the capital, or otherwise cut off from the expensive in-person admissions consulting market."]},
-      {t:"h", ko:"소감", en:"Reflection"},
-      {t:"p", ko:"사범대학교 학생으로서 교육학개론 등 여러 교수법을 늘 학습하지만, 직접 학생들과 맞닿아 소통할 수 있는 기회는 적습니다. 이 멘토링 활동을 통해 지금 학생들이 가진 걱정과 고민에 공감하고 조언하는 경험을 하면서 수업에 대한 열정도 더 커졌습니다. 단순히 수업을 듣는 데 그치지 않고 실제로 배운 것을 적용할 곳을 찾는 것은 제 장점 중 하나입니다.", en:"As a student in a college of education I am always studying pedagogy in the abstract, but chances to actually sit with students are rare. Empathising with what these students were worried about, and giving them advice, made me more invested in my own coursework. Finding somewhere to actually apply what I have learned, rather than stopping at the lecture, is one of my strengths."},
-      {t:"files", items:["오디바이스_수업_내역.png"]}
-    ]},
-
-  { id:"icists", s:"2024-08-07", e:"2024-08-11", cat:"대외활동", nid:"3bbdd7c9423e8030b293ee9bb512796d",
-    ko:"카이스트 ICISTS HACKAFAIR", en:"KAIST ICISTS HACKAFAIR",
-    dko:"5일간 아이디어를 디벨롭하고, 영어로 자료를 구성하며 해외 멘토와 영어로 멘토링을 진행함.",
-    den:"Developed an idea over five days, built the materials in English and worked through mentoring sessions with overseas mentors in English.",
-    d:[
-      {t:"p", ko:"5일간 아이디어를 디벨롭하고, 영어로 자료를 구성하며 해외 멘토와 영어로 멘토링을 진행했습니다.", en:"Over five days we developed an idea, built all the materials in English, and ran our mentoring sessions with overseas mentors in English."},
-      {t:"h", ko:"프로그램 구성", en:"Programme"},
-      {t:"ul",
-        ko:["Keynote Speech","Culture Night","Discussion","IDEAthon","Talk Concert","Mentoring","Actualizing","Tech-Fair"],
-        en:["Keynote speech","Culture night","Discussion","IDEAthon","Talk concert","Mentoring","Actualizing","Tech-Fair"]},
-      {t:"link", href:"http://youtube.com/watch?v=aaZnvdajMoU", ko:"[HACKAFAIR 2024] Closing 영상", en:"[HACKAFAIR 2024] Closing video"}
-    ]},
-
-  { id:"goormthon", s:"2024-07-22", e:"2025-02-28", cat:"교내동아리", nid:"3bbdd7c9423e808e910cca08abc718b6",
-    ko:"구름톤 유니브 3기 교내 운영진", en:"Goormthon Univ 3rd cohort: campus organiser",
-    dko:"소프트웨어 개발 동아리로서 가치 실현을 위한 프로그램을 개발하고, 매주 스터디 및 강의 수강을 진행함.",
-    den:"As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
-    d:[
-      {t:"h", ko:"교내 활동", en:"On campus"},
-      {t:"p", ko:"구름은 카카오의 자회사로 코딩 부트캠프, IDE 개발 등을 하고 있습니다. 성균관대 소속으로 구름톤 유니브에 합격하게 되어 판교 사옥에서 OT를 했고, 구름톤 성균관대 사람들과도 처음 만나 친해졌습니다.", en:"Goorm is a Kakao subsidiary that runs coding bootcamps and builds IDEs. I got into Goormthon Univ representing SKKU, did the orientation at their Pangyo office, and met the rest of the SKKU cohort there for the first time."},
-      {t:"p", ko:"그리고 10월 31일 할로윈과 솦밤을 맞아, 구름톤 유니브 사람들과 함께 ‘지금 우리 율전은’이라는 학교 방탈출 게임을 개발했습니다. 처음 PM으로서 스토리라인도 짜보고 PRD를 작성해보며 재밌는 게임을 만들 수 있었습니다. 유능한 디자이너와 개발자 덕분에 생각한 대로 아주 멋진 게임이 만들어졌고, 운 좋게 부스를 얻어 오프라인으로 진행했는데 실제로 학생들의 반응도 매우 좋았습니다.", en:"Then, for Halloween and our college night on 31 October, we built a campus escape-room game called \"All of Us Are Yuljeon Now\". It was my first time as PM - writing the storyline and the PRD - and it turned out to be a genuinely fun game. Thanks to a very capable designer and developers it came out exactly as imagined; we were lucky enough to get a booth and run it in person, and the students loved it."},
-      {t:"h", ko:"연합 활동", en:"Inter-university work"},
-      {t:"p", ko:"세종대, 숭실대 사람들과 함께 PM 연합 스터디를 진행했습니다. 워크플로우 방식과 개발이 어떻게 이루어지는지, 피그마 사용법 등을 3달에 걸쳐 매주 만나 진행하며 많은 것을 배웠습니다. 1학년으로서 얻기 어려운 경험인 것 같아 감사한 마음으로 임했고, 모두 착하고 똑똑한 사람들만 모여 있어서 재밌고 행복했습니다.", en:"I ran a joint PM study group with people from Sejong and Soongsil. Over three months, meeting weekly, we worked through workflow methods, how development actually gets done, and how to use Figma. It is not an experience a first-year usually gets, so I went into it grateful - and everyone there was kind and sharp, which made it a good time."}
-    ]},
-
-  { id:"ched", s:"2024-07-17", cat:"교내활동", nid:"3bbdd7c9423e8016946ecaf4511b8813",
-    ko:"필리핀 대통령실 고등교육위원회 방문단 학교 소개", en:"Campus briefing for the Philippine CHED delegation",
-    dko:"CHED 관계자들에게 SKKU 소프트웨어융합대학의 다양한 학제간 융합 활동을 소개하여 많은 관심을 받음.",
-    den:"Introduced CHED officials to the interdisciplinary work of SKKU's College of Computing and Informatics, drawing strong interest.",
-    d:[
-      {t:"h", ko:"글로벌 외빈 앞에서 증명한 대표성과 능동적인 커뮤니케이션", en:"Representing the school in front of an international delegation"},
-      {t:"p", ko:"필리핀 대통령실 고등교육위원회(CHED)의 교내 방문 당시, SW중심대학사업단을 대표하는 GDSC 연사로 선발되어 글로벌 외빈 대상 성과 발표를 진행했습니다. 학교의 정체성을 상징하는 유생복을 착용하고, 학교와 동아리를 대표하는 마음가짐으로 임했습니다.", en:"When the Philippine Commission on Higher Education (CHED) visited campus, I was chosen as the GDSC speaker representing the university's software program, and presented our work to the delegation. I wore the yusaengbok - the scholar's robe that stands for the school's identity - and went in carrying the school and the club on my shoulders."},
-      {t:"p", ko:"발표 과정에서는 정형화된 대본 암기 방식에 의존하지 않고, 현장 청중의 반응을 살피며 실시간 질의응답 중심의 유연한 영어 스피치를 이끌었습니다. 이를 통해 GDSC가 주도해 온 다양한 IT 활동과 학제 간 융합 성과를 생동감 있게 전달하며 외빈들의 높은 관심과 호응을 이끌어냈습니다.", en:"Rather than leaning on a memorised script, I read the room and ran a flexible English talk built around live questions and answers. That let me convey the IT work and interdisciplinary results GDSC had been driving with some energy, and the delegation responded warmly."},
-      {t:"p", ko:"교내 언론 에스프레스(S-PRESS)에도 보도되었습니다. 소프트웨어학과·컬처앤테크놀로지융합전공 학우들과 함께, 컴퓨터교육학과 1학년으로서 CHED 관계자들에게 솦ː콤의 학제간 융합 활동을 소개한 것으로 기록되어 있습니다.", en:"The campus paper S-PRESS covered it, recording that - alongside students from software engineering and the Culture & Technology convergence major - I introduced the CHED officials to the college's interdisciplinary work, as a first-year in computer education."},
-      {t:"link", href:"https://www.spressnews.com/news/articleView.html?idxno=119305", ko:"보도자료: 에스프레스(S-PRESS)", en:"Press coverage - S-PRESS"}
-    ]},
-
-  { id:"dreamon", s:"2024-05-21", cat:"봉사활동", nid:"3bbdd7c9423e80e4b8d3e65e4c295448",
-    ko:"드림온학교", en:"Dream On School",
-    dko:"발달장애청소년 수업 보조 외 활동을 진행함.",
-    den:"Assisted classes for adolescents with developmental disabilities, among other activities.",
-    d:[
-      {t:"h", ko:"봉사활동에서 맡은 역할", en:"What I did"},
-      {t:"ul",
-        ko:["전반적인 수업 보조를 맡았습니다. 기관에서는 수업을 3교시로 나누어 미술 심리 치료, 국악, 성악 뮤지컬 수업으로 구성해 진행하고 있었고, 각 교시마다 담당 교수님이 오셨습니다.",
-            "돌발 행동을 보이려 하는 학생에게 강한 어조로 “안 돼요, 진정하세요”라고 말해 제지하는 역할을 맡았습니다. 상주하시는 보조 교사님들이 방법을 알려주셨습니다.",
-            "국악 수업을 위해 외부 장구 학원까지 도보로 이동할 때, 앞뒤로 한 명씩 배치되어 학생들이 이동 경로를 벗어나지 않도록 보조했습니다.",
-            "성악 뮤지컬 수업에서는 앞에서 컴퓨터를 조작하며 학생들에게 노래 가사를 보여주는 역할을 맡았고, 이 과정에서 수업에 참여하는 학생들과 수업 방식을 면밀히 관찰할 수 있었습니다.",
-            "쉬는 시간에는 학생들과 이야기를 나누었습니다. 먼저 말을 거는 것은 기관에서 지양해 달라고 하셔서 하지 않았지만, 학생이 먼저 말을 걸어오면 서로 어디 사는지, 취미가 무엇인지 공유하며 일상적인 대화를 이어갔습니다."],
-        en:["I assisted across the whole class day. The centre split the day into three periods - art therapy, Korean traditional music, and vocal musical - each with its own instructor.",
-            "My role was to step in firmly when a student was about to act out, saying \"No - please calm down.\" The resident assistant teachers showed me how.",
-            "When we walked to an outside janggu studio for the traditional-music class, one of us went ahead and one behind, keeping the group on route.",
-            "In the vocal musical class I ran the computer at the front, putting the lyrics up for the students - which let me watch the students and the teaching method closely.",
-            "During breaks I talked with the students. The centre asked us not to initiate, so I didn't - but when a student started a conversation we'd trade ordinary things: where we lived, what we liked doing."]},
-      {t:"h", ko:"봉사활동을 통해 느낀 점", en:"What I took away"},
-      {t:"p", ko:"이번 경험을 통해 장애인을 가까이서 접하고 경계성 인격 장애, 조현병, 자폐 스펙트럼의 특징을 알아보았습니다. 장애별로 특성이 정리된 자료는 많았지만, 제가 만난 학생과 정확히 부합하는 분류 체계는 찾아볼 수 없었습니다. 기본적으로 사람은 세상에 유일무이한 존재이고, 이를 특수교육대상 학생들과 시간을 보내며 더욱 강하게 체감할 수 있었습니다.", en:"Being close to it, I read up on borderline personality disorder, schizophrenia and the autism spectrum. There is no shortage of material organising traits by diagnosis - but I could not find a classification that matched the students I actually met. People are singular, and spending time with these students made that far more concrete to me."},
-      {t:"p", ko:"교사가 장애 학생을 만나면 가장 먼저 참고하는 것은 장애별로 정리된 교육법일 것입니다. 물론 중요하지만, 결국 핵심은 관심 어린 시선으로 학생을 바라보고 개인별 특성에 맞는 교육을 제공하는 것입니다. 최근 정보 기술의 발달로 개별화 교육의 실현이 점점 가까워지고 있기에, 장애 학생이 융합된 교실 환경을 만드는 일도 머지않아 가능해지리라 기대합니다.", en:"A teacher meeting a student with a disability will reach first for the per-diagnosis teaching guide. That matters - but what matters more is looking at the student with real attention and teaching to their individual traits. As information technology brings individualised education closer, I expect an integrated classroom to become possible before long."},
-      {t:"p", ko:"집에서 1시간 정도 떨어진 곳에서 봉사를 하고 대중교통으로 돌아오는데, 버스에서 수업을 함께한 학생들과 같이 타게 되었습니다. 그때 이전엔 느끼지 못했던 감정을 느꼈습니다. 멀리 있다고만 느꼈던 사람들이 실제론 이렇게 가까이 있었다는 것을 실감하게 되었습니다. 미래 사회에서 통합사회를 실현하려면 통합교실의 실현이 선행되어야 한다고 생각합니다.", en:"The centre was about an hour from home, and on the bus back I ended up riding with the students from that day's class. It landed differently than anything else had: people I had thought of as distant were in fact right here. If we want an integrated society, integrated classrooms have to come first."},
-      {t:"files", items:["장애학급_봉사활동_보고서.docx"]}
-    ]},
-
-  { id:"ba-dive", s:"2024-05-13", cat:"공모전", nid:"3bbdd7c9423e800c847cc4c7f34c4046",
-    ko:"SKKU-BA-DIVE 도전", en:"SKKU-BA-DIVE application",
-    dko:"GDSC 사람들과 함께 지원하여 1차 합격, 최종 면접에서 탈락함.",
-    den:"Applied with fellow GDSC members, passed the first round and was not selected at the final interview.",
-    d:[
-      {t:"p", ko:"GDSC 사람들과 함께 지원해 1차에 합격했고, 최종 면접에서 탈락했습니다.", en:"I applied together with people from GDSC, passed the first round, and was not selected at the final interview."},
-      {t:"files", items:["Skku-ba-dive.pdf"]},
-      {t:"note", ko:"노션 상세 페이지에는 별도 본문 기록 없이 제출 자료만 보관되어 있습니다.", en:"The Notion page keeps only the submitted materials; there is no written record beyond that."}
-    ]},
-
-  { id:"s-global", s:"2024-04-18", cat:"공모전", nid:"3bbdd7c9423e8018bc23dc8f365b965e",
-    ko:"S-Global Challenger 도전", en:"S-Global Challenger application",
-    dko:"GDSC 사람들과 함께 해외 파견 교내 공모전에 도전함.",
-    den:"Entered the university's overseas-dispatch competition together with fellow GDSC members.",
-    d:[
-      {t:"ul",
-        ko:["<b>활동명</b>: 2024 S-Global Challenger 프로그램 도전 계획서 작성 (성균관대학교 GDSC)",
-            "<b>기간 / 규모</b>: 2024년 상반기, 해외 R&D 탐방 및 연구 프로젝트 제안서 작성 (팀 단위 4인 공모)",
-            "<b>주요 역할</b>: GDSC AI/TensorFlow 팀원으로서 AI 기반 비즈니스 시장 예측 연구 주제 정의, 시계열 데이터 분석 모델링 아키텍처 설계, 해외 기관·대학 협업 계획 수립 및 제안서 작성 주도"],
-        en:["<b>What</b> - writing the 2024 S-Global Challenger proposal for SKKU GDSC",
-            "<b>Span</b> - first half of 2024; a four-person team proposal for an overseas R&D visit and research project",
-            "<b>Role</b> - on the GDSC AI/TensorFlow team: defining the research topic on AI-based market forecasting, designing the time-series modelling architecture, planning collaboration with overseas institutions, and leading the writing"]},
-      {t:"h", ko:"비즈니스-AI 융합 연구 가설 설정 및 문제 정의", en:"Framing the research question"},
-      {t:"ul",
-        ko:["Google Trends 검색 데이터와 거시 경제·인구 지표를 연계해 미래 비즈니스 수요를 예측하는 LSTM 및 ARIMA 기반 시계열 분석 연구 프레임워크를 설계했습니다.",
-            "해외 선행 연구 논문을 분석해 시계열 모델의 한계점을 사전에 파악하고, TensorFlow 기반 하이퍼파라미터 최적화 방안을 구체화했습니다."],
-        en:["Designed an LSTM- and ARIMA-based time-series framework that links Google Trends search data with macroeconomic and demographic indicators to forecast future business demand.",
-            "Read the overseas literature first to understand where time-series models break down, then worked out a TensorFlow-based hyperparameter optimisation plan."]},
-      {t:"h", ko:"글로벌 R&D 협업 및 기술 자문 로드맵", en:"Global R&D collaboration roadmap"},
-      {t:"ul",
-        ko:["토론토 대학교(U of T)·TMU GDSC와의 개발 교류 워크숍, Vector Institute, BlueDot, Google Canada AI Research Lab 대상 기술 인터뷰 및 랩 탐방 계획을 수립했습니다.",
-            "글로벌 비즈니스·데이터사이언스 학술 컨퍼런스(ICMABEBR, ICSDS)를 연계해 산학 연구 발전 방향성을 체계화했습니다."],
-        en:["Planned development-exchange workshops with the University of Toronto and TMU GDSC, plus technical interviews and lab visits at the Vector Institute, BlueDot and Google Canada's AI Research Lab.",
-            "Tied the plan to global business and data-science conferences (ICMABEBR, ICSDS) to give the industry-academia direction some structure."]},
-      {t:"h", ko:"실행력 및 지식 확산 방안", en:"Execution and dissemination"},
-      {t:"ul",
-        ko:["연구 모델을 실질적인 프로그램(웹/앱)으로 구현하는 단계별 개발 계획과 함께, 학술 저널·시각화 포스터·기술 공유 영상 제작 등 커뮤니티 배포 프로세스를 설계했습니다.",
-            "컴퓨터교육 전공 지식을 비즈니스·경제 도메인과 결합해, 추상적인 문제의식을 논리적이고 설득력 있는 완성형 연구 계획서로 구조화했습니다."],
-        en:["Laid out a staged plan to turn the research model into an actual web/app product, plus a dissemination process - journal write-up, visualisation posters, technical explainer videos.",
-            "Combined computer-education knowledge with the business and economics domain, turning an abstract concern into a complete, defensible research plan."]},
-      {t:"h", ko:"소감", en:"Reflection"},
-      {t:"p", ko:"성균관대학교 GDSC 팀원들과 함께 ‘구글 트렌드 데이터를 활용한 AI 비즈니스 시장 분석 및 예측’이라는 연구 주제를 발굴하고, 이를 실현하기 위한 도전 계획서를 주도적으로 작성했습니다. 단순한 아이디어 제안에 그치지 않고, Google Trends API와 경제 지표를 결합한 LSTM 시계열 예측 모델의 기술적 실현 가능성을 분석했습니다.", en:"With the SKKU GDSC team I found the topic - AI analysis and forecasting of business markets using Google Trends data - and led the writing of the proposal. Rather than stopping at the idea, I analysed whether an LSTM forecasting model combining the Google Trends API with economic indicators was technically feasible."},
-      {t:"p", ko:"방대한 기술 문서와 해외 연구 동향을 분석하여 하나의 완성도 높은 연구 제안서로 엮어낸 과정은 큰 성장의 계기가 되었습니다. 컴퓨터교육 전공자로서 복잡한 AI 기술을 비즈니스 문제 해결과 연결하는 융합적 시각을 체득했고, 높은 난도의 목표에 주도적으로 부딪히며 아이디어를 논리적으로 구조화하는 기획 역량을 확립할 수 있었습니다.", en:"Pulling a large body of technical documentation and overseas research into one coherent proposal was where I grew most. As a computer-education major I learned to connect complex AI work to business problems, and - by taking on something well above my level - built the habit of structuring an idea until it holds together."},
-      {t:"files", items:["2024_S-Global_Challenger_프로그램_창조적_도전계획서.pdf"]}
-    ]},
-
-  { id:"premed", s:"2024-03-19", e:"2025-03-31", cat:"대외활동", nid:"3bbdd7c9423e8053a7f4d551c51ad66e",
-    ko:"프리메드", en:"PreMed",
-    dko:"쪽방촌 독거노인 방문건강관리 파트장을 맡음.",
-    den:"Led the part of the team providing home health-care visits to elderly residents living alone in jjokbang districts.",
-    d:[
-      {t:"p", ko:"쪽방촌 독거노인 방문건강관리 파트장을 맡아 약 1년간 활동했습니다.", en:"For about a year I led the home health-care visiting part of the team, working with elderly residents living alone in jjokbang districts."},
-      {t:"files", items:["쪽방촌_봉사_내역.pdf"]},
-      {t:"note", ko:"노션 원본에는 ‘해외파견사업 과제’ 문서가 하위 페이지로 함께 정리되어 있습니다.", en:"An \"overseas dispatch project\" document is kept as a sub-page in the Notion original."}
-    ]},
-
-  { id:"likelion12", s:"2024-03-02", e:"2025-02-28", cat:"교내동아리", nid:"3bbdd7c9423e803693f8ef83c8e04db6",
-    ko:"멋쟁이사자처럼 12기", en:"LIKELION, 12th cohort",
-    dko:"PM으로서 “광고대행사” 플랫폼을 기획·실행하였으며 5명의 팀원과 함께함.",
-    den:"As PM, planned and shipped an advertising-agency platform with a team of five.",
-    d:[
-      {t:"h", ko:"1. 교내 스터디: 프론트엔드 기초 확립과 API 통신 메커니즘 체득", en:"1. Campus study group - front-end foundations and how API communication works"},
-      {t:"p", ko:"교내에서 격주 단위 스터디를 진행하며 React의 상태 관리 및 프론트엔드 핵심 개념을 학습했습니다. 이론에 그치지 않고 Postman을 활용해 Hugging Face의 GPT-2 모델 API 요청 및 JSON 응답 처리 실습을 병행했습니다. 이 과정에서 클라이언트-서버 간 데이터 송수신 원리를 명확히 이해하고, HTTP 메서드를 활용한 CRUD 구현 및 표준 REST API 설계 규칙을 실무적 관점에서 익혔습니다.", en:"We ran a fortnightly study group covering React state management and the core front-end concepts. Rather than stopping at theory, we used Postman to make requests against Hugging Face's GPT-2 model API and handle the JSON responses. That made the client-server exchange concrete, and taught me CRUD over HTTP methods and standard REST design from a practical angle."},
-      {t:"h", ko:"2. 교내 아이디어톤: Tomak(e)", en:"2. Campus ideathon - Tomak(e)"},
-      {t:"ul",
-        ko:["<b>서비스명</b>: Tomak(e) (토막)",
-            "<b>발표팀</b>: 팀 도파민중독 (2024 멋쟁이사자처럼 교내 아이디어톤)",
-            "<b>슬로건</b>: “비(非)생산적인 것에서 비(BE)생산적으로” / “짧은 순간, 당신의 시간을 의미있고 가치있게”"],
-        en:["<b>Service</b> - Tomak(e)",
-            "<b>Team</b> - Dopamine Addicts (2024 LIKELION campus ideathon)",
-            "<b>Taglines</b> - \"From un-productive to BE-productive\" / \"Make a short moment of your time meaningful\""]},
-      {t:"p", ko:"<b>기획 배경 및 문제 정의</b>", en:"<b>Background and problem</b>"},
-      {t:"ul",
-        ko:["<b>운동 부족과 바쁜 일상</b>: 따로 시간을 내어 운동하기 어려운 현대인의 생활 패턴",
-            "<b>디지털 과몰입</b>: 숏폼 콘텐츠 시청 등 무의식적이고 비생산적인 스마트폰 사용 시간 증가",
-            "<b>‘시성비’ 트렌드</b>: 시간 대비 성능·효율을 중시하는 소비 경향 증가"],
-        en:["<b>Too busy to exercise</b> - modern schedules leave little room to set time aside for it",
-            "<b>Digital overuse</b> - rising unconscious, unproductive phone time, short-form video above all",
-            "<b>Time-efficiency as a trend</b> - consumption increasingly judged by return on time spent"]},
-      {t:"p", ko:"<b>목표와 타깃</b>: 자투리(토막) 시간을 효율적으로 활용해 사용자의 신체적·정신적 건강을 복합 관리하고 삶의 질(Wellness)을 향상시키는 것. 바쁜 일상 속에서도 건강·웰빙 관리에 관심 있는 대학생과 직장인을 타깃으로 잡았습니다.", en:"<b>Goal and audience</b> - use the offcuts of a day to manage physical and mental health together and lift overall wellness, aimed at students and office workers who care about their health despite busy schedules."},
-      {t:"p", ko:"<b>주요 기능</b>", en:"<b>Core features</b>"},
-      {t:"ul",
-        ko:["<b>홈 화면</b>: 일일 활용한 토막 시간 통계, 맞춤 아바타 및 개인 스케줄 현황",
-            "<b>상황 및 가용 시간 설정</b>: 현재 위치(지하철, 사무실 등)와 가용 시간을 분 단위로 입력",
-            "<b>맞춤형 활동 추천 알고리즘</b>: 장소와 시간에 최적화된 운동·스트레칭 및 명상 가이드 콘텐츠 추천",
-            "<b>활동 실행 및 타이머</b>: 가이드 영상 제공과 실시간 타이머 기록",
-            "<b>결과 및 소셜 공유</b>: 활동 완료 후 성취 확인, 친구들과 진행 상황 공유"],
-        en:["<b>Home</b> - stats on the spare minutes used today, a personalised avatar, and the day's schedule",
-            "<b>Context and availability</b> - enter where you are (train, office) and how many minutes you have",
-            "<b>Recommendation engine</b> - exercise, stretching or meditation content matched to that place and duration",
-            "<b>Run and time it</b> - guide videos with a live timer",
-            "<b>Results and sharing</b> - see what you completed and share progress with friends"]},
-      {t:"p", ko:"<b>차별화 포인트</b>: 신체 운동과 정신적 힐링(명상 등)을 통합 제공, 활동 리워드와 아바타 꾸미기를 통한 게이미피케이션, 친구와의 활동 공유를 통한 동기부여.", en:"<b>What set it apart</b> - physical exercise and mental recovery in one place, gamification through activity rewards and avatar customisation, and motivation through sharing with friends."},
-      {t:"p", ko:"<b>비즈니스 모델</b>: 건당 광고 노출 기반 광고 모델, 헬스케어 업체 제품·서비스 홍보 및 제휴 수수료.", en:"<b>Business model</b> - per-impression advertising, plus partnership fees from healthcare companies promoting products and services."},
-      {t:"p", ko:"<b>기술 스택</b>: 프론트엔드/언어: Flutter, Next.js · 백엔드: Spring · 데이터베이스: MySQL, PostgreSQL · 클라우드/인프라: AWS, Firebase · 버전 관리: Git, GitHub.", en:"<b>Stack</b> - front end: Flutter, Next.js · back end: Spring · databases: MySQL, PostgreSQL · cloud: AWS, Firebase · version control: Git, GitHub."},
-      {t:"files", items:["멋쟁이사자처럼_세션_자료.pdf","세션_발표자료_오진석.pdf","멋쟁이사자처럼_교내_ideation.pdf"]}
-    ]},
-
-  { id:"gdsc", s:"2024-03-02", e:"2025-02-28", cat:"대외활동", nid:"3bbdd7c9423e8045ac49d6324b76536e",
-    ko:"Google Developer Student Clubs", en:"Google Developer Student Clubs",
-    dko:"대학교 SW중심사업단 소속 동아리로서 월간 글로벌 IT 화상강연을 주최하고 하반기 글로벌 해커톤을 기획함. Core 직급으로 Administration팀을 총괄하며 대부분의 연사 컨택을 담당함.",
-    den:"Within the university's software program, hosted monthly global IT video lectures and planned a global hackathon for the second half of the year. As a Core member, led the Administration team and handled most speaker outreach.",
-    d:[
-      {t:"h", ko:"글로벌 IT 전문가와 킹고인의 만남", en:"Bringing global IT experts to campus"},
-      {t:"p", ko:"<b>발로 뛰며 완성한 네트워킹: 한계를 기회로 바꾸다</b>", en:"<b>Networking built on foot: turning a limit into an opening</b>"},
-      {t:"p", ko:"폭넓은 기술 트렌드를 익히고 커뮤니티에 기여하고자 운영팀(Administration Team)에 합류하여 매월 정기 기술 세미나를 운영했습니다. 첫 학기에는 섭외된 연사들과의 긴밀한 팔로업과 현장 운영에 집중하여 성실성을 인정받았고, 그 성과를 바탕으로 다음 학기 운영 코어(Core) 멤버로 선발되었습니다.", en:"I joined the Administration Team to follow technology trends more broadly and give something back to the community, running the monthly technical seminar. In my first semester I focused on close follow-up with booked speakers and on running the events themselves; that work got me selected as a Core member the following semester."},
-      {t:"p", ko:"코어 멤버로서 직접 강연 주최를 이끌며 섭외의 한계에 부딪히기도 했습니다. 당시 GDG가 개편 중이어서 활용 가능한 구글 내 네트워크가 부재한 상황이었기에, LinkedIn과 이메일을 활용한 다각도의 ‘콜드 메일’로 활로를 열었습니다. 수업에서 특강 차 오셔서 뵈었던 Computer Vision·Robotics 전문가분께 정중히 연락드려 섭외를 성사시켰고, 대학 사업단장님의 네트워크를 적극적으로 연계해 엔비디아 전문가 강연을 이끌어냈습니다. 나아가 10대 시절 TED 강연자이자 구글 자문을 맡고 있는 글로벌 전문가의 세미나를 주최하는 등 주도적으로 섭외 반경을 넓혔습니다.", en:"Leading the talks as a Core member, I ran into the limits of booking. GDG was mid-reorganisation, so there was no usable Google network to draw on - I opened a path with cold emails across LinkedIn and email. I wrote respectfully to a computer-vision and robotics specialist I had met when they guest-lectured in a class, and landed them; I worked the university program director's network and brought in an NVIDIA expert. I went further and hosted a global expert who had given a TED talk as a teenager and now advises Google."},
-      {t:"p", ko:"<b>유연한 글로벌 소통</b>: 글로벌 연사와 소통할 때는 LinkedIn에만 얽매이지 않고 상대방이 선호하는 WhatsApp을 활용하는 등 상황에 맞춘 커뮤니케이션을 펼쳤습니다. 또한 사내 규정상 강연이 어려웠던 한국 구글 현업자분과도 정중히 소통을 이어가며 커피챗을 제안받는 등, 테크 분야 특유의 개방적이고 건강한 네트워킹 문화를 체감했습니다.", en:"<b>Flexible global communication</b> - I didn't hold to LinkedIn for its own sake; where a speaker preferred WhatsApp, I met them there. With a Google Korea engineer who couldn't speak due to internal policy, I kept the conversation going politely and ended up invited for a coffee chat - a good look at how open the networking culture in tech can be."},
-      {t:"p", ko:"<b>빈틈없는 행정·실무 실행력</b>: 행사 기획에 그치지 않고 강연료 정산 및 예산 집행을 위해 대학 사업단 실무진과 긴밀히 조율하며 행정 절차를 끝까지 책임졌습니다. 학생들에게 지식을 공유한 것만으로도 만족한다고 하신 연사분들도 많아, 학교 기념품 등을 전달하는 과정도 함께했습니다. 기획 단계를 넘어 마무리까지 책임지는 경험을 통해 프로젝트에 대한 책임감을 기를 수 있었습니다.", en:"<b>Seeing the administration through</b> - I didn't stop at planning. I coordinated closely with the university program staff on speaker fees and budget execution, and carried the paperwork to the end. Many speakers said sharing knowledge with students was reward enough, so I also handled getting school gifts to them. Owning a project from planning through to close-out is where I learned what responsibility for it actually means."},
-      {t:"p", ko:"한계를 마주했을 때 스스로 활로를 찾는 주도성과, 다양한 이해관계자를 아우르는 소통·행정 실행력은 앞으로의 실무 프로젝트를 안정적으로 이끄는 밑거름이 될 것입니다.", en:"Finding a way through when I hit a wall, and holding communication and administration together across different stakeholders, is what I expect to carry into the projects that come next."}
-    ]},
-
-  { id:"trade-ai", s:"2024-02-20", e:"2024-02-22", cat:"대외활동", nid:"3bbdd7c9423e80af818dfc2265242c89",
-    ko:"2024 대학생 무역 인공지능 캠프", en:"2024 Undergraduate Trade & AI Camp",
-    dko:"한국무역협회 주관 대학생 무역 인공지능 캠프에 참여함.",
-    den:"Took part in the trade-and-AI camp for undergraduates run by the Korea International Trade Association.",
-    d:[
-      {t:"ul",
-        ko:["<b>활동명</b>: 한국무역협회(KITA) 주관 대학생 무역인공지능 캠프",
-            "<b>구성</b>: 이론 특강 이수, AI 아이디어 발표대회 참가, 후속 자격(무역영어 1급) 취득",
-            "<b>주요 역할</b>: 무역·산업계 DX 사례 및 데이터 리터러시 수강, AI 기반 무역 애로사항 해결 아이디어 기획(데이터 선별 및 기술적 방향성 제시)"],
-        en:["<b>What</b> - the Trade & AI camp for undergraduates run by the Korea International Trade Association (KITA)",
-            "<b>Shape</b> - lecture track, an AI idea pitch competition, and a follow-on certification (Trade English Level 1)",
-            "<b>Role</b> - studying DX cases across trade and industry plus data literacy; on the pitch team, selecting the data and setting the technical direction"]},
-      {t:"h", ko:"데이터 리터러시", en:"Data literacy"},
-      {t:"p", ko:"Big Data와 Thick Data의 개념, 그리고 데이터 수집·해석·활용 5단계 프로세스를 체계화했습니다.", en:"I worked through the distinction between big data and thick data, and the five-stage process for collecting, interpreting and using data."},
-      {t:"h", ko:"무역 산업 전반의 DX 실무 사례", en:"DX in practice across the trade industry"},
-      {t:"ul",
-        ko:["<b>제조</b>: LS그룹 스마트 팩토리. 공정 변수 간 인과관계를 반영한 비선형 AI 예측 모델 구축과 이를 통한 에너지·비용 절감 최적화 사례.",
-            "<b>물류</b>: 적재·보관·피킹·패킹·배송 각 단계별 로봇 자동화 및 스마트 물류 프로세스.",
-            "<b>금융/플랫폼</b>: 블록체인 기반 신용장(L/C) 개설 절차 혁신, 한국무역협회 AI 시맨틱 검색 서비스."],
-        en:["<b>Manufacturing</b> - LS Group's smart factory: non-linear AI prediction models that account for causal relations between process variables, used to optimise energy and cost.",
-            "<b>Logistics</b> - robotic automation across loading, storage, picking, packing and delivery.",
-            "<b>Finance and platforms</b> - blockchain-based letter-of-credit issuance, and KITA's AI semantic search service."]},
-      {t:"h", ko:"XAI 및 AI Safety", en:"XAI and AI safety"},
-      {t:"ul",
-        ko:["LRP(Layer-wise Relevance Propagation) 기술과 GAN 생성 모델 뉴런 수정 기술을 통해 AI 판단 근거를 시각화하고 모델을 수정하는 메커니즘을 파악했습니다.",
-            "공정성, 투명성, 신뢰성 등 산업 현장 적용을 위한 AI Safety 원칙과 기업 이행 기준을 학습했습니다."],
-        en:["Studied how Layer-wise Relevance Propagation and neuron-editing in GANs make a model's reasoning visible and correctable.",
-            "Covered the AI safety principles - fairness, transparency, reliability - and the corporate standards for applying them on the ground."]},
-      {t:"h", ko:"팀 프로젝트 기여", en:"Contribution to the team project"},
-      {t:"p", ko:"팀에 무역학과 전공 학생들이 많았는데, 팀원들이 가진 풍부한 무역 지식을 적극적으로 배우고 활용하는 동시에, 저는 평소 소프트웨어와 데이터를 다루며 쌓은 기술적 감각을 바탕으로 기여했습니다. 특히 어떤 데이터를 정제하고 활용해야 가시적이고 명료한 결괏값을 도출할 수 있는지 데이터 분석의 방향성을 제시하며 팀 프로젝트의 완성도를 높였습니다.", en:"Most of the team were trade majors. I leaned on their domain knowledge and contributed from the other side - the feel for software and data I had built up. Above all I set the analytical direction: which data to clean and use so the result would come out visible and unambiguous."},
-      {t:"h", ko:"후속 성과", en:"What followed"},
-      {t:"p", ko:"이 활동을 계기로 무역과 기술이 융합된 비즈니스 생태계에 대한 흥미가 한층 깊어졌고, 지속적인 공부를 이어간 끝에 실무 전문성을 고취하고자 <b>무역영어 1급</b> 자격까지 취득했습니다.", en:"The camp deepened my interest in the business ecosystem where trade and technology meet. I kept studying, and eventually took the <b>Trade English Level 1</b> certification to back it up."},
-      {t:"files", items:["2024_대학생_무역_인공지능_캠프.pdf"]}
-    ]},
-
-  { id:"future-tech", s:"2024-02-13", e:"2024-02-14", cat:"강의", nid:"3bbdd7c9423e80b690b0d90c1eef856f",
-    ko:"IT전문가들이 말하는 4차 산업혁명 미래기술과정", en:"Future Technologies of the Fourth Industrial Revolution",
-    dko:"이틀간 14개 강좌(총 14시간)를 온라인으로 수강함.",
-    den:"Completed 14 online courses over two days, 14 hours in total.",
-    d:[
-      {t:"ul",
-        ko:["<b>주최</b>: 교육부 첨단분야 혁신융합대학사업 A.I.B 사업단 / 성균관대 인공지능융합원",
-            "<b>기간</b>: 2024년 2월 13일 ~ 2월 14일 (총 14시간 이수)",
-            "<b>내용</b>: Microsoft, AWS, Google Cloud, NVIDIA 등 글로벌 IT 기업 전문가 특강 수강"],
-        en:["<b>Host</b> - the Ministry of Education's A.I.B convergence-university program / SKKU AI Institute",
-            "<b>Dates</b> - 13-14 February 2024, 14 hours completed",
-            "<b>Content</b> - lectures by experts from Microsoft, AWS, Google Cloud and NVIDIA"]},
-      {t:"h", ko:"주요 성과", en:"What I took from it"},
-      {t:"ul",
-        ko:["생성형 AI(DALL-E 3, Copilot), Azure AI Studio, 클라우드 및 메타버스 등 AI·소프트웨어 미래 기술 전반에 대한 기술적 인사이트를 습득했습니다.",
-            "최신 IT 트렌드를 통해 컴퓨터교육 전공과의 연계성을 확인하고 전공적합성을 고취했습니다."],
-        en:["Technical grounding across generative AI (DALL-E 3, Copilot), Azure AI Studio, cloud and the metaverse.",
-            "A clearer sense of how current IT trends connect back to a computer-education major."]},
-      {t:"h", ko:"소감", en:"Reflection"},
-      {t:"p", ko:"교내 홈페이지를 통해 인공지능융합원에서 주관하는 특강을 접하고 수강했습니다. 이틀간 총 14시간의 전일제 과정으로 진행되어, Microsoft, AWS, Google, NVIDIA 등 글로벌 기업 전문가들로부터 생성형 AI, 클라우드, Azure AI Studio 등 현업 최전선의 기술 인사이트를 배울 수 있었습니다.", en:"I found the lecture series on the university site and signed up. It ran full-time across two days - 14 hours - with experts from Microsoft, AWS, Google and NVIDIA on generative AI, cloud and Azure AI Studio, straight from the front line of the work."},
-      {t:"p", ko:"이번 교육을 통해 빠르게 다변화하는 최신 인공지능 트렌드를 다각도로 파악할 수 있었고, 컴퓨터교육 전공자로서 제 진로와 적성이 전공과 잘 부합한다는 확신을 갖게 되었습니다. 급변하는 기술 생태계에 대한 부담감이 느껴지기도 하지만, 한편으로는 기술적 변화를 지속적으로 탐구하고 적용하는 과정에서 매력과 성장의 즐거움을 실감한 계기가 되었습니다.", en:"It gave me several angles on how fast AI is diversifying, and left me confident that my direction and aptitude line up with my major. The pace of the ecosystem can feel like a weight - but chasing and applying those changes is also where I found the pull, and the pleasure of getting better at something."},
-      {t:"files", items:["수료_증빙.png"]}
-    ]},
-
-  { id:"worldvision", s:"2024-02-09", e:"2024-07-16", cat:"봉사활동", nid:"3bbdd7c9423e80939f16f631e7660eca",
-    ko:"월드비전", en:"World Vision",
-    dko:"월드비전 서신 영어 번역을 진행함(120회, 총 40시간).",
-    den:"Translated World Vision sponsor letters into English: 120 letters, 40 hours in total.",
-    d:[
-      {t:"ul",
-        ko:["<b>활동명</b>: 월드비전 아동 서신 번역 봉사단",
-            "<b>기간 / 규모</b>: 약 6개월 (총 40시간, 번역 120건 완수)",
-            "<b>주요 역할</b>: 해외 수혜 아동과 국내 후원자 간 교신 편지 한-영 / 영-한 번역"],
-        en:["<b>Programme</b> - World Vision child-letter translation corps",
-            "<b>Span</b> - about six months; 40 hours, 120 letters completed",
-            "<b>Role</b> - translating correspondence between sponsored children overseas and their sponsors in Korea, both directions"]},
-      {t:"h", ko:"주요 성과", en:"What it produced"},
-      {t:"ul",
-        ko:["매주 10편의 서신을 기한 내 정확하게 번역하여 총 120건의 과제를 이행했습니다. (학기 중 시험 기간에는 중단)",
-            "지정 양식 활용과 작업 루틴 체계화를 통해 번역 처리 효율성과 정확도를 함께 높였습니다.",
-            "아동의 정서와 맥락을 반영한 섬세한 번역으로, 후원자와 아동 간의 진정성 있는 소통을 지원했습니다."],
-        en:["Ten letters a week, accurate and on deadline, to 120 completed (paused during exam periods).",
-            "Working to the given template and systematising my routine raised both speed and accuracy.",
-            "Translating for the child's feeling and context, not just the words, so the exchange with the sponsor stayed genuine."]},
-      {t:"h", ko:"소감", en:"Reflection"},
-      {t:"p", ko:"대학 입학 전, 대표적인 번역 활동 중 하나인 월드비전 번역 봉사를 시작했습니다. 평소 자신 있는 영어 실력을 활용할 수 있는 봉사활동을 알아보던 중, 온라인으로 진행되어 학업과 병행하며 꾸준히 참여할 수 있다는 점에 끌려 선택했습니다.", en:"I started before university. I was looking for volunteering that used the English I was confident in, and this one ran online - which meant I could keep it up alongside my studies."},
-      {t:"p", ko:"대학 입학 후까지 활동을 이어가며 총 6개월간 120회, 40시간의 봉사를 진행했습니다. 매주 10편씩 번역하는 일이 처음에는 다소 부담스러웠지만, 몇 달간 정해진 양식을 활용하며 작업에 적응한 덕분에 점차 능숙하고 신속하게 처리할 수 있었습니다.", en:"I carried it through into my first year - six months, 120 letters, 40 hours. Ten a week felt like a lot at first, but after a few months working to the template I got quicker and surer at it."},
-      {t:"p", ko:"무엇보다 아이들이 후원자에게 보내는 편지를 번역하는 작업이었기에, 아이들의 순수한 이야기를 읽으며 큰 보람을 느꼈고 매주 즐거운 마음으로 꾸준히 임할 수 있었습니다.", en:"Most of all, these were letters children were writing to their sponsors. Reading their unguarded accounts of their lives made the work feel worth doing, and kept me coming back each week gladly."}
-    ]}
-  ];
-
-  /* [3-3] 자격증 ───────────────────────────────────────────────
-     그룹(컴퓨터·데이터 / 영어 / 기타)이 화면에 나오는 순서 그대로입니다.
-     그룹을 새로 만들려면 아래 { g:{...}, items:[...] } 덩어리를
-     통째로 복사해 붙이세요.
-
-     한 줄의 뜻
-       ko / en  자격 이름          score  결과 ("합격" 또는 점수)
-       note     비고 (없으면 "-")  iss    발급처
-       date     취득일 "2026-08-08"
-       valid    "ok" = 초록 배지 / "exp" = 회색 배지
-       term     배지에 쓸 글자 ("영구" "2년" "만료")            */
-  var CERT_GROUPS = [
-    { g:{ko:"컴퓨터 · 데이터", en:"Computing & Data"}, items:[
-      { ko:"ADsP", en:"ADsP (Advanced Data Semi-Professional)", score:{ko:"합격",en:"Pass"},
-        note:{ko:"데이터 분석 준전문가", en:"Data analytics semi-professional"},
-        iss:{ko:"한국데이터산업진흥원", en:"Korea Data Agency"}, date:"2026-08-08", valid:"ok", term:{ko:"영구", en:"Permanent"} },
-      { ko:"SQLD", en:"SQLD (SQL Developer)", score:{ko:"합격",en:"Pass"},
-        note:{ko:"82 / 100", en:"82 / 100"}, iss:{ko:"한국데이터산업진흥원", en:"Korea Data Agency"},
-        date:"2025-04-04", valid:"ok", term:{ko:"영구", en:"Permanent"} },
-      { ko:"컴퓨터활용능력 2급", en:"Computer Proficiency, Level 2", score:{ko:"합격",en:"Pass"},
-        note:{ko:"-", en:"-"}, iss:{ko:"대한상공회의소", en:"Korea Chamber of Commerce & Industry"},
-        date:"2024-10-11", valid:"ok", term:{ko:"영구", en:"Permanent"} }
-    ]},
-    { g:{ko:"영어", en:"English"}, items:[
-      { ko:"무역영어 1급", en:"Trade English, Level 1", score:{ko:"합격",en:"Pass"},
-        note:{ko:"1과목 76 · 2과목 72 · 3과목 64 (평균 70.76)", en:"Subject scores 76 / 72 / 64 (avg. 70.76)"},
-        iss:{ko:"대한상공회의소", en:"Korea Chamber of Commerce & Industry"}, date:"2026-06-01", valid:"ok", term:{ko:"영구", en:"Permanent"} },
-      { ko:"IELTS", en:"IELTS", score:{ko:"8.0",en:"8.0"},
-        note:{ko:"L 9.0 · R 8.5 · W 6.5 · S 7.5", en:"L 9.0 · R 8.5 · W 6.5 · S 7.5"},
-        iss:{ko:"IDP Education", en:"IDP Education"}, date:"2026-04-21", valid:"ok", term:{ko:"2년", en:"2 years"} },
-      { ko:"TOEIC", en:"TOEIC", score:{ko:"975",en:"975"},
-        note:{ko:"LC 485 · RC 490", en:"LC 485 · RC 490"}, iss:{ko:"한국TOEIC위원회", en:"YBM / TOEIC Committee Korea"},
-        date:"2024-02-04", valid:"exp", term:{ko:"만료", en:"Expired"} }
-    ]},
-    { g:{ko:"기타", en:"Other"}, items:[
-      { ko:"한국사능력검정시험 1급", en:"Korean History Proficiency, Level 1", score:{ko:"합격",en:"Pass"},
-        note:{ko:"87 / 100", en:"87 / 100"}, iss:{ko:"국사편찬위원회", en:"National Institute of Korean History"},
-        date:"2026-08-21", valid:"ok", term:{ko:"영구", en:"Permanent"} }
-    ]}
-  ];
-
-  // 자격증 표의 머리글. 열 순서를 바꾸려면 renderCerts 함수도 같이 봐야 합니다.
-  var CERT_HEAD = [
-    {ko:"자격", en:"Credential"}, {ko:"결과", en:"Result"}, {ko:"상세", en:"Detail"},
-    {ko:"발급처", en:"Issuer"}, {ko:"취득일", en:"Obtained"}, {ko:"유효", en:"Status"}
-  ];
-
-  /* [3-4] 장학 · 수상 ──────────────────────────────────────────
-     amt 는 따옴표 없는 숫자입니다. 쉼표는 화면에서 자동으로 붙습니다.
-     ※ 금액을 공개하고 싶지 않다면 amt 줄을 지우는 대신,
-        아래 renderAwards 함수에서 amt 를 쓰는 줄을 지우면 됩니다.
-     ※ 합계(5,824,500)는 HTML 쪽 <b class="num"> 안에 손으로 적혀 있으니
-        항목을 고치면 그 숫자도 같이 고쳐 주세요.                */
-  var AWARDS = [
-    { ko:"성적우수장학금 (최우수)", en:"Academic Excellence Scholarship (Highest)", amt:2824500,
-      dko:"재학생 3%, 학과 내 4명 선발", den:"Top 3% of students; 4 selected within the department" },
-    { ko:"학생성공 창의장학생", en:"Student Success Creativity Scholarship", amt:2500000,
-      dko:"사범대 재학생 내 총 4명 선발", den:"4 selected across the College of Education" },
-    { ko:"비교과챌린지장학금", en:"Co-curricular Challenge Scholarship", amt:500000,
-      dko:"교내 비교과 참여 우수 인원에게 수여", den:"Awarded for outstanding participation in co-curricular programs" }
-  ];
-
-  /* [3-5] 기록 요약 카드 ───────────────────────────────────────
-     k = 위의 작은 제목,  v = 큰 숫자,  u = 숫자 뒤 단위,  n = 아래 설명.
-     이 숫자들은 자동 계산이 아니라 손으로 적는 값입니다.
-     지금은 8개라 4칸씩 두 줄로 딱 맞습니다. 4의 배수로 유지하면 깔끔해요. */
-  var TILES = [
-    { ic:"ic-globe", k:{ko:"기록된 대외활동", en:"Recorded activities"}, v:"20", u:{ko:"건", en:""},
-      n:{ko:"2024.02 - 2026.09", en:"Feb 2024 - Sep 2026"} },
-    { ic:"ic-medal", k:{ko:"자격증", en:"Certifications"}, v:"7", u:{ko:"개", en:""},
-      n:{ko:"컴퓨터 3 · 영어 3 · 기타 1", en:"3 computing · 3 English · 1 other"} },
-    { ic:"ic-star", k:{ko:"교내 장학금", en:"Campus scholarships"}, v:"3", u:{ko:"건", en:""},
-      n:{ko:"2024년 2학기 · 총 582만원", en:"2024 fall term · 5.82M KRW total"} },
-    { ic:"ic-heart", k:{ko:"기록된 봉사시간", en:"Volunteer hours"}, v:"217", u:{ko:"시간+", en:"h+"},
-      n:{ko:"해외봉사 177 · 번역 40", en:"177 overseas · 40 translation"} },
-    { ic:"ic-lang", k:{ko:"IELTS Overall", en:"IELTS Overall"}, v:"8.0", u:{ko:"", en:""},
-      n:{ko:"Listening 9.0 · Reading 8.5", en:"Listening 9.0 · Reading 8.5"} },
-    { ic:"ic-book", k:{ko:"TOEIC", en:"TOEIC"}, v:"975", u:{ko:"", en:""},
-      n:{ko:"LC 485 · RC 490", en:"LC 485 · RC 490"} },
-    { ic:"ic-users", k:{ko:"주최 해커톤 규모", en:"Hackathon hosted"}, v:"90", u:{ko:"명", en:" ppl"},
-      n:{ko:"RE:ALThon · GDSC 대표", en:"RE:ALThon · as GDSC lead"} },
-    { ic:"ic-chart", k:{ko:"유치한 후원금", en:"Funding secured"}, v:"800", u:{ko:"만원", en:"万 KRW"},
-      n:{ko:"3개 학교 SW중심사업단", en:"3 university software programs"} }
-  ];
-
-  /* [3-5b] 첫 화면 그림 위에 띄울 숫자 칩 ─ 위 TILES 의 ic 값으로 고릅니다(순서대로 3개) */
-  var HERO_STATS = ["ic-users", "ic-lang", "ic-heart"];
-
-  /* [3-6] 기본 정보 표 ─ k = 왼쪽 항목, v = 오른쪽 값. 줄 수는 자유입니다. */
-  var PROFILE = [
-    { k:{ko:"이름", en:"Name"}, v:{ko:"오진석", en:"Jinseok Oh"} },
-    { k:{ko:"전공", en:"Major"}, v:{ko:"성균관대학교 컴퓨터교육과", en:"Computer Education, SKKU"} },
-    { k:{ko:"학번", en:"Class"}, v:{ko:"2024학번", en:"Class of 2024"} },
-    { k:{ko:"관심 분야", en:"Interests"}, v:{ko:"데이터 사이언스, 에듀테크", en:"Data science, edtech"} },
-    { k:{ko:"현재", en:"Currently"}, v:{ko:"군 복무 중 · 자격·어학 준비 병행", en:"Military service, while studying for certifications"} },
-    { k:{ko:"기록", en:"Writing"}, v:{ko:"네이버 블로그 ‘진석의 기록’", en:"Naver blog: Jinseok's Record"} }
-  ];
-
-  /* [3-7] 이름 아래 관심사 태그 ─ 한 줄이 태그 하나입니다. 4~6개가 적당해요. */
-  var CHIPS = [
-    {ko:"데이터 사이언스", en:"Data science"},
-    {ko:"에듀테크", en:"EdTech"},
-    {ko:"프로덕트 기획 · PM", en:"Product planning / PM"},
-    {ko:"개발자 커뮤니티 운영", en:"Developer communities"},
-    {ko:"글로벌 · 봉사활동", en:"Global work & volunteering"}
-  ];
-
-  /* [3-8] 버튼·라벨 글자 ─ '상세 기록 보기', '이전/다음' 같은 짧은 문구들.
-     ※ 노션 원본 링크를 없애고 싶다면: 아래 renderDetail 함수에서
-        var src = el("p","srcline"); 로 시작하는 5줄을 지우면 됩니다.   */
-  var T = {
-    back:      {ko:"대외활동 목록", en:"All activities"},
-    prev:      {ko:"이전 활동", en:"Previous"},
-    next:      {ko:"다음 활동", en:"Next"},
-    files:     {ko:"첨부 자료", en:"Attachments"},
-    source:    {ko:"이 기록의 원본은 노션 ACTIVITY RECORDS에 있습니다.", en:"The original of this record lives in my Notion ACTIVITY RECORDS."},
-    openNotion:{ko:"노션에서 열기", en:"Open in Notion"},
-    detail:    {ko:"상세 기록 보기", en:"Read the full record"},
-    notFound:  {ko:"해당 활동을 찾을 수 없습니다.", en:"That activity could not be found."},
-    photos:    {ko:"현장 사진", en:"Photos"},
-    swipe:     {ko:"옆으로 넘겨 보세요", en:"Scroll sideways"},
-    close:     {ko:"닫기", en:"Close"}
-  };
-
-  /* ══════════════════════════════════════════════════════════════
-     [4] 기능 코드  ─ 여기부터는 위 데이터를 화면에 그리는 부분입니다.
-     보통은 건드릴 일이 없습니다. 단, 아래 두 가지는 자주 찾게 되어
-     주석으로 표시해 뒀습니다.
-       · 노션 링크 지우기        → renderDetail 함수 안 "srcline"
-       · 한국어/영어 이름 바꾸기 → applyStatic 함수 안 "오진석"
-     ══════════════════════════════════════════════════════════════ */
+  var CAT = {};
+  Object.keys(C.categories).forEach(function(k){
+    var c = C.categories[k];
+    CAT[k] = {ko: KO.categories[k] || k, en: EN.categories[k] || k, cls: c.color, ic: c.icon};
+  });
+  var ACT = C.activities.map(function(a){
+    var k = KO.activities[a.id] || {}, e = EN.activities[a.id] || {};
+    return {id: a.id, s: a.start, e: a.end, cat: a.category, nid: a.notion || "",
+      ko: k.title || a.id, en: e.title || k.title || a.id, dko: k.summary || "", den: e.summary || "",
+      body: {ko: k.body || [], en: e.body || []}};
+  });
+  var CERT_GROUPS = C.certGroups.map(function(g){
+    return {g: both(function(L){ return L.certGroups[g.id] || g.id; }), items: g.items.map(function(c){
+      function f(key){ return both(function(L){ return (L.certs[c.id] || {})[key] || ""; }); }
+      var n = f("name");
+      return {ko: n.ko, en: n.en, score: f("result"), note: f("detail"), iss: f("issuer"), term: f("status"), date: c.date, valid: c.valid};
+    })};
+  });
+  var CERT_HEAD = KO.certHead.map(function(h, i){ return {ko: h, en: EN.certHead[i] || h}; });
+  var AWARDS = C.awards.map(function(a){
+    var k = KO.awards[a.id] || {}, e = EN.awards[a.id] || {};
+    return {ko: k.name || "", en: e.name || "", dko: k.description || "", den: e.description || "", amt: a.amount};
+  });
+  var TILES = C.tiles.map(function(t){
+    var k = KO.tiles[t.id] || {}, e = EN.tiles[t.id] || {};
+    return {id: t.id, ic: t.icon, v: t.value, k: {ko: k.label || "", en: e.label || ""},
+      u: {ko: k.unit || "", en: e.unit || ""}, n: {ko: k.note || "", en: e.note || ""}};
+  });
+  var HERO_STATS = C.heroStats;
+  var T = {};
+  Object.keys(KO.ui).forEach(function(k){ T[k] = {ko: KO.ui[k], en: EN.ui[k] != null ? EN.ui[k] : KO.ui[k]}; });
+  function L(){ return lang === "ko" ? KO : EN; }   // 지금 언어의 문구 파일
 
   var lang = "ko";        // 처음 열었을 때의 언어. "en" 으로 바꾸면 영어로 시작합니다
   var filter = "all";
@@ -1424,7 +839,7 @@
     var c = CAT[cat];
     var b = el("span", "badge " + c.cls);
     b.appendChild(icon(c.ic));
-    b.appendChild(document.createTextNode(lang === "ko" ? cat : c.en));
+    b.appendChild(document.createTextNode(c[lang]));
     return b;
   }
   // 사진 크게 보기 (오버레이)
@@ -1475,7 +890,7 @@
   function renderChips(){
     var box = document.getElementById("hero-chips");
     box.textContent = "";
-    CHIPS.forEach(function(c){ box.appendChild(el("span","chip",c[lang])); });
+    L().interests.forEach(function(c){ box.appendChild(el("span","chip",c)); });
   }
 
   // 첫 화면 그림 위의 유리 숫자 칩
@@ -1484,7 +899,7 @@
     box.textContent = "";
     HERO_STATS.forEach(function(ic, n){
       var t = null;
-      for(var i=0;i<TILES.length;i++){ if(TILES[i].ic === ic) t = TILES[i]; }
+      for(var i=0;i<TILES.length;i++){ if(TILES[i].id === ic) t = TILES[i]; }
       if(!t) return;
       var c = el("div","hstat lg s" + (n+1));
       var v = el("span","v num", t.v);
@@ -1498,9 +913,9 @@
   function renderProfile(){
     var dl = document.getElementById("profile-dl");
     dl.textContent = "";
-    PROFILE.forEach(function(r){
-      dl.appendChild(el("dt", null, r.k[lang]));
-      dl.appendChild(el("dd", null, r.v[lang]));
+    L().profile.forEach(function(r){
+      dl.appendChild(el("dt", null, r[0]));
+      dl.appendChild(el("dd", null, r[1]));
     });
   }
 
@@ -1527,9 +942,9 @@
     var counts = {};
     ACT.forEach(function(a){ counts[a.cat] = (counts[a.cat]||0)+1; });
 
-    var list = [{key:"all", label:{ko:"전체", en:"All"}, n:ACT.length, ic:"ic-star"}];
+    var list = [{key:"all", label:T.all, n:ACT.length, ic:"ic-star"}];
     Object.keys(CAT).forEach(function(k){
-      if(counts[k]) list.push({key:k, label:{ko:k, en:CAT[k].en}, n:counts[k], ic:CAT[k].ic});
+      if(counts[k]) list.push({key:k, label:{ko:CAT[k].ko, en:CAT[k].en}, n:counts[k], ic:CAT[k].ic});
     });
 
     list.forEach(function(f){
@@ -1558,7 +973,7 @@
       var y = a.s.slice(0,4);
       if(y !== year){
         year = y;
-        box.appendChild(el("p","yr", lang === "ko" ? y + "년" : y));
+        box.appendChild(el("p","yr", fill(T.year[lang], {y: y})));
       }
       var item = el("div","item");
       var card = el("a","card");
@@ -1606,7 +1021,7 @@
 
       var label = el("div","clabel");
       label.appendChild(el("span","cn", grp.g[lang]));
-      label.appendChild(el("span","cc", lang === "ko" ? grp.items.length + "개" : grp.items.length + (grp.items.length > 1 ? " items" : " item")));
+      label.appendChild(el("span","cc", fill((grp.items.length === 1 ? T.groupCountOne : T.groupCount)[lang], {n: grp.items.length})));
       sec.appendChild(label);
 
       var wrapper = el("div","tablebox");
@@ -1646,10 +1061,10 @@
       var c = el("div", i === 0 ? "award top" : "award");   // 첫 번째(가장 큰 장학)는 파란 카드로 강조
       var term = el("p","term");
       term.appendChild(icon("ic-star"));
-      term.appendChild(document.createTextNode(lang === "ko" ? "2024년 2학기 · 교내" : "2024 Fall term · On campus"));
+      term.appendChild(document.createTextNode(T.awardTerm[lang]));
       c.appendChild(term);
       c.appendChild(el("h3", null, a[lang]));
-      c.appendChild(el("p","amt", won(a.amt) + (lang === "ko" ? "원" : " KRW")));
+      c.appendChild(el("p","amt", won(a.amt) + T.won[lang]));
       c.appendChild(el("p", null, lang === "ko" ? a.dko : a.den));
       box.appendChild(c);
     });
@@ -1717,19 +1132,20 @@
     }
 
     var body = el("div","body");
-    (a.d || []).forEach(function(b){
-      if(b.t === "h")      body.appendChild(el("h2", null, b[lang]));
-      else if(b.t === "p") body.appendChild(rich("p", null, b[lang]));
-      else if(b.t === "ul"){
+    // 본문 블록: {h} 소제목 · {p} 문단 · {ul} 목록 · {note} 참고 상자 · {files} 첨부 · {link, href} 링크
+    (a.body[lang] || []).forEach(function(b){
+      if(b.h != null)         body.appendChild(el("h2", null, b.h));
+      else if(b.p != null)    body.appendChild(rich("p", null, b.p));
+      else if(b.ul){
         var ul = el("ul");
-        b[lang].forEach(function(li){ ul.appendChild(rich("li", null, li)); });
+        b.ul.forEach(function(li){ ul.appendChild(rich("li", null, li)); });
         body.appendChild(ul);
       }
-      else if(b.t === "note") body.appendChild(rich("p","note", b[lang]));
-      else if(b.t === "files"){
+      else if(b.note != null) body.appendChild(rich("p","note", b.note));
+      else if(b.files){
         body.appendChild(el("h2", null, T.files[lang]));
         var fb = el("div","files");
-        b.items.forEach(function(f){
+        b.files.forEach(function(f){
           var row = el("div","fl");
           row.appendChild(rich("span", null, FILEICON));
           row.appendChild(el("span", null, f));
@@ -1737,9 +1153,9 @@
         });
         body.appendChild(fb);
       }
-      else if(b.t === "link"){
+      else if(b.link != null){
         var p = el("p");
-        var lk = el("a", null, b[lang]);
+        var lk = el("a", null, b.link);
         lk.href = b.href; lk.target = "_blank"; lk.rel = "noopener";
         p.appendChild(lk);
         body.appendChild(p);
@@ -1807,15 +1223,24 @@
   /* ---------- language ---------- */
 
   function applyStatic(){
-    var nodes = document.querySelectorAll("[data-ko]");
+    // data-t="hero.intro" 처럼 표시된 곳에 지금 언어 파일(page)의 글자를 넣습니다
+    var certTotal = 0;
+    CERT_GROUPS.forEach(function(g){ certTotal += g.items.length; });
+    var counts = {"activities.count": ACT.length, "certs.count": certTotal, "awards.count": AWARDS.length};
+    var nodes = document.querySelectorAll("[data-t]");
     for(var i=0;i<nodes.length;i++){
-      var t = nodes[i].getAttribute("data-" + lang);
-      if(t != null) nodes[i].textContent = t;
+      var key = nodes[i].getAttribute("data-t");
+      var t = pick(L().page, key);
+      if(t == null) t = pick(KO.page, key);   // 영어 문구가 비어 있으면 한국어로 대신 보여 줌
+      if(t != null) nodes[i].textContent = fill(t, {n: counts[key]});
     }
+    var sum = 0;                                 // 장학금 합계는 common.js 금액을 자동으로 더합니다
+    AWARDS.forEach(function(a){ sum += a.amt; });
+    var tot = document.getElementById("award-total");
+    if(tot) tot.textContent = won(sum);
     var name = document.querySelector('[data-role="name"]');
     if(name){
-      // ◀ 맨 위 큰 이름 (한국어 / 영어)
-      name.textContent = lang === "ko" ? "오진석" : "JINSEOK OH";
+      name.textContent = L().name;             // 맨 위 큰 이름: ko.js / en.js 의 name
       name.className = lang === "ko" ? "ko" : "";
     }
     document.documentElement.lang = lang === "ko" ? "ko" : "en";
@@ -1868,6 +1293,5 @@
   route();
 })();
 </script>
-
 </body>
 </html>
