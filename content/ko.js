@@ -91,10 +91,10 @@ SITE.ko = {
     activities: {label:"기록된 대외활동", unit:"건", note:"2024.02 - 2026.09"},
     certs: {label:"자격증", unit:"개", note:"컴퓨터 3 · 영어 3 · 기타 1"},
     scholarships: {label:"교내 장학금", unit:"건", note:"2024년 2학기 · 총 582만원"},
-    volunteer: {label:"기록된 봉사시간", unit:"시간+", note:"1365 확인서 · 41회"},
+    volunteer: {label:"봉사시간", unit:"시간+", note:"1365 확인서 · 41회"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
-    hackathon: {label:"주최 해커톤 규모", unit:"명", note:"RE:ALThon · GDSC 대표"},
+    hackathon: {label:"규모 해커톤 주최", unit:"명", note:"RE:ALThon · GDSC 대표"},
     funding: {label:"유치한 후원금", unit:"만원", note:"3개 학교 SW중심사업단"}
   },
   certHead: ["자격", "결과", "상세", "발급처", "취득일", "유효"],
