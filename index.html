@@ -397,7 +397,6 @@
   .award .term{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;letter-spacing:.04em;color:var(--accent)}
   .award .term .i{width:14px;height:14px;stroke-width:2}
   .award h3{font-size:19px;font-weight:800;margin-top:4px;line-height:1.4}
-  .award .amt{font-family:var(--display);font-weight:800;font-size:clamp(30px,3.2vw,40px);color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.04em;margin-top:auto;padding-top:12px}
   .award p{font-size:14.5px;color:var(--muted);line-height:1.6}
   /* 가장 큰 장학금은 파란 카드 */
   .award.top{
@@ -406,9 +405,7 @@
     box-shadow:0 20px 40px -18px rgba(0,0,0,.4);
   }
   .award.top .term{color:#bcd6ff} .award.top h3{color:#fff}
-  .award.top .amt{color:#fff;font-size:clamp(40px,4.4vw,56px)} .award.top p{color:#cfe0fb}
-  .total{margin-top:22px;font-size:15px;color:var(--muted);display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
-  .total b{font-family:var(--display);font-size:30px;color:var(--ink);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .award.top p{color:#cfe0fb}
 
   /* ---- 연락처(파란 패널) ---- */
   .contact{
@@ -773,11 +770,6 @@
         </div>
         <p class="sdesc" data-t="awards.description">모두 2024년 2학기 교내 선발입니다.</p>
         <div class="awards" id="award-list"></div>
-        <p class="total">
-          <span data-t="awards.totalLabel">합계</span>
-          <b class="num" id="award-total">5,824,500</b>
-          <span data-t="awards.totalUnit">원</span>
-        </p>
       </div>
     </section>
 
@@ -806,9 +798,9 @@
   </div>
 </main>
 
-<script src="content/common.js?v=1790164687"></script>
-<script src="content/ko.js?v=1790164687"></script>
-<script src="content/en.js?v=1790164687"></script>
+<script src="content/common.js?v=1790164829"></script>
+<script src="content/ko.js?v=1790164829"></script>
+<script src="content/en.js?v=1790164829"></script>
 <script>
 (function(){
   "use strict";
@@ -943,7 +935,6 @@
     if(s.slice(0,7) === e.slice(0,7)) return part(s);
     return part(s) + " - " + part(e);
   }
-  function won(n){ return n.toLocaleString("en-US"); }
 
   var CHEV = '<svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4l6 6-6 6"/></svg>';
   var FILEICON = '<svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.5 2.5H6a1.5 1.5 0 00-1.5 1.5v12A1.5 1.5 0 006 17.5h8a1.5 1.5 0 001.5-1.5V6.5z"/><path d="M11.5 2.5v4h4"/></svg>';
@@ -1232,7 +1223,6 @@
       term.appendChild(document.createTextNode(T.awardTerm[lang]));
       c.appendChild(term);
       c.appendChild(el("h3", null, a[lang]));
-      c.appendChild(el("p","amt", won(a.amt) + T.won[lang]));
       c.appendChild(el("p", null, lang === "ko" ? a.dko : a.den));
       box.appendChild(c);
     });
@@ -1403,10 +1393,6 @@
       if(t != null) nodes[i].textContent = fill(t, {n: counts[key]});
       nodes[i].hidden = t === "";              // 문구를 "" 로 비우면 그 줄은 화면에서 빠집니다
     }
-    var sum = 0;                                 // 장학금 합계는 common.js 금액을 자동으로 더합니다
-    AWARDS.forEach(function(a){ sum += a.amt; });
-    var tot = document.getElementById("award-total");
-    if(tot) tot.textContent = won(sum);
     var name = document.querySelector('[data-role="name"]');
     if(name){
       name.textContent = L().name;             // 맨 위 큰 이름: ko.js / en.js 의 name

@@ -188,6 +188,7 @@ SITE.common = {
     },
     {id:"other", items:[{id:"korean-history-1", date:"2026-08-21", valid:"ok"}]}
   ],
+  // 장학 금액: 화면에는 표시하지 않고 기록으로만 둡니다
   awards: [
     {id:"academic-excellence", amount:2824500},
     {id:"student-success", amount:2500000},
