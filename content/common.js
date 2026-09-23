@@ -201,7 +201,7 @@ SITE.common = {
     {id:"ielts", icon:"ic-lang", value:"8.0"},
     {id:"toeic", icon:"ic-book", value:"975"},
     {id:"hackathon", icon:"ic-users", value:"90"},
-    {id:"funding", icon:"ic-chart", value:"800"}
+    {id:"funding", icon:"ic-chart", value:"600"}
   ],
 
   /* 봉사활동 전체 내역 (기록 요약의 '기록된 봉사시간' 카드를 누르면 뜨는 창)

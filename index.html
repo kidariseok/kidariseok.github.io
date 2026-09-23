@@ -806,9 +806,9 @@
   </div>
 </main>
 
-<script src="content/common.js?v=1790164548"></script>
-<script src="content/ko.js?v=1790164548"></script>
-<script src="content/en.js?v=1790164548"></script>
+<script src="content/common.js?v=1790164687"></script>
+<script src="content/ko.js?v=1790164687"></script>
+<script src="content/en.js?v=1790164687"></script>
 <script>
 (function(){
   "use strict";
@@ -1401,6 +1401,7 @@
       var t = pick(L().page, key);
       if(t == null) t = pick(KO.page, key);   // 영어 문구가 비어 있으면 한국어로 대신 보여 줌
       if(t != null) nodes[i].textContent = fill(t, {n: counts[key]});
+      nodes[i].hidden = t === "";              // 문구를 "" 로 비우면 그 줄은 화면에서 빠집니다
     }
     var sum = 0;                                 // 장학금 합계는 common.js 금액을 자동으로 더합니다
     AWARDS.forEach(function(a){ sum += a.amt; });

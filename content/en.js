@@ -65,7 +65,7 @@ SITE.en = {
     awards: {
       title: "Scholarships",
       count: "{n} awards",
-      description: "All awarded on campus in the second semester of 2024.",
+      description: "",
       totalLabel: "Total",
       totalUnit: "KRW"
     },
@@ -121,11 +121,11 @@ SITE.en = {
   tiles: {
     activities: {label:"Recorded activities", unit:"", note:"Feb 2024 - Sep 2026"},
     certs: {label:"Certifications", unit:"", note:"3 computing · 3 English · 1 other"},
-    scholarships: {label:"Campus scholarships", unit:"", note:"2024 fall term · 5.82M KRW total"},
+    scholarships: {label:"Campus scholarships", unit:"", note:"5M+ KRW"},
     volunteer: {label:"Volunteer hours", unit:"h+", note:"1365 certificate · 41 sessions"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
-    hackathon: {label:"Hackathon hosted", unit:" ppl", note:"RE:ALThon · as GDSC lead"},
+    hackathon: {label:"Hackathon hosted", unit:" ppl", note:"RE:ALThon · HR lead"},
     funding: {label:"Funding secured", unit:"万 KRW", note:"3 university software programs"}
   },
   certHead: ["Credential", "Result", "Detail", "Issuer", "Obtained", "Status"],
@@ -134,14 +134,14 @@ SITE.en = {
     adsp: {
       name: "ADsP (Advanced Data Semi-Professional)",
       result: "Pass",
-      detail: "Data analytics semi-professional",
+      detail: ".",
       issuer: "Korea Data Agency",
       status: "Permanent"
     },
     sqld: {
       name: "SQLD (SQL Developer)",
       result: "Pass",
-      detail: "82 / 100",
+      detail: ".",
       issuer: "Korea Data Agency",
       status: "Permanent"
     },

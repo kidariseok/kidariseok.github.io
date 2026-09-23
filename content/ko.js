@@ -47,7 +47,7 @@ SITE.ko = {
     awards: {
       title: "장학 · 수상",
       count: "{n}건",
-      description: "모두 2024년 2학기 교내 선발입니다.",
+      description: "",
       totalLabel: "합계",
       totalUnit: "원"
     },
@@ -90,18 +90,18 @@ SITE.ko = {
   tiles: {
     activities: {label:"기록된 대외활동", unit:"건", note:"2024.02 - 2026.09"},
     certs: {label:"자격증", unit:"개", note:"컴퓨터 3 · 영어 3 · 기타 1"},
-    scholarships: {label:"교내 장학금", unit:"건", note:"2024년 2학기 · 총 582만원"},
+    scholarships: {label:"교내 장학금", unit:"건", note:"500만원 이상"},
     volunteer: {label:"봉사시간", unit:"시간+", note:"1365 확인서 · 41회"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
-    hackathon: {label:"규모 해커톤 주최", unit:"명", note:"RE:ALThon · GDSC 대표"},
+    hackathon: {label:"규모 해커톤 주최", unit:"명", note:"RE:ALThon · 인사총괄"},
     funding: {label:"유치한 후원금", unit:"만원", note:"3개 학교 SW중심사업단"}
   },
   certHead: ["자격", "결과", "상세", "발급처", "취득일", "유효"],
   certGroups: {computing:"컴퓨터 · 데이터", english:"영어", other:"기타"},
   certs: {
-    adsp: {name:"ADsP", result:"합격", detail:"데이터 분석 준전문가", issuer:"한국데이터산업진흥원", status:"영구"},
-    sqld: {name:"SQLD", result:"합격", detail:"82 / 100", issuer:"한국데이터산업진흥원", status:"영구"},
+    adsp: {name:"ADsP", result:"합격", detail:".", issuer:"한국데이터산업진흥원", status:"영구"},
+    sqld: {name:"SQLD", result:"합격", detail:".", issuer:"한국데이터산업진흥원", status:"영구"},
     "computer-proficiency-2": {name:"컴퓨터활용능력 2급", result:"합격", detail:"-", issuer:"대한상공회의소", status:"영구"},
     "trade-english-1": {
       name: "무역영어 1급",
