@@ -513,6 +513,70 @@
   .pager .pt{display:block;margin-top:6px;font-size:16px;font-weight:800;color:var(--ink);line-height:1.45;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
   .pager a.nx{text-align:right}
 
+  /* ---- '기록된 봉사시간' 카드: 누르면 전체 내역 창 ---- */
+  button.tile{font:inherit;text-align:left;border:0;cursor:pointer;width:100%}
+  .tile-open{outline-offset:4px}
+  .tile-open:hover{transform:translateY(-6px)}
+  .tile-open:hover::before{opacity:1}
+  .open-hint{
+    display:inline-flex;align-items:center;gap:6px;margin-top:12px;align-self:flex-start;
+    font-size:13.5px;font-weight:800;color:#fff;padding:6px 12px;border-radius:999px;
+    background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);
+  }
+  .open-hint .i{width:15px;height:15px;transition:transform .35s var(--ease)}
+  .tile-open:hover .open-hint .i{transform:translateX(3px)}
+  html.modal-open{overflow:hidden}
+
+  /* 봉사활동 전체 내역 창 (유리 테두리 + 읽기 쉬운 바탕) */
+  .vdlg{
+    border:0;padding:0;background:transparent;color:var(--ink);
+    width:min(900px,calc(100% - 32px));max-width:none;max-height:min(88dvh,960px);
+    border-radius:30px;overflow:visible;
+  }
+  .vdlg::backdrop{background:rgba(4,12,30,.55);-webkit-backdrop-filter:blur(8px) saturate(140%);backdrop-filter:blur(8px) saturate(140%)}
+  .vdlg[open]{animation:vIn .45s var(--ease) both}
+  @keyframes vIn{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+  .vpanel{
+    position:relative;max-height:min(88dvh,960px);overflow-y:auto;overscroll-behavior:contain;
+    border-radius:30px;padding:30px clamp(20px,4vw,40px) 36px;
+    background:linear-gradient(170deg,color-mix(in srgb,var(--surface) 96%,transparent),color-mix(in srgb,var(--surface) 90%,transparent));
+    -webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent),0 30px 60px -20px rgba(0,0,0,.45);
+  }
+  .vhead{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  .vhead h2{font-family:var(--display);font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.035em;line-height:1.15}
+  .vsrc{margin-top:8px;font-size:14px;color:var(--muted)}
+  .vclose{
+    --glass-tint:color-mix(in srgb,var(--surface-2) 80%,transparent);
+    flex:none;width:44px;height:44px;border:0;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:var(--ink);
+  }
+  .vclose .i{width:20px;height:20px}
+  .vsum{
+    margin-top:24px;padding:22px 24px;border-radius:22px;color:#fff;
+    display:flex;justify-content:space-between;align-items:baseline;gap:8px 20px;flex-wrap:wrap;
+    background:radial-gradient(70% 120% at 90% 0%,rgba(90,160,255,.55),transparent 70%),linear-gradient(150deg,#0e2a66,#1c6fe0);
+  }
+  .vbig{font-family:var(--display);font-weight:800;font-size:clamp(28px,4.2vw,44px);letter-spacing:-.035em;line-height:1.1}
+  .vperiod{font-size:15px;font-weight:600;color:#d3e3fc}
+  .vnote{margin-top:14px;font-size:14px;line-height:1.7;color:var(--ink-2);background:var(--accent-soft);border-radius:14px;padding:12px 16px}
+  .vgroup{margin-top:30px}
+  .vghead{display:flex;justify-content:space-between;align-items:baseline;gap:6px 14px;flex-wrap:wrap;margin-bottom:12px}
+  .vghead h3{font-size:18px;font-weight:800;letter-spacing:-.02em}
+  .vgsum{font-size:13.5px;font-weight:800;color:var(--accent-strong);background:var(--accent-soft);padding:3px 11px;border-radius:999px;white-space:nowrap}
+  .vtable{overflow-x:auto;border-radius:16px;background:var(--bg)}
+  .vtable table{min-width:520px;font-size:15px}
+  .vtable thead th{background:var(--surface-2);padding:11px 16px;font-size:12px}
+  .vtable tbody td{padding:11px 16px;border-top:1px solid var(--border-soft);color:var(--ink-2)}
+  .vtable td.vdate{white-space:nowrap;color:var(--muted);font-weight:600}
+  .vtable td.vtitle{color:var(--ink);font-weight:700}
+  .vtable td.vfield{white-space:nowrap;font-size:13.5px}
+  .vtable td.vdur{white-space:nowrap;text-align:right;font-weight:800;color:var(--ink)}
+  .vtable th:last-child{text-align:right}
+  @media (prefers-reduced-transparency: reduce){
+    .vpanel{background:var(--surface);-webkit-backdrop-filter:none;backdrop-filter:none}
+    .vdlg::backdrop{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(4,12,30,.8)}
+  }
+
   @media (max-width:980px){
     .hero-grid{grid-template-columns:1fr;gap:0;min-height:0}
     .hero-copy{padding-block:56px 12px}
@@ -550,6 +614,11 @@
     .pager a.nx{text-align:left}
     .contact{border-radius:24px;width:calc(100% - 32px);grid-template-columns:1fr;gap:0}
     .contact > .cta{grid-column:auto;grid-row:auto;margin-top:28px}
+    .vdlg{width:calc(100% - 20px);border-radius:24px;margin-top:auto;margin-bottom:10px}
+    .vpanel{border-radius:24px;padding:22px 16px 28px}
+    .vtable table{min-width:0}
+    .vtable th:nth-child(3),.vtable td.vfield{display:none}
+    .vtable tbody td,.vtable thead th{padding:10px 12px}
   }
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
@@ -923,7 +992,14 @@
     var box = document.getElementById("tiles");
     box.textContent = "";
     TILES.forEach(function(t){
-      var c = el("div","tile lg");
+      // '기록된 봉사시간' 카드는 누르면 전체 내역 창이 열리는 버튼입니다
+      var clickable = t.id === "volunteer" && C.volunteerLog;
+      var c = el(clickable ? "button" : "div", clickable ? "tile lg tile-open" : "tile lg");
+      if(clickable){
+        c.type = "button";
+        c.setAttribute("aria-haspopup", "dialog");
+        c.addEventListener("click", openVolunteer);
+      }
       var k = el("span","k");
       k.appendChild(icon(t.ic));
       k.appendChild(document.createTextNode(t.k[lang]));
@@ -932,8 +1008,95 @@
       if(t.u[lang]) v.appendChild(el("small",null,t.u[lang]));
       c.appendChild(v);
       c.appendChild(el("span","n",t.n[lang]));
+      if(clickable){
+        var hint = el("span","open-hint", L().volunteerLog.open);
+        hint.appendChild(icon("ic-arrow"));
+        c.appendChild(hint);
+      }
       box.appendChild(c);
     });
+  }
+
+  /* ---------- 봉사활동 전체 내역 창 ----------
+     데이터: common.js 의 volunteerLog.records / 글자: ko.js · en.js 의 volunteerLog */
+  function openVolunteer(){
+    var V = C.volunteerLog, W = L().volunteerLog;
+    var recs = V.records.slice().sort(function(a, b){ return a.date < b.date ? 1 : -1; });
+    function hm(min){ return {h: Math.floor(min / 60), m: min % 60}; }
+    function dur(min){ var x = hm(min); return x.m ? fill(W.duration, x) : fill(W.durationHours, x); }
+    function dot(d){ return d.replace(/-/g, "."); }
+    var total = 0; recs.forEach(function(r){ total += r.minutes; });
+    var T0 = hm(total);
+
+    var dlg = el("dialog","vdlg");
+    dlg.setAttribute("aria-labelledby","vdlg-title");
+    var panel = el("div","vpanel");
+
+    var head = el("div","vhead");
+    var htext = el("div");
+    var h = el("h2", null, W.title); h.id = "vdlg-title";
+    htext.appendChild(h);
+    htext.appendChild(el("p","vsrc", fill(W.source, {issued: dot(V.issued)})));
+    head.appendChild(htext);
+    var x = el("button","vclose lg");
+    x.type = "button";
+    x.setAttribute("aria-label", W.close);
+    x.appendChild(icon("ic-x"));
+    x.addEventListener("click", function(){ dlg.close(); });
+    head.appendChild(x);
+    panel.appendChild(head);
+
+    var sum = el("div","vsum");
+    sum.appendChild(el("p","vbig num", fill(W.summary, {dur: dur(total), n: recs.length})));
+    sum.appendChild(el("p","vperiod num", fill(W.period, {from: dot(recs[recs.length-1].date), to: dot(recs[0].date)})));
+    panel.appendChild(sum);
+    panel.appendChild(el("p","vnote", W.difference));
+
+    // 기관별로 묶어서 보여 줍니다 (시간이 많은 기관부터)
+    var groups = {}, order = [];
+    recs.forEach(function(r){
+      if(!groups[r.org]){ groups[r.org] = {min: 0, rows: []}; order.push(r.org); }
+      groups[r.org].min += r.minutes; groups[r.org].rows.push(r);
+    });
+    order.sort(function(a, b){ return groups[b].min - groups[a].min; });
+    order.forEach(function(o){
+      var g = groups[o];
+      var sec = el("div","vgroup");
+      var gh = el("div","vghead");
+      gh.appendChild(el("h3", null, W.orgs[o] || o));
+        gh.appendChild(el("span","vgsum num", fill(W.groupSummary, {n: g.rows.length, dur: dur(g.min)})));
+      sec.appendChild(gh);
+      var box = el("div","vtable");
+      var table = el("table");
+      var thead = el("thead"), tr0 = el("tr");
+      W.columns.forEach(function(c){ tr0.appendChild(el("th", null, c)); });
+      thead.appendChild(tr0); table.appendChild(thead);
+      var tb = el("tbody");
+      g.rows.forEach(function(r){
+        var tr = el("tr");
+        tr.appendChild(el("td","vdate num", dot(r.date)));
+        tr.appendChild(el("td","vtitle", W.titles[r.title] || r.title));
+        tr.appendChild(el("td","vfield", W.fields[r.field] || r.field));
+        tr.appendChild(el("td","vdur num", dur(r.minutes)));
+        tb.appendChild(tr);
+      });
+      table.appendChild(tb); box.appendChild(table); sec.appendChild(box);
+      panel.appendChild(sec);
+    });
+
+    dlg.appendChild(panel);
+    // 창 바깥(어두운 부분)을 누르면 닫힙니다
+    dlg.addEventListener("click", function(e){ if(e.target === dlg) dlg.close(); });
+    var opener = document.activeElement;
+    dlg.addEventListener("close", function(){
+      dlg.remove();
+      document.documentElement.classList.remove("modal-open");
+      if(opener && opener.focus) opener.focus();
+    });
+    document.body.appendChild(dlg);
+    document.documentElement.classList.add("modal-open");
+    dlg.showModal();
+    x.focus();
   }
 
   function renderFilters(){

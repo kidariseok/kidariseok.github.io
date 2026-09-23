@@ -202,5 +202,57 @@ SITE.common = {
     {id:"toeic", icon:"ic-book", value:"975"},
     {id:"hackathon", icon:"ic-users", value:"90"},
     {id:"funding", icon:"ic-chart", value:"800"}
-  ]
+  ],
+
+  /* 봉사활동 전체 내역 (기록 요약의 '기록된 봉사시간' 카드를 누르면 뜨는 창)
+     출처: 1365 자원봉사포털 '자원봉사활동 확인서' (2026-09-23 발급)
+     한 줄이 활동 1건입니다. minutes 는 분 단위 (1시간 53분 = 113).
+     org · title · field 의 이름은 ko.js / en.js 의 volunteerLog 에 있습니다.
+     새 확인서를 받으면 records 를 바꾸고 issued 날짜를 고치세요. */
+  volunteerLog: {
+    issued: "2026-09-23",
+    records: [
+      {date:"2025-03-22", minutes:113, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2025-02-28", minutes:210, org:"ktng", title:"closing", field:"other"},
+      {date:"2025-02-22", minutes:120, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2025-02-08", minutes:98, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2025-01-25", minutes:120, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2025-01-16", minutes:780, org:"ktng", title:"deployment", field:"other"},
+      {date:"2025-01-15", minutes:780, org:"ktng", title:"deployment", field:"other"},
+      {date:"2025-01-14", minutes:780, org:"ktng", title:"deployment", field:"other"},
+      {date:"2025-01-13", minutes:780, org:"ktng", title:"deployment", field:"other"},
+      {date:"2025-01-12", minutes:780, org:"ktng", title:"deployment", field:"other"},
+      {date:"2025-01-11", minutes:780, org:"ktng", title:"deployment", field:"other"},
+      {date:"2025-01-10", minutes:780, org:"ktng", title:"deployment", field:"other"},
+      {date:"2025-01-09", minutes:780, org:"ktng", title:"deployment", field:"other"},
+      {date:"2025-01-08", minutes:120, org:"ktng", title:"accounting", field:"other"},
+      {date:"2025-01-08", minutes:540, org:"ktng", title:"deployment", field:"other"},
+      {date:"2025-01-04", minutes:180, org:"ktng", title:"performance", field:"other"},
+      {date:"2025-01-04", minutes:180, org:"ktng", title:"performance", field:"other"},
+      {date:"2025-01-03", minutes:300, org:"ktng", title:"performance", field:"other"},
+      {date:"2025-01-03", minutes:120, org:"ktng", title:"launch", field:"other"},
+      {date:"2024-12-30", minutes:360, org:"ktng", title:"supplies", field:"other"},
+      {date:"2024-12-28", minutes:65, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-12-27", minutes:150, org:"ktng", title:"performance", field:"other"},
+      {date:"2024-12-27", minutes:450, org:"ktng", title:"teachingRehearsal", field:"other"},
+      {date:"2024-12-21", minutes:510, org:"ktng", title:"prepMeeting", field:"other"},
+      {date:"2024-12-15", minutes:270, org:"ktng", title:"supplies", field:"other"},
+      {date:"2024-12-07", minutes:66, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-11-17", minutes:66, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-11-09", minutes:510, org:"ktng", title:"camp", field:"other"},
+      {date:"2024-11-08", minutes:480, org:"ktng", title:"camp", field:"other"},
+      {date:"2024-10-26", minutes:62, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-10-25", minutes:240, org:"redcross", title:"bloodDonation", field:"health"},
+      {date:"2024-09-21", minutes:70, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-09-07", minutes:60, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-08-17", minutes:60, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-08-03", minutes:60, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-07-20", minutes:100, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-07-06", minutes:60, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-06-22", minutes:120, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-06-08", minutes:90, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-05-21", minutes:420, org:"dreamon", title:"classAssist", field:"education"},
+      {date:"2024-05-18", minutes:120, org:"premed", title:"homeVisit", field:"health"}
+    ]
+  }
 };

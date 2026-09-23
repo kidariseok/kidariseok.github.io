@@ -611,5 +611,41 @@ SITE.ko = {
         }
       ]
     }
+  },
+
+  /* 봉사활동 전체 내역 창의 글자 */
+  volunteerLog: {
+    open: "전체 내역 보기",
+    title: "봉사활동 전체 내역",
+    summary: "총 {dur} · {n}회",
+    period: "{from} - {to}",
+    source: "1365 자원봉사포털 자원봉사활동 확인서 기준 ({issued} 발급)",
+    difference: "카드의 217시간+는 해외봉사 177시간과 월드비전 서신 번역 40시간을 더한 값입니다. 월드비전 번역 봉사는 1365 확인서에 포함되어 있지 않습니다.",
+    groupSummary: "{n}회 · {dur}",
+    duration: "{h}시간 {m}분",
+    durationHours: "{h}시간",
+    columns: ["날짜", "활동", "분야", "시간"],
+    close: "닫기",
+    orgs: {
+      ktng: "KT&G 상상위더스 동계 대학생 해외봉사단",
+      premed: "사단법인 프리메드",
+      redcross: "대한적십자사",
+      dreamon: "드림온학교"
+    },
+    titles: {
+      homeVisit: "쪽방촌 방문건강관리",
+      deployment: "해외봉사 파견 (인도네시아)",
+      performance: "단체공연 연습",
+      supplies: "물품 준비모임",
+      camp: "준비캠프",
+      closing: "해단식",
+      accounting: "회계물품팀 활동",
+      launch: "발대식",
+      teachingRehearsal: "교육봉사 리허설",
+      prepMeeting: "준비모임",
+      bloodDonation: "헌혈",
+      classAssist: "발달장애청소년 수업 보조"
+    },
+    fields: {other: "기타", health: "보건·의료", education: "교육"}
   }
 };

@@ -705,5 +705,41 @@ SITE.en = {
         }
       ]
     }
+  },
+
+  /* Text for the full volunteer-record window */
+  volunteerLog: {
+    open: "See every entry",
+    title: "Full volunteer record",
+    summary: "{dur} in {n} sessions",
+    period: "{from} - {to}",
+    source: "From the official 1365 Volunteer Portal certificate (issued {issued})",
+    difference: "The 217h+ on the card is 177 hours overseas plus 40 hours of World Vision letter translation. The translation work is not part of the 1365 certificate.",
+    groupSummary: "{n} sessions · {dur}",
+    duration: "{h}h {m}m",
+    durationHours: "{h}h",
+    columns: ["Date", "Activity", "Field", "Time"],
+    close: "Close",
+    orgs: {
+      ktng: "KT&G Sangsang Withus Winter Overseas Volunteer Corps",
+      premed: "PreMed",
+      redcross: "Korean Red Cross",
+      dreamon: "Dream On School"
+    },
+    titles: {
+      homeVisit: "Home health-care visit, jjokbang district",
+      deployment: "Overseas deployment (Indonesia)",
+      performance: "Group performance rehearsal",
+      supplies: "Supplies preparation meeting",
+      camp: "Preparation camp",
+      closing: "Closing ceremony",
+      accounting: "Accounting and supplies team",
+      launch: "Launch ceremony",
+      teachingRehearsal: "Teaching rehearsal",
+      prepMeeting: "Preparation meeting",
+      bloodDonation: "Blood donation",
+      classAssist: "Class assistance, adolescents with developmental disabilities"
+    },
+    fields: {other: "Other", health: "Health", education: "Education"}
   }
 };
