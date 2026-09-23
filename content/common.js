@@ -197,7 +197,7 @@ SITE.common = {
     {id:"activities", icon:"ic-globe", value:"20"},
     {id:"certs", icon:"ic-medal", value:"7"},
     {id:"scholarships", icon:"ic-star", value:"3"},
-    {id:"volunteer", icon:"ic-heart", value:"217"},
+    {id:"volunteer", icon:"ic-heart", value:"212"},
     {id:"ielts", icon:"ic-lang", value:"8.0"},
     {id:"toeic", icon:"ic-book", value:"975"},
     {id:"hackathon", icon:"ic-users", value:"90"},

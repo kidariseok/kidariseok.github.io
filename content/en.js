@@ -50,7 +50,7 @@ SITE.en = {
     },
     records: {
       title: "Records at a Glance",
-      description: "Figures drawn from my Notion Activity Records. Volunteer hours are the sum of the hours stated in each activity entry."
+      description: "Figures drawn from my Notion Activity Records. Volunteer hours follow the official 1365 volunteer certificate."
     },
     activities: {
       title: "Activities",
@@ -122,7 +122,7 @@ SITE.en = {
     activities: {label:"Recorded activities", unit:"", note:"Feb 2024 - Sep 2026"},
     certs: {label:"Certifications", unit:"", note:"3 computing · 3 English · 1 other"},
     scholarships: {label:"Campus scholarships", unit:"", note:"2024 fall term · 5.82M KRW total"},
-    volunteer: {label:"Volunteer hours", unit:"h+", note:"177 overseas · 40 translation"},
+    volunteer: {label:"Volunteer hours", unit:"h+", note:"1365 certificate · 41 sessions"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
     hackathon: {label:"Hackathon hosted", unit:" ppl", note:"RE:ALThon · as GDSC lead"},
@@ -714,7 +714,8 @@ SITE.en = {
     summary: "{dur} in {n} sessions",
     period: "{from} - {to}",
     source: "From the official 1365 Volunteer Portal certificate (issued {issued})",
-    difference: "The 217h+ on the card is 177 hours overseas plus 40 hours of World Vision letter translation. The translation work is not part of the 1365 certificate.",
+    more: "Show {n} more",
+    less: "Show less",
     groupSummary: "{n} sessions · {dur}",
     duration: "{h}h {m}m",
     durationHours: "{h}h",

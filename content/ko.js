@@ -41,7 +41,7 @@ SITE.ko = {
       paragraph2: "멋쟁이사자처럼 12기와 4호선톤에서는 PM으로 팀을 이끌며 서비스를 기획하고 와이어프레임까지 직접 그렸습니다. 동시에 인도네시아 해외봉사 177시간, 월드비전 서신 번역 40시간처럼 사람을 만나는 일도 놓지 않았습니다. 지금은 군 복무 중이며, SQLD·ADsP로 데이터 자격을 갖추고 IELTS 8.0을 취득하며 다음 단계를 준비하고 있습니다.",
       profileTitle: "기본 정보"
     },
-    records: {title:"기록 요약", description:"노션 Activity Records에 기록된 수치입니다. 봉사시간은 활동 설명에 명시된 시간을 합산했습니다."},
+    records: {title:"기록 요약", description:"노션 Activity Records에 기록된 수치입니다. 봉사시간은 1365 자원봉사활동 확인서 기준입니다."},
     activities: {title:"대외활동", count:"{n}건", description:"구분을 눌러 활동을 추려보고, 카드를 누르면 그 활동의 상세 기록으로 들어갑니다."},
     certs: {title:"자격증", count:"{n}개", description:"분야별로 묶었고, 각 묶음 안에서는 취득일 기준 최신순입니다."},
     awards: {
@@ -91,7 +91,7 @@ SITE.ko = {
     activities: {label:"기록된 대외활동", unit:"건", note:"2024.02 - 2026.09"},
     certs: {label:"자격증", unit:"개", note:"컴퓨터 3 · 영어 3 · 기타 1"},
     scholarships: {label:"교내 장학금", unit:"건", note:"2024년 2학기 · 총 582만원"},
-    volunteer: {label:"기록된 봉사시간", unit:"시간+", note:"해외봉사 177 · 번역 40"},
+    volunteer: {label:"기록된 봉사시간", unit:"시간+", note:"1365 확인서 · 41회"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
     hackathon: {label:"주최 해커톤 규모", unit:"명", note:"RE:ALThon · GDSC 대표"},
@@ -620,7 +620,8 @@ SITE.ko = {
     summary: "총 {dur} · {n}회",
     period: "{from} - {to}",
     source: "1365 자원봉사포털 자원봉사활동 확인서 기준 ({issued} 발급)",
-    difference: "카드의 217시간+는 해외봉사 177시간과 월드비전 서신 번역 40시간을 더한 값입니다. 월드비전 번역 봉사는 1365 확인서에 포함되어 있지 않습니다.",
+    more: "나머지 {n}건 더 보기",
+    less: "접기",
     groupSummary: "{n}회 · {dur}",
     duration: "{h}시간 {m}분",
     durationHours: "{h}시간",

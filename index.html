@@ -553,7 +553,6 @@
   }
   .vbig{font-family:var(--display);font-weight:800;font-size:clamp(28px,4.2vw,44px);letter-spacing:-.035em;line-height:1.1}
   .vperiod{font-size:15px;font-weight:600;color:#d3e3fc}
-  .vnote{margin-top:14px;font-size:14px;line-height:1.7;color:var(--ink-2);background:var(--accent-soft);border-radius:14px;padding:12px 16px}
   .vgroup{margin-top:30px}
   .vghead{display:flex;justify-content:space-between;align-items:baseline;gap:6px 14px;flex-wrap:wrap;margin-bottom:12px}
   .vghead h3{font-size:18px;font-weight:800;letter-spacing:-.02em}
@@ -562,6 +561,11 @@
   .vtable table{min-width:520px;font-size:15px}
   .vtable thead th{background:var(--surface-2);padding:11px 16px;font-size:12px}
   .vtable tbody td{padding:11px 16px;border-top:1px solid var(--border-soft);color:var(--ink-2)}
+  .vmore{
+    display:block;width:100%;margin-top:8px;padding:12px;border:0;border-radius:14px;cursor:pointer;
+    font:inherit;font-size:14.5px;font-weight:800;color:var(--accent-strong);background:var(--accent-soft);
+  }
+  .vmore:hover{filter:brightness(.97)}
   .vtable td.vdate{white-space:nowrap;color:var(--muted);font-weight:600}
   .vtable td.vtitle{color:var(--ink);font-weight:700}
   .vtable td.vfield{white-space:nowrap;font-size:13.5px}
@@ -802,9 +806,9 @@
   </div>
 </main>
 
-<script src="content/common.js"></script>
-<script src="content/ko.js"></script>
-<script src="content/en.js"></script>
+<script src="content/common.js?v=1790162755"></script>
+<script src="content/ko.js?v=1790162755"></script>
+<script src="content/en.js?v=1790162755"></script>
 <script>
 (function(){
   "use strict";
@@ -1039,7 +1043,6 @@
     sum.appendChild(el("p","vbig num", fill(W.summary, {dur: dur(total), n: recs.length})));
     sum.appendChild(el("p","vperiod num", fill(W.period, {from: dot(recs[recs.length-1].date), to: dot(recs[0].date)})));
     panel.appendChild(sum);
-    panel.appendChild(el("p","vnote", W.difference));
 
     // 기관별로 묶어서 보여 줍니다 (시간이 많은 기관부터)
     var groups = {}, order = [];
@@ -1061,8 +1064,9 @@
       W.columns.forEach(function(c){ tr0.appendChild(el("th", null, c)); });
       thead.appendChild(tr0); table.appendChild(thead);
       var tb = el("tbody");
-      g.rows.forEach(function(r){
+      g.rows.forEach(function(r, i){
         var tr = el("tr");
+        tr.hidden = i >= 2;                  // 기관마다 처음 2건만 보이고 나머지는 '더 보기'로 펼침
         tr.appendChild(el("td","vdate num", dot(r.date)));
         tr.appendChild(el("td","vtitle", W.titles[r.title] || r.title));
         tr.appendChild(el("td","vfield", W.fields[r.field] || r.field));
@@ -1070,6 +1074,18 @@
         tb.appendChild(tr);
       });
       table.appendChild(tb); box.appendChild(table); sec.appendChild(box);
+      if(g.rows.length > 2){
+        var more = el("button","vmore", fill(W.more, {n: g.rows.length - 2}));
+        more.type = "button";
+        more.setAttribute("aria-expanded","false");
+        more.addEventListener("click", function(){
+          var open = more.getAttribute("aria-expanded") !== "true";
+          [].slice.call(tb.rows, 2).forEach(function(tr){ tr.hidden = !open; });
+          more.setAttribute("aria-expanded", String(open));
+          more.textContent = open ? W.less : fill(W.more, {n: g.rows.length - 2});
+        });
+        sec.appendChild(more);
+      }
       panel.appendChild(sec);
     });
 
