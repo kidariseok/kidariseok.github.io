@@ -10,7 +10,7 @@
 
    목차
      name        첫 화면의 큰 이름
-     page        메뉴 · 첫 화면 · 각 섹션 제목과 설명 · 연락처 · 푸터
+     page        메뉴 · 첫 화면 · 대표 활동 · 각 섹션 제목과 설명 · 연락처 · 푸터
      ui          버튼과 작은 라벨 글자
      categories  활동 구분 이름 (공모전 등)
      interests   이름 아래 관심사 태그
@@ -35,6 +35,7 @@ SITE.ko = {
       buttonActivities: "대외활동 보기",
       buttonContact: "연락처"
     },
+    featured: {title:"대표 활동", more:"전체 활동 보기"},
     about: {
       title: "소개",
       paragraph1: "컴퓨터교육과에서 배우는 것은 결국 “어떻게 가르칠 것인가”이고, 저는 그 답을 데이터에서 찾고 싶었습니다. 그래서 학부 첫해부터 기획하고 운영하는 자리에 계속 섰습니다. Google Developer Student Clubs에서는 Core 직급으로 Administration팀을 총괄하며 월간 글로벌 IT 화상강연의 연사 컨택을 맡았고, 그 경험을 이어 90명 규모의 해커톤 RE:ALThon을 주최해 3개 학교 SW중심사업단으로부터 약 600만 원의 투자를 유치했습니다.",
@@ -71,6 +72,8 @@ SITE.ko = {
     swipe: "옆으로 넘겨 보세요",
     close: "닫기",
     all: "전체",
+    showAll: "{n}개 모두 보기",
+    showLess: "접기",
     year: "{y}년",
     groupCount: "{n}개",
     groupCountOne: "{n}개",

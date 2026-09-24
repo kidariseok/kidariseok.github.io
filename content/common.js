@@ -10,12 +10,14 @@
        3) 사진이 있으면 img/ 에 넣고 아래 photos 에 id 로 등록
    · activities 는 날짜가 늦은 것부터 위에서 아래로 적습니다.
    · tiles 의 value 는 기록 요약 카드의 큰 숫자입니다(손으로 적는 값).
-   · heroStats 는 첫 화면 그림 위에 띄울 tiles 의 id 3개입니다.
+   · heroStats 는 첫 화면 아래 숫자 상자에 넣을 tiles 의 id 4개입니다.
+   · featured 는 '대표 활동' 검은 카드로 보여 줄 activities 의 id 4개입니다 (사진이 있으면 카드 오른쪽에 나옴).
    ══════════════════════════════════════════════════════════════ */
 window.SITE = window.SITE || {};
 SITE.common = {
   notion: "https://app.notion.com/p/",
-  heroStats: ["hackathon", "ielts", "volunteer"],
+  heroStats: ["hackathon", "ielts", "volunteer", "activities"],
+  featured: ["realthon", "gdsc", "line4", "ktng-overseas"],
   categories: {
     competition: {color:"b1", icon:"ic-trophy"},
     external: {color:"b2", icon:"ic-globe"},

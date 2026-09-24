@@ -42,6 +42,7 @@ SITE.en = {
       buttonActivities: "See activities",
       buttonContact: "Contact"
     },
+    featured: {title:"Highlights", more:"All activities"},
     about: {
       title: "About",
       paragraph1: "What a computer-education major really asks is how to teach - and I wanted to answer that with data. From my first undergraduate year I kept taking on planning and operating roles. At Google Developer Student Clubs I led the Administration team as a Core member and handled speaker outreach for the monthly global IT talks; building on that, I hosted RE:ALThon, a 90-person hackathon, and secured roughly $4,300 in funding from three university software programs.",
@@ -89,6 +90,8 @@ SITE.en = {
     swipe: "Scroll sideways",
     close: "Close",
     all: "All",
+    showAll: "Show all {n}",
+    showLess: "Show less",
     year: "{y}",
     groupCount: "{n} items",
     groupCountOne: "{n} item",
