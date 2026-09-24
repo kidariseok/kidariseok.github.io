@@ -108,7 +108,7 @@ SITE.en = {
     ["Name", "Jinseok Oh"],
     ["Major", "Computer Education, SKKU"],
     ["Class", "Class of 2024"],
-    ["Interests", "Data science, edtech"],
+    ["Interests", "EdTech"],
     ["Currently", "Military service, while studying for certifications"],
     ["Writing", "Naver blog: Jinseok's Record"]
   ],
