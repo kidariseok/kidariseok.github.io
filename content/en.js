@@ -49,7 +49,7 @@ SITE.en = {
       profileTitle: "Profile"
     },
     records: {
-      title: "Records at a Glance",
+      title: "Records",
       description: "Figures drawn from my Notion Activity Records. Volunteer hours follow the official 1365 volunteer certificate."
     },
     activities: {
@@ -109,8 +109,8 @@ SITE.en = {
     ["Major", "Computer Education, SKKU"],
     ["Class", "Class of 2024"],
     ["Interests", "EdTech"],
-    ["Currently", "Military service, while studying for certifications"],
-    ["Writing", "Naver blog: Jinseok's Record"]
+    ["Currently", "Serving in the Republic of Korea Army as a Network Manager / Squad Leader"],
+    ["Writing", "blog.naver.com/kidariseok"]
   ],
   tiles: {
     activities: {label:"Recorded activities", unit:"", note:"Feb 2024 - Sep 2026"},

@@ -800,9 +800,9 @@
   </div>
 </main>
 
-<script src="content/common.js?v=1790247086"></script>
-<script src="content/ko.js?v=1790247086"></script>
-<script src="content/en.js?v=1790247086"></script>
+<script src="content/common.js?v=1790247160"></script>
+<script src="content/ko.js?v=1790247160"></script>
+<script src="content/en.js?v=1790247160"></script>
 <script>
 (function(){
   "use strict";
@@ -971,7 +971,13 @@
     dl.textContent = "";
     L().profile.forEach(function(r){
       dl.appendChild(el("dt", null, r[0]));
-      dl.appendChild(el("dd", null, r[1]));
+      var dd = el("dd");
+      if(/^[\w.-]+\.[a-z]{2,}\/\S*$/i.test(r[1])){   // 'blog.naver.com/...' 처럼 주소를 적으면 링크가 됩니다
+        var a = el("a", null, r[1]);
+        a.href = "https://" + r[1]; a.target = "_blank"; a.rel = "noopener";
+        dd.appendChild(a);
+      } else dd.textContent = r[1];
+      dl.appendChild(dd);
     });
   }
 
