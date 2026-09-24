@@ -54,12 +54,12 @@ SITE.en = {
     },
     activities: {
       title: "Activities",
-      count: "{n} entries",
+      count: "{n}",
       description: "Filter by category, and open any card for the full record of that activity."
     },
     certs: {
       title: "Certifications",
-      count: "{n} items",
+      count: "{n}",
       description: "Grouped by field; most recent first within each group."
     },
     awards: {
@@ -515,7 +515,7 @@ SITE.en = {
       ]
     },
     premed: {
-      title: "PreMed",
+      title: "FreeMed",
       summary: "Led the part of the team providing home health-care visits to elderly residents living alone in jjokbang districts.",
       body: [
         {
@@ -528,7 +528,7 @@ SITE.en = {
       ]
     },
     likelion12: {
-      title: "LIKELION, 12th cohort",
+      title: "LIKELION SKKU 12th",
       summary: "As PM, planned and shipped an advertising-agency platform with a team of five.",
       body: [
         {h:"1. Campus study group - front-end foundations and how API communication works"},
@@ -717,7 +717,7 @@ SITE.en = {
     close: "Close",
     orgs: {
       ktng: "KT&G Sangsang Withus Winter Overseas Volunteer Corps",
-      premed: "PreMed",
+      premed: "FreeMed",
       redcross: "Korean Red Cross",
       dreamon: "Dream On School"
     },

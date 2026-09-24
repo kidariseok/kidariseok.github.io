@@ -42,8 +42,8 @@ SITE.ko = {
       profileTitle: "기본 정보"
     },
     records: {title:"기록 요약", description:"노션 Activity Records에 기록된 수치입니다. 봉사시간은 1365 자원봉사활동 확인서 기준입니다."},
-    activities: {title:"대외활동", count:"{n}건", description:"구분을 눌러 활동을 추려보고, 카드를 누르면 그 활동의 상세 기록으로 들어갑니다."},
-    certs: {title:"자격증", count:"{n}개", description:"분야별로 묶었고, 각 묶음 안에서는 취득일 기준 최신순입니다."},
+    activities: {title:"대외활동", count:"{n}", description:"구분을 눌러 활동을 추려보고, 카드를 누르면 그 활동의 상세 기록으로 들어갑니다."},
+    certs: {title:"자격증", count:"{n}", description:"분야별로 묶었고, 각 묶음 안에서는 취득일 기준 최신순입니다."},
     awards: {
       title: "장학 · 수상",
       count: "{n}건",
