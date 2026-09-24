@@ -44,13 +44,13 @@ SITE.en = {
     },
     about: {
       title: "About",
-      paragraph1: "What a computer-education major really asks is how to teach - and I wanted to answer that with data. From my first undergraduate year I kept taking on planning and operating roles. At Google Developer Student Clubs I led the Administration team as a Core member and handled speaker outreach for the monthly global IT talks; building on that, I hosted RE:ALThon, a 90-person hackathon, and secured roughly 6 million KRW in funding from three university software programs.",
+      paragraph1: "What a computer-education major really asks is how to teach - and I wanted to answer that with data. From my first undergraduate year I kept taking on planning and operating roles. At Google Developer Student Clubs I led the Administration team as a Core member and handled speaker outreach for the monthly global IT talks; building on that, I hosted RE:ALThon, a 90-person hackathon, and secured roughly $4,300 in funding from three university software programs.",
       paragraph2: "As PM for LIKELION's 12th cohort and the Line-4 Hackathon I led teams through service planning and drew the wireframes myself. Alongside that I kept doing work that puts me in front of people: 177 hours of overseas volunteering in Indonesia and 40 hours translating World Vision letters. I am currently completing military service, preparing for what comes next with SQLD and ADsP data certifications and an IELTS 8.0.",
       profileTitle: "Profile"
     },
     records: {
       title: "Records",
-      description: "Figures drawn from my Notion Activity Records. Volunteer hours follow the official 1365 volunteer certificate."
+      description: "Volunteer hours follow the official 1365 volunteer certificate."
     },
     activities: {
       title: "Activities",
@@ -115,12 +115,12 @@ SITE.en = {
   tiles: {
     activities: {label:"Recorded activities", unit:"", note:"Feb 2024 - Sep 2026"},
     certs: {label:"Certifications", unit:"", note:"3 computing · 3 English · 1 other"},
-    scholarships: {label:"Campus scholarships", unit:"", note:"5M+ KRW"},
+    scholarships: {label:"Campus scholarships", unit:"", note:"Over $3,500"},
     volunteer: {label:"Volunteer hours", unit:"h+", note:"1365 certificate · 41 sessions"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
     hackathon: {label:"Hackathon hosted", unit:" ppl", note:"RE:ALThon · HR lead"},
-    funding: {label:"Funding secured", unit:"万 KRW", note:"3 university software programs"}
+    funding: {label:"Funding secured", value:"$4K+", unit:"", note:"3 university software programs"}
   },
   certHead: ["Credential", "Result", "Detail", "Issuer", "Obtained", "Status"],
   certGroups: {computing:"Computing & Data", english:"English", other:"Other"},
@@ -244,7 +244,7 @@ SITE.en = {
     },
     realthon: {
       title: "RE:ALThon (host)",
-      summary: "As SKKU GDSC's HR lead, hosted a 90-person hackathon and secured roughly 6 million KRW in funding from three universities' software programs.",
+      summary: "As SKKU GDSC's HR lead, hosted a 90-person hackathon and secured roughly $4,300 in funding from three universities' software programs.",
       body: [
         {h:"How it came together"},
         {p:"<b>1. Trying to run it online and offline at once</b>"},
@@ -257,7 +257,7 @@ SITE.en = {
         },
         {p:"<b>3. Venue support and sponsorship</b>"},
         {
-          p: "I secured roughly 6 million KRW from the three universities' software programs, and the event ran at 90 participants."
+          p: "I secured roughly $4,300 from the three universities' software programs, and the event ran at 90 participants."
         },
         {
           note: "The Notion original keeps two working documents as sub-pages: \"2024 RE:ALThon (operations)\" and \"RE:ALThon - GDG on Campus Korea (Prep)\"."

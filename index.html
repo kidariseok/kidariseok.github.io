@@ -800,9 +800,9 @@
   </div>
 </main>
 
-<script src="content/common.js?v=1790247160"></script>
-<script src="content/ko.js?v=1790247160"></script>
-<script src="content/en.js?v=1790247160"></script>
+<script src="content/common.js?v=1790247271"></script>
+<script src="content/ko.js?v=1790247271"></script>
+<script src="content/en.js?v=1790247271"></script>
 <script>
 (function(){
   "use strict";
@@ -856,7 +856,8 @@
   });
   var TILES = C.tiles.map(function(t){
     var k = KO.tiles[t.id] || {}, e = EN.tiles[t.id] || {};
-    return {id: t.id, ic: t.icon, v: t.value, k: {ko: k.label || "", en: e.label || ""},
+    // 언어 파일에 value 가 있으면 그 언어에서는 그 숫자를 씁니다 (예: 영어는 달러)
+    return {id: t.id, ic: t.icon, v: t.value, vl: {ko: k.value, en: e.value}, k: {ko: k.label || "", en: e.label || ""},
       u: {ko: k.unit || "", en: e.unit || ""}, n: {ko: k.note || "", en: e.note || ""}};
   });
   var HERO_STATS = C.heroStats;
@@ -958,7 +959,7 @@
       for(var i=0;i<TILES.length;i++){ if(TILES[i].id === ic) t = TILES[i]; }
       if(!t) return;
       var c = el("div","hstat lg s" + (n+1));
-      var v = el("span","v num", t.v);
+      var v = el("span","v num", t.vl[lang] || t.v);
       if(t.u[lang]) v.appendChild(el("small", null, t.u[lang].trim()));
       c.appendChild(v);
       c.appendChild(el("span","k", t.k[lang]));
@@ -997,7 +998,7 @@
       k.appendChild(icon(t.ic));
       k.appendChild(document.createTextNode(t.k[lang]));
       c.appendChild(k);
-      var v = el("span","v",t.v);
+      var v = el("span","v",t.vl[lang] || t.v);
       if(t.u[lang]) v.appendChild(el("small",null,t.u[lang]));
       c.appendChild(v);
       c.appendChild(el("span","n",t.n[lang]));
