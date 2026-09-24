@@ -301,6 +301,7 @@
     letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums;color:#fff;
   }
   .tile .v small{font-size:17px;font-weight:700;margin-left:4px;letter-spacing:0;color:#d2e1fa}
+  .tile .n b{font-family:var(--display);font-size:1.45em;font-weight:800;color:#fff;letter-spacing:-.02em}
   .tile .n{font-size:13.5px;color:#b9cbea;line-height:1.55;margin-top:8px}
 
   /* ---- 필터(유리 바, 스크롤해도 위에 붙어 있음) ---- */
@@ -800,9 +801,9 @@
   </div>
 </main>
 
-<script src="content/common.js?v=1790247271"></script>
-<script src="content/ko.js?v=1790247271"></script>
-<script src="content/en.js?v=1790247271"></script>
+<script src="content/common.js?v=1790247382"></script>
+<script src="content/ko.js?v=1790247382"></script>
+<script src="content/en.js?v=1790247382"></script>
 <script>
 (function(){
   "use strict";
@@ -1001,7 +1002,7 @@
       var v = el("span","v",t.vl[lang] || t.v);
       if(t.u[lang]) v.appendChild(el("small",null,t.u[lang]));
       c.appendChild(v);
-      c.appendChild(el("span","n",t.n[lang]));
+      c.appendChild(rich("span","n",t.n[lang]));   // <b>숫자</b> 로 강조할 수 있습니다
       if(clickable){
         var hint = el("span","open-hint", L().volunteerLog.open);
         hint.appendChild(icon("ic-arrow"));

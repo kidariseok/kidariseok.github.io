@@ -120,7 +120,7 @@ SITE.en = {
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
     hackathon: {label:"Hackathon hosted", unit:" ppl", note:"RE:ALThon · HR lead"},
-    funding: {label:"Funding secured", value:"$4K+", unit:"", note:"3 university software programs"}
+    funding: {label:"Funding secured", value:"$4K+", unit:"", note:"Funded by College of Computing and Informatics from <b>3</b> Universities."}
   },
   certHead: ["Credential", "Result", "Detail", "Issuer", "Obtained", "Status"],
   certGroups: {computing:"Computing & Data", english:"English", other:"Other"},
