@@ -53,10 +53,10 @@ SITE.ko = {
     },
     contact: {
       title: "기록은 계속 쌓이는 중입니다.",
-      description: "활동과 공부 과정은 네이버 블로그 ‘진석의 기록’에 정리하고 있습니다. 협업이나 궁금한 점이 있다면 편하게 연락 주세요.",
+      description: "",
       blog: "네이버 블로그 ‘진석의 기록’"
     },
-    footer: {name:"오진석 · Activity Records", updated:"최종 갱신 2026.09.22"}
+    footer: {name:"오진석 · Portfolio", updated:"최종 갱신 2026.09.22"}
   },
   ui: {
     back: "대외활동 목록",

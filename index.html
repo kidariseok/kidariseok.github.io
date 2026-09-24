@@ -392,21 +392,25 @@
   /* ---- 장학 · 수상 ---- */
   .awards{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:16px}
   .award{
+    position:relative;isolation:isolate;outline-offset:4px;
     background:var(--surface);border-radius:var(--r-card);padding:26px;
     box-shadow:var(--shadow-1);display:flex;flex-direction:column;gap:8px;
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease);
   }
-  .award .term{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;letter-spacing:.04em;color:var(--accent)}
+  .award .term{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;letter-spacing:.04em;color:var(--accent);transition:color .3s}
   .award .term .i{width:14px;height:14px;stroke-width:2}
-  .award h3{font-size:19px;font-weight:800;margin-top:4px;line-height:1.4}
-  .award p{font-size:14.5px;color:var(--muted);line-height:1.6}
-  /* 가장 큰 장학금은 파란 카드 */
-  .award.top{
-    color:var(--on-deep);border-color:transparent;
+  .award h3{font-size:19px;font-weight:800;margin-top:4px;line-height:1.4;transition:color .3s}
+  .award p{font-size:14.5px;color:var(--muted);line-height:1.6;transition:color .3s}
+  /* 마우스를 올리거나 키보드로 고른 카드만 파란색으로 */
+  .award::before{
+    content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;opacity:0;transition:opacity .35s var(--ease);
     background:radial-gradient(80% 90% at 90% 0%,rgba(90,160,255,.55),transparent 70%),linear-gradient(150deg,#0e2a66,#1c6fe0);
-    box-shadow:0 20px 40px -18px rgba(0,0,0,.4);
   }
-  .award.top .term{color:#bcd6ff} .award.top h3{color:#fff}
-  .award.top p{color:#cfe0fb}
+  .award:hover,.award:focus-visible{transform:translateY(-3px);box-shadow:0 20px 40px -18px rgba(0,0,0,.4)}
+  .award:hover::before,.award:focus-visible::before{opacity:1}
+  .award:hover .term,.award:focus-visible .term{color:#bcd6ff}
+  .award:hover h3,.award:focus-visible h3{color:#fff}
+  .award:hover p,.award:focus-visible p{color:#cfe0fb}
 
   /* ---- 연락처(파란 패널) ---- */
   .contact{
@@ -801,9 +805,9 @@
   </div>
 </main>
 
-<script src="content/common.js?v=1790247501"></script>
-<script src="content/ko.js?v=1790247501"></script>
-<script src="content/en.js?v=1790247501"></script>
+<script src="content/common.js?v=1790247632"></script>
+<script src="content/ko.js?v=1790247632"></script>
+<script src="content/en.js?v=1790247632"></script>
 <script>
 (function(){
   "use strict";
@@ -1227,7 +1231,8 @@
     var box = document.getElementById("award-list");
     box.textContent = "";
     AWARDS.forEach(function(a, i){
-      var c = el("div", i === 0 ? "award top" : "award");   // 첫 번째(가장 큰 장학)는 파란 카드로 강조
+      var c = el("div", "award");
+      c.tabIndex = 0;                                   // 키보드로 골라도 파랗게 바뀌도록
       var term = el("p","term");
       term.appendChild(icon("ic-star"));
       term.appendChild(document.createTextNode(T.awardTerm[lang]));

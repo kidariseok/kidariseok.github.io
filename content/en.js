@@ -71,10 +71,10 @@ SITE.en = {
     },
     contact: {
       title: "The record is still growing.",
-      description: "I write up what I learn on my Naver blog, Jinseok's Record. Feel free to reach out about collaboration or anything you'd like to ask.",
+      description: "",
       blog: "Naver Blog: Jinseok's Record"
     },
-    footer: {name:"Jinseok Oh · Activity Records", updated:"Last updated 22 Sep 2026"}
+    footer: {name:"Jinseok Oh · Portfolio", updated:"Last updated 22 Sep 2026"}
   },
   ui: {
     back: "All activities",
