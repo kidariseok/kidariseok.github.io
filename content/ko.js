@@ -78,7 +78,7 @@ SITE.ko = {
     awardTerm: "2024년 2학기 · 교내"
   },
   categories: {competition:"공모전", external:"대외활동", volunteer:"봉사활동", club:"교내동아리", campus:"교내활동", course:"강의"},
-  interests: ["데이터 사이언스", "에듀테크", "프로덕트 기획 · PM", "개발자 커뮤니티 운영", "글로벌 · 봉사활동"],
+  interests: ["프로덕트 기획 · PM", "개발자 커뮤니티 운영", "에듀테크", "글로벌 · 봉사활동"],
   profile: [
     ["이름", "오진석"],
     ["전공", "성균관대학교 컴퓨터교육과"],

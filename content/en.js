@@ -103,13 +103,7 @@ SITE.en = {
     campus: "Campus",
     course: "Course"
   },
-  interests: [
-    "Data science",
-    "EdTech",
-    "Product planning / PM",
-    "Developer communities",
-    "Global work & volunteering"
-  ],
+  interests: ["Product planning / PM", "Developer communities", "EdTech", "Global work & volunteering"],
   profile: [
     ["Name", "Jinseok Oh"],
     ["Major", "Computer Education, SKKU"],
