@@ -65,10 +65,10 @@ SITE.en = {
     featured: {title:"Highlights", more:"All activities"},
     about: {
       title: "About",
-      paragraph1: "I don't stop at learning technology; what I enjoy is connecting it to people and ideas.",
-      paragraph2: "Studying computer science and education in Computer Education at Sungkyunkwan University, I have focused on AI, data and software and taken part in a wide range of projects.",
-      paragraph3: "Through GDGoC, hackathons, service planning, teaching and mentoring, I have built experience connecting technology to real people, organisations and problems.",
-      paragraph4: "Going forward, I want to grow into someone who works with many different people and, grounded in a real understanding of technology, turns ideas into actual results.",
+      paragraph1: "My interests lie at the intersection of technology, people, and ideas.",
+      paragraph2: "I study Computer Education at Sungkyunkwan University, with a focus on AI, data, and software. Alongside my academic studies, I have pursued diverse experiences across technology projects, service planning, hackathons, education, and mentoring.",
+      paragraph3: "Through these experiences, I have developed a strong interest in how technology can be understood, communicated, and applied to real-world people, organizations, and problems.",
+      paragraph4: "Going forward, I aim to become a professional who combines a solid understanding of technology with the ability to collaborate across disciplines, connect diverse perspectives, and turn ideas into meaningful outcomes.",
       profileTitle: "Profile"
     },
     records: {
