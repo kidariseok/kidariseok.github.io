@@ -135,7 +135,7 @@ SITE.common = {
     {
       id: "s-global",
       start: "2024-04-18",
-      category: "competition", axis:"global",
+      category: "competition", axis:"explore",
       notion: "3bbdd7c9423e8018bc23dc8f365b965e"
     },
     {
