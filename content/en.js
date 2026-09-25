@@ -125,6 +125,7 @@ SITE.en = {
     volunteer: {label:"Volunteer hours", unit:"h+", note:"1365 certificate · 41 sessions"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
+    dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China"},
     hackathon: {label:"Hackathon hosted", unit:" ppl", note:"RE:ALThon · HR lead"},
     funding: {label:"Funding secured", value:"$4K+", unit:"", note:"Funded by College of Computing and Informatics from <b>3</b> Universities."}
   },

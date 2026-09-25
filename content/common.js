@@ -211,7 +211,8 @@ SITE.common = {
     {id:"scholarships", icon:"ic-star", value:"3"},
     {id:"volunteer", icon:"ic-heart", value:"212"},
     {id:"ielts", icon:"ic-lang", value:"8.0"},
-    {id:"toeic", icon:"ic-book", value:"975"},
+    // TOEIC 카드를 되돌리려면 아래 줄을 {id:"toeic", icon:"ic-book", value:"975"}, 로 바꾸세요
+    {id:"dulwich", icon:"ic-globe", value:"5", logo:"dulwich_crest.png"},
     {id:"hackathon", icon:"ic-users", value:"90"},
     {id:"funding", icon:"ic-chart", value:"600"}
   ],

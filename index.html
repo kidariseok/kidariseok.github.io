@@ -244,6 +244,9 @@
   .tile .k{font-weight:700;color:var(--ink);font-size:15px}
   .tile .n{font-size:13px;color:var(--muted)}
   .tile .n b{color:var(--ink);font-size:15px}
+  .tile{position:relative}
+  .tlogo{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center}
+  .tlogo img{width:26px;height:auto}
   /* '봉사시간' 카드: 누르면 전체 내역 창이 열리는 버튼 */
   button.tile{font:inherit;text-align:left;border:0;cursor:pointer;width:100%;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
   .open-hint{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--accent-text)}
@@ -454,6 +457,8 @@
     .fcard.has-ph{grid-template-columns:1fr}
     .fcard .ph{aspect-ratio:16/9;order:-1}
     .tile{padding:18px 16px}
+    .tlogo{top:12px;right:12px;width:36px;height:36px}
+    .tlogo img{width:20px}
     .tile .v{font-size:28px}
     .row{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:16px 12px}
     .row .d{grid-column:1;grid-row:1}
@@ -683,9 +688,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790299069"></script>
-<script src="content/ko.js?v=1790299069"></script>
-<script src="content/en.js?v=1790299069"></script>
+<script src="content/common.js?v=1790299151"></script>
+<script src="content/ko.js?v=1790299151"></script>
+<script src="content/en.js?v=1790299151"></script>
 <script>
 (function(){
   "use strict";
@@ -738,7 +743,7 @@
   var TILES = C.tiles.map(function(t){
     var k = KO.tiles[t.id] || {}, e = EN.tiles[t.id] || {};
     // 언어 파일에 value 가 있으면 그 언어에서는 그 숫자를 씁니다 (예: 영어는 달러)
-    return {id: t.id, ic: t.icon, v: t.value, vl: {ko: k.value, en: e.value}, k: {ko: k.label || "", en: e.label || ""},
+    return {id: t.id, ic: t.icon, v: t.value, logo: t.logo, vl: {ko: k.value, en: e.value}, k: {ko: k.label || "", en: e.label || ""},
       u: {ko: k.unit || "", en: e.unit || ""}, n: {ko: k.note || "", en: e.note || ""}};
   });
   var HERO_STATS = C.heroStats;
@@ -935,6 +940,12 @@
         c.setAttribute("aria-haspopup", "dialog");
         c.addEventListener("click", openVolunteer);
       } else c.tabIndex = 0;                            // 키보드로 골라도 검게 바뀌도록
+      if(t.logo){                                   // 로고가 있는 카드 (예: 국제학교): 오른쪽 위 흰 원 안에
+        var lg = el("span","tlogo");
+        var li = document.createElement("img");
+        li.src = "img/" + t.logo; li.alt = ""; li.loading = "lazy";
+        lg.appendChild(li); c.appendChild(lg);
+      }
       c.appendChild(valueEl("v num", t));
       c.appendChild(el("span","k", t.k[lang]));
       c.appendChild(rich("span","n", t.n[lang]));   // <b>숫자</b> 로 강조할 수 있습니다
