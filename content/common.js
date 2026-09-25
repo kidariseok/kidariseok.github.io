@@ -20,13 +20,13 @@ SITE.common = {
   tagline: "Connector: Connecting people, technology, and ideas",
   heroStats: ["hackathon", "ielts", "volunteer", "activities"],
   featured: ["realthon", "gdsc", "line4", "ktng-overseas"],
-  // 대외활동 '분야별' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. name · sub 는 ko / en
+  // 대외활동 '분야별' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. name 은 한·영 공통 영어, sub 는 ko / en
   axes: [
-    {id:"technology", name:{ko:"기술", en:"Technology"}, sub:{ko:"AI · 데이터 · 소프트웨어", en:"AI · Data · Software"}},
-    {id:"people", name:{ko:"사람", en:"People"}, sub:{ko:"교육 · 멘토링 · 봉사", en:"Education · Mentoring · Volunteering"}},
-    {id:"leadership", name:{ko:"리더십", en:"Leadership"}, sub:{ko:"PM · 해커톤 · 커뮤니티", en:"PM · Hackathon · Community"}},
-    {id:"global", name:{ko:"글로벌", en:"Global"}, sub:{ko:"국제 · 영어 · 교류", en:"International · English · Exchange"}},
-    {id:"explore", name:{ko:"탐색 · 견문", en:"Explore"}, sub:{ko:"강의 · 박람회", en:"Lectures · Expos"}}
+    {id:"technology", name:"Technology", sub:{ko:"AI · 데이터 · 소프트웨어", en:"AI · Data · Software"}},
+    {id:"people", name:"People", sub:{ko:"교육 · 멘토링 · 봉사", en:"Education · Mentoring · Volunteering"}},
+    {id:"leadership", name:"Leadership", sub:{ko:"PM · 해커톤 · 커뮤니티", en:"PM · Hackathon · Community"}},
+    {id:"global", name:"Global", sub:{ko:"국제 · 영어 · 교류", en:"International · English · Exchange"}},
+    {id:"explore", name:"Explore", sub:{ko:"강의 · 박람회", en:"Lectures · Expos"}}
   ],
   categories: {
     competition: {color:"b1", icon:"ic-trophy"},
