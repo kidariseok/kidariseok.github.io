@@ -106,6 +106,7 @@ SITE.en = {
     campus: "Campus",
     course: "Course"
   },
+  keywords: ["AI", "Data", "Software", "Computer Education", "Education", "Mentoring", "Volunteering", "Student programs", "Service planning", "Projects", "Hackathons", "International school", "English", "Global speakers", "Overseas volunteering", "Exchange student", "GDGoC", "Hackathon lead", "PM"],
   interests: ["Product planning / PM", "Developer communities", "EdTech", "Global work & volunteering"],
   profile: [
     ["Name", "Jinseok Oh"],

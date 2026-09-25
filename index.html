@@ -140,6 +140,20 @@
     content:"";position:absolute;right:-8%;top:-10%;width:min(900px,120vw);aspect-ratio:1;border-radius:50%;pointer-events:none;
     background:radial-gradient(circle,rgba(47,134,255,.55) 0%,rgba(28,111,224,.28) 30%,rgba(10,12,16,0) 64%);
   }
+  /* 이름 뒤로 흘러가는 키워드 띠: 아주 옅게, 양끝은 흐리게, 천천히 */
+  .marquee{
+    position:absolute;left:0;right:0;top:118px;overflow:hidden;pointer-events:none;user-select:none;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  }
+  .marquee-track{display:flex;width:max-content;animation:marquee var(--dur,90s) linear infinite}
+  .marquee-track span{
+    font:800 clamp(56px,7vw,96px)/1.1 var(--display);letter-spacing:-.03em;white-space:nowrap;
+    color:rgba(255,255,255,.055);
+  }
+  .marquee-track span::after{content:"·";margin-inline:.45em;color:rgba(77,148,255,.14)}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+  .hero > .wrap{position:relative;z-index:1}
   .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:40px;align-items:center}
   .eyebrow{font-size:14px;font-weight:700;color:var(--accent-2)}
   .hero h1{color:#fff;font-size:clamp(44px,5.2vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.035em;margin-block:12px 18px}
@@ -415,6 +429,7 @@
     .wrap{padding-inline:16px}
     section{padding-block:64px}
     .hero{padding-block:48px 80px}
+    .marquee{top:84px}
     .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
     .hstat{padding:18px 8px}
     .fcard.has-ph{grid-template-columns:1fr}
@@ -514,6 +529,8 @@
          · hero-stats: 아래 유리 숫자 상자. 어떤 숫자를 넣을지는 common.js 의 heroStats
          ───────────────────────────────────────────────────────── -->
     <div class="hero">
+      <!-- 이름 뒤로 흘러가는 키워드 띠 (글자는 ko.js / en.js 의 keywords). 장식이라 화면 읽기에서 제외 -->
+      <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-copy">
@@ -638,9 +655,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790297098"></script>
-<script src="content/ko.js?v=1790297098"></script>
-<script src="content/en.js?v=1790297098"></script>
+<script src="content/common.js?v=1790297275"></script>
+<script src="content/ko.js?v=1790297275"></script>
+<script src="content/en.js?v=1790297275"></script>
 <script>
 (function(){
   "use strict";
@@ -798,6 +815,16 @@
     var v = el("b", cls, t.vl[lang] || t.v);
     if(t.u[lang]) v.appendChild(el("small", null, t.u[lang].trim()));
     return v;
+  }
+
+  // 이름 뒤 키워드 띠: 같은 목록을 두 번 이어 붙여 끊김 없이 돌게 합니다
+  function renderMarquee(){
+    var box = document.getElementById("marquee");
+    box.textContent = "";
+    var words = L().keywords || [];
+    box.parentNode.hidden = !words.length;
+    for(var r=0;r<2;r++) words.forEach(function(w){ box.appendChild(el("span", null, w)); });
+    box.style.setProperty("--dur", Math.max(40, words.length * 5) + "s");   // 키워드가 많을수록 천천히
   }
 
   // 첫 화면 아래 유리 숫자 상자 (common.js 의 heroStats)
@@ -1252,6 +1279,7 @@
   function renderAll(){
     applyStatic();
     renderChips();
+    renderMarquee();
     renderHeroStats();
     renderFeatured();
     renderProfile();
