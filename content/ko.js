@@ -57,7 +57,7 @@ SITE.ko = {
       description: "",
       blog: "네이버 블로그 ‘진석의 기록’"
     },
-    footer: {name:"오진석 · Portfolio", updated:"최종 갱신 2026.09.22"}
+    footer: {name:"오진석 · Portfolio", updated:""}
   },
   ui: {
     back: "대외활동 목록",

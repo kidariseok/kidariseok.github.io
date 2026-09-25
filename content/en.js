@@ -75,7 +75,7 @@ SITE.en = {
       description: "",
       blog: "Naver Blog: Jinseok's Record"
     },
-    footer: {name:"Jinseok Oh · Portfolio", updated:"Last updated 22 Sep 2026"}
+    footer: {name:"Jinseok Oh · Portfolio", updated:""}
   },
   ui: {
     back: "All activities",

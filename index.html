@@ -299,9 +299,10 @@
   .contact h2{color:#fff;font-size:clamp(24px,3vw,32px);max-width:12em}
   .contact > div > p{margin-top:12px;color:var(--on-block-2);max-width:40ch}
   .cta{position:relative;z-index:1;display:grid;gap:10px;justify-items:start}
-  .cta a{display:inline-flex;align-items:center;gap:12px;color:#fff;font-weight:700;font-size:15px}
-  .cta a .i{width:18px;height:18px;color:var(--accent-2)}
-  .cta a:hover span{text-decoration:underline}
+  /* 연락처 링크: 평소엔 파란색, 마우스를 올리거나 키보드로 고르면 흰색 */
+  .cta a{display:inline-flex;align-items:center;gap:12px;color:var(--accent-2);font-weight:700;font-size:15px;transition:color .2s}
+  .cta a .i{width:18px;height:18px}
+  .cta a:hover,.cta a:focus-visible{color:#fff;text-decoration:none}
 
   /* 맨 아래 검은 띠 */
   .foot{background:var(--hero);color:var(--on-block-2);padding-block:48px;font-size:14px}
@@ -631,15 +632,15 @@
   <div class="wrap">
     <div>
       <a class="mark" href="#top">JINSEOK OH<span>.</span></a>
-      <!-- ◀ 내용을 고친 날짜는 ko.js / en.js 의 footer.updated -->
       <p data-t="footer.name">오진석 · Portfolio</p>
     </div>
-    <p class="num" data-t="footer.updated">최종 갱신 2026.09.22</p>
+    <!-- 갱신 날짜: ko.js / en.js 의 footer.updated (지금은 "" 로 비워 숨김) -->
+    <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790297009"></script>
-<script src="content/ko.js?v=1790297009"></script>
-<script src="content/en.js?v=1790297009"></script>
+<script src="content/common.js?v=1790297098"></script>
+<script src="content/ko.js?v=1790297098"></script>
+<script src="content/en.js?v=1790297098"></script>
 <script>
 (function(){
   "use strict";
