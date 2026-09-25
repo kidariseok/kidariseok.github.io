@@ -279,12 +279,9 @@
   }
   .filters button:hover{border-color:var(--ink)}
   .filters button .c{margin-left:5px;color:var(--muted)}
-  /* 4개 축 보기: 버튼 안에 이름 + 작은 설명 두 줄 */
-  .filters.axes{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
-  .filters.axes button{border-radius:16px;padding:12px 16px;text-align:left;display:grid;gap:2px;align-content:center}
-  .filters.axes button .nm{font:700 15px/1.2 var(--display)}
-  .filters.axes button small{font-size:12px;color:var(--muted);line-height:1.35}
-  .filters.axes button[aria-pressed="true"] small{color:inherit;opacity:.7}
+  /* 분야별 보기: 알약 버튼(이름 + 개수), 고른 분야의 설명은 아래 한 줄 */
+  .axis-desc{margin:-8px 0 20px;font-size:14px;color:var(--muted)}
+  .axis-desc b{color:var(--ax,var(--ink))}
   /* 분야별 색: --ax 는 흰 바탕용, --ax-2 는 검은 바탕(마우스 올림)용 */
   .ax-technology{--ax:#1a64cc;--ax-2:#6aa5ff}
   .ax-people{--ax:#1b7f45;--ax-2:#5fd08e}
@@ -295,10 +292,10 @@
   :root[data-theme="dark"] [class*="ax-"]{--ax:var(--ax-2)}
   .row[class*="ax-"] .c{color:var(--ax)}
   .row[class*="ax-"]:hover .c,.row[class*="ax-"]:focus-visible .c{color:var(--ax-2)}
-  .filters.axes button[class*="ax-"] .nm{color:var(--ax)}
-  .filters.axes button[class*="ax-"]{box-shadow:inset 0 3px 0 var(--ax)}
+  .filters.axes button[class*="ax-"]{color:var(--ax);font-weight:700}
+  .filters.axes button[class*="ax-"]{border-color:var(--ax)}
   .filters.axes button[class*="ax-"][aria-pressed="true"]{background:var(--ax);border-color:var(--ax);color:#fff;box-shadow:none}
-  .filters.axes button[class*="ax-"][aria-pressed="true"] .nm{color:#fff}
+  .filters.axes button[class*="ax-"][aria-pressed="true"] .c{color:#fff;opacity:.8}
   /* 보기 전환 (KO/EN 버튼과 같은 모양) */
   .seg{display:flex;padding:3px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
   .seg button{border:0;background:none;padding:8px 14px;border-radius:999px;cursor:pointer;font:700 13px/1 var(--sans);color:var(--muted);white-space:nowrap}
@@ -498,8 +495,6 @@
     .row .t .s{white-space:normal}
     .row > .i{display:none}
     .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px}
-    .filters.axes{grid-template-columns:repeat(2,minmax(0,1fr));margin-inline:0;padding-inline:0;overflow:visible}
-    .filters.axes button:first-child,.filters.axes button:last-child:nth-child(even){grid-column:1/-1}
     .filters::-webkit-scrollbar{display:none}
     .filters button{flex:none}
     .contact{padding:32px 24px}
@@ -671,6 +666,8 @@
           </div>
           <p class="sdesc" data-t="activities.description"></p>
           <div class="filters" id="filters" role="group" aria-label="구분"></div>
+          <!-- 분야별 보기에서 고른 분야의 설명 한 줄 -->
+          <p class="axis-desc" id="axis-desc" hidden></p>
           <div class="rows" id="timeline"></div>
           <div class="all"><button class="btn line" type="button" id="tl-more" aria-controls="timeline" aria-expanded="false" hidden></button></div>
         </div>
@@ -726,9 +723,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790302672"></script>
-<script src="content/ko.js?v=1790302672"></script>
-<script src="content/en.js?v=1790302672"></script>
+<script src="content/common.js?v=1790303017"></script>
+<script src="content/ko.js?v=1790303017"></script>
+<script src="content/en.js?v=1790303017"></script>
 <script>
 (function(){
   "use strict";
@@ -1136,7 +1133,7 @@
       var name = el("span","nm", f.label);
       name.appendChild(el("span","c num", String(f.n)));
       b.appendChild(name);
-      if(f.sub) b.appendChild(el("small", null, f.sub));
+      if(f.sub) b.title = f.sub;
       b.addEventListener("click", function(){
         filter = f.key;
         tlOpen = false;
@@ -1145,6 +1142,22 @@
       });
       box.appendChild(b);
     });
+
+    // 분야별 보기: 고른 분야의 설명을 버튼 아래 한 줄로
+    var desc = document.getElementById("axis-desc");
+    desc.hidden = view !== "axes";
+    desc.textContent = "";
+    if(view === "axes"){
+      var ax = axisOf(filter);
+      if(ax){
+        desc.className = "axis-desc ax-" + ax.id;
+        desc.appendChild(el("b", null, tr(ax.name)));
+        desc.appendChild(document.createTextNode(" · " + tr(ax.sub)));
+      } else {
+        desc.className = "axis-desc";
+        desc.textContent = T.axisHint[lang];
+      }
+    }
 
     document.querySelectorAll("#view-toggle button").forEach(function(b){
       b.setAttribute("aria-pressed", String(b.getAttribute("data-view") === view));

@@ -93,6 +93,7 @@ SITE.en = {
     showAll: "Show all {n}",
     viewAxes: "By field",
     viewTypes: "By activity",
+    axisHint: "Pick a field to see what it covers.",
     showLess: "Show less",
     year: "{y}",
     groupCount: "{n} items",

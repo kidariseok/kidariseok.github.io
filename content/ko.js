@@ -75,6 +75,7 @@ SITE.ko = {
     showAll: "{n}개 모두 보기",
     viewAxes: "분야별",
     viewTypes: "활동별",
+    axisHint: "분야를 고르면 설명이 여기에 나옵니다.",
     showLess: "접기",
     year: "{y}년",
     groupCount: "{n}개",
