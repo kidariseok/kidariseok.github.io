@@ -154,6 +154,27 @@
   }
   .marquee-track span::after{content:"·";margin-inline:.6em;color:rgba(77,148,255,.2)}
   @keyframes marquee{to{transform:translateX(-50%)}}
+
+  /* ---- 첫 접속 애니메이션 (시안 7번) ----
+     키워드 띠가 빠르고 밝게 쏟아지다 느려져 평소 띠가 되고, 그 사이 이름이 한 자씩 솟고
+     캐치프레이즈가 왼쪽부터 써지며, 나머지가 차례로 올라옵니다. */
+  .hero h1 .ch{display:inline-block}
+  html.intro .marquee-track{animation:rushIn 1.4s cubic-bezier(.2,.9,.2,1) both,marquee var(--dur,80s) linear 1.4s infinite}
+  html.intro .marquee-track.rev{animation:rushInRev 1.4s cubic-bezier(.2,.9,.2,1) both,marquee var(--dur,80s) linear 1.4s infinite reverse}
+  html.intro .marquee-track span{animation:rushGlow 1.6s ease-out both}
+  @keyframes rushIn{from{transform:translateX(35%)}to{transform:translateX(0)}}
+  @keyframes rushInRev{from{transform:translateX(-85%)}to{transform:translateX(-50%)}}
+  @keyframes rushGlow{from{color:rgba(255,255,255,.2)}}
+  html.intro:not(.intro-done) .hero h1{overflow:hidden;padding-bottom:4px}
+  html.intro:not(.intro-done) .hero h1 .ch{animation:riseCh .9s var(--ease) both;animation-delay:calc(.2s + var(--i) * .1s)}
+  @keyframes riseCh{from{transform:translateY(110%)}to{transform:none}}
+  html.intro .eyebrow{animation:introUp .6s var(--ease) .1s both}
+  html.intro .tagline{animation:typeIn 1.3s steps(40) .8s both}
+  @keyframes typeIn{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+  html.intro .lede,html.intro .chips,html.intro .hero-cta{animation:introUp .8s var(--ease) 1.2s both}
+  html.intro .hero-art{animation:introUp 1s var(--ease) 1s both}
+  html.intro .hero-stats{animation:introUp .8s var(--ease) 1.8s both}
+  @keyframes introUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .hero > .wrap{position:relative;z-index:1}
   .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:40px;align-items:center}
   .eyebrow{font-size:14px;font-weight:700;color:var(--accent-2)}
@@ -723,9 +744,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790303017"></script>
-<script src="content/ko.js?v=1790303017"></script>
-<script src="content/en.js?v=1790303017"></script>
+<script src="content/common.js?v=1790311685"></script>
+<script src="content/ko.js?v=1790311685"></script>
+<script src="content/en.js?v=1790311685"></script>
 <script>
 (function(){
   "use strict";
@@ -1403,7 +1424,16 @@
       nodes[i].hidden = t === "";              // 문구를 "" 로 비우면 그 줄은 화면에서 빠집니다
     }
     var name = document.querySelector('[data-role="name"]');
-    if(name) name.textContent = L().name;      // 첫 화면 이름: ko.js / en.js 의 name
+    if(name){                                  // 첫 화면 이름: ko.js / en.js 의 name (첫 등장 때 한 글자씩 솟도록 글자마다 나눔)
+      name.textContent = "";
+      name.setAttribute("aria-label", L().name);
+      Array.from(L().name).forEach(function(ch, i){
+        var s = el("span", "ch", ch === " " ? "\u00a0" : ch);
+        s.style.setProperty("--i", i);
+        s.setAttribute("aria-hidden", "true");
+        name.appendChild(s);
+      });
+    }
     var tag = document.getElementById("tagline"), tl = C.tagline || "", cut = tl.indexOf(":");
     tag.textContent = cut < 0 ? tl : tl.slice(cut);   // 캐치프레이즈: ':' 앞은 굵게
     if(cut > 0) tag.insertBefore(el("b", null, tl.slice(0, cut)), tag.firstChild);
@@ -1456,6 +1486,11 @@
   });
   window.addEventListener("hashchange", route);
 
+  // 첫 접속 애니메이션: 키워드 띠가 쏟아지다 느려지고, 이름이 한 자씩 솟음 (목록 화면으로 들어올 때 한 번, '동작 줄이기' 설정이면 생략)
+  if(!currentDetailId() && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)){
+    document.documentElement.classList.add("intro");
+    setTimeout(function(){ document.documentElement.classList.add("intro-done"); }, 3200);
+  }
   setLang(saved === "en" ? "en" : "ko");
   route();
 })();
