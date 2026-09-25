@@ -148,7 +148,7 @@ SITE.en = {
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
     dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments and built my global perspective."},
     hackathon: {label:"Hackathon hosted", unit:" ppl", note:"RE:ALThon · HR lead"},
-    funding: {label:"Funding secured", value:"$4K+", unit:"", note:"Funded by College of Computing and Informatics from <b>3</b> Universities."}
+    funding: {label:"Hackathon funding", value:"$5K+", unit:"", note:"From programs at <b>3</b> universities · total budget ~$5.5K"}
   },
   certHead: ["Credential", "Result", "Detail", "Issuer", "Obtained", "Status"],
   certGroups: {computing:"Computing & Data", english:"English", other:"Other"},
@@ -273,21 +273,80 @@ SITE.en = {
     },
     realthon: {
       title: "RE:ALThon (host)",
-      summary: "As SKKU GDSC's HR lead, hosted a 90-person hackathon and secured roughly $4,300 in funding from three universities' software programs.",
-      short: "HR lead of SKKU GDSC; hosted a 90-person hackathon and raised ~$4,300.",
+      summary: "When a planned collaboration with Japanese universities fell through, changed course and organised a joint AI hackathon across SKKU, Korea University and Sogang (50 participants, 9 teams).",
+      short: "Pivoted from a failed global plan to a 3-university hackathon for 50.",
       body: [
-        {h:"How it came together"},
-        {p:"<b>1. Trying to run it online and offline at once</b>"},
         {
-          p: "I reached out to Canada and Japan, whose time zones lined up reasonably well - connecting first on LinkedIn, then moving to Discord for real conversation. It fell through when participation on the Japanese side dropped off."
+          ul: [
+            "<b>Dates</b>: 6-7 Dec 2024 (overnight)",
+            "<b>Venue</b>: Korea University, Woojung Hall of Informatics",
+            "<b>Co-hosts</b>: GDSC at SKKU, Korea University and Sogang University",
+            "<b>Scale</b>: 50 participants, 9 teams",
+            "<b>My role</b>: HR lead of SKKU GDSC; overall planning and budget management"
+          ]
         },
-        {p:"<b>2. Recruiting partner universities in Korea</b>"},
+        {h:"01. Situation: the global plan wobbles"},
         {
-          p: "There was a Slack channel where the GDSC leads gathered. From there I contacted Yonsei, Korea University and Sogang directly, and settled on running it offline together with Korea University and Sogang. Since all of us were clustered around Seoul, we planned the event in person as well as online."
+          p: "A global hackathon was the thing I most wanted to do when I joined GDSC. Once SKKU's software program committed a budget, I reached out to GDSC chapters in time zones close to Korea - Singapore, Manila, Sydney and Japan. From early September I was discussing the format in English, over LinkedIn and Discord, with Tokyo Metropolitan University, Tokyo City University and Waseda University."
         },
-        {p:"<b>3. Venue support and sponsorship</b>"},
         {
-          p: "I secured roughly $4,300 from the three universities' software programs, and the event ran at 90 participants."
+          p: "Just as the line-up was about to be confirmed, the Japanese side said they could not take part: many members were not comfortable in English, the distance between Tokyo and Osaka was a burden, and realistically only 3-4 people per school would attend. Holding on to the original plan risked the event not happening at all."
+        },
+        {h:"02. Decision: running the event over keeping the label"},
+        {
+          ul: [
+            "<b>A. Keep working with Japan</b>: this would preserve the global angle, but mixing one Japanese participant into mostly Korean teams would tilt communication and put them at a disadvantage.",
+            "<b>B. Postpone the joint event with Japan and run a strong domestic hackathon first</b>: less distinctive, but an overnight event needs smooth communication, and Google-specific strengths such as the Gemini API could still set it apart."
+          ]
+        },
+        {
+          p: "I chose B, mainly because of the budget: there was no guarantee this year's funding would carry over if we postponed. Delivering a real event with the time and resources we had mattered more than keeping the original shape of the plan."
+        },
+        {h:"03. Action: re-plan and reconnect"},
+        {
+          ul: [
+            "Contacted Yonsei, Korea University and Sogang directly through the GDSC leads' Slack, and confirmed an offline event with Korea University and Sogang.",
+            "Named the event: RE:ALThon stands for 'REply via AI machine Learning'.",
+            "Shaped the concept and operations with the other schools' leads, and gave input on promotion and recruitment to the design task force.",
+            "Managed SKKU's share of the budget and submitted receipts to the program office.",
+            "On the day, briefed participants through Notion and explained the rules for using the Gemini API."
+          ]
+        },
+        {p:"Korea University arranged the venue and the faculty judges; each school took on its own part."},
+        {h:"04. Budget and resources"},
+        {
+          ul: [
+            "<b>Sponsorship</b>: roughly KRW 7 million from four programs at three universities, with SKKU covering more than half.",
+            "<b>Total budget</b>: around KRW 7.5 million including entry fees, spent on prizes, meals and snacks, promotion, AI API costs and operations.",
+            "<b>In-kind support</b>: Korea University's College of Informatics provided four lecture rooms (about 300 seats) free of charge - worth about KRW 6 million in rental fees.",
+            "SKKU first promised about KRW 2 million; after seeing me drive the collaboration with Japan, the program nearly doubled its support.",
+            "SKKU carried the larger share this time, and we agreed that Korea University would carry more the following year."
+          ]
+        },
+        {h:"05. Results"},
+        {
+          ul: [
+            "<b>Three universities</b>: 50 students from SKKU, Korea University and Sogang competed in 9 teams.",
+            "<b>AI services</b>: teams built services on marine conservation, job and legal support for migrant workers, pronunciation practice for people with hearing loss, personal safety and sustainable healthcare. AquaLens, for example, used the user's location and a photo of a fish to tell whether fishing is allowed there and whether the species may be caught, with image recognition via the Gemini API.",
+            "<b>Satisfaction</b>: 35 of the 37 survey respondents rated the event 91/100 or higher; operations and venue averaged 4.68/5, and willingness to recommend or return 4.62/5.",
+            "<b>Continued</b>: thanks to the cost-sharing agreement, RE:ALThon ran again in 2025."
+          ]
+        },
+        {h:"06. What I would change"},
+        {
+          p: "It fell just before exams, which made recruiting hard. We wanted a year-end date, but the program budget had to be spent by early December. The survey echoed this ('too close to exams', 'not enough dev time'). Next time I would start from the budget deadline and plan backwards around the exam calendar."
+        },
+        {h:"07. What I learned"},
+        {
+          p: "I used to think the quality of the event depended on keeping its global shape. But with several organisations involved, many variables were outside my control. What mattered was rebuilding the options from the resources and constraints we actually had, and connecting directly with the people who could help. I also felt how delaying one key decision pushes back sponsorship, venue, promotion and recruitment all at once."
+        },
+        {h:"08. What changed afterwards"},
+        {
+          p: "When something gets stuck, I now look for alternative people, channels and methods first, rather than holding on to a blocked route. I used this experience as my example of decisiveness when applying to the KT&G overseas volunteer corps. Using Slack, LinkedIn, Discord, Notion, Figma and Google Forms/Sheets intensively also made working with outside organisations feel natural."
+        },
+        {h:"Looking back"},
+        {
+          p: "I poured a huge amount of my own time into this, from the summer break into the semester. The exams hit me too - the morning after the overnight event, I sat a university online exam on the Korea University campus. Had I known how much work it would be, I might have hesitated; not knowing let me throw myself into it. What stays with me most is planning with senior leads from other schools until 4 a.m. and building one event together."
         }
       ]
     },

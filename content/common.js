@@ -213,8 +213,8 @@ SITE.common = {
     {id:"ielts", icon:"ic-lang", value:"8.0"},
     // TOEIC 카드를 되돌리려면 아래 줄을 {id:"toeic", icon:"ic-book", value:"975"}, 로 바꾸세요
     {id:"dulwich", icon:"ic-globe", value:"5", logo:"dulwich_crest.png"},
-    {id:"hackathon", icon:"ic-users", value:"90"},
-    {id:"funding", icon:"ic-chart", value:"600"}
+    {id:"hackathon", icon:"ic-users", value:"50"},
+    {id:"funding", icon:"ic-chart", value:"700"}
   ],
 
   /* 봉사활동 전체 내역 (기록 요약의 '기록된 봉사시간' 카드를 누르면 뜨는 창)
