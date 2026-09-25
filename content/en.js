@@ -45,8 +45,10 @@ SITE.en = {
     featured: {title:"Highlights", more:"All activities"},
     about: {
       title: "About",
-      paragraph1: "What a computer-education major really asks is how to teach - and I wanted to answer that with data. From my first undergraduate year I kept taking on planning and operating roles. At Google Developer Student Clubs I led the Administration team as a Core member and handled speaker outreach for the monthly global IT talks; building on that, I hosted RE:ALThon, a 90-person hackathon, and secured roughly $4,300 in funding from three university software programs.",
-      paragraph2: "As PM for LIKELION's 12th cohort and the Line-4 Hackathon I led teams through service planning and drew the wireframes myself. Alongside that I kept doing work that puts me in front of people: 177 hours of overseas volunteering in Indonesia and 40 hours translating World Vision letters. I am currently completing military service, preparing for what comes next with SQLD and ADsP data certifications and an IELTS 8.0.",
+      paragraph1: "I don't stop at learning technology; what I enjoy is connecting it to people and ideas.",
+      paragraph2: "Studying computer science and education in Computer Education at Sungkyunkwan University, I have focused on AI, data and software and taken part in a wide range of projects.",
+      paragraph3: "Through GDGoC, hackathons, service planning, teaching and mentoring, I have built experience connecting technology to real people, organisations and problems.",
+      paragraph4: "Going forward, I want to grow into someone who works with many different people and, grounded in a real understanding of technology, turns ideas into actual results.",
       profileTitle: "Profile"
     },
     records: {
@@ -82,8 +84,6 @@ SITE.en = {
     prev: "Previous",
     next: "Next",
     files: "Attachments",
-    source: "The original of this record lives in my Notion ACTIVITY RECORDS.",
-    openNotion: "Open in Notion",
     detail: "Read the full record",
     notFound: "That activity could not be found.",
     photos: "Photos",
@@ -107,7 +107,7 @@ SITE.en = {
     course: "Course"
   },
   keywords: ["AI", "Data", "Software", "Computer Education", "Education", "Mentoring", "Volunteering", "Student programs", "Service planning", "Projects", "Hackathons", "International school", "English", "Global speakers", "Overseas volunteering", "Exchange student", "GDGoC", "Hackathon lead", "PM"],
-  interests: ["Product planning / PM", "Developer communities", "EdTech", "Global work & volunteering"],
+  interests: ["AI · Data", "PM", "Service planning", "Developer", "Global"],
   profile: [
     ["Name", "Jinseok Oh"],
     ["Major", "Computer Education, SKKU"],
@@ -262,9 +262,6 @@ SITE.en = {
         {p:"<b>3. Venue support and sponsorship</b>"},
         {
           p: "I secured roughly $4,300 from the three universities' software programs, and the event ran at 90 participants."
-        },
-        {
-          note: "The Notion original keeps two working documents as sub-pages: \"2024 RE:ALThon (operations)\" and \"RE:ALThon - GDG on Campus Korea (Prep)\"."
         }
       ]
     },
@@ -275,8 +272,7 @@ SITE.en = {
         {p:"At the Line-4 Hackathon I took the PM role for a team of five."},
         {
           p: "I owned the planning and the overall direction, and built the low-fidelity wireframes in Figma myself - defining screen structure and layout before anything went to the designers."
-        },
-        {note:"Three photos from the event are kept alongside this entry in the Notion original."}
+        }
       ]
     },
     "ktng-overseas": {
@@ -301,8 +297,7 @@ SITE.en = {
             "상상위더스딱지치기_오진석.docx",
             "상상위더스부채꾸미기_오진석.docx"
           ]
-        },
-        {note:"The application itself is kept as a separate sub-page in Notion."}
+        }
       ]
     },
     creverse: {
@@ -311,8 +306,7 @@ SITE.en = {
       body: [
         {
           p: "As part of the first Creverse Campus Crew cohort I handled marketing: producing Instagram promotional assets and researching the state of the education market."
-        },
-        {note:"Three of the promotional assets I made are kept as images in the Notion original."}
+        }
       ]
     },
     "edutech-expo": {
@@ -324,8 +318,7 @@ SITE.en = {
         },
         {
           p: "I had thought of edtech as a blue ocean. Walking the floor, it looked more like a market where a great many companies - Chunjae Education, Alice School and others - are already competing hard. Because a computer-education major should have an edge here, I found it all the more interesting, and lost track of time for four or five hours."
-        },
-        {note:"Two photos from the floor are kept alongside this entry in Notion."}
+        }
       ]
     },
     "speech-mentors": {
@@ -470,10 +463,7 @@ SITE.en = {
         {
           p: "I applied together with people from GDSC, passed the first round, and was not selected at the final interview."
         },
-        {files:["Skku-ba-dive.pdf"]},
-        {
-          note: "The Notion page keeps only the submitted materials; there is no written record beyond that."
-        }
+        {files:["Skku-ba-dive.pdf"]}
       ]
     },
     "s-global": {
@@ -525,10 +515,7 @@ SITE.en = {
         {
           p: "For about a year I led the home health-care visiting part of the team, working with elderly residents living alone in jjokbang districts."
         },
-        {files:["쪽방촌_봉사_내역.pdf"]},
-        {
-          note: "An \"overseas dispatch project\" document is kept as a sub-page in the Notion original."
-        }
+        {files:["쪽방촌_봉사_내역.pdf"]}
       ]
     },
     likelion12: {

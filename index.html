@@ -23,7 +23,7 @@
      ──────────────────────────────────────────────────────────────
      흰 바탕 + 검은 카드 + 파란 포인트 한 가지(--accent) 로 된 디자인입니다.
      · --accent : 포인트 파란색 (버튼, 숫자 단위, 구분 글씨)
-     · --block  : 검은 카드 색 (대표 활동, 장학, 연락처, 봉사시간 카드)
+     · --block  : 검은 카드 색 (대표 활동, 장학, 연락처, 기록 요약 카드에 마우스를 올렸을 때)
      · --hero   : 첫 화면과 맨 아래 검은 띠 색
 
      ※ 색 정의가 세 군데 있습니다.
@@ -140,18 +140,19 @@
     content:"";position:absolute;right:-8%;top:-10%;width:min(900px,120vw);aspect-ratio:1;border-radius:50%;pointer-events:none;
     background:radial-gradient(circle,rgba(47,134,255,.55) 0%,rgba(28,111,224,.28) 30%,rgba(10,12,16,0) 64%);
   }
-  /* 이름 뒤로 흘러가는 키워드 띠: 아주 옅게, 양끝은 흐리게, 천천히 */
+  /* 이름 뒤로 흘러가는 키워드 띠 4줄: 작고 옅게, 양끝은 흐리게, 줄마다 방향·속도가 조금씩 다름 */
   .marquee{
-    position:absolute;left:0;right:0;top:118px;overflow:hidden;pointer-events:none;user-select:none;
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-            mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+    position:absolute;left:0;right:0;top:92px;display:grid;gap:14px;overflow:hidden;pointer-events:none;user-select:none;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
   }
-  .marquee-track{display:flex;width:max-content;animation:marquee var(--dur,90s) linear infinite}
+  .marquee-track{display:flex;width:max-content;animation:marquee var(--dur,80s) linear infinite}
+  .marquee-track.rev{animation-direction:reverse}
   .marquee-track span{
-    font:800 clamp(56px,7vw,96px)/1.1 var(--display);letter-spacing:-.03em;white-space:nowrap;
+    font:700 clamp(22px,2.6vw,34px)/1.2 var(--display);letter-spacing:-.01em;white-space:nowrap;
     color:rgba(255,255,255,.055);
   }
-  .marquee-track span::after{content:"·";margin-inline:.45em;color:rgba(77,148,255,.14)}
+  .marquee-track span::after{content:"·";margin-inline:.6em;color:rgba(77,148,255,.2)}
   @keyframes marquee{to{transform:translateX(-50%)}}
   .hero > .wrap{position:relative;z-index:1}
   .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:40px;align-items:center}
@@ -228,22 +229,26 @@
 
   /* 기록 요약 */
   .tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-  .tile{display:flex;flex-direction:column;gap:4px;padding:22px;border-radius:var(--r);background:var(--tile)}
+  /* 기록 요약 카드: 평소엔 흰색, 마우스를 올리거나 키보드로 고르면 검은색 */
+  .tile{
+    display:flex;flex-direction:column;gap:4px;padding:22px;border-radius:var(--r);background:var(--paper);
+    box-shadow:inset 0 0 0 1px var(--line);transition:background .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);
+  }
+  .tile:hover,.tile:focus-visible{background:var(--block);box-shadow:inset 0 0 0 1px var(--block-line),var(--shadow);transform:translateY(-4px)}
+  .tile:hover .v,.tile:hover .k,.tile:hover .n b,.tile:focus-visible .v,.tile:focus-visible .k,.tile:focus-visible .n b{color:#fff}
+  .tile:hover .v small,.tile:focus-visible .v small{color:var(--accent-2)}
+  .tile:hover .n,.tile:focus-visible .n{color:var(--on-block-2)}
   .tile .v{font:800 34px/1.1 var(--display);color:var(--ink)}
   .tile .v small{font:700 15px var(--sans);color:var(--accent-text);margin-left:3px}
   .tile .k{font-weight:700;color:var(--ink);font-size:15px}
   .tile .n{font-size:13px;color:var(--muted)}
   .tile .n b{color:var(--ink);font-size:15px}
-  /* '봉사시간' 카드: 검은 버튼, 누르면 전체 내역 창 */
+  /* '봉사시간' 카드: 누르면 전체 내역 창이 열리는 버튼 */
   button.tile{font:inherit;text-align:left;border:0;cursor:pointer;width:100%;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-  .tile.dark{background:var(--block);box-shadow:inset 0 0 0 1px var(--block-line)}
-  .tile.dark .v,.tile.dark .k,.tile.dark .n b{color:#fff}
-  .tile.dark .v small{color:var(--accent-2)}
-  .tile.dark .n{color:var(--on-block-2)}
-  .tile.dark:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--block-line),var(--shadow)}
-  .open-hint{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--accent-2)}
+  .open-hint{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--accent-text)}
+  .tile:hover .open-hint,.tile:focus-visible .open-hint{color:var(--accent-2)}
   .open-hint .i{width:15px;height:15px;transition:transform .3s var(--ease)}
-  .tile.dark:hover .open-hint .i{transform:translateX(3px)}
+  .tile:hover .open-hint .i{transform:translateX(3px)}
 
   /* 대외활동: 구분 버튼 + 한 줄 목록 */
   .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
@@ -358,8 +363,6 @@
   .files{margin-top:18px;display:grid;gap:8px}
   .files .fl{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;background:var(--soft);font-size:15px;color:var(--ink)}
   .files .fl svg{flex:none;color:var(--accent-text)}
-  .srcline{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
-  .srcline a:hover{text-decoration:underline}
   .pager{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
   .pager a{display:block;padding:20px 22px;border-radius:var(--r);background:var(--block);box-shadow:inset 0 0 0 1px var(--block-line);transition:transform .3s var(--ease),background .3s}
   .pager a:hover{text-decoration:none;transform:translateY(-3px);background:var(--accent)}
@@ -429,7 +432,7 @@
     .wrap{padding-inline:16px}
     section{padding-block:64px}
     .hero{padding-block:48px 80px}
-    .marquee{top:84px}
+    .marquee{top:60px;gap:10px}
     .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
     .hstat{padding:18px 8px}
     .fcard.has-ph{grid-template-columns:1fr}
@@ -530,7 +533,7 @@
          ───────────────────────────────────────────────────────── -->
     <div class="hero">
       <!-- 이름 뒤로 흘러가는 키워드 띠 (글자는 ko.js / en.js 의 keywords). 장식이라 화면 읽기에서 제외 -->
-      <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+      <div class="marquee" id="marquee" aria-hidden="true"></div>
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-copy">
@@ -570,12 +573,14 @@
         <div class="wrap">
           <div class="shead"><h2 data-t="about.title">소개</h2></div>
           <div class="about">
-            <!-- ◀ 소개 본문 두 문단. 글자는 ko.js / en.js 의 page → about 에 있습니다.
-                 문단을 더 넣으려면 <p data-t="about.paragraph3"></p> 를 아래에 붙이고
-                 ko.js · en.js 의 about 에 paragraph3 를 추가하세요. -->
+            <!-- ◀ 소개 본문 네 문단. 글자는 ko.js / en.js 의 page → about 에 있습니다.
+                 문단을 더 넣으려면 <p data-t="about.paragraph5"></p> 를 아래에 붙이고
+                 ko.js · en.js 의 about 에 paragraph5 를 추가하세요. -->
             <div class="prose">
               <p data-t="about.paragraph1"></p>
               <p data-t="about.paragraph2"></p>
+              <p data-t="about.paragraph3"></p>
+              <p data-t="about.paragraph4"></p>
             </div>
             <div>
               <p class="subh" data-t="about.profileTitle">기본 정보</p>
@@ -655,9 +660,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790297275"></script>
-<script src="content/ko.js?v=1790297275"></script>
-<script src="content/en.js?v=1790297275"></script>
+<script src="content/common.js?v=1790298126"></script>
+<script src="content/ko.js?v=1790298126"></script>
+<script src="content/en.js?v=1790298126"></script>
 <script>
 (function(){
   "use strict";
@@ -683,7 +688,6 @@
   function fill(str, vals){ return String(str).replace(/\{(\w+)\}/g, function(m, k){ return vals[k] != null ? vals[k] : m; }); }
   function pick(obj, path){ return path.split(".").reduce(function(o, k){ return o == null ? o : o[k]; }, obj); }
 
-  var NOTION = C.notion;
   var IMG = C.photos;
   function imgSrc(n){ return "img/" + n + ".webp"; }
   var CAT = {};
@@ -817,14 +821,21 @@
     return v;
   }
 
-  // 이름 뒤 키워드 띠: 같은 목록을 두 번 이어 붙여 끊김 없이 돌게 합니다
+  // 이름 뒤 키워드 띠 4줄: 줄마다 시작 키워드를 바꾸고, 같은 목록을 두 번 이어 붙여 끊김 없이 돕니다
+  var MARQUEE_ROWS = 4;
   function renderMarquee(){
     var box = document.getElementById("marquee");
     box.textContent = "";
     var words = L().keywords || [];
-    box.parentNode.hidden = !words.length;
-    for(var r=0;r<2;r++) words.forEach(function(w){ box.appendChild(el("span", null, w)); });
-    box.style.setProperty("--dur", Math.max(40, words.length * 5) + "s");   // 키워드가 많을수록 천천히
+    box.hidden = !words.length;
+    for(var r=0;r<MARQUEE_ROWS;r++){
+      var shift = Math.round(words.length * r / MARQUEE_ROWS);
+      var row = words.slice(shift).concat(words.slice(0, shift));
+      var track = el("div","marquee-track" + (r % 2 ? " rev" : ""));
+      track.style.setProperty("--dur", (words.length * 4 + r * 9) + "s");   // 줄마다 속도를 조금씩 다르게
+      for(var k=0;k<2;k++) row.forEach(function(w){ track.appendChild(el("span", null, w)); });
+      box.appendChild(track);
+    }
   }
 
   // 첫 화면 아래 유리 숫자 상자 (common.js 의 heroStats)
@@ -890,14 +901,14 @@
     var box = document.getElementById("tiles");
     box.textContent = "";
     TILES.forEach(function(t){
-      // '봉사시간' 카드는 누르면 전체 내역 창이 열리는 버튼입니다 (검은 카드)
+      // '봉사시간' 카드는 누르면 전체 내역 창이 열리는 버튼입니다
       var clickable = t.id === "volunteer" && C.volunteerLog;
-      var c = el(clickable ? "button" : "div", clickable ? "tile dark" : "tile");
+      var c = el(clickable ? "button" : "div", "tile");
       if(clickable){
         c.type = "button";
         c.setAttribute("aria-haspopup", "dialog");
         c.addEventListener("click", openVolunteer);
-      }
+      } else c.tabIndex = 0;                            // 키보드로 골라도 검게 바뀌도록
       c.appendChild(valueEl("v num", t));
       c.appendChild(el("span","k", t.k[lang]));
       c.appendChild(rich("span","n", t.n[lang]));   // <b>숫자</b> 로 강조할 수 있습니다
@@ -1194,14 +1205,6 @@
       }
     });
     view.appendChild(body);
-
-    // ◀ 노션 원본 링크. 외부 공개용으로 지우려면 아래 6줄을 통째로 삭제
-    var src = el("p","srcline");
-    src.appendChild(document.createTextNode(T.source[lang] + " "));
-    var nl = el("a", null, T.openNotion[lang] + " →");
-    nl.href = NOTION + a.nid; nl.target = "_blank"; nl.rel = "noopener";
-    src.appendChild(nl);
-    view.appendChild(src);
 
     var pager = el("div","pager");
     function pagerLink(idx, kind){
