@@ -60,7 +60,7 @@ SITE.en = {
         role: "",
         since: "2025-01-01"
       },
-      connect: {label:"CONNECT", period:"Next", text:"Going forward, I want to bridge the gap between those who build technology and those who need it, connecting technology, people, and industry to create meaningful value."}
+      connect: {label:"CONNECT", period:"Next", text:"I want to connect technology with real-world needs, bridging people, ideas, and industry to create meaningful value."}
     },
     featured: {title:"Highlights", more:"All activities"},
     about: {
