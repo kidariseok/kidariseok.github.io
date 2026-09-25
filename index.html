@@ -281,6 +281,20 @@
   .filters.axes button .nm{font:700 15px/1.2 var(--display)}
   .filters.axes button small{font-size:12px;color:var(--muted);line-height:1.35}
   .filters.axes button[aria-pressed="true"] small{color:inherit;opacity:.7}
+  /* 분야별 색: --ax 는 흰 바탕용, --ax-2 는 검은 바탕(마우스 올림)용 */
+  .ax-technology{--ax:#1a64cc;--ax-2:#6aa5ff}
+  .ax-people{--ax:#1b7f45;--ax-2:#5fd08e}
+  .ax-leadership{--ax:#c2410c;--ax-2:#fb923c}
+  .ax-global{--ax:#7c3aed;--ax-2:#b39bff}
+  .ax-explore{--ax:#0e7c86;--ax-2:#4fd1db}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) [class*="ax-"]{--ax:var(--ax-2)} }
+  :root[data-theme="dark"] [class*="ax-"]{--ax:var(--ax-2)}
+  .row[class*="ax-"] .c{color:var(--ax)}
+  .row[class*="ax-"]:hover .c,.row[class*="ax-"]:focus-visible .c{color:var(--ax-2)}
+  .filters.axes button[class*="ax-"] .nm{color:var(--ax)}
+  .filters.axes button[class*="ax-"]{box-shadow:inset 0 3px 0 var(--ax)}
+  .filters.axes button[class*="ax-"][aria-pressed="true"]{background:var(--ax);border-color:var(--ax);color:#fff;box-shadow:none}
+  .filters.axes button[class*="ax-"][aria-pressed="true"] .nm{color:#fff}
   /* 보기 전환 (KO/EN 버튼과 같은 모양) */
   .seg{display:flex;padding:3px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
   .seg button{border:0;background:none;padding:8px 14px;border-radius:999px;cursor:pointer;font:700 13px/1 var(--sans);color:var(--muted);white-space:nowrap}
@@ -701,9 +715,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790300241"></script>
-<script src="content/ko.js?v=1790300241"></script>
-<script src="content/en.js?v=1790300241"></script>
+<script src="content/common.js?v=1790300500"></script>
+<script src="content/ko.js?v=1790300500"></script>
+<script src="content/en.js?v=1790300500"></script>
 <script>
 (function(){
   "use strict";
@@ -1088,7 +1102,7 @@
     else Object.keys(CAT).forEach(function(k){ if(counts[k]) list.push({key:k, label:CAT[k][lang], n:counts[k]}); });
 
     list.forEach(function(f){
-      var b = el("button");
+      var b = el("button", view === "axes" && f.key !== "all" ? "ax-" + f.key : null);   // 분야마다 색 (style.css 의 .ax-...)
       b.type = "button";
       b.setAttribute("aria-pressed", filter === f.key ? "true" : "false");
       var name = el("span","nm", f.label);
@@ -1124,7 +1138,7 @@
     var total = filter === "all" ? ACT.length : rows.length;
 
     rows.forEach(function(a, n){
-      var r = el("a","row");
+      var r = el("a", view === "axes" && a.axis ? "row ax-" + a.axis : "row");
       r.href = "#a/" + a.id;
       r.hidden = !tlOpen && n >= shown;
       r.appendChild(el("span","d num", fmtDate(a.s, a.e)));
