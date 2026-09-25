@@ -135,7 +135,7 @@ SITE.en = {
     ["Name", "Jinseok Oh"],
     ["Major", "Computer Education, SKKU"],
     ["Class", "Class of 2024"],
-    ["Interests", "EdTech"],
+    ["Interests", "Connecting technology, people & industry"],
     ["Currently", "Serving in the Republic of Korea Army as a Network Manager / Squad Leader"],
     ["Writing", "blog.naver.com/kidariseok"]
   ],
