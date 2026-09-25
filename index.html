@@ -16,7 +16,7 @@
 <title>JINSEOK OH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,700&family=Archivo:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
 <style>
   /* ══════════════════════════════════════════════════════════════
      [1] 색 · 글꼴  ◀ 사이트 분위기를 바꾸려면 여기
@@ -158,8 +158,9 @@
   .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:40px;align-items:center}
   .eyebrow{font-size:14px;font-weight:700;color:var(--accent-2)}
   .hero h1{color:#fff;font-size:clamp(44px,5.2vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.035em;margin-block:12px 18px}
-  .tagline{margin:-6px 0 16px;font:600 clamp(16px,1.6vw,19px)/1.4 var(--display);color:#fff;letter-spacing:-.01em}
-  .tagline b{color:var(--accent-2);font-weight:800;letter-spacing:.02em}
+  /* 캐치프레이즈: 이 줄만 세리프 기울임체(Playfair Display)로 강조 */
+  .tagline{margin:-6px 0 16px;font:italic 500 clamp(18px,1.5vw,20.5px)/1.35 "Playfair Display",Georgia,serif;color:#fff}
+  .tagline b{color:var(--accent-2);font-weight:700}
   .lede{color:#cfd5df;font-size:16.5px;max-width:29em}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-block:22px 28px}
   .chip{font-size:13px;font-weight:700;color:#dfe6f2;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04)}
@@ -541,7 +542,7 @@
             <h1 data-role="name">오진석</h1>
             <!-- 캐치프레이즈: common.js 의 tagline -->
             <p class="tagline" id="tagline"></p>
-            <p class="lede" data-t="hero.intro">교육과 데이터를 잇는 일을 공부하고 있습니다.</p>
+            <p class="lede" data-t="hero.intro">기술을 사람과 아이디어에 연결하는 일을 좋아합니다.</p>
             <div class="chips" id="hero-chips"></div>
             <div class="hero-cta">
               <a class="btn solid" href="#activities"><span data-t="hero.buttonActivities">대외활동 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
@@ -660,9 +661,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790298283"></script>
-<script src="content/ko.js?v=1790298283"></script>
-<script src="content/en.js?v=1790298283"></script>
+<script src="content/common.js?v=1790298397"></script>
+<script src="content/ko.js?v=1790298397"></script>
+<script src="content/en.js?v=1790298397"></script>
 <script>
 (function(){
   "use strict";

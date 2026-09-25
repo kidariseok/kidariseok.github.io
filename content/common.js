@@ -16,8 +16,8 @@
 window.SITE = window.SITE || {};
 SITE.common = {
   notion: "https://app.notion.com/p/",
-  // 첫 화면 이름 밑 캐치프레이즈 (한국어·영어 화면 모두 이 영어 문구). ":" 앞부분은 파란 굵은 글씨
-  tagline: "CONNECTOR: Connecting people, technology, and ideas",
+  // 첫 화면 이름 밑 캐치프레이즈 (한국어·영어 화면 모두 이 영어 문구). ":" 앞부분은 파란 굵은 글씨, 글꼴은 Playfair Display 기울임
+  tagline: "Connector: Connecting people, technology, and ideas",
   heroStats: ["hackathon", "ielts", "volunteer", "activities"],
   featured: ["realthon", "gdsc", "line4", "ktng-overseas"],
   categories: {

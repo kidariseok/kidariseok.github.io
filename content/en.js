@@ -38,7 +38,7 @@ SITE.en = {
     },
     hero: {
       school: "Computer Education, Sungkyunkwan University · Class of 2024",
-      intro: "I study the space where education meets data. In my first undergraduate year I ran communities and led projects at GDSC and LIKELION across 20 recorded activities, and I am now extending that record through data-analysis and language certifications.",
+      intro: "I enjoy connecting technology to people and ideas. Studying AI, data and software, I have built those connections hands-on through GDGoC, hackathons, service planning, teaching and mentoring.",
       buttonActivities: "See activities",
       buttonContact: "Contact"
     },
