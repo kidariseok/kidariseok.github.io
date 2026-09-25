@@ -259,6 +259,16 @@
   }
   .filters button:hover{border-color:var(--ink)}
   .filters button .c{margin-left:5px;color:var(--muted)}
+  /* 4개 축 보기: 버튼 안에 이름 + 작은 설명 두 줄 */
+  .filters.axes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+  .filters.axes button{border-radius:16px;padding:12px 16px;text-align:left;display:grid;gap:2px;align-content:center}
+  .filters.axes button .nm{font:700 15px/1.2 var(--display)}
+  .filters.axes button small{font-size:12px;color:var(--muted);line-height:1.35}
+  .filters.axes button[aria-pressed="true"] small{color:inherit;opacity:.7}
+  /* 보기 전환 (KO/EN 버튼과 같은 모양) */
+  .seg{display:flex;padding:3px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
+  .seg button{border:0;background:none;padding:8px 14px;border-radius:999px;cursor:pointer;font:700 13px/1 var(--sans);color:var(--muted);white-space:nowrap}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
   .filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
   .filters button[aria-pressed="true"] .c{color:inherit;opacity:.7}
   .rows{border-top:1px solid var(--ink)}
@@ -452,6 +462,8 @@
     .row .t .s{white-space:normal}
     .row > .i{display:none}
     .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px}
+    .filters.axes{grid-template-columns:repeat(2,minmax(0,1fr));margin-inline:0;padding-inline:0;overflow:visible}
+    .filters.axes button:first-child{grid-column:1/-1}
     .filters::-webkit-scrollbar{display:none}
     .filters button{flex:none}
     .contact{padding:32px 24px}
@@ -608,6 +620,11 @@
         <div class="wrap">
           <div class="shead">
             <h2><span data-t="activities.title">대외활동</span><span class="count num" data-t="activities.count">20</span></h2>
+            <!-- 보기 전환: 4개 축(기본) / 활동 구분. 축은 common.js 의 axes, 활동마다 axis -->
+            <div class="seg" id="view-toggle" role="group" aria-label="보기 방식">
+              <button type="button" data-view="axes" aria-pressed="true">4개 축</button>
+              <button type="button" data-view="types" aria-pressed="false">활동 구분</button>
+            </div>
           </div>
           <p class="sdesc" data-t="activities.description"></p>
           <div class="filters" id="filters" role="group" aria-label="구분"></div>
@@ -666,9 +683,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790298515"></script>
-<script src="content/ko.js?v=1790298515"></script>
-<script src="content/en.js?v=1790298515"></script>
+<script src="content/common.js?v=1790298961"></script>
+<script src="content/ko.js?v=1790298961"></script>
+<script src="content/en.js?v=1790298961"></script>
 <script>
 (function(){
   "use strict";
@@ -703,7 +720,7 @@
   });
   var ACT = C.activities.map(function(a){
     var k = KO.activities[a.id] || {}, e = EN.activities[a.id] || {};
-    return {id: a.id, s: a.start, e: a.end, cat: a.category, nid: a.notion || "",
+    return {id: a.id, s: a.start, e: a.end, cat: a.category, axis: a.axis, nid: a.notion || "",
       ko: k.title || a.id, en: e.title || k.title || a.id, dko: k.summary || "", den: e.summary || "",
       body: {ko: k.body || [], en: e.body || []}};
   });
@@ -726,6 +743,8 @@
   });
   var HERO_STATS = C.heroStats;
   var FEATURED = C.featured || [];
+  var AXES = C.axes || [];
+  function axisOf(id){ for(var i=0;i<AXES.length;i++){ if(AXES[i].id === id) return AXES[i]; } return null; }
   var TL_SHOW = 6;          // 대외활동 목록에서 처음에 보이는 개수 ('모두 보기'로 나머지를 펼침)
   var T = {};
   Object.keys(KO.ui).forEach(function(k){ T[k] = {ko: KO.ui[k], en: EN.ui[k] != null ? EN.ui[k] : KO.ui[k]}; });
@@ -734,6 +753,7 @@
   var lang = "ko";        // 처음 열었을 때의 언어. "en" 으로 바꾸면 영어로 시작합니다
   var filter = "all";
   var tlOpen = false;       // 대외활동 목록을 모두 펼쳤는지
+  var view = AXES.length ? "axes" : "types";   // 대외활동 보기: "axes"(4개 축, 기본) / "types"(활동 구분)
   var listScroll = 0;
 
   function el(tag, cls, text){
@@ -1020,23 +1040,31 @@
     x.focus();
   }
 
+  // 활동 a 가 지금 고른 구분(또는 축)에 들어가는지
+  function inFilter(a){
+    if(filter === "all") return true;
+    return view === "axes" ? a.axis === filter : a.cat === filter;
+  }
+
   function renderFilters(){
     var box = document.getElementById("filters");
     box.textContent = "";
+    box.className = "filters" + (view === "axes" ? " axes" : "");
     var counts = {};
-    ACT.forEach(function(a){ counts[a.cat] = (counts[a.cat]||0)+1; });
+    ACT.forEach(function(a){ var k = view === "axes" ? a.axis : a.cat; counts[k] = (counts[k]||0)+1; });
 
-    var list = [{key:"all", label:T.all, n:ACT.length}];
-    Object.keys(CAT).forEach(function(k){
-      if(counts[k]) list.push({key:k, label:{ko:CAT[k].ko, en:CAT[k].en}, n:counts[k]});
-    });
+    var list = [{key:"all", label:T.all[lang], n:ACT.length}];
+    if(view === "axes") AXES.forEach(function(x){ if(counts[x.id]) list.push({key:x.id, label:x.name, sub:x.sub, n:counts[x.id]}); });
+    else Object.keys(CAT).forEach(function(k){ if(counts[k]) list.push({key:k, label:CAT[k][lang], n:counts[k]}); });
 
     list.forEach(function(f){
       var b = el("button");
       b.type = "button";
       b.setAttribute("aria-pressed", filter === f.key ? "true" : "false");
-      b.appendChild(document.createTextNode(f.label[lang]));
-      b.appendChild(el("span","c num", String(f.n)));
+      var name = el("span","nm", f.label);
+      name.appendChild(el("span","c num", String(f.n)));
+      b.appendChild(name);
+      if(f.sub) b.appendChild(el("small", null, f.sub));
       b.addEventListener("click", function(){
         filter = f.key;
         tlOpen = false;
@@ -1045,6 +1073,11 @@
       });
       box.appendChild(b);
     });
+
+    document.querySelectorAll("#view-toggle button").forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-view") === view));
+      b.textContent = b.getAttribute("data-view") === "axes" ? T.viewAxes[lang] : T.viewTypes[lang];
+    });
   }
 
   // 대외활동 목록: 한 줄에 날짜 · 구분 · 제목(+요약).
@@ -1052,7 +1085,7 @@
   function renderTimeline(){
     var box = document.getElementById("timeline");
     box.textContent = "";
-    var rows = ACT.filter(function(a){ return filter === "all" || a.cat === filter; });
+    var rows = ACT.filter(inFilter);
     var shown = rows.length > TL_SHOW ? TL_SHOW : rows.length;
     if(filter === "all" && !tlOpen && FEATURED.length){
       rows = FEATURED.map(function(id){ return ACT[byId(id)]; }).filter(Boolean);
@@ -1065,7 +1098,8 @@
       r.href = "#a/" + a.id;
       r.hidden = !tlOpen && n >= shown;
       r.appendChild(el("span","d num", fmtDate(a.s, a.e)));
-      r.appendChild(el("span","c", CAT[a.cat][lang]));
+      var ax = axisOf(a.axis);
+      r.appendChild(el("span","c", view === "axes" && ax ? ax.name : CAT[a.cat][lang]));
       var t = el("span","t");
       t.appendChild(el("b", null, a[lang]));
       var d = lang === "ko" ? a.dko : a.den;
@@ -1320,6 +1354,16 @@
   try { saved = localStorage.getItem("jso-lang"); } catch(err){}
   document.getElementById("btn-ko").addEventListener("click", function(){ setLang("ko"); });
   document.getElementById("btn-en").addEventListener("click", function(){ setLang("en"); });
+  document.querySelectorAll("#view-toggle button").forEach(function(b){
+    b.addEventListener("click", function(){
+      view = b.getAttribute("data-view");
+      filter = "all";
+      tlOpen = false;
+      renderFilters();
+      renderTimeline();
+    });
+  });
+  if(!AXES.length) document.getElementById("view-toggle").hidden = true;
   document.getElementById("tl-more").addEventListener("click", function(){
     tlOpen = !tlOpen;
     renderTimeline();

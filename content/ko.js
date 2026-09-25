@@ -73,6 +73,8 @@ SITE.ko = {
     close: "닫기",
     all: "전체",
     showAll: "{n}개 모두 보기",
+    viewAxes: "4개 축",
+    viewTypes: "활동 구분",
     showLess: "접기",
     year: "{y}년",
     groupCount: "{n}개",

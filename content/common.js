@@ -20,6 +20,13 @@ SITE.common = {
   tagline: "Connector: Connecting people, technology, and ideas",
   heroStats: ["hackathon", "ielts", "volunteer", "activities"],
   featured: ["realthon", "gdsc", "line4", "ktng-overseas"],
+  // 대외활동 '4개 축' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. 이름은 한·영 공통
+  axes: [
+    {id:"technology", name:"Technology", sub:"AI · Data · Software"},
+    {id:"people", name:"People", sub:"Education · Mentoring · Volunteering"},
+    {id:"leadership", name:"Leadership", sub:"PM · Hackathon · Community"},
+    {id:"global", name:"Global", sub:"International · English · Exchange"}
+  ],
   categories: {
     competition: {color:"b1", icon:"ic-trophy"},
     external: {color:"b2", icon:"ic-globe"},
@@ -47,129 +54,129 @@ SITE.common = {
     {
       id: "intl-publication",
       start: "2026-09-03",
-      category: "course",
+      category: "course", axis:"technology",
       notion: "3d0dd7c9423e80cea77dcb29b860b857"
     },
     {
       id: "realthon",
       start: "2024-12-06",
       end: "2024-12-07",
-      category: "competition",
+      category: "competition", axis:"leadership",
       notion: "3bbdd7c9423e80ee8b8ef666a7e571d2"
     },
     {
       id: "line4",
       start: "2024-11-16",
-      category: "competition",
+      category: "competition", axis:"leadership",
       notion: "3bbdd7c9423e80a2a597da537213f270"
     },
     {
       id: "ktng-overseas",
       start: "2024-10-29",
       end: "2025-01-17",
-      category: "volunteer",
+      category: "volunteer", axis:"global",
       notion: "3bbdd7c9423e800188c5c527021715d2"
     },
     {
       id: "creverse",
       start: "2024-09-26",
       end: "2024-12-28",
-      category: "external",
+      category: "external", axis:"people",
       notion: "3bbdd7c9423e8077b654e011ee7a5081"
     },
     {
       id: "edutech-expo",
       start: "2024-09-23",
-      category: "external",
+      category: "external", axis:"technology",
       notion: "3bbdd7c9423e802ebfe9ebd64f5b9d8d"
     },
     {
       id: "speech-mentors",
       start: "2024-09-06",
       end: "2024-11-09",
-      category: "external",
+      category: "external", axis:"global",
       notion: "3bbdd7c9423e80c8813cf352ed856ed9"
     },
     {
       id: "odyvice",
       start: "2024-09-01",
       end: "2025-02-28",
-      category: "external",
+      category: "external", axis:"people",
       notion: "3bbdd7c9423e8066ac60f53bfed2bc5f"
     },
     {
       id: "icists",
       start: "2024-08-07",
       end: "2024-08-11",
-      category: "external",
+      category: "external", axis:"global",
       notion: "3bbdd7c9423e8030b293ee9bb512796d"
     },
     {
       id: "goormthon",
       start: "2024-07-22",
       end: "2025-02-28",
-      category: "club",
+      category: "club", axis:"leadership",
       notion: "3bbdd7c9423e808e910cca08abc718b6"
     },
-    {id:"ched", start:"2024-07-17", category:"campus", notion:"3bbdd7c9423e8016946ecaf4511b8813"},
+    {id:"ched", start:"2024-07-17", category:"campus", axis:"global", notion:"3bbdd7c9423e8016946ecaf4511b8813"},
     {
       id: "dreamon",
       start: "2024-05-21",
-      category: "volunteer",
+      category: "volunteer", axis:"people",
       notion: "3bbdd7c9423e80e4b8d3e65e4c295448"
     },
     {
       id: "ba-dive",
       start: "2024-05-13",
-      category: "competition",
+      category: "competition", axis:"technology",
       notion: "3bbdd7c9423e800c847cc4c7f34c4046"
     },
     {
       id: "s-global",
       start: "2024-04-18",
-      category: "competition",
+      category: "competition", axis:"global",
       notion: "3bbdd7c9423e8018bc23dc8f365b965e"
     },
     {
       id: "premed",
       start: "2024-03-19",
       end: "2025-03-31",
-      category: "external",
+      category: "external", axis:"people",
       notion: "3bbdd7c9423e8053a7f4d551c51ad66e"
     },
     {
       id: "likelion12",
       start: "2024-03-02",
       end: "2025-02-28",
-      category: "club",
+      category: "club", axis:"leadership",
       notion: "3bbdd7c9423e803693f8ef83c8e04db6"
     },
     {
       id: "gdsc",
       start: "2024-03-02",
       end: "2025-02-28",
-      category: "external",
+      category: "external", axis:"leadership",
       notion: "3bbdd7c9423e8045ac49d6324b76536e"
     },
     {
       id: "trade-ai",
       start: "2024-02-20",
       end: "2024-02-22",
-      category: "external",
+      category: "external", axis:"technology",
       notion: "3bbdd7c9423e80af818dfc2265242c89"
     },
     {
       id: "future-tech",
       start: "2024-02-13",
       end: "2024-02-14",
-      category: "course",
+      category: "course", axis:"technology",
       notion: "3bbdd7c9423e80b690b0d90c1eef856f"
     },
     {
       id: "worldvision",
       start: "2024-02-09",
       end: "2024-07-16",
-      category: "volunteer",
+      category: "volunteer", axis:"global",
       notion: "3bbdd7c9423e80939f16f631e7660eca"
     }
   ],

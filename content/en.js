@@ -91,6 +91,8 @@ SITE.en = {
     close: "Close",
     all: "All",
     showAll: "Show all {n}",
+    viewAxes: "4 axes",
+    viewTypes: "By type",
     showLess: "Show less",
     year: "{y}",
     groupCount: "{n} items",
