@@ -109,7 +109,7 @@ SITE.common = {
       id: "icists",
       start: "2024-08-07",
       end: "2024-08-11",
-      category: "external", axis:"global",
+      category: "external", axis:"technology",
       notion: "3bbdd7c9423e8030b293ee9bb512796d"
     },
     {
