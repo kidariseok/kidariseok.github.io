@@ -49,7 +49,7 @@ SITE.en = {
     // 첫 화면 바로 아래 '방향' 섹션. period 는 오른쪽 작은 기간 글씨, adapt.since 이후에 딴 자격증이 ADAPT 카드 오른쪽에 자동으로 나옵니다
     story: {
       kicker: "WHAT AM I BECOMING?",
-      title: "I explored not simply to do more, but to discover who I am becoming.",
+      title: "Through diverse experiences, I found my own direction.",
       explore: {label:"EXPLORE", period:"2024", text:"Since entering university, I have explored AI and data, service planning, education, and global activities through hands-on experiences. These experiences helped me discover what I care about and how I want to contribute."},
       discover: {label:"DISCOVER", period:"2024 - 2025", text:"Through these experiences, I discovered that my interest lies not only in technology itself, but in where technology meets people and industry. I found greater meaning in understanding technology and connecting it to real-world problems."},
       adapt: {
