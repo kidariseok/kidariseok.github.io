@@ -276,7 +276,7 @@
   .filters button:hover{border-color:var(--ink)}
   .filters button .c{margin-left:5px;color:var(--muted)}
   /* 4개 축 보기: 버튼 안에 이름 + 작은 설명 두 줄 */
-  .filters.axes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+  .filters.axes{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
   .filters.axes button{border-radius:16px;padding:12px 16px;text-align:left;display:grid;gap:2px;align-content:center}
   .filters.axes button .nm{font:700 15px/1.2 var(--display)}
   .filters.axes button small{font-size:12px;color:var(--muted);line-height:1.35}
@@ -481,7 +481,7 @@
     .row > .i{display:none}
     .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px}
     .filters.axes{grid-template-columns:repeat(2,minmax(0,1fr));margin-inline:0;padding-inline:0;overflow:visible}
-    .filters.axes button:first-child{grid-column:1/-1}
+    .filters.axes button:first-child,.filters.axes button:last-child:nth-child(even){grid-column:1/-1}
     .filters::-webkit-scrollbar{display:none}
     .filters button{flex:none}
     .contact{padding:32px 24px}
@@ -638,7 +638,7 @@
         <div class="wrap">
           <div class="shead">
             <h2><span data-t="activities.title">대외활동</span><span class="count num" data-t="activities.count">20</span></h2>
-            <!-- 보기 전환: 분야별(4개 축, 기본) / 활동별. 축은 common.js 의 axes, 활동마다 axis -->
+            <!-- 보기 전환: 분야별(기본) / 활동별. 축은 common.js 의 axes, 활동마다 axis -->
             <div class="seg" id="view-toggle" role="group" aria-label="보기 방식">
               <button type="button" data-view="axes" aria-pressed="true">분야별</button>
               <button type="button" data-view="types" aria-pressed="false">활동별</button>
@@ -701,9 +701,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790299540"></script>
-<script src="content/ko.js?v=1790299540"></script>
-<script src="content/en.js?v=1790299540"></script>
+<script src="content/common.js?v=1790299717"></script>
+<script src="content/ko.js?v=1790299717"></script>
+<script src="content/en.js?v=1790299717"></script>
 <script>
 (function(){
   "use strict";
@@ -762,6 +762,7 @@
   var HERO_STATS = C.heroStats;
   var FEATURED = C.featured || [];
   var AXES = C.axes || [];
+  function tr(v){ return v && typeof v === "object" ? (v[lang] || v.ko) : v; }   // {ko, en} 이면 지금 언어 글자
   function axisOf(id){ for(var i=0;i<AXES.length;i++){ if(AXES[i].id === id) return AXES[i]; } return null; }
   var TL_SHOW = 6;          // 대외활동 목록에서 처음에 보이는 개수 ('모두 보기'로 나머지를 펼침)
   var T = {};
@@ -771,7 +772,7 @@
   var lang = "ko";        // 처음 열었을 때의 언어. "en" 으로 바꾸면 영어로 시작합니다
   var filter = "all";
   var tlOpen = false;       // 대외활동 목록을 모두 펼쳤는지
-  var view = AXES.length ? "axes" : "types";   // 대외활동 보기: "axes"(4개 축, 기본) / "types"(활동 구분)
+  var view = AXES.length ? "axes" : "types";   // 대외활동 보기: "axes"(분야별, 기본) / "types"(활동별)
   var listScroll = 0;
 
   function el(tag, cls, text){
@@ -1083,7 +1084,7 @@
     ACT.forEach(function(a){ var k = view === "axes" ? a.axis : a.cat; counts[k] = (counts[k]||0)+1; });
 
     var list = [{key:"all", label:T.all[lang], n:ACT.length}];
-    if(view === "axes") AXES.forEach(function(x){ if(counts[x.id]) list.push({key:x.id, label:x.name, sub:x.sub, n:counts[x.id]}); });
+    if(view === "axes") AXES.forEach(function(x){ if(counts[x.id]) list.push({key:x.id, label:tr(x.name), sub:tr(x.sub), n:counts[x.id]}); });
     else Object.keys(CAT).forEach(function(k){ if(counts[k]) list.push({key:k, label:CAT[k][lang], n:counts[k]}); });
 
     list.forEach(function(f){
@@ -1128,7 +1129,7 @@
       r.hidden = !tlOpen && n >= shown;
       r.appendChild(el("span","d num", fmtDate(a.s, a.e)));
       var ax = axisOf(a.axis);
-      r.appendChild(el("span","c", view === "axes" && ax ? ax.name : CAT[a.cat][lang]));
+      r.appendChild(el("span","c", view === "axes" && ax ? tr(ax.name) : CAT[a.cat][lang]));
       var t = el("span","t");
       t.appendChild(el("b", null, a[lang]));
       var d = lang === "ko" ? a.dko : a.den;

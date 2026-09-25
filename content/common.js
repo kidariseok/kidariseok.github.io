@@ -20,12 +20,13 @@ SITE.common = {
   tagline: "Connector: Connecting people, technology, and ideas",
   heroStats: ["hackathon", "ielts", "volunteer", "activities"],
   featured: ["realthon", "gdsc", "line4", "ktng-overseas"],
-  // 대외활동 '4개 축' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. 이름은 한·영 공통
+  // 대외활동 '분야별' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. name · sub 는 ko / en
   axes: [
-    {id:"technology", name:"Technology", sub:"AI · Data · Software"},
-    {id:"people", name:"People", sub:"Education · Mentoring · Volunteering"},
-    {id:"leadership", name:"Leadership", sub:"PM · Hackathon · Community"},
-    {id:"global", name:"Global", sub:"International · English · Exchange"}
+    {id:"technology", name:{ko:"기술", en:"Technology"}, sub:{ko:"AI · 데이터 · 소프트웨어", en:"AI · Data · Software"}},
+    {id:"people", name:{ko:"사람", en:"People"}, sub:{ko:"교육 · 멘토링 · 봉사", en:"Education · Mentoring · Volunteering"}},
+    {id:"leadership", name:{ko:"리더십", en:"Leadership"}, sub:{ko:"PM · 해커톤 · 커뮤니티", en:"PM · Hackathon · Community"}},
+    {id:"global", name:{ko:"글로벌", en:"Global"}, sub:{ko:"국제 · 영어 · 교류", en:"International · English · Exchange"}},
+    {id:"explore", name:{ko:"탐색 · 견문", en:"Explore"}, sub:{ko:"강의 · 박람회", en:"Lectures · Expos"}}
   ],
   categories: {
     competition: {color:"b1", icon:"ic-trophy"},
@@ -54,7 +55,7 @@ SITE.common = {
     {
       id: "intl-publication",
       start: "2026-09-03",
-      category: "course", axis:"technology",
+      category: "course", axis:"explore",
       notion: "3d0dd7c9423e80cea77dcb29b860b857"
     },
     {
@@ -87,7 +88,7 @@ SITE.common = {
     {
       id: "edutech-expo",
       start: "2024-09-23",
-      category: "external", axis:"technology",
+      category: "external", axis:"explore",
       notion: "3bbdd7c9423e802ebfe9ebd64f5b9d8d"
     },
     {
@@ -169,7 +170,7 @@ SITE.common = {
       id: "future-tech",
       start: "2024-02-13",
       end: "2024-02-14",
-      category: "course", axis:"technology",
+      category: "course", axis:"explore",
       notion: "3bbdd7c9423e80b690b0d90c1eef856f"
     },
     {
