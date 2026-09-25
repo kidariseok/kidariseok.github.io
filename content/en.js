@@ -73,7 +73,7 @@ SITE.en = {
       totalUnit: "KRW"
     },
     contact: {
-      title: "The record is still growing.",
+      title: "Not stopping at experience, but building what comes next.",
       description: "",
       blog: "Naver Blog: Jinseok's Record"
     },
@@ -119,10 +119,10 @@ SITE.en = {
     ["Writing", "blog.naver.com/kidariseok"]
   ],
   tiles: {
-    activities: {label:"Recorded activities", unit:"", note:"Feb 2024 - Sep 2026"},
+    activities: {label:"Recorded activities", unit:"", note:"{from} - {to}"},
     certs: {label:"Certifications", unit:"", note:"3 computing · 3 English · 1 other"},
     scholarships: {label:"Campus scholarships", unit:"", note:"Over $3,500"},
-    volunteer: {label:"Volunteer hours", unit:"h+", note:"1365 certificate · 41 sessions"},
+    volunteer: {label:"Volunteer hours", unit:"h+", note:"1365 certificate · {n} sessions"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
     dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments and built my global perspective."},
@@ -200,6 +200,7 @@ SITE.en = {
     "intl-publication": {
       title: "The Art and Science of International Publication: A Practical Roadmap from Research Development to Scholarly Impact",
       summary: "Attended a Department of English lecture on the process of international scholarly publication.",
+      short: "Attended an English dept. lecture on international scholarly publishing.",
       body: [
         {h:"AI in L2 education: where the research is going"},
         {
@@ -252,6 +253,7 @@ SITE.en = {
     realthon: {
       title: "RE:ALThon (host)",
       summary: "As SKKU GDSC's HR lead, hosted a 90-person hackathon and secured roughly $4,300 in funding from three universities' software programs.",
+      short: "HR lead of SKKU GDSC; hosted a 90-person hackathon and raised ~$4,300.",
       body: [
         {h:"How it came together"},
         {p:"<b>1. Trying to run it online and offline at once</b>"},
@@ -271,6 +273,7 @@ SITE.en = {
     line4: {
       title: "LIKELION Line-4 Hackathon",
       summary: "Served as PM, owning planning and overall direction, and built low-fidelity wireframes in Figma to define screen structure and layout before handoff to designers.",
+      short: "PM for planning and direction; built low-fi wireframes in Figma.",
       body: [
         {p:"At the Line-4 Hackathon I took the PM role for a team of five."},
         {
@@ -281,6 +284,7 @@ SITE.en = {
     "ktng-overseas": {
       title: "KT&G Sangsang Withus Overseas Volunteer Corps",
       summary: "Deployed to Bogor, Indonesia for 177 hours of education and environmental-improvement volunteering.",
+      short: "177 hours of education and environmental volunteering in Bogor, Indonesia.",
       body: [
         {
           ul: [
@@ -306,6 +310,7 @@ SITE.en = {
     creverse: {
       title: "Creverse Campus Crew, 1st cohort",
       summary: "Handled marketing work including Instagram promotional assets and research into the current education market.",
+      short: "Made Instagram promo assets and researched the education market.",
       body: [
         {
           p: "As part of the first Creverse Campus Crew cohort I handled marketing: producing Instagram promotional assets and researching the state of the education market."
@@ -315,6 +320,7 @@ SITE.en = {
     "edutech-expo": {
       title: "2024 EduTech Expo",
       summary: "Attended the expo to follow the latest edtech trends and took an Adobe masterclass, broadening my knowledge on my own initiative.",
+      short: "Followed the latest edtech trends and took an Adobe masterclass.",
       body: [
         {
           p: "On 23 September I went to the EduTech Expo at COEX. I had already signed up on my own - and then my Educational Multimedia class set attending it as an assignment, which I found funny."
@@ -327,6 +333,7 @@ SITE.en = {
     "speech-mentors": {
       title: "KT&G Sangsang Univ Global Speech Mentors",
       summary: "Led a team delivering speech mentoring to foreign residents in Korea. Through conversations with a Pakistani resident, prepared a speech on recognising cultural difference and raising multicultural awareness.",
+      short: "Team lead mentoring foreign residents in Korea on multicultural speeches.",
       body: [
         {
           p: "I led a team running speech mentoring for foreign residents in Korea. Listening to and talking with a Pakistani resident here, we prepared a speech together on recognising cultural difference and raising multicultural awareness."
@@ -350,6 +357,7 @@ SITE.en = {
     odyvice: {
       title: "Odyvice Undergraduate Mentor",
       summary: "Mentored middle and high school students on study methods, mental wellbeing and more.",
+      short: "Mentored secondary students on study habits and wellbeing.",
       body: [
         {
           ul: [
@@ -375,6 +383,7 @@ SITE.en = {
     icists: {
       title: "KAIST ICISTS HACKAFAIR",
       summary: "Developed an idea over five days, built the materials in English and worked through mentoring sessions with overseas mentors in English.",
+      short: "Developed an idea over five days with overseas mentors, in English.",
       body: [
         {
           p: "Over five days we developed an idea, built all the materials in English, and ran our mentoring sessions with overseas mentors in English."
@@ -398,6 +407,7 @@ SITE.en = {
     goormthon: {
       title: "Goormthon Univ 3rd cohort: campus organiser",
       summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
+      short: "Campus organiser; built club programs and ran weekly study sessions.",
       body: [
         {h:"On campus"},
         {
@@ -415,6 +425,7 @@ SITE.en = {
     ched: {
       title: "Campus briefing for the Philippine CHED delegation",
       summary: "Introduced CHED officials to the interdisciplinary work of SKKU's College of Computing and Informatics, drawing strong interest.",
+      short: "Presented SKKU computing's interdisciplinary work to CHED officials.",
       body: [
         {h:"Representing the school in front of an international delegation"},
         {
@@ -435,6 +446,7 @@ SITE.en = {
     dreamon: {
       title: "Dream On School",
       summary: "Assisted classes for adolescents with developmental disabilities, among other activities.",
+      short: "Assisted classes for adolescents with developmental disabilities.",
       body: [
         {h:"What I did"},
         {
@@ -462,6 +474,7 @@ SITE.en = {
     "ba-dive": {
       title: "SKKU-BA-DIVE application",
       summary: "Applied with fellow GDSC members, passed the first round and was not selected at the final interview.",
+      short: "Applied with GDSC peers; passed round one, not selected at the final interview.",
       body: [
         {
           p: "I applied together with people from GDSC, passed the first round, and was not selected at the final interview."
@@ -472,6 +485,7 @@ SITE.en = {
     "s-global": {
       title: "S-Global Challenger application",
       summary: "Entered the university's overseas-dispatch competition together with fellow GDSC members.",
+      short: "Entered SKKU's overseas-dispatch competition with GDSC peers.",
       body: [
         {
           ul: [
@@ -514,6 +528,7 @@ SITE.en = {
     premed: {
       title: "FreeMed",
       summary: "Led the part of the team providing home health-care visits to elderly residents living alone in jjokbang districts.",
+      short: "Led home health-care visits for elderly residents living alone.",
       body: [
         {
           p: "For about a year I led the home health-care visiting part of the team, working with elderly residents living alone in jjokbang districts."
@@ -573,6 +588,7 @@ SITE.en = {
     gdsc: {
       title: "Google Developer Student Clubs",
       summary: "Within the university's software program, hosted monthly global IT video lectures and planned a global hackathon for the second half of the year. As a Core member, led the Administration team and handled most speaker outreach.",
+      short: "Core member; led Administration and speaker outreach for global IT talks.",
       body: [
         {h:"Bringing global IT experts to campus"},
         {p:"<b>Networking built on foot: turning a limit into an opening</b>"},
@@ -596,6 +612,7 @@ SITE.en = {
     "trade-ai": {
       title: "2024 Undergraduate Trade & AI Camp",
       summary: "Took part in the trade-and-AI camp for undergraduates run by the Korea International Trade Association.",
+      short: "Joined KITA's trade-and-AI camp for undergraduates.",
       body: [
         {
           ul: [
@@ -665,6 +682,7 @@ SITE.en = {
     worldvision: {
       title: "World Vision",
       summary: "Translated World Vision sponsor letters into English: 120 letters, 40 hours in total.",
+      short: "Translated 120 World Vision letters into English (40 hours).",
       body: [
         {
           ul: [

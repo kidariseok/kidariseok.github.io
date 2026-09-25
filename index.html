@@ -223,6 +223,10 @@
   .prose{display:grid;gap:18px;font-size:16.5px;line-height:1.9;max-width:62ch}
   .subh{font-weight:800;color:var(--ink);margin-bottom:12px}
   .dl{display:grid;grid-template-columns:auto 1fr;gap:12px 20px;margin:0;padding:22px 24px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line)}
+  /* 기본 정보 카드 오른쪽 위 학교 로고 (위쪽 줄 글자가 로고와 겹치지 않게 오른쪽 여백) */
+  .profile-card{position:relative}
+  .profile-card .dl{padding-right:96px}
+  .school-logo{position:absolute;top:18px;right:18px;width:64px;height:auto}
   .dl dt{font-size:14px;color:var(--muted);white-space:nowrap}
   .dl dd{margin:0;font-size:15px;font-weight:700;color:var(--ink)}
   .dl dd a{color:var(--accent-text)}
@@ -499,7 +503,10 @@
     .filters::-webkit-scrollbar{display:none}
     .filters button{flex:none}
     .contact{padding:32px 24px}
+    .contact::after{right:-190px;bottom:-230px}
     .dl{padding:18px}
+    .profile-card .dl{padding-right:72px}
+    .school-logo{top:14px;right:14px;width:48px}
     .dtop.has-cov{grid-template-columns:1fr;gap:22px}
     .pager{grid-template-columns:1fr}
     .pager a.nx{text-align:left}
@@ -634,7 +641,11 @@
             </div>
             <div>
               <p class="subh" data-t="about.profileTitle">기본 정보</p>
-              <dl class="dl" id="profile-dl"></dl>
+              <!-- 기본 정보 카드. 오른쪽 위 학교 로고는 img/skku.png -->
+              <div class="profile-card">
+                <img class="school-logo" src="img/skku.png" alt="성균관대학교 로고" width="240" height="240" loading="lazy">
+                <dl class="dl" id="profile-dl"></dl>
+              </div>
             </div>
           </div>
         </div>
@@ -688,7 +699,7 @@
         <div class="wrap">
           <div class="contact" id="contact">
             <div>
-              <h2 data-t="contact.title">기록은 계속 쌓이는 중입니다.</h2>
+              <h2 data-t="contact.title">경험에 머무르지 않고, 다음을 만들어갑니다.</h2>
               <p data-t="contact.description"></p>
             </div>
             <div class="cta">
@@ -715,9 +726,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790300500"></script>
-<script src="content/ko.js?v=1790300500"></script>
-<script src="content/en.js?v=1790300500"></script>
+<script src="content/common.js?v=1790302672"></script>
+<script src="content/ko.js?v=1790302672"></script>
+<script src="content/en.js?v=1790302672"></script>
 <script>
 (function(){
   "use strict";
@@ -754,6 +765,7 @@
     var k = KO.activities[a.id] || {}, e = EN.activities[a.id] || {};
     return {id: a.id, s: a.start, e: a.end, cat: a.category, axis: a.axis, nid: a.notion || "",
       ko: k.title || a.id, en: e.title || k.title || a.id, dko: k.summary || "", den: e.summary || "",
+      sko: k.short || k.summary || "", sen: e.short || e.summary || "",   // short: 목록 한 줄용 짧은 요약 (없으면 summary)
       body: {ko: k.body || [], en: e.body || []}};
   });
   var CERT_GROUPS = C.certGroups.map(function(g){
@@ -874,8 +886,24 @@
     return null;
   }
   // 숫자 한 개: 큰 숫자 + 작은 단위 (예: 212 시간+)
+  // 자동 계산 값: 대외활동 수와 기간, 봉사시간(분 합계 → 시간, 소수점 버림)과 횟수
+  function autoVals(id){
+    if(id === "activities"){
+      var from = ACT[0].s, to = ACT[0].e || ACT[0].s;
+      ACT.forEach(function(a){ if(a.s < from) from = a.s; if((a.e || a.s) > to) to = a.e || a.s; });
+      var r = fmtDate(from.slice(0,8) + "01", to.slice(0,8) + "02").split(" - ");
+      return {v: String(ACT.length), from: r[0], to: r[1] || r[0]};
+    }
+    if(id === "volunteer" && C.volunteerLog){
+      var min = 0, recs = C.volunteerLog.records;
+      recs.forEach(function(x){ min += x.minutes; });
+      return {v: String(Math.floor(min / 60)), n: recs.length};
+    }
+    return {};
+  }
+  function noteText(t){ return fill(t.n[lang], autoVals(t.id)); }
   function valueEl(cls, t){
-    var v = el("b", cls, t.vl[lang] || t.v);
+    var v = el("b", cls, t.v === "auto" ? autoVals(t.id).v : (t.vl[lang] || t.v));
     if(t.u[lang]) v.appendChild(el("small", null, t.u[lang].trim()));
     return v;
   }
@@ -976,7 +1004,7 @@
       }
       c.appendChild(valueEl("v num", t));
       c.appendChild(el("span","k", t.k[lang]));
-      c.appendChild(rich("span","n", t.n[lang]));   // <b>숫자</b> 로 강조할 수 있습니다
+      c.appendChild(rich("span","n", noteText(t)));   // <b>숫자</b> 로 강조할 수 있습니다
       if(t.more[lang]){                              // 마우스를 올리면 아래로 펼쳐지는 설명 (휴대폰은 눌러서 열고 닫기)
         c.classList.add("has-more");
         c.appendChild(el("span","more", t.more[lang]));
@@ -1146,7 +1174,7 @@
       r.appendChild(el("span","c", view === "axes" && ax ? tr(ax.name) : CAT[a.cat][lang]));
       var t = el("span","t");
       t.appendChild(el("b", null, a[lang]));
-      var d = lang === "ko" ? a.dko : a.den;
+      var d = lang === "ko" ? a.sko : a.sen;
       if(d) t.appendChild(el("span","s", d));
       r.appendChild(t);
       r.appendChild(icon("ic-arrow"));

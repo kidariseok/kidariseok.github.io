@@ -9,7 +9,7 @@
        2) ko.js 와 en.js 의 activities 에 같은 id 로 title · summary · body 추가
        3) 사진이 있으면 img/ 에 넣고 아래 photos 에 id 로 등록
    · activities 는 날짜가 늦은 것부터 위에서 아래로 적습니다.
-   · tiles 의 value 는 기록 요약 카드의 큰 숫자입니다(손으로 적는 값).
+   · tiles 의 value 는 기록 요약 카드의 큰 숫자입니다. "auto" 는 자동 계산(대외활동 수 · 봉사시간).
    · heroStats 는 첫 화면 아래 숫자 상자에 넣을 tiles 의 id 4개입니다.
    · featured 는 '대표 활동' 검은 카드로 보여 줄 activities 의 id 4개입니다 (사진이 있으면 카드 오른쪽에 나옴).
    ══════════════════════════════════════════════════════════════ */
@@ -207,10 +207,11 @@ SITE.common = {
     {id:"co-curricular", amount:500000}
   ],
   tiles: [
-    {id:"activities", icon:"ic-globe", value:"20"},
+    // value 가 "auto" 이면 사이트가 직접 계산합니다 (대외활동 수 = activities 개수, 봉사시간 = volunteerLog 합계)
+    {id:"activities", icon:"ic-globe", value:"auto"},
     {id:"certs", icon:"ic-medal", value:"7"},
     {id:"scholarships", icon:"ic-star", value:"3"},
-    {id:"volunteer", icon:"ic-heart", value:"212"},
+    {id:"volunteer", icon:"ic-heart", value:"auto"},
     {id:"ielts", icon:"ic-lang", value:"8.0"},
     // TOEIC 카드를 되돌리려면 아래 줄을 {id:"toeic", icon:"ic-book", value:"975"}, 로 바꾸세요
     {id:"dulwich", icon:"ic-globe", value:"5", logo:"dulwich_crest.png"},
