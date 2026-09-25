@@ -264,16 +264,21 @@
   .rows{border-top:1px solid var(--ink)}
   .row{
     display:grid;grid-template-columns:150px 80px minmax(0,1fr) auto;gap:16px;align-items:center;
-    padding:18px 8px;border-bottom:1px solid var(--line);color:var(--text);transition:background .2s
+    padding:18px 16px;border-bottom:1px solid var(--line);color:var(--text)
   }
-  .row:hover{text-decoration:none;background:var(--paper)}
+  /* 목록 한 줄: 마우스를 올리거나 키보드로 고르면 검은 바탕 + 흰 글씨 */
+  .row{border-radius:12px;transition:background .25s var(--ease),color .25s,border-color .25s}
+  .row:hover,.row:focus-visible{text-decoration:none;background:var(--block);border-bottom-color:transparent}
+  .row:hover .t b,.row:focus-visible .t b{color:#fff}
+  .row:hover .d,.row:hover .t .s,.row:focus-visible .d,.row:focus-visible .t .s{color:var(--on-block-2)}
+  .row:hover .c,.row:focus-visible .c{color:var(--accent-2)}
   .row .d{font:600 14px var(--display);color:var(--muted)}
   .row .c{font-size:13px;font-weight:700;color:var(--accent-text)}
   .row .t{display:grid;gap:2px;min-width:0}
   .row .t b{color:var(--ink)}
   .row .t .s{font-size:14px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .row > .i{width:18px;height:18px;color:var(--muted);transition:transform .3s var(--ease),color .2s}
-  .row:hover > .i{color:var(--accent-text);transform:translateX(3px)}
+  .row:hover > .i,.row:focus-visible > .i{color:#fff;transform:translateX(3px)}
   .all{display:flex;justify-content:center;margin-top:24px}
   .all:has(> [hidden]){display:none}
 
@@ -440,7 +445,7 @@
     .fcard .ph{aspect-ratio:16/9;order:-1}
     .tile{padding:18px 16px}
     .tile .v{font-size:28px}
-    .row{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:16px 4px}
+    .row{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:16px 12px}
     .row .d{grid-column:1;grid-row:1}
     .row .c{grid-column:2;grid-row:1;text-align:right}
     .row .t{grid-column:1/-1}
@@ -661,9 +666,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790298397"></script>
-<script src="content/ko.js?v=1790298397"></script>
-<script src="content/en.js?v=1790298397"></script>
+<script src="content/common.js?v=1790298515"></script>
+<script src="content/ko.js?v=1790298515"></script>
+<script src="content/en.js?v=1790298515"></script>
 <script>
 (function(){
   "use strict";
@@ -1042,16 +1047,23 @@
     });
   }
 
-  // 대외활동 목록: 한 줄에 날짜 · 구분 · 제목(+요약). 처음엔 TL_SHOW 개만 보이고 버튼으로 펼침
+  // 대외활동 목록: 한 줄에 날짜 · 구분 · 제목(+요약).
+  // '전체'는 처음에 대표 활동(featured) 4개만, 다른 구분은 TL_SHOW 개까지 보이고 '모두 보기'로 펼침
   function renderTimeline(){
     var box = document.getElementById("timeline");
     box.textContent = "";
     var rows = ACT.filter(function(a){ return filter === "all" || a.cat === filter; });
+    var shown = rows.length > TL_SHOW ? TL_SHOW : rows.length;
+    if(filter === "all" && !tlOpen && FEATURED.length){
+      rows = FEATURED.map(function(id){ return ACT[byId(id)]; }).filter(Boolean);
+      shown = rows.length;
+    }
+    var total = filter === "all" ? ACT.length : rows.length;
 
     rows.forEach(function(a, n){
       var r = el("a","row");
       r.href = "#a/" + a.id;
-      r.hidden = !tlOpen && n >= TL_SHOW;
+      r.hidden = !tlOpen && n >= shown;
       r.appendChild(el("span","d num", fmtDate(a.s, a.e)));
       r.appendChild(el("span","c", CAT[a.cat][lang]));
       var t = el("span","t");
@@ -1064,8 +1076,8 @@
     });
 
     var more = document.getElementById("tl-more");
-    more.hidden = rows.length <= TL_SHOW;
-    more.textContent = tlOpen ? T.showLess[lang] : fill(T.showAll[lang], {n: rows.length});
+    more.hidden = total <= shown && !tlOpen;
+    more.textContent = tlOpen ? T.showLess[lang] : fill(T.showAll[lang], {n: total});
     more.setAttribute("aria-expanded", String(tlOpen));
   }
 
