@@ -101,7 +101,8 @@ SITE.ko = {
     volunteer: {label:"봉사시간", unit:"시간+", note:"1365 확인서 · 41회"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
-    dulwich: {label:"Dulwich College Suzhou", unit:"년", note:"중국 쑤저우 국제학교 · 다문화 환경에서 성장"},
+    // more: 카드에 마우스를 올리면(휴대폰은 누르면) 아래로 펼쳐지는 설명
+    dulwich: {label:"Dulwich College Suzhou", unit:"년", note:"중국 쑤저우 국제학교", more:"다양한 문화적 배경의 친구들과 5년간 함께 배우며 낯선 환경에 빠르게 적응하는 힘과 글로벌 역량을 길렀습니다."},
     hackathon: {label:"규모 해커톤 주최", unit:"명", note:"RE:ALThon · 인사총괄"},
     funding: {label:"유치한 후원금", unit:"만원", note:"3개 학교 SW중심사업단"}
   },
