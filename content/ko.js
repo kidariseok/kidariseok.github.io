@@ -46,7 +46,7 @@ SITE.ko = {
     },
     records: {title:"기록 요약", description:"봉사시간은 1365 자원봉사활동 확인서 기준입니다."},
     activities: {title:"대외활동", count:"{n}", description:"구분을 눌러 활동을 추려보고, 카드를 누르면 그 활동의 상세 기록으로 들어갑니다."},
-    certs: {title:"자격증", count:"{n}", description:"분야별로 묶었고, 각 묶음 안에서는 취득일 기준 최신순입니다."},
+    certs: {title:"자격증", count:"{n}", description:"분야별로 구분되어 있으며, 각 분야 내에서는 취득일 기준 최신순입니다."},
     awards: {
       title: "장학 · 수상",
       count: "{n}건",
