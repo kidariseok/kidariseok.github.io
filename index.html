@@ -143,6 +143,8 @@
   .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:40px;align-items:center}
   .eyebrow{font-size:14px;font-weight:700;color:var(--accent-2)}
   .hero h1{color:#fff;font-size:clamp(44px,5.2vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.035em;margin-block:12px 18px}
+  .tagline{margin:-6px 0 16px;font:600 clamp(16px,1.6vw,19px)/1.4 var(--display);color:#fff;letter-spacing:-.01em}
+  .tagline b{color:var(--accent-2);font-weight:800;letter-spacing:.02em}
   .lede{color:#cfd5df;font-size:16.5px;max-width:29em}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-block:22px 28px}
   .chip{font-size:13px;font-weight:700;color:#dfe6f2;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04)}
@@ -516,6 +518,8 @@
           <div class="hero-copy">
             <p class="eyebrow" data-t="hero.school">성균관대학교 컴퓨터교육과 · 2024학번</p>
             <h1 data-role="name">오진석</h1>
+            <!-- 캐치프레이즈: common.js 의 tagline -->
+            <p class="tagline" id="tagline"></p>
             <p class="lede" data-t="hero.intro">교육과 데이터를 잇는 일을 공부하고 있습니다.</p>
             <div class="chips" id="hero-chips"></div>
             <div class="hero-cta">
@@ -633,9 +637,9 @@
     <p class="num" data-t="footer.updated">최종 갱신 2026.09.22</p>
   </div>
 </footer>
-<script src="content/common.js?v=1790250775"></script>
-<script src="content/ko.js?v=1790250775"></script>
-<script src="content/en.js?v=1790250775"></script>
+<script src="content/common.js?v=1790297009"></script>
+<script src="content/ko.js?v=1790297009"></script>
+<script src="content/en.js?v=1790297009"></script>
 <script>
 (function(){
   "use strict";
@@ -1237,6 +1241,10 @@
     }
     var name = document.querySelector('[data-role="name"]');
     if(name) name.textContent = L().name;      // 첫 화면 이름: ko.js / en.js 의 name
+    var tag = document.getElementById("tagline"), tl = C.tagline || "", cut = tl.indexOf(":");
+    tag.textContent = cut < 0 ? tl : tl.slice(cut);   // 캐치프레이즈: ':' 앞은 굵게
+    if(cut > 0) tag.insertBefore(el("b", null, tl.slice(0, cut)), tag.firstChild);
+    tag.hidden = !tl;
     document.documentElement.lang = lang === "ko" ? "ko" : "en";
   }
 
