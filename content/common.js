@@ -16,8 +16,6 @@
 window.SITE = window.SITE || {};
 SITE.common = {
   notion: "https://app.notion.com/p/",
-  // 첫 화면 이름 밑 캐치프레이즈 (한국어·영어 화면 모두 이 영어 문구). ":" 앞부분은 파란 굵은 글씨, 글꼴은 Playfair Display 기울임
-  tagline: "Connector: Connecting people, technology, and ideas",
   heroStats: ["hackathon", "ielts", "volunteer", "activities"],
   featured: ["realthon", "gdsc", "line4", "ktng-overseas"],
   // 대외활동 '분야별' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. name 은 한·영 공통 영어, sub 는 ko / en

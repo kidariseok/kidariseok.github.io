@@ -27,8 +27,11 @@
 window.SITE = window.SITE || {};
 SITE.en = {
   name: "JINSEOK OH",
+  // 첫 화면 이름 밑 기울임체 영어 한 줄 (Playfair Display). ":" 가 있으면 그 앞은 파란 굵은 글씨
+  tagline: "Connecting what matters through technology.",
   page: {
     nav: {
+      story: "Direction",
       about: "About",
       records: "Records",
       activities: "Activities",
@@ -38,9 +41,26 @@ SITE.en = {
     },
     hero: {
       school: "Computer Education, Sungkyunkwan University · Class of 2024",
-      intro: "I enjoy connecting technology to people and ideas. Studying AI, data and software, I have built those connections hands-on through GDGoC, hackathons, service planning, teaching and mentoring.",
+      headline: "Connecting technology, people, and industry.",
+      intro: "I have explored technology, education, planning, and global experiences through diverse activities. I understand technology, but I do not stop at technology itself. I care about how it can create value for people, organizations, and industries.",
       buttonActivities: "See activities",
       buttonContact: "Contact"
+    },
+    // 첫 화면 바로 아래 '방향' 섹션. period 는 오른쪽 작은 기간 글씨, adapt.since 이후에 딴 자격증이 ADAPT 카드 오른쪽에 자동으로 나옵니다
+    story: {
+      kicker: "WHAT AM I BECOMING?",
+      title: "I explored not simply to do more, but to discover who I am becoming.",
+      explore: {label:"EXPLORE", period:"2024", text:"Since entering university, I have explored AI and data, service planning, education, and global activities through hands-on experiences. These experiences helped me discover what I care about and how I want to contribute."},
+      discover: {label:"DISCOVER", period:"2024 - 2025", text:"Through these experiences, I discovered that my interest lies not only in technology itself, but in where technology meets people and industry. I found greater meaning in understanding technology and connecting it to real-world problems."},
+      adapt: {
+        label: "ADAPT & GROW",
+        period: "2025 - 2026",
+        title: "A period of growth, even in a different environment.",
+        text: "From 2025 to 2026, I served in the Republic of Korea Army as a network management soldier and squad leader. While adapting to a completely different environment, I continued learning and preparing for what comes next, earning certifications including SQLD, IELTS 8.0, Trade English Level 1, Korean History Level 1, and ADsP.",
+        role: "",
+        since: "2025-01-01"
+      },
+      connect: {label:"CONNECT", period:"Next", text:"Going forward, I want to bridge the gap between those who build technology and those who need it, connecting technology, people, and industry to create meaningful value."}
     },
     featured: {title:"Highlights", more:"All activities"},
     about: {

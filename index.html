@@ -171,6 +171,7 @@
   html.intro .eyebrow{animation:introUp .6s var(--ease) .1s both}
   html.intro .tagline{animation:typeIn 1.3s steps(40) .8s both}
   @keyframes typeIn{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+  html.intro .headline{animation:introUp .7s var(--ease) .6s both}
   html.intro .lede,html.intro .chips,html.intro .hero-cta{animation:introUp .8s var(--ease) 1.2s both}
   html.intro .hero-art{animation:introUp 1s var(--ease) 1s both}
   html.intro .hero-stats{animation:introUp .8s var(--ease) 1.8s both}
@@ -182,6 +183,9 @@
   /* 캐치프레이즈: 이 줄만 세리프 기울임체(Playfair Display)로 강조 */
   .tagline{margin:-6px 0 16px;font:italic 500 clamp(18px,1.5vw,20.5px)/1.35 "Playfair Display",Georgia,serif;color:#fff}
   .tagline b{color:var(--accent-2);font-weight:700}
+  /* 이름 밑 한 줄 (hero.headline) */
+  .headline{color:#fff;font-size:clamp(22px,2.2vw,28px);font-weight:800;line-height:1.35;letter-spacing:-.025em;margin:-4px 0 12px;text-wrap:balance}
+  .headline + .tagline{margin-top:0}
   .lede{color:#cfd5df;font-size:16.5px;max-width:29em}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-block:22px 28px}
   .chip{font-size:13px;font-weight:700;color:#dfe6f2;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04)}
@@ -485,6 +489,54 @@
   .vmore{display:block;width:100%;margin-top:8px;padding:12px;border:1px solid var(--line);border-radius:14px;cursor:pointer;font:700 14.5px var(--sans);color:var(--ink);background:var(--soft)}
   .vmore:hover{border-color:var(--ink)}
 
+  /* ---- 방향 (What am I becoming?) ----
+     01 · 02 흰 카드 두 칸 → 03 ADAPT 검은 카드(오른쪽 자격증 시간순) → 04 CONNECT 한 줄 */
+  .st-kicker{font:800 13px/1 var(--display);letter-spacing:.12em;color:var(--accent-text)}
+  .st-title{margin-top:14px;font-size:clamp(26px,3vw,36px);font-weight:800;max-width:24em}
+  .st-no{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+  .st-no .num{font:800 13px/1 var(--display);color:var(--accent-text)}
+  .st-no b{font:800 20px/1.2 var(--display);color:var(--ink);letter-spacing:.02em}
+  .st-no span:last-child{margin-left:auto;font:700 13px/1 var(--display);color:var(--muted);white-space:nowrap}
+  .st-steps{margin-top:44px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .st-step{padding:28px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper)}
+  .st-adapt{
+    position:relative;overflow:hidden;margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;
+    padding:48px;border-radius:28px;background:var(--block);color:var(--on-block);box-shadow:inset 0 0 0 1px var(--block-line);
+  }
+  .st-adapt::before{
+    content:"";position:absolute;left:-160px;top:-200px;width:420px;height:420px;border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle,rgba(47,134,255,.28),rgba(28,111,224,0) 68%);
+  }
+  .st-adapt > *{position:relative}
+  .st-adapt .st-no b{color:#fff}
+  .st-adapt .st-no .num{color:var(--accent-2)}
+  .st-adapt .st-no span:last-child{color:var(--on-block-2)}
+  .st-adapt h3{color:#fff;font-size:clamp(26px,3vw,36px);font-weight:800;line-height:1.3}
+  .st-adapt-text{margin-top:16px;color:#cfd5df}
+  .st-role{
+    display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:7px 14px;border-radius:999px;font-size:14px;color:#e5eaf2;
+    border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);
+  }
+  .st-role::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-2)}
+  .st-certs{list-style:none;margin:0;padding:0;position:relative}
+  .st-certs::before{content:"";position:absolute;left:6px;top:20px;bottom:20px;width:2px;background:linear-gradient(var(--accent-2),rgba(77,148,255,.15))}
+  .st-certs li{
+    position:relative;display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:12px;align-items:baseline;
+    padding:13px 0 13px 30px;border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .st-certs li:last-child{border-bottom:0}
+  .st-certs li::before{content:"";position:absolute;left:0;top:19px;width:14px;height:14px;border-radius:50%;background:var(--block);border:3px solid var(--accent-2);box-sizing:border-box}
+  .st-certs .dt{font:700 13px/1.4 var(--display);color:var(--on-block-2)}
+  .st-certs .nm{color:#fff;font-weight:700}
+  .st-certs .rs{font:800 14px/1.4 var(--display);color:var(--accent-2);white-space:nowrap}
+  .st-next{
+    margin-top:16px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:center;
+    padding:28px;border:1px solid var(--line);border-radius:var(--r);
+  }
+  .st-next .st-no{margin:0}
+  .st-next .st-no span:last-child{margin-left:0}
+  .st-next-text{color:var(--ink);font-size:clamp(17px,1.7vw,20px);font-weight:700;line-height:1.55}
+
   /* ---- 화면 폭에 따라 ---- */
   @media (max-width:980px){
     nav.links{display:none}
@@ -492,9 +544,11 @@
     .hero-grid{grid-template-columns:1fr;gap:12px}
     .hero-art{max-width:620px}
     .feature{grid-template-columns:1fr}
-    .about,.pair-in{grid-template-columns:1fr;gap:40px}
+    .about,.pair-in{grid-template-columns:minmax(0,1fr);gap:40px}
     .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
     .contact{grid-template-columns:1fr}
+    .st-adapt{grid-template-columns:1fr;gap:32px}
+    .st-next{grid-template-columns:1fr;gap:10px}
   }
   @media (max-width:640px){
     .wrap{padding-inline:16px}
@@ -519,6 +573,11 @@
     .filters::-webkit-scrollbar{display:none}
     .filters button{flex:none}
     .contact{padding:32px 24px}
+    .st-steps{grid-template-columns:1fr;margin-top:32px}
+    .st-step{padding:22px}
+    .st-adapt{padding:32px 22px}
+    .st-certs li{grid-template-columns:62px minmax(0,1fr) auto;gap:8px}
+    .st-next{padding:22px}
     .contact::after{right:-190px;bottom:-230px}
     .dl{padding:18px}
     .profile-card .dl{padding-right:72px}
@@ -582,6 +641,7 @@
   <div class="wrap bar-in">
     <a class="mark" href="#top">JINSEOK OH<span>.</span></a>
     <nav class="links" aria-label="섹션">
+      <a href="#story" data-t="nav.story">방향</a>
       <a href="#about" data-t="nav.about">소개</a>
       <a href="#records" data-t="nav.records">기록 요약</a>
       <a href="#activities" data-t="nav.activities">대외활동</a>
@@ -601,7 +661,9 @@
     <!-- ── 첫 화면 (검은 바탕) ─────────────────────────────────────
          · eyebrow  : 이름 위 작은 파란 글씨 (학교 · 학번)
          · h1       : 이름 (ko.js / en.js 의 name)
-         · lede     : 이름 밑 소개  ◀ 자기소개를 바꾸려면 ko.js · en.js 의 hero.intro
+         · headline : 이름 밑 한 줄 (ko.js · en.js 의 hero.headline)
+         · tagline  : 기울임체 영어 한 줄 (ko.js · en.js 의 tagline)
+         · lede     : 소개 두 문장  ◀ 자기소개를 바꾸려면 ko.js · en.js 의 hero.intro
          · hero-stats: 아래 유리 숫자 상자. 어떤 숫자를 넣을지는 common.js 의 heroStats
          ───────────────────────────────────────────────────────── -->
     <div class="hero">
@@ -612,7 +674,8 @@
           <div class="hero-copy">
             <p class="eyebrow" data-t="hero.school">성균관대학교 컴퓨터교육과 · 2024학번</p>
             <h1 data-role="name">오진석</h1>
-            <!-- 캐치프레이즈: common.js 의 tagline -->
+            <p class="headline" data-t="hero.headline"></p>
+            <!-- 캐치프레이즈: ko.js / en.js 의 tagline -->
             <p class="tagline" id="tagline"></p>
             <p class="lede" data-t="hero.intro">기술을 사람과 아이디어에 연결하는 일을 좋아합니다.</p>
             <div class="chips" id="hero-chips"></div>
@@ -632,6 +695,42 @@
 
     <!-- 첫 화면 위로 올라오는 둥근 흰 판. 아래 섹션은 모두 이 안에 있습니다 -->
     <div class="sheet">
+      <!-- ── 방향 (What am I becoming?) ──────────────────────────────
+           글자는 ko.js / en.js 의 page → story.
+           01 EXPLORE · 02 DISCOVER 두 칸 → 03 ADAPT 검은 카드 → 04 CONNECT 한 줄.
+           ADAPT 오른쪽 자격증 목록은 common.js 의 certGroups 에서
+           story.adapt.since 날짜 이후에 딴 것을 자동으로 날짜순으로 보여 줍니다.
+           ───────────────────────────────────────────────────────── -->
+      <section id="story">
+        <div class="wrap">
+          <p class="st-kicker" data-t="story.kicker">WHAT AM I BECOMING?</p>
+          <h2 class="st-title" data-t="story.title"></h2>
+          <div class="st-steps">
+            <div class="st-step">
+              <p class="st-no"><span class="num">01</span><b data-t="story.explore.label">EXPLORE</b><span data-t="story.explore.period"></span></p>
+              <p data-t="story.explore.text"></p>
+            </div>
+            <div class="st-step">
+              <p class="st-no"><span class="num">02</span><b data-t="story.discover.label">DISCOVER</b><span data-t="story.discover.period"></span></p>
+              <p data-t="story.discover.text"></p>
+            </div>
+          </div>
+          <div class="st-adapt">
+            <div>
+              <p class="st-no"><span class="num">03</span><b data-t="story.adapt.label">ADAPT &amp; GROW</b><span data-t="story.adapt.period"></span></p>
+              <h3 data-t="story.adapt.title"></h3>
+              <p class="st-adapt-text" data-t="story.adapt.text"></p>
+              <p class="st-role" data-t="story.adapt.role"></p>
+            </div>
+            <ol class="st-certs" id="story-certs"></ol>
+          </div>
+          <div class="st-next">
+            <p class="st-no"><span class="num">04</span><b data-t="story.connect.label">CONNECT</b><span data-t="story.connect.period"></span></p>
+            <p class="st-next-text" data-t="story.connect.text"></p>
+          </div>
+        </div>
+      </section>
+
       <section id="featured">
         <div class="wrap">
           <div class="shead">
@@ -744,9 +843,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790311685"></script>
-<script src="content/ko.js?v=1790311685"></script>
-<script src="content/en.js?v=1790311685"></script>
+<script src="content/common.js?v=1790315312"></script>
+<script src="content/ko.js?v=1790315312"></script>
+<script src="content/en.js?v=1790315312"></script>
 <script>
 (function(){
   "use strict";
@@ -955,6 +1054,25 @@
       c.appendChild(el("span","k", t.k[lang]));
       box.appendChild(c);
     });
+  }
+
+  // '방향' 섹션 ADAPT 카드 오른쪽: story.adapt.since 이후에 딴 자격증을 날짜순으로 (common.js 의 certGroups)
+  function renderStoryCerts(){
+    var box = document.getElementById("story-certs");
+    if(!box) return;
+    box.textContent = "";
+    var since = pick(L().page, "story.adapt.since") || "9999";
+    var list = [];
+    CERT_GROUPS.forEach(function(g){ g.items.forEach(function(c){ if(c.date >= since) list.push(c); }); });
+    list.sort(function(a, b){ return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+    list.forEach(function(c){
+      var li = el("li");
+      li.appendChild(el("span","dt num", c.date.slice(0,7).replace("-", ".")));
+      li.appendChild(el("span","nm", c[lang]));
+      li.appendChild(el("span","rs", c.score[lang]));
+      box.appendChild(li);
+    });
+    box.hidden = !list.length;
   }
 
   // 대표 활동 검은 카드 (common.js 의 featured)
@@ -1434,7 +1552,7 @@
         name.appendChild(s);
       });
     }
-    var tag = document.getElementById("tagline"), tl = C.tagline || "", cut = tl.indexOf(":");
+    var tag = document.getElementById("tagline"), tl = L().tagline || "", cut = tl.indexOf(":");
     tag.textContent = cut < 0 ? tl : tl.slice(cut);   // 캐치프레이즈: ':' 앞은 굵게
     if(cut > 0) tag.insertBefore(el("b", null, tl.slice(0, cut)), tag.firstChild);
     tag.hidden = !tl;
@@ -1446,6 +1564,7 @@
     renderChips();
     renderMarquee();
     renderHeroStats();
+    renderStoryCerts();
     renderFeatured();
     renderProfile();
     renderTiles();

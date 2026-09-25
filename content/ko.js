@@ -10,6 +10,7 @@
 
    목차
      name        첫 화면의 큰 이름
+     tagline     이름 밑 기울임체 영어 한 줄
      page        메뉴 · 첫 화면 · 대표 활동 · 각 섹션 제목과 설명 · 연락처 · 푸터
      ui          버튼과 작은 라벨 글자
      categories  활동 구분 이름 (공모전 등)
@@ -27,13 +28,32 @@
 window.SITE = window.SITE || {};
 SITE.ko = {
   name: "오진석",
+  // 첫 화면 이름 밑 기울임체 영어 한 줄 (Playfair Display). ":" 가 있으면 그 앞은 파란 굵은 글씨
+  tagline: "Technology, people, and industry, connected.",
   page: {
-    nav: {about:"소개", records:"기록 요약", activities:"대외활동", certs:"자격증", awards:"장학·수상", contact:"연락처"},
+    nav: {story:"방향", about:"소개", records:"기록 요약", activities:"대외활동", certs:"자격증", awards:"장학·수상", contact:"연락처"},
     hero: {
       school: "성균관대학교 컴퓨터교육과 · 2024학번",
-      intro: "기술을 사람과 아이디어에 연결하는 일을 좋아합니다. AI·데이터·소프트웨어를 공부하며 GDGoC, 해커톤, 서비스 기획, 교육·멘토링으로 그 연결을 직접 만들어 왔습니다.",
+      headline: "기술과 사람, 산업을 연결합니다.",
+      intro: "다양한 경험을 통해 기술, 교육, 기획, 글로벌 활동을 탐색해 왔습니다. 기술을 이해하지만 기술 자체에 머무르지 않고, 그것이 실제 사람과 조직, 산업에서 어떻게 쓰일 수 있는지를 고민합니다.",
       buttonActivities: "대외활동 보기",
       buttonContact: "연락처"
+    },
+    // 첫 화면 바로 아래 '방향' 섹션. period 는 오른쪽 작은 기간 글씨, adapt.since 이후에 딴 자격증이 ADAPT 카드 오른쪽에 자동으로 나옵니다
+    story: {
+      kicker: "WHAT AM I BECOMING?",
+      title: "많이 경험하기 위해 경험한 것이 아니라, 내가 어떤 사람이 되어가고 있는지 찾기 위해 경험해 왔습니다.",
+      explore: {label:"EXPLORE", period:"2024", text:"대학에 입학한 후 AI와 데이터, 서비스 기획, 교육, 글로벌 활동 등 관심이 가는 다양한 영역을 직접 경험했습니다. 서로 다른 경험 속에서 제가 무엇에 관심을 갖고 어떤 방식으로 기여하고 싶은지 찾아가는 시간을 가졌습니다."},
+      discover: {label:"DISCOVER", period:"2024 - 2025", text:"다양한 활동을 이어가며 제가 관심을 갖는 지점은 기술 그 자체보다 기술이 사람과 산업을 만나는 곳에 있다는 것을 발견했습니다. 기술을 이해하고, 그것을 실제 문제와 연결하는 과정에 더 큰 의미를 느끼게 되었습니다."},
+      adapt: {
+        label: "ADAPT & GROW",
+        period: "2025 - 2026",
+        title: "환경이 달라져도 성장을 멈추지 않은 시간",
+        text: "2025년부터 2026년까지 군 복무를 하며 새로운 환경에 적응하는 동시에 제가 할 수 있는 성장을 이어갔습니다. SQLD, IELTS 8.0, 무역영어 1급, 한국사능력검정 1급, ADsP를 취득하며 다음 단계를 준비했고, 새로운 환경에서도 배움과 자기계발을 이어갔습니다.",
+        role: "대한민국 육군 네트워크 관리병 · 분대장",
+        since: "2025-01-01"
+      },
+      connect: {label:"CONNECT", period:"앞으로", text:"앞으로는 기술을 만드는 사람과 기술을 필요로 하는 사람 사이의 간극을 줄이고, 기술과 사람, 산업을 연결하며 실제 가치를 만들어가는 사람이 되고자 합니다."}
     },
     featured: {title:"대표 활동", more:"전체 활동 보기"},
     about: {
