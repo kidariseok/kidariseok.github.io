@@ -376,14 +376,6 @@ SITE.en = {
         },
         {
           p: "In the run-up to deployment I wrote the cultural-exchange and education-volunteering plans, and produced the materials for the on-site programs myself - Korean ddakji and fan-decorating among them."
-        },
-        {
-          files: [
-            "1조_문화교류_계획서_1130.docx",
-            "3차_1조_교육봉사_계획서-1.docx",
-            "상상위더스딱지치기_오진석.docx",
-            "상상위더스부채꾸미기_오진석.docx"
-          ]
         }
       ]
     },
