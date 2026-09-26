@@ -17,7 +17,7 @@
 window.SITE = window.SITE || {};
 SITE.common = {
   notion: "https://app.notion.com/p/",
-  heroStats: ["hackathon", "ielts", "volunteer", "activities"],
+  heroStats: ["funding", "ielts", "volunteer", "activities"],
   featured: ["realthon", "gdsc", "line4", "ktng-overseas"],
   // 대외활동 '분야별' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. name 은 한·영 공통 영어, sub 는 ko / en
   axes: [

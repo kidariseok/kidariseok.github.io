@@ -126,7 +126,7 @@ SITE.ko = {
     // more: 카드에 마우스를 올리면(휴대폰은 누르면) 아래로 펼쳐지는 설명
     dulwich: {label:"Dulwich College Suzhou", unit:"년", note:"중국 쑤저우 국제학교", more:"다양한 문화적 배경의 친구들과 5년간 함께 배우며 낯선 환경에 빠르게 적응하는 힘과 글로벌 역량을 길렀습니다."},
     hackathon: {label:"규모 해커톤 주최", unit:"명", note:"RE:ALThon · 인사총괄"},
-    funding: {label:"해커톤 기관 후원", unit:"만원+", note:"3개 대학 · 가용 예산 약 750만원대"}
+    funding: {label:"해커톤 후원 유치", unit:"만원+", note:"3개 대학 · 가용 예산 약 750만원대"}
   },
   // 기록 요약 카드 묶음(common.js 의 tileGroups)에 마우스를 올렸을 때 나오는 글자. sub 는 위 오른쪽, note 는 아래 왼쪽
   tileGroups: {
