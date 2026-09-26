@@ -663,25 +663,81 @@ SITE.en = {
     },
     gdsc: {
       title: "Google Developer Student Clubs",
-      summary: "Within the university's software program, hosted monthly global IT video lectures and planned a global hackathon for the second half of the year. As a Core member, led the Administration team and handled most speaker outreach.",
-      short: "Core member; led Administration and speaker outreach for global IT talks.",
+      summary: "When GDSC's reorganisation into GDG on Campus cut off the Google network we used to rely on, I booked speakers for the monthly global IT seminar through several routes - cold emails, people I had met in class, and referrals from the university program - and documented the whole outreach process in Korean and English.",
+      short: "Booked monthly IT seminar speakers without an existing network; documented the process.",
       body: [
-        {h:"Bringing global IT experts to campus"},
-        {p:"<b>Networking built on foot: turning a limit into an opening</b>"},
         {
-          p: "I joined the Administration Team to follow technology trends more broadly and give something back to the community, running the monthly technical seminar. In my first semester I focused on close follow-up with booked speakers and on running the events themselves; that work got me selected as a Core member the following semester."
+          ul: [
+            "<b>Dates</b> - Mar 2024 - Feb 2025",
+            "<b>Chapter</b> - GDSC Sungkyunkwan University (now GDG on Campus)",
+            "<b>Role</b> - joined the Administration team, then selected as Core / HR lead the next semester (Administration team of 4)",
+            "<b>Owned</b> - most speaker outreach for the monthly global IT seminar",
+            "<b>Scale</b> - about 20-30 attendees per session, online and offline"
+          ]
+        },
+        {h:"01. Situation: no network to draw on"},
+        {
+          p: "When I joined the Administration team in March 2024, the first-half speakers were already booked. Once I was selected as HR lead and took over second-half outreach myself, I found that the internal Google network we used to rely on was no longer available. GDSC was <b>in the middle of becoming GDG on Campus</b>, and all my predecessor could hand over was the method: \"you'll have to book people by cold email.\""
         },
         {
-          p: "Leading the talks as a Core member, I ran into the limits of booking. GDG was mid-reorganisation, so there was no usable Google network to draw on - I opened a path with cold emails across LinkedIn and email. I wrote respectfully to a computer-vision and robotics specialist I had met when they guest-lectured in a class, and landed them; I worked the university program director's network and brought in an NVIDIA expert. I went further and hosted a global expert who had given a TED talk as a teenager and now advises Google."
+          p: "The most urgent date was the October seminar, about six weeks away. A late booking would push back preparation and promotion too - and because the university program was paying speaker fees, I felt <b>responsible for turning that budget into real talks</b>."
+        },
+        {h:"02. Decision: don't depend on a single route"},
+        {
+          p: "I started by contacting overseas IT experts directly over LinkedIn and email. Not everyone responded the same way, and some declined once they saw the terms. So rather than narrowing the target, I switched to <b>working several different points of contact at once</b>."
         },
         {
-          p: "<b>Flexible global communication</b> - I didn't hold to LinkedIn for its own sake; where a speaker preferred WhatsApp, I met them there. With a Google Korea engineer who couldn't speak due to internal policy, I kept the conversation going politely and ended up invited for a coffee chat - a good look at how open the networking culture in tech can be."
+          ul: [
+            "<b>Overseas IT experts</b> → cold messages on LinkedIn and email",
+            "<b>Experts I had met in class</b> → direct contact building on that earlier meeting",
+            "<b>The university program's network</b> → bookings through referrals",
+            "<b>Korean professionals working abroad</b> → chosen for experience Korean students could learn from"
+          ]
         },
         {
-          p: "<b>Seeing the administration through</b> - I didn't stop at planning. I coordinated closely with the university program staff on speaker fees and budget execution, and carried the paperwork to the end. Many speakers said sharing knowledge with students was reward enough, so I also handled getting school gifts to them. Owning a project from planning through to close-out is where I learned what responsibility for it actually means."
+          p: "I didn't lock the contact channel either. Rather than insisting on the Google organisation's official platform, I decided that <b>actually being able to talk with a speaker mattered more for getting the talk to happen</b>."
+        },
+        {h:"03. Action: turning outreach into a repeatable process"},
+        {
+          ul: [
+            "<b>Cold emails</b> - separate Korean and English invitations for Korean and international speakers. Each one covered why I had chosen them (after checking their interests on LinkedIn), the topic, length, format, audience, fee, equipment and post-talk feedback, so they could decide without having to ask anything first.",
+            "<b>Adapting the channel</b> - with an India-born expert based in the US, messages on Google Chat were slow to be read. I asked which channel suited them, heard WhatsApp, confirmed the switch with our GDSC lead, and scheduling and preparation sped up.",
+            "<b>Using existing connections</b> - I wrote to a computer-vision and robotics expert whose guest lecture I had attended in an AI convergence class, saying the talk had stayed with me and I wanted other students to hear it. Through the program director's network I was also introduced to an NVIDIA expert and booked that talk.",
+            "<b>Documenting the process</b> - so the next person wouldn't repeat the trial and error, I wrote up the flow of <b>first contact → details → contact channel</b>, with Korean and English message templates and a talk-information sheet that we reused for later bookings."
+          ]
+        },
+        {h:"04. Speakers booked"},
+        {
+          ul: [
+            "A computer-vision and robotics expert (met at a guest lecture in class)",
+            "An NVIDIA expert (referred by the program director)",
+            "A former teenage TED speaker who now advises Google",
+            "Other IT professionals in Korea and abroad"
+          ]
         },
         {
-          p: "Finding a way through when I hit a wall, and holding communication and administration together across different stakeholders, is what I expect to carry into the projects that come next."
+          p: "At the former TED speaker's seminar, what stood out was that the talk covered not only technology but the speaker's own path - careers and taking on challenges - for the students in the room. A Google Korea engineer who couldn't give a talk under company policy kept the conversation going with me and ended up offering a coffee chat."
+        },
+        {h:"05. Running the talks and settling payments"},
+        {
+          p: "Seminars ran online and offline with about 20-30 attendees each. The speaker fee was KRW 300,000 per talk, and I walked speakers through the paperwork the program required, collected it and passed it on. Some speakers said sharing knowledge was reason enough and declined the fee; for them I worked out with the program office to offer a school gift - a mascot plush or a book - and handled the follow-up and shipping details."
+        },
+        {h:"06. Results"},
+        {
+          ul: [
+            "<b>Monthly IT seminar</b> - handled most second-half speaker outreach and supported a year of regular talks.",
+            "<b>About 20-30 per session</b> - online and offline seminars for SKKU students.",
+            "<b>A range of experts</b> - brought in speakers from computer vision and robotics, NVIDIA, Google and more.",
+            "<b>A documented process</b> - Korean and English templates left in a form the next organiser can pick up."
+          ]
+        },
+        {h:"07. What I learned"},
+        {
+          p: "When I sent my first cold email, I had no idea whether a stranger would ever write back. Once I actually reached out, far more people than I expected were keen to share their experience with students. It showed me how warm the developer community is, and that <b>you don't need to have everything in place before you can start</b>. If something is needed, you can look for it, reach out and build the way there."
+        },
+        {h:"08. What changed afterwards"},
+        {
+          p: "Reaching out to people I don't know now feels natural. Contacting Japanese universities directly and proposing collaboration to other GDSC leads while preparing RE:ALThon came from the confidence I built here. I also got into the habit of looking first at the other person's platform and situation - <b>connecting in the way that is easiest for them to answer, not the way that is easiest for me</b>."
         }
       ]
     },
