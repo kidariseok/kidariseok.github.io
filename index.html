@@ -378,10 +378,10 @@
   .award p{color:var(--on-block-2);font-size:14px}
   .award:hover p,.award:hover small,.award:focus-visible p,.award:focus-visible small{color:#e6efff}
 
-  /* 연락처 (검은 카드 + 파란 원) */
+  /* 연락처 (검은 카드 + 파란 원). 제목과 오른쪽 연락처 목록을 위쪽 끝에 맞춤 */
   .contact-sec{padding-top:0}
   .contact{
-    position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:end;
+    position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:start;
     padding:48px;border-radius:28px;background:var(--block-2);color:var(--on-block);box-shadow:inset 0 0 0 1px var(--block-line);
   }
   .contact::after{
@@ -389,6 +389,8 @@
     background:radial-gradient(circle at 40% 30%,#2f86ff,#1c6fe0 35%,rgba(28,111,224,0) 70%);
   }
   .contact h2{color:#fff;font-size:clamp(24px,3vw,32px);max-width:12em}
+  /* 넓은 화면: 제목 첫 줄 윗선을 오른쪽 메일 주소 줄 높이에 맞춰 살짝 올림 */
+  @media (min-width:981px){ .contact h2{margin-top:-.42em} }
   .contact > div > p{margin-top:12px;color:var(--on-block-2);max-width:40ch}
   .cta{position:relative;z-index:1;display:grid;gap:10px;justify-items:start}
   /* 연락처 링크: 평소엔 파란색, 마우스를 올리거나 키보드로 고르면 흰색 */
