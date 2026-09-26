@@ -137,7 +137,7 @@ SITE.ko = {
     "trade-english-1": {
       name: "무역영어 1급",
       result: "합격",
-      detail: "1과목 76 · 2과목 72 · 3과목 64 (평균 70.76)",
+      detail: "-",
       issuer: "대한상공회의소",
       status: "영구"
     },
@@ -149,7 +149,7 @@ SITE.ko = {
       status: "2년"
     },
     toeic: {name:"TOEIC", result:"975", detail:"LC 485 · RC 490", issuer:"한국TOEIC위원회", status:"만료"},
-    "korean-history-1": {name:"한국사능력검정시험 1급", result:"합격", detail:"87 / 100", issuer:"국사편찬위원회", status:"영구"}
+    "korean-history-1": {name:"한국사능력검정시험 1급", result:"합격", detail:"-", issuer:"국사편찬위원회", status:"영구"}
   },
   awards: {
     "academic-excellence": {name:"성적우수장학금 (최우수)", description:"재학생 3%, 학과 내 4명 선발"},

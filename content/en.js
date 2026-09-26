@@ -177,7 +177,7 @@ SITE.en = {
     "trade-english-1": {
       name: "Trade English, Level 1",
       result: "Pass",
-      detail: "Subject scores 76 / 72 / 64 (avg. 70.76)",
+      detail: "-",
       issuer: "Korea Chamber of Commerce & Industry",
       status: "Permanent"
     },
@@ -198,7 +198,7 @@ SITE.en = {
     "korean-history-1": {
       name: "Korean History Proficiency, Level 1",
       result: "Pass",
-      detail: "87 / 100",
+      detail: "-",
       issuer: "National Institute of Korean History",
       status: "Permanent"
     }
