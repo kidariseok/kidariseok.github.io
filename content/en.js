@@ -364,7 +364,7 @@ SITE.en = {
     "ktng-overseas": {
       title: "KT&G Sangsang Withus Overseas Volunteer Corps",
       summary: "Deployed to an elementary school in Bogor, Indonesia for 177 hours of education and environmental-improvement volunteering.",
-      short: "177 hours of education and environmental volunteering in Bogor, Indonesia.",
+      short: "177 hours of education and environmental volunteering at an elementary school in Bogor, Indonesia.",
       body: [
         {
           ul: [
