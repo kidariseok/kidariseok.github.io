@@ -150,6 +150,10 @@ SITE.en = {
     hackathon: {label:"Hackathon hosted", unit:" ppl", note:"RE:ALThon · HR lead"},
     funding: {label:"Hackathon funding", value:"$5K+", unit:"", note:"From programs at <b>3</b> universities · total budget ~$5.5K"}
   },
+  // 기록 요약 카드 묶음(common.js 의 tileGroups)에 마우스를 올렸을 때 나오는 글자
+  tileGroups: {
+    realthon: {title:"RE:ALThon", sub:"Dec 2024 · co-hosted by 3 universities", note:"Overnight · 9 teams"}
+  },
   certHead: ["Credential", "Result", "Detail", "Issuer", "Obtained", "Status"],
   certGroups: {computing:"Computing & Data", english:"English", other:"Other"},
   certs: {

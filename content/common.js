@@ -215,7 +215,13 @@ SITE.common = {
     // TOEIC 카드를 되돌리려면 아래 줄을 {id:"toeic", icon:"ic-book", value:"975"}, 로 바꾸세요
     {id:"dulwich", icon:"ic-globe", value:"5", logo:"dulwich_crest.png"},
     {id:"hackathon", icon:"ic-users", value:"50"},
-    {id:"funding", icon:"ic-chart", value:"700", link:"realthon"}
+    {id:"funding", icon:"ic-chart", value:"700"}
+  ],
+  // 같은 활동의 기록 요약 카드 묶음: 마우스를 올리면 카드들이 하나로 이어지고(검은 한 덩어리),
+  // 위에 공통 제목, 아래에 상세 기록 링크가 생깁니다. tiles 에서 서로 붙어 있는 두 카드여야 합니다.
+  // link 는 누르면 갈 활동 id. 글자(제목 · 설명)는 ko.js / en.js 의 tileGroups
+  tileGroups: [
+    {id:"realthon", tiles:["hackathon", "funding"], link:"realthon"}
   ],
 
   /* 봉사활동 전체 내역 (기록 요약의 '기록된 봉사시간' 카드를 누르면 뜨는 창)

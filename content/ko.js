@@ -128,6 +128,10 @@ SITE.ko = {
     hackathon: {label:"규모 해커톤 주최", unit:"명", note:"RE:ALThon · 인사총괄"},
     funding: {label:"해커톤 기관 후원", unit:"만원+", note:"3개 대학 · 가용 예산 약 750만원대"}
   },
+  // 기록 요약 카드 묶음(common.js 의 tileGroups)에 마우스를 올렸을 때 나오는 글자. sub 는 위 오른쪽, note 는 아래 왼쪽
+  tileGroups: {
+    realthon: {title:"RE:ALThon", sub:"2024.12 · 3개 대학 공동 개최", note:"무박 2일 · 9개 팀"}
+  },
   certHead: ["자격", "결과", "상세", "발급처", "취득일", "유효"],
   certGroups: {computing:"컴퓨터 · 데이터", english:"영어", other:"기타"},
   certs: {

@@ -297,6 +297,49 @@
   .tile:hover .open-hint .i{transform:translateX(3px)}
   a.tile:hover{text-decoration:none}
 
+  /* 기록 요약 카드 묶음 (common.js 의 tileGroups, 예: RE:ALThon 두 카드)
+     마우스를 올리거나 키보드로 고르면 두 카드가 함께 검게 바뀌고 사이 틈이 메워져 한 덩어리가 됨.
+     위에 공통 제목(.tg-band), 아래에 상세 기록 링크(.tg-foot). 휴대폰은 한 번 누르면 열리고, 한 번 더 누르면 상세로 이동 */
+  .tgroup{grid-column:span 2;position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;color:inherit;transition:transform .35s var(--ease)}
+  .tgroup:hover{text-decoration:none}
+  .tgroup:focus-visible{outline-offset:4px;border-radius:calc(var(--r) + 4px)}
+  .tgroup .tile{z-index:0}
+  .tgroup .tile:hover{transform:none}
+  .tgroup::before{   /* 두 카드 사이 틈을 메우는 다리 */
+    content:"";position:absolute;top:0;bottom:0;left:calc(50% - 7px);width:14px;z-index:1;
+    background:var(--block);transform:scaleY(0);transition:transform .45s var(--ease);
+  }
+  .tg-band{
+    position:absolute;left:0;right:0;top:0;z-index:2;padding:16px 22px 0;display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+    opacity:0;transform:translateY(-6px);transition:opacity .3s var(--ease),transform .4s var(--ease);pointer-events:none;
+  }
+  .tg-band b{font:800 13px/1.2 var(--display);letter-spacing:.06em;color:var(--accent-2)}
+  .tg-band span{font-size:12.5px;color:var(--on-block-2)}
+  .tg-foot{
+    position:absolute;left:22px;right:22px;bottom:18px;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;
+    opacity:0;transition:opacity .3s var(--ease) .08s;pointer-events:none;
+  }
+  .tg-foot span{font-size:12.5px;color:var(--on-block-2)}
+  .tg-foot b{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#fff}
+  .tg-foot b .i{width:15px;height:15px;transition:transform .3s var(--ease)}
+  .tgroup:hover .tg-foot b .i{transform:translateX(3px)}
+  .tgroup:hover,.tgroup:focus-visible,.tgroup.on{transform:translateY(-4px)}
+  .tgroup:hover::before,.tgroup:focus-visible::before,.tgroup.on::before{transform:scaleY(1)}
+  .tgroup:hover .tile,.tgroup:focus-visible .tile,.tgroup.on .tile{background:var(--block);box-shadow:var(--shadow);padding-top:46px}
+  .tgroup:hover .tile:first-child,.tgroup:focus-visible .tile:first-child,.tgroup.on .tile:first-child{border-radius:var(--r) 0 0 var(--r)}
+  .tgroup:hover .tile:nth-child(2),.tgroup:focus-visible .tile:nth-child(2),.tgroup.on .tile:nth-child(2){border-radius:0 var(--r) var(--r) 0}
+  .tgroup:hover .tile .v,.tgroup:hover .tile .k,.tgroup:focus-visible .tile .v,.tgroup:focus-visible .tile .k,.tgroup.on .tile .v,.tgroup.on .tile .k{color:#fff}
+  .tgroup:hover .tile .v small,.tgroup:focus-visible .tile .v small,.tgroup.on .tile .v small{color:var(--accent-2)}
+  .tgroup:hover .tile .n,.tgroup:focus-visible .tile .n,.tgroup.on .tile .n{opacity:0}
+  .tgroup:hover .tg-band,.tgroup:focus-visible .tg-band,.tgroup.on .tg-band{opacity:1;transform:none}
+  .tgroup:hover .tg-foot,.tgroup:focus-visible .tg-foot,.tgroup.on .tg-foot{opacity:1}
+  @media (max-width:640px){
+    .tg-band{padding:14px 16px 0}
+    .tg-band span,.tg-foot span{display:none}
+    .tg-foot{left:16px;right:16px;bottom:14px}
+    .tgroup:hover .tile,.tgroup:focus-visible .tile,.tgroup.on .tile{padding-top:40px}
+  }
+
   /* 대외활동: 구분 버튼 + 한 줄 목록 */
   .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
   .filters button{
@@ -862,9 +905,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790404000"></script>
-<script src="content/ko.js?v=1790404000"></script>
-<script src="content/en.js?v=1790404000"></script>
+<script src="content/common.js?v=1790405000"></script>
+<script src="content/ko.js?v=1790405000"></script>
+<script src="content/en.js?v=1790405000"></script>
 <script>
 (function(){
   "use strict";
@@ -921,6 +964,8 @@
     return {id: t.id, ic: t.icon, v: t.value, logo: t.logo, link: t.link, vl: {ko: k.value, en: e.value}, k: {ko: k.label || "", en: e.label || ""},
       u: {ko: k.unit || "", en: e.unit || ""}, n: {ko: k.note || "", en: e.note || ""}, more: {ko: k.more || "", en: e.more || ""}};
   });
+  var TILE_GROUPS = C.tileGroups || [];
+  function groupOf(id){ for(var i=0;i<TILE_GROUPS.length;i++){ if(TILE_GROUPS[i].tiles.indexOf(id) >= 0) return TILE_GROUPS[i]; } return null; }
   var HERO_STATS = C.heroStats;
   var FEATURED = C.featured || [];
   var AXES = C.axes || [];
@@ -1142,7 +1187,37 @@
   function renderTiles(){
     var box = document.getElementById("tiles");
     box.textContent = "";
+    var groupBoxes = {};
     TILES.forEach(function(t){
+      // 카드 묶음(tileGroups)에 든 카드는 묶음 상자 안에 넣습니다 (상자는 첫 카드 자리에 한 번 만듦)
+      var grp = groupOf(t.id), parent = box;
+      if(grp){
+        if(!groupBoxes[grp.id]){
+          var G = (L().tileGroups || {})[grp.id] || {};
+          var gb = el("a","tgroup");
+          gb.href = "#a/" + grp.link;
+          gb.setAttribute("aria-label", (G.title || grp.id) + " · " + T.detail[lang]);
+          gb.addEventListener("click", function(e){   // 휴대폰: 첫 번째 누름은 열기, 두 번째 누름에 상세로 이동
+            if(window.matchMedia && matchMedia("(hover: none)").matches && !gb.classList.contains("on")){
+              e.preventDefault();
+              document.querySelectorAll(".tgroup.on").forEach(function(o){ o.classList.remove("on"); });
+              gb.classList.add("on");
+            }
+          });
+          var band = el("span","tg-band");
+          band.appendChild(el("b", null, G.title || ""));
+          if(G.sub) band.appendChild(el("span", null, G.sub));
+          var foot = el("span","tg-foot");
+          foot.appendChild(el("span", null, G.note || ""));
+          var go = el("b", null, T.detail[lang]);
+          go.appendChild(icon("ic-arrow"));
+          foot.appendChild(go);
+          gb._tail = [band, foot];
+          groupBoxes[grp.id] = gb;
+          box.appendChild(gb);
+        }
+        parent = groupBoxes[grp.id];
+      }
       // '봉사시간' 카드는 누르면 전체 내역 창이 열리는 버튼입니다
       var clickable = t.id === "volunteer" && C.volunteerLog;
       var linked = !clickable && t.link && byId(t.link) >= 0;   // common.js 의 link: 누르면 그 활동 상세 기록으로
@@ -1152,7 +1227,7 @@
         c.type = "button";
         c.setAttribute("aria-haspopup", "dialog");
         c.addEventListener("click", openVolunteer);
-      } else c.tabIndex = 0;                            // 키보드로 골라도 검게 바뀌도록
+      } else if(!grp) c.tabIndex = 0;                   // 키보드로 골라도 검게 바뀌도록 (묶음 카드는 묶음 상자가 대신 받음)
       if(t.logo){                                   // 로고가 있는 카드 (예: 국제학교): 오른쪽 위 흰 원 안에
         var lg = el("span","tlogo");
         var li = document.createElement("img");
@@ -1172,7 +1247,10 @@
         hint.appendChild(icon("ic-arrow"));
         c.appendChild(hint);
       }
-      box.appendChild(c);
+      parent.appendChild(c);
+    });
+    Object.keys(groupBoxes).forEach(function(k){   // 공통 제목 · 링크는 카드 뒤에 붙여야 :first-child / :nth-child(2) 가 카드를 가리킴
+      groupBoxes[k]._tail.forEach(function(n){ groupBoxes[k].appendChild(n); });
     });
   }
 
