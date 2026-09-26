@@ -397,6 +397,15 @@
   .cta a{display:inline-flex;align-items:center;gap:12px;color:var(--accent-2);font-weight:700;font-size:15px;transition:color .2s}
   .cta a .i{width:18px;height:18px}
   .cta a:hover,.cta a:focus-visible{color:#fff;text-decoration:none}
+  /* 연락처 카드: 장학 카드처럼 마우스를 올리거나 키보드로 안쪽 링크를 고르면 파랗게 + 살짝 뜸.
+     파란 바탕에서는 링크를 흰색으로, 그중 가리킨 링크는 밑줄로 구분 */
+  .contact{transition:background .3s var(--ease),transform .3s var(--ease)}
+  .contact::after{transition:opacity .3s var(--ease)}
+  .contact:hover,.contact:focus-within{background:var(--accent);transform:translateY(-3px)}
+  .contact:hover::after,.contact:focus-within::after{opacity:0}
+  .contact:hover > div > p,.contact:focus-within > div > p{color:#e6efff}
+  .contact:hover .cta a,.contact:focus-within .cta a{color:#fff}
+  .contact:hover .cta a:hover,.contact .cta a:focus-visible{text-decoration:underline}
 
   /* 맨 아래 검은 띠 */
   .foot{background:var(--hero);color:var(--on-block-2);padding-block:48px;font-size:14px}
@@ -846,9 +855,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790402000"></script>
-<script src="content/ko.js?v=1790402000"></script>
-<script src="content/en.js?v=1790402000"></script>
+<script src="content/common.js?v=1790403000"></script>
+<script src="content/ko.js?v=1790403000"></script>
+<script src="content/en.js?v=1790403000"></script>
 <script>
 (function(){
   "use strict";
