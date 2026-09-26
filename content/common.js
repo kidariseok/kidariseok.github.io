@@ -10,6 +10,7 @@
        3) 사진이 있으면 img/ 에 넣고 아래 photos 에 id 로 등록
    · activities 는 날짜가 늦은 것부터 위에서 아래로 적습니다.
    · tiles 의 value 는 기록 요약 카드의 큰 숫자입니다. "auto" 는 자동 계산(대외활동 수 · 봉사시간).
+     link 에 활동 id 를 적으면 카드를 눌렀을 때 그 활동의 상세 기록으로 이동합니다.
    · heroStats 는 첫 화면 아래 숫자 상자에 넣을 tiles 의 id 4개입니다.
    · featured 는 '대표 활동' 검은 카드로 보여 줄 activities 의 id 4개입니다 (사진이 있으면 카드 오른쪽에 나옴).
    ══════════════════════════════════════════════════════════════ */
@@ -214,7 +215,7 @@ SITE.common = {
     // TOEIC 카드를 되돌리려면 아래 줄을 {id:"toeic", icon:"ic-book", value:"975"}, 로 바꾸세요
     {id:"dulwich", icon:"ic-globe", value:"5", logo:"dulwich_crest.png"},
     {id:"hackathon", icon:"ic-users", value:"50"},
-    {id:"funding", icon:"ic-chart", value:"700"}
+    {id:"funding", icon:"ic-chart", value:"700", link:"realthon"}
   ],
 
   /* 봉사활동 전체 내역 (기록 요약의 '기록된 봉사시간' 카드를 누르면 뜨는 창)

@@ -295,6 +295,7 @@
   .tile:hover .open-hint,.tile:focus-visible .open-hint{color:var(--accent-2)}
   .open-hint .i{width:15px;height:15px;transition:transform .3s var(--ease)}
   .tile:hover .open-hint .i{transform:translateX(3px)}
+  a.tile:hover{text-decoration:none}
 
   /* 대외활동: 구분 버튼 + 한 줄 목록 */
   .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
@@ -843,9 +844,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790400000"></script>
-<script src="content/ko.js?v=1790400000"></script>
-<script src="content/en.js?v=1790400000"></script>
+<script src="content/common.js?v=1790401000"></script>
+<script src="content/ko.js?v=1790401000"></script>
+<script src="content/en.js?v=1790401000"></script>
 <script>
 (function(){
   "use strict";
@@ -899,7 +900,7 @@
   var TILES = C.tiles.map(function(t){
     var k = KO.tiles[t.id] || {}, e = EN.tiles[t.id] || {};
     // 언어 파일에 value 가 있으면 그 언어에서는 그 숫자를 씁니다 (예: 영어는 달러)
-    return {id: t.id, ic: t.icon, v: t.value, logo: t.logo, vl: {ko: k.value, en: e.value}, k: {ko: k.label || "", en: e.label || ""},
+    return {id: t.id, ic: t.icon, v: t.value, logo: t.logo, link: t.link, vl: {ko: k.value, en: e.value}, k: {ko: k.label || "", en: e.label || ""},
       u: {ko: k.unit || "", en: e.unit || ""}, n: {ko: k.note || "", en: e.note || ""}, more: {ko: k.more || "", en: e.more || ""}};
   });
   var HERO_STATS = C.heroStats;
@@ -1126,8 +1127,10 @@
     TILES.forEach(function(t){
       // '봉사시간' 카드는 누르면 전체 내역 창이 열리는 버튼입니다
       var clickable = t.id === "volunteer" && C.volunteerLog;
-      var c = el(clickable ? "button" : "div", "tile");
-      if(clickable){
+      var linked = !clickable && t.link && byId(t.link) >= 0;   // common.js 의 link: 누르면 그 활동 상세 기록으로
+      var c = el(clickable ? "button" : linked ? "a" : "div", "tile");
+      if(linked) c.href = "#a/" + t.link;
+      else if(clickable){
         c.type = "button";
         c.setAttribute("aria-haspopup", "dialog");
         c.addEventListener("click", openVolunteer);
@@ -1146,8 +1149,8 @@
         c.appendChild(el("span","more", t.more[lang]));
         c.addEventListener("click", function(){ c.classList.toggle("on"); });
       }
-      if(clickable){
-        var hint = el("span","open-hint", L().volunteerLog.open);
+      if(clickable || linked){
+        var hint = el("span","open-hint", clickable ? L().volunteerLog.open : T.detail[lang]);
         hint.appendChild(icon("ic-arrow"));
         c.appendChild(hint);
       }
