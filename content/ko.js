@@ -34,6 +34,8 @@ SITE.ko = {
     nav: {story:"방향", about:"소개", records:"기록 요약", activities:"대외활동", certs:"자격증", awards:"장학·수상", contact:"연락처"},
     hero: {
       school: "성균관대학교 컴퓨터교육과 · 2024학번",
+      gpa: "GPA 4.33",
+      gpaMax: "/ 4.5",
       headline: "기술과 사람, 산업을 연결합니다.",
       intro: "다양한 경험을 통해 기술, 교육, 기획, 글로벌 활동을 탐색해 왔습니다. 기술을 이해하지만 기술 자체에 머무르지 않고, 그것이 실제 사람과 조직, 산업에서 어떻게 쓰일 수 있는지를 고민합니다.",
       buttonActivities: "대외활동 보기",

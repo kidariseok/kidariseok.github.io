@@ -178,7 +178,10 @@
   @keyframes introUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .hero > .wrap{position:relative;z-index:1}
   .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:40px;align-items:center}
-  .eyebrow{font-size:14px;font-weight:700;color:var(--accent-2)}
+  .eyebrow{font-size:14px;font-weight:700;color:var(--accent-2);display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px}
+  /* 학교 줄 끝의 학점 배지 (글자는 ko.js / en.js 의 hero.gpa · hero.gpaMax) */
+  .gpa-pill{display:inline-flex;align-items:baseline;gap:4px;padding:3px 10px;border-radius:999px;border:1px solid rgba(77,148,255,.45);background:rgba(28,111,224,.16);color:#fff;font:700 13px/1.4 var(--display);white-space:nowrap}
+  .gpa-pill small{color:var(--accent-2);font:700 12px var(--display)}
   .hero h1{color:#fff;font-size:clamp(44px,5.2vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.035em;margin-block:12px 18px}
   /* 캐치프레이즈: 이 줄만 세리프 기울임체(Playfair Display)로 강조 */
   .tagline{margin:-6px 0 16px;font:italic 500 clamp(18px,1.5vw,20.5px)/1.35 "Playfair Display",Georgia,serif;color:#fff}
@@ -734,7 +737,7 @@
       <div class="wrap">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow" data-t="hero.school">성균관대학교 컴퓨터교육과 · 2024학번</p>
+            <p class="eyebrow"><span data-t="hero.school">성균관대학교 컴퓨터교육과 · 2024학번</span><span class="gpa-pill"><span data-t="hero.gpa">GPA 4.33</span><small data-t="hero.gpaMax">/ 4.5</small></span></p>
             <h1 data-role="name">오진석</h1>
             <p class="headline" data-t="hero.headline"></p>
             <!-- 캐치프레이즈: ko.js / en.js 의 tagline -->

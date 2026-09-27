@@ -41,6 +41,8 @@ SITE.en = {
     },
     hero: {
       school: "Computer Education, Sungkyunkwan University · Class of 2024",
+      gpa: "GPA 4.33",
+      gpaMax: "/ 4.5",
       headline: "Connecting technology, people, and industry.",
       intro: "I have explored technology, education, planning, and global experiences through diverse activities. I understand technology, but I do not stop at technology itself. I care about how it can create value for people, organizations, and industries.",
       buttonActivities: "See activities",
