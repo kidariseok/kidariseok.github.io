@@ -5,7 +5,8 @@
    예) 활동을 하나 추가하려면
        1) 아래 activities 에 {id:"새주소", start:"2026-10-01", category:"external", notion:""} 추가
           (end 는 끝나는 날짜. 하루짜리면 빼세요.
-           category 는 competition / external / volunteer / campus / course 중 하나)
+           category 는 competition / external / volunteer / campus / course 중 하나
+           video 에 유튜브 주소를 넣으면 상세 페이지 제목 아래 '활동 영상' 버튼이 생김)
        2) ko.js 와 en.js 의 activities 에 같은 id 로 title · summary · body 추가
        3) 사진이 있으면 img/ 에 넣고 아래 photos 에 id 로 등록
    · activities 는 날짜가 늦은 것부터 위에서 아래로 적습니다.
@@ -79,7 +80,8 @@ SITE.common = {
       start: "2024-10-29",
       end: "2025-01-17",
       category: "volunteer", axis:"global",
-      notion: "3bbdd7c9423e800188c5c527021715d2"
+      notion: "3bbdd7c9423e800188c5c527021715d2",
+      video: "https://www.youtube.com/watch?v=_4omkqwhhkQ&t=45s"
     },
     {
       id: "creverse",

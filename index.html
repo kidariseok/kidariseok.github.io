@@ -513,6 +513,9 @@
     .dnums > div{padding:16px 16px 15px}
     .dnums .nv{font-size:28px}
   }
+  .dhead .vbtn{margin-top:22px;padding:11px 20px;font-size:14.5px}
+  .dhead .vbtn .i{width:19px;height:19px}
+  .dhead .vbtn:hover .i{transform:none}
   .shotshead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:40px}
   .shotshead h2{font-size:20px;font-weight:800}
   .shotshead .hint{font-size:13.5px;color:var(--muted);white-space:nowrap}
@@ -828,6 +831,7 @@
     <symbol id="ic-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
     <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></symbol>
     <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M7.2 3.8h2.6l1.4 4-2 1.3a10.5 10.5 0 0 0 5.7 5.7l1.3-2 4 1.4v2.6a2 2 0 0 1-2.2 2A15.8 15.8 0 0 1 5.2 6a2 2 0 0 1 2-2.2Z"/></symbol>
+    <symbol id="ic-video" viewBox="0 0 24 24"><rect x="3.4" y="6" width="12.4" height="12" rx="2.6"/><path d="m15.8 10.4 4.8-2.8v8.8l-4.8-2.8"/></symbol>
     <symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3.4" y="5.4" width="17.2" height="13.2" rx="2.4"/><path d="m3.9 7.4 8.1 5.6 8.1-5.6"/></symbol>
   </defs>
 </svg>
@@ -1039,9 +1043,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790521000"></script>
-<script src="content/ko.js?v=1790521000"></script>
-<script src="content/en.js?v=1790521000"></script>
+<script src="content/common.js?v=1790522000"></script>
+<script src="content/ko.js?v=1790522000"></script>
+<script src="content/en.js?v=1790522000"></script>
 <script>
 (function(){
   "use strict";
@@ -1076,7 +1080,7 @@
   });
   var ACT = C.activities.map(function(a){
     var k = KO.activities[a.id] || {}, e = EN.activities[a.id] || {};
-    return {id: a.id, s: a.start, e: a.end, cat: a.category, axis: a.axis, nid: a.notion || "",
+    return {id: a.id, s: a.start, e: a.end, cat: a.category, axis: a.axis, nid: a.notion || "", video: a.video || "",
       ko: k.title || a.id, en: e.title || k.title || a.id, dko: k.summary || "", den: e.summary || "",
       sko: k.short || k.summary || "", sen: e.short || e.summary || "",   // short: 목록 한 줄용 짧은 요약 (없으면 summary)
       body: {ko: k.body || [], en: e.body || []}};
@@ -1902,6 +1906,13 @@
     head.appendChild(el("h1", null, a[lang]));
     var lede = lang === "ko" ? a.dko : a.den;
     if(lede) head.appendChild(el("p","lede", lede));
+    if(a.video){
+      var vb = el("a","btn line vbtn");
+      vb.href = a.video; vb.target = "_blank"; vb.rel = "noopener";
+      vb.appendChild(icon("ic-video"));
+      vb.appendChild(document.createTextNode(T.video[lang]));
+      head.appendChild(vb);
+    }
     dtop.appendChild(head);
 
     // 요약 숫자 카드: 제목 바로 아래, 사진보다 먼저 보이도록 상단 블록 안에 둡니다

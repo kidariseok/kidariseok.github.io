@@ -92,6 +92,7 @@ SITE.ko = {
     notFound: "해당 활동을 찾을 수 없습니다.",
     photos: "현장 사진",
     swipe: "옆으로 넘겨 보세요",
+    video: "활동 영상",
     deckAll: "전체 슬라이드 {n}장",
     deckPrev: "이전",
     deckNext: "다음",

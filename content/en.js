@@ -110,6 +110,7 @@ SITE.en = {
     notFound: "That activity could not be found.",
     photos: "Photos",
     swipe: "Scroll sideways",
+    video: "Activity video",
     deckAll: "All {n} slides",
     deckPrev: "Prev",
     deckNext: "Next",
