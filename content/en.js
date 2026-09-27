@@ -499,13 +499,11 @@ SITE.en = {
       summary: "Deployed to an elementary school in Bogor, Indonesia for 177 hours of education and environmental-improvement volunteering.",
       short: "177 hours of education and environmental volunteering at an elementary school in Bogor, Indonesia.",
       nums: [
+        {v:"177", u:"hrs", t:"Total volunteering hours", d:"8 – 17 Jan 2025 · Bogor, Indonesia", hi:true},
         {v:"40", t:"Volunteers deployed together to Indonesia"},
-        {v:"10", t:"Members of my team, Team 1"},
-        {v:"10", u:"days", t:"On the ground in Indonesia", d:"8 – 17 Jan 2025"},
-        {v:"177", u:"hrs", t:"Total volunteering hours"},
-        {pre:"~", v:"₩2.2", u:"M", t:"Budget for Team 1's class supplies"},
-        {v:"34", t:"Third-grade students in our main programs", d:"Run in six groups"}
+        {v:"34", t:"Third-grade students we taught", d:"Main education programs"}
       ],
+      numsLayout: "row",
       body: [
         {lead:"Ten days with children in Indonesia"},
         {p:"A volunteering trip spent teaching, running around and laughing with the children of <b>Babakan Madang Elementary School</b> in Bogor, Indonesia."},
