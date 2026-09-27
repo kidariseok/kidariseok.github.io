@@ -1945,6 +1945,9 @@
       view.appendChild(strip);
     }
 
+    // 발표자료: 현장 사진 바로 아래에 둡니다 (사진이 없으면 제목 블록 아래)
+    renderDeck(view, a);
+
     var body = el("div","body");
     var heads = [];   // 목차에 들어갈 소제목들 {label, node}
     // 본문 블록: {h} 소제목(k 작은 제목 · toc 목차 이름) · {p} 문단 · {ul} 목록 · {note} 참고 상자 · {files} 첨부 · {link, href} 링크
@@ -2034,12 +2037,10 @@
         body.appendChild(p);
       }
     });
-    // 본문 + 발표자료를 한 칸에 모으고, 소제목이 3개 이상이면 목차를 옆에 붙입니다
+    // 본문을 한 칸에 두고, 소제목이 3개 이상이면 목차를 옆에 붙입니다
     var dmain = el("div","dmain");
     var col = el("div","dcol");
     col.appendChild(body);
-    var deck = renderDeck(col, a);
-    if(deck) heads.push({label: deck.getAttribute("aria-label"), node: deck});
     if(heads.length >= 3){
       dmain.classList.add("has-toc");
       dmain.appendChild(buildToc(heads));
