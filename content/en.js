@@ -139,6 +139,7 @@ SITE.en = {
     ["Writing", "blog.naver.com/kidariseok"]
   ],
   tiles: {
+    gpa: {label:"GPA", unit:" / 4.5", note:"Sungkyunkwan University · Computer Education"},
     activities: {label:"Recorded activities", unit:"", note:"{from} - {to}"},
     certs: {label:"Certifications", unit:"", note:"3 computing · 3 English · 1 other"},
     scholarships: {label:"Campus scholarships", unit:"", note:"Over $3,500"},
@@ -146,7 +147,6 @@ SITE.en = {
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
     dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments and built my global perspective."},
-    hackathon: {label:"Hackathon hosted", unit:" ppl", note:"RE:ALThon · HR lead"},
     funding: {label:"Hackathon funding raised", value:"$5K+", unit:"", note:"From programs at <b>3</b> universities · total budget ~$5.5K"}
   },
   // 기록 요약 카드 묶음(common.js 의 tileGroups)에 마우스를 올렸을 때 나오는 글자
