@@ -504,6 +504,61 @@
   .body .note{margin-top:20px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:15px 18px;font-size:15px;line-height:1.7}
   .body a:hover{text-decoration:underline}
 
+  /* 본문 추가 블록: 케이스 스터디용 (content 파일의 body 에서 사용) */
+  .body .hk{margin-top:52px;font:800 13px var(--display);color:var(--accent-text);letter-spacing:.06em}
+  .body .hk + h2{margin-top:6px}
+  .body .lead{margin-top:8px;font-size:20px;font-weight:800;color:var(--ink);line-height:1.5;letter-spacing:-.02em}
+  .body .facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .body .facts span{padding:6px 13px;border-radius:999px;background:var(--soft);border:1px solid var(--line);font-size:13.5px;font-weight:700;color:var(--ink)}
+  .body .stat{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+  .body .stat div{background:var(--soft);border-radius:16px;padding:14px 22px}
+  .body .stat small{display:block;font-size:12.5px;font-weight:700;color:var(--muted)}
+  .body .stat b{font:800 32px/1.25 var(--display);color:var(--ink)}
+  .body .stat b.hi{color:#ff6a3d}
+  .body .stat i{font-style:normal;color:var(--muted);font-size:20px}
+  .body .qt{margin-top:22px;padding:17px 22px;border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 14px 14px 0;font-size:17px;font-weight:800;color:var(--ink);line-height:1.65}
+  .body .flow{display:flex;align-items:center;gap:10px;margin-top:18px;flex-wrap:wrap}
+  .body .flow span{background:var(--ink);color:var(--paper);border-radius:999px;padding:8px 17px;font:700 14.5px var(--display)}
+  .body .flow i{font-style:normal;color:var(--muted);font-weight:700}
+  .body .boxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+  .body .boxes div{background:var(--soft);border-radius:14px;padding:13px 16px;font-size:15.5px;line-height:1.65}
+  .body .cards{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:10px;margin-top:18px}
+  .body .cards div{border:1px solid var(--line);border-radius:16px;padding:16px 17px}
+  .body .cards small{display:block;font:800 12px var(--display);color:var(--accent-text);letter-spacing:.05em;margin-bottom:4px}
+  .body .cards b{display:block;font-size:16px}
+  .body .cards span{display:block;margin-top:6px;font-size:14.5px;line-height:1.7}
+  .body .cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+  .body .cmp div{border-radius:16px;padding:17px 20px;background:var(--soft)}
+  .body .cmp div:last-child{background:var(--ink);color:var(--paper)}
+  .body .cmp div:last-child b{color:var(--paper)}
+  .body .cmp b{display:block;font-size:17px}
+  .body .cmp span{display:block;margin-top:6px;font-size:15px;line-height:1.7}
+  .body ul.checks li::before{content:"✓";width:auto;height:auto;background:none;border-radius:0;top:0;left:1px;color:var(--accent);font-weight:800}
+  @media (max-width:640px){
+    .body .boxes,.body .cmp{grid-template-columns:1fr}
+    .body .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (max-width:460px){ .body .cards{grid-template-columns:1fr} }
+
+  /* 목차: 본문 소제목(h)이 3개 이상이면 자동으로 생김. PC 는 왼쪽 고정, 좁은 화면은 위쪽 가로 띠 */
+  .dmain.has-toc{display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px;align-items:start}
+  .toc{position:sticky;top:calc(64px + 28px + env(safe-area-inset-top,0px));margin-top:36px;max-height:calc(100dvh - 130px);overflow-y:auto;scrollbar-width:thin}
+  .toc .tt{font:800 12.5px var(--display);letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
+  .toc ol{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+  .toc button{display:block;width:100%;text-align:left;border:0;background:none;cursor:pointer;margin-left:-2px;padding:6px 0 6px 14px;border-left:2px solid transparent;font:500 14px/1.5 var(--sans);color:var(--muted);transition:color .2s,border-color .2s}
+  .toc button:hover{color:var(--ink)}
+  .toc button[aria-current="true"]{color:var(--accent-text);font-weight:800;border-left-color:var(--accent)}
+  @media (max-width:980px){
+    .dmain.has-toc{display:block}
+    .toc{position:sticky;top:calc(64px + env(safe-area-inset-top,0px));z-index:30;margin:24px -24px 0;padding:10px 24px;max-height:none;overflow-x:auto;overflow-y:hidden;background:var(--bar);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border-bottom:1px solid var(--line);scrollbar-width:none}
+    .toc::-webkit-scrollbar{display:none}
+    .toc .tt{display:none}
+    .toc ol{display:flex;gap:6px;border:0;width:max-content}
+    .toc button{margin:0;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--soft);font-size:13.5px;white-space:nowrap}
+    .toc button[aria-current="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  }
+  @media (max-width:640px){ .toc{margin-inline:-16px;padding-inline:16px} }
+
   /* 발표자료 (챕터형 슬라이드) */
   .deck{margin-top:48px;padding-top:36px;border-top:1px solid var(--line)}
   .deckhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
@@ -1149,7 +1204,7 @@
   function renderDeck(view, a){
     var cfg = (C.decks || {})[a.id];
     var dk = (L().activities[a.id] || {}).deck || (KO.activities[a.id] || {}).deck;
-    if(!cfg || !dk || !dk.chapters) return;
+    if(!cfg || !dk || !dk.chapters) return null;
 
     var items = [], chStart = [];
     dk.chapters.forEach(function(ch, ci){
@@ -1271,7 +1326,64 @@
     }
     set(0, true);
     view.appendChild(sec);
+    return sec;
   }
+
+  // 목차 이름: toc 가 있으면 그것, k("01 · 문제")가 있으면 "01 문제", "01. 상황: ..." 이면 "01 상황"
+  function tocLabel(b){
+    if(b.toc) return b.toc;
+    if(b.k) return b.k.replace(/\s*·\s*/, " ");
+    var m = String(b.h).match(/^(\d+)\.\s*([^:：]+)/);
+    return m ? m[1] + " " + m[2].trim() : b.h;
+  }
+
+  var tocState = null;   // 지금 상세 페이지의 목차 (스크롤 위치 따라 표시)
+  function buildToc(heads){
+    var nav = el("nav","toc");
+    nav.setAttribute("aria-label", T.toc[lang]);
+    nav.appendChild(el("p","tt", T.toc[lang]));
+    var ol = el("ol");
+    var btns = heads.map(function(h){
+      var li = el("li");
+      var b = el("button", null, h.label);
+      b.type = "button";
+      b.addEventListener("click", function(){
+        var bar = nav.offsetHeight && getComputedStyle(nav).position === "sticky" && nav.getBoundingClientRect().width > window.innerWidth - 60 ? nav.offsetHeight : 0;
+        var y = h.node.getBoundingClientRect().top + window.scrollY - 64 - bar - 20;
+        window.scrollTo({top: y, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+        tocState && tocState.mark(heads.indexOf(h));
+      });
+      li.appendChild(b); ol.appendChild(li);
+      return b;
+    });
+    nav.appendChild(ol);
+    var cur = -1;
+    function mark(i){
+      if(i === cur) return;
+      cur = i;
+      btns.forEach(function(b, j){ b.setAttribute("aria-current", j === i ? "true" : "false"); });
+      // 좁은 화면(가로 띠)에서는 지금 항목이 보이도록 띠를 옆으로 밀어 줍니다
+      if(i >= 0 && nav.scrollWidth > nav.clientWidth){
+        var bb = btns[i];
+        nav.scrollTo({left: bb.offsetLeft - nav.clientWidth / 2 + bb.offsetWidth / 2, behavior: "smooth"});
+      }
+    }
+    tocState = {nav: nav, mark: mark, update: function(){
+      if(!nav.isConnected) return;
+      var line = 64 + 120, i = 0;
+      heads.forEach(function(h, j){ if(h.node.getBoundingClientRect().top <= line) i = j; });
+      if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) i = heads.length - 1;
+      mark(i);
+    }};
+    mark(0);
+    return nav;
+  }
+  var tocTick = false;
+  window.addEventListener("scroll", function(){
+    if(tocTick || !tocState) return;
+    tocTick = true;
+    requestAnimationFrame(function(){ tocTick = false; tocState && tocState.update(); });
+  }, {passive:true});
 
   function byId(id){
     for(var i=0;i<ACT.length;i++){ if(ACT[i].id === id) return i; }
@@ -1729,6 +1841,7 @@
   function renderDetail(id){
     var view = document.getElementById("detail-view");
     view.textContent = "";
+    tocState = null;
     var i = byId(id);
     if(i < 0){
       view.appendChild(el("p", null, T.notFound[lang]));
@@ -1786,10 +1899,68 @@
     }
 
     var body = el("div","body");
-    // 본문 블록: {h} 소제목 · {p} 문단 · {ul} 목록 · {note} 참고 상자 · {files} 첨부 · {link, href} 링크
+    var heads = [];   // 목차에 들어갈 소제목들 {label, node}
+    // 본문 블록: {h} 소제목(k 작은 제목 · toc 목차 이름) · {p} 문단 · {ul} 목록 · {note} 참고 상자 · {files} 첨부 · {link, href} 링크
+    //           {lead} 큰 문장 · {facts} 정보 칩 · {stat} 숫자 · {q} 강조 문장 · {flow} 흐름 · {boxes} 회색 상자
+    //           {cards} 카드 · {cmp} 두 칸 비교 · {checks} 체크 목록
     (a.body[lang] || []).forEach(function(b){
-      if(b.h != null)         body.appendChild(el("h2", null, b.h));
+      if(b.h != null){
+        var anchor;
+        if(b.k){ anchor = el("p","hk", b.k); body.appendChild(anchor); }
+        var h2 = el("h2", null, b.h);
+        body.appendChild(h2);
+        heads.push({label: tocLabel(b), node: anchor || h2});
+      }
       else if(b.p != null)    body.appendChild(rich("p", null, b.p));
+      else if(b.lead != null) body.appendChild(rich("p","lead", b.lead));
+      else if(b.q != null)    body.appendChild(rich("p","qt", b.q));
+      else if(b.facts){
+        var fc = el("div","facts");
+        b.facts.forEach(function(t){ fc.appendChild(el("span", null, t)); });
+        body.appendChild(fc);
+      }
+      else if(b.stat){
+        var st = el("div","stat");
+        b.stat.forEach(function(x, j){
+          if(j) st.appendChild(el("i", null, "→"));
+          var d = el("div");
+          d.appendChild(el("small", null, x.k));
+          d.appendChild(el("b", x.hi ? "hi" : null, x.v));
+          st.appendChild(d);
+        });
+        body.appendChild(st);
+      }
+      else if(b.flow){
+        var fl = el("div","flow");
+        b.flow.forEach(function(t, j){
+          if(j) fl.appendChild(el("i", null, "→"));
+          fl.appendChild(el("span", null, t));
+        });
+        body.appendChild(fl);
+      }
+      else if(b.boxes){
+        var bx = el("div","boxes");
+        b.boxes.forEach(function(t){ bx.appendChild(rich("div", null, t)); });
+        body.appendChild(bx);
+      }
+      else if(b.cards || b.cmp){
+        var list = b.cards || b.cmp;
+        var cd = el("div", b.cards ? "cards" : "cmp");
+        if(b.cards) cd.style.setProperty("--n", Math.min(list.length, 4));
+        list.forEach(function(x){
+          var d = el("div");
+          if(x.n) d.appendChild(el("small", null, x.n));
+          d.appendChild(el("b", null, x.t));
+          d.appendChild(rich("span", null, x.d));
+          cd.appendChild(d);
+        });
+        body.appendChild(cd);
+      }
+      else if(b.checks){
+        var ck = el("ul","checks");
+        b.checks.forEach(function(li){ ck.appendChild(rich("li", null, li)); });
+        body.appendChild(ck);
+      }
       else if(b.ul){
         var ul = el("ul");
         b.ul.forEach(function(li){ ul.appendChild(rich("li", null, li)); });
@@ -1815,9 +1986,18 @@
         body.appendChild(p);
       }
     });
-    view.appendChild(body);
-
-    renderDeck(view, a);
+    // 본문 + 발표자료를 한 칸에 모으고, 소제목이 3개 이상이면 목차를 옆에 붙입니다
+    var dmain = el("div","dmain");
+    var col = el("div","dcol");
+    col.appendChild(body);
+    var deck = renderDeck(col, a);
+    if(deck) heads.push({label: deck.getAttribute("aria-label"), node: deck});
+    if(heads.length >= 3){
+      dmain.classList.add("has-toc");
+      dmain.appendChild(buildToc(heads));
+    }
+    dmain.appendChild(col);
+    view.appendChild(dmain);
 
     var pager = el("div","pager");
     function pagerLink(idx, kind){

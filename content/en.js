@@ -114,6 +114,7 @@ SITE.en = {
     deckPrev: "Prev",
     deckNext: "Next",
     deckPm: "My part",
+    toc: "Contents",
     close: "Close",
     all: "All",
     showAll: "Show all {n}",
@@ -361,29 +362,102 @@ SITE.en = {
     },
     line4: {
       title: "LIKELION Line-4 Hackathon",
-      summary: "Served as PM, owning planning and overall direction, and built low-fidelity wireframes in Figma to define screen structure and layout before handoff to designers.",
-      short: "PM for planning and direction; built low-fi wireframes in Figma.",
+      summary: "As PM, planned 2GATHER - an AI-powered marketing solution that helps students and early-stage founders plan promotion and connect with the right people on a small budget and a limited network.",
+      short: "PM · UX/UI for 2GATHER, an AI promotion-strategy platform shipped in 5 weeks",
       body: [
-        {p:"At the Line-4 Hackathon I took the PM role for a team of five."},
-        {
-          p: "I owned the planning and the overall direction, and built the low-fidelity wireframes in Figma myself - defining screen structure and layout before anything went to the designers."
-        }
+        {lead:"2GATHER · An AI promotion-strategy platform for people starting out"},
+        {p:"An AI-powered marketing solution built so that students and early-stage founders can <b>plan their promotion and connect with the people they need - even with a small budget and a limited network</b>."},
+        {p:"At the LIKELION Line-4 Hackathon, a team of six planned, built and deployed the service in about five weeks."},
+        {facts:["Oct – Nov 2024", "PM / UX·UI", "Team of 6"]},
+
+        {k:"01 · Problem", h:"A good idea is not enough if you can't get the word out."},
+        {p:"As head of people at GDSC, I set a goal of <b>30 new members - but only 9 joined</b>."},
+        {stat:[{k:"Goal", v:"30"}, {k:"Recruited", v:"9", hi:true}]},
+        {p:"The only channels we could use were Everytime and department group chats, and we had neither the budget nor the network to reach further."},
+        {p:"That experience surfaced these problems:"},
+        {boxes:[
+          "It's hard to know which channel to promote on.",
+          "Every channel has different posting rules and timing.",
+          "A small budget can't pay for professional promotion.",
+          "It's hard even to find someone who can make the materials."
+        ]},
+        {q:"What if people starting out, with little money, could build a promotion strategy on their own?"},
+
+        {k:"02 · 2GATHER", h:"Plan the promotion, connect the people."},
+        {p:"2GATHER is a service that <b>builds a promotion strategy from just a few inputs</b>, so users don't have to study marketing first."},
+        {p:"Users enter <b>the recruiting period · target headcount · budget · preferred channels in order</b>. From that, 2GATHER returns three things."},
+        {cards:[
+          {n:"01", t:"Promotion timeline", d:"Considering each channel - Instagram, Everytime, CampusPick, Yozm, TikTok, YouTube - it shows <b>what to prepare and post, and when</b>, as a schedule."},
+          {n:"02", t:"Budget plan", d:"Based on the available budget, it splits costs across materials and channels and suggests <b>how to spend a limited budget</b>."},
+          {n:"03", t:"Creator matching", d:"Users can find <b>early-career creators who can make designs, videos and more</b>, matched to their budget and the materials they need."}
+        ]},
+
+        {k:"03 · How it works", h:"We cut down what the user has to decide."},
+        {p:"At first, we planned for users to pick the platforms themselves."},
+        {p:"But the problem 2GATHER set out to solve was exactly that people <b>“don't know where to promote.”</b>"},
+        {p:"So instead of choosing platforms, users only rank the formats they want - <b>print · video · social</b>."},
+        {p:"The system then maps suitable channels based on the material type and recruiting period."},
+        {flow:["Input", "AI Analysis", "Marketing Timeline"]},
+        {p:"This simple flow reduces the choices users have to think about."},
+
+        {k:"04 · Core design", h:"We turned each channel's quirks into rules."},
+        {p:"I researched how each platform handles promotion and turned it into rules that could shape a real schedule. For example:"},
+        {cards:[
+          {t:"CampusPick", d:"Allow for an approval period of up to 48 hours"},
+          {t:"Everytime", d:"Adjust the schedule to posting and recruiting periods"},
+          {t:"Yozm", d:"Account for poster/thumbnail specs and production time"},
+          {t:"Linkareer", d:"Limit to startups where business verification is required"}
+        ]},
+        {p:"The aim was not to stop at “AI recommends a promotion plan,” but to <b>build real platform constraints into the service logic</b>."},
+
+        {k:"05 · A different take on budget", toc:"05 Budget", h:"Not everyone gets the same ratio."},
+        {p:"At first we planned to apply a <b>70/20/10 budget split</b> to every user."},
+        {p:"But for very small budgets, like ₩10,000–20,000, applying the ratio as-is was unrealistic. So we split budgets into tiers."},
+        {cmp:[
+          {t:"Under ₩100,000", d:"Show recommended costs and creator rates, and let the user decide"},
+          {t:"₩100,000 and up", d:"Suggest 70/20/10 as the default, and let the user adjust"}
+        ]},
+        {p:"For small budgets, we decided it was better to <b>offer choices than to force an answer</b>."},
+
+        {k:"06 · Connecting people and opportunities", toc:"06 Connection", h:"2GATHER doesn't stop at promotion."},
+        {p:"2GATHER connects people who need promotion with people who can make the materials."},
+        {p:"Users are separated through student email verification and business verification, and can find creators by field - design, video and more - and by budget."},
+        {p:"To keep users and creators - mostly students and early-stage founders - rotating, we set <b>an active period of 3 years after graduation and 5 years after founding</b>."},
+        {q:"For one person it's the chance to start promoting; for another, the first job that shows what they can do."},
+
+        {k:"07 · My part", h:"I turned the idea into the structure of a service."},
+        {p:"As PM, I led the planning process <b>from pitching the idea through planning, wireframes, working with developers and presenting</b>."},
+        {checks:[
+          "Defined the problem from a real recruiting experience and pitched the project",
+          "Planned the core features and user flow",
+          "Researched six promotion channels and turned them into service rules",
+          "Designed the budget split and operating rules",
+          "Built low-fi wireframes in Figma",
+          "Worked through detailed logic and requirements with FE and BE",
+          "Prepared and delivered the first pitch and the final presentation"
+        ]},
+        {p:"The final UI design was by Minjeong Jang, and four teammates built the front-end and back-end."},
+
+        {k:"08 · Result", h:"From imagination to a real service"},
+        {p:"After about five weeks of planning and development, we built <b>a service you can actually log in to and demo</b>."},
+        {p:"From Google login and user verification to generating a strategy, checking the timeline and browsing creators, the core user flow of 2GATHER came together as one service."},
+        {q:"2GATHER - turning the ideas you only imagined into reality."}
       ],
       deck: {
         title: "Pitch deck",
         chapters: [
           {
             name: "Intro",
-            pm: "As PM, I owned the planning and overall direction of the project.",
+            pm: "As PM, I led the planning process from pitching the idea through wireframes, working with developers and presenting.",
             slides: [
               {k:"INTRO", t:"2GATHER, a promotion-strategy platform", d:"An AI-powered, timeline-based marketing solution. Built by Jinseok Oh (PM), Minjeong Jang (design), Yechan Kim and Hyeonseo Choi (front-end), and Minseo Kang and Jindong Lee (back-end)."}
             ]
           },
           {
             name: "Problem",
-            pm: "I framed the problem from the promotion limits we hit while recruiting LIKELION's 13th cohort, and set the planning direction.",
+            pm: "I defined the problem from recruiting for GDSC and pitched the project.",
             slides: [
-              {k:"GOAL / REALITY", t:"Aimed for 30, recruited 9", d:"Recruiting LIKELION's 13th cohort, the goal was 30 new members - only 9 joined. The project started from that gap."},
+              {k:"GOAL / REALITY", t:"Aimed for 30, recruited 9", d:"Recruiting for GDSC as head of people, the goal was 30 new members - only 9 joined. The project started from that gap."},
               {k:"QUESTION", t:"Where can ₩10,000 buy promotion?", d:"We asked whether a small budget could get a message onto a platform everyone already knows."},
               {k:"ANSWER", t:"In the end, only Instagram", d:"The only answer that came to mind was Instagram."},
               {k:"PAIN POINT", t:"Three limits", d:"With limited resources and networks, students and early-career people struggle to find teammates; existing channels like Everytime or department group chats reach only so far; and after graduation even those networks become hard to use."},
@@ -392,7 +466,7 @@ SITE.en = {
           },
           {
             name: "Features",
-            pm: "I scoped the three features and built the low-fi wireframes in Figma to define screen structure and layout before handing off to design.",
+            pm: "I planned the core features and user flow, and built low-fi wireframes in Figma.",
             slides: [
               {k:"FUNCTION 01", t:"An effective promotion timeline", d:"An AI trained on the AIDA model proposes a timeline for planning, producing and posting on each channel, with a tip for every stage."},
               {k:"FUNCTION 02", t:"Maximum impact on a tight budget", d:"Following the 70/20/10 rule, it suggests how to split the budget across items like print and video and shows the total spend at a glance."},
@@ -401,7 +475,7 @@ SITE.en = {
           },
           {
             name: "Strengths",
-            pm: "I designed the three-step input → analysis → result flow and the sign-up verification flow as wireframes.",
+            pm: "I researched six promotion channels, turned them into service rules, and designed the budget split and operating rules.",
             slides: [
               {k:"STEP 1", t:"Enter your conditions", d:"Just enter the campaign title, recruiting period, target headcount, budget, and your preferred channels in order."},
               {k:"STEP 2", t:"AI analysis", d:"The AI analyzes a promotion strategy based on those conditions."},
@@ -411,6 +485,7 @@ SITE.en = {
           },
           {
             name: "Conclusion",
+            pm: "I prepared and delivered the first pitch and the final presentation.",
             slides: [
               {k:"CONCLUSION", t:"A dependable ally", d:"The goal: practical help so ambitious students don't give up before they start, and backing for early-career people's projects and startups."},
               {k:"2GATHER", t:"Turning ideas into reality", d:"A space that turns the ideas you only imagined into reality - 2GATHER."}
