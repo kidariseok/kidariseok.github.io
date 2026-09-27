@@ -487,6 +487,21 @@
   .dhead .lede{margin-top:18px;font-size:18px;color:var(--text);line-height:1.75;max-width:60ch}
   .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;font-size:13px;font-weight:700;color:var(--accent-text);background:var(--accent-soft)}
   .badge .i{width:14px;height:14px}
+  /* 상세 페이지 맨 위 요약 숫자 카드: ko/en.js 활동의 nums (v 숫자 · u 단위 · pre 앞말 · t 설명 · d 보조 설명) */
+  .dnums{grid-column:1/-1;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:30px}
+  .dtop.has-cov .dnums{margin-top:0}
+  .dnums > div{background:var(--tile);border-radius:var(--r);padding:18px 18px 16px;min-width:0}
+  .dnums .nv{font:800 32px/1.1 var(--display);color:var(--ink);letter-spacing:-.02em;white-space:nowrap}
+  .dnums .nv small{font:700 14px var(--sans);color:var(--accent-text);margin-left:3px}
+  .dnums .nv em{font:700 14px var(--sans);font-style:normal;color:var(--muted);margin-right:4px}
+  .dnums .nt{display:block;margin-top:8px;font-size:14px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all}
+  .dnums .nd{display:block;margin-top:3px;font-size:12.5px;color:var(--muted);line-height:1.5;word-break:keep-all}
+  @media (max-width:1080px){ .dnums{grid-template-columns:repeat(3,minmax(0,1fr))} }
+  @media (max-width:560px){
+    .dnums{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .dnums > div{padding:15px 15px 14px}
+    .dnums .nv{font-size:27px}
+  }
   .shotshead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:40px}
   .shotshead h2{font-size:20px;font-weight:800}
   .shotshead .hint{font-size:13.5px;color:var(--muted);white-space:nowrap}
@@ -533,6 +548,7 @@
   .body .cmp div:last-child b{color:var(--paper)}
   .body .cmp b{display:block;font-size:17px}
   .body .cmp span{display:block;margin-top:6px;font-size:15px;line-height:1.7}
+  .body h3{margin-top:28px;font-size:17.5px;font-weight:800}
   .body ul.checks li::before{content:"✓";width:auto;height:auto;background:none;border-radius:0;top:0;left:1px;color:var(--accent);font-weight:800}
   @media (max-width:640px){
     .body .boxes,.body .cmp{grid-template-columns:1fr}
@@ -1012,9 +1028,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790514840"></script>
-<script src="content/ko.js?v=1790514840"></script>
-<script src="content/en.js?v=1790514840"></script>
+<script src="content/common.js?v=1790520000"></script>
+<script src="content/ko.js?v=1790520000"></script>
+<script src="content/en.js?v=1790520000"></script>
 <script>
 (function(){
   "use strict";
@@ -1876,6 +1892,24 @@
     var lede = lang === "ko" ? a.dko : a.den;
     if(lede) head.appendChild(el("p","lede", lede));
     dtop.appendChild(head);
+
+    // 요약 숫자 카드: 제목 바로 아래, 사진보다 먼저 보이도록 상단 블록 안에 둡니다
+    var nums = (L().activities[a.id] || {}).nums || (KO.activities[a.id] || {}).nums;
+    if(nums && nums.length){
+      var nm = el("div","dnums");
+      nums.forEach(function(x){
+        var d = el("div");
+        var v = el("div","nv");
+        if(x.pre) v.appendChild(el("em", null, x.pre));
+        v.appendChild(document.createTextNode(x.v));
+        if(x.u) v.appendChild(el("small", null, x.u));
+        d.appendChild(v);
+        d.appendChild(el("span","nt", x.t));
+        if(x.d) d.appendChild(el("span","nd", x.d));
+        nm.appendChild(d);
+      });
+      dtop.appendChild(nm);
+    }
     view.appendChild(dtop);
 
     // 가로로 넘겨 보는 사진 줄: 본문 위에 둬서 먼저 눈에 들어오게 합니다
@@ -1902,7 +1936,7 @@
     var heads = [];   // 목차에 들어갈 소제목들 {label, node}
     // 본문 블록: {h} 소제목(k 작은 제목 · toc 목차 이름) · {p} 문단 · {ul} 목록 · {note} 참고 상자 · {files} 첨부 · {link, href} 링크
     //           {lead} 큰 문장 · {facts} 정보 칩 · {stat} 숫자 · {q} 강조 문장 · {flow} 흐름 · {boxes} 회색 상자
-    //           {cards} 카드 · {cmp} 두 칸 비교 · {checks} 체크 목록
+    //           {cards} 카드 · {cmp} 두 칸 비교 · {checks} 체크 목록 · {h3} 작은 소제목(목차 제외)
     (a.body[lang] || []).forEach(function(b){
       if(b.h != null){
         var anchor;
@@ -1956,6 +1990,7 @@
         });
         body.appendChild(cd);
       }
+      else if(b.h3 != null) body.appendChild(el("h3", null, b.h3));
       else if(b.checks){
         var ck = el("ul","checks");
         b.checks.forEach(function(li){ ck.appendChild(rich("li", null, li)); });
