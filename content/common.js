@@ -49,6 +49,11 @@ SITE.common = {
     ched: {cover:"ched_cover", shots:["ched_01"]},
     gdsc: {cover:"gdsc_cover"}
   },
+  // 발표자료 슬라이드: img/ 안의 파일 이름 앞부분(file) + 01, 02 ... 번호 · count 는 전체 장 수
+  // 장(챕터) 이름과 설명은 ko.js / en.js 의 해당 활동 deck 에 있습니다.
+  decks: {
+    line4: {file:"line4_slide_", count:15}
+  },
   activities: [
     {
       id: "intl-publication",

@@ -110,6 +110,10 @@ SITE.en = {
     notFound: "That activity could not be found.",
     photos: "Photos",
     swipe: "Scroll sideways",
+    deckAll: "All {n} slides",
+    deckPrev: "Prev",
+    deckNext: "Next",
+    deckPm: "My part",
     close: "Close",
     all: "All",
     showAll: "Show all {n}",
@@ -364,7 +368,56 @@ SITE.en = {
         {
           p: "I owned the planning and the overall direction, and built the low-fidelity wireframes in Figma myself - defining screen structure and layout before anything went to the designers."
         }
-      ]
+      ],
+      deck: {
+        title: "Pitch deck",
+        chapters: [
+          {
+            name: "Intro",
+            pm: "As PM, I owned the planning and overall direction of the project.",
+            slides: [
+              {k:"INTRO", t:"2GATHER, a promotion-strategy platform", d:"An AI-powered, timeline-based marketing solution. Built by Jinseok Oh (PM), Minjeong Jang (design), Yechan Kim and Hyeonseo Choi (front-end), and Minseo Kang and Jindong Lee (back-end)."}
+            ]
+          },
+          {
+            name: "Problem",
+            pm: "I framed the problem from the promotion limits we hit while recruiting LIKELION's 13th cohort, and set the planning direction.",
+            slides: [
+              {k:"GOAL / REALITY", t:"Aimed for 30, recruited 9", d:"Recruiting LIKELION's 13th cohort, the goal was 30 new members - only 9 joined. The project started from that gap."},
+              {k:"QUESTION", t:"Where can ₩10,000 buy promotion?", d:"We asked whether a small budget could get a message onto a platform everyone already knows."},
+              {k:"ANSWER", t:"In the end, only Instagram", d:"The only answer that came to mind was Instagram."},
+              {k:"PAIN POINT", t:"Three limits", d:"With limited resources and networks, students and early-career people struggle to find teammates; existing channels like Everytime or department group chats reach only so far; and after graduation even those networks become hard to use."},
+              {k:"OVERVIEW", t:"Why don't capable people connect?", d:"Capable people hit a ceiling when looking for opportunities and growing their networks. From that, we planned 2GATHER - a space that turns ideas into reality."}
+            ]
+          },
+          {
+            name: "Features",
+            pm: "I scoped the three features and built the low-fi wireframes in Figma to define screen structure and layout before handing off to design.",
+            slides: [
+              {k:"FUNCTION 01", t:"An effective promotion timeline", d:"An AI trained on the AIDA model proposes a timeline for planning, producing and posting on each channel, with a tip for every stage."},
+              {k:"FUNCTION 02", t:"Maximum impact on a tight budget", d:"Following the 70/20/10 rule, it suggests how to split the budget across items like print and video and shows the total spend at a glance."},
+              {k:"FUNCTION 03", t:"Creators that fit the budget", d:"Browse creators by category (video, print, social) and price range, and pick who to work with within your budget."}
+            ]
+          },
+          {
+            name: "Strengths",
+            pm: "I designed the three-step input → analysis → result flow and the sign-up verification flow as wireframes.",
+            slides: [
+              {k:"STEP 1", t:"Enter your conditions", d:"Just enter the campaign title, recruiting period, target headcount, budget, and your preferred channels in order."},
+              {k:"STEP 2", t:"AI analysis", d:"The AI analyzes a promotion strategy based on those conditions."},
+              {k:"STEP 3", t:"The optimal timeline", d:"The resulting timeline can be saved as an image, and channels with different promotion periods are managed on one screen."},
+              {k:"STRENGTH", t:"A rotating structure that lowers the barrier", d:"Users join with student or business verification. Experts leave the platform 3 years after graduating or 5 years after founding, so new users and creators keep arriving and no one monopolizes it."}
+            ]
+          },
+          {
+            name: "Conclusion",
+            slides: [
+              {k:"CONCLUSION", t:"A dependable ally", d:"The goal: practical help so ambitious students don't give up before they start, and backing for early-career people's projects and startups."},
+              {k:"2GATHER", t:"Turning ideas into reality", d:"A space that turns the ideas you only imagined into reality - 2GATHER."}
+            ]
+          }
+        ]
+      }
     },
     "ktng-overseas": {
       title: "KT&G Sangsang Withus Overseas Volunteer Corps",
