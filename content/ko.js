@@ -66,7 +66,7 @@ SITE.ko = {
       paragraph4: "앞으로는 탄탄한 기술 이해를 바탕으로 여러 분야와 협력하고, 다양한 관점을 연결하며, 아이디어를 의미 있는 결과로 만들어내는 사람이 되고자 합니다.",
       profileTitle: "기본 정보"
     },
-    records: {title:"기록 요약", description:"봉사시간은 1365 자원봉사활동 확인서 기준입니다."},
+    records: {title:"기록 요약", description:""},
     activities: {title:"대외활동", count:"{n}", description:"구분을 눌러 활동을 추려보고, 카드를 누르면 그 활동의 상세 기록으로 들어갑니다."},
     certs: {title:"자격증", count:"{n}", description:"분야별로 구분되어 있으며, 각 분야 내에서는 취득일 기준 최신순입니다."},
     awards: {

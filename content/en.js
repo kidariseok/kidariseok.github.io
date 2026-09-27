@@ -75,7 +75,7 @@ SITE.en = {
     },
     records: {
       title: "Records",
-      description: "Volunteer hours follow the official 1365 volunteer certificate."
+      description: ""
     },
     activities: {
       title: "Activities",
