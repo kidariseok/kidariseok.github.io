@@ -125,7 +125,6 @@ SITE.en = {
     competition: "Competition",
     external: "External",
     volunteer: "Volunteer",
-    club: "Club",
     campus: "Campus",
     course: "Course"
   },

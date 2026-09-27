@@ -103,7 +103,7 @@ SITE.ko = {
     won: "원",
     awardTerm: "2024년 2학기 · 교내"
   },
-  categories: {competition:"공모전", external:"대외활동", volunteer:"봉사활동", club:"교내동아리", campus:"교내활동", course:"강의"},
+  categories: {competition:"공모전", external:"대외활동", volunteer:"봉사활동", campus:"교내활동", course:"강의"},
   // 첫 화면 이름 뒤로 천천히 흘러가는 키워드 띠 (순서대로, 쉼표로 구분)
   keywords: ["AI", "데이터", "소프트웨어", "컴퓨터교육", "교육", "멘토링", "봉사", "학생 대상 활동", "서비스 기획", "프로젝트", "해커톤", "국제학교", "영어", "해외 연사", "해외봉사", "교환학생", "GDGoC", "해커톤 총괄", "PM"],
   interests: ["AI·데이터", "PM", "서비스기획", "개발자", "글로벌"],

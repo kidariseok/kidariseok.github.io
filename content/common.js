@@ -5,7 +5,7 @@
    예) 활동을 하나 추가하려면
        1) 아래 activities 에 {id:"새주소", start:"2026-10-01", category:"external", notion:""} 추가
           (end 는 끝나는 날짜. 하루짜리면 빼세요.
-           category 는 competition / external / volunteer / club / campus / course 중 하나)
+           category 는 competition / external / volunteer / campus / course 중 하나)
        2) ko.js 와 en.js 의 activities 에 같은 id 로 title · summary · body 추가
        3) 사진이 있으면 img/ 에 넣고 아래 photos 에 id 로 등록
    · activities 는 날짜가 늦은 것부터 위에서 아래로 적습니다.
@@ -31,7 +31,6 @@ SITE.common = {
     competition: {color:"b1", icon:"ic-trophy"},
     external: {color:"b2", icon:"ic-globe"},
     volunteer: {color:"b3", icon:"ic-heart"},
-    club: {color:"b4", icon:"ic-code"},
     campus: {color:"b5", icon:"ic-flag"},
     course: {color:"b6", icon:"ic-cap"}
   },
@@ -115,7 +114,7 @@ SITE.common = {
       id: "goormthon",
       start: "2024-07-22",
       end: "2025-02-28",
-      category: "club", axis:"leadership",
+      category: "campus", axis:"leadership",
       notion: "3bbdd7c9423e808e910cca08abc718b6"
     },
     {id:"ched", start:"2024-07-17", category:"campus", axis:"global", notion:"3bbdd7c9423e8016946ecaf4511b8813"},
@@ -148,7 +147,7 @@ SITE.common = {
       id: "likelion12",
       start: "2024-03-02",
       end: "2025-02-28",
-      category: "club", axis:"leadership",
+      category: "campus", axis:"leadership",
       notion: "3bbdd7c9423e803693f8ef83c8e04db6"
     },
     {
