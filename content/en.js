@@ -501,8 +501,8 @@ SITE.en = {
       short: "177 hours of education and environmental volunteering at an elementary school in Bogor, Indonesia.",
       nums: [
         {v:"177", u:"hrs", t:"Total volunteering hours", d:"8 – 17 Jan 2025 · Bogor, Indonesia", hi:true},
-        {v:"40", t:"Volunteers deployed together to Indonesia"},
-        {v:"34", t:"Third-grade students we taught", d:"Main education programs"}
+        {v:"40", t:"Volunteers in the whole corps", d:"4 teams · 10 per team"},
+        {v:"34", t:"Students my team taught", d:"One third-grade class"}
       ],
       numsLayout: "row",
       body: [
