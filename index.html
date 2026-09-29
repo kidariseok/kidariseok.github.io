@@ -736,6 +736,162 @@
   .st-next .st-no span:last-child{margin-left:0}
   .st-next-text{color:var(--ink);font-size:clamp(17px,1.7vw,20px);font-weight:700;line-height:1.55}
 
+
+  /* ---- 프로젝트 (common.js projects) ----
+     첫 카드(.wide)는 표지 | 내용 두 칸, 나머지는 세 칸. 카드 안 네 칸: 문제 · 기능 · 역할 · 성과 */
+  .st-kicker + .shead{margin-top:12px}
+  .pj-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .pj{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+  .pj:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--line),var(--shadow)}
+  .pj.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+  .pj-cov{position:relative;aspect-ratio:16/9;background:var(--block);overflow:hidden}
+  .pj.wide .pj-cov{aspect-ratio:auto;min-height:100%}
+  .pj-cov img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  /* 표지 사진이 없을 때: 검은 바탕 + 파란 빛 + 큰 제목 */
+  .pj-cov.blank{display:flex;align-items:flex-end;padding:22px;background:radial-gradient(90% 120% at 100% 0%,rgba(47,134,255,.5),transparent 62%),var(--block)}
+  .pj-cov.blank{justify-content:flex-end}
+  .pj-cov .pj-ic{width:92px;height:92px;stroke-width:1.1;color:var(--accent-2);opacity:.9}
+  .pj.wide .pj-cov img{object-fit:contain}
+  .pj-tags{position:absolute;left:14px;top:14px;display:flex;gap:6px;flex-wrap:wrap;z-index:1}
+  .pj-tags span{padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;color:#fff;background:rgba(10,12,16,.55);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+  .pj-main{display:flex;flex-direction:column;gap:6px;padding:24px 24px 20px;flex:1}
+  .pj.wide .pj-main{padding:32px}
+  .pj-kind{font-size:13px;font-weight:700;color:var(--accent-text)}
+  .pj h3{font-size:21px;font-weight:800}
+  .pj.wide h3{font-size:28px}
+  .pj-one{color:var(--text);font-size:15px;line-height:1.65}
+  .pj-spec{display:grid;gap:12px;margin:14px 0 0}
+  .pj.wide .pj-spec{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px}
+  .pj-spec > div{padding-top:12px;border-top:1px solid var(--line);min-width:0}
+  .pj-spec dt{font:800 12px/1.3 var(--display);letter-spacing:.05em;color:var(--muted);margin-bottom:5px}
+  .pj-spec dd{margin:0;font-size:14px;line-height:1.65;color:var(--text)}
+  .pj-spec dd b{color:var(--ink)}
+  .pj-spec ul{margin:0;padding:0;list-style:none;display:grid;gap:3px}
+  .pj-spec li{position:relative;padding-left:14px}
+  .pj-spec li::before{content:"";position:absolute;left:1px;top:.68em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+  .pj-spec .lrn{display:block;margin-top:4px;color:var(--muted)}
+  .pj-stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+  .stag{display:inline-flex;align-items:center;padding:4px 10px;border-radius:8px;font:700 12.5px/1.3 var(--display);color:var(--ink);background:var(--soft);border:1px solid var(--line)}
+  .stag.hit{background:var(--accent);border-color:var(--accent);color:#fff}
+  .pj-foot{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:18px}
+  .pj-link{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink)}
+  .pj-link .i{width:15px;height:15px}
+  a.pj-link:hover{border-color:var(--ink);text-decoration:none}
+  .pj-link.off{color:var(--muted);border-style:dashed}
+  .pj-link.off small{font-weight:500;margin-left:2px}
+  .pj-case{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:800;color:var(--accent-text)}
+  .pj-case .i{width:16px;height:16px;transition:transform .3s var(--ease)}
+  .pj-case:hover{text-decoration:none}
+  .pj-case:hover .i{transform:translateX(3px)}
+  .pj-active{display:flex;align-items:center;gap:10px;margin:-6px 0 18px;font-size:14px;color:var(--muted)}
+  .pj-active b{color:var(--ink)}
+  .pj-active button{border:0;background:none;padding:0;cursor:pointer;font:700 14px var(--sans);color:var(--accent-text)}
+  .pj-active button:hover{text-decoration:underline}
+  .pj-empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:var(--r)}
+
+  /* ---- 기술 스택 (common.js stack) ---- 칸마다 기술 목록, 아이콘 자리 짧은 글자. 진한 칸 = 주로 사용 */
+  .stk-legend{display:flex;gap:16px;font-size:13.5px;color:var(--muted)}
+  .stk-legend > span{display:inline-flex;align-items:center;gap:7px}
+  .stk-legend i{width:12px;height:12px;border-radius:4px}
+  .stk-legend .lv2 i{background:var(--accent)}
+  .stk-legend .lv1 i{border:1.5px solid var(--accent)}
+  .stk-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+  .stk{padding:20px 16px 12px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper)}
+  .stk h3{font:800 12.5px/1.3 var(--display);letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin:0 4px 10px}
+  .stk ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+  .sitem{display:grid;grid-template-columns:38px minmax(0,1fr);gap:0 11px;align-items:center;width:100%;padding:8px 4px;border:0;border-radius:12px;background:none;text-align:left;font:inherit;color:inherit}
+  button.sitem{cursor:pointer;transition:background .2s}
+  button.sitem:hover,.sitem[aria-pressed="true"]{background:var(--soft)}
+  .sico{grid-row:span 2;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font:800 12.5px/1 var(--display);letter-spacing:-.01em}
+  .lv-2 .sico{background:var(--accent);color:#fff}
+  .lv-1 .sico{background:var(--paper);color:var(--accent-text);box-shadow:inset 0 0 0 1.5px var(--accent)}
+  .sitem b{font-size:14.5px;color:var(--ink);line-height:1.3;display:flex;align-items:center;gap:6px}
+  .sitem b em{font:700 11px/1 var(--display);font-style:normal;color:var(--accent-text);background:var(--accent-soft);padding:3px 6px;border-radius:999px}
+  .sitem small{font-size:12.5px;color:var(--muted);line-height:1.4}
+  .sitem[aria-pressed="true"]{box-shadow:inset 0 0 0 1.5px var(--accent)}
+
+  /* ---- 상세 페이지: 프로젝트 요약 상자 (프로젝트와 연결된 활동에만) ---- */
+  .pjsum{margin-top:32px;border-radius:var(--r);background:var(--block);color:var(--on-block);box-shadow:inset 0 0 0 1px var(--block-line);overflow:hidden;position:relative}
+  .pjsum::before{content:"";position:absolute;right:-120px;top:-160px;width:380px;height:380px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(47,134,255,.3),rgba(28,111,224,0) 68%)}
+  .pjsum-h{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:20px 26px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .pjsum-h b{font:800 13px/1 var(--display);letter-spacing:.08em;color:var(--accent-2)}
+  .pjsum-h .pj-tags{position:static}
+  .pjsum dl{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0}
+  .pjsum dl > div{padding:20px 26px 22px;border-right:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);min-width:0}
+  .pjsum dl > div:nth-child(3n){border-right:0}
+  .pjsum dl > div:nth-child(n+4){border-bottom:0}
+  .pjsum dt{display:flex;align-items:center;gap:8px;font:800 12px/1.3 var(--display);letter-spacing:.05em;color:var(--on-block-2);margin-bottom:8px}
+  .pjsum dt .n{color:var(--accent-2)}
+  .pjsum dd{margin:0;font-size:14.5px;line-height:1.7;color:#e3e8f0}
+  .pjsum dd b{color:#fff}
+  .pjsum ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+  .pjsum li{position:relative;padding-left:14px}
+  .pjsum li::before{content:"";position:absolute;left:1px;top:.7em;width:5px;height:5px;border-radius:50%;background:var(--accent-2)}
+  .pjsum .lrn{display:block;margin-top:6px;color:var(--on-block-2)}
+  .pjsum .stag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#fff}
+  .pjsum .pj-stack{margin-top:0}
+  .pjsum .pj-link{color:#fff;border-color:rgba(255,255,255,.2)}
+  .pjsum .pj-link.off{color:var(--on-block-2)}
+  .pjsum .pj-foot{padding-top:0;margin-top:0}
+
+  /* ---- 본문 그림 블록: {fig} 한 장 · {figs} 여러 장 나란히 · {arch} 시스템 구조도 ---- */
+  .body figure{margin:24px 0 0}
+  .figimg{display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--soft);box-shadow:inset 0 0 0 1px var(--line);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+  .figimg:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .figimg img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  .body figcaption{margin-top:8px;font-size:13.5px;color:var(--muted);line-height:1.5}
+  .figs{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:12px;margin-top:24px}
+  .figs figure{margin:0}
+  .figs figcaption{font-weight:700;color:var(--ink)}
+  .arch{margin-top:24px;padding:20px;border-radius:18px;background:var(--soft);border:1px solid var(--line)}
+  .arch-row{display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr));gap:22px;position:relative}
+  .alane{position:relative;padding:14px 14px 12px;border-radius:14px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:6px}
+  .alane:not(:last-child)::after{content:"";position:absolute;right:-19px;top:50%;width:16px;height:16px;transform:translateY(-50%);
+    background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h15M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h15M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat}
+  .alane small{font:800 11px/1 var(--display);letter-spacing:.08em;color:var(--accent-text)}
+  .alane b{font-size:15px;color:var(--ink);line-height:1.35}
+  .body .alane ul{margin:2px 0 0;gap:4px}
+  .body .alane li{font-size:13px;line-height:1.5;padding-left:12px}
+  .body .alane li::before{width:4px;height:4px;left:1px;top:.62em}
+  .alane .ats{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto;padding-top:6px}
+  .alane .stag{font-size:11.5px;padding:2px 7px}
+  .alane.hl{background:var(--ink)}
+  .alane.hl b{color:var(--paper)}
+  .alane.hl small{color:var(--accent-2)}
+  .body .alane.hl li{color:var(--paper);opacity:.85}
+  .abase{margin-top:14px;display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:12px;border:1.5px dashed var(--accent);color:var(--ink);font-size:14px;font-weight:700}
+  .abase small{font:800 11px/1 var(--display);letter-spacing:.08em;color:var(--accent-text)}
+  @media (max-width:1100px){ .stk-grid{grid-template-columns:repeat(3,minmax(0,1fr))} }
+  @media (max-width:980px){
+    .pj-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .pj.wide{grid-template-columns:1fr}
+    .pj.wide .pj-cov{aspect-ratio:16/9}
+    .pjsum dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .pjsum dl > div{border-bottom:1px solid rgba(255,255,255,.08)!important;border-right:1px solid rgba(255,255,255,.08)!important}
+    .pjsum dl > div:nth-child(2n){border-right:0!important}
+    .pjsum dl > div:nth-child(n+5){border-bottom:0!important}
+  }
+  @media (max-width:720px){
+    .arch-row{grid-template-columns:1fr;gap:20px}
+    .alane:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-18px;transform:translateX(-50%) rotate(90deg)}
+  }
+  @media (max-width:640px){
+    .pj-list{grid-template-columns:1fr}
+    .pj.wide .pj-main{padding:22px}
+    .pj.wide .pj-spec{grid-template-columns:1fr}
+    .pj.wide h3{font-size:24px}
+    .stk-grid{grid-template-columns:1fr 1fr;gap:8px}
+    .stk{padding:14px 10px 8px}
+    .sitem{grid-template-columns:32px minmax(0,1fr);gap:0 8px}
+    .sico{width:32px;height:32px;border-radius:9px;font-size:11px}
+    .pjsum dl{grid-template-columns:1fr}
+    .pjsum dl > div{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.08)!important;padding:16px 20px}
+    .pjsum dl > div:last-child{border-bottom:0!important}
+    .pjsum-h{padding:16px 20px}
+    .figs{grid-template-columns:1fr}
+  }
+
   /* ---- 화면 폭에 따라 ---- */
   @media (max-width:980px){
     nav.links{display:none}
@@ -832,6 +988,8 @@
     <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></symbol>
     <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M7.2 3.8h2.6l1.4 4-2 1.3a10.5 10.5 0 0 0 5.7 5.7l1.3-2 4 1.4v2.6a2 2 0 0 1-2.2 2A15.8 15.8 0 0 1 5.2 6a2 2 0 0 1 2-2.2Z"/></symbol>
     <symbol id="ic-video" viewBox="0 0 24 24"><rect x="3.4" y="6" width="12.4" height="12" rx="2.6"/><path d="m15.8 10.4 4.8-2.8v8.8l-4.8-2.8"/></symbol>
+    <symbol id="ic-github" viewBox="0 0 24 24"><path d="M9.2 19.2c-3.9 1.2-3.9-2-5.5-2.4m11 4.4v-3.1a2.7 2.7 0 0 0-.8-2.1c2.6-.3 5.3-1.3 5.3-5.7a4.4 4.4 0 0 0-1.2-3.1 4.1 4.1 0 0 0-.1-3.1s-1-.3-3.2 1.2a11 11 0 0 0-5.7 0C6.8 3.8 5.8 4.1 5.8 4.1a4.1 4.1 0 0 0-.1 3.1 4.4 4.4 0 0 0-1.2 3.1c0 4.4 2.7 5.4 5.3 5.7a2.7 2.7 0 0 0-.8 2.1v3.1"/></symbol>
+    <symbol id="ic-ext" viewBox="0 0 24 24"><path d="M13.5 5.5h5v5M18.2 5.8 11 13"/><path d="M17 13.8v3.4a1.8 1.8 0 0 1-1.8 1.8H6.8A1.8 1.8 0 0 1 5 17.2V8.8A1.8 1.8 0 0 1 6.8 7h3.4"/></symbol>
     <symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3.4" y="5.4" width="17.2" height="13.2" rx="2.4"/><path d="m3.9 7.4 8.1 5.6 8.1-5.6"/></symbol>
   </defs>
 </svg>
@@ -842,6 +1000,8 @@
     <a class="mark" href="#top">JINSEOK OH<span>.</span></a>
     <nav class="links" aria-label="섹션">
       <a href="#story" data-t="nav.story">방향</a>
+      <a href="#projects" data-t="nav.projects">프로젝트</a>
+      <a href="#stack" data-t="nav.stack">기술 스택</a>
       <a href="#about" data-t="nav.about">소개</a>
       <a href="#records" data-t="nav.records">기록 요약</a>
       <a href="#activities" data-t="nav.activities">대외활동</a>
@@ -938,6 +1098,37 @@
             <a class="more-link" href="#activities"><span data-t="featured.more">전체 활동 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
           </div>
           <div class="feature" id="featured-list"></div>
+        </div>
+      </section>
+
+      <!-- ── 프로젝트 ────────────────────────────────────────────────
+           카드 목록은 common.js 의 projects, 글자는 ko.js / en.js 의 projects.
+           첫 카드는 넓게, 나머지는 세 칸. 위 버튼으로 개발 · AI·데이터 · PM·기획을 골라 볼 수 있습니다.
+           ───────────────────────────────────────────────────────── -->
+      <section id="projects" class="tint">
+        <div class="wrap">
+          <p class="st-kicker" data-t="projects.kicker">PROJECTS</p>
+          <div class="shead pj-shead"><h2 data-t="projects.title">프로젝트</h2></div>
+          <p class="sdesc" data-t="projects.description"></p>
+          <div class="filters" id="pj-filters" role="group" aria-label="프로젝트 구분"></div>
+          <p class="pj-active" id="pj-active" hidden></p>
+          <div class="pj-list" id="pj-list"></div>
+        </div>
+      </section>
+
+      <!-- ── 기술 스택 ───────────────────────────────────────────────
+           목록은 common.js 의 stack, 칸 이름은 ko.js / en.js 의 stackGroups.
+           기술을 누르면 위 프로젝트 목록이 그 기술을 쓴 프로젝트로 좁혀집니다.
+           ───────────────────────────────────────────────────────── -->
+      <section id="stack">
+        <div class="wrap">
+          <p class="st-kicker" data-t="stack.kicker">TECH STACK</p>
+          <div class="shead">
+            <h2 data-t="stack.title">기술 스택</h2>
+            <p class="stk-legend"><span class="lv2"><i></i><span data-t="stack.lv2">주로 사용</span></span><span class="lv1"><i></i><span data-t="stack.lv1">사용 경험</span></span></p>
+          </div>
+          <p class="sdesc" data-t="stack.description"></p>
+          <div class="stk-grid" id="stack-grid"></div>
         </div>
       </section>
 
@@ -1883,6 +2074,204 @@
     });
   }
 
+
+  /* ---------- 프로젝트 · 기술 스택 ---------- */
+  var PJ_TAGS = C.projectTags || [];
+  var PROJECTS = (C.projects || []).map(function(p){
+    return {id: p.id, act: p.activity, tags: p.tags || [], cover: p.cover, stack: p.stack || [], github: p.github || "", demo: p.demo || "",
+      txt: both(function(Lx){ return (Lx.projects || {})[p.id] || (KO.projects || {})[p.id] || {}; })};
+  });
+  var pjTag = "all", pjStack = null;   // 프로젝트 목록 필터: 구분(tags) · 기술 스택 이름
+  function projectOf(actId){
+    for(var i=0;i<PROJECTS.length;i++){ if(PROJECTS[i].act === actId) return PROJECTS[i]; }
+    return null;
+  }
+  function tagName(id){
+    for(var i=0;i<PJ_TAGS.length;i++){ if(PJ_TAGS[i].id === id) return tr(PJ_TAGS[i].name); }
+    return id;
+  }
+  function stackTags(p, hit){
+    var box = el("div","pj-stack");
+    p.stack.forEach(function(n){ box.appendChild(el("span", "stag" + (n === hit ? " hit" : ""), n)); });
+    return box;
+  }
+  // GitHub · Demo 버튼 (주소가 없으면 점선 '준비 중') + 케이스 스터디 링크
+  function projectLinks(p, withCase){
+    var f = el("div","pj-foot");
+    [["github", "GitHub", "ic-github"], ["demo", "Demo", "ic-ext"]].forEach(function(k){
+      var url = p[k[0]], a;
+      if(url){ a = el("a","pj-link"); a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+      else { a = el("span","pj-link off"); a.title = T.pjSoon[lang]; }
+      a.appendChild(icon(k[2]));
+      a.appendChild(document.createTextNode(k[1]));
+      if(!url) a.appendChild(el("small", null, "· " + T.pjSoon[lang]));
+      f.appendChild(a);
+    });
+    if(withCase && byId(p.act) >= 0){
+      var c = el("a","pj-case");
+      c.href = "#a/" + p.act;
+      c.appendChild(document.createTextNode(T.pjCase[lang]));
+      c.appendChild(icon("ic-arrow"));
+      f.appendChild(c);
+    }
+    return f;
+  }
+  // 문제 · 기능 · 역할 · 성과 네 칸 (카드와 상세 요약 상자가 같이 씀)
+  function specCells(t){
+    function cell(label, fill){
+      var d = el("div");
+      d.appendChild(el("dt", null, label));
+      var dd = el("dd");
+      fill(dd);
+      d.appendChild(dd);
+      return d;
+    }
+    return [
+      cell(T.pjProblem[lang], function(dd){ dd.innerHTML = t.problem || ""; }),
+      cell(T.pjFeatures[lang], function(dd){
+        var ul = el("ul");
+        (t.features || []).forEach(function(x){ ul.appendChild(rich("li", null, x)); });
+        dd.appendChild(ul);
+      }),
+      cell(T.pjRole[lang], function(dd){
+        dd.appendChild(el("b", null, t.role || ""));
+        if(t.contrib) dd.appendChild(document.createTextNode(" · " + t.contrib));
+      }),
+      cell(T.pjOutcome[lang], function(dd){
+        dd.appendChild(rich("span", null, t.outcome || ""));
+        if(t.learned) dd.appendChild(el("span","lrn", "→ " + t.learned));
+      })
+    ];
+  }
+  function tagPills(p){
+    var tg = el("div","pj-tags");
+    p.tags.forEach(function(x){ tg.appendChild(el("span", null, tagName(x))); });
+    return tg;
+  }
+
+  function renderProjectFilters(){
+    var box = document.getElementById("pj-filters");
+    if(!box) return;
+    box.textContent = "";
+    [{id:"all", name: T.all[lang]}].concat(PJ_TAGS.map(function(t){ return {id: t.id, name: tr(t.name)}; })).forEach(function(f){
+      var n = f.id === "all" ? PROJECTS.length : PROJECTS.filter(function(p){ return p.tags.indexOf(f.id) >= 0; }).length;
+      var b = el("button");
+      b.type = "button";
+      b.setAttribute("aria-pressed", pjTag === f.id ? "true" : "false");
+      b.appendChild(document.createTextNode(f.name));
+      b.appendChild(el("span","c num", String(n)));
+      b.addEventListener("click", function(){ pjTag = f.id; pjStack = null; renderProjectFilters(); renderProjects(); renderStack(); });
+      box.appendChild(b);
+    });
+  }
+
+  function renderProjects(){
+    var box = document.getElementById("pj-list");
+    if(!box) return;
+    box.textContent = "";
+    var act = document.getElementById("pj-active");
+    act.hidden = !pjStack;
+    act.textContent = "";
+    if(pjStack){
+      act.appendChild(rich("span", null, fill(T.pjFilterStack[lang], {s: "<b>" + pjStack + "</b>"})));
+      var cl = el("button", null, T.pjClear[lang]);
+      cl.type = "button";
+      cl.addEventListener("click", function(){ pjStack = null; renderProjects(); renderStack(); });
+      act.appendChild(cl);
+    }
+    var list = PROJECTS.filter(function(p){
+      return (pjTag === "all" || p.tags.indexOf(pjTag) >= 0) && (!pjStack || p.stack.indexOf(pjStack) >= 0);
+    });
+    if(!list.length){ box.appendChild(el("p","pj-empty", "—")); return; }
+    list.forEach(function(p, i){
+      var t = p.txt[lang];
+      var card = el("article", "pj" + (i === 0 && list.length > 1 ? " wide" : ""));
+      var cov = el("div", "pj-cov" + (p.cover ? "" : " blank"));
+      if(p.cover){
+        var im = document.createElement("img");
+        im.src = imgSrc(p.cover); im.alt = ""; im.loading = "lazy"; im.decoding = "async";
+        cov.appendChild(im);
+      } else {                                   // 표지 사진이 없으면 구분 아이콘을 크게
+        var ic = icon({data:"ic-chart", dev:"ic-code", pm:"ic-users"}[p.tags[0]] || "ic-star");
+        ic.setAttribute("class","i pj-ic");
+        cov.appendChild(ic);
+      }
+      cov.appendChild(tagPills(p));
+      card.appendChild(cov);
+      var m = el("div","pj-main");
+      m.appendChild(el("p","pj-kind", t.kind || ""));
+      m.appendChild(el("h3", null, t.title || p.id));
+      m.appendChild(rich("p","pj-one", t.one || ""));
+      var dl = el("dl","pj-spec");
+      specCells(t).forEach(function(c){ dl.appendChild(c); });
+      m.appendChild(dl);
+      m.appendChild(stackTags(p, pjStack));
+      m.appendChild(projectLinks(p, true));
+      card.appendChild(m);
+      box.appendChild(card);
+    });
+  }
+
+  function renderStack(){
+    var box = document.getElementById("stack-grid");
+    if(!box) return;
+    box.textContent = "";
+    (C.stack || []).forEach(function(g){
+      var col = el("div","stk");
+      col.appendChild(el("h3", null, (L().stackGroups || KO.stackGroups || {})[g.group] || g.group));
+      var ul = el("ul");
+      g.items.forEach(function(x){
+        var n = PROJECTS.filter(function(p){ return p.stack.indexOf(x.name) >= 0; }).length;
+        var it = el(n ? "button" : "div", "sitem lv-" + (x.lv || 1));
+        if(n){
+          it.type = "button";
+          it.setAttribute("aria-pressed", pjStack === x.name ? "true" : "false");
+          it.addEventListener("click", function(){
+            pjStack = pjStack === x.name ? null : x.name;
+            pjTag = "all";
+            renderProjectFilters(); renderProjects(); renderStack();
+            if(pjStack) document.getElementById("projects").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+          });
+        }
+        it.appendChild(el("span","sico", x.ab || x.name.slice(0, 2)));
+        var nm = el("b", null, x.name);
+        if(n) nm.appendChild(el("em", null, String(n)));
+        it.appendChild(nm);
+        it.appendChild(el("small", null, tr(x.used) || ""));
+        var li = el("li");
+        li.appendChild(it);
+        ul.appendChild(li);
+      });
+      col.appendChild(ul);
+      box.appendChild(col);
+    });
+  }
+
+  // 상세 페이지 맨 위 '프로젝트 한눈에 보기' 상자: 문제 · 기능 · 역할 / 스택 · 성과 · 링크 여섯 칸
+  function projectSummary(p){
+    var t = p.txt[lang];
+    var box = el("div","pjsum");
+    var h = el("div","pjsum-h");
+    h.appendChild(el("b", null, T.pjSummary[lang]));
+    h.appendChild(tagPills(p));
+    box.appendChild(h);
+    var dl = el("dl");
+    var cells = specCells(t);
+    function extra(label, node){
+      var d = el("div");
+      d.appendChild(el("dt", null, label));
+      var dd = el("dd"); dd.appendChild(node); d.appendChild(dd);
+      return d;
+    }
+    // 순서: 문제 · 기능 · 역할 / 기술 스택 · 성과 · 링크
+    [cells[0], cells[1], cells[2], extra(T.pjStack[lang], stackTags(p)), cells[3], extra(T.pjLinks[lang], projectLinks(p, false))].forEach(function(c, i){
+      c.firstChild.insertBefore(el("span","n num", pad2(i + 1)), c.firstChild.firstChild);
+      dl.appendChild(c);
+    });
+    box.appendChild(dl);
+    return box;
+  }
+
   /* ---------- detail renderer ---------- */
 
   function renderDetail(id){
@@ -1951,6 +2340,10 @@
       dtop.appendChild(nm);
     }
     view.appendChild(dtop);
+
+    // 프로젝트와 연결된 활동이면 '프로젝트 한눈에 보기' 상자 (common.js projects 의 activity)
+    var pj = projectOf(a.id);
+    if(pj) view.appendChild(projectSummary(pj));
 
     // 가로로 넘겨 보는 사진 줄: 본문 위에 둬서 먼저 눈에 들어오게 합니다
     if(pics.shots && pics.shots.length){
@@ -2045,6 +2438,55 @@
         body.appendChild(ul);
       }
       else if(b.note != null) body.appendChild(rich("p","note", b.note));
+      else if(b.fig || b.figs){                 // 그림: {fig:"파일", cap:"설명"} 한 장 · {figs:[{src, cap}, ...]} 나란히
+        var items = b.figs || [{src: b.fig, cap: b.cap}];
+        var wrapF = items.length > 1 ? el("div","figs") : body;
+        if(items.length > 1) wrapF.style.setProperty("--n", Math.min(items.length, 3));
+        var srcs = items.map(function(x){ return imgSrc(x.src); }), alts = items.map(function(x){ return x.cap || ""; });
+        items.forEach(function(x, j){
+          var fg = el("figure");
+          var bt = el("button","figimg");
+          bt.type = "button";
+          bt.setAttribute("aria-label", x.cap || "");
+          var im = document.createElement("img");
+          im.src = imgSrc(x.src); im.alt = x.cap || ""; im.loading = "lazy"; im.decoding = "async";
+          bt.appendChild(im);
+          bt.addEventListener("click", function(){ if(items.length > 1) openDeck(srcs, alts, j); else openShot(srcs[0]); });
+          fg.appendChild(bt);
+          if(x.cap) fg.appendChild(el("figcaption", null, x.cap));
+          wrapF.appendChild(fg);
+        });
+        if(items.length > 1) body.appendChild(wrapF);
+      }
+      else if(b.arch){                          // 시스템 구조도: lanes 단계 상자 → 화살표, base 아래 공통 저장소
+        var ar = el("div","arch");
+        ar.setAttribute("role","img");
+        ar.setAttribute("aria-label", b.arch.lanes.map(function(x){ return x.t; }).join(" → "));
+        var row = el("div","arch-row");
+        row.style.setProperty("--n", b.arch.lanes.length);
+        b.arch.lanes.forEach(function(x){
+          var ln = el("div", "alane" + (x.k === "AI" ? " hl" : ""));
+          ln.appendChild(el("small", null, x.k));
+          ln.appendChild(el("b", null, x.t));
+          var u = el("ul");
+          (x.items || []).forEach(function(t){ u.appendChild(el("li", null, t)); });
+          ln.appendChild(u);
+          if(x.tech && x.tech.length){
+            var ts = el("div","ats");
+            x.tech.forEach(function(t){ ts.appendChild(el("span","stag", t)); });
+            ln.appendChild(ts);
+          }
+          row.appendChild(ln);
+        });
+        ar.appendChild(row);
+        if(b.arch.base){
+          var bs = el("div","abase");
+          bs.appendChild(el("small", null, b.arch.base.k));
+          bs.appendChild(document.createTextNode(b.arch.base.t));
+          ar.appendChild(bs);
+        }
+        body.appendChild(ar);
+      }
       else if(b.files){
         body.appendChild(el("h2", null, T.files[lang]));
         var fb = el("div","files");
@@ -2164,6 +2606,9 @@
     renderHeroStats();
     renderStoryCerts();
     renderFeatured();
+    renderProjectFilters();
+    renderProjects();
+    renderStack();
     renderProfile();
     renderTiles();
     renderFilters();

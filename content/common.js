@@ -56,6 +56,56 @@ SITE.common = {
   decks: {
     line4: {file:"line4_slide_", count:15}
   },
+  // ── 프로젝트 섹션 ──────────────────────────────────────────────
+  // 한 줄이 프로젝트 카드 하나입니다 (위에서부터 순서대로, 첫 카드는 넓게).
+  //   activity : 이어지는 대외활동 id (카드의 '케이스 스터디' 버튼 · 상세 페이지 요약 상자가 이 활동에 붙음)
+  //   tags     : 위 projectTags 의 id (dev / data / pm). 카드 위 필터 버튼과 연결
+  //   cover    : img/ 안의 표지 이미지 이름
+  //   stack    : 기술 스택 이름. 아래 stack 의 name 과 같게 적으면 기술 스택 칸과 서로 연결됩니다
+  //   github / demo : 주소. 비워 두면 '준비 중' 으로 흐리게 표시
+  // 글자(문제 · 기능 · 역할 · 성과)는 ko.js / en.js 의 projects 에 있습니다.
+  projectTags: [
+    {id:"dev", name:{ko:"개발", en:"Development"}},
+    {id:"data", name:{ko:"AI · 데이터", en:"AI · Data"}},
+    {id:"pm", name:{ko:"PM · 기획", en:"PM · Planning"}}
+  ],
+  projects: [
+    {id:"2gather", activity:"line4", tags:["pm", "dev"], cover:"line4_slide_01", stack:["Figma", "Notion", "Google OAuth", "LLM API"], github:"", demo:""},
+    {id:"realthon", activity:"realthon", tags:["pm", "data"], cover:"realthon_cover", stack:["Gemini API", "Notion", "Slack"], github:"", demo:""},
+    {id:"trend-forecast", activity:"s-global", tags:["data"], cover:"", stack:["Python", "TensorFlow", "LSTM", "ARIMA"], github:"", demo:""},
+    {id:"tomake", activity:"likelion12", tags:["pm", "dev"], cover:"", stack:["React", "Figma", "Postman", "Hugging Face"], github:"", demo:""}
+  ],
+  // ── 기술 스택 ─────────────────────────────────────────────────
+  // group 한 칸에 기술 여러 개. lv: 2 = 주로 사용 · 1 = 사용 경험
+  // ab 는 아이콘 자리에 들어가는 짧은 글자, used 는 근거가 되는 활동 · 자격증 이름(ko/en)
+  stack: [
+    {group:"lang", items:[
+      {name:"Python", ab:"Py", lv:2, used:{ko:"GDSC AI 팀 · 시계열 분석", en:"GDSC AI team · time series"}},
+      {name:"SQL", ab:"SQL", lv:2, used:{ko:"SQLD · ADsP", en:"SQLD · ADsP"}},
+      {name:"JavaScript", ab:"JS", lv:1, used:{ko:"멋쟁이사자처럼 스터디", en:"LIKELION study"}},
+      {name:"TypeScript", ab:"TS", lv:1, used:{ko:"사용 경험", en:"Hands-on"}}
+    ]},
+    {group:"web", items:[
+      {name:"React", ab:"Re", lv:1, used:{ko:"멋쟁이사자처럼 스터디", en:"LIKELION study"}},
+      {name:"Google OAuth", ab:"G", lv:1, used:{ko:"2GATHER 로그인 흐름 기획", en:"2GATHER sign-in flow"}}
+    ]},
+    {group:"data", items:[
+      {name:"TensorFlow", ab:"TF", lv:1, used:{ko:"GDSC AI/TensorFlow 팀", en:"GDSC AI/TensorFlow team"}},
+      {name:"LLM API", ab:"AI", lv:2, used:{ko:"2GATHER · RE:ALThon", en:"2GATHER · RE:ALThon"}},
+      {name:"Gemini API", ab:"Ge", lv:2, used:{ko:"RE:ALThon 참가자 안내", en:"RE:ALThon participant guide"}},
+      {name:"Hugging Face", ab:"HF", lv:1, used:{ko:"GPT-2 API 실습", en:"GPT-2 API practice"}}
+    ]},
+    {group:"design", items:[
+      {name:"Figma", ab:"Fi", lv:2, used:{ko:"2GATHER 와이어프레임", en:"2GATHER wireframes"}},
+      {name:"PRD", ab:"PRD", lv:2, used:{ko:"구름톤 방탈출 게임", en:"goormthon escape game"}}
+    ]},
+    {group:"tools", items:[
+      {name:"Notion", ab:"N", lv:2, used:{ko:"행사 · 프로젝트 문서화", en:"Event & project docs"}},
+      {name:"Slack", ab:"Sl", lv:2, used:{ko:"3개 대학 GDSC 협업", en:"3-university GDSC collaboration"}},
+      {name:"Postman", ab:"Pm", lv:1, used:{ko:"API 요청 · 응답 실습", en:"API request practice"}},
+      {name:"Git · GitHub", ab:"Git", lv:1, used:{ko:"이 포트폴리오 사이트", en:"This portfolio site"}}
+    ]}
+  ],
   activities: [
     {
       id: "intl-publication",
