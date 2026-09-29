@@ -1856,10 +1856,10 @@
         var s = el("span","s num", bits.join(" · "));
         s.appendChild(el("span","pill " + (c.valid === "ok" ? "ok" : "exp"), c.term[lang]));
         li.appendChild(s);
-        // 같은 시험의 이전 성적이 있으면 둘째 줄: 이전 성적 975 · LC 485 · RC 490 · 2024.02.04 [만료]
+        // 같은 시험의 이전 성적이 있으면 첫 줄과 같은 형식으로 둘째 줄: LC 485 · RC 490 · 발급처 · 2024.02.04 [만료]
         if(c.prev){
           var p = c.prev.txt[lang];
-          var s2 = el("span","s num", [(p.label || "") + " " + (p.result || ""), p.detail, c.prev.date.replace(/-/g,".")].filter(function(x){ return x && x.trim().length > 1; }).join(" · "));
+          var s2 = el("span","s num", [p.detail, c.iss[lang], c.prev.date.replace(/-/g,".")].filter(function(x){ return x && x.length > 1; }).join(" · "));
           s2.appendChild(el("span","pill " + (c.prev.valid === "ok" ? "ok" : "exp"), p.status || ""));
           li.appendChild(s2);
         }

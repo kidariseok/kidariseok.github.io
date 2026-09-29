@@ -162,7 +162,7 @@ SITE.ko = {
     },
     toeic: {
       name: "TOEIC", result: "975", detail: "LC 495 · RC 480", issuer: "한국TOEIC위원회", status: "2년",
-      prev: {label:"이전 성적", result:"975", detail:"LC 485 · RC 490", status:"만료"}
+      prev: {detail:"LC 485 · RC 490", status:"만료"}
     },
     "korean-history-1": {name:"한국사능력검정시험 1급", result:"합격", detail:"-", issuer:"국사편찬위원회", status:"영구"}
   },

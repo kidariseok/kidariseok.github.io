@@ -205,7 +205,7 @@ SITE.en = {
       detail: "LC 495 · RC 480",
       issuer: "YBM / TOEIC Committee Korea",
       status: "2 years",
-      prev: {label:"Previous score", result:"975", detail:"LC 485 · RC 490", status:"Expired"}
+      prev: {detail:"LC 485 · RC 490", status:"Expired"}
     },
     "korean-history-1": {
       name: "Korean History Proficiency, Level 1",
