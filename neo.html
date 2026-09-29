@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="오진석 포트폴리오 · Neo-Brutalism 디자인 시안">
+<meta name="theme-color" content="#efebe2">
+<meta name="robots" content="noindex">
+<title>JINSEOK OH · Neo-Brutalism</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,400..900&family=Black+Han+Sans&family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  /* ══════════════════════════════════════════════════════════════
+     Neo-Brutalism 시안
+     ──────────────────────────────────────────────────────────────
+     · 포스터처럼 거대한 압축 서체(Anton) + 넓은 굵은 서체(Archivo Expanded)
+     · 두꺼운 검은 테두리, 흐림 없는 딱딱한 그림자, 종이 질감(grain)
+     · 색은 사진에서 뽑았습니다: 숲 초록 · 햇빛 연두 · 칸나 빨강 · 돌계단 베이지
+     ══════════════════════════════════════════════════════════════ */
+  :root{
+    --paper:#efebe2;   /* 종이 */
+    --stone:#e2d6bb;   /* 돌계단 */
+    --ink:#0d0d0b;
+    --forest:#16301a;  /* 숲 그늘 */
+    --lime:#c8f03c;    /* 햇빛 받은 잎 */
+    --red:#e8401f;     /* 칸나 꽃 */
+    --line:3px solid var(--ink);
+    --hard:6px 6px 0 var(--ink);
+    --hard-lg:10px 10px 0 var(--ink);
+    --anton:"Anton","Black Han Sans",Impact,sans-serif;
+    --wide:"Archivo","Black Han Sans",sans-serif;
+    --kr-display:"Black Han Sans","Anton",sans-serif;
+    --serif:"DM Serif Display",Georgia,serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --sans:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;overflow-x:clip}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:clip;
+  }
+  h1,h2,h3,p{margin:0}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+  ::selection{background:var(--lime);color:var(--ink)}
+  :focus-visible{outline:3px solid var(--red);outline-offset:3px}
+  .wrap{width:100%;max-width:1280px;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+  .mono{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+
+  /* 종이 질감 — 화면 전체에 얹는 노이즈 */
+  .grain{
+    position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.22;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation:grain 1.2s steps(4) infinite;
+  }
+  @keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
+
+  /* ── 상단 바 ─────────────────────────────────────────────── */
+  .bar{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    padding:calc(12px + env(safe-area-inset-top,0px)) clamp(16px,4vw,48px) 12px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    pointer-events:none;
+  }
+  .bar > *{pointer-events:auto}
+  .logo{font-family:var(--serif);font-size:22px;line-height:1;text-decoration:none;background:var(--paper);border:var(--line);padding:8px 12px;box-shadow:4px 4px 0 var(--ink)}
+  .nav{display:flex;gap:8px}
+  .nav a{
+    font-family:var(--mono);font-size:12px;font-weight:700;text-transform:uppercase;text-decoration:none;
+    background:var(--paper);border:var(--line);padding:8px 12px;box-shadow:4px 4px 0 var(--ink);
+    transition:transform .15s,box-shadow .15s,background .15s;
+  }
+  .nav a:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);background:var(--lime)}
+  .nav a:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+  .nav a.cta{background:var(--ink);color:var(--paper)}
+  .nav a.cta:hover{background:var(--red);color:var(--ink)}
+  @media (max-width:720px){.nav a:not(.cta){display:none}}
+
+  /* ── 1. 포스터 첫 화면 (스크롤하면 지붕 모양 사진이 화면 전체로 펼쳐짐) ── */
+  .hero{position:relative;height:250vh;height:250svh}
+  .hero-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--paper)}
+  .hero-type{
+    position:absolute;inset:0;
+    padding:calc(78px + env(safe-area-inset-top,0px)) clamp(16px,4vw,48px) 0;
+    display:flex;flex-direction:column;
+  }
+  .t1,.t2{
+    margin:0;color:var(--ink);text-transform:uppercase;white-space:nowrap;line-height:.8;
+    will-change:transform;
+  }
+  .t1{
+    font-family:var(--anton);font-weight:400;
+    font-size:min(calc((100vw - 2 * clamp(16px,4vw,48px)) / 4.2),34vh);letter-spacing:-.01em;
+    text-align:center;
+  }
+  .t2{
+    font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900;
+    font-size:min(calc((100vw - 2 * clamp(16px,4vw,48px)) / 7.4),15vh);letter-spacing:-.045em;text-align:center;margin-top:.12em;
+  }
+  .hero-meta{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,6vw,120px);
+    margin-top:clamp(10px,2vh,22px);
+    font-size:clamp(10px,1vw,12.5px);line-height:1.35;font-weight:700;text-align:justify;
+  }
+  .hero-side{
+    position:absolute;left:clamp(16px,4vw,48px);right:clamp(16px,4vw,48px);top:62%;
+    display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;
+  }
+  .sig{font-family:var(--serif);font-size:clamp(22px,2.4vw,32px);line-height:1}
+  .plus{font-size:44px;line-height:1;font-weight:300;margin-top:18px}
+  .barcode{
+    width:clamp(120px,14vw,190px);height:30px;
+    background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px,var(--ink) 12px 13px,transparent 13px 16px);
+  }
+  .counter{
+    position:absolute;top:calc(84px + env(safe-area-inset-top,0px));right:clamp(16px,4vw,48px);z-index:3;
+    font-family:var(--mono);font-size:13px;font-weight:700;background:var(--ink);color:var(--paper);
+    padding:6px 12px;border-radius:999px;
+  }
+  /* 지붕(박공) 모양으로 잘린 사진. clip-path 는 스크립트가 스크롤에 맞춰 바꿈 */
+  .roof{
+    position:absolute;inset:0;z-index:2;
+    clip-path:polygon(0% 90%,50% 40%,50% 40%,100% 90%,100% 100%,0% 100%);
+    will-change:clip-path;
+  }
+  .roof img{width:100%;height:100%;object-fit:cover;object-position:50% 48%;transform-origin:50% 60%;will-change:transform}
+  .roof::after{ /* 사진 위 살짝 어둡게 + 종이 결 */
+    content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,11,0) 40%,rgba(13,13,11,.55));
+    opacity:var(--shade,0);
+  }
+  .hero-caption{
+    position:absolute;z-index:4;left:clamp(16px,4vw,48px);right:clamp(16px,4vw,48px);bottom:clamp(24px,6vh,64px);
+    display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;
+    opacity:0;transform:translateY(40px);transition:opacity .5s,transform .6s cubic-bezier(.2,.9,.2,1);
+  }
+  .hero-caption.on{opacity:1;transform:none}
+  .stamp{
+    background:var(--lime);border:var(--line);box-shadow:var(--hard-lg);padding:clamp(14px,2vw,24px) clamp(16px,2.4vw,30px);
+    max-width:620px;
+  }
+  .stamp .kicker{display:block;margin-bottom:8px}
+  .stamp h2{font-family:var(--kr-display);font-weight:400;font-size:clamp(28px,4.4vw,60px);line-height:1.08;letter-spacing:-.01em}
+  .scroll-hint{
+    font-family:var(--mono);font-size:12px;font-weight:700;background:var(--paper);border:var(--line);padding:8px 12px;
+    box-shadow:4px 4px 0 var(--ink);
+  }
+  @media (max-width:720px){
+    .hero-meta{grid-template-columns:1fr}
+    .hero-meta p:last-child{display:none}
+    .hero-side,.counter{display:none}
+  }
+
+  /* ── 2. 기울어진 띠 ───────────────────────────────────────── */
+  .ribbon{
+    position:relative;z-index:5;background:var(--red);border-block:var(--line);
+    transform:rotate(-2deg);margin:-28px -20px 0;overflow:hidden;
+  }
+  .ribbon.alt{background:var(--lime);transform:rotate(1.5deg);margin:0 -20px}
+  .ribbon-track{display:flex;width:max-content;animation:slide 26s linear infinite}
+  .ribbon.alt .ribbon-track{animation-direction:reverse}
+  .ribbon span{
+    font-family:var(--anton);font-size:clamp(28px,4vw,52px);line-height:1;padding:14px 0;white-space:nowrap;text-transform:uppercase;
+  }
+  .ribbon span::after{content:"✺";margin:0 .5em;font-family:var(--sans)}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ── 공통 섹션 머리 ───────────────────────────────────────── */
+  section{position:relative;scroll-margin-top:72px}
+  .sec{padding-block:clamp(72px,11vw,140px)}
+  .sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 32px;margin-bottom:clamp(32px,5vw,64px)}
+  .sec-num{
+    display:inline-block;font-family:var(--mono);font-weight:700;font-size:13px;
+    background:var(--ink);color:var(--paper);padding:4px 10px;margin-bottom:14px;
+  }
+  .sec-title{font-family:var(--anton);font-weight:400;text-transform:uppercase;font-size:clamp(52px,9vw,128px);line-height:.88;letter-spacing:-.005em}
+  .sec-title .kr{display:block;font-family:var(--kr-display);font-size:.34em;line-height:1.3;margin-top:.3em;letter-spacing:0}
+  .sec-desc{max-width:380px;font-size:15px;color:#3a3a34}
+
+  /* ── 3. 방향: 계단처럼 올라가는 카드 ─────────────────────── */
+  .stairs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,22px);align-items:end}
+  .step{
+    border:var(--line);box-shadow:var(--hard);padding:22px 20px 24px;background:var(--paper);
+    display:flex;flex-direction:column;gap:12px;min-height:300px;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .step:hover{transform:translate(-4px,-4px);box-shadow:var(--hard-lg)}
+  .step:nth-child(1){margin-top:180px}
+  .step:nth-child(2){margin-top:120px;background:var(--stone)}
+  .step:nth-child(3){margin-top:60px;background:var(--forest);color:var(--paper)}
+  .step:nth-child(4){background:var(--lime)}
+  .step-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .step-no{font-family:var(--anton);font-size:64px;line-height:.9}
+  .tag{font-family:var(--mono);font-size:11px;font-weight:700;border:2px solid currentColor;padding:2px 8px;border-radius:999px;white-space:nowrap}
+  .step h3{font-family:var(--wide);font-variation-settings:"wdth" 125;font-weight:900;font-size:22px;letter-spacing:-.03em;line-height:1.1;text-transform:uppercase}
+  .step p{font-size:14.5px;line-height:1.6}
+  .step .role{margin-top:auto;font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;border-top:2px solid currentColor;padding-top:10px}
+  @media (max-width:900px){
+    .stairs{grid-template-columns:1fr 1fr}
+    .step:nth-child(n){margin-top:0}
+    .step:nth-child(odd){margin-top:48px}
+  }
+  @media (max-width:560px){
+    .stairs{grid-template-columns:1fr}
+    .step:nth-child(n){margin:0}
+    .step{min-height:0}
+    .step:nth-child(1){margin-right:48px}
+    .step:nth-child(2){margin-inline:16px 32px}
+    .step:nth-child(3){margin-inline:32px 16px}
+    .step:nth-child(4){margin-left:48px}
+  }
+
+  /* ── 4. 숫자 ─────────────────────────────────────────────── */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border:var(--line);box-shadow:var(--hard-lg);background:var(--paper)}
+  .stat{padding:clamp(18px,2.4vw,32px);border-right:var(--line);display:flex;flex-direction:column;gap:6px}
+  .stat:last-child{border-right:0}
+  .stat:nth-child(2){background:var(--red)}
+  .stat:nth-child(3){background:var(--ink);color:var(--paper)}
+  .stat b{font-family:var(--anton);font-weight:400;font-size:clamp(56px,7vw,104px);line-height:.9;letter-spacing:-.01em}
+  .stat b small{font-size:.36em;margin-left:4px}
+  .stat span{font-weight:700;font-size:15px}
+  .stat .mono{opacity:.75}
+  @media (max-width:800px){
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:var(--line)}
+  }
+
+  /* ── 5. 사진 패럴랙스 구간 ────────────────────────────────── */
+  .band{position:relative;height:130vh;height:130svh;overflow:hidden;border-block:var(--line);background:var(--forest)}
+  .band-img{position:absolute;left:0;right:0;top:-20%;height:140%;will-change:transform}
+  .band-img img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+  .band-words{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+    pointer-events:none;overflow:hidden;
+  }
+  .band-words p{
+    font-family:var(--anton);text-transform:uppercase;white-space:nowrap;line-height:.85;
+    font-size:clamp(88px,19vw,300px);will-change:transform;
+  }
+  .band-words .solid{color:var(--lime);mix-blend-mode:hard-light}
+  .band-words .outline{color:transparent;-webkit-text-stroke:2px var(--paper)}
+  .band-card{
+    position:absolute;z-index:2;right:clamp(16px,5vw,64px);bottom:clamp(24px,8vh,80px);
+    max-width:420px;background:var(--paper);border:var(--line);box-shadow:var(--hard-lg);padding:22px 24px;
+  }
+  .band-card h3{font-family:var(--kr-display);font-weight:400;font-size:clamp(24px,2.6vw,34px);line-height:1.2;margin:10px 0 8px}
+  .band-card p{font-size:14.5px}
+  @media (max-width:560px){.band-card{left:16px;right:16px}}
+
+  /* ── 6. 대표 활동 ─────────────────────────────────────────── */
+  .works{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2.4vw,32px)}
+  .work{
+    grid-column:span 6;display:flex;flex-direction:column;text-decoration:none;
+    background:var(--paper);border:var(--line);box-shadow:var(--hard);
+    transition:transform .2s,box-shadow .2s;
+  }
+  .work:nth-child(1){grid-column:span 7}
+  .work:nth-child(2){grid-column:span 5;background:var(--lime)}
+  .work:nth-child(3){grid-column:span 5;background:var(--stone)}
+  .work:nth-child(4){grid-column:span 7;background:var(--red)}
+  .work:hover{transform:translate(-5px,-5px);box-shadow:12px 12px 0 var(--ink)}
+  .work:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+  .work-img{aspect-ratio:16/10;border-bottom:var(--line);overflow:hidden;background:var(--ink)}
+  .work-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15);transition:filter .3s,transform .5s}
+  .work:hover .work-img img{filter:none;transform:scale(1.04)}
+  .work-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .work-meta{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .work h3{font-family:var(--wide);font-variation-settings:"wdth" 112;font-weight:900;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.03em;line-height:1.1}
+  .work p{font-size:14.5px}
+  .work .go{margin-top:auto;padding-top:8px;font-family:var(--mono);font-size:12px;font-weight:700;text-transform:uppercase}
+  @media (max-width:800px){.work:nth-child(n){grid-column:1/-1}}
+
+  /* ── 7. 연락처 ────────────────────────────────────────────── */
+  .contact{background:var(--ink);color:var(--paper);padding-block:clamp(80px,12vw,160px) 40px;overflow:hidden;border-top:var(--line)}
+  .contact .big{
+    font-family:var(--anton);text-transform:uppercase;font-size:clamp(84px,17vw,260px);line-height:.84;color:var(--lime);
+  }
+  .contact .big span{display:block;color:transparent;-webkit-text-stroke:2px var(--paper)}
+  .contact-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:clamp(32px,5vw,56px)}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+    font-family:var(--mono);font-weight:700;font-size:14px;text-transform:uppercase;
+    padding:16px 22px;border:3px solid var(--paper);background:var(--lime);color:var(--ink);box-shadow:6px 6px 0 var(--paper);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .btn:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--paper)}
+  .btn:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--paper)}
+  .btn.ghost{background:var(--ink);color:var(--paper)}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:clamp(64px,10vw,120px);padding-top:18px;border-top:2px solid rgba(239,235,226,.25);opacity:.7}
+
+  /* 나타나기 */
+  .rise{opacity:0;transform:translateY(48px);transition:opacity .6s,transform .7s cubic-bezier(.2,.9,.2,1)}
+  .rise.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    .grain,.ribbon-track{animation:none}
+    .rise{opacity:1;transform:none;transition:none}
+    .hero{height:auto}
+    .hero-stage{position:relative}
+    .hero-caption{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="bar">
+  <a class="logo" href="#top">Jinseok Oh</a>
+  <nav class="nav" aria-label="메뉴">
+    <a href="#direction">Direction</a>
+    <a href="#records">Records</a>
+    <a href="#works">Works</a>
+    <a class="cta" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- 1. 포스터 첫 화면 -->
+  <section class="hero" id="hero" aria-label="소개">
+    <div class="hero-stage">
+      <span class="counter" id="counter">01/05</span>
+      <div class="hero-type">
+        <h1 class="t1" id="t1">Connector</h1>
+        <p class="t2" id="t2">Jinseok&nbsp;Oh</p>
+        <div class="hero-meta" id="meta">
+          <p>성균관대학교 컴퓨터교육과 2024학번. AI와 데이터, 소프트웨어를 공부하며 해커톤을 기획하고, 해외봉사와 교육 현장에서 사람을 만났습니다. 기술을 이해하지만 기술 자체에 머무르지 않고, 그것이 실제 사람과 조직, 산업에서 어떻게 쓰일 수 있는지를 고민합니다.</p>
+          <p>Technology, people, and industry, connected. Twenty external activities, seven certificates, two hundred and twelve hours of volunteering — each one a step up the same stone staircase, toward the place where ideas meet the people who need them.</p>
+        </div>
+      </div>
+      <div class="hero-side" id="side" aria-hidden="true">
+        <div><div class="sig">Jinseok Oh</div><div class="plus">+</div></div>
+        <div class="barcode"></div>
+      </div>
+      <div class="roof" id="roof">
+        <img id="roof-img" src="img/neo_hanok.webp" alt="숲속 돌계단 끝에 서 있는 한옥" width="1500" height="2000" fetchpriority="high">
+      </div>
+      <div class="hero-caption" id="caption">
+        <div class="stamp">
+          <span class="kicker mono">Technology · People · Industry</span>
+          <h2>기술과 사람, 산업을<br>연결합니다.</h2>
+        </div>
+        <span class="scroll-hint">↓ Scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track">
+      <span>Explore</span><span>Discover</span><span>Adapt &amp; Grow</span><span>Connect</span><span>Technology</span><span>People</span><span>Leadership</span><span>Global</span>
+      <span>Explore</span><span>Discover</span><span>Adapt &amp; Grow</span><span>Connect</span><span>Technology</span><span>People</span><span>Leadership</span><span>Global</span>
+    </div>
+  </div>
+
+  <!-- 2. 방향 -->
+  <section class="sec" id="direction">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="sec-num">02 / Direction</span>
+          <h2 class="sec-title">What am I<br>becoming?<span class="kr">다양한 경험 속에서 찾은 나만의 방향</span></h2>
+        </div>
+        <p class="sec-desc">한 칸씩 올라온 계단처럼, 탐색하고 발견하고 적응하며 다음 단계로 연결해 왔습니다.</p>
+      </div>
+      <div class="stairs">
+        <article class="step rise">
+          <div class="step-top"><span class="step-no">01</span><span class="tag">2024</span></div>
+          <h3>Explore</h3>
+          <p>AI와 데이터, 서비스 기획, 교육, 글로벌 활동까지 관심 가는 영역을 직접 경험했습니다.</p>
+        </article>
+        <article class="step rise">
+          <div class="step-top"><span class="step-no">02</span><span class="tag">2024 – 25</span></div>
+          <h3>Discover</h3>
+          <p>기술 그 자체보다 기술이 사람과 산업을 만나는 곳에 제 관심이 있다는 것을 발견했습니다.</p>
+        </article>
+        <article class="step rise">
+          <div class="step-top"><span class="step-no">03</span><span class="tag">2025 – 26</span></div>
+          <h3>Adapt &amp; Grow</h3>
+          <p>군 복무 중에도 SQLD, IELTS 8.0, 무역영어 1급, 한국사 1급, ADsP를 취득하며 성장을 이어갔습니다.</p>
+          <span class="role">육군 통신병 · 분대장</span>
+        </article>
+        <article class="step rise">
+          <div class="step-top"><span class="step-no">04</span><span class="tag">Next</span></div>
+          <h3>Connect</h3>
+          <p>기술을 실제 필요와 연결하고, 사람과 아이디어, 산업을 이어 의미 있는 가치를 만들고 싶습니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 숫자 -->
+  <section class="sec" id="records" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="sec-num">03 / Records</span>
+          <h2 class="sec-title">By the<br>numbers</h2>
+        </div>
+      </div>
+      <div class="stats rise">
+        <div class="stat"><b>20<small>건</small></b><span>기록된 대외활동</span><span class="mono">2024 – 2026</span></div>
+        <div class="stat"><b>212<small>h+</small></b><span>봉사시간</span><span class="mono">1365 확인서</span></div>
+        <div class="stat"><b>8.0</b><span>IELTS Overall</span><span class="mono">L 9.0 · R 8.5</span></div>
+        <div class="stat"><b>4.33</b><span>GPA / 4.5</span><span class="mono">SKKU Comp. Edu.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 사진 패럴랙스 -->
+  <section class="band" id="band" aria-label="Step by step">
+    <div class="band-img" id="band-img"><img src="img/neo_hanok.webp" alt="" loading="lazy" width="1500" height="2000"></div>
+    <div class="band-words" aria-hidden="true">
+      <p class="solid" data-drift="-1">Step by step / Step by step</p>
+      <p class="outline" data-drift="1">One more step / One more step</p>
+    </div>
+    <div class="band-card rise">
+      <span class="sec-num" style="margin:0">04 / Now</span>
+      <h3>다음 계단을 오르는 중</h3>
+      <p>대한민국 육군 통신병 · 분대장으로 복무하며, 새로운 환경에서도 배움과 자기계발을 이어가고 있습니다.</p>
+    </div>
+  </section>
+
+  <div class="ribbon alt" aria-hidden="true">
+    <div class="ribbon-track">
+      <span>RE:ALThon</span><span>GDG on Campus</span><span>4호선톤</span><span>KT&amp;G 해외봉사</span><span>FREEMED</span><span>ICISTS</span>
+      <span>RE:ALThon</span><span>GDG on Campus</span><span>4호선톤</span><span>KT&amp;G 해외봉사</span><span>FREEMED</span><span>ICISTS</span>
+    </div>
+  </div>
+
+  <!-- 5. 대표 활동 -->
+  <section class="sec" id="works">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="sec-num">05 / Selected works</span>
+          <h2 class="sec-title">Selected<br>works<span class="kr">대표 활동</span></h2>
+        </div>
+        <a class="scroll-hint" href="index.html#activities" style="text-decoration:none">전체 활동 보기 →</a>
+      </div>
+      <div class="works">
+        <a class="work rise" href="index.html#a/realthon">
+          <div class="work-img"><img src="img/realthon_cover.webp" alt="RE:ALThon 해커톤 현장" loading="lazy" style="object-position:50% 30%"></div>
+          <div class="work-body">
+            <div class="work-meta"><span class="tag">Leadership</span><span class="mono">2024.12</span></div>
+            <h3>RE:ALThon 주최</h3>
+            <p>글로벌 협업이 무산되자 방향을 바꿔 성균관대 · 고려대 · 서강대 3개 대학 공동 AI 해커톤(50명 · 9개 팀)을 기획하고 개최.</p>
+            <span class="go">Read more →</span>
+          </div>
+        </a>
+        <a class="work rise" href="index.html#a/gdsc">
+          <div class="work-img"><img src="img/gdsc_cover.webp" alt="Google Developer Student Clubs" loading="lazy"></div>
+          <div class="work-body">
+            <div class="work-meta"><span class="tag">Leadership</span><span class="mono">GDG on Campus</span></div>
+            <h3>Google Developer Student Clubs</h3>
+            <p>네트워크 없이 여러 경로로 월간 IT 세미나 연사를 섭외하고, 섭외 과정을 한 · 영 양식으로 문서화.</p>
+            <span class="go">Read more →</span>
+          </div>
+        </a>
+        <a class="work rise" href="index.html#a/line4">
+          <div class="work-img"><img src="img/line4_cover.webp" alt="멋쟁이사자처럼 4호선톤" loading="lazy"></div>
+          <div class="work-body">
+            <div class="work-meta"><span class="tag">PM · UX/UI</span><span class="mono">2024.11</span></div>
+            <h3>멋쟁이사자처럼 4호선톤</h3>
+            <p>AI 홍보 전략 플랫폼 2GATHER를 PM으로 기획, 5주 만에 서비스 배포.</p>
+            <span class="go">Read more →</span>
+          </div>
+        </a>
+        <a class="work rise" href="index.html#a/ktng-overseas">
+          <div class="work-img"><img src="img/ktng_cover.webp" alt="KT&amp;G 상상위더스 해외봉사단" loading="lazy"></div>
+          <div class="work-body">
+            <div class="work-meta"><span class="tag">Global</span><span class="mono">2024.10 – 2025.01</span></div>
+            <h3>KT&amp;G 상상위더스 해외봉사단</h3>
+            <p>인도네시아 보고르 지역 초등학교에서 177시간 동안 교육 · 환경 개선 봉사.</p>
+            <span class="go">Read more →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 연락처 -->
+  <footer class="contact" id="contact">
+    <div class="wrap">
+      <span class="sec-num" style="background:var(--lime);color:var(--ink)">06 / Contact</span>
+      <p class="big">Let's<span>Connect</span></p>
+      <div class="contact-row">
+        <a class="btn" href="mailto:kidariseok@gmail.com">kidariseok@gmail.com ↗</a>
+        <a class="btn ghost" href="https://blog.naver.com/kidariseok" target="_blank" rel="noopener">Blog ↗</a>
+      </div>
+      <div class="foot mono"><span>© 2026 Jinseok Oh</span><span>Neo-Brutalism concept</span></div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = id => document.getElementById(id);
+  const hero = $("hero"), roof = $("roof"), roofImg = $("roof-img");
+  const t1 = $("t1"), t2 = $("t2"), meta = $("meta"), side = $("side"), caption = $("caption"), counter = $("counter");
+  const band = $("band"), bandImg = $("band-img"), drifts = [...document.querySelectorAll("[data-drift]")];
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const ease = t => 1 - Math.pow(1 - t, 3);
+
+  // 나타나기
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), {threshold: .15});
+  document.querySelectorAll(".rise").forEach(el => io.observe(el));
+
+  // 섹션 번호 (첫 화면 오른쪽 위 01/05)
+  const secs = ["hero", "direction", "records", "band", "works"].map($);
+  const sio = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) counter.textContent = String(secs.indexOf(e.target) + 1).padStart(2, "0") + "/05";
+  }), {rootMargin: "-50% 0px -50% 0px"});
+  secs.forEach(s => sio.observe(s));
+
+  if (reduce) { caption.classList.add("on"); return; }
+
+  let ticking = false;
+  function frame() {
+    ticking = false;
+    const vh = innerHeight;
+
+    // 첫 화면: 0 → 1 동안 지붕 모양 사진이 화면 전체로 펼쳐짐
+    const r = hero.getBoundingClientRect();
+    const p = clamp(-r.top / (r.height - vh));
+    const e = ease(clamp(p / .75));
+    const peakY = lerp(40, -2, e), baseY = lerp(90, -2, e);
+    const peakL = lerp(50, 0, e), peakR = lerp(50, 100, e);
+    // 세로 화면에서는 지붕 밑변을 화면 밖으로 넓혀 완만한 박공 모양 유지
+    const spread = innerWidth < innerHeight ? lerp(70, 0, e) : 0;
+    roof.style.clipPath =
+      `polygon(${-spread}% ${baseY}%, ${peakL}% ${peakY}%, ${peakR}% ${peakY}%, ${100 + spread}% ${baseY}%, 100% 100%, 0% 100%)`;
+    roofImg.style.transform = `scale(${lerp(1.18, 1, e)}) translateY(${lerp(4, 0, e)}%)`;
+    roof.style.setProperty("--shade", e.toFixed(3));
+    t1.style.transform = `translateY(${-e * 18}vh) scale(${1 + e * .06})`;
+    t2.style.transform = `translateY(${-e * 10}vh)`;
+    meta.style.opacity = side.style.opacity = (1 - clamp(p * 3)).toFixed(3);
+    caption.classList.toggle("on", p > .6);
+
+    // 사진 띠: 사진은 느리게, 큰 글자는 좌우로 흘러감
+    const b = band.getBoundingClientRect();
+    if (b.bottom > 0 && b.top < vh) {
+      const k = (b.top + b.height / 2 - vh / 2) / (vh + b.height); // 약 -.5 ~ .5
+      bandImg.style.transform = `translate3d(0, ${k * 30}%, 0)`;
+      drifts.forEach(d => d.style.transform = `translate3d(${(+d.dataset.drift) * k * 60 - 20}%, 0, 0)`);
+    }
+  }
+  const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+  addEventListener("scroll", req, {passive: true});
+  addEventListener("resize", req);
+  frame();
+})();
+</script>
+</body>
+</html>
