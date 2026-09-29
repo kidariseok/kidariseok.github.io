@@ -58,7 +58,7 @@ SITE.en = {
         label: "ADAPT & GROW",
         period: "2025 - 2026",
         title: "A period of growth, even in a different environment.",
-        text: "From 2025 to 2026, I served in the Republic of Korea Army as a network management soldier and squad leader. While adapting to a completely different environment, I continued learning and preparing for what comes next, earning certifications including SQLD, IELTS 8.0, Trade English Level 1, Korean History Level 1, and ADsP.",
+        text: "From 2025 to 2026, I served in the Republic of Korea Army as a network management soldier and squad leader. While adapting to a completely different environment, I continued learning and preparing for what comes next, earning certifications including SQLD, IELTS 8.0, Trade English Level 1, Korean History Level 1, ADsP, and TOEIC 975.",
         role: "",
         since: "2025-01-01"
       },
@@ -153,7 +153,7 @@ SITE.en = {
     scholarships: {label:"Campus scholarships", unit:"", note:"Over $3,500"},
     volunteer: {label:"Volunteer hours", unit:"h+", note:"1365 certificate · {n} sessions"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
-    toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
+    toeic: {label:"TOEIC", unit:"", note:"LC 495 · RC 480"},
     dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments and built my global perspective."},
     funding: {label:"Hackathon funding raised", value:"$5K+", unit:"", note:"From programs at <b>3</b> universities · total budget ~$5.5K"}
   },
@@ -202,9 +202,10 @@ SITE.en = {
     toeic: {
       name: "TOEIC",
       result: "975",
-      detail: "LC 485 · RC 490",
+      detail: "LC 495 · RC 480",
       issuer: "YBM / TOEIC Committee Korea",
-      status: "Expired"
+      status: "2 years",
+      prev: {detail:"LC 485 · RC 490", status:"Expired"}
     },
     "korean-history-1": {
       name: "Korean History Proficiency, Level 1",
