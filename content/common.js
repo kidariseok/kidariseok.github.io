@@ -94,6 +94,7 @@ SITE.common = {
     {
       id: "edutech-expo",
       start: "2024-09-24",
+      dates: ["2024-09-24", "2026-09-17"],   // 상단 날짜에 두 방문일을 모두 표시
       category: "external", axis:"explore",
       notion: "3bbdd7c9423e802ebfe9ebd64f5b9d8d"
     },

@@ -1043,9 +1043,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790660000"></script>
-<script src="content/ko.js?v=1790660000"></script>
-<script src="content/en.js?v=1790660000"></script>
+<script src="content/common.js?v=1790670000"></script>
+<script src="content/ko.js?v=1790670000"></script>
+<script src="content/en.js?v=1790670000"></script>
 <script>
 (function(){
   "use strict";
@@ -1080,7 +1080,7 @@
   });
   var ACT = C.activities.map(function(a){
     var k = KO.activities[a.id] || {}, e = EN.activities[a.id] || {};
-    return {id: a.id, s: a.start, e: a.end, cat: a.category, axis: a.axis, nid: a.notion || "", video: a.video || "",
+    return {id: a.id, s: a.start, e: a.end, ds: a.dates || null, cat: a.category, axis: a.axis, nid: a.notion || "", video: a.video || "",
       ko: k.title || a.id, en: e.title || k.title || a.id, dko: k.summary || "", den: e.summary || "",
       sko: k.short || k.summary || "", sen: e.short || e.summary || "",   // short: 목록 한 줄용 짧은 요약 (없으면 summary)
       body: {ko: k.body || [], en: e.body || []}};
@@ -1420,7 +1420,15 @@
     for(var i=0;i<ACT.length;i++){ if(ACT[i].id === id) return i; }
     return -1;
   }
-  function fmtDate(s, e){
+  function fmtDate(s, e, ds){
+    // ds: 떨어진 여러 날짜(예: 2024, 2026 방문)를 모두 적을 때 쓰는 목록
+    if(ds && ds.length){
+      var M2 = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      return ds.map(function(d){
+        var q = d.split("-");
+        return lang === "ko" ? q[0] + "." + q[1] + "." + q[2] : parseInt(q[2],10) + " " + M2[parseInt(q[1],10)-1] + " " + q[0];
+      }).join(" · ");
+    }
     function part(d){
       var p = d.split("-");
       if(lang === "ko") return p[0] + "." + p[1];
@@ -1533,7 +1541,7 @@
       var card = el("a", pics.cover ? "fcard has-ph" : "fcard");
       card.href = "#a/" + a.id;
       var txt = el("div","txt");
-      txt.appendChild(el("span","meta num", CAT[a.cat][lang] + " · " + fmtDate(a.s, a.e)));
+      txt.appendChild(el("span","meta num", CAT[a.cat][lang] + " · " + fmtDate(a.s, a.e, a.ds)));
       txt.appendChild(el("h3", null, a[lang]));
       var d = lang === "ko" ? a.dko : a.den;
       if(d) txt.appendChild(el("p", null, d));
@@ -1804,7 +1812,7 @@
       var r = el("a", ck ? "row ax-" + ck : "row");
       r.href = "#a/" + a.id;
       r.hidden = !tlOpen && n >= shown;
-      r.appendChild(el("span","d num", fmtDate(a.s, a.e)));
+      r.appendChild(el("span","d num", fmtDate(a.s, a.e, a.ds)));
       var ax = axisOf(a.axis);
       r.appendChild(el("span","c", view === "axes" && ax ? tr(ax.name) : CAT[a.cat][lang]));
       var t = el("span","t");
@@ -1901,7 +1909,7 @@
     var head = el("div","dhead");
     var meta = el("div","meta");
     meta.appendChild(catBadge(a.cat));
-    meta.appendChild(el("span","date", fmtDate(a.s, a.e)));
+    meta.appendChild(el("span","date", fmtDate(a.s, a.e, a.ds)));
     head.appendChild(meta);
     head.appendChild(el("h1", null, a[lang]));
     var lede = lang === "ko" ? a.dko : a.den;

@@ -685,8 +685,8 @@ SITE.en = {
       short: "Observed which education problems tech solves, and compared two expos two years apart.",
       nums: [
         {v:"2", t:"Expo visits", d:"24 Sep 2024 · 17 Sep 2026", hi:true},
-        {v:"10M+", t:"Learning records at Haeppop Reading & Essay", d:"OCR-based AI feedback · 2024"},
-        {v:"6/10", t:"Teachers who have used generative AI in class", d:"Adobe session material · 2026"}
+        {v:"2", u:"yrs", t:"Period over which I compared the market", d:"2024 → 2026"},
+        {v:"5", t:"Insights gained", d:"Problem · Data · Experience · Connection · Convergence"}
       ],
       numsLayout: "row",
       body: [
