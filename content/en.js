@@ -684,7 +684,7 @@ SITE.en = {
       summary: "Went beyond looking at the technology to observe which education problems it solves. Comparing two expos two years apart, I saw that data, user experience and policy shape edtech.",
       short: "Observed which education problems tech solves, and compared two expos two years apart.",
       nums: [
-        {v:"2", t:"Expo visits", d:"23 Sep 2024 · 17 Sep 2026", hi:true},
+        {v:"2", t:"Expo visits", d:"24 Sep 2024 · 17 Sep 2026", hi:true},
         {v:"10M+", t:"Learning records at Haeppop Reading & Essay", d:"OCR-based AI feedback · 2024"},
         {v:"6/10", t:"Teachers who have used generative AI in class", d:"Adobe session material · 2026"}
       ],
@@ -693,7 +693,7 @@ SITE.en = {
         {lead:"I went to look at technology, and ended up looking at the education problems it meets."},
         {p:"I attended the EduTech Expo twice, in 2024 and 2026. I started out looking at what technology was on show, but came to look at <b>which education problem each piece of technology is trying to solve</b>."},
         {p:"I could also compare how the market changed over those two years."},
-        {facts:["23 Sep 2024", "17 Sep 2026", "COEX", "Adobe session"]},
+        {facts:["24 Sep 2024", "17 Sep 2026", "COEX", "Adobe session"]},
 
         {k:"01 · Two years of change", h:"The biggest booths had changed hands."},
         {p:"In 2024, large textbook companies such as Chunjae Education and YBM held the big booths. In 2026, global company <b>Adobe</b> was the main sponsor, and the textbook giants were nowhere to be seen."},

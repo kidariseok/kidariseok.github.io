@@ -93,7 +93,7 @@ SITE.common = {
     },
     {
       id: "edutech-expo",
-      start: "2024-09-23",
+      start: "2024-09-24",
       category: "external", axis:"explore",
       notion: "3bbdd7c9423e802ebfe9ebd64f5b9d8d"
     },
