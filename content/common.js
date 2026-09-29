@@ -39,7 +39,7 @@ SITE.common = {
     realthon: {cover:"realthon_cover"},
     line4: {cover:"line4_cover", shots:["line4_01", "line4_02", "line4_03"]},
     "ktng-overseas": {cover:"ktng_cover", shots:["ktng_01", "ktng_02", "ktng_03", "ktng_04"]},
-    "edutech-expo": {cover:"edutech_04", shots:["edutech_01", "edutech_02", "edutech_03", "edutech_04", "edutech_05"]},
+    "edutech-expo": {cover:"edutech_02", shots:["edutech_01", "edutech_02", "edutech_03", "edutech_04", "edutech_05"]},
     creverse: {cover:"creverse_cover", shots:["creverse_01", "creverse_02", "creverse_03"]},
     "speech-mentors": {cover:"speech_cover", shots:["speech_01", "speech_02", "speech_03", "speech_04", "speech_05"]},
     odyvice: {cover:"odyvice_cover"},
