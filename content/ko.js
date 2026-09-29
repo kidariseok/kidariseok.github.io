@@ -51,7 +51,7 @@ SITE.ko = {
         label: "ADAPT & GROW",
         period: "2025 - 2026",
         title: "환경이 달라져도 성장을 멈추지 않은 시간",
-        text: "2025년부터 2026년까지 군 복무를 하며 새로운 환경에 적응하는 동시에 제가 할 수 있는 성장을 이어갔습니다. SQLD, IELTS 8.0, 무역영어 1급, 한국사능력검정 1급, ADsP를 취득하며 다음 단계를 준비했고, 새로운 환경에서도 배움과 자기계발을 이어갔습니다.",
+        text: "2025년부터 2026년까지 군 복무를 하며 새로운 환경에 적응하는 동시에 제가 할 수 있는 성장을 이어갔습니다. SQLD, IELTS 8.0, 무역영어 1급, 한국사능력검정 1급, ADsP, TOEIC 975를 취득하며 다음 단계를 준비했고, 새로운 환경에서도 배움과 자기계발을 이어갔습니다.",
         role: "대한민국 육군 통신병 · 분대장",
         since: "2025-01-01"
       },
@@ -131,7 +131,7 @@ SITE.ko = {
     scholarships: {label:"교내 장학금", unit:"건", note:"500만원 이상"},
     volunteer: {label:"봉사시간", unit:"시간+", note:"1365 확인서 · {n}회"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
-    toeic: {label:"TOEIC", unit:"", note:"LC 485 · RC 490"},
+    toeic: {label:"TOEIC", unit:"", note:"LC 495 · RC 480"},
     // more: 카드에 마우스를 올리면(휴대폰은 누르면) 아래로 펼쳐지는 설명
     dulwich: {label:"Dulwich College Suzhou", unit:"년", note:"중국 쑤저우 국제학교", more:"다양한 문화적 배경의 친구들과 5년간 함께 배우며 낯선 환경에 빠르게 적응하는 힘과 글로벌 역량을 길렀습니다."},
     funding: {label:"해커톤 후원 유치", unit:"만원+", note:"3개 대학 · 가용 예산 약 750만원대"}
@@ -160,7 +160,10 @@ SITE.ko = {
       issuer: "IDP Education",
       status: "2년"
     },
-    toeic: {name:"TOEIC", result:"975", detail:"LC 485 · RC 490", issuer:"한국TOEIC위원회", status:"만료"},
+    toeic: {
+      name: "TOEIC", result: "975", detail: "LC 495 · RC 480", issuer: "한국TOEIC위원회", status: "2년",
+      prev: {label:"이전 성적", result:"975", detail:"LC 485 · RC 490", status:"만료"}
+    },
     "korean-history-1": {name:"한국사능력검정시험 1급", result:"합격", detail:"-", issuer:"국사편찬위원회", status:"영구"}
   },
   awards: {

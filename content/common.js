@@ -200,9 +200,10 @@ SITE.common = {
     {
       id: "english",
       items: [
+        // prev: 같은 시험의 이전 성적. 상세 아래 둘째 줄로 나옵니다 (글자는 ko.js / en.js 의 certs.toeic.prev)
+        {id:"toeic", date:"2026-09-20", valid:"ok", prev:{date:"2024-02-04", valid:"exp"}},
         {id:"trade-english-1", date:"2026-06-01", valid:"ok"},
-        {id:"ielts", date:"2026-04-21", valid:"ok"},
-        {id:"toeic", date:"2024-02-04", valid:"exp"}
+        {id:"ielts", date:"2026-04-21", valid:"ok"}
       ]
     },
     {id:"other", items:[{id:"korean-history-1", date:"2026-08-21", valid:"ok"}]}
