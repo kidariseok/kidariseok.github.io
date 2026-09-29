@@ -680,16 +680,67 @@ SITE.en = {
       ]
     },
     "edutech-expo": {
-      title: "2024 EduTech Expo",
-      summary: "Attended the expo to follow the latest edtech trends and took an Adobe masterclass, broadening my knowledge on my own initiative.",
-      short: "Followed the latest edtech trends and took an Adobe masterclass.",
+      title: "2024/2026 EduTech Expo",
+      summary: "Went beyond looking at the technology to observe which education problems it solves. Comparing two expos two years apart, I saw that data, user experience and policy shape edtech.",
+      short: "Observed which education problems tech solves, and compared two expos two years apart.",
+      nums: [
+        {v:"2", t:"Expo visits", d:"23 Sep 2024 · 17 Sep 2026", hi:true},
+        {v:"10M+", t:"Learning records at Haeppop Reading & Essay", d:"OCR-based AI feedback · 2024"},
+        {v:"6/10", t:"Teachers who have used generative AI in class", d:"Adobe session material · 2026"}
+      ],
+      numsLayout: "row",
       body: [
-        {
-          p: "On 23 September I went to the EduTech Expo at COEX. I had already signed up on my own - and then my Educational Multimedia class set attending it as an assignment, which I found funny."
-        },
-        {
-          p: "I had thought of edtech as a blue ocean. Walking the floor, it looked more like a market where a great many companies - Chunjae Education, Alice School and others - are already competing hard. Because a computer-education major should have an edge here, I found it all the more interesting, and lost track of time for four or five hours."
-        }
+        {lead:"I went to look at technology, and ended up looking at the education problems it meets."},
+        {p:"I attended the EduTech Expo twice, in 2024 and 2026. I started out looking at what technology was on show, but came to look at <b>which education problem each piece of technology is trying to solve</b>."},
+        {p:"I could also compare how the market changed over those two years."},
+        {facts:["23 Sep 2024", "17 Sep 2026", "COEX", "Adobe session"]},
+
+        {k:"01 · Two years of change", h:"The biggest booths had changed hands."},
+        {p:"In 2024, large textbook companies such as Chunjae Education and YBM held the big booths. In 2026, global company <b>Adobe</b> was the main sponsor, and the textbook giants were nowhere to be seen."},
+        {p:"Adobe's participation read as a sign that the market is growing. I wondered why the textbook companies had disappeared, and found the cause: the <b>legal downgrade of AI Digital Textbooks (AIDT)</b>. (Source: <a href=\"https://edumorning.com/articles/1452\" target=\"_blank\" rel=\"noopener\">Edumorning article</a>)"},
+        {cmp:[
+          {n:"Before", t:"Textbook (must-have)", d:"Mandatory purchase with national funds · quality assured by review and approval · price controlled"},
+          {n:"After", t:"Educational material (nice-to-have)", d:"Chosen at the principal's discretion · deprioritised when budgets are tight · excluded from textbook review"}
+        ]},
+        {p:"On 18 Nov 2025 the Ministry of Education passed an amendment to the Regulations on Textbooks that removed AIDT from the scope of textbooks. With a local education finance burden of up to KRW 6.6 trillion expected for 2025-2028, AIDT budgets that no longer carry legal force are likely to be the first cut. For companies, a stable barrier to entry and a guaranteed market vanished at the same time."},
+        {q:"I realised that a field companies were investing in aggressively two years ago can turn on a single policy change."},
+
+        {k:"02 · Problems before technology", h:"What matters is not the technology itself, but which problem it solves."},
+        {p:"I saw AI tutors, in-house coding IDEs and digital textbooks, but the question that stayed with me was <b>\"which education problem does this technology solve?\"</b>"},
+        {p:"The AIDT change looked like the same story: even with the technology, a market is hard to sustain unless the classroom needs it and policy backs it."},
+        {p:"As a computer-education major who designs lessons, looking at technology as <b>\"what does it solve\" rather than \"what can it do\"</b> felt natural."},
+        {p:"For example, Adobe wanted to cut the burden of filing a separate official request for every photo used in textbook writing, so it trained Firefly only on photos free of copyright disputes, making them free to use."},
+
+        {k:"03 · Data-driven personalisation", h:"What separates personalised education is learning data."},
+        {p:"Most companies used similar AI: <b>CAT</b>, which picks the next question by student level; <b>STT</b>, which turns speech into text; and <b>OCR</b>, which reads text from images. With similar technology, I thought the differentiator would be <b>the quantity and quality of data</b>."},
+        {p:"A good example was the AI feedback at Haeppop Reading & Essay. It recognises even messy handwriting and analyses typos, structure and grammar, with over 10 million student records that keep improving its accuracy in real time. Seeing personalised learning built on each student's level and wrong-answer data, I felt that data is the core of personalising education."},
+
+        {k:"04 · Experience over performance", h:"Even good technology doesn't last if teachers and students can't use it easily."},
+        {p:"Even for the same coding IDE, the demos showed a clear difference. <b>Goorm IDE</b>, which Chunjae Education worked with, handled real-time teacher-student feedback more smoothly, while Alice School's in-house IDE felt limited in what it could do."},
+        {p:"The Chunjae booth split the teacher and student screens to show how interaction happens in class. Showing <b>user experience inside a real lesson</b> rather than a feature list made it far easier to understand."},
+        {p:"The 2026 Adobe session made the same point. Firefly's AI Assistant builds results from plain-language requests, so even people who find the tools hard can use it easily. It also automatically refuses inappropriate requests, so it was designed to suit classrooms."},
+        {p:"Teacher workload, student accessibility and an intuitive UX seemed key to whether an edtech service lasts. So does parental acceptance. An Adobe representative told us that Korean parents are still quite resistant to AI in class. Since education involves social context that only people understand, I think <b>showing parents educational value and evidence they can accept</b> is part of the user experience too."},
+
+        {k:"05 · The connector", h:"Between classrooms and tech companies, someone has to translate."},
+        {p:"At the expo I saw groups of teachers saying, \"I'd love to see this technology at our school.\" Teachers know education problems best, and companies build the technology, but their languages and requirements differ."},
+        {p:"In the AIDT case too, policy, companies and classrooms were moving by different standards."},
+        {p:"That made me interested in <b>turning classroom problems into technical requirements, and bringing technology back into the classroom</b>."},
+
+        {k:"06 · Converging technologies", h:"Edtech is where many technologies meet education."},
+        {p:"At the 2026 Adobe session, I heard how generative AI is used to create content and apply it in education."},
+        {ul:[
+          "<b>Photoshop · Illustrator</b>: extend landscape photos to portrait, and convert 2D images to vector-based 3D naturally",
+          "<b>Premiere Pro</b>: auto-captions in 30+ languages, and an object mask that tracks and masks moving objects",
+          "<b>Firefly</b>: image, video and avatar generation with partner models such as GPT Image, Gemini and Veo; useful for visualising maths and academic concepts and making class-role icons",
+          "<b>Copyright</b>: trained on stock images, so it is comparatively safe for educational and commercial use such as teaching materials"
+        ]},
+        {p:"AI, data, content creation and UX all gathered around one problem: education. I felt the importance of <b>convergent thinking</b> - applying technology from one field to another industry's problem."},
+
+        {k:"07 · Looking back", h:"I learned to define the problem and connect the right technology."},
+        {p:"At the EduTech Expo, I observed where technology meets real education problems rather than just learning about the technology."},
+        {p:"I learned that learning data matters for personalising education, and that designing an experience teachers and students can really use matters as much as technical performance."},
+        {q:"Between classroom problems and technology, a connection is needed."},
+        {p:"I'll keep thinking about the role of a <b>Connector</b>: someone who understands classroom problems and connects data and other technology to them as solutions."}
       ]
     },
     "speech-mentors": {
