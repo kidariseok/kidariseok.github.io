@@ -507,6 +507,11 @@ SITE.en = {
       title: "KT&G Sangsang Withus Overseas Volunteer Corps",
       summary: "Deployed to an elementary school in Bogor, Indonesia for 177 hours of education and environmental-improvement volunteering.",
       short: "177 hours of education and environmental volunteering at an elementary school in Bogor, Indonesia.",
+      vid: {
+        k: "HIGHLIGHT",
+        t: "Ten days with the children of Bogor, in 60 seconds",
+        d: "Cut down from the corps' official 19-minute activity film: our team's classes, the talking tree from the storytelling class, and sports day."
+      },
       nums: [
         {v:"177", u:"hrs", t:"Total volunteering hours", d:"8 – 17 Jan 2025 · Bogor, Indonesia", hi:true},
         {v:"40", t:"Volunteers in the whole corps", d:"4 teams · 10 per team"},
