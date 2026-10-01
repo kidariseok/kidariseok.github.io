@@ -368,6 +368,12 @@ SITE.en = {
       title: "LIKELION Line-4 Hackathon",
       summary: "As PM, planned 2GATHER - an AI-powered marketing solution that helps students and early-stage founders plan promotion and connect with the right people on a small budget and a limited network.",
       short: "PM · UX/UI for 2GATHER, an AI promotion-strategy platform shipped in 5 weeks",
+      vid: {
+        k: "PROMO VIDEO",
+        t: "2GATHER official promo video",
+        d: "A 75-second video that tells the service as a single line: scattered ideas and people gather, connect, act, and loop back. It walks through the real Figma screens, from entering a promotion brief to the channel timeline, the budget, and matching with creators.",
+        pm: "I planned the video and wrote the storyboard, building each scene from the real screens and service rules."
+      },
       body: [
         {lead:"2GATHER · An AI promotion-strategy platform for people starting out"},
         {p:"An AI-powered marketing solution built so that students and early-stage founders can <b>plan their promotion and connect with the people they need - even with a small budget and a limited network</b>."},
