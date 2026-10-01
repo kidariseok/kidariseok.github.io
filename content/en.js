@@ -371,8 +371,7 @@ SITE.en = {
       vid: {
         k: "PROMO VIDEO",
         t: "2GATHER official promo video",
-        d: "A 75-second video that tells the service as a single line: scattered ideas and people gather, connect, act, and loop back. It walks through the real Figma screens, from entering a promotion brief to the channel timeline, the budget, and matching with creators.",
-        pm: "I planned the video and wrote the storyboard, building each scene from the real screens and service rules."
+        d: "A 75-second video that tells the service as a single line: scattered ideas and people gather, connect, act, and loop back. It walks through the real Figma screens, from entering a promotion brief to the channel timeline, the budget, and matching with creators."
       },
       body: [
         {lead:"2GATHER · An AI promotion-strategy platform for people starting out"},
