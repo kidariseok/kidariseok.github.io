@@ -39,3 +39,11 @@ npm run mux                      # 영상 + 소리 → final.mp4
 - 크로미움 경로가 다르면 `CHROME=/path/to/chrome npm run frames`
 - 특정 시각만 확인: `node tools/render.mjs --stills 12,40.5` → `build/stills/`
 - 브라우저 미리보기: `python3 -m http.server` 실행 후 `http://localhost:8000/index.html?play` (실시간, 소리 없음) 또는 `?t=40.5` (그 시각 정지)
+
+## 검증 결과 (final.mp4)
+
+- 규격: 1920×1080, 30fps, 3,600프레임, 120.0초, H.264(약 2.3Mbps) + AAC 44.1kHz 스테레오, 37.6MB
+- 자막: 21개 모두 화면 안에 있고 두 줄 이하 (`node tools/check_layout.mjs`)
+- 싱크: 인코딩 뒤 오디오 전체 오프셋 0ms. 쿵·클릭·베기처럼 뚜렷한 효과음은 예정 시점과 ±7ms 이내이고, 같은 시각 프레임에서 화면 동작(손바닥 등장, 원숭이 번쩍임, GAME CLEAR)을 확인
+- 음량: 통합 -17 LUFS, 피크 -1 dBFS
+- 화질: 42개 시점 프레임을 뽑아 글자 잘림, 겹침, 압축으로 디더 패턴이 뭉개지는지 확인

@@ -2,7 +2,7 @@
 //
 //   node tools/render.mjs --stills 2,12.5,40      특정 시각(초)만 PNG로 저장 → build/stills/
 //   node tools/render.mjs --workers 3             전체 영상(무음) → build/video.mp4
-//   node tools/render.mjs --from 58 --to 68       일부 구간만 → build/video.mp4
+//   node tools/render.mjs --from 115 --to 120 --out patch.mp4   일부 구간만 → build/patch.mp4
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import http from "node:http";
@@ -92,9 +92,9 @@ async function main() {
     }));
     const list = path.join(BUILD, "parts.txt");
     fs.writeFileSync(list, parts.filter(Boolean).map((p) => `file '${p}'`).join("\n"));
-    await new Promise((r, j) => spawn("ffmpeg", ["-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", list, "-c", "copy", path.join(BUILD, "video.mp4")], { stdio: "inherit" })
+    await new Promise((r, j) => spawn("ffmpeg", ["-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", list, "-c", "copy", path.join(BUILD, args.out || "video.mp4")], { stdio: "inherit" })
       .on("close", (c) => (c === 0 ? r() : j(new Error("concat failed")))));
-    console.log(`video: build/video.mp4 (${((Date.now() - started) / 1000).toFixed(0)}s)`);
+    console.log(`video: build/${args.out || "video.mp4"} (${((Date.now() - started) / 1000).toFixed(0)}s)`);
   } finally {
     await browser.close();
     srv.close();

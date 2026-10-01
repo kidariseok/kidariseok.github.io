@@ -1301,8 +1301,8 @@
         const flip = Math.sin(lt * 2.1 + d.i) > 0 ? 1 : -1;
         tf(d.e, { y: -hop, sx: flip });
       });
-      const sIn = seg(lt, beat(sc, "sign"), beat(sc, "sign") + 0.9), sOut = seg(lt, beat(sc, "logo") - 0.3, beat(sc, "logo") + 0.3);
-      tf(sign, { y: lerp(-420, 0, ease.outBackSoft(sIn)) - ease.in(sOut) * 500, r: Math.sin(lt * 2) * 1.2 });
+      const sIn = seg(lt, beat(sc, "sign"), beat(sc, "sign") + 0.9), sOut = seg(lt, beat(sc, "logo") - 0.6, beat(sc, "logo") - 0.05);
+      tf(sign, { y: lerp(-420, 0, ease.outBackSoft(sIn)) - ease.in(sOut) * 520, r: Math.sin(lt * 2) * 1.2, o: 1 - seg(lt, beat(sc, "logo") - 0.25, beat(sc, "logo") - 0.05) });
       const L = seg(lt, beat(sc, "logo"), beat(sc, "logo") + 0.6);
       tf(logo, { s: lerp(1.3, 1, ease.out(L)), o: L });
       const T = seg(lt, beat(sc, "logo") + 0.4, beat(sc, "logo") + 0.9);
