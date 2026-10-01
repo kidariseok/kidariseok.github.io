@@ -822,6 +822,7 @@ SITE.en = {
       title: "Goormthon Univ 3rd cohort: campus organiser",
       summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
       short: "Campus organiser; built club programs and ran weekly study sessions.",
+      videoCap: "Promo video for \"All of Us Are Yuljeon Now\"",
       body: [
         {h:"On campus"},
         {
@@ -830,7 +831,6 @@ SITE.en = {
         {
           p: "Then, for Halloween and our college night on 31 October, we built a campus escape-room game called \"All of Us Are Yuljeon Now\". It was my first time as PM - writing the storyline and the PRD - and it turned out to be a genuinely fun game. Thanks to a very capable designer and developers it came out exactly as imagined; we were lucky enough to get a booth and run it in person, and the students loved it."
         },
-        {video:"video/esc-yuljeon.mp4", poster:"goorm_video_poster", cap:"Promo video for \"All of Us Are Yuljeon Now\""},
         {h:"Inter-university work"},
         {
           p: "I ran a joint PM study group with people from Sejong and Soongsil. Over three months, meeting weekly, we worked through workflow methods, how development actually gets done, and how to use Figma. It is not an experience a first-year usually gets, so I went into it grateful - and everyone there was kind and sharp, which made it a good time."
