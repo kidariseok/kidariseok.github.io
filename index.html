@@ -530,6 +530,9 @@
   .body ul li{position:relative;padding-left:22px;font-size:16.5px;line-height:1.8}
   .body ul li::before{content:"";position:absolute;left:3px;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .body b{color:var(--ink);font-weight:800}
+  .body .vid{margin-top:20px}
+  .body .vid video{display:block;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px}
+  .body .vid figcaption{margin-top:8px;font-size:13.5px;color:var(--muted)}
   .body .note{margin-top:20px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:15px 18px;font-size:15px;line-height:1.7}
   .body a:hover{text-decoration:underline}
 
@@ -1978,7 +1981,7 @@
     var body = el("div","body");
     var heads = [];   // 목차에 들어갈 소제목들 {label, node}
     // 본문 블록: {h} 소제목(k 작은 제목 · toc 목차 이름) · {p} 문단 · {ul} 목록 · {note} 참고 상자 · {files} 첨부 · {link, href} 링크
-    //           {lead} 큰 문장 · {facts} 정보 칩 · {stat} 숫자 · {q} 강조 문장 · {flow} 흐름 · {boxes} 회색 상자
+    //           {video, poster, cap} 영상 · {lead} 큰 문장 · {facts} 정보 칩 · {stat} 숫자 · {q} 강조 문장 · {flow} 흐름 · {boxes} 회색 상자
     //           {cards} 카드 · {cmp} 두 칸 비교 · {checks} 체크 목록 · {h3} 작은 소제목(목차 제외)
     (a.body[lang] || []).forEach(function(b){
       if(b.h != null){
@@ -2032,6 +2035,15 @@
           cd.appendChild(d);
         });
         body.appendChild(cd);
+      }
+      else if(b.video){
+        var fig = el("figure","vid");
+        var vd = document.createElement("video");
+        vd.src = b.video; vd.controls = true; vd.preload = "metadata"; vd.playsInline = true;
+        if(b.poster) vd.poster = imgSrc(b.poster);
+        fig.appendChild(vd);
+        if(b.cap) fig.appendChild(el("figcaption", null, b.cap));
+        body.appendChild(fig);
       }
       else if(b.h3 != null) body.appendChild(el("h3", null, b.h3));
       else if(b.checks){
