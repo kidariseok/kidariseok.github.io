@@ -530,9 +530,6 @@
   .body ul li{position:relative;padding-left:22px;font-size:16.5px;line-height:1.8}
   .body ul li::before{content:"";position:absolute;left:3px;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .body b{color:var(--ink);font-weight:800}
-  .vid{margin:32px 0 0}
-  .vid video{display:block;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px}
-  .vid figcaption{margin-top:8px;font-size:13.5px;color:var(--muted)}
   .body .note{margin-top:20px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:15px 18px;font-size:15px;line-height:1.7}
   .body a:hover{text-decoration:underline}
 
@@ -607,6 +604,15 @@
   .dstory{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:32px;margin-top:20px;align-items:start}
   .dslide{position:relative;display:block;width:100%;padding:0;border:0;border-radius:16px;overflow:hidden;cursor:zoom-in;background:var(--soft);box-shadow:inset 0 0 0 1px var(--line);touch-action:pan-y}
   .dslide img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  .dtop + .vsec{margin-top:32px;padding-top:0;border-top:0}
+  .vbox{position:relative;border-radius:16px;overflow:hidden;background:#000;box-shadow:inset 0 0 0 1px var(--line)}
+  .vbox video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  .vbox.on video{object-fit:contain}
+  .vplay{position:absolute;inset:0;width:100%;border:0;padding:0;cursor:pointer;display:grid;place-items:center;background:linear-gradient(180deg,rgba(8,10,14,.08),rgba(8,10,14,.38));transition:background .25s}
+  .vplay:hover{background:linear-gradient(180deg,rgba(8,10,14,.02),rgba(8,10,14,.3))}
+  .vplay .i{width:72px;height:72px;padding:20px 18px 20px 22px;border-radius:50%;background:var(--accent);color:#fff;fill:currentColor;stroke:none;box-shadow:0 10px 30px -6px rgba(0,0,0,.5);transition:transform .25s var(--ease)}
+  .vplay:hover .i{transform:scale(1.07)}
+  .vbox.on .vplay{display:none}
   .dcap .k{font:700 12.5px var(--display);color:var(--accent-text);letter-spacing:.05em}
   .dcap h3{margin-top:8px;font-size:22px;font-weight:800;line-height:1.4}
   .dcap .d{margin-top:10px;font-size:15.5px;line-height:1.85}
@@ -834,6 +840,7 @@
     <symbol id="ic-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
     <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></symbol>
     <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M7.2 3.8h2.6l1.4 4-2 1.3a10.5 10.5 0 0 0 5.7 5.7l1.3-2 4 1.4v2.6a2 2 0 0 1-2.2 2A15.8 15.8 0 0 1 5.2 6a2 2 0 0 1 2-2.2Z"/></symbol>
+    <symbol id="ic-play" viewBox="0 0 24 24"><path d="M7 4.6v14.8L19.2 12 7 4.6Z"/></symbol>
     <symbol id="ic-video" viewBox="0 0 24 24"><rect x="3.4" y="6" width="12.4" height="12" rx="2.6"/><path d="m15.8 10.4 4.8-2.8v8.8l-4.8-2.8"/></symbol>
     <symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3.4" y="5.4" width="17.2" height="13.2" rx="2.4"/><path d="m3.9 7.4 8.1 5.6 8.1-5.6"/></symbol>
   </defs>
@@ -1234,6 +1241,61 @@
     bt.focus();
   }
   function pad2(n){ return (n < 10 ? "0" : "") + n; }
+
+  // 영상 섹션 (발표자료와 같은 레이아웃). 데이터: common.js IMG[id].video {src, poster} · ko/en.js activities[id].vid {k, t, d, pm}
+  function renderVideo(view, a){
+    var cfg = (IMG[a.id] || {}).video;
+    var vi = (L().activities[a.id] || {}).vid || (KO.activities[a.id] || {}).vid;
+    if(!cfg || !vi) return null;
+
+    var sec = el("section","deck vsec");
+    sec.setAttribute("aria-label", vi.t);
+    var hd = el("div","deckhead");
+    hd.appendChild(el("h2", null, T.video[lang]));
+    var fs = el("button","deckall", T.vidFull[lang] + " →");
+    fs.type = "button";
+    hd.appendChild(fs);
+    sec.appendChild(hd);
+
+    var story = el("div","dstory");
+    var box = el("div","vbox");
+    var vd = document.createElement("video");
+    vd.src = cfg.src; vd.preload = "metadata"; vd.playsInline = true;
+    if(cfg.poster) vd.poster = imgSrc(cfg.poster);
+    vd.setAttribute("aria-label", vi.t);
+    var pl = el("button","vplay");
+    pl.type = "button";
+    pl.setAttribute("aria-label", T.vidPlay[lang]);
+    pl.appendChild(icon("ic-play"));
+    box.appendChild(vd); box.appendChild(pl);
+    story.appendChild(box);
+
+    var cap = el("div","dcap");
+    if(vi.k) cap.appendChild(el("div","k", vi.k));
+    cap.appendChild(el("h3", null, vi.t));
+    if(vi.d) cap.appendChild(el("p","d", vi.d));
+    if(vi.pm){
+      var pm = el("p","pm");
+      pm.appendChild(el("b", null, T.deckPm[lang]));
+      pm.appendChild(document.createTextNode(vi.pm));
+      cap.appendChild(pm);
+    }
+    story.appendChild(cap);
+    sec.appendChild(story);
+
+    function play(){ box.classList.add("on"); vd.controls = true; var p = vd.play(); if(p && p.catch) p.catch(function(){}); }
+    function full(){
+      play();
+      var r = vd.requestFullscreen || vd.webkitRequestFullscreen;
+      if(r){ var q = r.call(vd); if(q && q.catch) q.catch(function(){}); }
+      else if(vd.webkitEnterFullscreen) vd.webkitEnterFullscreen();   // iOS Safari
+    }
+    pl.addEventListener("click", play);
+    fs.addEventListener("click", full);
+    vd.addEventListener("ended", function(){ box.classList.remove("on"); vd.controls = false; });
+    view.appendChild(sec);
+    return sec;
+  }
 
   // 발표자료 섹션 (챕터 칩 + 슬라이드 + 설명). 데이터: common.js decks · ko/en.js activities[id].deck
   function renderDeck(view, a){
@@ -1975,17 +2037,8 @@
       view.appendChild(strip);
     }
 
-    // 영상: 사진 줄 대신 쓰는 큰 영상 (IMG[id].video = {src, poster} · 캡션은 활동의 videoCap)
-    if(pics.video){
-      var fig = el("figure","vid");
-      var vd = document.createElement("video");
-      vd.src = pics.video.src; vd.controls = true; vd.preload = "metadata"; vd.playsInline = true;
-      if(pics.video.poster) vd.poster = imgSrc(pics.video.poster);
-      fig.appendChild(vd);
-      var vc = (L().activities[a.id] || {}).videoCap;
-      if(vc) fig.appendChild(el("figcaption", null, vc));
-      view.appendChild(fig);
-    }
+    // 영상 섹션: 발표자료와 같은 섹션 형태 (사진 줄 대신, 발표자료 위)
+    renderVideo(view, a);
 
     // 발표자료: 현장 사진 바로 아래에 둡니다 (사진이 없으면 제목 블록 아래)
     renderDeck(view, a);

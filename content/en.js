@@ -114,6 +114,8 @@ SITE.en = {
     deckAll: "All {n} slides",
     deckPrev: "Prev",
     deckNext: "Next",
+    vidFull: "Fullscreen",
+    vidPlay: "Play",
     deckPm: "My part",
     toc: "Contents",
     close: "Close",
@@ -822,7 +824,12 @@ SITE.en = {
       title: "Goormthon Univ 3rd cohort: campus organiser",
       summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
       short: "Campus organiser; built club programs and ran weekly study sessions.",
-      videoCap: "Promo video for \"All of Us Are Yuljeon Now\"",
+      vid: {
+        k: "PROMO VIDEO",
+        t: "Promo video for \"All of Us Are Yuljeon Now\"",
+        d: "A video introducing the campus escape-room game we built with the Goormthon Univ cohort for Halloween and our college night.",
+        pm: "As PM, I shaped the storyline and wrote the PRD."
+      },
       body: [
         {h:"On campus"},
         {
