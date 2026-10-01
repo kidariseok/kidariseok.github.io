@@ -37,7 +37,10 @@ SITE.common = {
   },
   photos: {
     realthon: {cover:"realthon_cover"},
-    line4: {cover:"line4_cover", shots:["line4_01", "line4_02", "line4_03"]},
+    line4: {
+      cover: "line4_cover",
+      video: {src:"video/2gather-promo.mp4", poster:"line4_video_poster"}
+    },
     "ktng-overseas": {cover:"ktng_cover", shots:["ktng_01", "ktng_02", "ktng_03", "ktng_04"]},
     "edutech-expo": {cover:"edutech_02", shots:["edutech_01", "edutech_02", "edutech_03", "edutech_04", "edutech_05"]},
     creverse: {cover:"creverse_cover", shots:["creverse_01", "creverse_02", "creverse_03"]},
