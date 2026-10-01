@@ -822,6 +822,7 @@ SITE.en = {
       title: "Goormthon Univ 3rd cohort: campus organiser",
       summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
       short: "Campus organiser; built club programs and ran weekly study sessions.",
+      videoCap: "Promo video for \"All of Us Are Yuljeon Now\"",
       body: [
         {h:"On campus"},
         {

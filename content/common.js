@@ -46,7 +46,7 @@ SITE.common = {
     icists: {cover:"icists_cover", shots:["icists_01", "icists_02"]},
     goormthon: {
       cover: "goorm_cover",
-      shots: ["goorm_01", "goorm_02", "goorm_03", "goorm_04", "goorm_05", "goorm_06", "goorm_07"]
+      video: {src:"video/esc-yuljeon.mp4", poster:"goorm_video_poster"}
     },
     ched: {cover:"ched_cover", shots:["ched_01"]},
     gdsc: {cover:"gdsc_cover"}

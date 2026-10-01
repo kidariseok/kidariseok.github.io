@@ -530,6 +530,9 @@
   .body ul li{position:relative;padding-left:22px;font-size:16.5px;line-height:1.8}
   .body ul li::before{content:"";position:absolute;left:3px;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .body b{color:var(--ink);font-weight:800}
+  .vid{margin:32px 0 0}
+  .vid video{display:block;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px}
+  .vid figcaption{margin-top:8px;font-size:13.5px;color:var(--muted)}
   .body .note{margin-top:20px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:15px 18px;font-size:15px;line-height:1.7}
   .body a:hover{text-decoration:underline}
 
@@ -1970,6 +1973,18 @@
         strip.appendChild(b);
       });
       view.appendChild(strip);
+    }
+
+    // 영상: 사진 줄 대신 쓰는 큰 영상 (IMG[id].video = {src, poster} · 캡션은 활동의 videoCap)
+    if(pics.video){
+      var fig = el("figure","vid");
+      var vd = document.createElement("video");
+      vd.src = pics.video.src; vd.controls = true; vd.preload = "metadata"; vd.playsInline = true;
+      if(pics.video.poster) vd.poster = imgSrc(pics.video.poster);
+      fig.appendChild(vd);
+      var vc = (L().activities[a.id] || {}).videoCap;
+      if(vc) fig.appendChild(el("figcaption", null, vc));
+      view.appendChild(fig);
     }
 
     // 발표자료: 현장 사진 바로 아래에 둡니다 (사진이 없으면 제목 블록 아래)
