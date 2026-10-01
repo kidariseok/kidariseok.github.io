@@ -268,7 +268,8 @@
   }
 
   // ───────────────────────── 휴대폰 ─────────────────────────
-  const PHONE = { sl: 420, st: 40, s: 0.92 }; // 화면 왼쪽 위(스테이지 좌표)와 배율
+  const PHONE = { sl: 420, st: 40, s: 0.92 };
+  const FLY = 0.5; // 아이템이 폰에서 슬롯으로 날아가는 시간(초) // 화면 왼쪽 위(스테이지 좌표)와 배율
   function makePhone(parent, sl, st, s) {
     const root = el("div", "abs", parent, { left: px(sl - 14 * s), top: px(st - 20 * s), width: px(421 * s), height: px(892 * s) });
     const body = el("div", "phone", root, { transform: `scale(${s})` });
@@ -293,7 +294,7 @@
       let cur = 0;
       for (let i = 0; i < items.length; i++) if (lt >= items[i].t) cur = i;
       const it = items[cur];
-      const dur = it.dur ?? (it.tr === "slide" ? 0.38 : 0.2);
+      const dur = it.dur ?? (it.tr === "slide" ? 0.3 : 0.16);
       const p = cur === 0 ? 1 : seg(lt, it.t, it.t + dur);
       layers.forEach((e, i) => vis(e, i === cur || (i === cur - 1 && p < 1)));
       const ce = layers[cur], pe = layers[cur - 1];
@@ -375,7 +376,7 @@
     im.src = IMG[cfg.key].src;
     if (cfg.extra) cfg.extra(inner, z, x0, y0);
     return (lt) => {
-      const a = seg(lt, cfg.t0, cfg.t0 + 0.4), b = seg(lt, cfg.t1 - 0.25, cfg.t1);
+      const a = seg(lt, cfg.t0, cfg.t0 + 0.3), b = seg(lt, cfg.t1 - 0.2, cfg.t1);
       const on = lt >= cfg.t0 && lt < cfg.t1;
       vis(box, on); vis(svg, on); vis(hl, on);
       if (!on) return;
@@ -405,7 +406,7 @@
       update(lt, t) {
         emb(t);
         tf(glow, { o: 0.8 + 0.2 * Math.sin(t * 1.3) });
-        if (lab) { const a = seg(lt, 0.05, 0.5); tf(lab, { x: lerp(40, 0, ease.out(a)), o: ease.out(a) }); }
+        if (lab) { const a = seg(lt, 0.03, 0.38); tf(lab, { x: lerp(40, 0, ease.out(a)), o: ease.out(a) }); }
       },
     };
   }
@@ -430,12 +431,12 @@
         box._cover = cover;
       }
       return (lt) => {
-        const a = seg(lt, 0, 0.45);
+        const a = seg(lt, 0, 0.35);
         tf(rays, { r: lt * 40, o: 0.9 * ease.out(a) });
         tf(halo, { s: 0.9 + 0.08 * Math.sin(lt * 6), o: ease.out(a) });
         const gone = opts.collect !== undefined ? seg(lt, opts.collect, opts.collect + 0.08) : 0;
         tf(it, { s: lerp(0.3, 1, ease.outBack(a)), y: Math.sin(lt * 4) * 4, o: 1 - gone });
-        if (box) { const b = seg(lt, 0.15, 0.45); tf(box, { y: lerp(20, 0, ease.out(b)), o: b }); tf(box._cover, { y: lerp(20, 0, ease.out(b)), o: b }); }
+        if (box) { const b = seg(lt, 0.1, 0.35); tf(box, { y: lerp(20, 0, ease.out(b)), o: b }); tf(box._cover, { y: lerp(20, 0, ease.out(b)), o: b }); }
       };
     };
   }
@@ -452,20 +453,20 @@
       const r = rng(5);
       for (let i = 0; i < 9; i++) {
         const e = sprite(i % 2 ? "bug_b_t" : "bug_a_t", cam, 0, 0, i % 2 ? 1.2 : 0.8);
-        swarm.push({ e, y: 90 + r() * 360, d: 0.35 + r() * 1.6, sp: 900 + r() * 500, amp: 20 + r() * 40, ph: r() * 6 });
+        swarm.push({ e, y: 90 + r() * 360, d: 0.15 + r() * 0.9, sp: 1000 + r() * 500, amp: 20 + r() * 40, ph: r() * 6 });
       }
     }
     const vg = vignette(root, "vignette_soft_169", 0);
     return (lt) => {
       const t = sc.start + lt;
-      const k = seg(t, 0, 7);
+      const k = seg(t, 0, SC.zombie.end);
       let [sx, sy] = [0, 0];
       if (withRed) [sx, sy] = shake(lt, beat(sc, "hit"), 22, 0.6, 3);
       tf(cam, { s: 1 + 0.06 * ease.sine(k), x: sx, y: sy });
       updateClouds(cl, t);
       if (withRed) {
         const h = beat(sc, "hit");
-        red.style.opacity = (0.88 * ease.out(seg(lt, h, h + 0.5))).toFixed(3);
+        red.style.opacity = (0.88 * ease.out(seg(lt, h, h + 0.35))).toFixed(3);
         flash.style.opacity = (0.7 * (1 - seg(lt, h, h + 0.18)) * (lt >= h ? 1 : 0)).toFixed(3);
         vg.style.opacity = (0.8 * seg(lt, h, h + 0.6)).toFixed(3);
         for (const b of swarm) {
@@ -491,7 +492,7 @@
     const big = sprite("bug_a_t", cam, 0, 0, 4), small = sprite("bug_b_t", cam, 0, 0, 4);
     vignette(root, "vignette_169", 0.85);
     return (lt) => {
-      tf(cam, { s: 1.0 + 0.05 * ease.sine(seg(lt, 0, 4)) });
+      tf(cam, { s: 1.0 + 0.05 * ease.sine(seg(lt, 0, sc.end - sc.start)) });
       const step = Math.floor(lt * 9);
       const g = hash(step * 3 + 1) > 0.55;
       tf(base, { x: g ? (hash(step) - 0.5) * 16 : 0 });
@@ -502,7 +503,7 @@
         tf(s, { x: (hash(step * 5 + i) - 0.5) * 60, o: g ? 0.9 : 0 });
       });
       // 벌레: 화면 밖에서 기어 들어와 꿈틀
-      const a = ease.out(seg(lt, 0.0, 1.7)), b = ease.out(seg(lt, 0.35, 2.0));
+      const a = ease.out(seg(lt, 0.0, 1.15)), b = ease.out(seg(lt, 0.2, 1.35));
       const wob = (s) => Math.abs(Math.sin(lt * 16 + s)) * 8;
       tf(big, { x: lerp(-560, 560, a), y: 330 - wob(0), r: Math.sin(lt * 16) * 5, s: 1 + 0.03 * Math.sin(lt * 5) });
       tf(small, { x: lerp(2000, 1200, b), y: 520 - wob(1.4), r: Math.sin(lt * 16 + 1.4) * 6 });
@@ -523,7 +524,7 @@
     return (lt) => {
       let sx = 0, sy = 0;
       for (const s of slams) { const [a, b] = shake(lt, beat(sc, s.b), 26, 0.45, s.x); sx += a; sy += b; }
-      tf(cam, { s: 1 + 0.07 * ease.sine(seg(lt, 0, 5)), x: sx, y: sy });
+      tf(cam, { s: 1 + 0.07 * ease.sine(seg(lt, 0, sc.end - sc.start)), x: sx, y: sy });
       for (const s of slams) {
         const t0 = beat(sc, s.b);
         const k = seg(lt, t0, t0 + 0.14);
@@ -545,10 +546,11 @@
     const sp = Array.from({ length: 14 }, () => el("div", "abs", sparks, { width: "8px", height: "8px", background: "#ffe08a" }));
     vignette(root, "vignette_169", 1);
     return (lt) => {
-      const nx = (tt) => lerp(1500, 200, ease.sine(seg(tt, -0.2, 3.2)));
+      const D = sc.end - sc.start;
+      const nx = (tt) => lerp(1500, 200, ease.sine(seg(tt, -0.2, D + 0.2)));
       tf(near, { x: nx(lt), y: Math.abs(Math.sin(lt * 9)) * -10 });
       ghosts.forEach((g, i) => tf(g, { x: nx(lt - 0.07 * (i + 1)), y: Math.abs(Math.sin((lt - 0.07 * (i + 1)) * 9)) * -10, o: 0.32 - i * 0.09 }));
-      const fx = (tt) => lerp(200, 1500, seg(tt, 0, 3.2));
+      const fx = (tt) => lerp(200, 1500, seg(tt, 0, D));
       tf(far, { x: fx(lt), sx: -1, o: 0.7 });
       tf(farG[0], { x: fx(lt - 0.08), sx: -1, o: 0.25 });
       const pulse = Math.pow(0.5 + 0.5 * Math.sin(lt * Math.PI * 4), 2);
@@ -590,14 +592,14 @@
       return { e, q, i };
     });
     return (lt) => {
-      const a = ease.inOut(seg(lt, 0, 0.9));
+      const a = ease.inOut(seg(lt, 0, 0.6));
       g.bg.style.opacity = a; g.rays.style.opacity = a;
       tf(g.rays, { r: lt * 6, o: a });
       spk(lt, a);
       for (const s of sil) {
-        const k = ease.out(seg(lt, 0.5 + s.i * 0.2, 1.6 + s.i * 0.2));
+        const k = ease.out(seg(lt, 0.3 + s.i * 0.15, 1.05 + s.i * 0.15));
         tf(s.e, { y: lerp(260, 0, k) + Math.sin(lt * 2 + s.i) * 6, o: k });
-        tf(s.q, { y: Math.sin(lt * 3 + s.i) * 10, s: lerp(0.3, 1, ease.outBack(seg(lt, 1.3 + s.i * 0.2, 1.7 + s.i * 0.2))), o: seg(lt, 1.3 + s.i * 0.2, 1.5 + s.i * 0.2) });
+        tf(s.q, { y: Math.sin(lt * 3 + s.i) * 10, s: lerp(0.3, 1, ease.outBack(seg(lt, 0.9 + s.i * 0.15, 1.25 + s.i * 0.15))), o: seg(lt, 0.9 + s.i * 0.15, 1.05 + s.i * 0.15) });
       }
     };
   };
@@ -652,21 +654,28 @@
     const spk = sparkles(root, 14, 21, [1100, 120, 1800, 700], "#e9ffd2");
     vignette(root, "vignette_soft_169", 0.9);
     return (lt) => {
-      const a = ease.out(seg(lt, 0, 0.65));
+      const a = ease.out(seg(lt, 0, 0.5));
       tf(prof, { x: lerp(-700, 0, a), y: Math.sin(lt * 2.4) * 6, sy: 1 + 0.015 * Math.sin(lt * 2.4) });
       tf(spot, { o: a });
-      const b = seg(lt, 2.7, 3.3);
+      const SW = beat(sc, "sword");
+      const b = seg(lt, SW - 0.1, SW + 0.4);
       tf(sw, { y: lerp(40, 0, ease.out(b)) + Math.sin(lt * 2) * 10, r: -8 + Math.sin(lt * 1.5) * 3, o: b });
-      tf(q, { s: lerp(0.3, 1, ease.outBack(seg(lt, 3.0, 3.4))), y: Math.sin(lt * 3) * 8, o: seg(lt, 3.0, 3.2) });
+      tf(q, { s: lerp(0.3, 1, ease.outBack(seg(lt, SW + 0.25, SW + 0.6))), y: Math.sin(lt * 3) * 8, o: seg(lt, SW + 0.25, SW + 0.4) });
       spk(lt, b);
     };
   };
 
   BUILD.need_you = (root, sc) => {
-    const cover = sprite("window_hands", root, 960 - (393 * 4.9) / 2, 540 - (658 * 4.9) / 2, 4.9);
-    cover.style.filter = "blur(14px) brightness(.35)";
-    const cam = el("div", "fill", root, { transformOrigin: "50% 50%" });
-    const main = sprite("window_hands", cam, 960 - (393 * 1.64) / 2, 0, 1.64);
+    // 손자국 창문 사진을 좌우 대칭으로 이어 붙여 화면 전체를 채운다(가운데 창문이 주인공)
+    el("div", "fill", root, { background: "#050505" });
+    const cam = el("div", "fill", root, { transformOrigin: "50% 48%" });
+    const WS = 1.85, ww = 393 * WS, wy = 540 - 315 * WS;
+    const wins = [-1, 0, 1].map((k) => {
+      const e = sprite("window_hands", cam, 960 - ww / 2 + k * ww, wy, WS);
+      if (k) { e.style.transform = "scaleX(-1)"; e.style.filter = "brightness(.55)"; }
+      return e;
+    });
+    void wins;
     const shade = el("div", "fill", root, { background: "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,.7) 100%)" });
     vignette(root, "vignette_169", 0.7);
     const btn = el("div", "plank", root, { left: px(960 - 190), top: px(560), width: px(380), height: px(110), transformOrigin: "50% 50%" });
@@ -675,8 +684,8 @@
     const tap = makeTap(root);
     return (lt) => {
       const p = beat(sc, "press");
-      tf(cam, { s: 1 + 0.08 * ease.sine(seg(lt, 0, 3.6)), x: noise1(lt * 2, 3) * 6 });
-      const a = seg(lt, 0.7, 1.1);
+      tf(cam, { s: 1.0 + 0.07 * ease.sine(seg(lt, 0, sc.end - sc.start)), x: noise1(lt * 2, 3) * 6 });
+      const bt = beat(sc, "button"), a = seg(lt, bt, bt + 0.35);
       const pressed = lt >= p && lt < p + 0.14 ? 0.92 : 1;
       tf(btn, { s: lerp(0.5, 1, ease.outBack(a)) * pressed * (1 + 0.03 * Math.sin(lt * 5) * (lt < p ? 1 : 0)), o: a });
       tap(lt, [{ t: p, x: 960, y: 615 }]);
@@ -702,9 +711,10 @@
     const sub = text(root, "- 에브리타임 (자과캠) 편 -", "t60", { left: 0, top: px(880), width: px(W), textAlign: "center" }, OL.ink);
     const info = text(root, "온라인 방탈출 · 2024 소프트웨어융합대학 할로윈 파티", "t36", { left: 0, top: px(970), width: px(W), textAlign: "center", color: "#E9D9FF" }, OL.ink3);
     return (lt) => {
-      tf(cam, { s: 1.04 - 0.04 * ease.out(seg(lt, 0, 6)) });
+      tf(cam, { s: 1.04 - 0.04 * ease.out(seg(lt, 0, sc.end - sc.start)) });
       emb(sc.start + lt);
-      tf(mk, { x: lerp(120, 0, ease.out(seg(lt, 1.0, 1.8))), y: Math.abs(Math.sin(lt * 2.6)) * -10, r: Math.sin(lt * 2.6) * 3, o: seg(lt, 1.0, 1.4) });
+      const MS = beat(sc, "sub") - 0.3;
+      tf(mk, { x: lerp(120, 0, ease.out(seg(lt, MS, MS + 0.6))), y: Math.abs(Math.sin(lt * 2.6)) * -10, r: Math.sin(lt * 2.6) * 3, o: seg(lt, MS, MS + 0.3) });
       const L = beat(sc, "logo");
       const a = seg(lt, L, L + 0.5);
       const glitchOn = (lt >= L && lt < L + 0.7) || (lt % 1.9 > 1.82 && lt > 1.5);
@@ -751,7 +761,7 @@
       const pL = beat(sc, "pickL"), pR = beat(sc, "pickR");
       const sel = lt < pR ? 0 : 1;
       cards.forEach((c, i) => {
-        const a = seg(lt, beat(sc, c.b), beat(sc, c.b) + 0.55);
+        const a = seg(lt, beat(sc, c.b), beat(sc, c.b) + 0.45);
         const picked = (i === 0 && lt >= pL && lt < pR) || (i === 1 && lt >= pR);
         const pt = i === 0 ? pL : pR;
         const lift = picked ? ease.outBack(seg(lt, pt, pt + 0.3)) : (i === 0 && lt >= pR ? 1 - ease.out(seg(lt, pR, pR + 0.3)) : 0);
@@ -791,7 +801,7 @@
     return (lt) => {
       base.update(lt, sc.start + lt);
       seq(lt);
-      const a = seg(lt, 0.2, 0.6), b = seg(lt, 0.6, 1.0), c = seg(lt, beat(sc, "swap") - 0.2, beat(sc, "swap") + 0.3);
+      const a = seg(lt, 0.1, 0.45), b = seg(lt, 0.3, 0.65), c = seg(lt, beat(sc, "swap") - 0.2, beat(sc, "swap") + 0.25);
       tf(hd, { x: lerp(40, 0, ease.out(a)), o: a });
       tf(l1, { x: lerp(40, 0, ease.out(b)), o: b });
       tf(l2, { x: lerp(40, 0, ease.out(c)), o: c });
@@ -837,7 +847,7 @@
       tf(head, { y: lerp(-40, 0, ease.out(h)), o: h });
       for (const r of rows) {
         const t0 = beat(sc, r.b);
-        const a = seg(lt, t0, t0 + 0.4), b = seg(lt, t0 + 0.3, t0 + 0.7), c = seg(lt, t0 + 0.2, t0 + 0.45);
+        const a = seg(lt, t0, t0 + 0.32), b = seg(lt, t0 + 0.2, t0 + 0.52), c = seg(lt, t0 + 0.15, t0 + 0.35);
         r.L.style.transform = `perspective(900px) rotateX(${lerp(-90, 0, ease.outBack(a))}deg)`; r.L.style.opacity = a > 0 ? 1 : 0;
         r.R.style.transform = `perspective(900px) rotateX(${lerp(-90, 0, ease.outBack(b))}deg)`; r.R.style.opacity = b > 0 ? 1 : 0;
         tf(r.arrow, { x: Math.sin(lt * 6) * 4 * c, o: c });
@@ -863,7 +873,7 @@
     ]);
     const typing = makeTyping(ph.scr, [64, 376, 328, 417], "미르미");
     const tap = makeTap(ph.scr);
-    const call = makeCallout(root, ph, { key: "select_myungwoong", src: [12, 532, 381, 690], x: 1000, y: 300, maxW: 780, maxH: 460, t0: B("toPicked") + 0.15, t1: B("toAfter") + 0.9 });
+    const call = makeCallout(root, ph, { key: "select_myungwoong", src: [12, 532, 381, 690], x: 1000, y: 300, maxW: 780, maxH: 460, t0: B("toPicked") + 0.1, t1: B("toAfter") + 0.65 });
     return (lt) => {
       base.update(lt, sc.start + lt);
       seq(lt);
@@ -954,14 +964,14 @@
         justifyContent: "center", textAlign: "center", font: '700 16px/24px "Galmuri11"', color: "#fff", whiteSpace: "pre" });
       cover.textContent = msg;
       return (lt) => {
-        const spin = seg(lt, 0, 0.7);
+        const spin = seg(lt, 0, 0.55);
         const ang = spin * Math.PI * 4;
         const sx = Math.cos(ang);
         const showNew = spin > 0.5;
         vis(a, !showNew); vis(b, showNew);
         tf(showNew ? b : a, { sx: Math.abs(sx) < 0.08 ? 0.08 : sx, y: -Math.sin(Math.PI * spin) * 30 });
         tf(halo, { s: 0.8 + 0.4 * Math.sin(Math.PI * spin), o: Math.sin(Math.PI * spin) + (spin >= 1 ? 0.35 : 0) });
-        const c = seg(lt, 0.5, 0.8);
+        const c = seg(lt, 0.4, 0.65);
         tf(box, { y: lerp(20, 0, ease.out(c)), o: c }); tf(cover, { y: lerp(20, 0, ease.out(c)), o: c });
       };
     };
@@ -977,7 +987,7 @@
       { t: B("toWrong"), key: "q1_wrong" },
       { t: B("back"), key: "q1_choice" },
       { t: B("toRight"), key: "q1_correct" },
-      { t: B("toItem"), build: itemGetBuild("item_suit_t", null, { scale: 1, collect: B("slot") - 0.6 - B("toItem") }), dur: 0.25 },
+      { t: B("toItem"), build: itemGetBuild("item_suit_t", null, { scale: 1, collect: B("slot") - FLY - B("toItem") }), dur: 0.2 },
       { t: B("toEquip"), build: equipBuild("item_suit_t", "mw_suit_t", "미르미는 '완전한 방호복'을 장착했다!"), dur: 0.2 },
       { t: B("toProgress"), key: "q1_progress" },
     ]);
@@ -1021,12 +1031,12 @@
       } },
       { t: B("toInput"), key: "q2_input1" },
       { t: B("toFilled"), key: "q2_input2" },
-      { t: B("toItem"), build: itemGetBuild("item_mask_t", null, { bgKey: "q2_itemget_noitem", scale: 1, collect: B("slot") - 0.6 - B("toItem") }), dur: 0.25 },
+      { t: B("toItem"), build: itemGetBuild("item_mask_t", null, { bgKey: "q2_itemget_noitem", scale: 1, collect: B("slot") - FLY - B("toItem") }), dur: 0.2 },
       { t: B("toEquip"), key: "q2_equip" },
     ]);
     const typing = makeTyping(ph.scr, [64, 681, 328, 722], "원피스");
     const tap = makeTap(ph.scr);
-    const call = makeCallout(root, ph, { key: "q2_input2", src: [104, 168, 290, 392], x: 1000, y: 270, maxW: 760, maxH: 500, t0: B("toFilled") + 0.05, t1: B("toItem") + 0.05 });
+    const call = () => {};
     return (lt) => {
       base.update(lt, sc.start + lt);
       seq(lt);
@@ -1048,7 +1058,7 @@
           backgroundPosition: "-120px -320px", backgroundSize: "393px 852px" });
         const halo = el("div", "abs", e, { left: px(196 - 160), top: px(400 - 160), width: "320px", height: "320px", borderRadius: "50%",
           background: "radial-gradient(circle, rgba(255,210,150,.6) 0%, transparent 65%)", mixBlendMode: "screen" });
-        const col = B("slot") - 0.6 - B("toItem");
+        const col = B("slot") - FLY - B("toItem");
         return (lt) => { tf(halo, { s: 0.85 + 0.15 * Math.sin(lt * 6), o: seg(lt, 0, 0.3) * (1 - seg(lt, col, col + 0.2)) }); patch.style.opacity = seg(lt, col, col + 0.08).toFixed(3); };
       }, dur: 0.25 },
     ]);
@@ -1079,7 +1089,7 @@
       } },
       { t: B("toInput"), key: "q5_input" },
       { t: B("toCorrect"), key: "q5_correct" },
-      { t: B("toItem"), build: itemGetBuild("item_radio_t", "하버드, 예일, 프린스턴의 가호가 담긴\n'통신짱짱 무전기'를 얻었다!", { scale: 1, collect: B("slot5") - 0.6 - B("toItem") }), dur: 0.25 },
+      { t: B("toItem"), build: itemGetBuild("item_radio_t", "하버드, 예일, 프린스턴의 가호가 담긴\n'통신짱짱 무전기'를 얻었다!", { scale: 1, collect: B("slot5") - FLY - B("toItem") }), dur: 0.2 },
       { t: B("toAll"), key: "q5_allitems" },
     ]);
     const typing = makeTyping(ph.scr, [64, 461, 328, 502], "하예프");
@@ -1094,6 +1104,37 @@
     };
   };
 
+  // 랭킹·인증서·메인 클리어 화면의 디자인 샘플 값을 scenes.js 의 sample 값으로 바꿔 쓴다
+  const SAMPLE = VIDEO.sample;
+  const WOOD = "rgb(217,160,102)", SKY = "rgb(134,197,227)";
+  function cell(parent, x, y, w, h, str, align, size, olw = 1, bg = "transparent") {
+    const e = el("div", "abs", parent, { left: px(x), top: px(y), width: px(w), height: px(h), background: bg,
+      font: `700 ${size}px/${h}px "Galmuri11"`, color: "#F4F4F4", textAlign: align, whiteSpace: "nowrap", textShadow: outline(olw, "#3a3a3a") });
+    e.textContent = str;
+    return e;
+  }
+  function patchScreen(scr, key) {
+    if (key === "ranking") {
+      el("div", "abs", scr, { left: px(62), top: px(354), width: px(272), height: px(232), background: WOOD });
+      SAMPLE.ranking.forEach((r, i) => {
+        const y = 357 + i * 34;
+        cell(scr, 47, y, 121, 22, r.name, "center", 16);
+        cell(scr, 166, y, 61, 22, String(r.stage), "center", 16);
+        cell(scr, 244, y, 81, 22, r.time, "center", 16);
+      });
+    } else if (key === "certificate") {
+      [[546, SAMPLE.player], [576, SAMPLE.clearTime], [606, SAMPLE.rank]].forEach(([y, v]) => {
+        el("div", "abs", scr, { left: px(232), top: px(y - 4), width: px(100), height: px(21), background: WOOD });
+        cell(scr, 190, y - 5, 138, 22, v, "right", 15);
+      });
+      el("div", "abs", scr, { left: px(244), top: px(646), width: px(88), height: px(19), background: WOOD });
+      cell(scr, 200, 645, 128, 20, SAMPLE.date, "right", 12);
+    } else if (key === "main_clear") {
+      cell(scr, 104, 266, 186, 32, `- ${SAMPLE.player} -`, "center", 24, 2, SKY);
+      cell(scr, 222, 324, 116, 40, SAMPLE.clearTime, "right", 36, 2, SKY);
+    }
+  }
+
   BUILD.mainscreens = (root, sc) => {
     const base = playBase(root, sc, { noPhone: true });
     const S = 0.62;
@@ -1102,11 +1143,7 @@
       const sl = xs[i] - (393 * S) / 2, st = 190;
       const ph = makePhone(root, sl, st, S);
       const im = el("img", "abs scrimg", ph.scr); im.src = IMG[p.screen].src;
-      if (p.screen === "main_clear") {
-        const cov = el("div", "abs", ph.scr, { left: "112px", top: "268px", width: "170px", height: "30px", background: "rgb(134,197,227)",
-          font: '700 18px/30px "Galmuri11"', color: "#fff", textAlign: "center", textShadow: outline(1, "#555") });
-        cov.textContent = "- 미르미 -";
-      }
+      patchScreen(ph.scr, p.screen);
       const lab = text(root, p.label, "t48", { left: px(xs[i] - 200), top: px(100), width: "400px", textAlign: "center" }, OL.ink);
       return { ph, lab, b: ["p1", "p2", "p3"][i] };
     });
@@ -1114,11 +1151,11 @@
     return (lt) => {
       base.update(lt, sc.start + lt);
       items.forEach((it, i) => {
-        const a = seg(lt, beat(sc, it.b), beat(sc, it.b) + 0.55);
+        const a = seg(lt, beat(sc, it.b), beat(sc, it.b) + 0.45);
         tf(it.ph.root, { y: lerp(120, 0, ease.outBackSoft(a)) + Math.sin(lt * 1.6 + i) * 5, o: a });
         tf(it.lab, { y: lerp(30, 0, ease.out(a)), o: a });
       });
-      arrows.forEach((ar, i) => { const a = seg(lt, 0.8 + i * 0.25, 1.2 + i * 0.25); tf(ar, { x: Math.sin(lt * 5) * 6, o: a }); });
+      arrows.forEach((ar, i) => { const a = seg(lt, 0.55 + i * 0.15, 0.85 + i * 0.15); tf(ar, { x: Math.sin(lt * 5) * 6, o: a }); });
     };
   };
 
@@ -1212,12 +1249,12 @@
     let lastP = -1;
     const cl = clouds(cam, CLOUDS);
     const monkeys = [
-      { x: 330, from: -320, d: 1.5 }, { x: 1300, from: 2100, d: 1.8 }, { x: 1560, from: 2300, d: 2.05 },
+      { x: 330, from: -320, d: beat(sc, "m1") }, { x: 1300, from: 2100, d: beat(sc, "m2") }, { x: 1560, from: 2300, d: beat(sc, "m3") },
     ].map((m) => ({ ...m, e: sprite("monkey_t", cam, m.x, 840 - 92 * 3, 3, { origin: "50% 100%" }) }));
     const hearts = Array.from({ length: 8 }, (_, i) => text(cam, "♥", "t48", { left: 0, top: 0, color: "#ff5b7f" }, outline(3, "#5a1020")));
     return (lt) => {
-      tf(cam, { s: 1.05 - 0.05 * ease.out(seg(lt, 0, 5)) });
-      const p = ease.inOut(seg(lt, 0.2, 1.9));
+      tf(cam, { s: 1.05 - 0.05 * ease.out(seg(lt, 0, sc.end - sc.start)) });
+      const p = ease.inOut(seg(lt, beat(sc, "bright0"), beat(sc, "bright1")));
       const q = Math.round(p * 64);
       if (q !== lastP) {
         lastP = q;
@@ -1231,15 +1268,15 @@
       updateClouds(cl, sc.start + lt);
       cl.forEach((c) => (c.e.style.opacity = p.toFixed(3)));
       monkeys.forEach((m, i) => {
-        const a = ease.out(seg(lt, m.d, m.d + 0.7));
-        const hopIn = Math.sin(Math.PI * seg(lt, m.d, m.d + 0.7)) * 120;
-        const idle = lt > m.d + 0.7 ? Math.abs(Math.sin((lt - m.d) * 4 + i)) * 40 : 0;
+        const a = ease.out(seg(lt, m.d, m.d + 0.5));
+        const hopIn = Math.sin(Math.PI * seg(lt, m.d, m.d + 0.5)) * 120;
+        const idle = lt > m.d + 0.5 ? Math.abs(Math.sin((lt - m.d) * 4 + i)) * 40 : 0;
         tf(m.e, { x: lerp(m.from - m.x, 0, a), y: -hopIn - idle, sx: m.from < m.x ? 1 : -1 });
       });
       hearts.forEach((h, i) => {
         const m = monkeys[i % 3];
-        const t0 = m.d + 0.9 + (i >> 1) * 0.5;
-        const k = seg(lt, t0, t0 + 1.4);
+        const t0 = m.d + 0.6 + (i >> 1) * 0.35;
+        const k = seg(lt, t0, t0 + 1.0);
         vis(h, k > 0 && k < 1);
         tf(h, { x: m.x + 120 + (i % 2 ? 40 : -20) + Math.sin(k * 6) * 12, y: 560 - k * 200, o: 1 - k, s: 0.8 + k * 0.4 });
       });
@@ -1251,20 +1288,22 @@
     backdrop("bd_sky", cam);
     const cl = clouds(cam, CLOUDS);
     const fw = fireworks(root, [
-      { t: 0.6, x: 90, y: 60, c: "#FFE14A" }, { t: 0.9, x: 390, y: 50, c: "#b65cff" }, { t: 1.6, x: 240, y: 40, c: "#4BE07A" },
-      { t: 2.9, x: 420, y: 70, c: "#FF9A2E" }, { t: 3.3, x: 60, y: 80, c: "#ff5b7f" }, { t: 4.2, x: 300, y: 45, c: "#FFE14A" }, { t: 4.8, x: 150, y: 55, c: "#b65cff" },
+      { t: 0.3, x: 90, y: 60, c: "#FFE14A" }, { t: 0.55, x: 390, y: 50, c: "#b65cff" }, { t: 1.0, x: 240, y: 40, c: "#4BE07A" },
+      { t: 1.7, x: 420, y: 70, c: "#FF9A2E" }, { t: 2.1, x: 60, y: 80, c: "#ff5b7f" }, { t: 2.7, x: 300, y: 45, c: "#FFE14A" }, { t: 3.1, x: 150, y: 55, c: "#b65cff" },
     ]);
     const mk = (key, cx, b) => {
       const S = 0.8, ph = makePhone(root, cx - (393 * S) / 2, 64, S);
-      const im = el("img", "abs scrimg", ph.scr); im.src = IMG[key].src;
-      return { ph, b, im };
+      const holder = el("div", "abs", ph.scr, { width: "393px", height: "852px" });
+      const im = el("img", "abs scrimg", holder); im.src = IMG[key].src;
+      patchScreen(holder, key);
+      return { ph, b, im: holder };
     };
     const P = [mk("certificate", 700, "cert"), mk("ranking", 1220, "rank")];
     return (lt) => {
       updateClouds(cl, sc.start + lt);
       fw(lt);
       P.forEach((p, i) => {
-        const a = seg(lt, beat(sc, p.b), beat(sc, p.b) + 0.6);
+        const a = seg(lt, beat(sc, p.b), beat(sc, p.b) + 0.5);
         tf(p.ph.root, { y: lerp(1150, 0, ease.outBackSoft(a)) + Math.sin(lt * 1.5 + i) * 6, r: lerp(i ? 6 : -6, 0, ease.out(a)), o: a > 0 ? 1 : 0 });
         if (i === 0) tf(p.im, { y: lerp(-120, 0, ease.out(seg(lt, beat(sc, p.b) + 0.3, beat(sc, p.b) + 1.2))) });
       });
@@ -1276,8 +1315,8 @@
     backdrop("bd_sky_dome", cam);
     const cl = clouds(cam, CLOUDS);
     const fw = fireworks(cam, [
-      { t: 0.4, x: 80, y: 40, c: "#FFE14A" }, { t: 0.8, x: 400, y: 35, c: "#b65cff" }, { t: 1.4, x: 120, y: 60, c: "#4BE07A" },
-      { t: 1.9, x: 370, y: 55, c: "#FF9A2E" }, { t: 2.6, x: 60, y: 30, c: "#ff5b7f" }, { t: 3.1, x: 420, y: 45, c: "#FFE14A" }, { t: 3.6, x: 250, y: 30, c: "#b65cff" },
+      { t: 0.25, x: 80, y: 40, c: "#FFE14A" }, { t: 0.55, x: 400, y: 35, c: "#b65cff" }, { t: 1.0, x: 120, y: 60, c: "#4BE07A" },
+      { t: 1.4, x: 370, y: 55, c: "#FF9A2E" }, { t: 1.9, x: 60, y: 30, c: "#ff5b7f" }, { t: 2.3, x: 420, y: 45, c: "#FFE14A" }, { t: 2.7, x: 250, y: 30, c: "#b65cff" },
     ]);
     const fire = sprite("campfire_t", cam, 960 - 75, 1000 - 156, 3, { origin: "50% 100%" });
     const dancers = [
@@ -1292,7 +1331,7 @@
     const logo = sprite("logo_dark", root, 960 - logoW / 2, 34, 1.4);
     const team = text(root, "구름톤 유니브 성균관대", "t48", { left: 0, top: px(286), width: px(W), textAlign: "center" }, OL.ink);
     return (lt) => {
-      tf(cam, { s: 1 + 0.03 * ease.sine(seg(lt, 0, 5)) });
+      tf(cam, { s: 1 + 0.03 * ease.sine(seg(lt, 0, sc.end - sc.start)) });
       updateClouds(cl, sc.start + lt);
       fw(lt);
       tf(fire, { sy: 1 + 0.06 * Math.sin(lt * 14), sx: 1 + 0.03 * Math.sin(lt * 11) });
@@ -1348,7 +1387,7 @@
         tf(it.icon, { s: filled ? lerp(1.6, 1, ease.outBack(pk)) : 1 });
         const glowAll = Math.max(0, Math.sin(Math.PI * seg(t, allAt, allAt + 1.2)));
         it.ring.style.opacity = Math.max((1 - pk) * (filled ? 1 : 0), glowAll * 0.9).toFixed(3);
-        const fk = seg(t, it.tFill - 0.6, it.tFill);
+        const fk = seg(t, it.tFill - FLY, it.tFill);
         const flyOn = playOn && fk > 0 && fk < 1;
         vis(it.fly, flyOn);
         if (flyOn) {
@@ -1376,13 +1415,13 @@
   function updateOverlays(t) {
     dctx.clearRect(0, 0, 48, 27);
     for (const e of DIS) {
-      const k = t < e ? seg(t, e - 0.42, e) : 1 - seg(t, e, e + 0.42);
+      const k = t < e ? seg(t, e - 0.3, e) : 1 - seg(t, e, e + 0.3);
       if (k <= 0) continue;
       const q = k * 64;
       dctx.fillStyle = "#0b0710";
       for (let y = 0; y < 27; y++) for (let x = 0; x < 48; x++) if (BAY8[(y % 8) * 8 + (x % 8)] < q) dctx.fillRect(x, y, 1, 1);
     }
-    const fin = 1 - seg(t, 0, 0.7);
+    const fin = 1 - seg(t, 0, 0.5);
     const fout = seg(t, SC.party.start + SC.party.beats.fadeOut, VIDEO.duration - 0.05);
     fadeEl.style.opacity = Math.max(fin, fout).toFixed(3);
   }
@@ -1414,10 +1453,10 @@
   const SUBS = [];
   function updateSubs(t) {
     for (const o of SUBS) {
-      const on = t >= o.t0 && t < o.t1 + 0.24;
+      const on = t >= o.t0 && t < o.t1 + 0.18;
       vis(o.holder, on);
       if (!on) continue;
-      const a = seg(t, o.t0, o.t0 + 0.3), b = seg(t, o.t1, o.t1 + 0.22);
+      const a = seg(t, o.t0, o.t0 + 0.22), b = seg(t, o.t1, o.t1 + 0.16);
       let x = 0, y = (1 - ease.out(a)) * 26 + ease.in(b) * 12, s = 1;
       if (o.s.slam) {
         s = lerp(1.4, 1, ease.outBack(seg(t, o.t0, o.t0 + 0.34)));
@@ -1428,7 +1467,7 @@
       tf(o.box, { x, y, s, o: ease.out(a) * (1 - b) });
       if (o.s.type) {
         const n = o.spans.length;
-        const p = seg(t, o.t0 + 0.1, o.t0 + Math.min(1.3, (o.t1 - o.t0) * 0.55));
+        const p = seg(t, o.t0 + 0.08, o.t0 + Math.min(1.0, (o.t1 - o.t0) * 0.5));
         const k = Math.floor(p * n + 1e-6);
         o.spans.forEach((sp, i) => (sp.style.visibility = i < k ? "visible" : "hidden"));
       }

@@ -182,19 +182,19 @@ def theme_alarm(t0, t1):
             kick(t, 0.25)
 
 
-def theme_hero(t0, t1):
+def theme_hero(t0, t1, split=None):
     beat = 60 / 132
     e8, e16 = beat / 2, beat / 4
-    split = t0 + 3.0
+    split = split or t0 + 3.0
     for k, t in grid(t0, split, e16):
-        oct_ = int((t - t0) / (beat * 4 * 0.75))
-        n = [60, 64, 67, 72][k % 4] + 12 * min(oct_, 1)
-        note(t, n, e16 * 0.8, "sq", 0.045 + 0.04 * (t - t0) / 3, duty=0.25, s=0.5, r=0.02)
+        prog = (t - t0) / max(split - t0, 0.1)
+        n = [60, 64, 67, 72][k % 4] + (12 if prog > 0.5 else 0)
+        note(t, n, e16 * 0.8, "sq", 0.045 + 0.04 * prog, duty=0.25, s=0.5, r=0.02)
     for k, t in grid(t0, split, beat):
         note(t, 36, beat * 0.9, "tri", 0.2)
     # 스네어 롤 크레셴도
-    roll = t0 + 1.8
-    for k, t in grid(roll, split, e16 * (0.5 if False else 1)):
+    roll = t0 + (split - t0) * 0.55
+    for k, t in grid(roll, split, e16):
         snare(t, 0.06 + 0.16 * (t - roll) / (split - roll))
     mel = [67, 72, 76, 79, 77, 76, 74, 72, 74, 76, 77, 79, 84, None, None, None]
     for k, t in grid(split, t1, e8):
@@ -555,6 +555,8 @@ def main():
         before = MUS.copy()
         if cue == "boss":
             theme_boss(t0, t1, clear_at or t1)
+        elif cue == "hero":
+            theme_hero(t0, t1, seg.get("split"))
         else:
             globals()["theme_" + cue](t0, t1)
         # 구간 경계에서 잘리는 음은 짧게 페이드
