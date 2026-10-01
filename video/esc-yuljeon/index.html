@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<title>ESC_ 지금 우리 율전은 — 게임 소개 영상</title>
+<style>
+  @font-face { font-family: "Galmuri11"; src: url(fonts/Galmuri11.woff2) format("woff2"); font-weight: 400; }
+  @font-face { font-family: "Galmuri11"; src: url(fonts/Galmuri11-Bold.woff2) format("woff2"); font-weight: 700; }
+
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #000;
+           font-family: "Galmuri11", sans-serif; color: #fff; -webkit-font-smoothing: none; }
+  .abs { position: absolute; left: 0; top: 0; }
+  .px { image-rendering: pixelated; }
+  .scene { position: absolute; inset: 0; overflow: hidden; }
+  .fill { position: absolute; inset: 0; }
+
+  /* 자막 — 하단 고정 */
+  .subholder { position: absolute; left: 0; right: 0; bottom: 48px; display: flex; justify-content: center; pointer-events: none; }
+  .sub { position: relative; max-width: 1560px; padding: 20px 46px 22px; border-radius: 8px;
+         font: 700 48px/64px "Galmuri11"; text-align: center; white-space: nowrap; }
+  .sub.wood  { background: #D9A066; box-shadow: inset 0 6px 0 #EEC39A, 0 0 0 6px #8F563B, 0 14px 0 6px rgba(0,0,0,.32); }
+  .sub.dark  { background: #404040; box-shadow: inset 0 6px 0 #808080, 0 0 0 6px #606060, 0 14px 0 6px rgba(0,0,0,.4); }
+  .sub.red   { background: #A92A2A; box-shadow: inset 0 6px 0 #D45A4E, 0 0 0 6px #5E1414, 0 14px 0 6px rgba(0,0,0,.4); }
+  .sub.green { background: #649534; box-shadow: inset 0 6px 0 #A2BA8A, 0 0 0 6px #808080, 0 14px 0 6px rgba(0,0,0,.3); }
+  .sub .speaker { position: absolute; left: 22px; top: -50px; padding: 4px 18px 6px; border-radius: 6px;
+                  font: 700 36px/40px "Galmuri11"; background: #404040; box-shadow: inset 0 4px 0 #808080, 0 0 0 5px #606060; }
+  .hl-g { color: #3DE06A; } .hl-r { color: #FF3B30; } .hl-y { color: #FFE14A; }
+  .sub.red .hl-r { color: #FFE14A; }
+
+  /* 나무 팻말 / 버튼 */
+  .plank { position: absolute; background: #D9A066; border-radius: 8px;
+           box-shadow: inset 0 6px 0 #EEC39A, 0 0 0 6px #8F563B, 0 14px 0 6px rgba(0,0,0,.3); }
+  .slate { position: absolute; background: #404040; border-radius: 8px;
+           box-shadow: inset 0 6px 0 #808080, 0 0 0 6px #606060, 0 14px 0 6px rgba(0,0,0,.35); }
+
+  /* 휴대폰 목업 */
+  .phone { position: absolute; left: 0; top: 0; width: 421px; height: 892px; transform-origin: 0 0;
+           background: #17141f; border-radius: 48px;
+           box-shadow: inset 0 0 0 3px #2e2a3b, inset 0 0 0 6px #0c0a12, 0 40px 80px rgba(0,0,0,.55); }
+  .phone .screen { position: absolute; left: 14px; top: 20px; width: 393px; height: 852px; overflow: hidden;
+                   border-radius: 30px; background: #000; }
+  .phone .slit { position: absolute; left: 180px; top: 8px; width: 60px; height: 5px; border-radius: 3px; background: #2e2a3b; }
+  .scrimg { width: 393px; height: 852px; }
+
+  .tapdot { position: absolute; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%;
+            background: rgba(255,255,255,.78); box-shadow: 0 0 0 3px rgba(40,20,10,.45); z-index: 40; }
+  .tapring { position: absolute; width: 44px; height: 44px; margin: -26px 0 0 -26px; border-radius: 50%;
+             border: 4px solid #fff; z-index: 40; }
+  .typebox { position: absolute; background: #fff; display: flex; align-items: center; padding-left: 16px; box-sizing: border-box;
+             font: 700 16px/20px "Galmuri11"; color: #333; z-index: 30; }
+  .caret { display: inline-block; width: 2px; height: 18px; margin-left: 2px; background: #333; }
+
+  .callout { position: absolute; overflow: hidden; border-radius: 6px; background: #000;
+             box-shadow: 0 0 0 5px #F6E7C8, 0 0 0 11px #3A2416, 0 24px 50px rgba(0,0,0,.5); }
+  .hlrect { position: absolute; border: 3px solid #FFE14A; border-radius: 4px; z-index: 35; box-shadow: 0 0 0 2px rgba(0,0,0,.4); }
+
+  .slot { position: absolute; width: 84px; height: 84px; border-radius: 8px; background: #241a2e;
+          box-shadow: inset 0 0 0 3px #4d3d5c, inset 0 6px 0 3px #1a1222, 0 0 0 4px #120c18; }
+  .slot img { position: absolute; image-rendering: pixelated; }
+
+  .t24 { font: 400 24px/30px "Galmuri11"; }
+  .t24b { font: 700 24px/30px "Galmuri11"; }
+  .t36 { font: 700 36px/44px "Galmuri11"; }
+  .t48 { font: 700 48px/60px "Galmuri11"; }
+  .t60 { font: 700 60px/72px "Galmuri11"; }
+  .t72 { font: 700 72px/84px "Galmuri11"; }
+  .t96 { font: 700 96px/108px "Galmuri11"; }
+  .nowrap { white-space: nowrap; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script src="scenes.js"></script>
+<script src="renderer.js"></script>
+</body>
+</html>

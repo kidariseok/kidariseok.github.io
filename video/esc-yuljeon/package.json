@@ -1,0 +1,15 @@
+{
+  "name": "esc-yuljeon-trailer",
+  "private": true,
+  "description": "ESC_ 지금 우리 율전은 게임 소개 영상 렌더러",
+  "scripts": {
+    "audio": "node tools/timeline.js > build/timeline.json && python3 tools/synth.py",
+    "frames": "node tools/render.mjs --workers 3",
+    "mux": "ffmpeg -y -i build/video.mp4 -i build/audio.wav -map 0:v -map 1:a -c:v libx264 -preset slow -crf 20 -tune animation -pix_fmt yuv420p -c:a aac -b:a 192k -shortest -movflags +faststart final.mp4",
+    "build": "npm run audio && npm run frames && npm run mux"
+  },
+  "devDependencies": {
+    "galmuri": "2.40.3",
+    "playwright-core": "1.56.1"
+  }
+}
