@@ -714,11 +714,21 @@ SITE.en = {
     },
     creverse: {
       title: "Creverse Campus Crew, 1st cohort",
-      summary: "Handled marketing work including Instagram promotional assets and research into the current education market.",
-      short: "Made Instagram promo assets and researched the education market.",
+      summary: "Chose market research from the monthly missions and wrote marketing proposals. I was told they would be used for internal review, and I was not informed whether any were applied.",
+      short: "Wrote market-research-based marketing proposals (proposal stage).",
       body: [
         {
-          p: "As part of the first Creverse Campus Crew cohort I handled marketing: producing Instagram promotional assets and researching the state of the education market."
+          p: "I took part in the first Creverse Campus Crew cohort. Each month's mission could be video production, informational content, or market research, and I chose <b>market research</b>, writing marketing proposals."
+        },
+        {
+          ul: [
+            "Compared a competing language academy's admissions strategy and curriculum with ours, and proposed improvements for areas that looked under-explained on the website and in videos.",
+            "Noticing that videos featuring native-speaker teachers were scarce, I proposed two video formats: interviews and vlogs.",
+            "For December, the staff set THE OPEN program as the topic. After studying the program, I proposed merchandise ideas aimed at students in grades 6 to 8 and their parents."
+          ]
+        },
+        {
+          note: "I was told the submissions would be used for internal review, and I was not informed whether any were applied, so this is a record up to the proposal stage. The proposals are internal submissions and are not published here."
         }
       ]
     },
