@@ -290,8 +290,7 @@ SITE.en = {
             "Patience is the key; work on multiple papers at once.",
             "Rebutting existing research is often an easier way into a topic than proposing a brand-new solution."
           ]
-        },
-        {files:["Artificial_Intelligence_in_Second_and_Foreign_Language_(L2)_Education.pdf"]}
+        }
       ]
     },
     realthon: {
@@ -833,8 +832,7 @@ SITE.en = {
         {h:"Reflection"},
         {
           p: "As a student in a college of education I am always studying pedagogy in the abstract, but chances to actually sit with students are rare. Empathising with what these students were worried about, and giving them advice, made me more invested in my own coursework. Finding somewhere to actually apply what I have learned, rather than stopping at the lecture, is one of my strengths."
-        },
-        {files:["오디바이스_수업_내역.png"]}
+        }
       ]
     },
     icists: {
@@ -965,8 +963,7 @@ SITE.en = {
         },
         {
           p: "The centre was about an hour from home, and on the bus back I ended up riding with the students from that day's class. It landed differently than anything else had: people I had thought of as distant were in fact right here. If we want an integrated society, integrated classrooms have to come first."
-        },
-        {files:["장애학급_봉사활동_보고서.docx"]}
+        }
       ]
     },
     "ba-dive": {
@@ -976,8 +973,7 @@ SITE.en = {
       body: [
         {
           p: "I applied together with people from GDSC, passed the first round, and was not selected at the final interview."
-        },
-        {files:["Skku-ba-dive.pdf"]}
+        }
       ]
     },
     "s-global": {
@@ -1019,8 +1015,7 @@ SITE.en = {
         },
         {
           p: "Pulling a large body of technical documentation and overseas research into one coherent proposal was where I grew most. As a computer-education major I learned to connect complex AI work to business problems, and - by taking on something well above my level - built the habit of structuring an idea until it holds together."
-        },
-        {files:["2024_S-Global_Challenger_프로그램_창조적_도전계획서.pdf"]}
+        }
       ]
     },
     premed: {
@@ -1030,8 +1025,7 @@ SITE.en = {
       body: [
         {
           p: "For about a year I led the home health-care visiting part of the team, working with elderly residents living alone in jjokbang districts."
-        },
-        {files:["쪽방촌_봉사_내역.pdf"]}
+        }
       ]
     },
     likelion12: {
@@ -1079,8 +1073,7 @@ SITE.en = {
         },
         {
           p: "<b>Stack</b> - front end: Flutter, Next.js · back end: Spring · databases: MySQL, PostgreSQL · cloud: AWS, Firebase · version control: Git, GitHub."
-        },
-        {files:["멋쟁이사자처럼_세션_자료.pdf", "세션_발표자료_오진석.pdf", "멋쟁이사자처럼_교내_ideation.pdf"]}
+        }
       ]
     },
     gdsc: {
@@ -1201,8 +1194,7 @@ SITE.en = {
         {h:"What followed"},
         {
           p: "The camp deepened my interest in the business ecosystem where trade and technology meet. I kept studying, and eventually took the <b>Trade English Level 1</b> certification to back it up."
-        },
-        {files:["2024_대학생_무역_인공지능_캠프.pdf"]}
+        }
       ]
     },
     "future-tech": {
@@ -1229,8 +1221,7 @@ SITE.en = {
         },
         {
           p: "It gave me several angles on how fast AI is diversifying, and left me confident that my direction and aptitude line up with my major. The pace of the ecosystem can feel like a weight - but chasing and applying those changes is also where I found the pull, and the pleasure of getting better at something."
-        },
-        {files:["수료_증빙.png"]}
+        }
       ]
     },
     worldvision: {
