@@ -1155,9 +1155,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790913633"></script>
-<script src="content/ko.js?v=1790913633"></script>
-<script src="content/en.js?v=1790913633"></script>
+<script src="content/common.js?v=1790946645"></script>
+<script src="content/ko.js?v=1790946645"></script>
+<script src="content/en.js?v=1790946645"></script>
 <script>
 (function(){
   "use strict";
@@ -1223,7 +1223,6 @@
   function tr(v){ return v && typeof v === "object" ? (v[lang] || v.ko) : v; }   // {ko, en} 이면 지금 언어 글자
   function axisOf(id){ for(var i=0;i<AXES.length;i++){ if(AXES[i].id === id) return AXES[i]; } return null; }
   var TL_SHOW = 6;          // 대외활동 목록에서 처음에 보이는 개수 ('모두 보기'로 나머지를 펼침)
-  var TL_SHOW_ALL = 3;      // '전체'를 접어 둔 상태에서 보이는 개수 (위에 나온 프로젝트 · 대표 활동 · 강의는 빼고 최신순)
   var T = {};
   Object.keys(KO.ui).forEach(function(k){ T[k] = {ko: KO.ui[k], en: EN.ui[k] != null ? EN.ui[k] : KO.ui[k]}; });
   function L(){ return lang === "ko" ? KO : EN; }   // 지금 언어의 문구 파일
@@ -2066,29 +2065,27 @@
     });
   }
 
-  // 대외활동 목록: 한 줄에 날짜 · 구분 · 제목(+요약). 줄 순서는 항상 최신순 그대로입니다.
-  // 접어 둔 상태에서는 TL_SHOW 개까지만 보이고 '모두 보기'로 나머지를 펼칩니다.
-  // '전체'를 접어 둔 상태에서는 위에서 이미 보여 준 활동(프로젝트 · 대표 활동)과 강의(course)는 빼고 고릅니다.
-  // 펼치면 빠졌던 줄도 날짜 자리에 그대로 다시 나타납니다.
+  // 대외활동 목록: 한 줄에 날짜 · 구분 · 제목(+요약).
+  // '전체'를 접어 둔 상태: common.js 의 archivePicks (분야별 대표 활동)를 분야 순서대로 보여 줍니다.
+  // 다른 구분을 접어 둔 상태: 최신순 TL_SHOW 개. '모두 보기'로 펼치면 해당 구분 전체가 최신순으로 나옵니다.
   function renderTimeline(){
     var box = document.getElementById("timeline");
     box.textContent = "";
     var rows = ACT.filter(inFilter);
     var preview;
     if(filter === "all"){
-      var shownAbove = FEATURED.concat(C.projects || []);
-      preview = rows.filter(function(a){ return shownAbove.indexOf(a.id) < 0 && a.cat !== "course"; }).slice(0, TL_SHOW_ALL);
+      var picks = C.archivePicks || {};
+      preview = AXES.map(function(x){ var i = byId(picks[x.id]); return i < 0 ? null : ACT[i]; }).filter(Boolean);
     } else {
       preview = rows.slice(0, TL_SHOW);
     }
     var shown = preview.length;
     var total = rows.length;
 
-    rows.forEach(function(a){
+    (tlOpen ? rows : preview).forEach(function(a){
       var ck = view === "axes" ? a.axis : a.cat;   // 줄의 색: 분야별이면 분야, 활동별이면 활동 구분
       var r = el("a", ck ? "row ax-" + ck : "row");
       r.href = "#a/" + a.id;
-      r.hidden = !tlOpen && preview.indexOf(a) < 0;
       r.appendChild(el("span","d num", fmtDate(a.s, a.e, a.ds)));
       var ax = axisOf(a.axis);
       r.appendChild(el("span","c", view === "axes" && ax ? tr(ax.name) : CAT[a.cat][lang]));

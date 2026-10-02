@@ -22,6 +22,9 @@ SITE.common = {
   featured: ["realthon", "gdsc", "ktng-overseas"],
   // 'PROJECTS' 쇼케이스 카드로 보여 줄 개발 프로젝트의 activities id (순서대로). 카드·상세 상단 요약 띠의 글자는 ko/en.js 의 activities[id].proj
   projects: ["line4", "goormthon"],
+  // 대외활동 '전체'를 접어 둔 상태에서 보여 줄 분야별 대표 활동 (axes 순서로 한 줄씩).
+  // 위 '대표 활동'(featured) · 'PROJECTS'(projects)와 겹치지 않게 고릅니다. 빼 둔 분야(지금은 leadership)는 건너뜁니다
+  archivePicks: {technology:"icists", people:"premed", global:"speech-mentors", explore:"edutech-expo"},
   // 대외활동 '분야별' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. name 은 한·영 공통 영어, sub 는 ko / en
   axes: [
     {id:"technology", name:"Technology", sub:{ko:"AI · 데이터 · 소프트웨어", en:"AI · Data · Software"}},

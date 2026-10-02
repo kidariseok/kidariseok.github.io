@@ -840,7 +840,7 @@ SITE.en = {
     icists: {
       title: "KAIST ICISTS HACKAFAIR",
       summary: "Developed an idea over five days, built the materials in English and worked through mentoring sessions with overseas mentors in English.",
-      short: "Developed an idea over five days with overseas mentors, in English.",
+      short: "Developed an idea over five days, building the materials in English with overseas mentors.",
       body: [
         {
           p: "Over five days we developed an idea, built all the materials in English, and ran our mentoring sessions with overseas mentors in English."
@@ -1026,7 +1026,7 @@ SITE.en = {
     premed: {
       title: "FreeMed",
       summary: "Led the part of the team providing home health-care visits to elderly residents living alone in jjokbang districts.",
-      short: "Led home health-care visits for elderly residents living alone.",
+      short: "Led home health-care visits for elderly residents living alone · about a year, 17 visits.",
       body: [
         {
           p: "For about a year I led the home health-care visiting part of the team, working with elderly residents living alone in jjokbang districts."
