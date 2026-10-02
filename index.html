@@ -228,6 +228,7 @@
 
   /* 대표 활동: 검은 카드 */
   .feature{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .feature .fcard:last-child:nth-child(odd){grid-column:1/-1}
   .fcard{
     display:grid;min-height:250px;border-radius:var(--r);overflow:hidden;color:var(--on-block);
     background:var(--block);box-shadow:inset 0 0 0 1px var(--block-line);
@@ -295,6 +296,22 @@
   .pstrip .pjumps button{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:700 13px var(--sans);cursor:pointer}
   .pstrip .pjumps button:hover{background:var(--ink);color:var(--paper)}
   .pstrip .pjumps .i{width:14px;height:14px}
+
+
+  .pstrip .pcell.wide{grid-column:1/-1;border-right:0;border-top:1px solid var(--line)}
+  .pstrip .pcell small i{font-style:normal;font-weight:700;letter-spacing:0;color:var(--muted);margin-left:6px}
+  .pstrip .pjumps a{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:#fff;font:700 13px var(--sans)}
+  .pstrip .pjumps a:hover{text-decoration:none;background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .body .people{margin-top:20px;display:flex;flex-wrap:wrap;gap:12px}
+  .body .people .pg{flex:1 1 150px;min-width:0;padding:16px 18px;border-radius:16px;background:var(--soft);border:1px solid var(--line);display:grid;gap:10px;align-content:start}
+  .body .people .pg.me{background:var(--accent-soft);border-color:var(--accent)}
+  .body .people .dots{display:flex;gap:6px}
+  .body .people .dots i{width:22px;height:22px;border-radius:50%;background:var(--muted)}
+  .body .people .pg.me .dots i{background:var(--accent)}
+  .body .people .dots i.dual{background:linear-gradient(90deg,var(--muted) 50%,var(--accent-text) 50%)}
+  .body .people b{font-size:15px;color:var(--ink)}
+  .body .people small{font-size:13px;color:var(--muted);line-height:1.5}
+  .body .peoplenote{margin:10px 0 0;font-size:13.5px;color:var(--muted)}
 
   /* Team vs My Contribution */
   .body .roles{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:14px;margin-top:20px}
@@ -1752,7 +1769,7 @@
       var txt = el("div","ptxt");
       var meta = el("div","pmeta");
       meta.appendChild(el("span","ptype", pj.type));
-      meta.appendChild(el("span","num", a[lang] + " · " + fmtDate(a.s, a.e, a.ds)));
+      meta.appendChild(el("span","num", a[lang] + " · " + (pj.date || fmtDate(a.s, a.e, a.ds))));
       txt.appendChild(meta);
       txt.appendChild(el("h3", null, pj.name));
       txt.appendChild(el("p","pwhat", pj.what));
@@ -1786,12 +1803,24 @@
     }
     var rc = el("div","pchips"); pj.role.forEach(function(t){ rc.appendChild(chip(t)); });
     cell(P.labels.role, rc);
+    if(pj.tools){
+      var tc = el("div","pchips"); pj.tools.forEach(function(t){ tc.appendChild(chip(t)); });
+      cell(P.labels.tools, tc);
+    }
     cell(P.labels.team, pj.team);
     cell(P.labels.period, pj.period);
     var sc = el("div","pchips"); pj.stack.forEach(function(t){ sc.appendChild(chip(t)); });
-    cell(P.labels.stack, sc);
+    cell(pj.tools ? P.labels.stackTeam : P.labels.stack, sc);
+    cells.lastChild.classList.add("wide");
     strip.appendChild(cells);
-    strip.appendChild(el("div","pjumps"));
+    var jumps = el("div","pjumps");
+    (pj.links || []).forEach(function(l){
+      var a2 = el("a", null, l.t);
+      a2.href = l.href; a2.target = "_blank"; a2.rel = "noopener";
+      a2.insertBefore(icon("ic-code"), a2.firstChild);
+      jumps.appendChild(a2);
+    });
+    strip.appendChild(jumps);
     return strip;
   }
   function addJump(strip, label, ic, target){
@@ -2284,6 +2313,21 @@
           cd.appendChild(d);
         });
         body.appendChild(cd);
+      }
+      else if(b.people){
+        // {people:[{role, n, me, note, dual}], note}  팀 구성을 사람 수만큼의 점으로 보여 줍니다
+        var pp = el("div","people");
+        b.people.forEach(function(g){
+          var d = el("div", g.me ? "pg me" : "pg");
+          var dots = el("div","dots");
+          for(var q = 0; q < g.n; q++) dots.appendChild(el("i", g.dual && q === 0 ? "dual" : null));
+          d.appendChild(dots);
+          d.appendChild(el("b", null, g.role + " " + g.n));
+          if(g.note) d.appendChild(el("small", null, g.note));
+          pp.appendChild(d);
+        });
+        body.appendChild(pp);
+        if(b.note) body.appendChild(el("p","peoplenote", b.note));
       }
       else if(b.roles){
         // {roles:{tl, ml, team:[...], mine:[...]}}  팀 전체의 일과 내가 한 일을 나란히. "[확인 필요" 로 시작하는 항목은 점선 표시
