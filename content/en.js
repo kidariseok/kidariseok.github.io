@@ -873,7 +873,7 @@ SITE.en = {
         team: "Team of 6 (planning 1 · front-end 3 · back-end 2)",
         period: "Jun – Oct 2024 · run on 31 Oct 2024",
         date: "Run on 31 Oct 2024",
-        stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "[To confirm: back-end tech]"],
+        stack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/ESC-Organization/ESC-client"}]
       },
       vid: {
@@ -904,7 +904,7 @@ SITE.en = {
         {p:"I did not do any of the development. I focused on planning and on the content and structure of the game."},
 
         {k:"04 · Build", h:"What the repository shows"},
-        {p:"Front-end and back-end teammates did the development. Below is what the public front-end repository shows. The back-end repository could not be found, so it is left as [To confirm: back-end tech]."},
+        {p:"Front-end and back-end teammates did the development. Below is what the public front-end repository shows."},
         {cards:[{"n": "FRONT-END", "t": "React 18 · TypeScript · Vite", "d": "Step-by-step screens with react-router: prologue, character select, quizzes 1–5, final game, ranking"}, {"n": "STATE · DATA", "t": "Zustand · TanStack Query", "d": "User state and server data, API calls with Axios"}, {"n": "UI", "t": "Tailwind CSS · Framer Motion", "d": "Styling and animation libraries"}]},
         {link:"GitHub · Front-end", href:"https://github.com/ESC-Organization/ESC-client"},
 

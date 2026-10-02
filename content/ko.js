@@ -813,7 +813,7 @@ SITE.ko = {
         team: "6인 팀 (기획 1 · 프론트엔드 3 · 백엔드 2)",
         period: "2024.06 – 2024.10 · 운영 2024.10.31",
         date: "운영 2024.10.31",
-        stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "[확인 필요: 백엔드 기술]"],
+        stack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/ESC-Organization/ESC-client"}]
       },
       vid: {
@@ -844,7 +844,7 @@ SITE.ko = {
         {p:"개발은 담당하지 않았습니다. 기획과 콘텐츠·게임 구조 설계에 집중했습니다."},
 
         {k:"04 · 기술 구성", h:"Repository로 확인되는 구성"},
-        {p:"개발은 프론트엔드·백엔드 팀원이 담당했습니다. 아래는 공개된 프론트엔드 repository에서 확인되는 구성입니다. 백엔드 repository는 확인되지 않아 [확인 필요: 백엔드 기술]로 남겼습니다."},
+        {p:"개발은 프론트엔드·백엔드 팀원이 담당했습니다. 아래는 공개된 프론트엔드 repository에서 확인되는 구성입니다."},
         {cards:[{"n": "FRONT-END", "t": "React 18 · TypeScript · Vite", "d": "react-router 기반 단계별 화면: 프롤로그, 캐릭터 선택, 퀴즈 1–5, 최종 게임, 랭킹"}, {"n": "STATE · DATA", "t": "Zustand · TanStack Query", "d": "사용자 상태와 서버 데이터 관리, Axios로 API 연동"}, {"n": "UI", "t": "Tailwind CSS · Framer Motion", "d": "스타일링과 애니메이션 라이브러리"}]},
         {link:"GitHub · Front-end", href:"https://github.com/ESC-Organization/ESC-client"},
 
