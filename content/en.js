@@ -32,6 +32,7 @@ SITE.en = {
   page: {
     nav: {
       story: "Direction",
+      projects: "Projects",
       about: "About",
       records: "Records",
       activities: "Activities",
@@ -65,6 +66,14 @@ SITE.en = {
       connect: {label:"CONNECT", period:"Next", text:"I want to connect technology with real-world needs, bridging people, ideas, and industry to create meaningful value."}
     },
     featured: {title:"Highlights", more:"All activities"},
+    projects: {
+      kicker: "PROJECTS",
+      title: "From a real problem to something people can actually use.",
+      desc: "Projects I planned and built. Each one starts with what it is and what I was responsible for.",
+      labels: {what:"WHAT", role:"MY ROLE", team:"TEAM", period:"PERIOD", stack:"STACK", links:"MORE"},
+      jumpVideo: "Promo video", jumpDeck: "Slides",
+      open: "View project", play: "Hover to play", tbd: "To confirm"
+    },
     about: {
       title: "About",
       paragraph1: "My interests lie at the intersection of technology, people, and ideas.",
@@ -368,6 +377,15 @@ SITE.en = {
       title: "LIKELION Line-4 Hackathon",
       summary: "As PM, planned 2GATHER - an AI-powered marketing solution that helps students and early-stage founders plan promotion and connect with the right people on a small budget and a limited network.",
       short: "PM · UX/UI for 2GATHER, an AI promotion-strategy platform shipped in 5 weeks",
+      proj: {
+        name: "2GATHER",
+        type: "AI · Web service",
+        what: "An AI promotion-strategy platform that helps students and early founders plan promotion and reach the right people on a small budget and a limited network",
+        role: ["PM", "UX/UI planning", "Service logic design"],
+        team: "Team of 6 (PM · UI design · FE/BE)",
+        period: "Oct – Nov 2024 · about 5 weeks",
+        stack: ["[To confirm: tech used]"]
+      },
       vid: {
         k: "PROMO VIDEO",
         t: "2GATHER official promo video",
@@ -436,7 +454,7 @@ SITE.en = {
 
         {k:"07 · My part", h:"I turned the idea into the structure of a service."},
         {p:"As PM, I led the planning process <b>from pitching the idea through planning, wireframes, working with developers and presenting</b>."},
-        {checks:[
+        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Team of 6: 1 PM · 1 UI designer · 4 front-end/back-end","Final UI design: Minjeong Jang","Front-end and back-end: four teammates"], mine:[
           "Defined the problem from a real recruiting experience and pitched the project",
           "Planned the core features and user flow",
           "Researched six promotion channels and turned them into service rules",
@@ -444,8 +462,7 @@ SITE.en = {
           "Built low-fi wireframes in Figma",
           "Worked through detailed logic and requirements with FE and BE",
           "Prepared and delivered the first pitch and the final presentation"
-        ]},
-        {p:"The final UI design was by Minjeong Jang, and four teammates built the front-end and back-end."},
+        ]}},
 
         {k:"08 · Result", h:"From imagination to a real service"},
         {p:"After about five weeks of planning and development, we built <b>a service you can actually log in to and demo</b>."},
@@ -829,6 +846,15 @@ SITE.en = {
       title: "Goormthon Univ 3rd cohort: campus organiser",
       summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
       short: "Campus organiser; built club programs and ran weekly study sessions.",
+      proj: {
+        name: "All of Us Are Yuljeon Now",
+        type: "Game · Escape room",
+        what: "A campus escape-room game set on SKKU's Natural Sciences Campus, built with the Goormthon Univ cohort for Halloween and our college night, and run in person at a booth.",
+        role: ["PM", "Storyline", "PRD"],
+        team: "Goormthon Univ 3rd cohort, SKKU organisers [To confirm: headcount]",
+        period: "Run on 31 Oct 2024 [To confirm: build period]",
+        stack: ["[To confirm: tech used]"]
+      },
       vid: {
         k: "PROMO VIDEO",
         t: "Promo video for \"All of Us Are Yuljeon Now\"",
@@ -843,6 +869,7 @@ SITE.en = {
         {
           p: "Then, for Halloween and our college night on 31 October, we built a campus escape-room game called \"All of Us Are Yuljeon Now\". It was my first time as PM - writing the storyline and the PRD - and it turned out to be a genuinely fun game. Thanks to a very capable designer and developers it came out exactly as imagined; we were lucky enough to get a booth and run it in person, and the students loved it."
         },
+        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Built with the Goormthon Univ 3rd cohort organisers","Game design and development by the designer and developer organisers","[To confirm: headcount and detailed roles]"], mine:["As PM, shaped the game's storyline","Wrote the PRD","[To confirm: other roles I did myself]"]}},
         {h:"Inter-university work"},
         {
           p: "I ran a joint PM study group with people from Sejong and Soongsil. Over three months, meeting weekly, we worked through workflow methods, how development actually gets done, and how to use Figma. It is not an experience a first-year usually gets, so I went into it grateful - and everyone there was kind and sharp, which made it a good time."
