@@ -32,6 +32,7 @@ SITE.en = {
   page: {
     nav: {
       story: "Direction",
+      projects: "Projects",
       about: "About",
       records: "Records",
       activities: "Activities",
@@ -65,6 +66,14 @@ SITE.en = {
       connect: {label:"CONNECT", period:"Next", text:"I want to connect technology with real-world needs, bridging people, ideas, and industry to create meaningful value."}
     },
     featured: {title:"Highlights", more:"All activities"},
+    projects: {
+      kicker: "PROJECTS",
+      title: "From a real problem to something people can actually use.",
+      desc: "Projects I planned and built. Each one starts with what it is and what I was responsible for.",
+      labels: {what:"WHAT", role:"MY ROLE", tools:"MY TOOLS", stackTeam:"STACK · built by team", team:"TEAM", period:"PERIOD", stack:"STACK", links:"MORE"},
+      jumpVideo: "Promo video", jumpDeck: "Slides",
+      open: "View project", play: "Hover to play", tbd: "To confirm"
+    },
     about: {
       title: "About",
       paragraph1: "My interests lie at the intersection of technology, people, and ideas.",
@@ -367,7 +376,18 @@ SITE.en = {
     line4: {
       title: "LIKELION Line-4 Hackathon",
       summary: "As PM, planned 2GATHER - an AI-powered marketing solution that helps students and early-stage founders plan promotion and connect with the right people on a small budget and a limited network.",
-      short: "PM · UX/UI for 2GATHER, an AI promotion-strategy platform shipped in 5 weeks",
+      short: "PM · UX/UI for 2GATHER, an AI promotion-strategy platform shipped in 6 weeks",
+      proj: {
+        name: "2GATHER",
+        type: "AI · Web service",
+        what: "An AI promotion-strategy platform that helps students and early founders plan promotion and reach the right people on a small budget and a limited network",
+        role: ["PM", "UX/UI planning", "PRD writing", "Service structure design"],
+        tools: ["Figma"],
+        team: "Team of 6 (planning/PM 1 · UI design 1 · FE/BE 4)",
+        period: "Sep – Oct 2024 · about 6 weeks",
+        stack: ["React", "Spring Boot", "OpenAI API", "MySQL"],
+        links: [{t:"GitHub · Front-end", href:"https://github.com/Line4thon-Gather/gather_Front_End"}, {t:"GitHub · Back-end", href:"https://github.com/Line4thon-Gather/gather_back_end"}]
+      },
       vid: {
         k: "PROMO VIDEO",
         t: "2GATHER official promo video",
@@ -376,8 +396,8 @@ SITE.en = {
       body: [
         {lead:"2GATHER · An AI promotion-strategy platform for people starting out"},
         {p:"An AI-powered marketing solution built so that students and early-stage founders can <b>plan their promotion and connect with the people they need - even with a small budget and a limited network</b>."},
-        {p:"At the LIKELION Line-4 Hackathon, a team of six planned, built and deployed the service in about five weeks."},
-        {facts:["Oct – Nov 2024", "PM / UX·UI", "Team of 6"]},
+        {p:"At the LIKELION Line-4 Hackathon, a team of six planned, built and deployed the service in about six weeks."},
+        {facts:["Sep – Oct 2024", "PM / UX·UI", "Team of 6"]},
 
         {k:"01 · Problem", h:"A good idea is not enough if you can't get the word out."},
         {p:"As head of people at GDSC, I set a goal of <b>30 new members - but only 9 joined</b>."},
@@ -436,21 +456,37 @@ SITE.en = {
 
         {k:"07 · My part", h:"I turned the idea into the structure of a service."},
         {p:"As PM, I led the planning process <b>from pitching the idea through planning, wireframes, working with developers and presenting</b>."},
-        {checks:[
+        {people:[{"role": "Planning · PM", "n": 1, "me": true, "note": "Me"}, {"role": "UI design", "n": 1, "note": "Minjeong Jang"}, {"role": "Front-end · Back-end", "n": 4, "note": "Four teammates"}]},
+        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Final UI design: Minjeong Jang", "Front-end and back-end: four teammates"], mine:[
           "Defined the problem from a real recruiting experience and pitched the project",
           "Planned the core features and user flow",
           "Researched six promotion channels and turned them into service rules",
           "Designed the budget split and operating rules",
           "Built low-fi wireframes in Figma",
           "Worked through detailed logic and requirements with FE and BE",
-          "Prepared and delivered the first pitch and the final presentation"
-        ]},
-        {p:"The final UI design was by Minjeong Jang, and four teammates built the front-end and back-end."},
+          "Prepared and delivered the first pitch and the final presentation",
+          "Wrote the PRD and detailed planning documents",
+          "Built the overall storyline for the presentation and service explanation",
+          "Put together the Mock Data handed to the developers"
+        ]}},
+        {p:"I did not write any of the code. Instead I focused on preparing the <b>PRD, detailed planning documents, wireframes and Mock Data</b> the developers needed, and on working through the logic with them."},
 
-        {k:"08 · Result", h:"From imagination to a real service"},
-        {p:"After about five weeks of planning and development, we built <b>a service you can actually log in to and demo</b>."},
+        {k:"08 · Build", h:"The structure the team built is open in the repositories."},
+        {p:"Front-end and back-end teammates did the development. Below is what the public repositories show. I did not write code; I worked out the logic and requirements for this service and aligned them with the developers."},
+        {cards:[{"n": "BACK-END", "t": "Java 21 · Spring Boot 3.3", "d": "JPA · MySQL, Spring Security · OAuth2 · JWT, springdoc (Swagger) API docs"}, {"n": "AI", "t": "OpenAI API · gpt-4o-mini", "d": "Generates the promotion timeline and budget results as JSON from a system prompt and example exchanges"}, {"n": "FRONT-END", "t": "React 18 · Vite", "d": "styled-components, TanStack Query, Zustand, visx for charts"}, {"n": "ETC", "t": "University verification · file storage", "d": "UnivCert-based university email verification, Oracle Cloud Object Storage SDK"}]},
+        {link:"GitHub · Front-end", href:"https://github.com/Line4thon-Gather/gather_Front_End"},
+        {link:"GitHub · Back-end", href:"https://github.com/Line4thon-Gather/gather_back_end"},
+
+        {k:"09 · Result", h:"From imagination to a real service"},
+        {p:"After about six weeks of planning and development, we built <b>a service you can actually log in to and demo</b>."},
         {p:"From Google login and user verification to generating a strategy, checking the timeline and browsing creators, the core user flow of 2GATHER came together as one service."},
-        {q:"2GATHER - turning the ideas you only imagined into reality."}
+        {q:"2GATHER - turning the ideas you only imagined into reality."},
+
+        {k:"10 · Looking back", h:"I had to check whether the idea had solid ground to stand on."},
+        {p:"I had to put together the <b>Mock Data</b> for the developers myself. I could not fill it with arbitrary values, so I looked further into the theory behind the idea."},
+        {p:"Along the way I found less theory and reliable data to support the idea than I had expected."},
+        {p:"I learned that what matters is not only whether a service idea is appealing, but whether the theory and data to support development and data use actually exist."},
+        {q:"In later projects I plan to check from the idea stage whether usable theory and reliable data are available."}
       ],
       deck: {
         title: "Pitch deck",
@@ -829,6 +865,17 @@ SITE.en = {
       title: "Goormthon Univ 3rd cohort: campus organiser",
       summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
       short: "Campus organiser; built club programs and ran weekly study sessions.",
+      proj: {
+        name: "All of Us Are Yuljeon Now",
+        type: "Game · Escape room",
+        what: "A web escape-room game set on the Yuljeon campus, built with the Goormthon Univ cohort for Halloween and our college night. It has five quiz stages, a final game and a ranking, and we ran it in person at a booth.",
+        role: ["Planning · PM", "Storyline", "PRD", "Stage & puzzle design"],
+        team: "Team of 6 (planning 1 · front-end 3 · back-end 2)",
+        period: "Jun – Oct 2024 · run on 31 Oct 2024",
+        date: "Run on 31 Oct 2024",
+        stack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+        links: [{t:"GitHub · Front-end", href:"https://github.com/ESC-Organization/ESC-client"}]
+      },
       vid: {
         k: "PROMO VIDEO",
         t: "Promo video for \"All of Us Are Yuljeon Now\"",
@@ -843,6 +890,30 @@ SITE.en = {
         {
           p: "Then, for Halloween and our college night on 31 October, we built a campus escape-room game called \"All of Us Are Yuljeon Now\". It was my first time as PM - writing the storyline and the PRD - and it turned out to be a genuinely fun game. Thanks to a very capable designer and developers it came out exactly as imagined; we were lucky enough to get a booth and run it in person, and the students loved it."
         },
+        {k:"01 · Project", h:"An escape room about saving Yuljeon from bug monkeys"},
+        {p:"For Halloween and our college night we built <b>a web escape-room game set on the Yuljeon campus</b> with the Goormthon Univ cohort. Players pick a character, go through five quiz stages and a final game, and check the result on a ranking."},
+        {facts:["Planning Jun – Oct 2024", "Run on 31 Oct 2024", "Team of 6", "Planning · PM"]},
+
+        {k:"02 · Team", h:"Planning 1 · Front-end 3 · Back-end 2"},
+        {people:[{"role": "Planning · PM", "n": 1, "me": true, "note": "Me"}, {"role": "Front-end", "n": 3, "note": "One also did design", "dual": true}, {"role": "Back-end", "n": 2}], note:"The overall concept design was discussed by the whole team, and one teammate was solely in charge of character design."},
+
+        {k:"03 · My part", h:"I planned everything from the idea to the structure of the game."},
+        {p:"The whole team discussed the idea, but <b>the original idea was mine</b>. Once it was chosen, I led the storyline and took on the planning the game structure needed."},
+        {flow:["Pitch the idea", "Build the storyline", "Write the PRD", "Design stages & puzzles", "Research game material", "Refine the plan during development"]},
+        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Concept design: discussed by the team", "Character design: one teammate", "Development: 3 front-end (one also designed), 2 back-end"], mine:["Proposed the original game idea", "Led the storyline once the idea was chosen", "Wrote the PRD", "Designed the stages and puzzles", "Researched material for the game", "Over the summer break, refined the idea and basic design with the team before development", "Refined the plan during development"]}},
+        {p:"I did not do any of the development. I focused on planning and on the content and structure of the game."},
+
+        {k:"04 · Build", h:"What the repository shows"},
+        {p:"Front-end and back-end teammates did the development. Below is what the public front-end repository shows."},
+        {cards:[{"n": "FRONT-END", "t": "React 18 · TypeScript · Vite", "d": "Step-by-step screens with react-router: prologue, character select, quizzes 1–5, final game, ranking"}, {"n": "STATE · DATA", "t": "Zustand · TanStack Query", "d": "User state and server data, API calls with Axios"}, {"n": "UI", "t": "Tailwind CSS · Framer Motion", "d": "Styling and animation libraries"}]},
+        {link:"GitHub · Front-end", href:"https://github.com/ESC-Organization/ESC-client"},
+
+        {k:"05 · Looking back", h:"My first time as PM"},
+        {p:"After proposing the first idea, I took on planning end to end: the storyline, the PRD, stage and puzzle design, and researching material. I did not develop, but we refined the idea and made the basic design together before development began, and I refined the plan as it went."},
+        {p:"I learned how the front-end and back-end connect organically to become one game."},
+        {p:"The game drew students in, and I found it rewarding to watch them enjoy it."},
+        {q:"I came to realise that I enjoy building something with technology and watching the effect it has on people."},
+
         {h:"Inter-university work"},
         {
           p: "I ran a joint PM study group with people from Sejong and Soongsil. Over three months, meeting weekly, we worked through workflow methods, how development actually gets done, and how to use Figma. It is not an experience a first-year usually gets, so I went into it grateful - and everyone there was kind and sharp, which made it a good time."

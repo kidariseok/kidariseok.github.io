@@ -19,7 +19,9 @@ window.SITE = window.SITE || {};
 SITE.common = {
   notion: "https://app.notion.com/p/",
   heroStats: ["funding", "ielts", "volunteer", "activities"],
-  featured: ["realthon", "gdsc", "line4", "ktng-overseas"],
+  featured: ["realthon", "gdsc", "ktng-overseas"],
+  // 'PROJECTS' 쇼케이스 카드로 보여 줄 개발 프로젝트의 activities id (순서대로). 카드·상세 상단 요약 띠의 글자는 ko/en.js 의 activities[id].proj
+  projects: ["line4", "goormthon"],
   // 대외활동 '분야별' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. name 은 한·영 공통 영어, sub 는 ko / en
   axes: [
     {id:"technology", name:"Technology", sub:{ko:"AI · 데이터 · 소프트웨어", en:"AI · Data · Software"}},
