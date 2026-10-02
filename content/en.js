@@ -376,7 +376,7 @@ SITE.en = {
     line4: {
       title: "LIKELION Line-4 Hackathon",
       summary: "As PM, planned 2GATHER - an AI-powered marketing solution that helps students and early-stage founders plan promotion and connect with the right people on a small budget and a limited network.",
-      short: "PM · UX/UI for 2GATHER, an AI promotion-strategy platform shipped in 5 weeks",
+      short: "PM · UX/UI for 2GATHER, an AI promotion-strategy platform shipped in 6 weeks",
       proj: {
         name: "2GATHER",
         type: "AI · Web service",
@@ -384,7 +384,7 @@ SITE.en = {
         role: ["PM", "UX/UI planning", "PRD writing", "Service structure design"],
         tools: ["Figma"],
         team: "Team of 6 (planning/PM 1 · UI design 1 · FE/BE 4)",
-        period: "Oct – Nov 2024 · about 5 weeks",
+        period: "Sep – Oct 2024 · about 6 weeks",
         stack: ["React", "Spring Boot", "OpenAI API", "MySQL"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/Line4thon-Gather/gather_Front_End"}, {t:"GitHub · Back-end", href:"https://github.com/Line4thon-Gather/gather_back_end"}]
       },
@@ -396,8 +396,8 @@ SITE.en = {
       body: [
         {lead:"2GATHER · An AI promotion-strategy platform for people starting out"},
         {p:"An AI-powered marketing solution built so that students and early-stage founders can <b>plan their promotion and connect with the people they need - even with a small budget and a limited network</b>."},
-        {p:"At the LIKELION Line-4 Hackathon, a team of six planned, built and deployed the service in about five weeks."},
-        {facts:["Oct – Nov 2024", "PM / UX·UI", "Team of 6"]},
+        {p:"At the LIKELION Line-4 Hackathon, a team of six planned, built and deployed the service in about six weeks."},
+        {facts:["Sep – Oct 2024", "PM / UX·UI", "Team of 6"]},
 
         {k:"01 · Problem", h:"A good idea is not enough if you can't get the word out."},
         {p:"As head of people at GDSC, I set a goal of <b>30 new members - but only 9 joined</b>."},
@@ -478,7 +478,7 @@ SITE.en = {
         {link:"GitHub · Back-end", href:"https://github.com/Line4thon-Gather/gather_back_end"},
 
         {k:"09 · Result", h:"From imagination to a real service"},
-        {p:"After about five weeks of planning and development, we built <b>a service you can actually log in to and demo</b>."},
+        {p:"After about six weeks of planning and development, we built <b>a service you can actually log in to and demo</b>."},
         {p:"From Google login and user verification to generating a strategy, checking the timeline and browsing creators, the core user flow of 2GATHER came together as one service."},
         {q:"2GATHER - turning the ideas you only imagined into reality."},
 
@@ -910,7 +910,9 @@ SITE.en = {
 
         {k:"05 · Looking back", h:"My first time as PM"},
         {p:"After proposing the first idea, I took on planning end to end: the storyline, the PRD, stage and puzzle design, and researching material. I did not develop, but we refined the idea and made the basic design together before development began, and I refined the plan as it went."},
-        {note:"[To confirm: the actual setbacks and lessons from this project]"},
+        {p:"I learned how the front-end and back-end connect organically to become one game."},
+        {p:"The game drew students in, and I found it rewarding to watch them enjoy it."},
+        {q:"I came to realise that I enjoy building something with technology and watching the effect it has on people."},
 
         {h:"Inter-university work"},
         {
