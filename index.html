@@ -941,8 +941,8 @@
   <div class="wrap bar-in">
     <a class="mark" href="#top">JINSEOK OH<span>.</span></a>
     <nav class="links" aria-label="섹션">
-      <a href="#story" data-t="nav.story">방향</a>
       <a href="#projects" data-t="nav.projects">프로젝트</a>
+      <a href="#story" data-t="nav.story">방향</a>
       <a href="#about" data-t="nav.about">소개</a>
       <a href="#records" data-t="nav.records">기록 요약</a>
       <a href="#activities" data-t="nav.activities">대외활동</a>
@@ -981,7 +981,7 @@
             <p class="lede" data-t="hero.intro">기술을 사람과 아이디어에 연결하는 일을 좋아합니다.</p>
             <div class="chips" id="hero-chips"></div>
             <div class="hero-cta">
-              <a class="btn solid" href="#activities"><span data-t="hero.buttonActivities">대외활동 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
+              <a class="btn solid" href="#projects"><span data-t="hero.buttonProjects">프로젝트 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
               <a class="btn ghost" href="#contact"><span data-t="hero.buttonContact">연락처</span></a>
             </div>
           </div>
@@ -996,6 +996,27 @@
 
     <!-- 첫 화면 위로 올라오는 둥근 흰 판. 아래 섹션은 모두 이 안에 있습니다 -->
     <div class="sheet">
+      <!-- ── PROJECTS: 개발 프로젝트 쇼케이스 ──────────────────────
+           카드 목록은 common.js 의 projects, 글자는 ko/en.js 의 page.projects 와 activities[id].proj -->
+      <section id="projects">
+        <div class="wrap">
+          <p class="st-kicker" data-t="projects.kicker">PROJECTS</p>
+          <div class="shead"><h2 data-t="projects.title"></h2></div>
+          <p class="sdesc" data-t="projects.desc"></p>
+          <div class="pshow" id="project-list"></div>
+        </div>
+      </section>
+
+      <section id="featured" class="tint">
+        <div class="wrap">
+          <div class="shead">
+            <h2 data-t="featured.title">대표 활동</h2>
+            <a class="more-link" href="#activities"><span data-t="featured.more">전체 활동 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
+          </div>
+          <div class="feature" id="featured-list"></div>
+        </div>
+      </section>
+
       <!-- ── 방향 (What am I becoming?) ──────────────────────────────
            글자는 ko.js / en.js 의 page → story.
            01 EXPLORE · 02 DISCOVER 두 칸 → 03 ADAPT 검은 카드 → 04 CONNECT 한 줄.
@@ -1029,27 +1050,6 @@
             <p class="st-no"><span class="num">04</span><b data-t="story.connect.label">CONNECT</b><span data-t="story.connect.period"></span></p>
             <p class="st-next-text" data-t="story.connect.text"></p>
           </div>
-        </div>
-      </section>
-
-      <!-- ── PROJECTS: 개발 프로젝트 쇼케이스 ──────────────────────
-           카드 목록은 common.js 의 projects, 글자는 ko/en.js 의 page.projects 와 activities[id].proj -->
-      <section id="projects" class="tint">
-        <div class="wrap">
-          <p class="st-kicker" data-t="projects.kicker">PROJECTS</p>
-          <div class="shead"><h2 data-t="projects.title"></h2></div>
-          <p class="sdesc" data-t="projects.desc"></p>
-          <div class="pshow" id="project-list"></div>
-        </div>
-      </section>
-
-      <section id="featured">
-        <div class="wrap">
-          <div class="shead">
-            <h2 data-t="featured.title">대표 활동</h2>
-            <a class="more-link" href="#activities"><span data-t="featured.more">전체 활동 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
-          </div>
-          <div class="feature" id="featured-list"></div>
         </div>
       </section>
 
@@ -1155,9 +1155,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790911400"></script>
-<script src="content/ko.js?v=1790911400"></script>
-<script src="content/en.js?v=1790911400"></script>
+<script src="content/common.js?v=1790913633"></script>
+<script src="content/ko.js?v=1790913633"></script>
+<script src="content/en.js?v=1790913633"></script>
 <script>
 (function(){
   "use strict";
@@ -1223,6 +1223,7 @@
   function tr(v){ return v && typeof v === "object" ? (v[lang] || v.ko) : v; }   // {ko, en} 이면 지금 언어 글자
   function axisOf(id){ for(var i=0;i<AXES.length;i++){ if(AXES[i].id === id) return AXES[i]; } return null; }
   var TL_SHOW = 6;          // 대외활동 목록에서 처음에 보이는 개수 ('모두 보기'로 나머지를 펼침)
+  var TL_SHOW_ALL = 3;      // '전체'를 접어 둔 상태에서 보이는 개수 (위에 나온 프로젝트 · 대표 활동 · 강의는 빼고 최신순)
   var T = {};
   Object.keys(KO.ui).forEach(function(k){ T[k] = {ko: KO.ui[k], en: EN.ui[k] != null ? EN.ui[k] : KO.ui[k]}; });
   function L(){ return lang === "ko" ? KO : EN; }   // 지금 언어의 문구 파일
@@ -2065,24 +2066,29 @@
     });
   }
 
-  // 대외활동 목록: 한 줄에 날짜 · 구분 · 제목(+요약).
-  // '전체'는 처음에 대표 활동(featured) 4개만, 다른 구분은 TL_SHOW 개까지 보이고 '모두 보기'로 펼침
+  // 대외활동 목록: 한 줄에 날짜 · 구분 · 제목(+요약). 줄 순서는 항상 최신순 그대로입니다.
+  // 접어 둔 상태에서는 TL_SHOW 개까지만 보이고 '모두 보기'로 나머지를 펼칩니다.
+  // '전체'를 접어 둔 상태에서는 위에서 이미 보여 준 활동(프로젝트 · 대표 활동)과 강의(course)는 빼고 고릅니다.
+  // 펼치면 빠졌던 줄도 날짜 자리에 그대로 다시 나타납니다.
   function renderTimeline(){
     var box = document.getElementById("timeline");
     box.textContent = "";
     var rows = ACT.filter(inFilter);
-    var shown = rows.length > TL_SHOW ? TL_SHOW : rows.length;
-    if(filter === "all" && !tlOpen && FEATURED.length){
-      rows = FEATURED.map(function(id){ return ACT[byId(id)]; }).filter(Boolean);
-      shown = rows.length;
+    var preview;
+    if(filter === "all"){
+      var shownAbove = FEATURED.concat(C.projects || []);
+      preview = rows.filter(function(a){ return shownAbove.indexOf(a.id) < 0 && a.cat !== "course"; }).slice(0, TL_SHOW_ALL);
+    } else {
+      preview = rows.slice(0, TL_SHOW);
     }
-    var total = filter === "all" ? ACT.length : rows.length;
+    var shown = preview.length;
+    var total = rows.length;
 
-    rows.forEach(function(a, n){
+    rows.forEach(function(a){
       var ck = view === "axes" ? a.axis : a.cat;   // 줄의 색: 분야별이면 분야, 활동별이면 활동 구분
       var r = el("a", ck ? "row ax-" + ck : "row");
       r.href = "#a/" + a.id;
-      r.hidden = !tlOpen && n >= shown;
+      r.hidden = !tlOpen && preview.indexOf(a) < 0;
       r.appendChild(el("span","d num", fmtDate(a.s, a.e, a.ds)));
       var ax = axisOf(a.axis);
       r.appendChild(el("span","c", view === "axes" && ax ? tr(ax.name) : CAT[a.cat][lang]));

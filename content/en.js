@@ -46,10 +46,10 @@ SITE.en = {
       gpaMax: "/ 4.5",
       headline: "Connecting technology, people, and industry.",
       intro: "I have explored technology, education, planning, and global experiences through diverse activities. I understand technology, but I do not stop at technology itself. I care about how it can create value for people, organizations, and industries.",
-      buttonActivities: "See activities",
+      buttonProjects: "See projects",
       buttonContact: "Contact"
     },
-    // 첫 화면 바로 아래 '방향' 섹션. period 는 오른쪽 작은 기간 글씨, adapt.since 이후에 딴 자격증이 ADAPT 카드 오른쪽에 자동으로 나옵니다
+    // 프로젝트 · 대표 활동 다음의 '방향' 섹션. period 는 오른쪽 작은 기간 글씨, adapt.since 이후에 딴 자격증이 ADAPT 카드 오른쪽에 자동으로 나옵니다
     story: {
       kicker: "WHAT AM I BECOMING?",
       title: "Through diverse experiences, I found my own direction.",
