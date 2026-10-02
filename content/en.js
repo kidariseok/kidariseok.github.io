@@ -714,21 +714,48 @@ SITE.en = {
     },
     creverse: {
       title: "Creverse Campus Crew, 1st cohort",
-      summary: "Chose market research from the monthly missions and wrote marketing proposals. I was told they would be used for internal review, and I was not informed whether any were applied.",
-      short: "Wrote market-research-based marketing proposals (proposal stage).",
+      summary: "Looked at an education service from the user's point of view, compared the market and competitors, and proposed marketing ideas.",
+      short: "Compared competitors through market research and proposed marketing ideas (proposal stage).",
       body: [
         {
-          p: "I took part in the first Creverse Campus Crew cohort. Each month's mission could be video production, informational content, or market research, and I chose <b>market research</b>, writing marketing proposals."
+          p: "As a member of the first Creverse Campus Crew cohort, I chose one of three monthly missions (video production, informational content, or market research) and produced a deliverable. I mostly chose market research: I investigated cases from the education market and competitors myself, and proposed ideas to improve Creverse's services and content."
+        },
+        {h:"01. Finding answers in competitors"},
+        {
+          p: "I compared competing language academies' admissions strategies, curricula, and the way their websites convey information. Rather than just listing competitors' strengths, I looked at how intuitively the values Creverse emphasizes actually reach real users."
         },
         {
-          ul: [
-            "Compared a competing language academy's admissions strategy and curriculum with ours, and proposed improvements for areas that looked under-explained on the website and in videos.",
-            "Noticing that videos featuring native-speaker teachers were scarce, I proposed two video formats: interviews and vlogs.",
-            "For December, the staff set THE OPEN program as the topic. After studying the program, I proposed merchandise ideas aimed at students in grades 6 to 8 and their parents."
-          ]
+          p: "I noticed that although Creverse has strengths such as integrated thinking, skill assessment, and systematic management, the way they are shown can feel abstract. I proposed conveying the education process more clearly with quantitative information and visual content."
+        },
+        {h:"02. Turning unseen strengths into content"},
+        {
+          p: "Looking through Creverse's content, I noticed there was relatively little that showed the expertise and teaching methods of native-speaker teachers."
         },
         {
-          note: "I was told the submissions would be used for internal review, and I was not informed whether any were applied, so this is a record up to the proposal stage. The proposals are internal submissions and are not published here."
+          p: "Rather than a plain promotional video, I wanted content that helps users understand real classes and teachers, so I proposed interview content introducing teaching philosophy and methods, and VLOG content showing actual classes, preparation, and daily life."
+        },
+        {
+          p: "The proposal focused less on creating new strengths than on how to show the strengths already there."
+        },
+        {h:"03. Connecting THE OPEN to the learning experience"},
+        {
+          p: "In December, I studied THE OPEN program, the topic set by the staff, and proposed merchandise ideas for students in grades 6 to 8 and their parents."
+        },
+        {
+          p: "Noticing the services and culture around recording and managing study time, I came up with the idea of linking a visual timer, which shows the passing of time intuitively, to the learning process of THE OPEN."
+        },
+        {
+          p: "Instead of merchandise with just a logo, I approached it by connecting the product's user experience with the brand, so that the program's character comes through naturally as learners actually use it."
+        },
+        {h:"What I learned"},
+        {
+          p: "Through three proposals, I learned that marketing is not only about creating new messages, but about discovering the strengths an existing service already has and connecting them in a form users can understand."
+        },
+        {
+          p: "In particular, by directly comparing competitors and content, I built a habit of thinking through observation → comparison → problem definition → proposal, instead of staying with vague impressions."
+        },
+        {
+          note: "All deliverables were submitted for Creverse's internal review, and I was not informed whether any were adopted or applied afterward. So this record focuses not on execution results but on the process of finding problems myself and developing them into concrete proposals."
         }
       ]
     },
