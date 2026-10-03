@@ -1005,13 +1005,112 @@ SITE.en = {
     },
     "ba-dive": {
       title: "SKKU-BA-DIVE application",
-      summary: "Applied with fellow GDSC members, passed the first round and was not selected at the final interview.",
-      short: "Applied with GDSC peers; passed round one, not selected at the final interview.",
+      summary: "Submitted a China e-commerce field-trip plan as a five-person GDSC team, passed the document round and presented, but was not selected in the end.",
+      short: "A five-person GDSC team's China e-commerce plan: passed round one and presented, not selected.",
       body: [
-        {
-          p: "I applied together with people from GDSC, passed the first round, and was not selected at the final interview."
-        }
-      ]
+        {lead:"As a team, we planned an overseas trip to learn about Chinese e-commerce on site and explore how Korean platforms can survive."},
+        {p:"We applied to Sungkyunkwan University's <b>SKKU-BA-DIVE 2024 Summer</b> global experience program as a five-person GDSC SKKU team. Our topic was <b>“Analyzing the rapid growth of Chinese e-commerce platforms and exploring survival strategies for Korean platforms in the global e-commerce market.”</b>"},
+        {p:"We passed the first-round document review and gave a five-minute presentation on June 4, but we were not selected in the end. This page records how we built the plan and presentation, and which parts I took on."},
+        {facts:["Summer 2024", "GDSC SKKU · 5-person team", "Shenzhen & Shanghai, China (8-day plan)", "Passed documents → presented · not selected"]},
+
+        {k:"01 · Why China", h:"We wanted to see for ourselves what Temu and AliExpress are changing in the Korean market."},
+        {p:"Our presentation began with the fast growth of <b>Chinese platforms (Temu, SHEIN, AliExpress)</b> in the global e-commerce market."},
+        {p:"We cited figures showing that Korean overseas direct-purchase users <b>roughly doubled in five years, from 13.78 million in 2019 to 25.44 million</b>, and used the rise in domestic app users to show how quickly Chinese platforms were gaining a presence in Korea."},
+        {p:"So we framed our question as <b>“How did Chinese platforms grow, and what should Korean platforms learn?”</b>"},
+
+        {k:"02 · The Plan", h:"From Shenzhen to Shanghai, we designed exchanges, conferences and company visits as one flow."},
+        {flow:["GDG exchange", "E-commerce conferences", "Company visits", "Shopping search app", "Paper · E-commerce Fair"]},
+        {h3:"GDG exchange · Sharing technology and know-how"},
+        {p:"We planned to meet GDG Shenzhen and GDG Shanghai, learn tools used locally such as <b>Google Analytics, TensorFlow, and Android and Kotlin</b>, and share GDSC SKKU's Google Workspace and SEO know-how along with Sungkyunkwan culture."},
+        {h3:"Conferences · Plan A and Plan B"},
+        {p:"We shortlisted the <b>China (Shenzhen) International E-Commerce Industry Expo</b> and the <b>13th China Digital Marketing and Ecommerce Innovation Summit</b> in Shanghai, checked deadlines and eligibility, and lined up a substitute conference (Plan B) for each."},
+        {h3:"Company visits · Tencent and Pinduoduo"},
+        {p:"For <b>Tencent</b>, we focused on the WeChat ecosystem and its logistics service; for <b>Pinduoduo</b>, on its ultra-low-price pricing method and improvements to the mobile shopping experience. We prepared questions for each company in advance."},
+        {h3:"After the trip · Plans that lead to outputs"},
+        {ul:[
+          "<b>Shopping search app</b> - define requirements from local market research and build an app that compares prices across platforms",
+          "<b>Paper on the Korean e-commerce market</b> - analyze it from technical, business and international angles, publish it on the GDSC blog and others, and aim for an academic submission",
+          "<b>Korea E-Commerce Fair</b> - pitch the app we built to test its feasibility and business potential"
+        ]},
+
+        {k:"03 · My Role", h:"I took on the team introduction, pre-trip planning and the conference part, tying my time in China to the plan."},
+        {p:"Each teammate owned different slides. Drawing on the five years I lived in China and my Computer Education background, I focused on making concrete <b>what to prepare before going</b> and <b>what we could learn at each conference</b>."},
+        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Choosing the topic and writing the application", "Project introduction and motivation", "GDG exchange, company visits, search app and paper plans", "Korea E-Commerce Fair and expected effects"], mine:["Wrote the team and member introduction slides", "Pre-plan: Chinese study, visa and flights", "Checked conference deadlines and eligibility, and researched backup conferences", "Outlined how to contact companies (drawing on GDSC's experience inviting video-lecture speakers)", "Prepared for and took part in the June 4 presentation"]}},
+        {h3:"Pre-plan · So we would not get stuck on site"},
+        {ul:[
+          "<b>Chinese and the local environment</b> - listed social media that cannot be used in China and cultural differences, including signing up for a paid VPN in advance.",
+          "<b>Visa</b> - compared how to apply (in person at a visa application centre), the required documents, and the processing time and fee for regular, express and rush service.",
+          "<b>Flights</b> - fitted the route from Incheon to Shenzhen, Shenzhen to Shanghai, and the return flight into the schedule."
+        ]},
+        {h3:"Conferences · Check feasibility first"},
+        {p:"While choosing conferences, I checked application periods, eligibility and costs. Because it was hard to confirm the participating companies and programme of the Shenzhen conference, I <b>also looked for substitute conferences</b> and summarized what we could learn at each event to make the plan more concrete."},
+
+        {k:"04 · How We Built It", h:"From choosing a topic to presenting, we refined the plan as a team over about six weeks."},
+        {ul:[
+          "<b>April 18</b> - Each member proposed a preferred country and topic, and we compared them: online platform development (US East Coast), mobility and daily-life support for vulnerable groups (Japan), e-commerce (China), and an AR virtual fitting system (Silicon Valley), which I proposed. We discussed them against the selection criteria (relevance to the programme's purpose, concreteness of the plan, novelty of the topic), and the team settled on China e-commerce.",
+          "<b>April 28</b> - We submitted the final application.",
+          "<b>May 21 and 26</b> - We set the presentation outline and divided up the slides.",
+          "<b>May 28</b> - We reviewed the presentation together in person.",
+          "<b>June 4</b> - After passing the document round, we gave the five-minute presentation."
+        ]},
+
+        {k:"05 · Team Presentation", h:"A 20-slide presentation covering everything from the problem to the expected effects."},
+        {p:"We structured it as <b>team → motivation → pre-plan → itinerary → next steps → expected effects</b>."},
+        {cards:[
+          {n:"01", t:"Team", d:"A five-person GDSC team from different majors and years"},
+          {n:"02", t:"Motivation", d:"The growth of Chinese e-commerce platforms and changes in the Korean market"},
+          {n:"03", t:"Pre-plan", d:"Contact points, and Chinese, visa and flight preparation"},
+          {n:"04", t:"Itinerary", d:"GDG exchange, conferences, and Tencent and Pinduoduo visits"},
+          {n:"05", t:"Next Steps", d:"Shopping search app, paper, Korea E-Commerce Fair"},
+          {n:"06", t:"Effects", d:"Academic and international expected effects"}
+        ]},
+        {note:"For publication, I removed student ID numbers and company contact details from the slides, and blurred every face except mine."},
+
+        {k:"06 · Result", h:"We passed the document round and presented, but were not selected in the end."},
+        {p:"The result was disappointing, but what remains is the process of working out in detail what we wanted to do in Shenzhen and Shanghai, down to schedule, cost and application requirements."},
+
+        {k:"07 · What I Learned", h:"I found that I am someone who is drawn to how technology is applied in different environments."},
+        {p:"Working with my teammates and extending our plan overseas made me curious about <b>how the same technology is applied in a different environment</b>."},
+        {p:"This attempt showed me that I am someone who finds that kind of question interesting."}
+      ],
+      // Presentation: all 20 slides (student IDs and contact details removed, faces other than mine blurred)
+      deck: {
+        title: "Presentation",
+        chapters: [
+          {name: "Intro", pm: "I wrote the team and member introduction slides.", slides: [
+            {k:"COVER", t:"Deep Dive into E-Commerce: Explore Like a Billionaire", d:"The cover of our SKKU-BA-DIVE 2024 Summer application presentation, from the Sungkyunkwan University GDSC team. Student IDs have been removed."},
+            {k:"CONTENTS", t:"Contents", d:"Six parts: team, motivation, pre-plan, itinerary, next steps and expected effects."},
+            {k:"TEAM 01", t:"GDSC SKKU", d:"A university-based community for students interested in Google technologies. We introduced our activities, from Google tech study workshops, the EAP national policy training, the GDSC Korea joint hackathon and the Google Solution Challenge to the global IT video lectures, under the keywords “convergence” and “global.”"},
+            {k:"TEAM 02", t:"Diversity of majors and years", d:"Introduces the five-person team from different majors and years. For myself, I included that I was a first-year Computer Education student who lived in China for five years. Photos of the other members are blurred."}
+          ]},
+          {name: "Motivation", slides: [
+            {k:"MOTIVATION 01", t:"Rapid growth of global e-commerce", d:"App ranking data shows Chinese platforms such as Temu, SHEIN and AliExpress posting high growth in the global e-commerce market."},
+            {k:"MOTIVATION 02", t:"A growing presence in Korea too", d:"Presents the rise in app users of Chinese platforms in the Korean e-commerce market."},
+            {k:"MOTIVATION 03", t:"Why understanding the winning strategy matters", d:"From the question “Why are AliExpress and Temu investing so much in Korea?”, we framed the topic as exploring survival strategies for Korean platforms by analyzing the rapid growth of Chinese e-commerce platforms. People on screen are blurred."}
+          ]},
+          {name: "Pre-plan", pm: "I took the Chinese, visa and flight part and organized the preparation items using my experience of living in China.", slides: [
+            {k:"PRE-PLAN 01", t:"Contact points and booking information", d:"Organized contact points in three groups: GDGs in China, e-commerce companies, and conferences. With the GDGs we would use a dedicated Slack channel; for companies and conferences we checked official channels and how to apply. Company contact details are removed."},
+            {k:"PRE-PLAN 02", t:"Chinese study, visa and flights", d:"The Chinese study covered social media that cannot be used in China, cultural differences, and signing up for a paid VPN in advance. For the visa, how to apply in person and the time and fee for regular, express and rush service; for flights, the route from Incheon to Shenzhen, Shenzhen to Shanghai, and back home."}
+          ]},
+          {name: "Itinerary", pm: "I took the conference part: I checked deadlines and eligibility for candidate conferences and summarized what we could learn at each, plus backup options.", slides: [
+            {k:"PLAN 01", t:"Overall schedule", d:"A calendar that places the GDG exchanges, conferences and company visits in a trip starting in Shenzhen and moving to Shanghai."},
+            {k:"PLAN 02", t:"GDG Shenzhen exchange", d:"A technology and culture exchange: GDG Shenzhen shares Google Analytics and TensorFlow, while GDSC SKKU shares Google Workspace and SEO know-how and Sungkyunkwan culture. Event photos are blurred."},
+            {k:"PLAN 03", t:"GDG Shanghai exchange", d:"GDG Shanghai shares Google Analytics and Android and Kotlin, and GDSC SKKU shares its know-how in the same way. Event photos are blurred."},
+            {k:"PLAN 04", t:"Conferences", d:"The Shenzhen Expo and the Shanghai Summit as Plan A, with academic and technology conferences held around the same time as Plan B, and their application deadlines."},
+            {k:"PLAN 05", t:"Company visits: Tencent and Pinduoduo", d:"We prepared questions for each company: for Tencent, the WeChat ecosystem and its logistics service; for Pinduoduo, the pricing method behind its ultra-low-price strategy and improvements to the mobile shopping experience."}
+          ]},
+          {name: "Next steps", slides: [
+            {k:"FUTURE 01", t:"Building a shopping search app", d:"Define the features and user requirements for search through local market research, then build a price-comparison and search app using server-side crawling."},
+            {k:"FUTURE 02", t:"Paper on the Korean e-commerce market", d:"Based on the Shanghai and Shenzhen trip, analyze the direction of Korean e-commerce from international, technical and business angles, publish it as a report and aim for an academic submission."},
+            {k:"FUTURE 03", t:"Attending the Korea E-Commerce Fair", d:"At the fair from Oct 31 to Nov 2, 2024, visit companies from China's Yiwu Market Group and Korea's specialist e-commerce pavilion, and pitch the app we built to strengthen its business case."}
+          ]},
+          {name: "Expected effects", slides: [
+            {k:"EFFECT 01", t:"Academic side", d:"Collaborate through role division, study the potential of the Chinese e-commerce market through the Tencent and Pinduoduo visits and conferences, and share the results through videos and blog content we produce ourselves."},
+            {k:"EFFECT 02", t:"International side", d:"Understand the local business environment and build a global network through GDG exchanges, which could lead to later activities such as video lectures."},
+            {k:"THANK YOU", t:"Thank you", d:"We close the presentation hoping GDSC SKKU can contribute to global e-commerce."}
+          ]}
+        ]
+      }
     },
     "s-global": {
       title: "S-Global Challenger application",
