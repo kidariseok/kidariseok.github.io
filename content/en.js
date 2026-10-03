@@ -1195,44 +1195,77 @@ SITE.en = {
     },
     "trade-ai": {
       title: "2024 Undergraduate Trade & AI Camp",
-      summary: "Took part in the trade-and-AI camp for undergraduates run by the Korea International Trade Association.",
-      short: "Joined KITA's trade-and-AI camp for undergraduates.",
+      summary: "Planned a company-matching service that responds to supply-chain instability by combining trade and AI.",
+      short: "Planned CSBBMS, a company-matching service for supply-chain instability, in a 5-person team.",
       body: [
-        {
-          ul: [
-            "<b>What</b> - the Trade & AI camp for undergraduates run by the Korea International Trade Association (KITA)",
-            "<b>Shape</b> - lecture track, an AI idea pitch competition, and a follow-on certification (Trade English Level 1)",
-            "<b>Role</b> - studying DX cases across trade and industry plus data literacy; on the pitch team, selecting the data and setting the technical direction"
-          ]
-        },
-        {h:"Data literacy"},
-        {
-          p: "I worked through the distinction between big data and thick data, and the five-stage process for collecting, interpreting and using data."
-        },
-        {h:"DX in practice across the trade industry"},
-        {
-          ul: [
-            "<b>Manufacturing</b> - LS Group's smart factory: non-linear AI prediction models that account for causal relations between process variables, used to optimise energy and cost.",
-            "<b>Logistics</b> - robotic automation across loading, storage, picking, packing and delivery.",
-            "<b>Finance and platforms</b> - blockchain-based letter-of-credit issuance, and KITA's AI semantic search service."
-          ]
-        },
-        {h:"XAI and AI safety"},
-        {
-          ul: [
-            "Studied how Layer-wise Relevance Propagation and neuron-editing in GANs make a model's reasoning visible and correctable.",
-            "Covered the AI safety principles - fairness, transparency, reliability - and the corporate standards for applying them on the ground."
-          ]
-        },
-        {h:"Contribution to the team project"},
-        {
-          p: "Most of the team were trade majors. I leaned on their domain knowledge and contributed from the other side - the feel for software and data I had built up. Above all I set the analytical direction: which data to clean and use so the result would come out visible and unambiguous."
-        },
-        {h:"What followed"},
-        {
-          p: "The camp deepened my interest in the business ecosystem where trade and technology meet. I kept studying, and eventually took the <b>Trade English Level 1</b> certification to back it up."
-        }
-      ]
+        {lead:"Planned a company-matching service that responds to supply-chain instability by combining trade and AI."},
+        {p:"I took part in the <b>Undergraduate Trade & AI Camp</b>, jointly run by the Industry-Academic Cooperation Foundation and the Korea International Trade Association (KITA) Trade Academy, and planned <b>CSBBMS</b>, a company-matching service for supply-chain instability, in a team of five."},
+        {p:"Together with teammates who majored in trade, we looked at problems that arise in real trade environments and designed a service for finding trading partners that fit a company's requirements. Drawing on my interest in software and data from studying Computer Education, I helped work out the service's features and how it would be used."},
+        {facts:["Feb 20 – 22, 2024", "Team 11 · 5 members", "Industry-Academic Cooperation Foundation × KITA Trade Academy", "Completed"]},
+
+        {k:"01 · Problem", h:"Companies needed a way to find new trading partners instead of relying on one source."},
+        {p:"Based on a KITA survey, our presentation focused on the finding that <b>85.5% of exporters had experienced supply-chain problems</b>."},
+        {p:"It also stated that only <b>33.5%</b> of companies answered that they were sufficiently prepared to respond to a crisis."},
+        {p:"From this, the team concluded that as supply-chain instability continues, companies need <b>a way to search for and compare new partners that fit their own conditions</b> rather than depending only on existing ones."},
+
+        {k:"02 · Solution", h:"Enter a company's conditions, and the service lets you search for companies to trade with."},
+        {p:"<b>CSBBMS</b> is a service concept that searches for trading candidates based on a company's requirements and lets users narrow the range on a map and compare."},
+        {flow:["Enter company info", "Set requirements", "Find similar companies", "Compare on the map", "Quote · contract"]},
+        {h3:"INPUT · The company's requirements"},
+        {p:"We designed the search around <b>10 conditions</b>, including preferred region, purchase quantity, preferred unit price, company track record, number of contracts, company size, preference for safety or low price, contract period, consultation method, and preferred language."},
+        {h3:"TRUST · Information that supports trading decisions"},
+        {p:"By providing contract-related information and transaction history, we aimed to go beyond finding companies that merely match the conditions, toward <b>helping users compare and judge a potential counterparty</b>."},
+        {h3:"FILTER · Excluding risky companies"},
+        {p:"Companies unsuitable for trading are automatically excluded according to internal criteria, and a company that was misclassified can file an objection with supporting documents."},
+        {h3:"MAP · Map-based search"},
+        {p:"Matching companies are shown on a map, and the screen lets users narrow the region and range step by step while searching for partners."},
+        {note:"※ The screens in the presentation are mockups to show the form of the service; the company names and figures on them are examples."},
+
+        {k:"03 · My Role", h:"I helped shape the service by connecting perspectives from different majors."},
+        {p:"Many teammates majored in trade, so during the project I could <b>learn about trade problems and the concepts used in the field while looking at them from a technology perspective</b>."},
+        {p:"As a Computer Education major, I helped turn the trade problems my teammates raised into a service, and <b>took part in designing the service flow and features</b> for entering a company's conditions and exploring the results."},
+        {p:"Rather than stopping at an idea that simply uses AI,<br>I focused on developing it into a service by thinking through <b>what information to take in → by what criteria to compare companies → and how users would check the results</b>."},
+        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Research on supply-chain problems and the trade environment", "Service idea and feature design", "Discussion of how to match companies", "Producing the presentation"], mine:["Developing the service idea from a software and data perspective", "Discussing the matching flow using company information and requirements", "Reviewing service features and screen layout from the user's perspective", "Turning the team's ideas into the presentation"]}},
+
+        {k:"04 · What I Learned", h:"I learned that you have to understand the problem and the data before the AI."},
+        {p:"The camp's lectures also broadened how I look at AI projects."},
+        {p:"In the <b>data literacy</b> lecture, I learned that what matters is not only how data is collected and interpreted, but also from what questions and perspectives it is viewed."},
+        {p:"I was also struck by the point that in AI projects, <b>data quality and an understanding of the actual work</b> matter more than simply collecting a lot of data, and so does smooth communication between developers and domain experts."},
+        {p:"Through digital-transformation cases in the trade industry, I saw how AI and data technology combine with real work in manufacturing, logistics, finance, and platforms."},
+        {p:"From this I came to see that <b>understanding the industry and problem a technology is applied to matters as much as building the technology itself</b>."},
+
+        {k:"05 · Afterwards", h:"I became interested in connecting technology to the problems of other industries."},
+        {p:"Although it was a short camp, looking at trade problems through AI and data made me interested in <b>how technology solves the problems of a specific industry</b>."},
+        {p:"Continuing that interest in trade, I later earned the <b>Trade English Level 1</b> certificate."},
+        {facts:["Trade English Level 1 · Korea Chamber of Commerce and Industry · Jun 2026"]}
+      ],
+      // Team presentation: 13 of 17 slides (contents, divider, closing slides and a screen showing real bank transactions are left out)
+      deck: {
+        title: "Team presentation",
+        chapters: [
+          {name: "Intro", slides: [
+            {k:"INTRO", t:"A customized, situation-based company-matching service", d:"Customized Situation-Based Business Matching Service. The presentation of Team 11, 2024 Undergraduate Trade & AI Camp."}
+          ]},
+          {name: "Problem", slides: [
+            {k:"PROBLEM 01", t:"85.5% of exporters had supply-chain problems", d:"Cites a KITA survey of 1,094 companies (reported by Newsis, May 2022). As the trade environment shifts from globalization to regionalization, Korean firms were not coping, so supply chains needed diversifying."},
+            {k:"PROBLEM 02", t:"Only 33.5% were prepared", d:"Only 33.5% of companies said they were somewhat prepared for a supply-chain crisis, and smaller companies were summarized as more vulnerable. Geopolitical risk (friend-shoring, the US-China trade war) and environmental regulation (CBAM, etc.) were noted as background."},
+            {k:"EVIDENCE", t:"Damage from the war and the carbon border tax", d:"In a survey of 333 companies by KOITA, raw-material prices and supply issues (27.2%) and trade restrictions and production disruption (26.0%) were the leading damage types. The slide also cites a Bank of Korea estimate that total exports would fall 0.5% if the EU imposed a carbon border tax and 0.6% if the US did."}
+          ]},
+          {name: "Service design", slides: [
+            {k:"SERVICE 01", t:"Sign-up: company information", d:"Enter company name, listing status, founding year, headcount, accumulated funding, and company size in six ranges (under KRW 1 billion to over KRW 50 billion). It states that company details are not disclosed externally."},
+            {k:"SERVICE 02", t:"Finding companies on a map", d:"A concept that shows search results as a list and as map pins together, in a map-service layout. The companies and figures on screen are examples."},
+            {k:"SERVICE 03", t:"Entering requirements", d:"Region, purchase quantity, unit price, company track record, number of contracts, company size, safety or low-price preference, long- or short-term contract, consultation format, and language, so that AI can match better."},
+            {k:"SERVICE 04", t:"Similar companies and trust signals", d:"Lists the companies most similar to the requested type and recommends companies from saved history. The detail view shows contract cancellation status, products, and contract count and size, and quotes and contracts are handled online. Transactions of similarly sized companies can be viewed anonymously as references."},
+            {k:"SERVICE 05", t:"Automatic exclusion of blacklisted companies", d:"Companies classified as blacklisted under internal rules are excluded automatically; a company that was misclassified can submit supporting documents to file an objection and be corrected."},
+            {k:"SERVICE 06", t:"Narrowing the map step by step", d:"Matching companies are shown on the map, and users zoom in and out as the category narrows."}
+          ]},
+          {name: "Expected effects", slides: [
+            {k:"EFFECT 01", t:"A stable trade supply network", d:"Matching tailored to a company's requirements (industry, value, size, etc.) plus AI processing that derives stable values from similar companies' precedents is expected to counter supply-chain crises."},
+            {k:"EFFECT 02", t:"Keeping a competitive edge, cutting costs", d:"A stable supply chain helps secure market competitiveness and reduces the risk of inefficient production stoppages, avoiding unnecessary costs."},
+            {k:"EFFECT 03", t:"Helping companies set trade strategy", d:"Saves time and cost while giving insight to understand situations that were hard to grasp before and to choose the best option."}
+          ]}
+        ]
+      }
     },
     "future-tech": {
       title: "Future Technologies of the Fourth Industrial Revolution",
