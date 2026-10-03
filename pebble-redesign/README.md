@@ -1,12 +1,12 @@
 # 조약돌(Pebble) 재설계 — 작업 기록
 
 2024 ICISTS × KAIST 해커페어 프로젝트 「조약돌」을 다시 설계하는 작업의 결정 기록입니다.
-진행 순서: Analyze → Challenge → Ask → Lo-fi → 승인(2026.10.03) → Phase 1~5 확정 → **Phase 6~10 1차 완료(하이파이 프로토타입)**
+진행 순서: Analyze → Challenge → Ask → Lo-fi → 승인(2026.10.03) → Phase 1~5 확정 → Phase 6~10 1차(하이파이 프로토타입) → **비주얼 v2(캔디 조약돌)**
 
 ## 현재 상태
 
-- 단계: 하이파이 인터랙티브 프로토타입 1차 완료. 피드백 반영 단계
-- 프로토타입: [prototype/index.html](prototype/index.html) · 아티팩트 https://claude.ai/artifact/QXrSDpwLrLcMamoX2fjR5g (비공개)
+- 단계: 하이파이 프로토타입 비주얼 v2 반영. 피드백 반영 단계
+- 프로토타입: [prototype/index.html](prototype/index.html) · 아티팩트 https://claude.ai/artifact/QXrSDpwLrLcMamoX2fjR5g (비공개, Version 1 = v1 미니멀, Version 3 = v2 현재)
 - 명세: [SPEC.md](SPEC.md) (디자인과 구현의 기준)
 - Lo-fi 문서: https://claude.ai/artifact/BvfkDm5wDPbJvyHtnt2roR (비공개, Version 4 = v0.3 승인본, Version 2 = v0.2, Version 1 = v0.1)
 
@@ -70,6 +70,13 @@
 - 나누어떨어지지 않는 가격은 올림하지 않는다. 몫만큼 탑을 쓰고 차액은 회사가 부담한다 (4,500원 → 탑 2개 + 회사 500원).
 - 받는 사람에게는 가격과 탑 개수를 숨긴다.
 - '가장 많이 대화한 사람 어워드'는 나중 아이디어로 둔다. 순위·받은 개수 비교 금지 원칙과 부딪히므로 진행한다면 추첨이나 회사 행사 쪽을 검토한다.
+
+## 비주얼 v2 (2026.10.03)
+
+- 피드백: v1이 너무 미니멀하다. 실제 앱처럼 색을 쓰고, 조약돌 색을 다양하게, 쓰는 회사가 힙해 보이게. 벤토 그리드 참고 가능. 여러 연령대가 쓰니 직관성은 유지.
+- 반영: 크림 바탕 + 파스텔 벤토 타일, 열 가지 캔디색 조약돌, 질문마다 바뀌는 관문 바탕색, 보기 번호와 결과 막대의 같은 색, 떠 있는 검정 탭 바.
+- 직관성 장치: 검정은 '지금 누를 것'에만(돌 버튼, 주요 버튼, 탭 바), 상태는 색과 글을 함께, 아이콘 옆엔 글자, 글자 대비 4.5:1 이상.
+- 자세한 기준: [SPEC.md](SPEC.md) 6~7장.
 
 ## 구현 단계 지침 (승인 이후 적용)
 
