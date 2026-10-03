@@ -64,7 +64,7 @@ SITE.common = {
   // 장(챕터) 이름과 설명은 ko.js / en.js 의 해당 활동 deck 에 있습니다.
   decks: {
     line4: {file:"line4_slide_", count:15},
-    "trade-ai": {file:"trade_slide_", count:13}
+    "trade-ai": {file:"trade_slide_", count:19}
   },
   activities: [
     {

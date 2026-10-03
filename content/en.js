@@ -1239,30 +1239,36 @@ SITE.en = {
         {p:"Continuing that interest in trade, I later earned the <b>Trade English Level 1</b> certificate."},
         {facts:["Trade English Level 1 · Korea Chamber of Commerce and Industry · Jun 2026"]}
       ],
-      // Team presentation: 13 of 17 slides (contents, divider, closing slides and a screen showing real bank transactions are left out)
+      // Team presentation: all 19 slides of the reworked deck (UI shows the improved mockups; company names and figures on screen are examples)
       deck: {
         title: "Team presentation",
         chapters: [
           {name: "Intro", slides: [
-            {k:"INTRO", t:"A customized, situation-based company-matching service", d:"Customized Situation-Based Business Matching Service. The presentation of Team 11, 2024 Undergraduate Trade & AI Camp."}
+            {k:"COVER", t:"A customized, situation-based company-matching service", d:"Customized Situation-Based Business Matching Service. The presentation of Team 11, 2024 Undergraduate Trade & AI Camp. The service screens that follow are improved UI mockups."},
+            {k:"CONTENTS", t:"Contents", d:"Four parts: the problem, the solution, expected effects, and a wrap-up."}
           ]},
           {name: "Problem", slides: [
             {k:"PROBLEM 01", t:"85.5% of exporters had supply-chain problems", d:"Cites a KITA survey of 1,094 companies (reported by Newsis, May 2022). As the trade environment shifts from globalization to regionalization, Korean firms were not coping, so supply chains needed diversifying."},
-            {k:"PROBLEM 02", t:"Only 33.5% were prepared", d:"Only 33.5% of companies said they were somewhat prepared for a supply-chain crisis, and smaller companies were summarized as more vulnerable. Geopolitical risk (friend-shoring, the US-China trade war) and environmental regulation (CBAM, etc.) were noted as background."},
-            {k:"EVIDENCE", t:"Damage from the war and the carbon border tax", d:"In a survey of 333 companies by KOITA, raw-material prices and supply issues (27.2%) and trade restrictions and production disruption (26.0%) were the leading damage types. The slide also cites a Bank of Korea estimate that total exports would fall 0.5% if the EU imposed a carbon border tax and 0.6% if the US did."}
+            {k:"PROBLEM 02", t:"A sudden shift in the trade structure", d:"Geopolitical risk (friend-shoring, the US-China trade war) and environmental regulation (CBAM, ETS, the IRA, etc.) are reshaping trade. Only 33.5% of companies said they were somewhat prepared for a supply-chain crisis."},
+            {k:"EVIDENCE 01", t:"War damage to domestic R&D companies", d:"In a survey of 333 companies by KOITA (Mar 2022), raw-material prices and supply issues (27.2%) and trade restrictions and production disruption (26.0%) were the leading damage types."},
+            {k:"EVIDENCE 02", t:"Export impact of a carbon border tax", d:"A Bank of Korea estimate puts exports down 0.5% if the EU imposed the tax and 0.6% if the US did, about -1.1% in total goods annually."}
           ]},
           {name: "Service design", slides: [
-            {k:"SERVICE 01", t:"Sign-up: company information", d:"Enter company name, listing status, founding year, headcount, accumulated funding, and company size in six ranges (under KRW 1 billion to over KRW 50 billion). It states that company details are not disclosed externally."},
-            {k:"SERVICE 02", t:"Finding companies on a map", d:"A concept that shows search results as a list and as map pins together, in a map-service layout. The companies and figures on screen are examples."},
-            {k:"SERVICE 03", t:"Entering requirements", d:"Region, purchase quantity, unit price, company track record, number of contracts, company size, safety or low-price preference, long- or short-term contract, consultation format, and language, so that AI can match better."},
-            {k:"SERVICE 04", t:"Similar companies and trust signals", d:"Lists the companies most similar to the requested type and recommends companies from saved history. The detail view shows contract cancellation status, products, and contract count and size, and quotes and contracts are handled online. Transactions of similarly sized companies can be viewed anonymously as references."},
-            {k:"SERVICE 05", t:"Automatic exclusion of blacklisted companies", d:"Companies classified as blacklisted under internal rules are excluded automatically; a company that was misclassified can submit supporting documents to file an objection and be corrected."},
-            {k:"SERVICE 06", t:"Narrowing the map step by step", d:"Matching companies are shown on the map, and users zoom in and out as the category narrows."}
+            {k:"SOLUTION", t:"From sign-up to consultation in one flow", d:"Section divider for the solution."},
+            {k:"FLOW", t:"Service flow", d:"Six steps: company registration, conditions, recommended companies, map search, company detail, and transaction references. Blacklisted companies are excluded automatically at every step."},
+            {k:"STEP 01", t:"Company registration", d:"Enter basic info, size, and transaction details section by section. The old screen of blank fields became sections, chips, and a progress bar."},
+            {k:"STEP 02", t:"Matching conditions", d:"Enter item, region, unit price, and contract period, and the result updates right away. Reworked with chips, a range slider, and selection controls."},
+            {k:"STEP 03", t:"Recommended companies", d:"Shows fit score together with the reasons. The old list with explanatory text became a view built around fit and evidence checks."},
+            {k:"STEP 04", t:"Map search", d:"Picking a company in the list opens it on the map, and picking a pin opens its card in the list: a two-way link."},
+            {k:"STEP 05", t:"Company detail", d:"Check contract and trust indicators and request a quote right away, using indicator cards and a request panel."},
+            {k:"TRUST", t:"Blacklist", d:"Companies are excluded automatically under internal rules, with the criteria and objection procedure made public. A misclassified company can object with supporting documents."},
+            {k:"STEP 06", t:"Transaction references", d:"See anonymous transactions of similarly sized companies, built around indicators, trends, and anonymous cases."}
           ]},
           {name: "Expected effects", slides: [
-            {k:"EFFECT 01", t:"A stable trade supply network", d:"Matching tailored to a company's requirements (industry, value, size, etc.) plus AI processing that derives stable values from similar companies' precedents is expected to counter supply-chain crises."},
+            {k:"EFFECT 01", t:"A stable trade supply network", d:"Customization to a company's requirements (industry, value, size, etc.) plus AI processing that derives stable values from similar companies' precedents is expected to counter supply-chain crises."},
             {k:"EFFECT 02", t:"Keeping a competitive edge, cutting costs", d:"A stable supply chain helps secure market competitiveness and reduces the risk of inefficient production stoppages, avoiding unnecessary costs."},
-            {k:"EFFECT 03", t:"Helping companies set trade strategy", d:"Saves time and cost while giving insight to understand situations that were hard to grasp before and to choose the best option."}
+            {k:"EFFECT 03", t:"Helping companies set trade strategy", d:"Saves time and cost while giving insight to understand situations that were hard to grasp before and to choose the best option."},
+            {k:"THANK YOU", t:"Thank you", d:"The end of Team 11's presentation at the 2024 Undergraduate Trade & AI Camp."}
           ]}
         ]
       }
