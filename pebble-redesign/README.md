@@ -1,11 +1,12 @@
 # 조약돌(Pebble) 재설계 — 작업 기록
 
 2024 ICISTS × KAIST 해커페어 프로젝트 「조약돌」을 다시 설계하는 작업의 결정 기록입니다.
-진행 순서: Analyze → Challenge → Ask → Lo-fi → 승인(2026.10.03) → **Phase 1~5 확정** → Phase 6~10
+진행 순서: Analyze → Challenge → Ask → Lo-fi → 승인(2026.10.03) → Phase 1~5 확정 → **Phase 6~10 1차 완료(하이파이 프로토타입)**
 
 ## 현재 상태
 
-- 단계: Lo-fi v0.3 승인, Phase 1~5 확정. Phase 6(Visual Direction)은 두 스킬이 준비되면 시작
+- 단계: 하이파이 인터랙티브 프로토타입 1차 완료. 피드백 반영 단계
+- 프로토타입: [prototype/index.html](prototype/index.html) · 아티팩트 https://claude.ai/artifact/QXrSDpwLrLcMamoX2fjR5g (비공개)
 - 명세: [SPEC.md](SPEC.md) (디자인과 구현의 기준)
 - Lo-fi 문서: https://claude.ai/artifact/BvfkDm5wDPbJvyHtnt2roR (비공개, Version 4 = v0.3 승인본, Version 2 = v0.2, Version 1 = v0.1)
 
