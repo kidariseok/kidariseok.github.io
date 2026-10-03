@@ -730,6 +730,11 @@
   .lb .lbnav.l{left:18px;right:auto}
   .lb .lbnav.r{right:18px}
   .lb .lbcnt{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);color:#fff;font:700 13px var(--display);background:rgba(10,12,16,.6);padding:6px 13px;border-radius:999px}
+  .cert{margin:22px 0 4px;max-width:340px}
+  .cert button{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in;background:var(--soft);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+  .cert button:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .cert img{display:block;width:100%;height:auto}
+  .cert figcaption{margin-top:8px;font-size:13.5px;color:var(--muted)}
   .files{margin-top:18px;display:grid;gap:8px}
   .files .fl{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;background:var(--soft);font-size:15px;color:var(--ink)}
   .files .fl svg{flex:none;color:var(--accent-text)}
@@ -2261,7 +2266,7 @@
 
     var body = el("div","body");
     var heads = [];   // 목차에 들어갈 소제목들 {label, node}
-    // 본문 블록: {h} 소제목(k 작은 제목 · toc 목차 이름) · {p} 문단 · {ul} 목록 · {note} 참고 상자 · {files} 첨부 · {link, href} 링크
+    // 본문 블록: {h} 소제목(k 작은 제목 · toc 목차 이름) · {p} 문단 · {ul} 목록 · {note} 참고 상자 · {files} 첨부 · {cert:{img,alt,cap}} 이수증 이미지 · {link, href} 링크
     //           {lead} 큰 문장 · {facts} 정보 칩 · {stat} 숫자 · {q} 강조 문장 · {flow} 흐름 · {boxes} 회색 상자
     //           {cards} 카드 · {cmp} 두 칸 비교 · {checks} 체크 목록 · {h3} 작은 소제목(목차 제외)
     (a.body[lang] || []).forEach(function(b){
@@ -2357,6 +2362,19 @@
         body.appendChild(ul);
       }
       else if(b.note != null) body.appendChild(rich("p","note", b.note));
+      else if(b.cert){
+        // {cert:{img, alt, cap}}  이수증 같은 세로 문서 이미지. 누르면 크게 열림
+        var cf = el("figure","cert");
+        var cb = el("button");
+        cb.type = "button";
+        var ci2 = document.createElement("img");
+        ci2.src = imgSrc(b.cert.img); ci2.alt = b.cert.alt || ""; ci2.loading = "lazy"; ci2.decoding = "async";
+        cb.appendChild(ci2);
+        cb.addEventListener("click", function(){ openShot(imgSrc(b.cert.img)); });
+        cf.appendChild(cb);
+        if(b.cert.cap) cf.appendChild(el("figcaption", null, b.cert.cap));
+        body.appendChild(cf);
+      }
       else if(b.files){
         body.appendChild(el("h2", null, T.files[lang]));
         var fb = el("div","files");

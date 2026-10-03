@@ -1236,7 +1236,7 @@ SITE.en = {
     },
     "future-tech": {
       title: "Future Technologies of the Fourth Industrial Revolution",
-      summary: "Completed 14 online courses over two days, 14 hours in total.",
+      summary: "Before starting university, completed 14 online courses over two days, 14 hours in total.",
       body: [
         {
           ul: [
@@ -1245,6 +1245,8 @@ SITE.en = {
             "<b>Content</b> - lectures by experts from Microsoft, AWS, Google Cloud and NVIDIA"
           ]
         },
+        {h3:"Certificate"},
+        {cert:{img:"future_tech_cert", alt:"Completion certificate, Future Technologies of the Fourth Industrial Revolution", cap:"Run jointly by the Meta-Consortium A·I·B under the Ministry of Education's convergence-university program · issued 23 Feb 2024 (tap to enlarge)"}},
         {h:"What I took from it"},
         {
           ul: [
