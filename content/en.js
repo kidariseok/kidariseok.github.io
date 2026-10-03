@@ -1236,29 +1236,78 @@ SITE.en = {
     },
     "future-tech": {
       title: "Future Technologies of the Fourth Industrial Revolution",
-      summary: "Completed 14 online courses over two days, 14 hours in total.",
+      summary: "Before starting university, completed 14 online courses over two days, 14 hours in total.",
+      nums: [
+        {v:"14", u:"hours", t:"Total hours completed", d:"13-14 Feb 2024 · online", hi:true},
+        {v:"14", u:"", t:"Lectures attended", d:"1 hour each"},
+        {v:"2", u:"days", t:"Full-time programme", d:"10:00 - 18:00"}
+      ],
+      numsLayout: "row",
       body: [
-        {
-          ul: [
-            "<b>Host</b> - the Ministry of Education's A.I.B convergence-university program / SKKU AI Institute",
-            "<b>Dates</b> - 13-14 February 2024, 14 hours completed",
-            "<b>Content</b> - lectures by experts from Microsoft, AWS, Google Cloud and NVIDIA"
-          ]
-        },
-        {h:"What I took from it"},
-        {
-          ul: [
-            "Technical grounding across generative AI (DALL-E 3, Copilot), Azure AI Studio, cloud and the metaverse.",
-            "A clearer sense of how current IT trends connect back to a computer-education major."
-          ]
-        },
-        {h:"Reflection"},
-        {
-          p: "I found the lecture series on the university site and signed up. It ran full-time across two days - 14 hours - with experts from Microsoft, AWS, Google and NVIDIA on generative AI, cloud and Azure AI Studio, straight from the front line of the work."
-        },
-        {
-          p: "It gave me several angles on how fast AI is diversifying, and left me confident that my direction and aptitude line up with my major. The pace of the ecosystem can feel like a weight - but chasing and applying those changes is also where I found the pull, and the pleasure of getting better at something."
-        }
+        {lead:"Looking past what technology can do, at how it connects to reality"},
+        {p:"Through talks by experts from Microsoft, AWS, Google and NVIDIA, I looked at fast-moving technologies - generative AI, cloud, image-generation models, digital twins and the metaverse - and at how they are used in real industry."},
+        {facts:["13 - 14 Feb 2024", "SKKU AI Institute lecture series", "2 days · 14 hours · full-time"]},
+        {h3:"Certificate"},
+        {cert:{img:"future_tech_cert", alt:"Completion certificate, Future Technologies of the Fourth Industrial Revolution", cap:"Run jointly by the Meta-Consortium A·I·B under the Ministry of Education's convergence-university program · issued 23 Feb 2024 (tap to enlarge)"}},
+
+        {k:"01 · Finding Future Tech on my own", h:"Meeting my field before I even started university"},
+        {p:"Just before entering university, I wanted a first look at the computing and AI fields I was about to study."},
+        {p:"While browsing the university website myself, I found a lecture series hosted by the AI Institute. I was curious what I would be learning, so I signed up on my own."},
+        {p:"Over two days and 14 hours I heard experts from Microsoft, AWS, Google and NVIDIA, and got a broad look at what was moving fast at the time: generative AI, cloud, Azure AI Studio, image-generation models and digital twins."},
+        {p:"Rather than going deep on any one technology, I listened with a question: <b>\u201cHow far will technology go, and what role could I play in it?\u201d</b>"},
+
+        {k:"02 · Technology doesn't grow alone", toc:"02 Technology doesn't grow alone", h:"Technology needs an ecosystem."},
+        {p:"The first thing that struck me was the story of the <b>driver's licence</b>."},
+        {p:"A car alone does not create a car society. Alongside the technology to build cars you need roads and traffic infrastructure, licensing rules and laws, and a society ready to accept it all."},
+        {p:"Generative AI and the metaverse were the same."},
+        {p:"A new model or platform appearing is not enough to change an industry. Real change needs people to use it, services built on it, infrastructure to handle the data, and a new culture around it."},
+        {p:"This widened how I look at technology, from"},
+        {q:"\u201cHow good is this technology?\u201d<br>to \u201cWhat does it have to connect to before it creates real value?\u201d"},
+
+        {k:"03 · Building AI, using AI", toc:"03 Building vs. using AI", h:"What kind of role will I play in the AI era?"},
+        {p:"The question that stayed with me longest was a simple one."},
+        {q:"Between building AI and using AI, which kind of person will I become?"},
+        {p:"The lectures covered how AI models are made, along with the path of using them:"},
+        {flow:["Train", "Fine-tune", "Prompt Engineering", "Add your data"]},
+        {p:"I also saw many examples of AI assisting existing work through Microsoft Copilot: summarising documents, organising PDFs and analysing data."},
+        {p:"It made me think the key skill in the AI era may not be building models alone, but being able to"},
+        {flow:["Define the problem", "Choose the right technology", "Describe the result precisely", "Judge and improve it"]},
+        {p:"As AI advances, people's role does not disappear. <b>The role of the person who defines what to solve and uses AI well may become even more important.</b>"},
+
+        {k:"04 · What generative AI changed was how we ‘generate’", toc:"04 Generative AI", h:"From generating content to understanding intention"},
+        {p:"We traced generative AI from GANs through Diffusion Models, Transformers and CLIP, and looked at image-generation services such as DALL\u00b7E, Midjourney and Stable Diffusion."},
+        {p:"Early generative models focused on producing natural-looking images. Later ones moved toward <b>linking the meaning of text and images and reflecting the user's intent more precisely</b>."},
+        {p:"Watching the speakers use DALL\u00b7E and Midjourney, I noticed the same thing."},
+        {p:"Simply giving AI a command was not enough. You had to define the result you wanted, express it in a form the AI could understand, then judge and revise what came back."},
+        {p:"Watching generative AI develop, I came to think:"},
+        {q:"What matters is less what AI can make<br>than what people ask AI to make."},
+        {p:"It sparked an interest in <b>using technology for a purpose and judging its results</b>, rather than simply consuming it."},
+
+        {k:"05 · Experimenting with reality in a virtual world", toc:"05 Reality, virtually", h:"Digital Twin & Synthetic Data"},
+        {p:"What stood out most among the talks was NVIDIA's <b>digital twins and Omniverse</b>."},
+        {p:"The idea is to rebuild a factory or a city in virtual space and run experiments that are hard to repeat in reality."},
+        {p:"When developing a self-driving system, for example, instead of exposing it to every situation on real roads, you can create varied weather and road conditions in a virtual environment and train it there."},
+        {p:"A factory's production can likewise be simulated under many conditions first, and the most efficient approach then applied in reality."},
+        {p:"I also found it interesting that <b>synthetic data</b> is used to train AI."},
+        {p:"I used to think of AI mainly as technology that learns from data and produces results. This lecture gave me a wider view: AI as <b>technology that recreates reality in virtual space, generates new data there, and helps real-world decisions in return</b>."},
+
+        {k:"06 · A different way of seeing technology", toc:"06 A different view", h:"What remained with me"},
+        {p:"At the time, it was exciting just to see new technologies like DALL\u00b7E, Copilot, Midjourney and Omniverse appear."},
+        {p:"Looking back with some distance, what stayed with me was not the name of any one technology."},
+        {p:"What mattered more was a new interest in <b>the connections: between technologies, between technology and people, between technology and industry</b>."},
+        {p:"When I meet a new technology, I no longer stop at <b>\u201cWhat can it do?\u201d</b> I also ask:"},
+        {checks:["\u201cWhat problem could this be connected to?\u201d", "\u201cWhat role should people play in this?\u201d"]},
+
+        {k:"07 · From Future Tech to My Direction", toc:"07 My direction", h:"Someone who understands technology and connects people with problems"},
+        {p:"The fast-changing technology ecosystem felt daunting at times. New models kept appearing, and I wondered whether anyone could keep up with that pace."},
+        {p:"At the same time, seeing new technology put to real use, I found <b>the appeal and the joy of growth in exploring change itself</b>."},
+        {p:"Above all, this was an experience from before university: finding a field I was curious about on my own, and meeting the technology and perspectives of working professionals first-hand."},
+        {p:"It also gave me confidence that choosing computer education as my major fits my interests."},
+        {p:"Back then, simply watching AI advance was exciting. Now I am one step further, interested in <b>which real problems of people and industry the technology can solve</b>."},
+        {p:"For me, this lecture series was more than learning new technology. It was"},
+        {q:"the start of thinking about a role that goes beyond following technology's progress:<br>connecting technology with people, and ideas with problems."},
+        {facts:["Technology", "People", "Ideas"]},
+        {p:"<b>I am growing into someone who understands technology and connects it where it is needed.</b>"}
       ]
     },
     worldvision: {
