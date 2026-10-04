@@ -585,13 +585,13 @@ SITE.en = {
       body: [
         {lead:"Ten days with children in Indonesia"},
         {p:"A volunteering trip spent teaching, running around and laughing with the children of <b>Babakan Madang Elementary School</b> in Bogor, Indonesia."},
-        {p:"I had once prepared an Indonesia volunteering trip myself with FREEMED, only for it to fall through. Before enlisting, I wanted one last chance to actually go - so I applied."},
+        {p:"I had once prepared an Indonesia volunteering trip myself with FreeMed, only for it to fall through. Before enlisting, I wanted one last chance to actually go - so I applied."},
         {p:"I didn't just volunteer on site. <b>I went through the whole process: designing and preparing classes, managing the supplies they needed, and working with the students in the classroom.</b>"},
         {facts:["Oct 2024 – Jan 2025", "Bogor, Indonesia", "40 volunteers"]},
 
         {k:"01 · Why Indonesia", h:"I wanted to finish a plan that had once fallen through."},
         {p:"I had been interested in overseas volunteering for a long time."},
-        {p:"With FREEMED I prepared a deployment to Indonesia myself - running an Indonesian-language study group and planning programs tailored to the local context - but the project was cancelled when the sponsor pulled out."},
+        {p:"With FreeMed I prepared a deployment to Indonesia myself - running an Indonesian-language study group and planning programs tailored to the local context - but the project was cancelled when the sponsor pulled out."},
         {p:"I regretted all the time I had put in."},
         {p:"So I saw this not as just another extracurricular, but as <b>a chance to finally experience the volunteering I couldn't finish back then</b>."},
         {p:"As a Computer Education major, I also wanted to find out first-hand what preparing and teaching real classes for children would mean to me."},
@@ -886,14 +886,14 @@ SITE.en = {
         {note:"Mentor-mentee sessions ran team by team."}
       ]
     },
-    odyvice: {
-      title: "Odyvice Undergraduate Mentor",
+    audivice: {
+      title: "Audivice Undergraduate Mentor",
       summary: "Mentored middle and high school students on study methods, mental wellbeing and more.",
       short: "Mentored secondary students on study habits and wellbeing.",
       body: [
         {
           ul: [
-            "<b>Programme</b> - Odyvice undergraduate mentor corps",
+            "<b>Programme</b> - Audivice undergraduate mentor corps",
             "<b>Span</b> - about five months; 5 hours, 5 sessions completed",
             "<b>Role</b> - advising middle and high school students on study method and managing their state of mind"
           ]
@@ -1197,7 +1197,7 @@ SITE.en = {
         }
       ]
     },
-    premed: {
+    freemed: {
       title: "FreeMed",
       summary: "Led the part of the team providing home health-care visits to elderly residents living alone in jjokbang districts.",
       short: "Led home health-care visits for elderly residents living alone · about a year, 17 visits.",
@@ -1538,7 +1538,7 @@ SITE.en = {
     close: "Close",
     orgs: {
       ktng: "KT&G Sangsang Withus Winter Overseas Volunteer Corps",
-      premed: "FreeMed",
+      freemed: "FreeMed",
       redcross: "Korean Red Cross",
       dreamon: "Dream On School"
     },

@@ -24,7 +24,7 @@ SITE.common = {
   projects: ["line4", "goormthon"],
   // 대외활동 '전체'를 접어 둔 상태에서 보여 줄 분야별 대표 활동 (axes 순서로 한 줄씩).
   // 위 '대표 활동'(featured) · 'PROJECTS'(projects)와 겹치지 않게 고릅니다. 빼 둔 분야(지금은 leadership)는 건너뜁니다
-  archivePicks: {technology:"icists", people:"premed", global:"speech-mentors", explore:"edutech-expo"},
+  archivePicks: {technology:"icists", people:"freemed", global:"speech-mentors", explore:"edutech-expo"},
   // 대외활동 '분야별' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. name 은 한·영 공통 영어, sub 는 ko / en
   axes: [
     {id:"technology", name:"Technology", sub:{ko:"AI · 데이터 · 소프트웨어", en:"AI · Data · Software"}},
@@ -55,7 +55,7 @@ SITE.common = {
       shots: ["speech_02", "speech_05", "speech_06", "speech_07", "speech_08"],
       video: {src:"video/speech-sketch.mp4", poster:"speech_video_poster"}
     },
-    odyvice: {cover:"odyvice_cover"},
+    audivice: {cover:"audivice_cover"},
     icists: {cover:"icists_cover", shots:["icists_01", "icists_02"]},
     goormthon: {
       cover: "goorm_cover",
@@ -123,7 +123,7 @@ SITE.common = {
       notion: "3bbdd7c9423e80c8813cf352ed856ed9"
     },
     {
-      id: "odyvice",
+      id: "audivice",
       start: "2024-09-01",
       end: "2025-02-28",
       category: "external", axis:"people",
@@ -163,7 +163,7 @@ SITE.common = {
       notion: "3bbdd7c9423e8018bc23dc8f365b965e"
     },
     {
-      id: "premed",
+      id: "freemed",
       start: "2024-03-19",
       end: "2025-03-31",
       category: "external", axis:"people",
@@ -258,11 +258,11 @@ SITE.common = {
   volunteerLog: {
     issued: "2026-09-23",
     records: [
-      {date:"2025-03-22", minutes:113, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2025-03-22", minutes:113, org:"freemed", title:"homeVisit", field:"health"},
       {date:"2025-02-28", minutes:210, org:"ktng", title:"closing", field:"other"},
-      {date:"2025-02-22", minutes:120, org:"premed", title:"homeVisit", field:"health"},
-      {date:"2025-02-08", minutes:98, org:"premed", title:"homeVisit", field:"health"},
-      {date:"2025-01-25", minutes:120, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2025-02-22", minutes:120, org:"freemed", title:"homeVisit", field:"health"},
+      {date:"2025-02-08", minutes:98, org:"freemed", title:"homeVisit", field:"health"},
+      {date:"2025-01-25", minutes:120, org:"freemed", title:"homeVisit", field:"health"},
       {date:"2025-01-16", minutes:780, org:"ktng", title:"deployment", field:"other"},
       {date:"2025-01-15", minutes:780, org:"ktng", title:"deployment", field:"other"},
       {date:"2025-01-14", minutes:780, org:"ktng", title:"deployment", field:"other"},
@@ -278,27 +278,27 @@ SITE.common = {
       {date:"2025-01-03", minutes:300, org:"ktng", title:"performance", field:"other"},
       {date:"2025-01-03", minutes:120, org:"ktng", title:"launch", field:"other"},
       {date:"2024-12-30", minutes:360, org:"ktng", title:"supplies", field:"other"},
-      {date:"2024-12-28", minutes:65, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-12-28", minutes:65, org:"freemed", title:"homeVisit", field:"health"},
       {date:"2024-12-27", minutes:150, org:"ktng", title:"performance", field:"other"},
       {date:"2024-12-27", minutes:450, org:"ktng", title:"teachingRehearsal", field:"other"},
       {date:"2024-12-21", minutes:510, org:"ktng", title:"prepMeeting", field:"other"},
       {date:"2024-12-15", minutes:270, org:"ktng", title:"supplies", field:"other"},
-      {date:"2024-12-07", minutes:66, org:"premed", title:"homeVisit", field:"health"},
-      {date:"2024-11-17", minutes:66, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-12-07", minutes:66, org:"freemed", title:"homeVisit", field:"health"},
+      {date:"2024-11-17", minutes:66, org:"freemed", title:"homeVisit", field:"health"},
       {date:"2024-11-09", minutes:510, org:"ktng", title:"camp", field:"other"},
       {date:"2024-11-08", minutes:480, org:"ktng", title:"camp", field:"other"},
-      {date:"2024-10-26", minutes:62, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-10-26", minutes:62, org:"freemed", title:"homeVisit", field:"health"},
       {date:"2024-10-25", minutes:240, org:"redcross", title:"bloodDonation", field:"health"},
-      {date:"2024-09-21", minutes:70, org:"premed", title:"homeVisit", field:"health"},
-      {date:"2024-09-07", minutes:60, org:"premed", title:"homeVisit", field:"health"},
-      {date:"2024-08-17", minutes:60, org:"premed", title:"homeVisit", field:"health"},
-      {date:"2024-08-03", minutes:60, org:"premed", title:"homeVisit", field:"health"},
-      {date:"2024-07-20", minutes:100, org:"premed", title:"homeVisit", field:"health"},
-      {date:"2024-07-06", minutes:60, org:"premed", title:"homeVisit", field:"health"},
-      {date:"2024-06-22", minutes:120, org:"premed", title:"homeVisit", field:"health"},
-      {date:"2024-06-08", minutes:90, org:"premed", title:"homeVisit", field:"health"},
+      {date:"2024-09-21", minutes:70, org:"freemed", title:"homeVisit", field:"health"},
+      {date:"2024-09-07", minutes:60, org:"freemed", title:"homeVisit", field:"health"},
+      {date:"2024-08-17", minutes:60, org:"freemed", title:"homeVisit", field:"health"},
+      {date:"2024-08-03", minutes:60, org:"freemed", title:"homeVisit", field:"health"},
+      {date:"2024-07-20", minutes:100, org:"freemed", title:"homeVisit", field:"health"},
+      {date:"2024-07-06", minutes:60, org:"freemed", title:"homeVisit", field:"health"},
+      {date:"2024-06-22", minutes:120, org:"freemed", title:"homeVisit", field:"health"},
+      {date:"2024-06-08", minutes:90, org:"freemed", title:"homeVisit", field:"health"},
       {date:"2024-05-21", minutes:420, org:"dreamon", title:"classAssist", field:"education"},
-      {date:"2024-05-18", minutes:120, org:"premed", title:"homeVisit", field:"health"}
+      {date:"2024-05-18", minutes:120, org:"freemed", title:"homeVisit", field:"health"}
     ]
   }
 };
