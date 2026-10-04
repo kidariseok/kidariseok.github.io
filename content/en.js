@@ -242,55 +242,81 @@ SITE.en = {
   },
   activities: {
     "intl-publication": {
-      title: "The Art and Science of International Publication: A Practical Roadmap from Research Development to Scholarly Impact",
-      summary: "Attended a Department of English lecture on the process of international scholarly publication.",
-      short: "Attended an English dept. lecture on international scholarly publishing.",
+      title: "AI in Second-Language Education and International Publication",
+      summary: "Attended both parts of a Department of English lecture on the same day, and wrote up how AI is used across the four language skills, the theories and research methods that explain why it works, and the path a paper takes to an international journal.",
+      short: "Dept. of English lecture, parts 1 and 2: AI x L2 education research and a roadmap to international publication.",
       body: [
-        {h:"AI in L2 education: where the research is going"},
-        {
-          p: "The lecture started from the observation that AI research splits along the four language skills - reading, listening, writing and speaking - and that expectations and limits differ sharply for each."
-        },
-        {
-          ul: [
-            "<b>Writing</b> - strong at brainstorming and at improving clarity, grammar, punctuation and style.",
-            "But loss of authorial voice, bias, overreliance and hallucinated references remain clear limits.",
-            "A tendency to lean too heavily on summarisation leaves its educational fit open to question.",
-            "Reduced foreign-language anxiety is reported - though whether less anxiety is always a good thing is itself worth asking.",
-            "<b>Speaking</b> - heavily used for pronunciation practice."
-          ]
-        },
-        {h:"Theoretical grounding"},
-        {
-          p: "The lecture laid out the theoretical frames that carry weight when writing in the humanities."
-        },
-        {
-          ul: [
-            "<b>Input Hypothesis</b> - i + 1; the classic frame, with plenty of literature behind it.",
-            "<b>Output Hypothesis</b> - give learners the chance to actually produce what they have taken in.",
-            "<b>Noticing Hypothesis</b> - exposure alone does not produce learning; attention must be drawn, then developed into awareness.",
-            "<b>Sociocultural Theory</b> - weight on teachers and peers; the More Knowledgeable Other (MKO).",
-            "<b>Self-Regulated Theory</b> - individualised learning; learners know themselves best, so give intrinsic motivation and let them become proactive agents."
-          ]
-        },
-        {h:"Research methods"},
-        {
-          p: "What stuck with me: that AI produces good outcomes is already established - what makes a paper now is analysing the <b>process</b> behind them."
-        },
-        {
-          ul: [
-            "Process tracing approach",
-            "Retrodictive modeling",
-            "Latent Growth Curve Modeling (LGCM)"
-          ]
-        },
-        {h:"Advice on writing papers"},
-        {
-          ul: [
-            "Fill the gap - not something that has been said before.",
-            "Patience is the key; work on multiple papers at once.",
-            "Rebutting existing research is often an easier way into a topic than proposing a brand-new solution."
-          ]
-        }
+        {lead:"We were told to move past “does AI work?” and ask “how, for whom, and under what conditions?”"},
+        {p:"I attended both parts of this lecture, hosted by the Department of English at Sungkyunkwan University, on the same day. Professor Ali Derakhshan of Golestan University had been invited, but he could not come, so Professor Park Yujeong and Professor Normandin gave the sessions in his place, working from his lecture materials."},
+        {facts:["Dept. of English, Sungkyunkwan University", "Parts 1 and 2, same day", "Materials: Ali Derakhshan"]},
+        {cmp:[
+          {n:"Part 1", t:"Artificial Intelligence in Second and Foreign Language (L2) Education", d:"Skills, then theory, then research directions: “what should we study?”"},
+          {n:"Part 2", t:"The Art and Science of International Publication", d:"Research development, manuscript, submission, review, impact: “how do we turn it into a paper?”"}
+        ]},
+
+        {k:"Part 1 · 01", toc:"Part 1 Skills", h:"What AI does across the four language skills"},
+        {p:"Reading, writing, speaking and listening were all walked through in the same frame: the difficulties learners face, how AI helps before, during and after an activity, and where it falls short."},
+        {cards:[
+          {n:"READING", t:"Support before, during, after", d:"Activating background knowledge, explaining vocabulary and grammar, generating quizzes. Limit: leaning on explanations can weaken deep reading and inference."},
+          {n:"WRITING", t:"From ideas to reflection", d:"Brainstorming, outlining, revising, feedback. Limits: loss of authorial voice, bias, hallucination, academic integrity."},
+          {n:"SPEAKING", t:"A partner that never tires", d:"Role-play, debate, presentation practice, pronunciation feedback. Limits: less human interaction, accent bias."},
+          {n:"LISTENING", t:"Speed, captions, replays", d:"Adjustable speed, captions, comprehension questions, accent comparison. Limits: caption dependence, unnatural synthetic speech."}
+        ]},
+        {p:"The strengths were shared across all four skills: personalisation, immediate feedback, unlimited practice and learner autonomy. So were the limits: <b>overreliance, hallucination and bias</b>. The prescription was the same too: use AI as a <b>scaffold</b>, not an answer machine. For writing, the gains were larger when AI was built into the whole process, from planning to revision and reflection, than when it was used only for proofreading or text generation."},
+        {note:"<b>Said in the lecture</b><br>For writing, hallucinated references were named as a clear limit, and a tendency to lean too heavily on summarisation left its educational fit open to doubt. Reduced Foreign Language Anxiety is reported, but <b>whether less anxiety is always a good thing is worth questioning</b>, which stayed with me. Speaking, we heard, is heavily used for pronunciation practice."},
+
+        {k:"Part 1 · 02", toc:"Part 1 Theory", h:"Why it works: six theories"},
+        {p:"One question came at the end of the skills section: if AI helps with every skill, what explains the benefit? The answer was not the technology itself, but the way AI lines up with the learning principles of existing second language acquisition (SLA) theories."},
+        {cards:[
+          {n:"INPUT · KRASHEN", t:"i + 1", d:"Input that is understandable but slightly beyond the learner drives acquisition. AI simplifies texts to level and adds explanations to produce it."},
+          {n:"OUTPUT · SWAIN", t:"Produce to learn", d:"Understanding is not enough; learners must speak and write. Tasks should have them draft first, then use AI."},
+          {n:"NOTICING · SCHMIDT", t:"Attention becomes awareness", d:"Exposure alone does not produce learning. Ask AI to explain an error rather than fix it, so the learner notices."}
+        ]},
+        {cards:[
+          {n:"SOCIOCULTURAL · VYGOTSKY", t:"A digital MKO", d:"With help from a More Knowledgeable Other such as a teacher or peer, learners do what they cannot yet do alone. AI gives hints and gradually withdraws."},
+          {n:"SELF-REGULATED · ZIMMERMAN", t:"Plan, perform, reflect", d:"Learners know themselves best, so they should be proactive agents. AI is a temporary coach, not a permanent manager."},
+          {n:"SELF-DETERMINATION · DECI & RYAN", t:"Autonomy, competence, relatedness", d:"Intrinsic motivation grows when these three needs are met. AI can offer choice and immediate feedback, but teacher and peer relationships must be kept."}
+        ]},
+        {q:"Aim for the learner's output rather than AI's, for noticing rather than error removal, and for gradual independence rather than dependence. All six theories pointed the same way."},
+
+        {k:"Part 1 · 03", toc:"Part 1 Directions", h:"What to study next, and how"},
+        {p:"Research so far has mostly compared AI-assisted teaching with traditional teaching, and that good results appear is already established. What stuck with me is that analysing the <b>process</b> behind those results is becoming the material for papers. Six research directions were proposed."},
+        {ul:[
+          "<b>Learning mechanisms</b>: how does AI help learning?",
+          "<b>Teacher-AI collaboration</b>: how should teachers and AI work together?",
+          "<b>Learner variability</b>: for whom does it work best?",
+          "<b>Context</b>: under what conditions is it most effective?",
+          "<b>Longitudinal development</b>: how does it change over time?",
+          "<b>Ethics</b>: how can it be used responsibly?"
+        ]},
+        {h3:"Ten research methods"},
+        {p:"It was easiest to group the methods by what they try to see."},
+        {cards:[
+          {n:"PROCESS", t:"Follow the process", d:"<strong>PTA</strong>: reconstruct the learning path from prompts and revisions.<br><strong>Idiodynamic</strong>: rate confidence and anxiety second by second while watching a recording."},
+          {n:"TIME", t:"Follow time", d:"<strong>LGCM</strong>: estimate each learner's starting point and growth rate.<br><strong>TSA</strong>: analyse trends and swings in a long run of observations.<br><strong>EMA/ESM</strong>: record motivation and emotion in real time with short repeated surveys."},
+          {n:"CONTEXT", t:"Explain paths and context", d:"<strong>RM</strong>: work backwards from outcomes to reconstruct different paths.<br><strong>ABM</strong>: simulate behavioural rules.<br><strong>NEM</strong>: look at individual, classroom, institution and society together."},
+          {n:"PERSPECTIVE", t:"Cluster viewpoints", d:"<strong>Q Methodology</strong>: have people rank statements to find distinct types of viewpoint on AI."}
+        ]},
+        {p:"What they share is a wish to see what pre/post averages cannot: <b>process, individual differences and time</b>. A mean of 82 against 74 hides that some learners improved a lot while others declined. The ones I remember best are the <b>Process Tracing Approach, Retrodictive Modeling and Latent Growth Curve Modeling (LGCM)</b>."},
+
+        {k:"Part 2 · 01", toc:"Part 2 Roadmap", h:"A paper is a cycle, not a single act of writing"},
+        {p:"Part 2 described international publication as four stages and what comes after. The stages do not only run in order: a weak research question cannot be rescued by good writing, and reviewer comments can send you back to an earlier stage."},
+        {flow:["Research development", "Manuscript", "Journal and submission", "Peer review", "Scholarly impact"]},
+        {ul:[
+          "<b>Research development (the most important)</b>: publishable research is novel, significant and relevant. Gaps come in five types: theoretical, methodological, contextual, population and temporal. Find them in recent reviews, limitations sections, contradictory findings, scholarly debates and bibliometric tools such as VOSviewer. A good question is clear, focused, original and researchable.",
+          "<b>Manuscript</b>: titles, abstracts and keywords, the IMRaD structure, and Swales' CARS model (establish a territory, establish a niche, occupy the niche). Keep interpretation out of the results, and report unexpected findings too.",
+          "<b>Journal and submission</b>: SSCI, AHCI, SCIE and ESCI; Impact Factor, CiteScore, SJR and SNIP; what Q1 to Q4 mean. Metrics inform judgement, they do not replace it. Promises of acceptance within days, excessive solicitation emails and fake metrics are warning signs of predatory journals. Check the journal's AI-use disclosure policy before submitting.",
+          "<b>Peer review</b>: administrative screening, the editor's desk review (scope, novelty, significance, method, writing), reviewer selection, review, decision. Answer every reviewer comment, and say in the response letter what you changed, why, and where.",
+          "<b>Scholarly impact</b>: publication is a beginning, not an end. Good titles and keywords, steady publishing and international collaboration make a paper more likely to be read and cited."
+        ]},
+        {note:"<b>Said in the lecture</b><br>Fill the gap, and do not repeat what has already been said. Patience is the key; work on several papers at once. Rebutting existing research is often an easier way into a topic than proposing a brand-new solution."},
+
+        {k:"Looking back", toc:"Looking back", h:"I learned to read the process, not just the effect, through data"},
+        {p:"What stayed with me longest from Part 1 was the research methods. PTA, TSA, LGCM and EMA all assume <b>data</b>: records of learners' exchanges with AI, scores measured repeatedly, responses stacked in time order. Instead of a single average that says “it worked”, they show which path each learner took, and I found that interesting."},
+        {p:"As someone studying computer education and data analysis, reading the individual differences hidden behind an average felt like a problem of data and of education at once. These methods looked like a concrete way to connect the two."},
+        {p:"Part 2 showed the steps a question goes through on its way to becoming a paper, and what struck me most was that good research starts from a <b>gap</b>, not from a technology."},
+        {q:"Reading, through data, how it happens, not only whether it works."},
+        {p:"As I keep studying the link between education and data, I want to bring this way of asking questions into how I look back on and design my own projects."}
       ]
     },
     realthon: {
