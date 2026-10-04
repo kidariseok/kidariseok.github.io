@@ -38,7 +38,7 @@
 대표적인 활동으로는 다음과 같은 경험이 있습니다.
 
 * **RE:ALThon** — 대학생 연합 해커톤 총괄
-* **Google Developer Groups on Campus** — 기획 및 운영
+* **Google Developer Group on Campus : SKKU** — 기획 및 운영
 * **4호선톤** — 실제 데이터를 활용한 서비스 기획·개발
 * **KT&G SangSang WithUS** — 인도네시아 해외봉사
 * **FREEMED** — 방문건강관리 봉사
