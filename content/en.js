@@ -1010,7 +1010,7 @@ SITE.en = {
       summary: "Assisted classes for adolescents with developmental disabilities, among other activities.",
       short: "Assisted classes for adolescents with developmental disabilities.",
       body: [
-        {h:"What I did"},
+        {k:"01 · My role", h:"I supported the classes from the side."},
         {
           ul: [
             "I assisted across the whole class day. The centre split the day into three periods - art therapy, Korean traditional music, and vocal musical - each with its own instructor.",
@@ -1020,13 +1020,15 @@ SITE.en = {
             "During breaks I talked with the students. The centre asked us not to initiate, so I didn't - but when a student started a conversation we'd trade ordinary things: where we lived, what we liked doing."
           ]
         },
-        {h:"What I took away"},
+        {k:"02 · One person at a time", h:"I felt first-hand that every person is singular."},
         {
           p: "Being close to it, I read up on borderline personality disorder, schizophrenia and the autism spectrum. There is no shortage of material organising traits by diagnosis - but I could not find a classification that matched the students I actually met. People are singular, and spending time with these students made that far more concrete to me."
         },
+        {k:"03 · Education and technology", toc:"03 Education & tech", h:"What matters most is teaching to each student's traits."},
         {
           p: "A teacher meeting a student with a disability will reach first for the per-diagnosis teaching guide. That matters - but what matters more is looking at the student with real attention and teaching to their individual traits. As information technology brings individualised education closer, I expect an integrated classroom to become possible before long."
         },
+        {k:"04 · The bus ride home", h:"People I thought of as distant were right here."},
         {
           p: "The centre was about an hour from home, and on the bus back I ended up riding with the students from that day's class. It landed differently than anything else had: people I had thought of as distant were in fact right here. If we want an integrated society, integrated classrooms have to come first."
         }
