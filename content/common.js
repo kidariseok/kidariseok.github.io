@@ -41,6 +41,7 @@ SITE.common = {
     course: {color:"b6", icon:"ic-cap"}
   },
   photos: {
+    "intl-publication": {cover:"intl_publication_cover"},
     realthon: {cover:"realthon_cover"},
     line4: {
       cover: "line4_cover",
