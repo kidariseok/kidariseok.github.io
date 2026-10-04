@@ -297,7 +297,7 @@ SITE.en = {
           {n:"CONTEXT", t:"Explain paths and context", d:"<strong>RM</strong>: work backwards from outcomes to reconstruct different paths.<br><strong>ABM</strong>: simulate behavioural rules.<br><strong>NEM</strong>: look at individual, classroom, institution and society together."},
           {n:"PERSPECTIVE", t:"Cluster viewpoints", d:"<strong>Q Methodology</strong>: have people rank statements to find distinct types of viewpoint on AI."}
         ]},
-        {p:"What they share is a wish to see what pre/post averages cannot: <b>process, individual differences and time</b>. A mean of 82 against 74 hides that some learners improved a lot while others declined. The ones I remember best are the <b>Process Tracing Approach, Retrodictive Modeling and Latent Growth Curve Modeling (LGCM)</b>."},
+        {p:"What they share is a wish to see what pre/post averages cannot: <b>process, individual differences and time</b>. A mean of 82 against 74 hides that some learners improved a lot while others declined."},
 
         {k:"Part 2 · 01", toc:"Part 2 Roadmap", h:"A paper is a cycle, not a single act of writing"},
         {p:"Part 2 described international publication as four stages and what comes after. The stages do not only run in order: a weak research question cannot be rescued by good writing, and reviewer comments can send you back to an earlier stage."},
@@ -311,12 +311,10 @@ SITE.en = {
         ]},
         {note:"<b>Remarks from the lecture</b><br>· It was stressed that a study should fill a gap left by prior research rather than repeat what has already been said.<br>· Patience is essential, and working on several papers at once was advised.<br>· Rebutting existing research was described as a comparatively accessible way to choose a topic, compared with proposing a new solution."},
 
-        {k:"Looking back", toc:"Looking back", h:"I learned to read the process, not just the effect, through data"},
-        {p:"What stayed with me longest from Part 1 was the research methods. PTA, TSA, LGCM and EMA all assume <b>data</b>: records of learners' exchanges with AI, scores measured repeatedly, responses stacked in time order. Instead of a single average that says “it worked”, they show which path each learner took, and I found that interesting."},
-        {p:"As someone studying computer education and data analysis, reading the individual differences hidden behind an average felt like a problem of data and of education at once. These methods looked like a concrete way to connect the two."},
-        {p:"Part 2 showed the steps a question goes through on its way to becoming a paper, and what struck me most was that good research starts from a <b>gap</b>, not from a technology."},
-        {q:"Reading, through data, how it happens, not only whether it works."},
-        {p:"As I keep studying the link between education and data, I want to bring this way of asking questions into how I look back on and design my own projects."}
+                {k:"Looking back", toc:"Looking back", h:"My first look at how a paper gets written"},
+        {p:"It was a lecture for the Department of English, so I worried I would take away little. I looked it up and signed up on my own, and I was the only undergraduate there."},
+        {p:"It was the first lecture on academic papers I had attended. Hearing how a topic is chosen, a manuscript written, a journal picked and a review gone through, I got at least a rough idea of how a good paper comes together."},
+        {p:"If I ever read or write papers, I think what I learned about paper writing will be a useful starting point."}
       ]
     },
     realthon: {
