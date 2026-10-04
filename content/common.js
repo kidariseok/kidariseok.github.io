@@ -19,12 +19,12 @@ window.SITE = window.SITE || {};
 SITE.common = {
   notion: "https://app.notion.com/p/",
   heroStats: ["funding", "ielts", "volunteer", "activities"],
-  featured: ["realthon", "gdsc", "ktng-overseas"],
+  featured: ["realthon", "gdsc", "ktng-overseas", "edutech-expo"],
   // 'PROJECTS' 쇼케이스 카드로 보여 줄 개발 프로젝트의 activities id (순서대로). 카드·상세 상단 요약 띠의 글자는 ko/en.js 의 activities[id].proj
   projects: ["line4", "goormthon"],
   // 대외활동 '전체'를 접어 둔 상태에서 보여 줄 분야별 대표 활동 (axes 순서로 한 줄씩).
   // 위 '대표 활동'(featured) · 'PROJECTS'(projects)와 겹치지 않게 고릅니다. 빼 둔 분야(지금은 leadership)는 건너뜁니다
-  archivePicks: {technology:"icists", people:"freemed", global:"speech-mentors", explore:"edutech-expo"},
+  archivePicks: {technology:"icists", people:"freemed", global:"speech-mentors", explore:"intl-publication"},
   // 대외활동 '분야별' 보기 (기본 보기). 각 활동의 axis 가 이 id 중 하나입니다. name 은 한·영 공통 영어, sub 는 ko / en
   axes: [
     {id:"technology", name:"Technology", sub:{ko:"AI · 데이터 · 소프트웨어", en:"AI · Data · Software"}},
@@ -88,18 +88,19 @@ SITE.common = {
       notion: "3bbdd7c9423e80ee8b8ef666a7e571d2"
     },
     {
-      id: "line4",
-      start: "2024-11-16",
-      category: "competition", axis:"leadership",
-      notion: "3bbdd7c9423e80a2a597da537213f270"
-    },
-    {
       id: "ktng-overseas",
       start: "2024-10-29",
-      end: "2025-01-17",
+      end: "2025-02-28",
       category: "volunteer", axis:"global",
       notion: "3bbdd7c9423e800188c5c527021715d2",
       video: "https://www.youtube.com/watch?v=_4omkqwhhkQ&t=45s"
+    },
+    {
+      id: "line4",
+      start: "2024-10-06",
+      end: "2024-11-16",
+      category: "competition", axis:"leadership",
+      notion: "3bbdd7c9423e80a2a597da537213f270"
     },
     {
       id: "creverse",
@@ -153,12 +154,14 @@ SITE.common = {
     {
       id: "ba-dive",
       start: "2024-05-13",
+      noDate: true,   // 지원 날짜는 중요하지 않아 화면에 날짜를 표시하지 않음 (정렬에만 사용)
       category: "competition", axis:"technology",
       notion: "3bbdd7c9423e800c847cc4c7f34c4046"
     },
     {
       id: "s-global",
       start: "2024-04-18",
+      noDate: true,   // 지원 날짜는 중요하지 않아 화면에 날짜를 표시하지 않음 (정렬에만 사용)
       category: "competition", axis:"explore",
       notion: "3bbdd7c9423e8018bc23dc8f365b965e"
     },

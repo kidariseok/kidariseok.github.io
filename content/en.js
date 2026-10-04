@@ -417,7 +417,8 @@ SITE.en = {
         role: ["PM", "UX/UI planning", "PRD writing", "Service structure design"],
         tools: ["Figma"],
         team: "Team of 6 (planning/PM 1 · UI design 1 · FE/BE 4)",
-        period: "Sep – Oct 2024 · about 6 weeks",
+        period: "6 Oct – 16 Nov 2024 · about 6 weeks (final 16 Nov)",
+        date: "Final 16 Nov 2024",
         stack: ["React", "Spring Boot", "OpenAI API", "MySQL"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/Line4thon-Gather/gather_Front_End"}, {t:"GitHub · Back-end", href:"https://github.com/Line4thon-Gather/gather_back_end"}]
       },
@@ -430,7 +431,7 @@ SITE.en = {
         {lead:"2GATHER · An AI promotion-strategy platform for people starting out"},
         {p:"An AI-powered marketing solution built so that students and early-stage founders can <b>plan their promotion and connect with the people they need - even with a small budget and a limited network</b>."},
         {p:"At the LIKELION Line-4 Hackathon, a team of six planned, built and deployed the service in about six weeks."},
-        {facts:["Sep – Oct 2024", "PM / UX·UI", "Team of 6"]},
+        {facts:["6 Oct – 16 Nov 2024", "PM / UX·UI", "Team of 6"]},
 
         {k:"01 · Problem", h:"A good idea is not enough if you can't get the word out."},
         {p:"As head of people at GDG on Campus : SKKU, I set a goal of <b>30 new members - but only 9 joined</b>."},
@@ -587,7 +588,7 @@ SITE.en = {
         {p:"A volunteering trip spent teaching, running around and laughing with the children of <b>Babakan Madang Elementary School</b> in Bogor, Indonesia."},
         {p:"I had once prepared an Indonesia volunteering trip myself with FreeMed, only for it to fall through. Before enlisting, I wanted one last chance to actually go - so I applied."},
         {p:"I didn't just volunteer on site. <b>I went through the whole process: designing and preparing classes, managing the supplies they needed, and working with the students in the classroom.</b>"},
-        {facts:["Oct 2024 – Jan 2025", "Bogor, Indonesia", "40 volunteers"]},
+        {facts:["Oct 2024 – Feb 2025", "Bogor, Indonesia", "40 volunteers"]},
 
         {k:"01 · Why Indonesia", h:"I wanted to finish a plan that had once fallen through."},
         {p:"I had been interested in overseas volunteering for a long time."},
@@ -946,7 +947,7 @@ SITE.en = {
         what: "A web escape-room game set on the Yuljeon campus, built with the Goormthon Univ cohort for Halloween and our college night. It has five quiz stages, a final game and a ranking, and we ran it in person at a booth.",
         role: ["Planning · PM", "Storyline", "PRD", "Stage & puzzle design"],
         team: "Team of 6 (planning 1 · front-end 3 · back-end 2)",
-        period: "Jun – Oct 2024 · run on 31 Oct 2024",
+        period: "Jul – Oct 2024 · run on 31 Oct 2024",
         date: "Run on 31 Oct 2024",
         stack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/ESC-Organization/ESC-client"}]
@@ -967,7 +968,7 @@ SITE.en = {
         },
         {k:"01 · Project", h:"An escape room about saving Yuljeon from bug monkeys"},
         {p:"For Halloween and our college night we built <b>a web escape-room game set on the Yuljeon campus</b> with the Goormthon Univ cohort. Players pick a character, go through five quiz stages and a final game, and check the result on a ranking."},
-        {facts:["Planning Jun – Oct 2024", "Run on 31 Oct 2024", "Team of 6", "Planning · PM"]},
+        {facts:["Planning Jul – Oct 2024", "Run on 31 Oct 2024", "Team of 6", "Planning · PM"]},
 
         {k:"02 · Team", h:"Planning 1 · Front-end 3 · Back-end 2"},
         {people:[{"role": "Planning · PM", "n": 1, "me": true, "note": "Me"}, {"role": "Front-end", "n": 3, "note": "One also did design", "dual": true}, {"role": "Back-end", "n": 2}], note:"The overall concept design was discussed by the whole team, and one teammate was solely in charge of character design."},

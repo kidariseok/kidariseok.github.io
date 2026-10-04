@@ -1167,8 +1167,6 @@
                 <a class="lk" href="https://github.com/kidariseok" target="_blank" rel="noopener" title="github.com/kidariseok"><span class="lk-ic"><svg class="i"><use href="#ic-code"/></svg></span><span class="lk-t">GitHub</span></a>
                 <a class="lk" href="https://www.linkedin.com/in/jinseokoh/" target="_blank" rel="noopener" title="linkedin.com/in/jinseokoh"><span class="lk-ic"><svg class="i"><use href="#ic-briefcase"/></svg></span><span class="lk-t">LinkedIn</span></a>
                 <a class="lk" href="https://blog.naver.com/kidariseok" target="_blank" rel="noopener" title="blog.naver.com/kidariseok"><span class="lk-ic"><svg class="i"><use href="#ic-pen"/></svg></span><span class="lk-t" data-t="contact.blogShort">블로그</span></a>
-                <a class="lk" href="https://www.instagram.com/dhwlstjr05/" target="_blank" rel="noopener" title="@dhwlstjr05"><span class="lk-ic"><svg class="i"><use href="#ic-camera"/></svg></span><span class="lk-t" data-t="contact.instagram">인스타그램</span></a>
-                <a class="lk" href="https://www.instagram.com/pics_noedit/" target="_blank" rel="noopener" title="@pics_noedit"><span class="lk-ic"><svg class="i"><use href="#ic-image"/></svg></span><span class="lk-t" data-t="contact.photos">사진 계정</span></a>
               </div>
             </div>
           </div>
@@ -1190,9 +1188,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1791111555"></script>
-<script src="content/ko.js?v=1791111555"></script>
-<script src="content/en.js?v=1791111555"></script>
+<script src="content/common.js?v=1791113294"></script>
+<script src="content/ko.js?v=1791113294"></script>
+<script src="content/en.js?v=1791113294"></script>
 <script>
 (function(){
   "use strict";
@@ -1229,7 +1227,8 @@
     var k = KO.activities[a.id] || {}, e = EN.activities[a.id] || {};
     return {id: a.id, s: a.start, e: a.end, ds: a.dates || null, cat: a.category, axis: a.axis, nid: a.notion || "", video: a.video || "",
       ko: k.title || a.id, en: e.title || k.title || a.id, dko: k.summary || "", den: e.summary || "",
-      oko: k.org || "", oen: e.org || k.org || "",   // org: 프로젝트명이 제목일 때 그 밑에 쓰는 동아리 · 행사 이름
+      oko: k.org || "", oen: e.org || k.org || "",
+      nd: !!a.noDate,   // noDate: 화면에 날짜를 표시하지 않음   // org: 프로젝트명이 제목일 때 그 밑에 쓰는 동아리 · 행사 이름
       sko: k.short || k.summary || "", sen: e.short || e.summary || "",   // short: 목록 한 줄용 짧은 요약 (없으면 summary)
       body: {ko: k.body || [], en: e.body || []}};
   });
@@ -1625,6 +1624,8 @@
     for(var i=0;i<ACT.length;i++){ if(ACT[i].id === id) return i; }
     return -1;
   }
+  // 활동 하나의 화면용 날짜 (noDate 이면 빈 글자)
+  function dateOf(a){ return a.nd ? "" : fmtDate(a.s, a.e, a.ds); }
   function fmtDate(s, e, ds){
     // ds: 떨어진 여러 날짜(예: 2024, 2026 방문)를 모두 적을 때 쓰는 목록
     if(ds && ds.length){
@@ -1644,7 +1645,12 @@
       var p = s.split("-");
       return lang === "ko" ? p[0] + "." + p[1] + "." + p[2] : part(s);
     }
-    if(s.slice(0,7) === e.slice(0,7)) return part(s);
+    // 같은 달 안의 여러 날은 일까지 (예: 2024.12.06 - 12.07 / 6–7 Dec 2024)
+    if(s.slice(0,7) === e.slice(0,7)){
+      var a1 = s.split("-"), b1 = e.split("-");
+      if(lang === "ko") return a1[0] + "." + a1[1] + "." + a1[2] + " - " + b1[1] + "." + b1[2];
+      return parseInt(a1[2],10) + "–" + parseInt(b1[2],10) + " " + part(s);
+    }
     return part(s) + " - " + part(e);
   }
 
@@ -1746,7 +1752,7 @@
       var card = el("a", pics.cover ? "fcard has-ph" : "fcard");
       card.href = "#a/" + a.id;
       var txt = el("div","txt");
-      txt.appendChild(el("span","meta num", CAT[a.cat][lang] + " · " + fmtDate(a.s, a.e, a.ds)));
+      txt.appendChild(el("span","meta num", CAT[a.cat][lang] + (dateOf(a) ? " · " + dateOf(a) : "")));
       txt.appendChild(el("h3", null, a[lang]));
       if(orgOf(a)) txt.appendChild(el("span","org", orgOf(a)));
       var d = lang === "ko" ? a.dko : a.den;
@@ -1807,7 +1813,7 @@
       var txt = el("div","ptxt");
       var meta = el("div","pmeta");
       meta.appendChild(el("span","ptype", pj.type));
-      meta.appendChild(el("span","num", (orgOf(a) || a[lang]) + " · " + (pj.date || fmtDate(a.s, a.e, a.ds))));
+      meta.appendChild(el("span","num", (orgOf(a) || a[lang]) + " · " + (pj.date || dateOf(a))));
       txt.appendChild(meta);
       txt.appendChild(el("h3", null, pj.name));
       txt.appendChild(el("p","pwhat", pj.what));
@@ -2140,7 +2146,7 @@
       var ck = view === "axes" ? a.axis : a.cat;   // 줄의 색: 분야별이면 분야, 활동별이면 활동 구분
       var r = el("a", ck ? "row ax-" + ck : "row");
       r.href = "#a/" + a.id;
-      r.appendChild(el("span","d num", fmtDate(a.s, a.e, a.ds)));
+      r.appendChild(el("span","d num", dateOf(a)));
       var ax = axisOf(a.axis);
       r.appendChild(el("span","c", view === "axes" && ax ? tr(ax.name) : CAT[a.cat][lang]));
       var t = el("span","t");
@@ -2246,7 +2252,7 @@
     var head = el("div","dhead");
     var meta = el("div","meta");
     meta.appendChild(catBadge(a.cat));
-    meta.appendChild(el("span","date", fmtDate(a.s, a.e, a.ds)));
+    meta.appendChild(el("span","date", dateOf(a)));
     head.appendChild(meta);
     head.appendChild(el("h1", null, a[lang]));
     if(orgOf(a)) head.appendChild(el("p","dorg", orgOf(a)));
