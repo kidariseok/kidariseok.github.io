@@ -239,6 +239,7 @@
   .fcard .txt{padding:28px;display:flex;flex-direction:column;gap:8px}
   .fcard .meta{font-size:13px;font-weight:700;color:var(--accent-2)}
   .fcard h3{color:#fff;font-size:21px}
+  .fcard .org{margin-top:-4px;font-size:13px;font-weight:600;color:var(--on-block-2)}
   .fcard p{color:var(--on-block-2);font-size:14.5px;line-height:1.65}
   .fcard .go{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#fff}
   .fcard .go .i{width:15px;height:15px;transition:transform .3s var(--ease)}
@@ -485,6 +486,8 @@
   .row .c{font-size:13px;font-weight:700;color:var(--accent-text)}
   .row .t{display:grid;gap:2px;min-width:0}
   .row .t b{color:var(--ink)}
+  .row .t b small.o{margin-left:8px;font-size:13px;font-weight:500;color:var(--muted)}
+  .row:hover .t b small.o,.row:focus-visible .t b small.o{color:var(--on-block-2)}
   .row .t .s{font-size:14px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .row > .i{width:18px;height:18px;color:var(--muted);transition:transform .3s var(--ease),color .2s}
   .row:hover > .i,.row:focus-visible > .i{color:#fff;transform:translateX(3px)}
@@ -539,6 +542,9 @@
   .cta a{display:inline-flex;align-items:center;gap:12px;color:var(--accent-2);font-weight:700;font-size:15px;transition:color .2s}
   .cta a .i{width:18px;height:18px}
   .cta a:hover,.cta a:focus-visible{color:#fff;text-decoration:none}
+  .cta .cta-sub{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin-top:2px;font-size:13.5px;color:var(--on-block-2)}
+  .cta .cta-sub .i{width:16px;height:16px;margin-right:4px;color:var(--on-block-2)}
+  .cta .cta-sub a{font-size:13.5px;gap:0}
   /* 연락처 카드: 마우스를 올리거나 키보드로 안쪽 링크를 고르면
      오른쪽 아래 파란 원이 커지면서 왼쪽으로 카드를 파랗게 채움 (::before = 커지는 원, ::after = 평소의 은은한 원).
      파란 바탕에서는 링크를 흰색으로, 그중 가리킨 링크는 밑줄로 구분 */
@@ -574,6 +580,7 @@
   .dhead .meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   .dhead .date{font:600 14.5px var(--display);color:var(--muted)}
   .dhead h1{font-size:clamp(30px,4.6vw,46px);font-weight:800;line-height:1.22;margin-top:16px;letter-spacing:-.035em;max-width:22ch}
+  .dhead .dorg{margin-top:10px;font-size:17px;font-weight:700;color:var(--muted)}
   .dhead .lede{margin-top:18px;font-size:18px;color:var(--text);line-height:1.75;max-width:60ch}
   .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;font-size:13px;font-weight:700;color:var(--accent-text);background:var(--accent-soft)}
   .badge .i{width:14px;height:14px}
@@ -938,6 +945,8 @@
     <symbol id="ic-play" viewBox="0 0 24 24"><path d="M7 4.6v14.8L19.2 12 7 4.6Z"/></symbol>
     <symbol id="ic-video" viewBox="0 0 24 24"><rect x="3.4" y="6" width="12.4" height="12" rx="2.6"/><path d="m15.8 10.4 4.8-2.8v8.8l-4.8-2.8"/></symbol>
     <symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3.4" y="5.4" width="17.2" height="13.2" rx="2.4"/><path d="m3.9 7.4 8.1 5.6 8.1-5.6"/></symbol>
+    <symbol id="ic-briefcase" viewBox="0 0 24 24"><rect x="3.6" y="7.4" width="16.8" height="11.6" rx="2.4"/><path d="M9 7.4V6a1.6 1.6 0 0 1 1.6-1.6h2.8A1.6 1.6 0 0 1 15 6v1.4M3.6 12.4h16.8"/></symbol>
+    <symbol id="ic-camera" viewBox="0 0 24 24"><rect x="3.4" y="6.6" width="17.2" height="12.4" rx="2.6"/><path d="M8.6 6.6 10 4.6h4l1.4 2"/><circle cx="12" cy="12.8" r="3.3"/></symbol>
   </defs>
 </svg>
 
@@ -1139,7 +1148,11 @@
             <div class="cta">
               <a href="mailto:kidariseok@gmail.com"><svg class="i"><use href="#ic-mail"/></svg><span>kidariseok@gmail.com</span></a>
               <a href="tel:01038738173"><svg class="i"><use href="#ic-phone"/></svg><span>010-3873-8173</span></a>
+              <a href="https://github.com/kidariseok" target="_blank" rel="noopener"><svg class="i"><use href="#ic-code"/></svg><span>github.com/kidariseok</span></a>
+              <a href="https://www.linkedin.com/in/jinseokoh/" target="_blank" rel="noopener"><svg class="i"><use href="#ic-briefcase"/></svg><span>linkedin.com/in/jinseokoh</span></a>
               <a href="https://blog.naver.com/kidariseok" target="_blank" rel="noopener"><svg class="i"><use href="#ic-pen"/></svg><span data-t="contact.blog">네이버 블로그 ‘진석의 기록’</span></a>
+              <!-- 인스타그램: 개인 계정 + 사진 계정 (보조 링크라 한 줄로 작게) -->
+              <p class="cta-sub"><svg class="i"><use href="#ic-camera"/></svg><span data-t="contact.instagram">인스타그램</span><a href="https://www.instagram.com/dhwlstjr05/" target="_blank" rel="noopener">@dhwlstjr05</a><span aria-hidden="true">·</span><span data-t="contact.photos">사진</span><a href="https://www.instagram.com/pics_noedit/" target="_blank" rel="noopener">@pics_noedit</a></p>
             </div>
           </div>
         </div>
@@ -1160,9 +1173,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1790995474"></script>
-<script src="content/ko.js?v=1790995474"></script>
-<script src="content/en.js?v=1790995474"></script>
+<script src="content/common.js?v=1791110456"></script>
+<script src="content/ko.js?v=1791110456"></script>
+<script src="content/en.js?v=1791110456"></script>
 <script>
 (function(){
   "use strict";
@@ -1199,6 +1212,7 @@
     var k = KO.activities[a.id] || {}, e = EN.activities[a.id] || {};
     return {id: a.id, s: a.start, e: a.end, ds: a.dates || null, cat: a.category, axis: a.axis, nid: a.notion || "", video: a.video || "",
       ko: k.title || a.id, en: e.title || k.title || a.id, dko: k.summary || "", den: e.summary || "",
+      oko: k.org || "", oen: e.org || k.org || "",   // org: 프로젝트명이 제목일 때 그 밑에 쓰는 동아리 · 행사 이름
       sko: k.short || k.summary || "", sen: e.short || e.summary || "",   // short: 목록 한 줄용 짧은 요약 (없으면 summary)
       body: {ko: k.body || [], en: e.body || []}};
   });
@@ -1589,6 +1603,7 @@
     requestAnimationFrame(function(){ tocTick = false; tocState && tocState.update(); });
   }, {passive:true});
 
+  function orgOf(a){ return lang === "ko" ? a.oko : a.oen; }
   function byId(id){
     for(var i=0;i<ACT.length;i++){ if(ACT[i].id === id) return i; }
     return -1;
@@ -1716,6 +1731,7 @@
       var txt = el("div","txt");
       txt.appendChild(el("span","meta num", CAT[a.cat][lang] + " · " + fmtDate(a.s, a.e, a.ds)));
       txt.appendChild(el("h3", null, a[lang]));
+      if(orgOf(a)) txt.appendChild(el("span","org", orgOf(a)));
       var d = lang === "ko" ? a.dko : a.den;
       if(d) txt.appendChild(el("p", null, d));
       var go = el("span","go", T.detail[lang]);
@@ -1774,7 +1790,7 @@
       var txt = el("div","ptxt");
       var meta = el("div","pmeta");
       meta.appendChild(el("span","ptype", pj.type));
-      meta.appendChild(el("span","num", a[lang] + " · " + (pj.date || fmtDate(a.s, a.e, a.ds))));
+      meta.appendChild(el("span","num", (orgOf(a) || a[lang]) + " · " + (pj.date || fmtDate(a.s, a.e, a.ds))));
       txt.appendChild(meta);
       txt.appendChild(el("h3", null, pj.name));
       txt.appendChild(el("p","pwhat", pj.what));
@@ -2095,7 +2111,9 @@
       var ax = axisOf(a.axis);
       r.appendChild(el("span","c", view === "axes" && ax ? tr(ax.name) : CAT[a.cat][lang]));
       var t = el("span","t");
-      t.appendChild(el("b", null, a[lang]));
+      var tb = el("b", null, a[lang]);
+      if(orgOf(a)) tb.appendChild(el("small","o", orgOf(a)));
+      t.appendChild(tb);
       var d = lang === "ko" ? a.sko : a.sen;
       if(d) t.appendChild(el("span","s", d));
       r.appendChild(t);
@@ -2198,6 +2216,7 @@
     meta.appendChild(el("span","date", fmtDate(a.s, a.e, a.ds)));
     head.appendChild(meta);
     head.appendChild(el("h1", null, a[lang]));
+    if(orgOf(a)) head.appendChild(el("p","dorg", orgOf(a)));
     var lede = lang === "ko" ? a.dko : a.den;
     if(lede) head.appendChild(el("p","lede", lede));
     if(a.video){
@@ -2236,8 +2255,10 @@
     // 가로로 넘겨 보는 사진 줄: 본문 위에 둬서 먼저 눈에 들어오게 합니다
     if(pics.shots && pics.shots.length){
       var sh = el("div","shotshead");
-      sh.appendChild(el("h2", null, T.photos[lang] + " (" + pics.shots.length + ")"));
-      sh.appendChild(el("span","hint", T.swipe[lang] + " →"));
+      // photosTitle: 사진 줄 제목을 활동마다 바꿀 때 (기본은 '현장 사진')
+      var ptitle = (L().activities[a.id] || {}).photosTitle || T.photos[lang];
+      sh.appendChild(el("h2", null, ptitle + " (" + pics.shots.length + ")"));
+      if(pics.shots.length > 1) sh.appendChild(el("span","hint", T.swipe[lang] + " →"));
       view.appendChild(sh);
 
       var strip = el("div","shots");

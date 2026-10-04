@@ -61,7 +61,7 @@ SITE.common = {
       cover: "goorm_cover",
       video: {src:"video/esc-yuljeon.mp4", poster:"goorm_video_poster"}
     },
-    ched: {cover:"ched_cover", shots:["ched_01"]},
+    ched: {cover:"ched_cover", shots:["ched_article_zoom", "ched_article"]},   // 교내 기사 캡처: 이름 부분 확대본 + 전체 화면 (형광펜 표시)
     gdsc: {cover:"gdsc_cover"},
     "trade-ai": {cover:"trade_cover"},
     "ba-dive": {cover:"ba_dive_cover"}

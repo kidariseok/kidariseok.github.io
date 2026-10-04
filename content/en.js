@@ -106,7 +106,9 @@ SITE.en = {
     contact: {
       title: "Not stopping at experience, but building what comes next.",
       description: "",
-      blog: "Naver Blog: Jinseok's Record"
+      blog: "Naver Blog: Jinseok's Record",
+      instagram: "Instagram",
+      photos: "Photos"
     },
     footer: {name:"Jinseok Oh · Portfolio", updated:""}
   },
@@ -147,7 +149,7 @@ SITE.en = {
     campus: "Campus",
     course: "Course"
   },
-  keywords: ["AI", "Data", "Software", "Computer Education", "Education", "Mentoring", "Volunteering", "Student programs", "Service planning", "Projects", "Hackathons", "International school", "English", "Global speakers", "Overseas volunteering", "Exchange student", "GDGoC", "Hackathon lead", "PM"],
+  keywords: ["AI", "Data", "Software", "Computer Education", "Education", "Mentoring", "Volunteering", "Student programs", "Service planning", "Projects", "Hackathons", "International school", "English", "Global speakers", "Overseas volunteering", "Exchange student", "GDG on Campus : SKKU", "Hackathon lead", "PM"],
   interests: ["AI · Data", "PM", "Service planning", "Developer", "Global"],
   profile: [
     ["Name", "Jinseok Oh"],
@@ -155,7 +157,9 @@ SITE.en = {
     ["Class", "Class of 2024"],
     ["Interests", "Connecting technology, people & industry"],
     ["Currently", "Serving in the Republic of Korea Army as a Network Manager / Squad Leader"],
-    ["Writing", "blog.naver.com/kidariseok"]
+    ["Writing", "blog.naver.com/kidariseok"],
+    ["GitHub", "github.com/kidariseok"],
+    ["LinkedIn", "linkedin.com/in/jinseokoh"]
   ],
   tiles: {
     gpa: {label:"GPA", unit:" / 4.5", note:"Sungkyunkwan University · Computer Education"},
@@ -318,7 +322,8 @@ SITE.en = {
       ]
     },
     realthon: {
-      title: "RE:ALThon (host)",
+      title: "RE:ALThon",
+      org: "GDG on Campus : SKKU",
       summary: "When a planned collaboration with Japanese universities fell through, changed course and organised a joint AI hackathon across SKKU, Korea University and Sogang (50 participants, 9 teams).",
       short: "Pivoted from a failed global plan to a 3-university hackathon for 50.",
       body: [
@@ -326,14 +331,14 @@ SITE.en = {
           ul: [
             "<b>Dates</b>: 6-7 Dec 2024 (overnight)",
             "<b>Venue</b>: Korea University, Woojung Hall of Informatics",
-            "<b>Co-hosts</b>: GDSC at SKKU, Korea University and Sogang University",
+            "<b>Co-hosts</b>: GDG on Campus at SKKU, Korea University and Sogang University",
             "<b>Scale</b>: 50 participants, 9 teams",
-            "<b>My role</b>: HR lead of SKKU GDSC; overall planning and budget management"
+            "<b>My role</b>: HR lead of GDG on Campus : SKKU; overall planning and budget management"
           ]
         },
         {h:"01. Situation: the global plan wobbles"},
         {
-          p: "A global hackathon was the thing I most wanted to do when I joined GDSC. Once SKKU's software program committed a budget, I reached out to GDSC chapters in time zones close to Korea - Singapore, Manila, Sydney and Japan. From early September I was discussing the format in English, over LinkedIn and Discord, with Tokyo Metropolitan University, Tokyo City University and Waseda University."
+          p: "A global hackathon was the thing I most wanted to do when I joined GDG on Campus : SKKU. Once SKKU's software program committed a budget, I reached out to GDG on Campus chapters in time zones close to Korea - Singapore, Manila, Sydney and Japan. From early September I was discussing the format in English, over LinkedIn and Discord, with Tokyo Metropolitan University, Tokyo City University and Waseda University."
         },
         {
           p: "Just as the line-up was about to be confirmed, the Japanese side said they could not take part: many members were not comfortable in English, the distance between Tokyo and Osaka was a burden, and realistically only 3-4 people per school would attend. Holding on to the original plan risked the event not happening at all."
@@ -351,7 +356,7 @@ SITE.en = {
         {h:"03. Action: re-plan and reconnect"},
         {
           ul: [
-            "Contacted Yonsei, Korea University and Sogang directly through the GDSC leads' Slack, and confirmed an offline event with Korea University and Sogang.",
+            "Contacted Yonsei, Korea University and Sogang directly through the GDG on Campus leads' Slack, and confirmed an offline event with Korea University and Sogang.",
             "Named the event: RE:ALThon stands for 'REply via AI machine Learning'.",
             "Shaped the concept and operations with the other schools' leads, and gave input on promotion and recruitment to the design task force.",
             "Managed SKKU's share of the budget and submitted receipts to the program office.",
@@ -397,7 +402,8 @@ SITE.en = {
       ]
     },
     line4: {
-      title: "LIKELION Line-4 Hackathon",
+      title: "2GATHER",
+      org: "LIKELION Line-4 Hackathon",
       summary: "As PM, planned 2GATHER - an AI-powered marketing solution that helps students and early-stage founders plan promotion and connect with the right people on a small budget and a limited network.",
       short: "PM · UX/UI for 2GATHER, an AI promotion-strategy platform shipped in 6 weeks",
       proj: {
@@ -423,7 +429,7 @@ SITE.en = {
         {facts:["Sep – Oct 2024", "PM / UX·UI", "Team of 6"]},
 
         {k:"01 · Problem", h:"A good idea is not enough if you can't get the word out."},
-        {p:"As head of people at GDSC, I set a goal of <b>30 new members - but only 9 joined</b>."},
+        {p:"As head of people at GDG on Campus : SKKU, I set a goal of <b>30 new members - but only 9 joined</b>."},
         {stat:[{k:"Goal", v:"30"}, {k:"Recruited", v:"9", hi:true}]},
         {p:"The only channels we could use were Everytime and department group chats, and we had neither the budget nor the network to reach further."},
         {p:"That experience surfaced these problems:"},
@@ -523,9 +529,9 @@ SITE.en = {
           },
           {
             name: "Problem",
-            pm: "I defined the problem from recruiting for GDSC and pitched the project.",
+            pm: "I defined the problem from recruiting for GDG on Campus : SKKU and pitched the project.",
             slides: [
-              {k:"GOAL / REALITY", t:"Aimed for 30, recruited 9", d:"Recruiting for GDSC as head of people, the goal was 30 new members - only 9 joined. The project started from that gap."},
+              {k:"GOAL / REALITY", t:"Aimed for 30, recruited 9", d:"Recruiting for GDG on Campus : SKKU as head of people, the goal was 30 new members - only 9 joined. The project started from that gap."},
               {k:"QUESTION", t:"Where can ₩10,000 buy promotion?", d:"We asked whether a small budget could get a message onto a platform everyone already knows."},
               {k:"ANSWER", t:"In the end, only Instagram", d:"The only answer that came to mind was Instagram."},
               {k:"PAIN POINT", t:"Three limits", d:"With limited resources and networks, students and early-career people struggle to find teammates; existing channels like Everytime or department group chats reach only so far; and after graduation even those networks become hard to use."},
@@ -926,7 +932,8 @@ SITE.en = {
       ]
     },
     goormthon: {
-      title: "Goormthon Univ 3rd cohort: campus organiser",
+      title: "All of Us Are Yuljeon Now",
+      org: "Goormthon Univ 3rd cohort: campus organiser",
       summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
       short: "Campus organiser; built club programs and ran weekly study sessions.",
       proj: {
@@ -986,15 +993,16 @@ SITE.en = {
     },
     ched: {
       title: "Campus briefing for the Philippine CHED delegation",
+      photosTitle: "Campus news screenshot",
       summary: "Introduced CHED officials to the interdisciplinary work of SKKU's College of Computing and Informatics, drawing strong interest.",
       short: "Presented SKKU computing's interdisciplinary work to CHED officials.",
       body: [
         {h:"Representing the school in front of an international delegation"},
         {
-          p: "When the Philippine Commission on Higher Education (CHED) visited campus, I was chosen as the GDSC speaker representing the university's software program, and presented our work to the delegation. I wore the yusaengbok - the scholar's robe that stands for the school's identity - and went in carrying the school and the club on my shoulders."
+          p: "When the Philippine Commission on Higher Education (CHED) visited campus, I was chosen as the GDG on Campus : SKKU speaker representing the university's software program, and presented our work to the delegation. I wore the yusaengbok - the scholar's robe that stands for the school's identity - and went in carrying the school and the club on my shoulders."
         },
         {
-          p: "Rather than leaning on a memorised script, I read the room and ran a flexible English talk built around live questions and answers. That let me convey the IT work and interdisciplinary results GDSC had been driving with some energy, and the delegation responded warmly."
+          p: "Rather than leaning on a memorised script, I read the room and ran a flexible English talk built around live questions and answers. That let me convey the IT work and interdisciplinary results GDG on Campus : SKKU had been driving with some energy, and the delegation responded warmly."
         },
         {
           p: "The campus paper S-PRESS covered it, recording that - alongside students from software engineering and the Culture & Technology convergence major - I introduced the CHED officials to the college's interdisciplinary work, as a first-year in computer education."
@@ -1036,13 +1044,13 @@ SITE.en = {
     },
     "ba-dive": {
       title: "SKKU-BA-DIVE application",
-      summary: "Submitted a China e-commerce field-trip plan as a five-person GDSC team, passed the document round and presented, but was not selected in the end.",
-      short: "A five-person GDSC team's China e-commerce plan: passed round one and presented, not selected.",
+      summary: "Submitted a China e-commerce field-trip plan as a five-person GDG on Campus : SKKU team, passed the document round and presented, but was not selected in the end.",
+      short: "A five-person GDG on Campus : SKKU team's China e-commerce plan: passed round one and presented, not selected.",
       body: [
         {lead:"As a team, we planned an overseas trip to learn about Chinese e-commerce on site and explore how Korean platforms can survive."},
-        {p:"We applied to Sungkyunkwan University's <b>SKKU-BA-DIVE 2024 Summer</b> global experience program as a five-person GDSC SKKU team. Our topic was <b>“Analyzing the rapid growth of Chinese e-commerce platforms and exploring survival strategies for Korean platforms in the global e-commerce market.”</b>"},
+        {p:"We applied to Sungkyunkwan University's <b>SKKU-BA-DIVE 2024 Summer</b> global experience program as a five-person GDG on Campus : SKKU team. Our topic was <b>“Analyzing the rapid growth of Chinese e-commerce platforms and exploring survival strategies for Korean platforms in the global e-commerce market.”</b>"},
         {p:"We passed the first-round document review and gave a five-minute presentation on June 4, but we were not selected in the end. This page records how we built the plan and presentation, and which parts I took on."},
-        {facts:["Summer 2024", "GDSC SKKU · 5-person team", "Shenzhen & Shanghai, China (8-day plan)", "Passed documents → presented · not selected"]},
+        {facts:["Summer 2024", "GDG on Campus : SKKU · 5-person team", "Shenzhen & Shanghai, China (8-day plan)", "Passed documents → presented · not selected"]},
 
         {k:"01 · Why China", h:"We wanted to see for ourselves what Temu and AliExpress are changing in the Korean market."},
         {p:"Our presentation began with the fast growth of <b>Chinese platforms (Temu, SHEIN, AliExpress)</b> in the global e-commerce market."},
@@ -1052,7 +1060,7 @@ SITE.en = {
         {k:"02 · The Plan", h:"From Shenzhen to Shanghai, we designed exchanges, conferences and company visits as one flow."},
         {flow:["GDG exchange", "E-commerce conferences", "Company visits", "Shopping search app", "Paper · E-commerce Fair"]},
         {h3:"GDG exchange · Sharing technology and know-how"},
-        {p:"We planned to meet GDG Shenzhen and GDG Shanghai, learn tools used locally such as <b>Google Analytics, TensorFlow, and Android and Kotlin</b>, and share GDSC SKKU's Google Workspace and SEO know-how along with Sungkyunkwan culture."},
+        {p:"We planned to meet GDG Shenzhen and GDG Shanghai, learn tools used locally such as <b>Google Analytics, TensorFlow, and Android and Kotlin</b>, and share GDG on Campus : SKKU's Google Workspace and SEO know-how along with Sungkyunkwan culture."},
         {h3:"Conferences · Plan A and Plan B"},
         {p:"We shortlisted the <b>China (Shenzhen) International E-Commerce Industry Expo</b> and the <b>13th China Digital Marketing and Ecommerce Innovation Summit</b> in Shanghai, checked deadlines and eligibility, and lined up a substitute conference (Plan B) for each."},
         {h3:"Company visits · Tencent and Pinduoduo"},
@@ -1060,13 +1068,13 @@ SITE.en = {
         {h3:"After the trip · Plans that lead to outputs"},
         {ul:[
           "<b>Shopping search app</b> - define requirements from local market research and build an app that compares prices across platforms",
-          "<b>Paper on the Korean e-commerce market</b> - analyze it from technical, business and international angles, publish it on the GDSC blog and others, and aim for an academic submission",
+          "<b>Paper on the Korean e-commerce market</b> - analyze it from technical, business and international angles, publish it on the GDG on Campus : SKKU blog and others, and aim for an academic submission",
           "<b>Korea E-Commerce Fair</b> - pitch the app we built to test its feasibility and business potential"
         ]},
 
         {k:"03 · My Role", h:"I took on the team introduction, pre-trip planning and the conference part, tying my time in China to the plan."},
         {p:"Each teammate owned different slides. Drawing on the five years I lived in China and my Computer Education background, I focused on making concrete <b>what to prepare before going</b> and <b>what we could learn at each conference</b>."},
-        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Choosing the topic and writing the application", "Project introduction and motivation", "GDG exchange, company visits, search app and paper plans", "Korea E-Commerce Fair and expected effects"], mine:["Wrote the team and member introduction slides", "Pre-plan: Chinese study, visa and flights", "Checked conference deadlines and eligibility, and researched backup conferences", "Outlined how to contact companies (drawing on GDSC's experience inviting video-lecture speakers)", "Prepared for and took part in the June 4 presentation"]}},
+        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Choosing the topic and writing the application", "Project introduction and motivation", "GDG exchange, company visits, search app and paper plans", "Korea E-Commerce Fair and expected effects"], mine:["Wrote the team and member introduction slides", "Pre-plan: Chinese study, visa and flights", "Checked conference deadlines and eligibility, and researched backup conferences", "Outlined how to contact companies (drawing on GDG on Campus : SKKU's experience inviting video-lecture speakers)", "Prepared for and took part in the June 4 presentation"]}},
         {h3:"Pre-plan · So we would not get stuck on site"},
         {ul:[
           "<b>Chinese and the local environment</b> - listed social media that cannot be used in China and cultural differences, including signing up for a paid VPN in advance.",
@@ -1088,7 +1096,7 @@ SITE.en = {
         {k:"05 · Team Presentation", h:"A 20-slide presentation covering everything from the problem to the expected effects."},
         {p:"We structured it as <b>team → motivation → pre-plan → itinerary → next steps → expected effects</b>."},
         {cards:[
-          {n:"01", t:"Team", d:"A five-person GDSC team from different majors and years"},
+          {n:"01", t:"Team", d:"A five-person GDG on Campus : SKKU team from different majors and years"},
           {n:"02", t:"Motivation", d:"The growth of Chinese e-commerce platforms and changes in the Korean market"},
           {n:"03", t:"Pre-plan", d:"Contact points, and Chinese, visa and flight preparation"},
           {n:"04", t:"Itinerary", d:"GDG exchange, conferences, and Tencent and Pinduoduo visits"},
@@ -1109,9 +1117,9 @@ SITE.en = {
         title: "Presentation",
         chapters: [
           {name: "Intro", pm: "I wrote the team and member introduction slides.", slides: [
-            {k:"COVER", t:"Deep Dive into E-Commerce: Explore Like a Billionaire", d:"The cover of our SKKU-BA-DIVE 2024 Summer application presentation, from the Sungkyunkwan University GDSC team. Student IDs have been removed."},
+            {k:"COVER", t:"Deep Dive into E-Commerce: Explore Like a Billionaire", d:"The cover of our SKKU-BA-DIVE 2024 Summer application presentation, from the GDG on Campus : SKKU team. Student IDs have been removed."},
             {k:"CONTENTS", t:"Contents", d:"Six parts: team, motivation, pre-plan, itinerary, next steps and expected effects."},
-            {k:"TEAM 01", t:"GDSC SKKU", d:"A university-based community for students interested in Google technologies. We introduced our activities, from Google tech study workshops, the EAP national policy training, the GDSC Korea joint hackathon and the Google Solution Challenge to the global IT video lectures, under the keywords “convergence” and “global.”"},
+            {k:"TEAM 01", t:"GDG on Campus : SKKU", d:"A university-based community for students interested in Google technologies. We introduced our activities, from Google tech study workshops, the EAP national policy training, the GDG on Campus Korea joint hackathon and the Google Solution Challenge to the global IT video lectures, under the keywords “convergence” and “global.”"},
             {k:"TEAM 02", t:"Diversity of majors and years", d:"Introduces the five-person team from different majors and years. For myself, I included that I was a first-year Computer Education student who lived in China for five years. Photos of the other members are blurred."}
           ]},
           {name: "Motivation", slides: [
@@ -1125,8 +1133,8 @@ SITE.en = {
           ]},
           {name: "Itinerary", pm: "I took the conference part: I checked deadlines and eligibility for candidate conferences and summarized what we could learn at each, plus backup options.", slides: [
             {k:"PLAN 01", t:"Overall schedule", d:"A calendar that places the GDG exchanges, conferences and company visits in a trip starting in Shenzhen and moving to Shanghai."},
-            {k:"PLAN 02", t:"GDG Shenzhen exchange", d:"A technology and culture exchange: GDG Shenzhen shares Google Analytics and TensorFlow, while GDSC SKKU shares Google Workspace and SEO know-how and Sungkyunkwan culture. Event photos are blurred."},
-            {k:"PLAN 03", t:"GDG Shanghai exchange", d:"GDG Shanghai shares Google Analytics and Android and Kotlin, and GDSC SKKU shares its know-how in the same way. Event photos are blurred."},
+            {k:"PLAN 02", t:"GDG Shenzhen exchange", d:"A technology and culture exchange: GDG Shenzhen shares Google Analytics and TensorFlow, while GDG on Campus : SKKU shares Google Workspace and SEO know-how and Sungkyunkwan culture. Event photos are blurred."},
+            {k:"PLAN 03", t:"GDG Shanghai exchange", d:"GDG Shanghai shares Google Analytics and Android and Kotlin, and GDG on Campus : SKKU shares its know-how in the same way. Event photos are blurred."},
             {k:"PLAN 04", t:"Conferences", d:"The Shenzhen Expo and the Shanghai Summit as Plan A, with academic and technology conferences held around the same time as Plan B, and their application deadlines."},
             {k:"PLAN 05", t:"Company visits: Tencent and Pinduoduo", d:"We prepared questions for each company: for Tencent, the WeChat ecosystem and its logistics service; for Pinduoduo, the pricing method behind its ultra-low-price strategy and improvements to the mobile shopping experience."}
           ]},
@@ -1138,21 +1146,21 @@ SITE.en = {
           {name: "Expected effects", slides: [
             {k:"EFFECT 01", t:"Academic side", d:"Collaborate through role division, study the potential of the Chinese e-commerce market through the Tencent and Pinduoduo visits and conferences, and share the results through videos and blog content we produce ourselves."},
             {k:"EFFECT 02", t:"International side", d:"Understand the local business environment and build a global network through GDG exchanges, which could lead to later activities such as video lectures."},
-            {k:"THANK YOU", t:"Thank you", d:"We close the presentation hoping GDSC SKKU can contribute to global e-commerce."}
+            {k:"THANK YOU", t:"Thank you", d:"We close the presentation hoping GDG on Campus : SKKU can contribute to global e-commerce."}
           ]}
         ]
       }
     },
     "s-global": {
       title: "S-Global Challenger application",
-      summary: "Entered the university's overseas-dispatch competition together with fellow GDSC members.",
-      short: "Entered SKKU's overseas-dispatch competition with GDSC peers.",
+      summary: "Entered the university's overseas-dispatch competition together with fellow GDG on Campus : SKKU members.",
+      short: "Entered SKKU's overseas-dispatch competition with GDG on Campus : SKKU peers.",
       body: [
         {
           ul: [
-            "<b>What</b> - writing the 2024 S-Global Challenger proposal for SKKU GDSC",
+            "<b>What</b> - writing the 2024 S-Global Challenger proposal for GDG on Campus : SKKU",
             "<b>Span</b> - first half of 2024; a four-person team proposal for an overseas R&D visit and research project",
-            "<b>Role</b> - on the GDSC AI/TensorFlow team: defining the research topic on AI-based market forecasting, designing the time-series modelling architecture, planning collaboration with overseas institutions, and leading the writing"
+            "<b>Role</b> - on the GDG on Campus : SKKU AI/TensorFlow team: defining the research topic on AI-based market forecasting, designing the time-series modelling architecture, planning collaboration with overseas institutions, and leading the writing"
           ]
         },
         {h:"Framing the research question"},
@@ -1165,7 +1173,7 @@ SITE.en = {
         {h:"Global R&D collaboration roadmap"},
         {
           ul: [
-            "Planned development-exchange workshops with the University of Toronto and TMU GDSC, plus technical interviews and lab visits at the Vector Institute, BlueDot and Google Canada's AI Research Lab.",
+            "Planned development-exchange workshops with the University of Toronto and TMU GDG on Campus chapters, plus technical interviews and lab visits at the Vector Institute, BlueDot and Google Canada's AI Research Lab.",
             "Tied the plan to global business and data-science conferences (ICMABEBR, ICSDS) to give the industry-academia direction some structure."
           ]
         },
@@ -1178,7 +1186,7 @@ SITE.en = {
         },
         {h:"Reflection"},
         {
-          p: "With the SKKU GDSC team I found the topic - AI analysis and forecasting of business markets using Google Trends data - and led the writing of the proposal. Rather than stopping at the idea, I analysed whether an LSTM forecasting model combining the Google Trends API with economic indicators was technically feasible."
+          p: "With the GDG on Campus : SKKU team I found the topic - AI analysis and forecasting of business markets using Google Trends data - and led the writing of the proposal. Rather than stopping at the idea, I analysed whether an LSTM forecasting model combining the Google Trends API with economic indicators was technically feasible."
         },
         {
           p: "Pulling a large body of technical documentation and overseas research into one coherent proposal was where I grew most. As a computer-education major I learned to connect complex AI work to business problems, and - by taking on something well above my level - built the habit of structuring an idea until it holds together."
@@ -1197,61 +1205,24 @@ SITE.en = {
     },
     likelion12: {
       title: "LIKELION SKKU 12th",
-      summary: "As PM, planned and shipped an advertising-agency platform with a team of five.",
+      summary: "Practised React and REST API communication in a fortnightly campus study group, and planned 2GATHER at the LIKELION Line-4 Hackathon.",
+      short: "React and REST API practice in a campus study group; planned 2GATHER at the Line-4 Hackathon.",
       body: [
-        {h:"1. Campus study group - front-end foundations and how API communication works"},
+        {h:"Campus study group - front-end foundations and how API communication works"},
         {
           p: "We ran a fortnightly study group covering React state management and the core front-end concepts. Rather than stopping at theory, we used Postman to make requests against Hugging Face's GPT-2 model API and handle the JSON responses. That made the client-server exchange concrete, and taught me CRUD over HTTP methods and standard REST design from a practical angle."
-        },
-        {h:"2. Campus ideathon - Tomak(e)"},
-        {
-          ul: [
-            "<b>Service</b> - Tomak(e)",
-            "<b>Team</b> - Dopamine Addicts (2024 LIKELION campus ideathon)",
-            "<b>Taglines</b> - \"From un-productive to BE-productive\" / \"Make a short moment of your time meaningful\""
-          ]
-        },
-        {p:"<b>Background and problem</b>"},
-        {
-          ul: [
-            "<b>Too busy to exercise</b> - modern schedules leave little room to set time aside for it",
-            "<b>Digital overuse</b> - rising unconscious, unproductive phone time, short-form video above all",
-            "<b>Time-efficiency as a trend</b> - consumption increasingly judged by return on time spent"
-          ]
-        },
-        {
-          p: "<b>Goal and audience</b> - use the offcuts of a day to manage physical and mental health together and lift overall wellness, aimed at students and office workers who care about their health despite busy schedules."
-        },
-        {p:"<b>Core features</b>"},
-        {
-          ul: [
-            "<b>Home</b> - stats on the spare minutes used today, a personalised avatar, and the day's schedule",
-            "<b>Context and availability</b> - enter where you are (train, office) and how many minutes you have",
-            "<b>Recommendation engine</b> - exercise, stretching or meditation content matched to that place and duration",
-            "<b>Run and time it</b> - guide videos with a live timer",
-            "<b>Results and sharing</b> - see what you completed and share progress with friends"
-          ]
-        },
-        {
-          p: "<b>What set it apart</b> - physical exercise and mental recovery in one place, gamification through activity rewards and avatar customisation, and motivation through sharing with friends."
-        },
-        {
-          p: "<b>Business model</b> - per-impression advertising, plus partnership fees from healthcare companies promoting products and services."
-        },
-        {
-          p: "<b>Stack</b> - front end: Flutter, Next.js · back end: Spring · databases: MySQL, PostgreSQL · cloud: AWS, Firebase · version control: Git, GitHub."
         }
       ]
     },
     gdsc: {
-      title: "Google Developer Student Clubs",
+      title: "GDG on Campus : SKKU",
       summary: "When GDSC's reorganisation into GDG on Campus cut off the Google network we used to rely on, I booked speakers for the monthly global IT seminar through several routes - cold emails, people I had met in class, and referrals from the university program - and documented the whole outreach process in Korean and English.",
       short: "Booked monthly IT seminar speakers without an existing network; documented the process.",
       body: [
         {
           ul: [
             "<b>Dates</b> - Mar 2024 - Feb 2025",
-            "<b>Chapter</b> - GDSC Sungkyunkwan University (now GDG on Campus)",
+            "<b>Chapter</b> - Google Developer Group on Campus : SKKU (formerly GDSC Sungkyunkwan University)",
             "<b>Role</b> - joined the Administration team, then selected as Core / HR lead the next semester (Administration team of 4)",
             "<b>Owned</b> - most speaker outreach for the monthly global IT seminar",
             "<b>Scale</b> - about 20-30 attendees per session, online and offline"
@@ -1283,7 +1254,7 @@ SITE.en = {
         {
           ul: [
             "<b>Cold emails</b> - separate Korean and English invitations for Korean and international speakers. Each one covered why I had chosen them (after checking their interests on LinkedIn), the topic, length, format, audience, fee, equipment and post-talk feedback, so they could decide without having to ask anything first.",
-            "<b>Adapting the channel</b> - with an India-born expert based in the US, messages on Google Chat were slow to be read. I asked which channel suited them, heard WhatsApp, confirmed the switch with our GDSC lead, and scheduling and preparation sped up.",
+            "<b>Adapting the channel</b> - with an India-born expert based in the US, messages on Google Chat were slow to be read. I asked which channel suited them, heard WhatsApp, confirmed the switch with our GDG on Campus : SKKU lead, and scheduling and preparation sped up.",
             "<b>Using existing connections</b> - I wrote to a computer-vision and robotics expert whose guest lecture I had attended in an AI convergence class, saying the talk had stayed with me and I wanted other students to hear it. Through the program director's network I was also introduced to an NVIDIA expert and booked that talk.",
             "<b>Documenting the process</b> - so the next person wouldn't repeat the trial and error, I wrote up the flow of <b>first contact → details → contact channel</b>, with Korean and English message templates and a talk-information sheet that we reused for later bookings."
           ]
@@ -1319,7 +1290,7 @@ SITE.en = {
         },
         {h:"08. What changed afterwards"},
         {
-          p: "Reaching out to people I don't know now feels natural. Contacting Japanese universities directly and proposing collaboration to other GDSC leads while preparing RE:ALThon came from the confidence I built here. I also got into the habit of looking first at the other person's platform and situation - <b>connecting in the way that is easiest for them to answer, not the way that is easiest for me</b>."
+          p: "Reaching out to people I don't know now feels natural. Contacting Japanese universities directly and proposing collaboration to other GDG on Campus leads while preparing RE:ALThon came from the confidence I built here. I also got into the habit of looking first at the other person's platform and situation - <b>connecting in the way that is easiest for them to answer, not the way that is easiest for me</b>."
         }
       ]
     },
