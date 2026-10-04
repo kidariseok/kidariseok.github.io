@@ -89,8 +89,9 @@ SITE.ko = {
       title: "경험에 머무르지 않고, 다음을 만들어갑니다.",
       description: "",
       blog: "네이버 블로그 ‘진석의 기록’",
+      blogShort: "블로그",
       instagram: "인스타그램",
-      photos: "사진"
+      photos: "사진 계정"
     },
     footer: {name:"오진석 · Portfolio", updated:""}
   },
@@ -134,10 +135,13 @@ SITE.ko = {
     ["학번", "2024학번"],
     ["관심 분야", "기술 · 사람 · 산업의 연결"],
     ["현재", "대한민국 육군 통신병 · 분대장으로 복무 중"],
-    ["기록", "blog.naver.com/kidariseok"],
-    ["GitHub", "github.com/kidariseok"],
-    ["LinkedIn", "linkedin.com/in/jinseokoh"]
   ],
+  // 기본 정보 카드의 '링크' 줄 버튼 (icon 은 index.html 아이콘 이름)
+  profileLinks: {label:"링크", items:[
+    {t:"블로그", href:"https://blog.naver.com/kidariseok", icon:"ic-pen"},
+    {t:"GitHub", href:"https://github.com/kidariseok", icon:"ic-code"},
+    {t:"LinkedIn", href:"https://www.linkedin.com/in/jinseokoh/", icon:"ic-briefcase"}
+  ]},
   tiles: {
     // note 의 {from} {to} {n} 은 자동으로 채워집니다 (첫 활동 ~ 마지막 활동, 봉사 횟수)
     gpa: {label:"학점", unit:" / 4.5", note:"성균관대학교 컴퓨터교육과"},

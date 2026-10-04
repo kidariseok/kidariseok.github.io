@@ -107,8 +107,9 @@ SITE.en = {
       title: "Not stopping at experience, but building what comes next.",
       description: "",
       blog: "Naver Blog: Jinseok's Record",
+      blogShort: "Blog",
       instagram: "Instagram",
-      photos: "Photos"
+      photos: "Photo account"
     },
     footer: {name:"Jinseok Oh · Portfolio", updated:""}
   },
@@ -157,10 +158,13 @@ SITE.en = {
     ["Class", "Class of 2024"],
     ["Interests", "Connecting technology, people & industry"],
     ["Currently", "Serving in the Republic of Korea Army as a Network Manager / Squad Leader"],
-    ["Writing", "blog.naver.com/kidariseok"],
-    ["GitHub", "github.com/kidariseok"],
-    ["LinkedIn", "linkedin.com/in/jinseokoh"]
   ],
+  // 기본 정보 카드의 '링크' 줄 버튼 (icon 은 index.html 아이콘 이름)
+  profileLinks: {label:"Links", items:[
+    {t:"Blog", href:"https://blog.naver.com/kidariseok", icon:"ic-pen"},
+    {t:"GitHub", href:"https://github.com/kidariseok", icon:"ic-code"},
+    {t:"LinkedIn", href:"https://www.linkedin.com/in/jinseokoh/", icon:"ic-briefcase"}
+  ]},
   tiles: {
     gpa: {label:"GPA", unit:" / 4.5", note:"Sungkyunkwan University · Computer Education"},
     activities: {label:"Recorded activities", unit:"", note:"{from} - {to}"},
