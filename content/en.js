@@ -739,7 +739,7 @@ SITE.en = {
     creverse: {
       title: "Creverse Campus Crew, 1st cohort",
       summary: "Looked at an education service from the user's point of view, compared the market and competitors, and proposed marketing ideas.",
-      short: "Compared competitors through market research and proposed marketing ideas (proposal stage).",
+      short: "Compared competitors through market research and proposed marketing ideas.",
       body: [
         {
           p: "As a member of the first Creverse Campus Crew cohort, I chose one of three monthly missions (video production, informational content, or market research) and produced a deliverable. I mostly chose market research: I investigated cases from the education market and competitors myself, and proposed ideas to improve Creverse's services and content."
