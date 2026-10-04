@@ -876,14 +876,14 @@ SITE.en = {
         {note:"Mentor-mentee sessions ran team by team."}
       ]
     },
-    odyvice: {
-      title: "Odyvice Undergraduate Mentor",
+    audivice: {
+      title: "Audivice Undergraduate Mentor",
       summary: "Mentored middle and high school students on study methods, mental wellbeing and more.",
       short: "Mentored secondary students on study habits and wellbeing.",
       body: [
         {
           ul: [
-            "<b>Programme</b> - Odyvice undergraduate mentor corps",
+            "<b>Programme</b> - Audivice undergraduate mentor corps",
             "<b>Span</b> - about five months; 5 hours, 5 sessions completed",
             "<b>Role</b> - advising middle and high school students on study method and managing their state of mind"
           ]
@@ -1185,7 +1185,7 @@ SITE.en = {
         }
       ]
     },
-    premed: {
+    freemed: {
       title: "FreeMed",
       summary: "Led the part of the team providing home health-care visits to elderly residents living alone in jjokbang districts.",
       short: "Led home health-care visits for elderly residents living alone · about a year, 17 visits.",
@@ -1563,7 +1563,7 @@ SITE.en = {
     close: "Close",
     orgs: {
       ktng: "KT&G Sangsang Withus Winter Overseas Volunteer Corps",
-      premed: "FreeMed",
+      freemed: "FreeMed",
       redcross: "Korean Red Cross",
       dreamon: "Dream On School"
     },

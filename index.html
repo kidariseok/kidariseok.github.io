@@ -2426,8 +2426,11 @@
 
   function currentDetailId(){
     var m = (location.hash || "").match(/^#a\/(.+)$/);
-    return m ? decodeURIComponent(m[1]) : null;
+    if(!m) return null;
+    var id = decodeURIComponent(m[1]);
+    return LEGACY_IDS[id] || id;   // 이름을 바꾸기 전에 공유된 옛 주소(#a/odyvice, #a/premed)도 새 상세 페이지로 연결
   }
+  var LEGACY_IDS = {odyvice:"audivice", premed:"freemed"};
 
   function route(){
     var id = currentDetailId();
