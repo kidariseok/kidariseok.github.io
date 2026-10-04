@@ -851,6 +851,11 @@ SITE.en = {
       title: "KT&G Sangsang Univ Global Speech Mentors",
       summary: "Led a team delivering speech mentoring to foreign residents in Korea. Through conversations with a Pakistani resident, prepared a speech on recognising cultural difference and raising multicultural awareness.",
       short: "Team lead mentoring foreign residents in Korea on multicultural speeches.",
+      vid: {
+        k: "SKETCH VIDEO",
+        t: "On-site sketch video",
+        d: "A sketch video from the 2024 KT&G Sangsang Global Speech event, showing the speeches that mentors and foreign residents in Korea prepared together."
+      },
       body: [
         {
           p: "I led a team running speech mentoring for foreign residents in Korea. Listening to and talking with a Pakistani resident here, we prepared a speech together on recognising cultural difference and raising multicultural awareness."

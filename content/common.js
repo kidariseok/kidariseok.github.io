@@ -50,7 +50,11 @@ SITE.common = {
     "ktng-overseas": {cover:"ktng_cover", shots:["ktng_01", "ktng_02", "ktng_03", "ktng_04"]},
     "edutech-expo": {cover:"edutech_02", shots:["edutech_01", "edutech_02", "edutech_03", "edutech_04", "edutech_05"]},
     creverse: {cover:"creverse_cover", shots:["creverse_01", "creverse_02", "creverse_03"]},
-    "speech-mentors": {cover:"speech_cover", shots:["speech_02", "speech_05", "speech_06", "speech_07", "speech_08"]},
+    "speech-mentors": {
+      cover: "speech_cover",
+      shots: ["speech_02", "speech_05", "speech_06", "speech_07", "speech_08"],
+      video: {src:"video/speech-sketch.mp4", poster:"speech_video_poster"}
+    },
     odyvice: {cover:"odyvice_cover"},
     icists: {cover:"icists_cover", shots:["icists_01", "icists_02"]},
     goormthon: {
