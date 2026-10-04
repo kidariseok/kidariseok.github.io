@@ -247,7 +247,7 @@ SITE.en = {
       short: "Dept. of English lecture, parts 1 and 2: AI x L2 education research and a roadmap to international publication.",
       body: [
         {lead:"We were told to move past “does AI work?” and ask “how, for whom, and under what conditions?”"},
-        {p:"I attended both parts of this lecture, hosted by the Department of English at Sungkyunkwan University, on the same day. Professor Ali Derakhshan of Golestan University had been invited, but he could not come, so Professor Park Yujeong and Professor Normandin gave the sessions in his place, working from his lecture materials."},
+        {p:"I attended both parts of this lecture, hosted by the Department of English at Sungkyunkwan University, on the same day. Professor Ali Derakhshan of Golestan University had been invited, but flights could not operate because of the war in Iran, so he was unable to travel to Korea. Professor Park Yujeong and Professor Shawn D. Normandin gave both sessions in his place, working from his lecture materials."},
         {facts:["Dept. of English, Sungkyunkwan University", "Parts 1 and 2, same day", "Materials: Ali Derakhshan"]},
         {cmp:[
           {n:"Part 1", t:"Artificial Intelligence in Second and Foreign Language (L2) Education", d:"Skills, then theory, then research directions: “what should we study?”"},
@@ -263,7 +263,7 @@ SITE.en = {
           {n:"LISTENING", t:"Speed, captions, replays", d:"Adjustable speed, captions, comprehension questions, accent comparison. Limits: caption dependence, unnatural synthetic speech."}
         ]},
         {p:"The strengths were shared across all four skills: personalisation, immediate feedback, unlimited practice and learner autonomy. So were the limits: <b>overreliance, hallucination and bias</b>. The prescription was the same too: use AI as a <b>scaffold</b>, not an answer machine. For writing, the gains were larger when AI was built into the whole process, from planning to revision and reflection, than when it was used only for proofreading or text generation."},
-        {note:"<b>Said in the lecture</b><br>For writing, hallucinated references were named as a clear limit, and a tendency to lean too heavily on summarisation left its educational fit open to doubt. Reduced Foreign Language Anxiety is reported, but <b>whether less anxiety is always a good thing is worth questioning</b>, which stayed with me. Speaking, we heard, is heavily used for pronunciation practice."},
+        {note:"<b>Remarks from the lecture</b><br>· For writing, hallucinated references were cited as a major limitation.<br>· A tendency to rely too heavily on summarisation led to a cautious view of its educational suitability.<br>· Reduced Foreign Language Anxiety has been reported, but it was noted that whether less anxiety is always a positive outcome calls for examination.<br>· For speaking, its use in pronunciation practice was described as especially high."},
 
         {k:"Part 1 · 02", toc:"Part 1 Theory", h:"Why it works: six theories"},
         {p:"One question came at the end of the skills section: if AI helps with every skill, what explains the benefit? The answer was not the technology itself, but the way AI lines up with the learning principles of existing second language acquisition (SLA) theories."},
@@ -309,7 +309,7 @@ SITE.en = {
           "<b>Peer review</b>: administrative screening, the editor's desk review (scope, novelty, significance, method, writing), reviewer selection, review, decision. Answer every reviewer comment, and say in the response letter what you changed, why, and where.",
           "<b>Scholarly impact</b>: publication is a beginning, not an end. Good titles and keywords, steady publishing and international collaboration make a paper more likely to be read and cited."
         ]},
-        {note:"<b>Said in the lecture</b><br>Fill the gap, and do not repeat what has already been said. Patience is the key; work on several papers at once. Rebutting existing research is often an easier way into a topic than proposing a brand-new solution."},
+        {note:"<b>Remarks from the lecture</b><br>· It was stressed that a study should fill a gap left by prior research rather than repeat what has already been said.<br>· Patience is essential, and working on several papers at once was advised.<br>· Rebutting existing research was described as a comparatively accessible way to choose a topic, compared with proposing a new solution."},
 
         {k:"Looking back", toc:"Looking back", h:"I learned to read the process, not just the effect, through data"},
         {p:"What stayed with me longest from Part 1 was the research methods. PTA, TSA, LGCM and EMA all assume <b>data</b>: records of learners' exchanges with AI, scores measured repeatedly, responses stacked in time order. Instead of a single average that says “it worked”, they show which path each learner took, and I found that interesting."},
