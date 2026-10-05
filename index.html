@@ -187,6 +187,11 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-block:22px 28px}
   .chip{font-size:13px;font-weight:700;color:#dfe6f2;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04)}
   .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+  .btn:hover .i-dl{transform:translateY(2px)}
+  .cv-alt{align-self:center;display:inline-flex;align-items:center;gap:5px;margin-left:6px;color:#aeb7c6;font-size:14px;font-weight:700}
+  .cv-alt .i{width:15px;height:15px;transition:transform .3s var(--ease)}
+  .cv-alt:hover,.cv-alt:focus-visible{color:#fff}
+  .cv-alt:hover .i{transform:translateY(2px)}
   .hero-art img{
     display:block;width:100%;height:auto;aspect-ratio:1400/826;
     -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%);
@@ -797,6 +802,7 @@
     <symbol id="ic-pen" viewBox="0 0 24 24"><path d="M16.6 4.5a2.1 2.1 0 0 1 2.9 2.9L8.3 18.6 4 20l1.4-4.3L16.6 4.5Z"/><path d="m14.8 6.3 2.9 2.9"/></symbol>
     <symbol id="ic-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol>
     <symbol id="ic-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="ic-download" viewBox="0 0 24 24"><path d="M12 4.6v10.2M7.6 10.6 12 15l4.4-4.4"/><path d="M5 16.8v1.4a1.6 1.6 0 0 0 1.6 1.6h10.8a1.6 1.6 0 0 0 1.6-1.6v-1.4"/></symbol>
     <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></symbol>
     <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M7.2 3.8h2.6l1.4 4-2 1.3a10.5 10.5 0 0 0 5.7 5.7l1.3-2 4 1.4v2.6a2 2 0 0 1-2.2 2A15.8 15.8 0 0 1 5.2 6a2 2 0 0 1 2-2.2Z"/></symbol>
     <symbol id="ic-play" viewBox="0 0 24 24"><path d="M7 4.6v14.8L19.2 12 7 4.6Z"/></symbol>
@@ -849,7 +855,10 @@
             <div class="chips" id="hero-chips"></div>
             <div class="hero-cta">
               <a class="btn solid" href="#work"><span data-t="hero.buttonWork">대표 작업 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
-              <a class="btn ghost" href="#contact"><span data-t="hero.buttonContact">연락처</span></a>
+              <!-- CV 버튼: 화면 언어(KO/EN)에 맞는 PDF를 받음. 파일 주소는 common.js 의 cv, 글자는 ko.js / en.js 의 hero.buttonCv · cvOther
+                   옆 작은 링크는 다른 언어 CV -->
+              <a class="btn ghost" id="cv-main" href="cv/Jinseok_Oh_CV_KO.pdf" download><span data-t="hero.buttonCv">CV 다운로드</span><svg class="i i-dl"><use href="#ic-download"/></svg></a>
+              <a class="cv-alt" id="cv-alt" href="cv/Jinseok_Oh_CV_EN.pdf" download><span data-t="hero.cvOther">English CV</span><svg class="i i-dl"><use href="#ic-download"/></svg></a>
             </div>
           </div>
           <!-- 일러스트를 바꾸려면 img/hero.webp 를 덮어쓰면 됩니다 -->
@@ -955,9 +964,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1791166404"></script>
-<script src="content/ko.js?v=1791166404"></script>
-<script src="content/en.js?v=1791166404"></script>
+<script src="content/common.js?v=1791186724"></script>
+<script src="content/ko.js?v=1791186724"></script>
+<script src="content/en.js?v=1791186724"></script>
 <script>
 (function(){
   "use strict";
@@ -2168,6 +2177,15 @@
       });
     }
     document.documentElement.lang = lang === "ko" ? "ko" : "en";
+    // CV 버튼은 지금 언어의 PDF, 옆 작은 링크는 다른 언어의 PDF (common.js 의 cv)
+    var other = lang === "ko" ? "en" : "ko";
+    [["cv-main", lang], ["cv-alt", other]].forEach(function(p){
+      var a = document.getElementById(p[0]);
+      if(!a || !C.cv) return;
+      a.href = C.cv[p[1]];
+      a.setAttribute("download", C.cv[p[1]].split("/").pop());
+      a.setAttribute("hreflang", p[1]);
+    });
   }
 
   function renderAll(){

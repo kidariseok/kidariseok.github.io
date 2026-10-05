@@ -39,7 +39,8 @@ SITE.en = {
       headline: "Connecting technology, people, and industry.",
       intro: "I have explored technology, education, planning, and global experiences through diverse activities. I understand technology, but I do not stop at technology itself. I care about how it can create value for people, organizations, and industries.",
       buttonWork: "See selected work",
-      buttonContact: "Contact"
+      buttonCv: "Download CV",
+      cvOther: "국문 CV"
     },
     work: {
       kicker: "SELECTED WORK",

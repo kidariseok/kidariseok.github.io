@@ -40,7 +40,8 @@ SITE.ko = {
       headline: "기술과 사람, 산업을 연결합니다.",
       intro: "다양한 경험을 통해 기술, 교육, 기획, 글로벌 활동을 탐색해 왔습니다. 기술을 이해하지만 기술 자체에 머무르지 않고, 그것이 실제 사람과 조직, 산업에서 어떻게 쓰일 수 있는지를 고민합니다.",
       buttonWork: "대표 작업 보기",
-      buttonContact: "연락처"
+      buttonCv: "CV 다운로드",
+      cvOther: "English CV"
     },
     // SELECTED WORK: 프로젝트(common.js 의 projects) + 대표 활동(common.js 의 featured)
     // featuredSub 는 대표 활동 4개를 한 줄로 요약한 글자라, featured 를 바꾸면 같이 고쳐 주세요
