@@ -99,6 +99,9 @@ content/
   ko.js
   en.js
   common.js
+cv/
+  Jinseok_Oh_CV_KO.pdf
+  Jinseok_Oh_CV_EN.pdf
 img/
 ```
 
@@ -123,6 +126,7 @@ GitHub Pages를 이용해 배포하고 있습니다.
 | 대표 활동         | `content/common.js` → `featured`  |
 | 첫 화면 숫자       | `content/common.js` → `heroStats` |
 | 활동 분야         | `content/common.js` → `axis`      |
+| CV PDF        | `cv/` 폴더의 파일을 같은 이름으로 덮어쓰기 (주소는 `content/common.js` → `cv`) |
 
 활동 하나를 추가할 때는 `common.js`에 기본 정보를 넣고,
 `ko.js`와 `en.js`에 각각 한국어와 영어 내용을 추가하는 방식입니다.

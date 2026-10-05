@@ -18,6 +18,8 @@
 window.SITE = window.SITE || {};
 SITE.common = {
   notion: "https://app.notion.com/p/",
+  // 첫 화면 'CV 다운로드' 버튼이 받는 PDF (cv/ 폴더). CV를 고치면 같은 이름으로 덮어쓰세요
+  cv: {ko: "cv/Jinseok_Oh_CV_KO.pdf", en: "cv/Jinseok_Oh_CV_EN.pdf"},
   featured: ["realthon", "gdsc", "ktng-overseas", "edutech-expo"],
   // 'SELECTED WORK'의 '프로젝트' 카드로 보여 줄 개발 프로젝트의 activities id (순서대로). 카드 · 상세 요약 패널의 글자는 ko/en.js 의 activities[id].proj
   projects: ["line4", "goormthon"],
