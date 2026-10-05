@@ -10,16 +10,17 @@
 
    목차
      name        첫 화면의 큰 이름
-     tagline     이름 밑 기울임체 영어 한 줄
-     page        메뉴 · 첫 화면 · 대표 활동 · 각 섹션 제목과 설명 · 연락처 · 푸터
+     page        메뉴 · 첫 화면 · SELECTED WORK · 소개 · 활동 기록 · 이력 · 연락처 · 푸터
      ui          버튼과 작은 라벨 글자
-     categories  활동 구분 이름 (공모전 등)
-     interests   이름 아래 관심사 태그
-     profile     소개 옆 기본 정보 표 ([항목, 값] 한 쌍이 한 줄)
-     tiles       기록 요약 숫자 카드의 글자 (숫자 자체는 common.js)
+     categories  활동 구분 이름 4가지
+     keywords    첫 화면 이름 뒤 키워드 띠 (장식)
+     interests   첫 화면 이름 아래 관심사 태그
+     tiles       숫자 모음의 글자 (숫자 자체는 common.js)
      certHead / certGroups / certs   자격증
      awards      장학 · 수상 (금액은 common.js)
-     activities  대외활동 제목 · 요약(summary) · 목록용 짧은 요약(short, 없으면 summary) · 상세 본문
+     activities  활동 제목 · 요약(summary) · 목록용 짧은 요약(short, 없으면 summary) · 상세 본문
+                 panel: 상세 페이지 맨 위 요약 패널 {role, team, scale, period, where, result, links}
+                        (모두 선택. period 를 비우면 common.js 날짜를 씀. 프로젝트는 proj 를 씀)
                  본문 블록: {h:"소제목"} {p:"문단"} {ul:["항목", ...]}
                             {note:"회색 참고 상자"} {files:["파일이름"]}
                             {link:"링크 글자", href:"https://..."}
@@ -28,62 +29,64 @@
 window.SITE = window.SITE || {};
 SITE.ko = {
   name: "오진석",
-  // 첫 화면 이름 밑 기울임체 영어 한 줄 (Playfair Display). ":" 가 있으면 그 앞은 파란 굵은 글씨
-  tagline: "Technology, people, and industry, connected.",
   page: {
-    nav: {story:"방향", projects:"프로젝트", about:"소개", records:"기록 요약", activities:"대외활동", certs:"자격증", awards:"장학·수상", contact:"연락처"},
+    // 상단 메뉴 5개 (휴대폰에서는 상단 바 아래에 가로 한 줄로 나옵니다)
+    nav: {work:"작업", about:"소개", activities:"활동", credentials:"이력", contact:"연락"},
     hero: {
       school: "성균관대학교 컴퓨터교육과 · 2024학번",
+      // 학교 줄 끝 배지. 학점은 여기와 '이력' EDUCATION 줄, 두 곳에만 나옵니다
       gpa: "GPA 4.33",
       gpaMax: "/ 4.5",
       headline: "기술과 사람, 산업을 연결합니다.",
       intro: "다양한 경험을 통해 기술, 교육, 기획, 글로벌 활동을 탐색해 왔습니다. 기술을 이해하지만 기술 자체에 머무르지 않고, 그것이 실제 사람과 조직, 산업에서 어떻게 쓰일 수 있는지를 고민합니다.",
-      buttonProjects: "프로젝트 보기",
+      buttonWork: "대표 작업 보기",
       buttonContact: "연락처"
     },
-    // 프로젝트 · 대표 활동 다음의 '방향' 섹션. period 는 오른쪽 작은 기간 글씨, adapt.since 이후에 딴 자격증이 ADAPT 카드 오른쪽에 자동으로 나옵니다
-    story: {
-      kicker: "WHAT AM I BECOMING?",
-      title: "다양한 경험 속에서, 제 자신만의 방향을 찾았습니다.",
-      explore: {label:"EXPLORE", period:"2024", text:"대학에 입학한 후 AI와 데이터, 서비스 기획, 교육, 글로벌 활동 등 관심이 가는 다양한 영역을 직접 경험했습니다. 서로 다른 경험 속에서 제가 무엇에 관심을 갖고 어떤 방식으로 기여하고 싶은지 찾아가는 시간을 가졌습니다."},
-      discover: {label:"DISCOVER", period:"2024 - 2025", text:"다양한 활동을 이어가며 제가 관심을 갖는 지점은 기술 그 자체보다 기술이 사람과 산업을 만나는 곳에 있다는 것을 발견했습니다. 기술을 이해하고, 그것을 실제 문제와 연결하는 과정에 더 큰 의미를 느끼게 되었습니다."},
-      adapt: {
-        label: "ADAPT & GROW",
-        period: "2025 - 2026",
-        title: "환경이 달라져도 성장을 멈추지 않은 시간",
-        text: "2025년부터 2026년까지 군 복무를 하며 새로운 환경에 적응하는 동시에 제가 할 수 있는 성장을 이어갔습니다. SQLD, IELTS 8.0, 무역영어 1급, 한국사능력검정 1급, ADsP, TOEIC 975를 취득하며 다음 단계를 준비했고, 새로운 환경에서도 배움과 자기계발을 이어갔습니다.",
-        role: "대한민국 육군 통신병 · 분대장",
-        since: "2025-01-01"
-      },
-      connect: {label:"CONNECT", period:"앞으로", text:"기술을 실제 필요와 연결하고, 사람과 아이디어, 산업을 이어 의미 있는 가치를 만들고 싶습니다."}
+    // SELECTED WORK: 프로젝트(common.js 의 projects) + 대표 활동(common.js 의 featured)
+    // featuredSub 는 대표 활동 4개를 한 줄로 요약한 글자라, featured 를 바꾸면 같이 고쳐 주세요
+    work: {
+      kicker: "SELECTED WORK",
+      title: "직접 만든 프로젝트와 대표 활동",
+      desc: "무엇을 했는지, 그 안에서 제가 맡은 일이 무엇이었는지부터 보여드립니다. 카드를 누르면 상세 기록으로 이어집니다.",
+      projects: "프로젝트",
+      projectsSub: "직접 기획하고 만든 서비스",
+      featured: "대표 활동",
+      featuredSub: "행사 운영 · 커뮤니티 · 해외봉사 · 현장 탐색"
     },
-    featured: {title:"대표 활동", more:"전체 활동 보기"},
-    // 프로젝트 쇼케이스 + 상세 상단 요약 띠의 공통 라벨. tbd 는 아직 확인되지 않은 항목에 붙는 표시
+    // 프로젝트 카드 + 상세 페이지 맨 위 요약 패널의 공통 라벨. tbd 는 아직 확인되지 않은 항목에 붙는 표시
     projects: {
-      kicker: "PROJECTS",
-      title: "문제에서 시작해, 실제로 쓸 수 있는 형태까지.",
-      desc: "직접 기획하고 만든 프로젝트입니다. 무엇을 만들었는지, 그 안에서 제가 맡은 일이 무엇이었는지부터 보여드립니다.",
-      labels: {what:"WHAT", role:"MY ROLE", tools:"MY TOOLS", stackTeam:"STACK · 팀 개발", team:"TEAM", period:"PERIOD", stack:"STACK", links:"MORE"},
+      labels: {what:"WHAT", role:"MY ROLE", tools:"MY TOOLS", stackTeam:"STACK · 팀 개발", team:"TEAM", scale:"SCALE", period:"PERIOD", where:"WHERE", result:"RESULT", stack:"STACK", links:"MORE"},
       jumpVideo: "프로모션 영상", jumpDeck: "발표자료",
       open: "프로젝트 보기", play: "마우스를 올리면 재생", tbd: "확인 필요"
     },
+    // 소개: 네 단계 (label 영어 이름 · period 기간 · text 한두 문장 · more 가 있으면 단계 끝에 #credentials 로 가는 작은 링크 · em:true 면 상자로 강조)
     about: {
-      title: "소개",
-      paragraph1: "제 관심은 기술과 사람, 아이디어가 만나는 지점에 있습니다.",
-      paragraph2: "성균관대학교 컴퓨터교육과에서 AI와 데이터, 소프트웨어를 중심으로 공부하고 있습니다. 학업과 함께 기술 프로젝트, 서비스 기획, 해커톤, 교육과 멘토링 등 다양한 경험을 쌓아 왔습니다.",
-      paragraph3: "이러한 경험을 통해 기술이 어떻게 이해되고, 전달되며, 실제 사람과 조직, 문제에 적용될 수 있는지에 깊은 관심을 갖게 되었습니다.",
-      paragraph4: "앞으로는 탄탄한 기술 이해를 바탕으로 여러 분야와 협력하고, 다양한 관점을 연결하며, 아이디어를 의미 있는 결과로 만들어내는 사람이 되고자 합니다.",
-      profileTitle: "기본 정보"
+      kicker: "ABOUT",
+      title: "다양한 경험 속에서, 제 자신만의 방향을 찾았습니다.",
+      steps: [
+        {label:"EXPLORE", period:"2024", text:"성균관대학교 컴퓨터교육과에 입학한 뒤 AI와 데이터, 서비스 기획, 교육, 글로벌 활동처럼 관심이 가는 영역을 직접 경험했습니다."},
+        {label:"DISCOVER", period:"2024 – 2025", text:"그 과정에서 제 관심이 기술 그 자체보다 기술이 사람과 산업을 만나는 곳에 있다는 것을 발견했습니다."},
+        // 복무 중(2025년 이후) 취득: 자격 SQLD · 무역영어 1급 · ADsP · 한국사 1급, 어학 IELTS · TOEIC (common.js 의 certGroups 날짜 기준)
+        {label:"ADAPT", period:"2025 – 2026", text:"대한민국 육군 통신병 · 분대장으로 복무하는 동안에도 자격증 4개와 어학 성적 2개를 취득하며 다음 단계를 준비했습니다.", more:"자격 보기", em:true},
+        {label:"NEXT", period:"앞으로", text:"기술을 실제 필요와 연결하고, 사람과 아이디어, 산업을 이어 의미 있는 가치를 만들고 싶습니다."}
+      ]
     },
-    records: {title:"기록 요약", description:""},
-    activities: {title:"대외활동", count:"{n}", description:"구분을 눌러 활동을 추려보고, 카드를 누르면 그 활동의 상세 기록으로 들어갑니다."},
-    certs: {title:"자격증", count:"{n}", description:"분야별로 구분되어 있으며, 각 분야 내에서는 취득일 기준 최신순입니다."},
-    awards: {
-      title: "장학 · 수상",
-      count: "{n}건",
+    activities: {kicker:"ACTIVITY ARCHIVE", title:"활동 기록", count:"{n}", description:"구분마다 대표 활동을 하나씩 먼저 보여드립니다. 아래 버튼을 누르면 구분별로 나머지 활동이 펼쳐지고, 누르면 상세 기록으로 들어갑니다."},
+    // 이력: 다섯 줄 (EDUCATION · LANGUAGE · CERTIFICATION · SCHOLARSHIP · VOLUNTEER).
+    // 기록은 common.js 의 tiles(gpa · dulwich) · certGroups · awards · volunteerLog
+    credentials: {
+      kicker: "RECORDS",
+      title: "이력",
       description: "",
-      totalLabel: "합계",
-      totalUnit: "원"
+      education: "EDUCATION",
+      school: "성균관대학교 컴퓨터교육과 · 2024학번",
+      lang: "LANGUAGE",
+      cert: "CERTIFICATION",
+      awards: "SCHOLARSHIP",
+      vol: "VOLUNTEER",
+      volTotal: "1365 자원봉사포털 확인서 · {issued} 발급",
+      volOpen: "전체 내역 보기",
+      volCount: "{n}회"
     },
     contact: {
       title: "경험에 머무르지 않고, 다음을 만들어갑니다.",
@@ -96,7 +99,9 @@ SITE.ko = {
     footer: {name:"오진석 · Portfolio", updated:""}
   },
   ui: {
-    back: "대외활동 목록",
+    back: "활동 기록으로",
+    backWork: "대표 작업으로",
+    workRef: "위에서 소개",
     prev: "이전 활동",
     next: "다음 활동",
     files: "첨부 자료",
@@ -114,10 +119,7 @@ SITE.ko = {
     toc: "목차",
     close: "닫기",
     all: "전체",
-    showAll: "{n}개 모두 보기",
-    viewAxes: "분야별",
-    viewTypes: "활동별",
-    axisHint: "분야를 고르면 설명이 여기에 나옵니다.",
+    showAll: "전체 활동 {n}개 보기",
     showLess: "접기",
     year: "{y}년",
     groupCount: "{n}개",
@@ -125,42 +127,23 @@ SITE.ko = {
     won: "원",
     awardTerm: "2024년 2학기 · 교내"
   },
-  categories: {competition:"공모전", external:"대외활동", volunteer:"봉사활동", campus:"교내활동", course:"강의"},
-  // 첫 화면 이름 뒤로 천천히 흘러가는 키워드 띠 (순서대로, 쉼표로 구분)
+  // 활동 구분 이름 (common.js 의 categories 와 같은 id)
+  categories: {project:"프로젝트 · 해커톤", community:"커뮤니티 · 운영", edu:"교육 · 봉사", learn:"학습 · 탐색"},
+  // 첫 화면 이름 뒤로 천천히 흘러가는 키워드 띠 (장식용 · 화면 읽기에서는 제외. 순서대로, 쉼표로 구분)
   keywords: ["AI", "데이터", "소프트웨어", "컴퓨터교육", "교육", "멘토링", "봉사", "학생 대상 활동", "서비스 기획", "프로젝트", "해커톤", "국제학교", "영어", "해외 연사", "해외봉사", "교환학생", "GDG on Campus : SKKU", "해커톤 총괄", "PM"],
+  // 첫 화면 이름 아래 관심사 태그
   interests: ["AI·데이터", "PM", "서비스기획", "개발자", "글로벌"],
-  profile: [
-    ["이름", "오진석"],
-    ["전공", "성균관대학교 컴퓨터교육과"],
-    ["학번", "2024학번"],
-    ["관심 분야", "기술 · 사람 · 산업의 연결"],
-    ["현재", "대한민국 육군 통신병 · 분대장으로 복무 중"],
-  ],
-  // 기본 정보 카드의 '링크' 줄 버튼 (icon 은 index.html 아이콘 이름)
-  profileLinks: {label:"링크", items:[
-    {t:"블로그", href:"https://blog.naver.com/kidariseok", icon:"ic-pen"},
-    {t:"GitHub", href:"https://github.com/kidariseok", icon:"ic-code"},
-    {t:"LinkedIn", href:"https://www.linkedin.com/in/jinseokoh/", icon:"ic-briefcase"}
-  ]},
+  // 숫자 모음의 글자 (숫자 자체는 common.js 의 tiles). '이력'에서 label · unit · note 를 씁니다
   tiles: {
-    // note 의 {from} {to} {n} 은 자동으로 채워집니다 (첫 활동 ~ 마지막 활동, 봉사 횟수)
     gpa: {label:"학점", unit:" / 4.5", note:"성균관대학교 컴퓨터교육과"},
-    activities: {label:"기록된 대외활동", unit:"건", note:"{from} - {to}"},
-    certs: {label:"자격증", unit:"개", note:"컴퓨터 3 · 영어 3 · 기타 1"},
-    scholarships: {label:"교내 장학금", unit:"건", note:"500만원 이상"},
     volunteer: {label:"봉사시간", unit:"시간+", note:"1365 확인서 · {n}회"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
-    toeic: {label:"TOEIC", unit:"", note:"LC 495 · RC 480"},
-    // more: 카드에 마우스를 올리면(휴대폰은 누르면) 아래로 펼쳐지는 설명
+    // more 는 지금 화면에 쓰지 않음 (예전 기록 요약 카드의 펼침 설명)
     dulwich: {label:"Dulwich College Suzhou", unit:"년", note:"중국 쑤저우 국제학교", more:"다양한 문화적 배경의 친구들과 5년간 함께 배우며 낯선 환경에 빠르게 적응하는 힘과 글로벌 역량을 길렀습니다."},
     funding: {label:"해커톤 후원 유치", unit:"만원+", note:"3개 대학 · 가용 예산 약 750만원대"}
   },
-  // 기록 요약 카드 묶음(common.js 의 tileGroups)에 마우스를 올렸을 때 나오는 글자. sub 는 위 오른쪽, note 는 아래 왼쪽
-  tileGroups: {
-    realthon: {title:"RE:ALThon", sub:"2024.12 · 3개 대학 공동 개최", note:"무박 2일 · 9개 팀"}
-  },
   certHead: ["자격", "결과", "상세", "발급처", "취득일", "유효"],
-  certGroups: {computing:"컴퓨터 · 데이터", english:"영어", other:"기타"},
+  certGroups: {language:"어학", cert:"자격"},
   certs: {
     adsp: {name:"ADsP", result:"합격", detail:".", issuer:"한국데이터산업진흥원", status:"영구"},
     sqld: {name:"SQLD", result:"합격", detail:".", issuer:"한국데이터산업진흥원", status:"영구"},
@@ -195,10 +178,10 @@ SITE.ko = {
       title: "AI 시대의 제2언어 교육과 국제학술지 출판",
       summary: "영어영문학과 특강 1·2부를 같은 날 들으며, AI가 제2언어 교육에서 하는 역할과 그 효과를 설명하는 이론·연구 방법론, 그리고 국제학술지에 논문이 실리기까지의 과정을 정리함.",
       short: "특강 1·2부를 같은 날 들으며 AI 제2언어 교육의 이론·연구 방법론과 국제학술지 출판 과정을 정리함",
+      panel: {role:"1·2부를 같은 날 수강하고 내용을 정리", where:"성균관대학교 영어영문학과 특강 · 강의 자료 Ali Derakhshan"},
       body: [
         {lead:"“AI가 효과가 있는가”를 지나, 이제는 “어떻게, 누구에게, 어떤 조건에서”를 묻는 단계라고 했습니다."},
         {p:"성균관대학교 영어영문학과가 마련한 특강을 같은 날 1부와 2부 모두 들었습니다. 골레스탄대학교 알리 데락샨(Ali Derakhshan) 교수님을 초청한 자리였으나, 이란 전쟁으로 항공편이 운항하지 못해 방한하실 수 없게 되었습니다. 이에 박유정 교수님과 션 노르만딘(Shawn D. Normandin) 교수님이 데락샨 교수님의 강의 자료를 바탕으로 두 강의를 대신 진행해 주셨습니다."},
-        {facts:["성균관대학교 영어영문학과", "같은 날 1·2부 수강", "강의 자료: Ali Derakhshan"]},
         {cmp:[
           {n:"1부", t:"Artificial Intelligence in Second and Foreign Language (L2) Education", d:"기술 → 이론 → 연구 방향. “무엇을 연구할 것인가”"},
           {n:"2부", t:"The Art and Science of International Publication", d:"연구 개발 → 원고 → 투고 → 심사 → 영향력. “그것을 어떻게 논문으로 만들 것인가”"}
@@ -272,16 +255,17 @@ SITE.ko = {
       org: "GDG on Campus : SKKU",
       summary: "일본 대학과의 글로벌 협업이 무산되자 방향을 바꿔, 성균관대 · 고려대 · 서강대 3개 대학 공동 AI 해커톤(50명 · 9개 팀)을 기획하고 개최함.",
       short: "일본 협업 무산 후 3개 대학 공동 AI 해커톤(50명 · 9개 팀)을 기획하고 개최함",
+      // card: 메인 '대표 활동' 카드의 두 줄 (MY ROLE · RESULT)
+      card: {role:"인사총괄 · 행사 기획 · 예산 운용", result:"3개 대학 · 50명 · 9개 팀 · 약 700만 원대 지원"},
+      panel: {
+        role: "GDG on Campus : SKKU 인사총괄 · 행사 전체 기획과 예산 운용",
+        scale: "참가자 50명 · 9개 팀",
+        period: "2024.12.06 – 12.07 · 무박 2일",
+        where: "고려대학교 우정정보관 · 성균관대 · 고려대 · 서강대 GDG on Campus 공동 주최",
+        result: "3개 대학 4개 사업단에서 약 700만 원대 지원 · 가용 예산 약 750만 원대",
+        key: "약 700만 원대"
+      },
       body: [
-        {
-          ul: [
-            "<b>기간</b>: 2024.12.06 - 12.07 (무박 2일)",
-            "<b>장소</b>: 고려대학교 우정정보관",
-            "<b>공동 주최</b>: 성균관대 · 고려대 · 서강대 GDG on Campus",
-            "<b>규모</b>: 참가자 50명, 9개 팀",
-            "<b>내 역할</b>: GDG on Campus : SKKU 인사총괄, 행사 전체 기획과 예산 운용"
-          ]
-        },
         {h:"01. 상황: 글로벌 협업이 흔들리다"},
         {
           p: "구글 동아리에 들어오면서 가장 해 보고 싶었던 일이 글로벌 해커톤이었습니다. 성균관대 SW중심대학사업단에서 예산을 배정받은 뒤, 한국과 시차가 적은 싱가포르 · 마닐라 · 시드니 · 일본 등 여러 지역의 GDG on Campus 지부에 연락했습니다. 9월 초부터는 Tokyo Metropolitan University, Tokyo City University, Waseda University 세 곳과 LinkedIn · Discord로 실제 개최 방식까지 논의했고, 모든 과정은 영어로 진행했습니다."
@@ -364,6 +348,8 @@ SITE.ko = {
         team: "6인 팀 (기획·PM 1 · UI 디자인 1 · FE/BE 4)",
         period: "2024.10.06 – 11.16 · 약 6주 (본선 11.16)",
         date: "본선 2024.11.16",
+        result: "약 6주 만에 서비스 배포",
+        key: "6주",
         stack: ["React", "Spring Boot", "OpenAI API", "MySQL"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/Line4thon-Gather/gather_Front_End"}, {t:"GitHub · Back-end", href:"https://github.com/Line4thon-Gather/gather_back_end"}]
       },
@@ -376,7 +362,6 @@ SITE.ko = {
         {lead:"2GATHER · 사회초년생을 위한 AI 기반 홍보 전략 플랫폼"},
         {p:"대학생과 초기 창업자가 <b>적은 예산과 제한된 네트워크만으로도 홍보 계획을 세우고, 필요한 사람과 연결될 수 있도록</b> 만든 AI 기반 마케팅 솔루션입니다."},
         {p:"멋쟁이사자처럼 4호선톤에서 6명의 팀원과 함께 약 6주간 기획·개발하여 서비스를 배포했습니다."},
-        {facts:["2024.10.06 – 11.16", "PM / UX·UI", "6인 팀"]},
 
         {k:"01 · 문제", h:"좋은 아이디어가 있어도, 알릴 방법이 없었습니다."},
         {p:"GDG on Campus : SKKU에서 인사총괄을 맡아 동아리 부원을 모집할 당시 <b>30명을 목표로 했지만 실제 모집 인원은 9명</b>에 그쳤습니다."},
@@ -523,19 +508,20 @@ SITE.ko = {
       title: "KT&G 상상위더스 해외봉사단",
       summary: "인도네시아 보고르 지역 초등학교에 파견되어 177시간 동안 교육, 환경 개선 봉사를 함.",
       short: "인도네시아 보고르 초등학교에서 177시간 교육·환경 봉사를 함",
-      // 상세 페이지 맨 위 요약 숫자 카드 (v 숫자 · u 단위 · pre 앞말 · t 설명 · d 보조 설명)
-      nums: [
-        {v:"177", u:"시간", t:"전체 봉사활동 시간", d:"2025.01.08 – 01.17 · 인도네시아 보고르", hi:true},
-        {v:"40", u:"명", t:"전체 해외봉사단", d:"4개 조 · 조별 10명"},
-        {v:"34", u:"명", t:"우리 조가 담당한 학생", d:"초등학교 3학년 1개 학급"}
-      ],
-      numsLayout: "row",
+      card: {role:"회계·물품 · 딱지치기 · 양치질 수업 주진행", result:"봉사 177시간 · 초등 3학년 34명 학급 담당"},
+      panel: {
+        role: "회계·물품팀 (1조 수업 물품 · 팀당 약 220만 원 예산) · 딱지치기 수업 · 양치질 교육 기획 및 주진행",
+        team: "해외봉사단 40명 (4개 조 · 조별 10명)",
+        period: "2024.10 – 2025.02 · 파견 2025.01.08 – 01.17",
+        where: "인도네시아 보고르 · 바바칸마당 초등학교",
+        result: "봉사 177시간 (1365 확인서) · 우리 조가 초등 3학년 1개 학급(34명) 담당",
+        key: "177시간"
+      },
       body: [
         {lead:"인도네시아 아이들과 함께한 10일"},
         {p:"인도네시아 보고르의 <b>바바칸마당 초등학교</b>에서 아이들과 수업하고, 함께 뛰고, 웃으며 보낸 해외봉사활동입니다."},
         {p:"프리메드에서 인도네시아 해외봉사를 직접 준비했다가 무산된 경험 이후, 입대 전 마지막으로 꼭 해외봉사를 해보고 싶다는 생각으로 지원했습니다."},
         {p:"단순히 현지에서 봉사하는 것에 그치지 않고, <b>수업을 직접 제작, 준비하고 필요한 물품을 관리하며 현장에서 학생들과 상호작용하는 과정 전체를 경험했습니다.</b>"},
-        {facts:["2024.10 – 2025.02", "인도네시아 보고르", "40명"]},
 
         {k:"01 · 왜 인도네시아였을까", h:"한 번 무산됐던 계획을 직접 완성해보고 싶었습니다."},
         {p:"이전부터 해외봉사에 관심이 많았습니다."},
@@ -699,6 +685,10 @@ SITE.ko = {
       title: "크레버스 캠퍼스 크루 1기",
       summary: "교육 서비스를 이용자의 관점에서 바라보고, 시장과 경쟁 사례를 비교해 마케팅 아이디어를 제안함.",
       short: "교육 서비스를 이용자의 관점에서 바라보고, 시장과 경쟁 사례를 비교해 마케팅 아이디어를 제안함",
+      panel: {
+        role: "월별 미션(영상 · 정보성 콘텐츠 · 시장 리서치) 중 주로 시장 리서치 · 교육 시장과 경쟁사 조사",
+        result: "조사를 바탕으로 크레버스의 서비스 · 콘텐츠 개선 아이디어 제안"
+      },
       body: [
         {
           p: "크레버스 캠퍼스 크루 1기로 활동하며 월별 미션에 따라 영상 제작, 정보성 콘텐츠 제작, 시장 리서치 중 하나를 선택해 결과물을 제작했습니다. 저는 주로 시장 리서치를 선택해 교육 시장과 경쟁사의 사례를 직접 조사하고, 이를 바탕으로 크레버스의 서비스와 콘텐츠를 개선할 수 있는 아이디어를 제안했습니다."
@@ -746,17 +736,16 @@ SITE.ko = {
       title: "2024/2026 에듀테크 박람회",
       summary: "기술을 보는 데서 그치지 않고, 기술이 교육의 어떤 문제를 해결하는지 관찰함. 2년 간격의 두 박람회를 비교하며 데이터·사용 경험·정책이 에듀테크를 좌우한다는 점을 확인함.",
       short: "기술이 해결하는 교육 문제를 관찰하고, 2년간 시장 변화를 비교함",
-      nums: [
-        {v:"2", u:"회", t:"박람회 방문", d:"2024.09.24 · 2026.09.17", hi:true},
-        {v:"2", u:"년", t:"시장 변화를 비교한 기간", d:"2024 → 2026"},
-        {v:"5", u:"가지", t:"얻은 인사이트", d:"문제 · 데이터 · 경험 · 연결 · 융합"}
-      ],
-      numsLayout: "row",
+      card: {role:"2024 · 2026 두 차례 방문해 비교", result:"교육 문제 관점의 인사이트 5가지 정리"},
+      panel: {
+        role: "두 차례 방문해 2024년과 2026년을 비교",
+        where: "코엑스 · Adobe 특강",
+        result: "인사이트 5가지 정리 (문제 · 데이터 · 경험 · 연결 · 융합)"
+      },
       body: [
         {lead:"기술을 보러 갔다가, 기술이 만나는 교육 문제를 보게 되었습니다."},
         {p:"2024년과 2026년, 두 번의 에듀테크 박람회를 다녀왔습니다. 어떤 기술이 있는지를 보는 데서 시작했지만, 나중에는 <b>그 기술이 교육의 어떤 문제를 해결하려는지</b>를 보게 되었습니다."},
         {p:"2년 사이 시장이 어떻게 달라졌는지도 함께 비교해 볼 수 있었습니다."},
-        {facts:["2024.09.24", "2026.09.17", "코엑스", "Adobe 특강"]},
 
         {k:"01 · 2년 사이의 변화", h:"큰 부스의 주인이 바뀌어 있었습니다."},
         {p:"2024년에는 천재교과서, YBM 같은 교재 분야 대기업이 큰 부스를 차지했습니다. 2026년에는 글로벌 기업 <b>어도비</b>가 메인 스폰서로 나섰고, 교과서 대기업들은 보이지 않았습니다."},
@@ -810,6 +799,12 @@ SITE.ko = {
       title: "KT&G 상상유니브 글로벌 스피치 멘토단",
       summary: "재한 외국인 대상 스피치 멘토링을 진행하며 팀장을 맡음. 한국에 거주하는 파키스탄 분의 이야기를 듣고 대화를 나누며 문화 차이 인식 및 다문화 인식 제고를 위한 스피치를 준비함.",
       short: "팀장으로 재한 외국인 스피치 멘토링을 진행하고, 파키스탄 분과 대화하며 문화 차이·다문화 인식 스피치를 준비함",
+      panel: {
+        role: "팀장 · 재한 외국인(파키스탄 분) 스피치 멘토링",
+        team: "멘토–멘티 팀 단위 진행",
+        period: "2024.09.06 – 11.09 · 행사일 11.09",
+        where: "KT&G 상상유니브 · 2024 KT&G 상상 글로벌 스피치 대회"
+      },
       vid: {
         k: "SKETCH VIDEO",
         t: "현장 스케치 영상",
@@ -838,14 +833,11 @@ SITE.ko = {
     audivice: {
       title: "오디바이스 대학생 멘토",
       summary: "중고등학생 대상 학습, 멘탈 관리 등 다양한 부분에서 멘토링을 제공함.",
+      panel: {
+        role: "중·고등학생 대상 공부법 · 멘탈 관리법 조언",
+        scale: "1:1 음성 상담 5회 · 총 5시간"
+      },
       body: [
-        {
-          ul: [
-            "<b>활동명</b>: 오디바이스 대학생 멘토단",
-            "<b>기간 / 규모</b>: 약 5개월 (총 5시간, 상담 5회 완수)",
-            "<b>주요 역할</b>: 중·고등학생 대상 공부법 및 멘탈 관리법 조언"
-          ]
-        },
         {h:"주요 성과"},
         {
           ul: [
@@ -894,6 +886,7 @@ SITE.ko = {
         team: "6인 팀 (기획 1 · 프론트엔드 3 · 백엔드 2)",
         period: "2024.07 – 2024.10 · 운영 2024.10.31",
         date: "운영 2024.10.31",
+        result: "부스를 열어 오프라인으로 운영",
         stack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/ESC-Organization/ESC-client"}]
       },
@@ -913,7 +906,6 @@ SITE.ko = {
         },
         {k:"01 · 프로젝트", h:"버그 원숭이에게서 율전을 지켜내는 방탈출"},
         {p:"할로윈과 솦밤에 맞춰 구름톤 유니브 사람들과 만든 <b>율전 캠퍼스 배경의 웹 방탈출 게임</b>입니다. 플레이어는 캐릭터를 고르고 퀴즈 5단계와 마지막 게임을 거치며, 결과는 랭킹으로 확인합니다."},
-        {facts:["기획 2024.07 – 2024.10", "운영 2024.10.31", "6인 팀", "기획 · PM"]},
 
         {k:"02 · 팀", h:"기획 1 · 프론트엔드 3 · 백엔드 2"},
         {people:[{"role": "기획 · PM", "n": 1, "me": true, "note": "나"}, {"role": "프론트엔드", "n": 3, "note": "1명은 디자인 겸임", "dual": true}, {"role": "백엔드", "n": 2}], note:"전반적인 컨셉 디자인은 팀이 함께 논의했고, 캐릭터 디자인은 팀원 한 명이 전담했습니다."},
@@ -946,6 +938,11 @@ SITE.ko = {
       photosTitle: "교내 기사 화면 캡처",
       summary: "CHED 관계자들에게 SKKU 소프트웨어융합대학의 다양한 학제간 융합 활동을 소개하여 많은 관심을 받음.",
       short: "SKKU 소프트웨어융합대학의 융합 활동을 소개함",
+      panel: {
+        role: "SW중심대학사업단을 대표하는 GDG on Campus : SKKU 연사 · 영어 발표와 질의응답",
+        where: "성균관대학교 · 필리핀 대통령실 고등교육위원회(CHED) 방문단 대상",
+        result: "교내 언론 에스프레스(S-PRESS) 보도"
+      },
       body: [
         {h:"글로벌 외빈 앞에서 증명한 대표성과 능동적인 커뮤니케이션"},
         {
@@ -966,6 +963,7 @@ SITE.ko = {
     dreamon: {
       title: "드림온학교",
       summary: "발달장애청소년 수업 보조 외 활동을 진행함.",
+      panel: {role:"발달장애 청소년 수업 보조", scale:"봉사 7시간 (1365 확인서)"},
       body: [
         {k:"01 · 맡은 역할", h:"수업 전반을 곁에서 보조했습니다."},
         {
@@ -995,11 +993,16 @@ SITE.ko = {
       title: "SKKU-BA-DIVE 도전",
       summary: "GDG on Campus : SKKU 팀(5인)으로 중국 이커머스 탐방 계획을 제출해 1차 서류에 합격하고 발표까지 했으나, 최종 선발은 되지 못함.",
       short: "GDG on Campus 5인 팀으로 중국 이커머스 탐방 계획을 내 1차 합격·발표까지 했으나 최종 선발은 되지 못함",
+      panel: {
+        role: "팀 소개 · 사전 계획(중국어 · 비자 · 항공) · 컨퍼런스 파트",
+        team: "GDG on Campus : SKKU · 5인 팀",
+        where: "SKKU-BA-DIVE 2024 하계 · 중국 선전 · 상하이 8일 일정 계획",
+        result: "1차 서류 합격 → 발표 · 최종 미선발"
+      },
       body: [
         {lead:"중국 이커머스를 현장에서 배우고 한국 플랫폼의 생존 전략을 탐구하는 해외 체험 계획을 팀으로 준비했습니다."},
         {p:"성균관대학교 <b>SKKU-BA-DIVE 2024 하계</b> 글로벌 체험 프로그램에 GDG on Campus : SKKU 5인 팀으로 지원했습니다. 주제는 <b>“중국 이커머스 플랫폼의 급격한 성장에 대한 분석 및 글로벌 이커머스 시장에서 한국의 플랫폼 생존 전략 탐구”</b>였습니다."},
         {p:"1차 서류 평가에 합격해 6월 4일 5분 발표까지 마쳤지만, 최종 선발에는 이르지 못했습니다. 이 페이지에는 계획서와 발표자료를 만든 과정, 그리고 제가 맡은 부분을 정리했습니다."},
-        {facts:["2024 하계", "GDG on Campus : SKKU · 5인 팀", "중국 선전 · 상하이 (8일 일정 계획)", "1차 서류 합격 → 발표 · 최종 미선발"]},
 
         {k:"01 · Why China", h:"테무·알리익스프레스의 성장이 한국 시장에서 무엇을 바꾸고 있는지 직접 보고 싶었습니다."},
         {p:"발표자료는 전 세계 이커머스 시장에서 <b>중국 플랫폼(테무·쉬인·알리익스프레스)</b>이 높은 성장률을 기록하고 있다는 점에서 출발했습니다."},
@@ -1103,14 +1106,12 @@ SITE.ko = {
     "s-global": {
       title: "S-Global Challenger 도전",
       summary: "GDG on Campus : SKKU 사람들과 함께 해외 파견 교내 공모전에 도전함.",
+      panel: {
+        role: "AI/TensorFlow 팀원 · 연구 주제 정의 · 시계열 모델링 설계 · 해외 협업 계획 · 제안서 작성 주도",
+        team: "GDG on Campus : SKKU · 4인 팀",
+        where: "2024 S-Global Challenger (교내 해외 파견 공모전) · 해외 R&D 탐방 · 연구 제안서"
+      },
       body: [
-        {
-          ul: [
-            "<b>활동명</b>: 2024 S-Global Challenger 프로그램 도전 계획서 작성 (GDG on Campus : SKKU)",
-            "<b>기간 / 규모</b>: 2024년 상반기, 해외 R&D 탐방 및 연구 프로젝트 제안서 작성 (팀 단위 4인 공모)",
-            "<b>주요 역할</b>: GDG on Campus : SKKU AI/TensorFlow 팀원으로서 AI 기반 비즈니스 시장 예측 연구 주제 정의, 시계열 데이터 분석 모델링 아키텍처 설계, 해외 기관·대학 협업 계획 수립 및 제안서 작성 주도"
-          ]
-        },
         {h:"비즈니스-AI 융합 연구 가설 설정 및 문제 정의"},
         {
           ul: [
@@ -1153,6 +1154,10 @@ SITE.ko = {
       title: "멋쟁이사자처럼 12기",
       summary: "격주 교내 스터디로 React와 REST API 통신을 실습하고, 멋쟁이사자처럼 4호선톤에서 2GATHER를 기획함.",
       short: "교내 스터디로 React · REST API를 실습하고, 4호선톤에서 2GATHER를 기획함",
+      panel: {
+        role: "격주 교내 스터디(React · REST API 실습) · 멋쟁이사자처럼 4호선톤에서 2GATHER 기획",
+        links: [{t:"2GATHER 프로젝트 보기", href:"#a/line4"}]
+      },
       body: [
         {h:"교내 스터디: 프론트엔드 기초 확립과 API 통신 메커니즘 체득"},
         {
@@ -1164,16 +1169,15 @@ SITE.ko = {
       title: "GDG on Campus : SKKU",
       summary: "여러 경로로 월간 IT 세미나 연사를 섭외하고, 섭외 과정을 문서화함.",
       short: "여러 경로로 월간 IT 세미나 연사를 섭외하고, 섭외 과정을 문서화함",
+      card: {role:"인사 총괄(Core) · 월간 IT 세미나 연사 섭외", result:"세미나 회당 약 20–30명 · 섭외 과정 문서화"},
+      panel: {
+        role: "Administration팀 합류 → 다음 학기 Core · 인사 총괄 · 월간 글로벌 IT 세미나 연사 섭외 대부분",
+        team: "Administration팀 4명",
+        where: "Google Developer Group on Campus : SKKU (구 GDSC Sungkyunkwan University)",
+        result: "세미나 회당 약 20–30명 (온·오프라인 병행) · 섭외 과정 문서화",
+        key: "회당 20–30명"
+      },
       body: [
-        {
-          ul: [
-            "<b>기간</b>: 2024.03 - 2025.02",
-            "<b>소속</b>: Google Developer Group on Campus : SKKU (구 GDSC Sungkyunkwan University)",
-            "<b>역할</b>: Administration팀 합류 → 다음 학기 Core · 인사 총괄 (Administration 4명)",
-            "<b>담당</b>: 월간 글로벌 IT 세미나 연사 섭외 대부분",
-            "<b>규모</b>: 회당 약 20-30명, 온·오프라인 병행"
-          ]
-        },
         {h:"01. 상황: 쓸 수 있는 네트워크가 없었다"},
         {
           p: "2024년 3월 Administration팀에 합류했을 때는 전반기 연사 섭외가 이미 끝나 있었습니다. 다음 학기 인사 총괄로 선발되어 하반기 연사 섭외를 직접 맡게 되면서, 기존에 기대던 구글 내부 네트워크를 쓸 수 없다는 것을 알게 됐습니다. GDSC가 <b>GDG on Campus로 개편되는 과정</b>이었고, 이전 담당자에게서도 “콜드메일로 직접 섭외해야 한다”는 방식만 전달받은 상태였습니다."
@@ -1243,11 +1247,16 @@ SITE.ko = {
     "trade-ai": {
       title: "2024 대학생 무역 인공지능 캠프",
       summary: "무역과 AI를 접목해 공급망 불안에 대응하는 기업 매칭 서비스를 기획함.",
+      panel: {
+        role: "소프트웨어 · 데이터 관점에서 서비스 구체화 · 매칭 흐름 논의 · 발표자료 구체화",
+        team: "11조 · 5인 팀",
+        where: "산학협동재단 × 한국무역협회 무역아카데미",
+        result: "수료 · 기업 매칭 서비스 CSBBMS 기획"
+      },
       body: [
         {lead:"무역과 AI를 접목해 공급망 불안에 대응하는 기업 매칭 서비스를 기획했습니다."},
         {p:"산학협동재단과 한국무역협회 무역아카데미가 공동 실시한 <b>대학생 무역 인공지능 캠프</b>에 참여해, 5인 팀으로 공급망 불안에 대응하는 기업 매칭 서비스 <b>CSBBMS</b>를 기획하고 발표자료로 구체화했습니다."},
         {p:"무역을 전공한 팀원들과 함께 실제 무역 환경에서 발생하는 문제를 살펴보고, 기업의 요구조건에 맞는 거래처를 탐색하고 비교할 수 있는 서비스를 구상했습니다. 저는 컴퓨터교육을 전공하며 쌓은 소프트웨어·데이터에 대한 관심을 바탕으로 <b>무역 분야의 문제를 기술 기반 서비스로 구체화하는 과정</b>에 참여했습니다."},
-        {facts:["2024.02.20 – 02.22", "11조 · 5인 팀", "산학협동재단 × 한국무역협회 무역아카데미", "수료"]},
 
         {k:"01 · Problem", h:"공급망을 한 곳에 의존하지 않기 위한 새로운 거래처 탐색이 필요했습니다."},
         {p:"발표자료에서는 한국무역협회의 조사 결과를 바탕으로 <b>수출기업의 85.5%가 공급망 문제를 경험했다는 점</b>에 주목했습니다."},
@@ -1356,16 +1365,17 @@ SITE.ko = {
     "future-tech": {
       title: "IT전문가들이 말하는 4차 산업혁명 미래기술과정",
       summary: "대학교 입학 전 이틀간 14개 강좌(총 14시간)를 온라인으로 수강함.",
-      nums: [
-        {v:"14", u:"시간", t:"총 이수 시간", d:"2024.02.13 – 02.14 · 온라인", hi:true},
-        {v:"14", u:"개", t:"수강한 강좌", d:"강좌당 1시간"},
-        {v:"2", u:"일", t:"전일제 과정", d:"10시 – 18시"}
-      ],
-      numsLayout: "row",
+      panel: {
+        role: "입학 전 교내 홈페이지에서 찾아 자발적으로 신청 · 수강",
+        scale: "강좌 14개 · 총 14시간 (2일 전일제 10시 – 18시)",
+        period: "2024.02.13 – 02.14 · 온라인",
+        where: "성균관대학교 인공지능융합원 주관 특강",
+        result: "이수증 발급 (2024.02.23)",
+        key: "14시간"
+      },
       body: [
         {lead:"기술의 가능성을 넘어, 기술이 현실과 연결되는 방식을 바라보다"},
         {p:"Microsoft · AWS · Google · NVIDIA 등 글로벌 기업 전문가들의 강연을 통해 생성형 AI, 클라우드, 이미지 생성 모델, 디지털 트윈, 메타버스 등 빠르게 발전하는 기술의 흐름과 실제 산업에서의 활용 사례를 살펴보았습니다."},
-        {facts:["2024.02.13 – 02.14", "인공지능융합원 주관 특강", "2일 · 14시간 · 전일제"]},
         {h3:"이수증"},
         {cert:{img:"future_tech_cert", alt:"4차 산업혁명 미래기술과정 이수증", cap:"교육부 첨단분야 혁신융합대학사업 메타컨소시엄 A·I·B 공동 운영 · 2024.02.23 발급 (눌러서 크게 보기)"}},
 
@@ -1436,14 +1446,12 @@ SITE.ko = {
     worldvision: {
       title: "월드비전",
       summary: "월드비전 서신 영어 번역을 진행함(120회, 총 40시간).",
+      panel: {
+        role: "해외 후원 아동과 국내 후원자 간 서신 한-영 / 영-한 번역",
+        result: "번역 120건 · 총 40시간 (매주 10편)",
+        key: "120건"
+      },
       body: [
-        {
-          ul: [
-            "<b>활동명</b>: 월드비전 아동 서신 번역 봉사단",
-            "<b>기간 / 규모</b>: 약 6개월 (총 40시간, 번역 120건 완수)",
-            "<b>주요 역할</b>: 해외 수혜 아동과 국내 후원자 간 교신 편지 한-영 / 영-한 번역"
-          ]
-        },
         {h:"주요 성과"},
         {
           ul: [

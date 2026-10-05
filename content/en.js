@@ -10,15 +10,16 @@
 
    목차
      name        첫 화면의 큰 이름
-     page        메뉴 · 첫 화면 · 각 섹션 제목과 설명 · 연락처 · 푸터
+     page        메뉴 · 첫 화면 · SELECTED WORK · 소개 · 활동 기록 · 이력 · 연락처 · 푸터
      ui          버튼과 작은 라벨 글자
-     categories  활동 구분 이름 (공모전 등)
-     interests   이름 아래 관심사 태그
-     profile     소개 옆 기본 정보 표 ([항목, 값] 한 쌍이 한 줄)
-     tiles       기록 요약 숫자 카드의 글자 (숫자 자체는 common.js)
+     categories  활동 구분 이름 4가지
+     keywords    첫 화면 이름 뒤 키워드 띠 (장식)
+     tiles       숫자 모음의 글자 (숫자 자체는 common.js)
      certHead / certGroups / certs   자격증
      awards      장학 · 수상 (금액은 common.js)
-     activities  대외활동 제목 · 요약 · 상세 본문
+     activities  활동 제목 · 요약 · 상세 본문
+                 card: 메인 '대표 활동' 카드의 두 줄 {role, result}
+                 panel: 상세 페이지 맨 위 요약 패널 {role, team, scale, period, where, result, links} (프로젝트는 proj)
                  본문 블록: {h:"소제목"} {p:"문단"} {ul:["항목", ...]}
                             {note:"회색 참고 상자"} {files:["파일이름"]}
                             {link:"링크 글자", href:"https://..."}
@@ -27,81 +28,58 @@
 window.SITE = window.SITE || {};
 SITE.en = {
   name: "JINSEOK OH",
-  // 첫 화면 이름 밑 기울임체 영어 한 줄 (Playfair Display). ":" 가 있으면 그 앞은 파란 굵은 글씨
-  tagline: "Connecting what matters through technology.",
   page: {
-    nav: {
-      story: "Direction",
-      projects: "Projects",
-      about: "About",
-      records: "Records",
-      activities: "Activities",
-      certs: "Certifications",
-      awards: "Awards",
-      contact: "Contact"
-    },
+    // 상단 메뉴 5개 (휴대폰에서는 상단 바 아래에 가로 한 줄로 나옵니다)
+    nav: {work:"Work", about:"About", activities:"Activities", credentials:"Credentials", contact:"Contact"},
     hero: {
       school: "Computer Education, Sungkyunkwan University · Class of 2024",
+      // 학교 줄 끝 배지. 학점은 여기와 '이력' EDUCATION 줄, 두 곳에만 나옵니다
       gpa: "GPA 4.33",
       gpaMax: "/ 4.5",
       headline: "Connecting technology, people, and industry.",
       intro: "I have explored technology, education, planning, and global experiences through diverse activities. I understand technology, but I do not stop at technology itself. I care about how it can create value for people, organizations, and industries.",
-      buttonProjects: "See projects",
+      buttonWork: "See selected work",
       buttonContact: "Contact"
     },
-    // 프로젝트 · 대표 활동 다음의 '방향' 섹션. period 는 오른쪽 작은 기간 글씨, adapt.since 이후에 딴 자격증이 ADAPT 카드 오른쪽에 자동으로 나옵니다
-    story: {
-      kicker: "WHAT AM I BECOMING?",
-      title: "Through diverse experiences, I found my own direction.",
-      explore: {label:"EXPLORE", period:"2024", text:"Since entering university, I have explored AI and data, service planning, education, and global activities through hands-on experiences. These experiences helped me discover what I care about and how I want to contribute."},
-      discover: {label:"DISCOVER", period:"2024 - 2025", text:"Through these experiences, I discovered that my interest lies not only in technology itself, but in where technology meets people and industry. I found greater meaning in understanding technology and connecting it to real-world problems."},
-      adapt: {
-        label: "ADAPT & GROW",
-        period: "2025 - 2026",
-        title: "A period of growth, even in a different environment.",
-        text: "From 2025 to 2026, I served in the Republic of Korea Army as a network management soldier and squad leader. While adapting to a completely different environment, I continued learning and preparing for what comes next, earning certifications including SQLD, IELTS 8.0, Trade English Level 1, Korean History Level 1, ADsP, and TOEIC 975.",
-        role: "",
-        since: "2025-01-01"
-      },
-      connect: {label:"CONNECT", period:"Next", text:"I want to connect technology with real-world needs, bridging people, ideas, and industry to create meaningful value."}
+    work: {
+      kicker: "SELECTED WORK",
+      title: "Projects I built and key activities",
+      desc: "Each card starts with what it was and what I was responsible for. Open any card for the full record.",
+      projects: "Projects",
+      projectsSub: "Services I planned and built",
+      featured: "Highlights",
+      featuredSub: "Event organizing · Community · Overseas volunteering · Field exploration"
     },
-    featured: {title:"Highlights", more:"All activities"},
     projects: {
-      kicker: "PROJECTS",
-      title: "From a real problem to something people can actually use.",
-      desc: "Projects I planned and built. Each one starts with what it is and what I was responsible for.",
-      labels: {what:"WHAT", role:"MY ROLE", tools:"MY TOOLS", stackTeam:"STACK · built by team", team:"TEAM", period:"PERIOD", stack:"STACK", links:"MORE"},
+      labels: {what:"WHAT", role:"MY ROLE", tools:"MY TOOLS", stackTeam:"STACK · built by team", team:"TEAM", scale:"SCALE", period:"PERIOD", where:"WHERE", result:"RESULT", stack:"STACK", links:"MORE"},
       jumpVideo: "Promo video", jumpDeck: "Slides",
       open: "View project", play: "Hover to play", tbd: "To confirm"
     },
     about: {
-      title: "About",
-      paragraph1: "My interests lie at the intersection of technology, people, and ideas.",
-      paragraph2: "I study Computer Education at Sungkyunkwan University, with a focus on AI, data, and software. Alongside my academic studies, I have pursued diverse experiences across technology projects, service planning, hackathons, education, and mentoring.",
-      paragraph3: "Through these experiences, I have developed a strong interest in how technology can be understood, communicated, and applied to real-world people, organizations, and problems.",
-      paragraph4: "Going forward, I aim to become a professional who combines a solid understanding of technology with the ability to collaborate across disciplines, connect diverse perspectives, and turn ideas into meaningful outcomes.",
-      profileTitle: "Profile"
+      kicker: "ABOUT",
+      title: "Through diverse experiences, I found my own direction.",
+      steps: [
+        {label:"EXPLORE", period:"2024", text:"After entering Computer Education at Sungkyunkwan University, I tried the areas that drew me: AI and data, service planning, education, and global activities."},
+        {label:"DISCOVER", period:"2024 – 2025", text:"Along the way, I found that my interest lies less in technology itself than in where it meets people and industry."},
+        {label:"ADAPT", period:"2025 – 2026", text:"While serving in the Republic of Korea Army as a network management soldier and squad leader, I earned four certifications and two English test scores to prepare for what comes next.", more:"See certifications", em:true},
+        {label:"NEXT", period:"Next", text:"I want to connect technology with real-world needs, bridging people, ideas, and industry to create meaningful value."}
+      ]
     },
-    records: {
-      title: "Records",
-      description: ""
-    },
-    activities: {
-      title: "Activities",
-      count: "{n}",
-      description: "Filter by category, and open any card for the full record of that activity."
-    },
-    certs: {
-      title: "Certifications",
-      count: "{n}",
-      description: "Grouped by field; most recent first within each group."
-    },
-    awards: {
-      title: "Scholarships",
-      count: "{n} awards",
+    activities: {kicker:"ACTIVITY ARCHIVE", title:"Activity archive", count:"{n}", description:"One representative activity per area comes first. Use the button below to see the rest, grouped by area, and open any item for the full record."},
+    credentials: {
+      kicker: "RECORDS",
+      title: "Credentials",
       description: "",
-      totalLabel: "Total",
-      totalUnit: "KRW"
+      education: "EDUCATION",
+      school: "Computer Education, Sungkyunkwan University · Class of 2024",
+      lang: "LANGUAGE",
+      cert: "CERTIFICATION",
+      awards: "SCHOLARSHIP",
+      vol: "VOLUNTEER",
+      volTotal: "1365 Volunteer Portal certificate · issued {issued}",
+      volOpen: "Full record",
+      volCount: "{n} sessions",
+      volCountOne: "{n} session"
     },
     contact: {
       title: "Not stopping at experience, but building what comes next.",
@@ -114,7 +92,9 @@ SITE.en = {
     footer: {name:"Jinseok Oh · Portfolio", updated:""}
   },
   ui: {
-    back: "All activities",
+    back: "Back to activity log",
+    backWork: "Back to selected work",
+    workRef: "Featured above",
     prev: "Previous",
     next: "Next",
     files: "Attachments",
@@ -132,10 +112,7 @@ SITE.en = {
     toc: "Contents",
     close: "Close",
     all: "All",
-    showAll: "Show all {n}",
-    viewAxes: "By field",
-    viewTypes: "By activity",
-    axisHint: "Pick a field to see what it covers.",
+    showAll: "Show all {n} activities",
     showLess: "Show less",
     year: "{y}",
     groupCount: "{n} items",
@@ -143,45 +120,21 @@ SITE.en = {
     won: " KRW",
     awardTerm: "2024 Fall term · On campus"
   },
-  categories: {
-    competition: "Competition",
-    external: "External",
-    volunteer: "Volunteer",
-    campus: "Campus",
-    course: "Course"
-  },
+  // 활동 구분 이름 (common.js 의 categories 와 같은 id)
+  categories: {project:"Projects & Hackathons", community:"Community & Organizing", edu:"Teaching & Service", learn:"Learning & Exploring"},
   keywords: ["AI", "Data", "Software", "Computer Education", "Education", "Mentoring", "Volunteering", "Student programs", "Service planning", "Projects", "Hackathons", "International school", "English", "Global speakers", "Overseas volunteering", "Exchange student", "GDG on Campus : SKKU", "Hackathon lead", "PM"],
   interests: ["AI · Data", "PM", "Service planning", "Developer", "Global"],
-  profile: [
-    ["Name", "Jinseok Oh"],
-    ["Major", "Computer Education, SKKU"],
-    ["Class", "Class of 2024"],
-    ["Interests", "Connecting technology, people & industry"],
-    ["Currently", "Serving in the Republic of Korea Army as a Network Manager / Squad Leader"],
-  ],
-  // 기본 정보 카드의 '링크' 줄 버튼 (icon 은 index.html 아이콘 이름)
-  profileLinks: {label:"Links", items:[
-    {t:"Blog", href:"https://blog.naver.com/kidariseok", icon:"ic-pen"},
-    {t:"GitHub", href:"https://github.com/kidariseok", icon:"ic-code"},
-    {t:"LinkedIn", href:"https://www.linkedin.com/in/jinseokoh/", icon:"ic-briefcase"}
-  ]},
+  // 숫자 모음의 글자 (숫자 자체는 common.js 의 tiles)
   tiles: {
     gpa: {label:"GPA", unit:" / 4.5", note:"Sungkyunkwan University · Computer Education"},
-    activities: {label:"Recorded activities", unit:"", note:"{from} - {to}"},
-    certs: {label:"Certifications", unit:"", note:"3 computing · 3 English · 1 other"},
-    scholarships: {label:"Campus scholarships", unit:"", note:"Over $3,500"},
     volunteer: {label:"Volunteer hours", unit:"h+", note:"1365 certificate · {n} sessions"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
-    toeic: {label:"TOEIC", unit:"", note:"LC 495 · RC 480"},
+    // more 는 지금 화면에 쓰지 않음 (예전 기록 요약 카드의 펼침 설명)
     dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments and built my global perspective."},
     funding: {label:"Hackathon funding raised", value:"$5K+", unit:"", note:"From programs at <b>3</b> universities · total budget ~$5.5K"}
   },
-  // 기록 요약 카드 묶음(common.js 의 tileGroups)에 마우스를 올렸을 때 나오는 글자
-  tileGroups: {
-    realthon: {title:"RE:ALThon", sub:"Dec 2024 · co-hosted by 3 universities", note:"Overnight · 9 teams"}
-  },
   certHead: ["Credential", "Result", "Detail", "Issuer", "Obtained", "Status"],
-  certGroups: {computing:"Computing & Data", english:"English", other:"Other"},
+  certGroups: {language:"Language", cert:"Certification"},
   certs: {
     adsp: {
       name: "ADsP (Advanced Data Semi-Professional)",
@@ -253,10 +206,13 @@ SITE.en = {
       title: "AI in Second-Language Education and International Publication",
       summary: "Attended both parts of a Department of English lecture on the same day, and wrote up how AI is used across the four language skills, the theories and research methods that explain why it works, and the path a paper takes to an international journal.",
       short: "Dept. of English lecture, parts 1 and 2: AI x L2 education research and a roadmap to international publication.",
+      panel: {
+        role: "Attended parts 1 and 2 on the same day and wrote up the content",
+        where: "Dept. of English, Sungkyunkwan University · lecture materials by Ali Derakhshan"
+      },
       body: [
         {lead:"We were told to move past “does AI work?” and ask “how, for whom, and under what conditions?”"},
         {p:"I attended both parts of this lecture, hosted by the Department of English at Sungkyunkwan University, on the same day. Professor Ali Derakhshan of Golestan University had been invited, but flights could not operate because of the war in Iran, so he was unable to travel to Korea. Professor Park Yujeong and Professor Shawn D. Normandin gave both sessions in his place, working from his lecture materials."},
-        {facts:["Dept. of English, Sungkyunkwan University", "Parts 1 and 2, same day", "Materials: Ali Derakhshan"]},
         {cmp:[
           {n:"Part 1", t:"Artificial Intelligence in Second and Foreign Language (L2) Education", d:"Skills, then theory, then research directions: “what should we study?”"},
           {n:"Part 2", t:"The Art and Science of International Publication", d:"Research development, manuscript, submission, review, impact: “how do we turn it into a paper?”"}
@@ -330,16 +286,16 @@ SITE.en = {
       org: "GDG on Campus : SKKU",
       summary: "When a planned collaboration with Japanese universities fell through, changed course and organised a joint AI hackathon across SKKU, Korea University and Sogang (50 participants, 9 teams).",
       short: "Pivoted from a failed global plan to a 3-university hackathon for 50.",
+      card: {role:"HR lead · event planning · budget management", result:"3 universities · 50 people · 9 teams · roughly KRW 7 million raised"},
+      panel: {
+        role: "HR lead of GDG on Campus : SKKU · overall planning and budget management",
+        scale: "50 participants · 9 teams",
+        period: "6–7 Dec 2024 · overnight",
+        where: "Korea University, Woojung Hall of Informatics · co-hosted by GDG on Campus at SKKU, Korea University and Sogang University",
+        result: "Roughly KRW 7 million from four programs at three universities · total budget around KRW 7.5 million",
+        key: "≈ KRW 7M"
+      },
       body: [
-        {
-          ul: [
-            "<b>Dates</b>: 6-7 Dec 2024 (overnight)",
-            "<b>Venue</b>: Korea University, Woojung Hall of Informatics",
-            "<b>Co-hosts</b>: GDG on Campus at SKKU, Korea University and Sogang University",
-            "<b>Scale</b>: 50 participants, 9 teams",
-            "<b>My role</b>: HR lead of GDG on Campus : SKKU; overall planning and budget management"
-          ]
-        },
         {h:"01. Situation: the global plan wobbles"},
         {
           p: "A global hackathon was the thing I most wanted to do when I joined GDG on Campus : SKKU. Once SKKU's software program committed a budget, I reached out to GDG on Campus chapters in time zones close to Korea - Singapore, Manila, Sydney and Japan. From early September I was discussing the format in English, over LinkedIn and Discord, with Tokyo Metropolitan University, Tokyo City University and Waseda University."
@@ -419,6 +375,8 @@ SITE.en = {
         team: "Team of 6 (planning/PM 1 · UI design 1 · FE/BE 4)",
         period: "6 Oct – 16 Nov 2024 · about 6 weeks (final 16 Nov)",
         date: "Final 16 Nov 2024",
+        result: "Service deployed in about 6 weeks",
+        key: "6 weeks",
         stack: ["React", "Spring Boot", "OpenAI API", "MySQL"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/Line4thon-Gather/gather_Front_End"}, {t:"GitHub · Back-end", href:"https://github.com/Line4thon-Gather/gather_back_end"}]
       },
@@ -431,7 +389,6 @@ SITE.en = {
         {lead:"2GATHER · An AI promotion-strategy platform for people starting out"},
         {p:"An AI-powered marketing solution built so that students and early-stage founders can <b>plan their promotion and connect with the people they need - even with a small budget and a limited network</b>."},
         {p:"At the LIKELION Line-4 Hackathon, a team of six planned, built and deployed the service in about six weeks."},
-        {facts:["6 Oct – 16 Nov 2024", "PM / UX·UI", "Team of 6"]},
 
         {k:"01 · Problem", h:"A good idea is not enough if you can't get the word out."},
         {p:"As head of people at GDG on Campus : SKKU, I set a goal of <b>30 new members - but only 9 joined</b>."},
@@ -577,18 +534,20 @@ SITE.en = {
       title: "KT&G Sangsang Withus Overseas Volunteer Corps",
       summary: "Deployed to an elementary school in Bogor, Indonesia for 177 hours of education and environmental-improvement volunteering.",
       short: "177 hours of education and environmental volunteering at an elementary school in Bogor, Indonesia.",
-      nums: [
-        {v:"177", u:"hrs", t:"Total volunteering hours", d:"8 – 17 Jan 2025 · Bogor, Indonesia", hi:true},
-        {v:"40", t:"Volunteers in the whole corps", d:"4 teams · 10 per team"},
-        {v:"34", t:"Students my team taught", d:"One third-grade class"}
-      ],
-      numsLayout: "row",
+      card: {role:"Accounting & supplies · led ddakji and tooth-brushing lessons", result:"177 volunteer hours · one third-grade class (34 students)"},
+      panel: {
+        role: "Accounting & supplies team (Team 1 class supplies · budget of roughly ₩2.2 million per team) · planned and led the ddakji class and tooth-brushing lesson",
+        team: "40 volunteers (4 teams of 10)",
+        period: "Oct 2024 – Feb 2025 · deployed 8–17 Jan 2025",
+        where: "Babakan Madang Elementary School, Bogor, Indonesia",
+        result: "177 volunteer hours (1365 certificate) · my team taught one third-grade class (34 students)",
+        key: "177 hrs"
+      },
       body: [
         {lead:"Ten days with children in Indonesia"},
         {p:"A volunteering trip spent teaching, running around and laughing with the children of <b>Babakan Madang Elementary School</b> in Bogor, Indonesia."},
         {p:"I had once prepared an Indonesia volunteering trip myself with FreeMed, only for it to fall through. Before enlisting, I wanted one last chance to actually go - so I applied."},
         {p:"I didn't just volunteer on site. <b>I went through the whole process: designing and preparing classes, managing the supplies they needed, and working with the students in the classroom.</b>"},
-        {facts:["Oct 2024 – Feb 2025", "Bogor, Indonesia", "40 volunteers"]},
 
         {k:"01 · Why Indonesia", h:"I wanted to finish a plan that had once fallen through."},
         {p:"I had been interested in overseas volunteering for a long time."},
@@ -751,6 +710,10 @@ SITE.en = {
       title: "Creverse Campus Crew, 1st cohort",
       summary: "Looked at an education service from the user's point of view, compared the market and competitors, and proposed marketing ideas.",
       short: "Compared competitors through market research and proposed marketing ideas.",
+      panel: {
+        role: "Mostly chose market research among the monthly missions (video · informational content · market research) · investigated the education market and competitors",
+        result: "Proposed ideas to improve Creverse's services and content based on the research"
+      },
       body: [
         {
           p: "As a member of the first Creverse Campus Crew cohort, I chose one of three monthly missions (video production, informational content, or market research) and produced a deliverable. I mostly chose market research: I investigated cases from the education market and competitors myself, and proposed ideas to improve Creverse's services and content."
@@ -798,17 +761,16 @@ SITE.en = {
       title: "2024/2026 EduTech Expo",
       summary: "Went beyond looking at the technology to observe which education problems it solves. Comparing two expos two years apart, I saw that data, user experience and policy shape edtech.",
       short: "Observed which education problems tech solves, and compared two expos two years apart.",
-      nums: [
-        {v:"2", t:"Expo visits", d:"24 Sep 2024 · 17 Sep 2026", hi:true},
-        {v:"2", u:"yrs", t:"Period over which I compared the market", d:"2024 → 2026"},
-        {v:"5", t:"Insights gained", d:"Problem · Data · Experience · Connection · Convergence"}
-      ],
-      numsLayout: "row",
+      card: {role:"Visited twice, comparing 2024 and 2026", result:"Five insights on the education problems behind the tech"},
+      panel: {
+        role: "Visited twice and compared 2024 with 2026",
+        where: "COEX · Adobe session",
+        result: "Five insights (problem · data · experience · connection · convergence)"
+      },
       body: [
         {lead:"I went to look at technology, and ended up looking at the education problems it meets."},
         {p:"I attended the EduTech Expo twice, in 2024 and 2026. I started out looking at what technology was on show, but came to look at <b>which education problem each piece of technology is trying to solve</b>."},
         {p:"I could also compare how the market changed over those two years."},
-        {facts:["24 Sep 2024", "17 Sep 2026", "COEX", "Adobe session"]},
 
         {k:"01 · Two years of change", h:"The biggest booths had changed hands."},
         {p:"In 2024, large textbook companies such as Chunjae Education and YBM held the big booths. In 2026, global company <b>Adobe</b> was the main sponsor, and the textbook giants were nowhere to be seen."},
@@ -867,6 +829,12 @@ SITE.en = {
         t: "On-site sketch video",
         d: "A sketch video from the 2024 KT&G Sangsang Global Speech event, showing the speeches that mentors and foreign residents in Korea prepared together."
       },
+      panel: {
+        role: "Team lead · speech mentoring for a Pakistani resident of Korea",
+        team: "Mentor–mentee teams",
+        period: "6 Sep – 9 Nov 2024 · event day 9 Nov",
+        where: "KT&G Sangsang Univ · 2024 KT&G Sangsang Global Speech"
+      },
       body: [
         {
           p: "I led a team running speech mentoring for foreign residents in Korea. Listening to and talking with a Pakistani resident here, we prepared a speech together on recognising cultural difference and raising multicultural awareness."
@@ -891,14 +859,11 @@ SITE.en = {
       title: "Audivice Undergraduate Mentor",
       summary: "Mentored middle and high school students on study methods, mental wellbeing and more.",
       short: "Mentored secondary students on study habits and wellbeing.",
+      panel: {
+        role: "Advising middle and high school students on study methods and managing their state of mind",
+        scale: "5 one-on-one audio sessions · 5 hours"
+      },
       body: [
-        {
-          ul: [
-            "<b>Programme</b> - Audivice undergraduate mentor corps",
-            "<b>Span</b> - about five months; 5 hours, 5 sessions completed",
-            "<b>Role</b> - advising middle and high school students on study method and managing their state of mind"
-          ]
-        },
         {h:"What it produced"},
         {
           ul: [
@@ -949,6 +914,7 @@ SITE.en = {
         team: "Team of 6 (planning 1 · front-end 3 · back-end 2)",
         period: "Jul – Oct 2024 · run on 31 Oct 2024",
         date: "Run on 31 Oct 2024",
+        result: "Ran it in person at a booth",
         stack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/ESC-Organization/ESC-client"}]
       },
@@ -968,7 +934,6 @@ SITE.en = {
         },
         {k:"01 · Project", h:"An escape room about saving Yuljeon from bug monkeys"},
         {p:"For Halloween and our college night we built <b>a web escape-room game set on the Yuljeon campus</b> with the Goormthon Univ cohort. Players pick a character, go through five quiz stages and a final game, and check the result on a ranking."},
-        {facts:["Planning Jul – Oct 2024", "Run on 31 Oct 2024", "Team of 6", "Planning · PM"]},
 
         {k:"02 · Team", h:"Planning 1 · Front-end 3 · Back-end 2"},
         {people:[{"role": "Planning · PM", "n": 1, "me": true, "note": "Me"}, {"role": "Front-end", "n": 3, "note": "One also did design", "dual": true}, {"role": "Back-end", "n": 2}], note:"The overall concept design was discussed by the whole team, and one teammate was solely in charge of character design."},
@@ -1001,6 +966,11 @@ SITE.en = {
       photosTitle: "Campus news screenshot",
       summary: "Introduced CHED officials to the interdisciplinary work of SKKU's College of Computing and Informatics, drawing strong interest.",
       short: "Presented SKKU computing's interdisciplinary work to CHED officials.",
+      panel: {
+        role: "GDG on Campus : SKKU speaker representing the university's software program · English talk with live Q&A",
+        where: "Sungkyunkwan University · for the Philippine CHED delegation",
+        result: "Covered by the campus paper S-PRESS"
+      },
       body: [
         {h:"Representing the school in front of an international delegation"},
         {
@@ -1022,6 +992,10 @@ SITE.en = {
       title: "Dream On School",
       summary: "Assisted classes for adolescents with developmental disabilities, among other activities.",
       short: "Assisted classes for adolescents with developmental disabilities.",
+      panel: {
+        role: "Assisting classes for adolescents with developmental disabilities",
+        scale: "7 volunteer hours (1365 certificate)"
+      },
       body: [
         {k:"01 · My role", h:"I supported the classes from the side."},
         {
@@ -1051,11 +1025,16 @@ SITE.en = {
       title: "SKKU-BA-DIVE application",
       summary: "Submitted a China e-commerce field-trip plan as a five-person GDG on Campus : SKKU team, passed the document round and presented, but was not selected in the end.",
       short: "A five-person GDG on Campus : SKKU team's China e-commerce plan: passed round one and presented, not selected.",
+      panel: {
+        role: "Team introduction · pre-trip planning (Chinese, visa, flights) · conference part",
+        team: "GDG on Campus : SKKU · 5-person team",
+        where: "SKKU-BA-DIVE Summer 2024 · 8-day plan for Shenzhen and Shanghai, China",
+        result: "Passed documents → presented · not selected"
+      },
       body: [
         {lead:"As a team, we planned an overseas trip to learn about Chinese e-commerce on site and explore how Korean platforms can survive."},
         {p:"We applied to Sungkyunkwan University's <b>SKKU-BA-DIVE 2024 Summer</b> global experience program as a five-person GDG on Campus : SKKU team. Our topic was <b>“Analyzing the rapid growth of Chinese e-commerce platforms and exploring survival strategies for Korean platforms in the global e-commerce market.”</b>"},
         {p:"We passed the first-round document review and gave a five-minute presentation on June 4, but we were not selected in the end. This page records how we built the plan and presentation, and which parts I took on."},
-        {facts:["Summer 2024", "GDG on Campus : SKKU · 5-person team", "Shenzhen & Shanghai, China (8-day plan)", "Passed documents → presented · not selected"]},
 
         {k:"01 · Why China", h:"We wanted to see for ourselves what Temu and AliExpress are changing in the Korean market."},
         {p:"Our presentation began with the fast growth of <b>Chinese platforms (Temu, SHEIN, AliExpress)</b> in the global e-commerce market."},
@@ -1160,14 +1139,12 @@ SITE.en = {
       title: "S-Global Challenger application",
       summary: "Entered the university's overseas-dispatch competition together with fellow GDG on Campus : SKKU members.",
       short: "Entered SKKU's overseas-dispatch competition with GDG on Campus : SKKU peers.",
+      panel: {
+        role: "AI/TensorFlow team member · defined the research topic · designed the time-series modelling · planned overseas collaboration · led the proposal writing",
+        team: "GDG on Campus : SKKU · team of 4",
+        where: "2024 S-Global Challenger (SKKU overseas-dispatch competition) · overseas R&D visit and research proposal"
+      },
       body: [
-        {
-          ul: [
-            "<b>What</b> - writing the 2024 S-Global Challenger proposal for GDG on Campus : SKKU",
-            "<b>Span</b> - first half of 2024; a four-person team proposal for an overseas R&D visit and research project",
-            "<b>Role</b> - on the GDG on Campus : SKKU AI/TensorFlow team: defining the research topic on AI-based market forecasting, designing the time-series modelling architecture, planning collaboration with overseas institutions, and leading the writing"
-          ]
-        },
         {h:"Framing the research question"},
         {
           ul: [
@@ -1212,6 +1189,10 @@ SITE.en = {
       title: "LIKELION SKKU 12th",
       summary: "Practised React and REST API communication in a fortnightly campus study group, and planned 2GATHER at the LIKELION Line-4 Hackathon.",
       short: "React and REST API practice in a campus study group; planned 2GATHER at the Line-4 Hackathon.",
+      panel: {
+        role: "Fortnightly campus study group (React · REST API practice) · planned 2GATHER at the LIKELION Line-4 Hackathon",
+        links: [{t:"See the 2GATHER project", href:"#a/line4"}]
+      },
       body: [
         {h:"Campus study group - front-end foundations and how API communication works"},
         {
@@ -1223,16 +1204,15 @@ SITE.en = {
       title: "GDG on Campus : SKKU",
       summary: "When GDSC's reorganisation into GDG on Campus cut off the Google network we used to rely on, I booked speakers for the monthly global IT seminar through several routes - cold emails, people I had met in class, and referrals from the university program - and documented the whole outreach process in Korean and English.",
       short: "Booked monthly IT seminar speakers without an existing network; documented the process.",
+      card: {role:"Core / HR lead · monthly IT seminar speaker outreach", result:"About 20–30 attendees per seminar · outreach process documented"},
+      panel: {
+        role: "Joined the Administration team → Core / HR lead the next semester · most speaker outreach for the monthly global IT seminar",
+        team: "Administration team of 4",
+        where: "Google Developer Group on Campus : SKKU (formerly GDSC Sungkyunkwan University)",
+        result: "About 20–30 attendees per seminar (online and offline) · outreach process documented",
+        key: "20–30 / session"
+      },
       body: [
-        {
-          ul: [
-            "<b>Dates</b> - Mar 2024 - Feb 2025",
-            "<b>Chapter</b> - Google Developer Group on Campus : SKKU (formerly GDSC Sungkyunkwan University)",
-            "<b>Role</b> - joined the Administration team, then selected as Core / HR lead the next semester (Administration team of 4)",
-            "<b>Owned</b> - most speaker outreach for the monthly global IT seminar",
-            "<b>Scale</b> - about 20-30 attendees per session, online and offline"
-          ]
-        },
         {h:"01. Situation: no network to draw on"},
         {
           p: "When I joined the Administration team in March 2024, the first-half speakers were already booked. Once I was selected as HR lead and took over second-half outreach myself, I found that the internal Google network we used to rely on was no longer available. GDSC was <b>in the middle of becoming GDG on Campus</b>, and all my predecessor could hand over was the method: \"you'll have to book people by cold email.\""
@@ -1303,11 +1283,16 @@ SITE.en = {
       title: "2024 Undergraduate Trade & AI Camp",
       summary: "Planned a company-matching service that responds to supply-chain instability by combining trade and AI.",
       short: "Planned CSBBMS, a company-matching service for supply-chain instability, in a 5-person team.",
+      panel: {
+        role: "Shaped the service from a software and data perspective · discussed the matching flow · turned ideas into the presentation",
+        team: "Team 11 · 5 members",
+        where: "Industry-Academic Cooperation Foundation × KITA Trade Academy",
+        result: "Completed · planned CSBBMS, a company-matching service"
+      },
       body: [
         {lead:"Planned a company-matching service that responds to supply-chain instability by combining trade and AI."},
         {p:"I took part in the <b>Undergraduate Trade & AI Camp</b>, jointly run by the Industry-Academic Cooperation Foundation and the Korea International Trade Association (KITA) Trade Academy. In a team of five, I planned <b>CSBBMS</b>, a company-matching service for supply-chain instability, and developed it into a presentation."},
         {p:"Together with teammates who majored in trade, we looked at problems that arise in real trade environments and designed a service for finding and comparing trading partners that fit a company's requirements. Drawing on my interest in software and data from studying Computer Education, I took part in <b>turning a trade problem into a technology-based service</b>."},
-        {facts:["Feb 20 – 22, 2024", "Team 11 · 5 members", "Industry-Academic Cooperation Foundation × KITA Trade Academy", "Completed"]},
 
         {k:"01 · Problem", h:"Companies needed a way to find new trading partners instead of relying on a single source."},
         {p:"Based on a KITA survey, our presentation focused on the finding that <b>85.5% of exporters had experienced supply-chain problems</b>."},
@@ -1416,16 +1401,17 @@ SITE.en = {
     "future-tech": {
       title: "Future Technologies of the Fourth Industrial Revolution",
       summary: "Before starting university, completed 14 online courses over two days, 14 hours in total.",
-      nums: [
-        {v:"14", u:"hours", t:"Total hours completed", d:"13-14 Feb 2024 · online", hi:true},
-        {v:"14", u:"", t:"Lectures attended", d:"1 hour each"},
-        {v:"2", u:"days", t:"Full-time programme", d:"10:00 - 18:00"}
-      ],
-      numsLayout: "row",
+      panel: {
+        role: "Found it on the university website before enrolling and signed up on my own",
+        scale: "14 lectures · 14 hours (2 full days, 10:00–18:00)",
+        period: "13–14 Feb 2024 · online",
+        where: "SKKU AI Institute lecture series",
+        result: "Completion certificate issued (23 Feb 2024)",
+        key: "14 hrs"
+      },
       body: [
         {lead:"Looking past what technology can do, at how it connects to reality"},
         {p:"Through talks by experts from Microsoft, AWS, Google and NVIDIA, I looked at fast-moving technologies - generative AI, cloud, image-generation models, digital twins and the metaverse - and at how they are used in real industry."},
-        {facts:["13 - 14 Feb 2024", "SKKU AI Institute lecture series", "2 days · 14 hours · full-time"]},
         {h3:"Certificate"},
         {cert:{img:"future_tech_cert", alt:"Completion certificate, Future Technologies of the Fourth Industrial Revolution", cap:"Run jointly by the Meta-Consortium A·I·B under the Ministry of Education's convergence-university program · issued 23 Feb 2024 (tap to enlarge)"}},
 
@@ -1493,14 +1479,12 @@ SITE.en = {
       title: "World Vision",
       summary: "Translated World Vision sponsor letters into English: 120 letters, 40 hours in total.",
       short: "Translated 120 World Vision letters into English (40 hours).",
+      panel: {
+        role: "Translating letters between sponsored children overseas and sponsors in Korea, both directions",
+        result: "120 letters · 40 hours (10 letters a week)",
+        key: "120 letters"
+      },
       body: [
-        {
-          ul: [
-            "<b>Programme</b> - World Vision child-letter translation corps",
-            "<b>Span</b> - about six months; 40 hours, 120 letters completed",
-            "<b>Role</b> - translating correspondence between sponsored children overseas and their sponsors in Korea, both directions"
-          ]
-        },
         {h:"What it produced"},
         {
           ul: [

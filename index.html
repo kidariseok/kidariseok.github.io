@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="오진석(성균관대학교 컴퓨터교육과)의 대외활동·자격증·장학 기록 포트폴리오">
+<meta name="description" content="오진석(성균관대학교 컴퓨터교육과)의 프로젝트 · 활동 기록 · 이력 포트폴리오">
 <meta name="theme-color" content="#0a0c10">
 <meta property="og:type" content="website">
 <meta property="og:title" content="JINSEOK OH">
-<meta property="og:description" content="성균관대학교 컴퓨터교육과 오진석의 대외활동 20건, 자격증, 장학 기록">
+<meta property="og:description" content="성균관대학교 컴퓨터교육과 오진석의 프로젝트와 활동 기록, 이력">
 <meta property="og:url" content="https://kidariseok.github.io/">
 <meta property="og:image" content="https://kidariseok.github.io/img/hero.webp">
 <link rel="canonical" href="https://kidariseok.github.io/">
@@ -16,7 +16,7 @@
 <title>JINSEOK OH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,700&family=Archivo:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Gowun+Batang:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Gowun+Batang:wght@700&display=swap">
 <style>
   /* ══════════════════════════════════════════════════════════════
      [1] 색 · 글꼴  ◀ 사이트 분위기를 바꾸려면 여기
@@ -34,7 +34,7 @@
 
      ※ 유리 효과는 Apple 'Liquid Glass'를 웹에서 흉내 낸 것입니다(공식 CSS 없음).
         흐림(backdrop-filter) + 윗면 빛 테두리로 근사했고,
-        메뉴 · 언어 버튼 · 첫 화면 숫자 상자 · 사진 닫기 버튼처럼 '떠 있는 층'에만 씁니다.
+        메뉴 · 언어 버튼 · 사진 닫기 버튼처럼 '떠 있는 층'에만 씁니다.
      ══════════════════════════════════════════════════════════════ */
   :root{
     --paper:#ffffff;       /* 페이지 바탕 */
@@ -135,7 +135,8 @@
   }
 
   /* ---- 첫 화면 (검은 바탕 + 파란 빛 + 일러스트) ---- */
-  .hero{background:var(--hero);color:var(--on-block);position:relative;overflow:hidden;padding-block:72px 104px}
+  /* 숫자 상자를 뺀 만큼 위아래 여백을 늘려 기존 첫 화면 높이(약 0.8화면)를 유지 */
+  .hero{background:var(--hero);color:var(--on-block);position:relative;overflow:hidden;padding-block:120px 190px}
   .hero::before{
     content:"";position:absolute;right:-8%;top:-10%;width:min(900px,120vw);aspect-ratio:1;border-radius:50%;pointer-events:none;
     background:radial-gradient(circle,rgba(47,134,255,.55) 0%,rgba(28,111,224,.28) 30%,rgba(10,12,16,0) 64%);
@@ -169,12 +170,9 @@
   html.intro:not(.intro-done) .hero h1 .ch{animation:riseCh .9s var(--ease) both;animation-delay:calc(.2s + var(--i) * .1s)}
   @keyframes riseCh{from{transform:translateY(110%)}to{transform:none}}
   html.intro .eyebrow{animation:introUp .6s var(--ease) .1s both}
-  html.intro .tagline{animation:typeIn 1.3s steps(40) .8s both}
-  @keyframes typeIn{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
   html.intro .headline{animation:introUp .7s var(--ease) .6s both}
   html.intro .lede,html.intro .chips,html.intro .hero-cta{animation:introUp .8s var(--ease) 1.2s both}
   html.intro .hero-art{animation:introUp 1s var(--ease) 1s both}
-  html.intro .hero-stats{animation:introUp .8s var(--ease) 1.8s both}
   @keyframes introUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .hero > .wrap{position:relative;z-index:1}
   .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:40px;align-items:center}
@@ -183,12 +181,8 @@
   .gpa-pill{display:inline-flex;align-items:baseline;gap:4px;padding:3px 10px;border-radius:999px;border:1px solid rgba(77,148,255,.45);background:rgba(28,111,224,.16);color:#fff;font:700 13px/1.4 var(--display);white-space:nowrap}
   .gpa-pill small{color:var(--accent-2);font:700 12px var(--display)}
   .hero h1{color:#fff;font-size:clamp(44px,5.2vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.035em;margin-block:12px 18px}
-  /* 캐치프레이즈: 이 줄만 세리프 기울임체(Playfair Display)로 강조 */
-  .tagline{margin:-6px 0 16px;font:italic 500 clamp(18px,1.5vw,20.5px)/1.35 "Playfair Display",Georgia,serif;color:#fff}
-  .tagline b{color:var(--accent-2);font-weight:700}
-  /* 이름 밑 한 줄 (hero.headline): 부드러운 명조 Gowun Batang (시안 009-5). 아래 Playfair 기울임체와 같은 세리프 계열 */
+  /* 이름 밑 핵심 한 줄 (hero.headline): 부드러운 명조 Gowun Batang (시안 009-5) */
   .headline{color:#fff;font:700 clamp(22px,2.2vw,28px)/1.4 "Gowun Batang","Noto Serif KR",Georgia,serif;letter-spacing:-.01em;margin:-4px 0 12px;text-wrap:balance}
-  .headline + .tagline{margin-top:0}
   .lede{color:#cfd5df;font-size:16.5px;max-width:29em}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-block:22px 28px}
   .chip{font-size:13px;font-weight:700;color:#dfe6f2;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04)}
@@ -198,26 +192,13 @@
     -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%);
             mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%);
   }
-  /* 숫자 상자 (유리, 칸 나눔 선 없음) */
-  .hero-stats{
-    position:relative;margin-top:40px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-    border:1px solid rgba(255,255,255,.16);border-radius:var(--r);
-    background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.01)),rgba(10,12,16,.6);
-    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
-  }
-  .hstat{display:grid;gap:2px;padding:22px 12px;text-align:center}
-  .hstat .v{color:#fff;font:800 clamp(26px,3vw,36px)/1.1 var(--display)}
-  .hstat .v small{font:700 15px var(--sans);color:var(--accent-2);margin-left:3px}
-  .hstat .k{font-size:13px;color:var(--on-block-2)}
-  @media (prefers-reduced-transparency: reduce){
-    .hero-stats{-webkit-backdrop-filter:none;backdrop-filter:none;background:#15181f}
-  }
 
   /* ---- 첫 화면 위로 올라오는 둥근 판과 섹션 ---- */
   .sheet{position:relative;background:var(--paper);border-radius:32px 32px 0 0;margin-top:-32px;padding-top:8px}
   section{padding-block:88px}
   section.tint{background:var(--soft)}
+  /* 첫 화면 아래쪽에서 SELECTED WORK 제목이 바로 보이도록 위 여백만 조금 줄임 */
+  #work{padding-top:64px}
   .shead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
   .shead h2{font-size:clamp(26px,3vw,34px);font-weight:800}
   .shead .count{font:800 clamp(26px,3vw,34px)/1.25 var(--display);color:var(--accent-text);margin-left:10px}
@@ -226,7 +207,13 @@
   .more-link:hover{color:var(--accent-text);text-decoration:none}
   .more-link .i{width:16px;height:16px}
 
-  /* 대표 활동: 검은 카드 */
+  /* SELECTED WORK 안의 작은 제목 (프로젝트 / 대표 활동) */
+  .wsub{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin:0 0 16px}
+  .wsub h3{font-size:19px;font-weight:800}
+  .wsub span{font-size:14px;color:var(--muted)}
+  .pshow + .wsub{margin-top:56px}
+  /* 대표 활동: 검은 카드 (왼쪽 글 · 오른쪽 사진, 두 칸). 글자는 ko.js / en.js 활동의 card
+     휴대폰(640px 이하)에서는 사진이 위로 오는 작은 카드 네 장이 2×2 로 한 화면에 들어옴 (아래 640px 구간) */
   .feature{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
   .feature .fcard:last-child:nth-child(odd){grid-column:1/-1}
   .fcard{
@@ -234,7 +221,7 @@
     background:var(--block);box-shadow:inset 0 0 0 1px var(--block-line);
     transition:transform .35s var(--ease),box-shadow .35s var(--ease);
   }
-  .fcard.has-ph{grid-template-columns:minmax(0,1fr) 42%}
+  .fcard.has-ph{grid-template-columns:minmax(0,1fr) 38%}
   .fcard:hover{text-decoration:none;transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--block-line),var(--shadow)}
   .fcard .txt{padding:28px;display:flex;flex-direction:column;gap:8px}
   .fcard .meta{font-size:13px;font-weight:700;color:var(--accent-2)}
@@ -247,6 +234,10 @@
   .fcard:hover .go .i{transform:translateX(3px)}
   .fcard .ph{position:relative;background:var(--block-2)}
   .fcard .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  /* 대표 활동 카드의 두 줄: MY ROLE · RESULT (ko.js / en.js 활동의 card) */
+  .fkv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px 14px;margin:8px 0 0}
+  .fkv dt{font:800 11px/1.95 var(--display);letter-spacing:.08em;color:var(--accent-2);white-space:nowrap}
+  .fkv dd{margin:0;color:var(--on-block);font-size:14.5px;line-height:1.6}
 
 
   /* PROJECTS 쇼케이스: 영상(Hero) + What · Role · Stack */
@@ -280,13 +271,33 @@
   .pcard .go .i{width:15px;height:15px;transition:transform .3s var(--ease)}
   .pcard:hover .go{color:var(--accent-2)}
   .pcard:hover .go .i{transform:translateX(3px)}
+  /* 카드 전체가 상세로 가는 링크(제목 링크를 카드 크기로 늘림) + 그 위에 GitHub 버튼 */
+  .pcard{position:relative}
+  .pcard-link{color:inherit}
+  .pcard-link:hover{text-decoration:none}
+  .pcard-link::after{content:"";position:absolute;inset:0;z-index:1}
+  .pcard-link:focus-visible{outline:none}
+  .pcard:has(.pcard-link:focus-visible){outline:2.5px solid var(--accent-2);outline-offset:3px}
+  .pfoot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap}
+  .pfoot .go{margin-top:0}
+  .plinks{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:8px}
+  .plinks a{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.24);color:#fff;font:700 12.5px var(--sans);transition:background .2s,color .2s}
+  .plinks a .i{width:14px;height:14px}
+  .plinks a:hover,.plinks a:focus-visible{background:#fff;color:#0a0c10;text-decoration:none}
+  .pdl dd.txt{font-size:14px;font-weight:700;color:#fff}
 
-  /* 상세 상단 30초 요약 띠 */
+  /* 상세 페이지 맨 위 요약 패널: 모든 상세 페이지가 같은 형식
+     (MY ROLE · TEAM · SCALE · PERIOD · WHERE · RESULT · STACK + 링크). 글자는 ko.js / en.js 활동의 panel, 프로젝트는 proj */
   .pstrip{margin-top:24px;border:1px solid var(--line);border-radius:var(--r);background:var(--soft);overflow:hidden}
-  .pstrip .pwhat{margin:0;padding:20px 24px;font-size:18px;font-weight:800;line-height:1.6;color:var(--ink);letter-spacing:-.01em;border-bottom:1px solid var(--line)}
-  .pstrip .pcells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-  .pstrip .pcell{padding:16px 24px;display:grid;gap:6px;align-content:start;border-right:1px solid var(--line)}
-  .pstrip .pcell:last-child{border-right:0}
+  .pstrip .pcells{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));grid-auto-flow:dense}
+  .pstrip .pcell{padding:16px 22px;display:grid;gap:6px;align-content:start;box-shadow:1px 0 0 var(--line),0 1px 0 var(--line)}
+  @media (min-width:761px){ .pstrip .pcell.w2{grid-column:span 2} }
+  .pstrip .pcell.res span{color:var(--accent-text)}
+  /* 핵심 결과값 하나만 크게 (ko.js / en.js 의 panel.key 또는 proj.key) */
+  .pstrip .pcell.res.haskey{background:var(--accent-soft)}
+  .pstrip .pcell.res.haskey .kv{display:grid;gap:4px}
+  .pstrip .pcell .kv b{font:800 30px/1.1 var(--display);color:var(--accent-text);letter-spacing:-.02em}
+  .pstrip .pcell.res.haskey .kv span{color:var(--ink);font-weight:600;font-size:14px}
   .pstrip .pcell small{font:800 11.5px var(--display);letter-spacing:.08em;color:var(--accent-text)}
   .pstrip .pcell span{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.5}
   .pstrip .pcell .pchips{display:flex;flex-wrap:wrap;gap:6px}
@@ -299,7 +310,7 @@
   .pstrip .pjumps .i{width:14px;height:14px}
 
 
-  .pstrip .pcell.wide{grid-column:1/-1;border-right:0;border-top:1px solid var(--line)}
+  .pstrip .pcell.wide{grid-column:1/-1}
   .pstrip .pcell small i{font-style:normal;font-weight:700;letter-spacing:0;color:var(--muted);margin-left:6px}
   .pstrip .pjumps a{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:#fff;font:700 13px var(--sans)}
   .pstrip .pjumps a:hover{text-decoration:none;background:var(--ink);border-color:var(--ink);color:var(--paper)}
@@ -331,200 +342,78 @@
     .pcard,.pcard.rev{grid-template-columns:1fr}
     .pcard.rev .pmedia{order:0}
     .pmedia{min-height:0;aspect-ratio:16/9}
-    .pstrip .pcells{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .pstrip .pcell{border-bottom:1px solid var(--line)}
-    .pstrip .pcell:nth-child(2n){border-right:0}
     .body .roles{grid-template-columns:1fr}
   }
 
-  /* 소개 */
-  .about{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:56px;align-items:start}
-  .prose{display:grid;gap:18px;font-size:16.5px;line-height:1.9;max-width:62ch}
-  .subh{font-weight:800;color:var(--ink);margin-bottom:12px}
-  .dl{display:grid;grid-template-columns:auto 1fr;gap:12px 20px;margin:0;padding:22px 24px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line)}
-  /* 기본 정보 카드 오른쪽 위 학교 로고 (위쪽 줄 글자가 로고와 겹치지 않게 오른쪽 여백) */
-  .profile-card{position:relative}
-  .profile-card .dl{padding-right:96px}
-  .school-logo{position:absolute;top:18px;right:18px;width:64px;height:auto}
-  .dl dt{font-size:14px;color:var(--muted);white-space:nowrap}
-  .dl dd{margin:0;font-size:15px;font-weight:700;color:var(--ink)}
-  .dl dd a{color:var(--accent-text)}
-  .dl dd a:hover{text-decoration:underline}
+  /* 소개: 네 단계 (EXPLORE · DISCOVER · ADAPT · NEXT). 글자는 ko.js / en.js 의 page.about.steps */
+  .steps{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px}
+  .steps li{position:relative;padding-top:26px;border-top:2px solid var(--line)}
+  .steps li::before{content:"";position:absolute;left:0;top:-7px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--soft)}
+  .steps .st-no{margin-bottom:10px}
+  .steps .st-no b{font-size:17px}
+  .steps .t{font-size:15.5px;line-height:1.8;color:var(--text)}
+  .steps .more{display:inline-flex;margin-top:10px;font-size:13.5px;font-weight:700;color:var(--accent-text)}
+  .steps .more:hover{text-decoration:underline}
+  /* 강조하는 단계 (steps 에서 em:true, 지금은 ADAPT): 흰 상자 + 얇은 파랑 테두리.
+     상자 안 글자 줄은 옆 단계와 같은 높이에서 시작하도록 위 · 옆으로 조금 넓힘 */
+  .steps li.em{margin:-20px -18px 0;padding:48px 18px 24px;border-top:0;border-radius:18px;background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--accent)}
+  .steps li.em::before{top:15px;left:18px;box-shadow:0 0 0 4px var(--accent-soft)}
+  .steps li.em .st-no b{color:var(--accent-text)}
+  .steps li.em .t{color:var(--ink)}
 
-  /* 기록 요약 */
-  .tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-  /* 기록 요약 카드: 평소엔 흰색, 마우스를 올리거나 키보드로 고르면 검은색 */
-  .tile{
-    display:flex;flex-direction:column;gap:4px;padding:22px;border-radius:var(--r);background:var(--paper);
-    box-shadow:inset 0 0 0 1px var(--line);transition:background .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);
-  }
-  .tile:hover,.tile:focus-visible{background:var(--block);box-shadow:inset 0 0 0 1px var(--block-line),var(--shadow);transform:translateY(-4px)}
-  .tile:hover .v,.tile:hover .k,.tile:hover .n b,.tile:focus-visible .v,.tile:focus-visible .k,.tile:focus-visible .n b{color:#fff}
-  .tile:hover .v small,.tile:focus-visible .v small{color:var(--accent-2)}
-  .tile:hover .n,.tile:focus-visible .n{color:var(--on-block-2)}
-  .tile .v{font:800 34px/1.1 var(--display);color:var(--ink)}
-  .tile .v small{font:700 15px var(--sans);color:var(--accent-text);margin-left:3px}
-  .tile .k{font-weight:700;color:var(--ink);font-size:15px}
-  .tile .n{font-size:13px;color:var(--muted)}
-  .tile .n b{color:var(--ink);font-size:15px}
-  .tile{position:relative}
-  /* 설명이 있는 카드: 살짝 커지며 아래로 설명이 펼쳐짐 (아랫줄 카드 위로 잠깐 겹침) */
-  .tile.has-more{cursor:default}
-  .tile.has-more:hover,.tile.has-more:focus-visible,.tile.has-more.on{z-index:5;transform:scale(1.04);border-radius:var(--r) var(--r) 0 0;box-shadow:inset 0 0 0 1px var(--block-line)}
-  .tile.has-more.on{background:var(--block)}
-  .tile.has-more.on .v,.tile.has-more.on .k{color:#fff}
-  .tile.has-more.on .v small{color:var(--accent-2)}
-  .tile.has-more.on .n{color:var(--on-block-2)}
-  .tile .more{
-    position:absolute;left:0;right:0;top:calc(100% - 2px);padding:6px 22px 22px;border-radius:0 0 var(--r) var(--r);
-    background:var(--block);color:var(--on-block-2);font-size:13.5px;line-height:1.65;box-shadow:var(--shadow);
-    opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .3s var(--ease),transform .35s var(--ease);
-  }
-  .tile.has-more:hover .more,.tile.has-more:focus-visible .more,.tile.has-more.on .more{opacity:1;transform:none}
-  .tlogo{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center}
-  .tlogo img{width:26px;height:auto}
-  /* '봉사시간' 카드: 누르면 전체 내역 창이 열리는 버튼 */
-  button.tile{font:inherit;text-align:left;border:0;cursor:pointer;width:100%;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-  .open-hint{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:700;color:var(--accent-text)}
-  .tile:hover .open-hint,.tile:focus-visible .open-hint{color:var(--accent-2)}
-  .open-hint .i{width:15px;height:15px;transition:transform .3s var(--ease)}
-  .tile:hover .open-hint .i{transform:translateX(3px)}
-  a.tile:hover{text-decoration:none}
 
-  /* 기록 요약 카드 묶음 (common.js 의 tileGroups, 예: RE:ALThon 두 카드)
-     마우스를 올리거나 키보드로 고르면 두 카드가 함께 검게 바뀌고 사이 틈이 메워져 한 덩어리가 됨.
-     위에 공통 제목(.tg-band), 아래에 상세 기록 링크(.tg-foot). 휴대폰은 한 번 누르면 열리고, 한 번 더 누르면 상세로 이동 */
-  .tgroup{grid-column:span 2;position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;color:inherit;transition:transform .35s var(--ease)}
-  .tgroup:hover{text-decoration:none}
-  .tgroup:focus-visible{outline-offset:4px;border-radius:calc(var(--r) + 4px)}
-  .tgroup .tile{z-index:0}
-  .tgroup .tile:hover{transform:none}
-  .tgroup::before{   /* 두 카드 사이 틈을 메우는 다리 */
-    content:"";position:absolute;top:0;bottom:0;left:calc(50% - 7px);width:14px;z-index:1;
-    background:var(--block);transform:scaleY(0);transition:transform .45s var(--ease);
-  }
-  .tg-band{
-    position:absolute;left:0;right:0;top:0;z-index:2;padding:16px 22px 0;display:flex;justify-content:space-between;align-items:baseline;gap:12px;
-    opacity:0;transform:translateY(-6px);transition:opacity .3s var(--ease),transform .4s var(--ease);pointer-events:none;
-  }
-  .tg-band b{font:800 13px/1.2 var(--display);letter-spacing:.06em;color:var(--accent-2)}
-  .tg-band span{font-size:12.5px;color:var(--on-block-2)}
-  .tg-foot{
-    position:absolute;left:22px;right:22px;bottom:18px;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;
-    opacity:0;transition:opacity .3s var(--ease) .08s;pointer-events:none;
-  }
-  .tg-foot span{font-size:12.5px;color:var(--on-block-2)}
-  .tg-foot b{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#fff}
-  .tg-foot b .i{width:15px;height:15px;transition:transform .3s var(--ease)}
-  .tgroup:hover .tg-foot b .i{transform:translateX(3px)}
-  .tgroup:hover,.tgroup:focus-visible,.tgroup.on{transform:translateY(-4px)}
-  .tgroup:hover::before,.tgroup:focus-visible::before,.tgroup.on::before{transform:scaleY(1)}
-  .tgroup:hover .tile,.tgroup:focus-visible .tile,.tgroup.on .tile{background:var(--block);box-shadow:var(--shadow);padding-top:46px}
-  .tgroup:hover .tile:first-child,.tgroup:focus-visible .tile:first-child,.tgroup.on .tile:first-child{border-radius:var(--r) 0 0 var(--r)}
-  .tgroup:hover .tile:nth-child(2),.tgroup:focus-visible .tile:nth-child(2),.tgroup.on .tile:nth-child(2){border-radius:0 var(--r) var(--r) 0}
-  .tgroup:hover .tile .v,.tgroup:hover .tile .k,.tgroup:focus-visible .tile .v,.tgroup:focus-visible .tile .k,.tgroup.on .tile .v,.tgroup.on .tile .k{color:#fff}
-  .tgroup:hover .tile .v small,.tgroup:focus-visible .tile .v small,.tgroup.on .tile .v small{color:var(--accent-2)}
-  .tgroup:hover .tile .n,.tgroup:focus-visible .tile .n,.tgroup.on .tile .n{opacity:0}
-  .tgroup:hover .tg-band,.tgroup:focus-visible .tg-band,.tgroup.on .tg-band{opacity:1;transform:none}
-  .tgroup:hover .tg-foot,.tgroup:focus-visible .tg-foot,.tgroup.on .tg-foot{opacity:1}
-  @media (max-width:640px){
-    .tg-band{padding:14px 16px 0}
-    .tg-band span,.tg-foot span{display:none}
-    .tg-foot{left:16px;right:16px;bottom:14px}
-    .tgroup:hover .tile,.tgroup:focus-visible .tile,.tgroup.on .tile{padding-top:40px}
-  }
-
-  /* 대외활동: 구분 버튼 + 한 줄 목록 */
-  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-  .filters button{
-    border:1px solid var(--line);background:var(--paper);color:var(--text);border-radius:999px;padding:8px 16px;
-    font:500 14px/1.2 var(--sans);cursor:pointer;transition:border-color .2s,background .2s,color .2s;
-  }
-  .filters button:hover{border-color:var(--ink)}
-  .filters button .c{margin-left:5px;color:var(--muted)}
-  /* 분야별 보기: 알약 버튼(이름 + 개수), 고른 분야의 설명은 아래 한 줄 */
-  .axis-desc{margin:-8px 0 20px;font-size:14px;color:var(--muted)}
-  .axis-desc b{color:var(--ax,var(--ink))}
-  /* 분야별 색: --ax 는 흰 바탕용, --ax-2 는 검은 바탕(마우스 올림)용 */
-  .ax-technology{--ax:#1a64cc;--ax-2:#6aa5ff}
-  .ax-people{--ax:#1b7f45;--ax-2:#5fd08e}
-  .ax-leadership{--ax:#c2410c;--ax-2:#fb923c}
-  .ax-global{--ax:#7c3aed;--ax-2:#b39bff}
-  .ax-explore{--ax:#0e7c86;--ax-2:#4fd1db}
-  /* 활동별 색 (common.js 의 categories id). 분야별 색과 겹치지 않게 빨강 · 자홍 · 황토 · 남색 · 올리브 */
-  .ax-competition{--ax:#b91c1c;--ax-2:#f87171}
-  .ax-external{--ax:#be185d;--ax-2:#f472b6}
-  .ax-volunteer{--ax:#a16207;--ax-2:#fbbf24}
-  .ax-campus{--ax:#4338ca;--ax-2:#a5b4fc}
-  .ax-course{--ax:#4d7c0f;--ax-2:#a3e635}
+  /* 활동 기록 (ACTIVITY ARCHIVE): 구분(common.js 의 categories)마다 한 칸.
+     처음엔 칸마다 대표 활동 하나(common.js 의 archiveReps) → '전체 활동 20개 보기'를 누르면 칸 아래로 나머지가 펼쳐짐.
+     각 활동은 제목 + 맡은 역할 한 줄. 위 SELECTED WORK 에서 소개한 활동은 칸 맨 아래에 이름만 */
+  .arch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 20px;align-items:start}
+  .acol h3{display:flex;align-items:center;gap:8px;padding-bottom:10px;margin-bottom:12px;border-bottom:2px solid var(--ax);font-size:15.5px;font-weight:800;color:var(--ink)}
+  .acol h3 .i{width:18px;height:18px;color:var(--ax);flex:none}
+  .acol h3 .c{margin-left:auto;font:800 15px var(--display);color:var(--ax)}
+  .arep{display:flex;flex-direction:column;gap:6px;min-height:172px;padding:18px;border-radius:16px;background:var(--tile);color:var(--text);transition:background .25s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease)}
+  .arep b{color:var(--ink);font-size:16px;line-height:1.4}
+  .arep span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:13.5px;line-height:1.55;color:var(--muted)}
+  .arep:hover,.arep:focus-visible{text-decoration:none;background:var(--block);transform:translateY(-3px);box-shadow:var(--shadow)}
+  .arep:hover b,.arep:focus-visible b{color:#fff}
+  .arep:hover span,.arep:focus-visible span{color:var(--on-block-2)}
+  .alist{list-style:none;margin:6px 0 0;padding:0}
+  .arow{display:grid;gap:2px;padding:12px 4px;border-bottom:1px solid var(--line);color:var(--text)}
+  .arow b{color:var(--ink);font-size:14.5px;line-height:1.45;transition:color .2s}
+  .arow span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px;line-height:1.5;color:var(--muted)}
+  .arow:hover,.arow:focus-visible{text-decoration:none}
+  .arow:hover b,.arow:focus-visible b{color:var(--ax)}
+  .aref{margin-top:12px;font-size:13px;line-height:1.65;color:var(--muted)}
+  .aref em{font-style:normal;font-weight:700;color:var(--ax);margin-right:6px}
+  .aref a{color:var(--ink);font-weight:600}
+  .aref a:hover{color:var(--ax)}
+  .all{display:flex;justify-content:center;margin-top:28px}
+  .all:has(> [hidden]){display:none}
+  /* 구분별 색: --ax 는 흰 바탕용, --ax-2 는 검은 바탕(마우스 올림)·어두운 화면용 */
+  .ax-project{--ax:#1a64cc;--ax-2:#6aa5ff}
+  .ax-community{--ax:#c2410c;--ax-2:#fb923c}
+  .ax-edu{--ax:#1b7f45;--ax-2:#5fd08e}
+  .ax-learn{--ax:#0e7c86;--ax-2:#4fd1db}
   @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) [class*="ax-"]{--ax:var(--ax-2)} }
   :root[data-theme="dark"] [class*="ax-"]{--ax:var(--ax-2)}
-  .row[class*="ax-"] .c{color:var(--ax)}
-  .row[class*="ax-"]:hover .c,.row[class*="ax-"]:focus-visible .c{color:var(--ax-2)}
-  .filters button[class*="ax-"]{color:var(--ax);font-weight:700}
-  .filters button[class*="ax-"]{border-color:var(--ax)}
-  .filters button[class*="ax-"][aria-pressed="true"]{background:var(--ax);border-color:var(--ax);color:#fff;box-shadow:none}
-  .filters button[class*="ax-"][aria-pressed="true"] .c{color:#fff;opacity:.8}
-  /* 보기 전환 (KO/EN 버튼과 같은 모양) */
-  .seg{display:flex;padding:3px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
-  .seg button{border:0;background:none;padding:8px 14px;border-radius:999px;cursor:pointer;font:700 13px/1 var(--sans);color:var(--muted);white-space:nowrap}
-  .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-  .filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-  .filters button[aria-pressed="true"] .c{color:inherit;opacity:.7}
-  .rows{border-top:1px solid var(--ink)}
-  .row{
-    display:grid;grid-template-columns:150px 80px minmax(0,1fr) auto;gap:16px;align-items:center;
-    padding:18px 16px;border-bottom:1px solid var(--line);color:var(--text)
-  }
-  /* 목록 한 줄: 마우스를 올리거나 키보드로 고르면 검은 바탕 + 흰 글씨 */
-  .row{border-radius:12px;transition:background .25s var(--ease),color .25s,border-color .25s}
-  .row:hover,.row:focus-visible{text-decoration:none;background:var(--block);border-bottom-color:transparent}
-  .row:hover .t b,.row:focus-visible .t b{color:#fff}
-  .row:hover .d,.row:hover .t .s,.row:focus-visible .d,.row:focus-visible .t .s{color:var(--on-block-2)}
-  .row:hover .c,.row:focus-visible .c{color:var(--accent-2)}
-  .row .d{font:600 14px var(--display);color:var(--muted)}
-  .row .c{font-size:13px;font-weight:700;color:var(--accent-text)}
-  .row .t{display:grid;gap:2px;min-width:0}
-  .row .t b{color:var(--ink)}
-  .row .t b small.o{margin-left:8px;font-size:13px;font-weight:500;color:var(--muted)}
-  .row:hover .t b small.o,.row:focus-visible .t b small.o{color:var(--on-block-2)}
-  .row .t .s{font-size:14px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .row > .i{width:18px;height:18px;color:var(--muted);transition:transform .3s var(--ease),color .2s}
-  .row:hover > .i,.row:focus-visible > .i{color:#fff;transform:translateX(3px)}
-  .all{display:flex;justify-content:center;margin-top:24px}
-  .all:has(> [hidden]){display:none}
+  .badge[class*="ax-"]{color:var(--ax);background:color-mix(in srgb,var(--ax) 13%,transparent)}
 
-  /* 자격증 (펼치는 목록) + 장학 (검은 카드) */
-  .pair-in{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;align-items:start}
-  .acc{border-top:1px solid var(--ink)}
-  .acc details{border-bottom:1px solid var(--line)}
-  .acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 4px;font-weight:700;color:var(--ink)}
-  .acc summary::-webkit-details-marker{display:none}
-  .acc summary small{margin-left:8px;font-weight:500;color:var(--muted);font-size:14px}
-  .acc summary .i{width:20px;height:20px;color:var(--accent-text);transition:transform .3s var(--ease)}
-  .acc details[open] summary .i{transform:rotate(45deg)}
-  .acc ul{list-style:none;margin:0;padding:0 4px 18px;display:grid;gap:14px}
-  .acc li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;font-size:15px}
-  .acc li b{color:var(--ink)}
-  .acc li .r{font:700 15px var(--display);color:var(--accent-text);text-align:right}
-  .acc li .s{grid-column:1/-1;font-size:13.5px;color:var(--muted)}
+  /* 이력 (RECORDS): 증거 자료실이라 작게. 왼쪽 줄 이름, 오른쪽 항목 (EDUCATION · LANGUAGE · CERTIFICATION · SCHOLARSHIP · VOLUNTEER) */
+  .recs{border-top:1px solid var(--ink)}
+  .rrow{display:grid;grid-template-columns:168px minmax(0,1fr);gap:8px 24px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .rrow h3{font:800 12.5px/1.9 var(--display);letter-spacing:.1em;color:var(--accent-text)}
+  .ritems{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px 32px}
+  .ritem{display:grid;gap:2px;align-content:start}
+  .ritem .n{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .ritem b{color:var(--ink);font-size:15px}
+  .ritem .r{font:700 15px var(--display);color:var(--accent-text);white-space:nowrap}
+  .ritem small{font-size:12.5px;line-height:1.5;color:var(--muted)}
+  .ritem .vbtn2{justify-self:start;margin-top:6px;padding:7px 14px;font-size:13px}
+  @media (min-width:641px){ .ritem.wide{grid-column:span 2} }
   .pill{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:700;vertical-align:1px}
   .pill.ok{color:var(--accent-text);background:var(--accent-soft)}
   .pill.exp{color:var(--muted);background:var(--soft);border:1px solid var(--line)}
-  /* 장학 카드: 평소엔 어둡게, 마우스를 올리거나 키보드로 고르면 파랗게 */
-  .awards{display:grid;gap:12px}
-  .award{
-    display:grid;gap:4px;padding:22px 24px;border-radius:var(--r);background:var(--block-2);color:var(--on-block);
-    box-shadow:inset 0 0 0 1px var(--block-line);transition:background .3s var(--ease),transform .3s var(--ease);
-  }
-  .award:hover,.award:focus-visible{background:var(--accent);transform:translateY(-3px)}
-  .award small{font-size:12.5px;color:var(--on-block-2)}
-  .award h3{color:#fff;font-size:17px}
-  .award p{color:var(--on-block-2);font-size:14px}
-  .award:hover p,.award:hover small,.award:focus-visible p,.award:focus-visible small{color:#e6efff}
 
   /* 연락처 (검은 카드 + 파란 원). 제목과 오른쪽 연락처 목록을 위쪽 끝에 맞춤 */
-  .contact-sec{padding-top:0}
+  .contact-sec{padding-top:72px}
   .contact{
     position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:start;
     padding:48px;border-radius:28px;background:var(--block-2);color:var(--on-block);box-shadow:inset 0 0 0 1px var(--block-line);
@@ -581,6 +470,10 @@
   .foot .mark{color:#fff;font-size:24px}
   .foot .mark span{color:var(--accent-2)}
   .foot .wrap > div p{margin-top:8px}
+  .foot-links{display:flex;flex-wrap:wrap;gap:8px 18px}
+  .foot-links a{color:var(--on-block-2);font-weight:700}
+  .foot-links a:hover{color:#fff}
+  html:not(.in-detail) .foot-links{display:none}
 
   /* ---- 상세 페이지 ---- */
   .detail{padding-block:40px 90px}
@@ -597,32 +490,6 @@
   .dhead .lede{margin-top:18px;font-size:18px;color:var(--text);line-height:1.75;max-width:60ch}
   .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;font-size:13px;font-weight:700;color:var(--accent-text);background:var(--accent-soft)}
   .badge .i{width:14px;height:14px}
-  /* 상세 페이지 맨 위 요약 숫자 카드: ko/en.js 활동의 nums (v 숫자 · u 단위 · pre 앞말 · t 설명 · d 보조 설명 · hi 강조 카드)
-     numsLayout: "row" 한 줄로 두고 강조(hi) 카드를 두 배 넓게 */
-  .dnums{grid-column:1/-1;display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:10px;margin-top:30px}
-  .dtop.has-cov .dnums{margin-top:0}
-  .dnums > div{background:var(--tile);border-radius:var(--r);padding:20px 22px 18px;min-width:0;display:flex;flex-direction:column;justify-content:flex-start}
-  .dnums .nv{font:800 34px/1.1 var(--display);color:var(--ink);letter-spacing:-.02em;white-space:nowrap}
-  .dnums .nv small{font:700 15px var(--sans);color:var(--accent-text);margin-left:3px}
-  .dnums .nv em{font:700 15px var(--sans);font-style:normal;color:var(--muted);margin-right:4px}
-  .dnums .nt{display:block;margin-top:8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.5;word-break:keep-all}
-  .dnums .nd{display:block;margin-top:3px;font-size:13px;color:var(--muted);line-height:1.5;word-break:keep-all}
-  .dnums > .hi{background:var(--accent)}
-  .dnums > .hi .nv{color:#fff;font-size:64px}
-  .dnums > .hi .nv small{color:#fff;opacity:.85;font-size:20px}
-  .dnums > .hi .nt{color:#fff;font-size:16px}
-  .dnums > .hi .nd{color:rgba(255,255,255,.82)}
-  .dnums.l-row{grid-template-columns:2fr 1fr 1fr}
-  @media (max-width:760px){
-    .dnums.l-row{grid-template-columns:1fr 1fr}
-    .dnums.l-row > .hi{grid-column:1/-1}
-    .dnums > .hi .nv{font-size:56px}
-  }
-  @media (max-width:560px){
-    .dnums{gap:8px}
-    .dnums > div{padding:16px 16px 15px}
-    .dnums .nv{font-size:28px}
-  }
   .dhead .vbtn{display:flex;width:max-content;margin:22px 0 0 auto;padding:11px 20px;font-size:14.5px}
   .dhead .vbtn .i{width:19px;height:19px}
   .dhead .vbtn:hover .i{transform:none}
@@ -812,100 +679,77 @@
   .vmore{display:block;width:100%;margin-top:8px;padding:12px;border:1px solid var(--line);border-radius:14px;cursor:pointer;font:700 14.5px var(--sans);color:var(--ink);background:var(--soft)}
   .vmore:hover{border-color:var(--ink)}
 
-  /* ---- 방향 (What am I becoming?) ----
-     01 · 02 흰 카드 두 칸 → 03 ADAPT 검은 카드(오른쪽 자격증 시간순) → 04 CONNECT 한 줄 */
+  /* ---- 섹션 위 작은 파란 글씨(kicker) · 큰 제목 · 단계 번호 줄 ---- */
   .st-kicker{font:800 13px/1 var(--display);letter-spacing:.12em;color:var(--accent-text)}
   .st-title{margin-top:14px;font-size:clamp(26px,3vw,36px);font-weight:800;max-width:24em}
   .st-no{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
   .st-no .num{font:800 13px/1 var(--display);color:var(--accent-text)}
   .st-no b{font:800 20px/1.2 var(--display);color:var(--ink);letter-spacing:.02em}
   .st-no span:last-child{margin-left:auto;font:700 13px/1 var(--display);color:var(--muted);white-space:nowrap}
-  .st-steps{margin-top:44px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-  .st-step{padding:28px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper)}
-  .st-adapt{
-    position:relative;overflow:hidden;margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;
-    padding:48px;border-radius:28px;background:var(--block);color:var(--on-block);box-shadow:inset 0 0 0 1px var(--block-line);
-  }
-  .st-adapt::before{
-    content:"";position:absolute;left:-160px;top:-200px;width:420px;height:420px;border-radius:50%;pointer-events:none;
-    background:radial-gradient(circle,rgba(47,134,255,.28),rgba(28,111,224,0) 68%);
-  }
-  .st-adapt > *{position:relative}
-  .st-adapt .st-no b{color:#fff}
-  .st-adapt .st-no .num{color:var(--accent-2)}
-  .st-adapt .st-no span:last-child{color:var(--on-block-2)}
-  .st-adapt h3{color:#fff;font-size:clamp(26px,3vw,36px);font-weight:800;line-height:1.3}
-  .st-adapt-text{margin-top:16px;color:#cfd5df}
-  .st-role{
-    display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:7px 14px;border-radius:999px;font-size:14px;color:#e5eaf2;
-    border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);
-  }
-  .st-role::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-2)}
-  .st-certs{list-style:none;margin:0;padding:0;position:relative}
-  .st-certs::before{content:"";position:absolute;left:6px;top:20px;bottom:20px;width:2px;background:linear-gradient(var(--accent-2),rgba(77,148,255,.15))}
-  .st-certs li{
-    position:relative;display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:12px;align-items:baseline;
-    padding:13px 0 13px 30px;border-bottom:1px solid rgba(255,255,255,.08);
-  }
-  .st-certs li:last-child{border-bottom:0}
-  .st-certs li::before{content:"";position:absolute;left:0;top:19px;width:14px;height:14px;border-radius:50%;background:var(--block);border:3px solid var(--accent-2);box-sizing:border-box}
-  .st-certs .dt{font:700 13px/1.4 var(--display);color:var(--on-block-2)}
-  .st-certs .nm{color:#fff;font-weight:700}
-  .st-certs .rs{font:800 14px/1.4 var(--display);color:var(--accent-2);white-space:nowrap}
-  .st-next{
-    margin-top:16px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:center;
-    padding:28px;border:1px solid var(--line);border-radius:var(--r);
-  }
-  .st-next .st-no{margin:0}
-  .st-next .st-no span:last-child{margin-left:0}
-  .st-next-text{color:var(--ink);font-size:clamp(17px,1.7vw,20px);font-weight:700;line-height:1.55}
 
   /* ---- 화면 폭에 따라 ---- */
   @media (max-width:980px){
-    nav.links{display:none}
-    .bar-in{justify-content:space-between}
+    /* 휴대폰 · 태블릿: 메뉴 5개를 상단 바 아래 가로 한 줄로 (상세 페이지에서는 숨김) */
+    html{scroll-padding-top:calc(118px + env(safe-area-inset-top,0px))}
+    .bar-in{justify-content:space-between;flex-wrap:wrap;height:auto;row-gap:0}
+    .bar-in > .mark,.bar-in > .lang{align-self:center}
+    .bar-in > .mark{height:64px;display:flex;align-items:center}
+    nav.links{order:3;width:100%;margin:0;gap:6px;overflow-x:auto;padding:0 0 10px;scrollbar-width:none}
+    nav.links::-webkit-scrollbar{display:none}
+    nav.links a{flex:none;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--soft);font-size:14px;color:var(--text)}
+    html.in-detail nav.links{display:none}
+    html.in-detail{scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
     .hero-grid{grid-template-columns:1fr;gap:12px}
     .hero-art{max-width:620px}
     .feature{grid-template-columns:1fr}
-    .about,.pair-in{grid-template-columns:minmax(0,1fr);gap:40px}
-    .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:44px}
+    .steps li.em{margin-inline:-12px;padding-inline:12px}   /* 두 칸일 때 왼쪽 칸이면 화면 끝에 너무 붙지 않게 */
+    .steps li.em::before{left:12px}
+    .arch{grid-template-columns:repeat(2,minmax(0,1fr))}
     .contact{grid-template-columns:1fr}
-    .st-adapt{grid-template-columns:1fr;gap:32px}
-    .st-next{grid-template-columns:1fr;gap:10px}
   }
   @media (max-width:640px){
     .wrap{padding-inline:16px}
     section{padding-block:64px}
     .hero{padding-block:48px 80px}
     .marquee{top:60px;gap:10px}
-    .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .hstat{padding:18px 8px}
-    .fcard.has-ph{grid-template-columns:1fr}
-    .fcard .ph{aspect-ratio:16/9;order:-1}
-    .tile{padding:18px 16px}
-    .tlogo{top:12px;right:12px;width:36px;height:36px}
-    .tlogo img{width:20px}
-    .tile .v{font-size:28px}
-    .row{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:16px 12px}
-    .row .d{grid-column:1;grid-row:1}
-    .row .c{grid-column:2;grid-row:1;text-align:right}
-    .row .t{grid-column:1/-1}
-    .row .t .s{white-space:normal}
-    .row > .i{display:none}
-    .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px}
-    .filters::-webkit-scrollbar{display:none}
-    .filters button{flex:none}
+    /* 대표 활동: 휴대폰은 사진이 위로 오는 작은 카드 2×2 (네 장이 한 화면에). 내용은 넓은 화면과 같고 라벨 · 소속 · '상세 기록 보기'만 숨김 */
+    .feature{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .feature .fcard:last-child:nth-child(odd){grid-column:auto}
+    .fcard,.fcard.has-ph{display:flex;flex-direction:column;min-height:0}
+    .fcard .ph{order:-1;aspect-ratio:4/3}
+    .fcard .txt{flex:1;padding:12px 12px 14px;gap:3px}
+    .fcard .meta{font-size:12px}
+    .fcard h3{font-size:15px;line-height:1.35}
+    .fcard .org,.fcard .go,.fkv dt{display:none}
+    .fkv{grid-template-columns:minmax(0,1fr);gap:3px;margin-top:3px}
+    .fkv dd,.fcard p{font-size:12.5px;line-height:1.5;color:var(--on-block-2)}
+    .fkv dd.res{font-weight:700;color:#fff}
+    .ptxt{padding:24px 22px}
+    /* 소개: 세로 타임라인 */
+    .steps{grid-template-columns:minmax(0,1fr);row-gap:0;margin-top:30px}
+    .steps li{border-top:0;border-left:2px solid var(--line);padding:0 0 26px 24px}
+    .steps li:last-child{padding-bottom:0}
+    .steps li::before{left:-7px;top:3px}
+    .steps li.em{margin:0;padding:18px 18px 20px 26px;border-left:0;border-radius:16px}
+    .steps li.em::before{left:-5px;top:21px}
+    .steps li.em + li{padding-top:26px}
+    /* 활동 기록: 처음엔 대표 네 장이 2×2, 펼치면 구분이 한 줄씩 */
+    .arch{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 10px}
+    .arch.open{grid-template-columns:minmax(0,1fr);gap:30px}
+    .acol h3{font-size:13.5px;gap:6px;margin-bottom:8px;padding-bottom:8px}
+    .acol h3 .i{width:15px;height:15px}
+    .acol h3 .c{font-size:13.5px}
+    .arep{min-height:0;padding:14px;gap:4px}
+    .arep b{font-size:14.5px}
+    .arep span{font-size:12.5px}
+    .rrow{grid-template-columns:minmax(0,1fr);gap:10px;padding:16px 0}
     .contact{padding:32px 24px}
-    .st-steps{grid-template-columns:1fr;margin-top:32px}
-    .st-step{padding:22px}
-    .st-adapt{padding:32px 22px}
-    .st-certs li{grid-template-columns:62px minmax(0,1fr) auto;gap:8px}
-    .st-next{padding:22px}
     .contact::after,.contact::before{right:-190px;bottom:-230px}
-    .dl{padding:18px}
-    .profile-card .dl{padding-right:72px}
-    .school-logo{top:14px;right:14px;width:48px}
     .dtop.has-cov{grid-template-columns:1fr;gap:22px}
+    .pstrip .pcells{grid-template-columns:minmax(0,1fr)}
+    .pstrip .pcell{grid-template-columns:84px minmax(0,1fr);gap:10px;padding:12px 16px}
+    .pstrip .pcell small{padding-top:3px}
     .pager{grid-template-columns:1fr}
     .pager a.nx{text-align:left}
     .vdlg{width:calc(100% - 20px);border-radius:24px;margin-top:auto;margin-bottom:10px}
@@ -969,14 +813,11 @@
   <div class="wrap bar-in">
     <a class="mark" href="#top">JINSEOK OH<span>.</span></a>
     <nav class="links" aria-label="섹션">
-      <a href="#projects" data-t="nav.projects">프로젝트</a>
-      <a href="#story" data-t="nav.story">방향</a>
+      <a href="#work" data-t="nav.work">작업</a>
       <a href="#about" data-t="nav.about">소개</a>
-      <a href="#records" data-t="nav.records">기록 요약</a>
-      <a href="#activities" data-t="nav.activities">대외활동</a>
-      <a href="#certs" data-t="nav.certs">자격증</a>
-      <a href="#awards" data-t="nav.awards">장학·수상</a>
-      <a href="#contact" data-t="nav.contact">연락처</a>
+      <a href="#activities" data-t="nav.activities">활동</a>
+      <a href="#credentials" data-t="nav.credentials">이력</a>
+      <a href="#contact" data-t="nav.contact">연락</a>
     </nav>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" id="btn-ko" aria-pressed="true">KO</button>
@@ -988,12 +829,12 @@
 <main id="top">
   <div id="list-view">
     <!-- ── 첫 화면 (검은 바탕) ─────────────────────────────────────
-         · eyebrow  : 이름 위 작은 파란 글씨 (학교 · 학번)
+         · eyebrow  : 이름 위 작은 파란 글씨 (학교 · 학번) + 학점 배지
          · h1       : 이름 (ko.js / en.js 의 name)
-         · headline : 이름 밑 한 줄 (ko.js · en.js 의 hero.headline)
-         · tagline  : 기울임체 영어 한 줄 (ko.js · en.js 의 tagline)
-         · lede     : 소개 두 문장  ◀ 자기소개를 바꾸려면 ko.js · en.js 의 hero.intro
-         · hero-stats: 아래 유리 숫자 상자. 어떤 숫자를 넣을지는 common.js 의 heroStats
+         · headline : 이름 밑 핵심 한 줄 (ko.js · en.js 의 hero.headline)
+         · lede     : 짧은 소개 두 문장 (ko.js · en.js 의 hero.intro)
+         · chips    : 관심사 태그 (ko.js · en.js 의 interests)
+         숫자 상자는 두지 않습니다. 숫자는 아래에서 맥락과 함께 한 번씩 나옵니다.
          ───────────────────────────────────────────────────────── -->
     <div class="hero">
       <!-- 이름 뒤로 흘러가는 키워드 띠 (글자는 ko.js / en.js 의 keywords). 장식이라 화면 읽기에서 제외 -->
@@ -1004,12 +845,10 @@
             <p class="eyebrow"><span data-t="hero.school">성균관대학교 컴퓨터교육과 · 2024학번</span><span class="gpa-pill"><span data-t="hero.gpa">GPA 4.33</span><small data-t="hero.gpaMax">/ 4.5</small></span></p>
             <h1 data-role="name">오진석</h1>
             <p class="headline" data-t="hero.headline"></p>
-            <!-- 캐치프레이즈: ko.js / en.js 의 tagline -->
-            <p class="tagline" id="tagline"></p>
-            <p class="lede" data-t="hero.intro">기술을 사람과 아이디어에 연결하는 일을 좋아합니다.</p>
+            <p class="lede" data-t="hero.intro"></p>
             <div class="chips" id="hero-chips"></div>
             <div class="hero-cta">
-              <a class="btn solid" href="#projects"><span data-t="hero.buttonProjects">프로젝트 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
+              <a class="btn solid" href="#work"><span data-t="hero.buttonWork">대표 작업 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
               <a class="btn ghost" href="#contact"><span data-t="hero.buttonContact">연락처</span></a>
             </div>
           </div>
@@ -1018,133 +857,54 @@
             <img src="img/hero.webp" alt="" aria-hidden="true" width="1400" height="826" fetchpriority="high" decoding="async">
           </div>
         </div>
-        <div class="hero-stats" id="hero-stats"></div>
       </div>
     </div>
 
     <!-- 첫 화면 위로 올라오는 둥근 흰 판. 아래 섹션은 모두 이 안에 있습니다 -->
     <div class="sheet">
-      <!-- ── PROJECTS: 개발 프로젝트 쇼케이스 ──────────────────────
-           카드 목록은 common.js 의 projects, 글자는 ko/en.js 의 page.projects 와 activities[id].proj -->
-      <section id="projects">
+      <!-- ── SELECTED WORK: 무엇을 했나 (깊이) ─────────────────────────
+           프로젝트 카드는 common.js 의 projects, 대표 활동 카드는 common.js 의 featured.
+           글자는 ko/en.js 의 page.work, 활동별 proj(프로젝트) · card(대표 활동 두 줄) -->
+      <section id="work">
         <div class="wrap">
-          <p class="st-kicker" data-t="projects.kicker">PROJECTS</p>
-          <div class="shead"><h2 data-t="projects.title"></h2></div>
-          <p class="sdesc" data-t="projects.desc"></p>
+          <p class="st-kicker" data-t="work.kicker">SELECTED WORK</p>
+          <div class="shead"><h2 data-t="work.title"></h2></div>
+          <p class="sdesc" data-t="work.desc"></p>
+          <div class="wsub"><h3 data-t="work.projects">프로젝트</h3><span data-t="work.projectsSub"></span></div>
           <div class="pshow" id="project-list"></div>
-        </div>
-      </section>
-
-      <section id="featured" class="tint">
-        <div class="wrap">
-          <div class="shead">
-            <h2 data-t="featured.title">대표 활동</h2>
-            <a class="more-link" href="#activities"><span data-t="featured.more">전체 활동 보기</span><svg class="i"><use href="#ic-arrow"/></svg></a>
-          </div>
+          <div class="wsub"><h3 data-t="work.featured">대표 활동</h3><span data-t="work.featuredSub"></span></div>
           <div class="feature" id="featured-list"></div>
         </div>
       </section>
 
-      <!-- ── 방향 (What am I becoming?) ──────────────────────────────
-           글자는 ko.js / en.js 의 page → story.
-           01 EXPLORE · 02 DISCOVER 두 칸 → 03 ADAPT 검은 카드 → 04 CONNECT 한 줄.
-           ADAPT 오른쪽 자격증 목록은 common.js 의 certGroups 에서
-           story.adapt.since 날짜 이후에 딴 것을 자동으로 날짜순으로 보여 줍니다.
-           ───────────────────────────────────────────────────────── -->
-      <section id="story">
-        <div class="wrap">
-          <p class="st-kicker" data-t="story.kicker">WHAT AM I BECOMING?</p>
-          <h2 class="st-title" data-t="story.title"></h2>
-          <div class="st-steps">
-            <div class="st-step">
-              <p class="st-no"><span class="num">01</span><b data-t="story.explore.label">EXPLORE</b><span data-t="story.explore.period"></span></p>
-              <p data-t="story.explore.text"></p>
-            </div>
-            <div class="st-step">
-              <p class="st-no"><span class="num">02</span><b data-t="story.discover.label">DISCOVER</b><span data-t="story.discover.period"></span></p>
-              <p data-t="story.discover.text"></p>
-            </div>
-          </div>
-          <div class="st-adapt">
-            <div>
-              <p class="st-no"><span class="num">03</span><b data-t="story.adapt.label">ADAPT &amp; GROW</b><span data-t="story.adapt.period"></span></p>
-              <h3 data-t="story.adapt.title"></h3>
-              <p class="st-adapt-text" data-t="story.adapt.text"></p>
-              <p class="st-role" data-t="story.adapt.role"></p>
-            </div>
-            <ol class="st-certs" id="story-certs"></ol>
-          </div>
-          <div class="st-next">
-            <p class="st-no"><span class="num">04</span><b data-t="story.connect.label">CONNECT</b><span data-t="story.connect.period"></span></p>
-            <p class="st-next-text" data-t="story.connect.text"></p>
-          </div>
-        </div>
-      </section>
-
+      <!-- ── 소개: 위의 작업을 해석하는 네 단계 (글자는 ko.js / en.js 의 page.about.steps, em:true 인 단계를 상자로 강조) ── -->
       <section id="about" class="tint">
         <div class="wrap">
-          <div class="shead"><h2 data-t="about.title">소개</h2></div>
-          <div class="about">
-            <!-- ◀ 소개 본문 네 문단. 글자는 ko.js / en.js 의 page → about 에 있습니다.
-                 문단을 더 넣으려면 <p data-t="about.paragraph5"></p> 를 아래에 붙이고
-                 ko.js · en.js 의 about 에 paragraph5 를 추가하세요. -->
-            <div class="prose">
-              <p data-t="about.paragraph1"></p>
-              <p data-t="about.paragraph2"></p>
-              <p data-t="about.paragraph3"></p>
-              <p data-t="about.paragraph4"></p>
-            </div>
-            <div>
-              <p class="subh" data-t="about.profileTitle">기본 정보</p>
-              <!-- 기본 정보 카드. 오른쪽 위 학교 로고는 img/skku.png -->
-              <div class="profile-card">
-                <img class="school-logo" src="img/skku.png" alt="성균관대학교 로고" width="240" height="240" loading="lazy">
-                <dl class="dl" id="profile-dl"></dl>
-              </div>
-            </div>
-          </div>
+          <p class="st-kicker" data-t="about.kicker">ABOUT</p>
+          <h2 class="st-title" data-t="about.title"></h2>
+          <ol class="steps" id="about-steps"></ol>
         </div>
       </section>
 
-      <section id="records">
+      <!-- ── 활동 기록 (ACTIVITY ARCHIVE): 구분마다 한 칸. 처음엔 칸마다 대표 하나(common.js 의 archiveReps), 버튼으로 나머지를 칸 아래에 펼침 ── -->
+      <section id="activities">
         <div class="wrap">
-          <div class="shead"><h2 data-t="records.title">기록 요약</h2></div>
-          <p class="sdesc" data-t="records.description"></p>
-          <div class="tiles" id="tiles"></div>
-        </div>
-      </section>
-
-      <section id="activities" class="tint">
-        <div class="wrap">
-          <div class="shead">
-            <h2><span data-t="activities.title">대외활동</span><span class="count num" data-t="activities.count">20</span></h2>
-            <!-- 보기 전환: 분야별(기본) / 활동별. 축은 common.js 의 axes, 활동마다 axis -->
-            <div class="seg" id="view-toggle" role="group" aria-label="보기 방식">
-              <button type="button" data-view="axes" aria-pressed="true">분야별</button>
-              <button type="button" data-view="types" aria-pressed="false">활동별</button>
-            </div>
-          </div>
+          <p class="st-kicker" data-t="activities.kicker">ACTIVITY ARCHIVE</p>
+          <div class="shead"><h2><span data-t="activities.title">활동 기록</span><span class="count num" data-t="activities.count">20</span></h2></div>
           <p class="sdesc" data-t="activities.description"></p>
-          <div class="filters" id="filters" role="group" aria-label="구분"></div>
-          <!-- 분야별 보기에서 고른 분야의 설명 한 줄 -->
-          <p class="axis-desc" id="axis-desc" hidden></p>
-          <div class="rows" id="timeline"></div>
-          <div class="all"><button class="btn line" type="button" id="tl-more" aria-controls="timeline" aria-expanded="false" hidden></button></div>
+          <div class="arch" id="board"></div>
+          <div class="all"><button class="btn line" type="button" id="tl-more" aria-controls="board" aria-expanded="false" hidden></button></div>
         </div>
       </section>
 
-      <section class="pair">
-        <div class="wrap pair-in">
-          <div id="certs">
-            <div class="shead"><h2><span data-t="certs.title">자격증</span><span class="count num" data-t="certs.count">7</span></h2></div>
-            <p class="sdesc" data-t="certs.description"></p>
-            <div class="acc" id="cert-groups"></div>
-          </div>
-          <div id="awards">
-            <div class="shead"><h2><span data-t="awards.title">장학 · 수상</span><span class="count num" data-t="awards.count">3</span></h2></div>
-            <p class="sdesc" data-t="awards.description"></p>
-            <div class="awards" id="award-list"></div>
-          </div>
+      <!-- ── 이력 (RECORDS): EDUCATION · LANGUAGE · CERTIFICATION · SCHOLARSHIP · VOLUNTEER 다섯 줄
+           (common.js 의 tiles · certGroups · awards · volunteerLog) ── -->
+      <section id="credentials" class="tint">
+        <div class="wrap">
+          <p class="st-kicker" data-t="credentials.kicker">RECORDS</p>
+          <div class="shead"><h2 data-t="credentials.title">이력</h2></div>
+          <p class="sdesc" data-t="credentials.description"></p>
+          <div class="recs" id="creds"></div>
         </div>
       </section>
 
@@ -1184,13 +944,20 @@
       <a class="mark" href="#top">JINSEOK OH<span>.</span></a>
       <p data-t="footer.name">오진석 · Portfolio</p>
     </div>
+    <!-- 상세 페이지에서만 보이는 연락 링크 (메인에서는 바로 위 연락처 카드와 겹치므로 숨김) -->
+    <div class="foot-links">
+      <a href="mailto:kidariseok@gmail.com">kidariseok@gmail.com</a>
+      <a href="https://github.com/kidariseok" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/jinseokoh/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://blog.naver.com/kidariseok" target="_blank" rel="noopener" data-t="contact.blogShort">블로그</a>
+    </div>
     <!-- 갱신 날짜: ko.js / en.js 의 footer.updated (지금은 "" 로 비워 숨김) -->
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1791113294"></script>
-<script src="content/ko.js?v=1791113294"></script>
-<script src="content/en.js?v=1791113294"></script>
+<script src="content/common.js?v=1791166404"></script>
+<script src="content/ko.js?v=1791166404"></script>
+<script src="content/en.js?v=1791166404"></script>
 <script>
 (function(){
   "use strict";
@@ -1221,11 +988,11 @@
   var CAT = {};
   Object.keys(C.categories).forEach(function(k){
     var c = C.categories[k];
-    CAT[k] = {ko: KO.categories[k] || k, en: EN.categories[k] || k, cls: c.color, ic: c.icon};
+    CAT[k] = {ko: KO.categories[k] || k, en: EN.categories[k] || k, cls: "ax-" + k, ic: c.icon};
   });
   var ACT = C.activities.map(function(a){
     var k = KO.activities[a.id] || {}, e = EN.activities[a.id] || {};
-    return {id: a.id, s: a.start, e: a.end, ds: a.dates || null, cat: a.category, axis: a.axis, nid: a.notion || "", video: a.video || "",
+    return {id: a.id, s: a.start, e: a.end, ds: a.dates || null, cat: a.category, nid: a.notion || "", video: a.video || "",
       ko: k.title || a.id, en: e.title || k.title || a.id, dko: k.summary || "", den: e.summary || "",
       oko: k.org || "", oen: e.org || k.org || "",
       nd: !!a.noDate,   // noDate: 화면에 날짜를 표시하지 않음   // org: 프로젝트명이 제목일 때 그 밑에 쓰는 동아리 · 행사 이름
@@ -1233,7 +1000,7 @@
       body: {ko: k.body || [], en: e.body || []}};
   });
   var CERT_GROUPS = C.certGroups.map(function(g){
-    return {g: both(function(L){ return L.certGroups[g.id] || g.id; }), items: g.items.map(function(c){
+    return {id: g.id, g: both(function(L){ return L.certGroups[g.id] || g.id; }), items: g.items.map(function(c){
       function f(key){ return both(function(L){ return (L.certs[c.id] || {})[key] || ""; }); }
       var n = f("name");
       var prev = c.prev ? {date: c.prev.date, valid: c.prev.valid, txt: both(function(L){ return ((L.certs[c.id] || {}).prev) || {}; })} : null;
@@ -1250,23 +1017,17 @@
     return {id: t.id, ic: t.icon, v: t.value, logo: t.logo, link: t.link, vl: {ko: k.value, en: e.value}, k: {ko: k.label || "", en: e.label || ""},
       u: {ko: k.unit || "", en: e.unit || ""}, n: {ko: k.note || "", en: e.note || ""}, more: {ko: k.more || "", en: e.more || ""}};
   });
-  var TILE_GROUPS = C.tileGroups || [];
-  function groupOf(id){ for(var i=0;i<TILE_GROUPS.length;i++){ if(TILE_GROUPS[i].tiles.indexOf(id) >= 0) return TILE_GROUPS[i]; } return null; }
-  var HERO_STATS = C.heroStats;
   var FEATURED = C.featured || [];
-  var AXES = C.axes || [];
-  function tr(v){ return v && typeof v === "object" ? (v[lang] || v.ko) : v; }   // {ko, en} 이면 지금 언어 글자
-  function axisOf(id){ for(var i=0;i<AXES.length;i++){ if(AXES[i].id === id) return AXES[i]; } return null; }
-  var TL_SHOW = 6;          // 대외활동 목록에서 처음에 보이는 개수 ('모두 보기'로 나머지를 펼침)
+  // 'SELECTED WORK'에 나오는 활동 (프로젝트 + 대표 활동): 활동 기록에서는 칸 맨 아래에 이름만
+  function isWork(id){ return (C.projects || []).indexOf(id) >= 0 || FEATURED.indexOf(id) >= 0; }
   var T = {};
   Object.keys(KO.ui).forEach(function(k){ T[k] = {ko: KO.ui[k], en: EN.ui[k] != null ? EN.ui[k] : KO.ui[k]}; });
   function L(){ return lang === "ko" ? KO : EN; }   // 지금 언어의 문구 파일
 
   var lang = "ko";        // 처음 열었을 때의 언어. "en" 으로 바꾸면 영어로 시작합니다
-  var filter = "all";
-  var tlOpen = false;       // 대외활동 목록을 모두 펼쳤는지
-  var view = AXES.length ? "axes" : "types";   // 대외활동 보기: "axes"(분야별, 기본) / "types"(활동별)
+  var tlOpen = false;       // 활동 기록의 나머지 활동을 펼쳤는지
   var listScroll = 0;
+  var cameFrom = null;      // 상세 페이지로 들어온 곳 ("work" · "activities"): 상세 맨 위 '뒤로' 링크가 그곳으로 돌아감
 
   function el(tag, cls, text){
     var n = document.createElement(tag);
@@ -1658,39 +1419,19 @@
 
   /* ---------- list renderers ---------- */
 
+  // 첫 화면 관심사 태그 (ko.js / en.js 의 interests)
   function renderChips(){
     var box = document.getElementById("hero-chips");
+    if(!box) return;
     box.textContent = "";
-    L().interests.forEach(function(c){ box.appendChild(el("span","chip",c)); });
+    (L().interests || []).forEach(function(c){ box.appendChild(el("span","chip",c)); });
+    box.hidden = !box.children.length;
   }
 
   function findTile(id){
     for(var i=0;i<TILES.length;i++){ if(TILES[i].id === id) return TILES[i]; }
     return null;
   }
-  // 숫자 한 개: 큰 숫자 + 작은 단위 (예: 212 시간+)
-  // 자동 계산 값: 대외활동 수와 기간, 봉사시간(분 합계 → 시간, 소수점 버림)과 횟수
-  function autoVals(id){
-    if(id === "activities"){
-      var from = ACT[0].s, to = ACT[0].e || ACT[0].s;
-      ACT.forEach(function(a){ if(a.s < from) from = a.s; if((a.e || a.s) > to) to = a.e || a.s; });
-      var r = fmtDate(from.slice(0,8) + "01", to.slice(0,8) + "02").split(" - ");
-      return {v: String(ACT.length), from: r[0], to: r[1] || r[0]};
-    }
-    if(id === "volunteer" && C.volunteerLog){
-      var min = 0, recs = C.volunteerLog.records;
-      recs.forEach(function(x){ min += x.minutes; });
-      return {v: String(Math.floor(min / 60)), n: recs.length};
-    }
-    return {};
-  }
-  function noteText(t){ return fill(t.n[lang], autoVals(t.id)); }
-  function valueEl(cls, t){
-    var v = el("b", cls, t.v === "auto" ? autoVals(t.id).v : (t.vl[lang] || t.v));
-    if(t.u[lang]) v.appendChild(el("small", null, t.u[lang].trim()));
-    return v;
-  }
-
   // 이름 뒤 키워드 띠 4줄: 줄마다 시작 키워드를 바꾸고, 같은 목록을 두 번 이어 붙여 끊김 없이 돕니다
   var MARQUEE_ROWS = 4;
   function renderMarquee(){
@@ -1708,40 +1449,8 @@
     }
   }
 
-  // 첫 화면 아래 유리 숫자 상자 (common.js 의 heroStats)
-  function renderHeroStats(){
-    var box = document.getElementById("hero-stats");
-    box.textContent = "";
-    HERO_STATS.forEach(function(id){
-      var t = findTile(id);
-      if(!t) return;
-      var c = el("div","hstat");
-      c.appendChild(valueEl("v num", t));
-      c.appendChild(el("span","k", t.k[lang]));
-      box.appendChild(c);
-    });
-  }
-
-  // '방향' 섹션 ADAPT 카드 오른쪽: story.adapt.since 이후에 딴 자격증을 날짜순으로 (common.js 의 certGroups)
-  function renderStoryCerts(){
-    var box = document.getElementById("story-certs");
-    if(!box) return;
-    box.textContent = "";
-    var since = pick(L().page, "story.adapt.since") || "9999";
-    var list = [];
-    CERT_GROUPS.forEach(function(g){ g.items.forEach(function(c){ if(c.date >= since) list.push(c); }); });
-    list.sort(function(a, b){ return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
-    list.forEach(function(c){
-      var li = el("li");
-      li.appendChild(el("span","dt num", c.date.slice(0,7).replace("-", ".")));
-      li.appendChild(el("span","nm", c[lang]));
-      li.appendChild(el("span","rs", c.score[lang]));
-      box.appendChild(li);
-    });
-    box.hidden = !list.length;
-  }
-
-  // 대표 활동 검은 카드 (common.js 의 featured)
+  // 대표 활동 검은 카드 (common.js 의 featured): 구분 · 제목 · 소속 · MY ROLE · RESULT (날짜 없음)
+  // 넓은 화면은 왼쪽 글 · 오른쪽 사진, 휴대폰은 CSS 로 사진을 위로 올려 2×2 작은 카드가 됨 (내용은 같음)
   function renderFeatured(){
     var box = document.getElementById("featured-list");
     box.textContent = "";
@@ -1752,11 +1461,20 @@
       var card = el("a", pics.cover ? "fcard has-ph" : "fcard");
       card.href = "#a/" + a.id;
       var txt = el("div","txt");
-      txt.appendChild(el("span","meta num", CAT[a.cat][lang] + (dateOf(a) ? " · " + dateOf(a) : "")));
+      txt.appendChild(el("span","meta", CAT[a.cat][lang]));
       txt.appendChild(el("h3", null, a[lang]));
       if(orgOf(a)) txt.appendChild(el("span","org", orgOf(a)));
-      var d = lang === "ko" ? a.dko : a.den;
-      if(d) txt.appendChild(el("p", null, d));
+      // card: {role, result} 두 줄 (ko.js / en.js). 없으면 목록용 짧은 요약
+      var cd = (L().activities[a.id] || {}).card || (KO.activities[a.id] || {}).card, LB = L().page.projects.labels;
+      if(cd){
+        var kv = el("dl","fkv");
+        if(cd.role){ kv.appendChild(el("dt", null, LB.role)); kv.appendChild(el("dd","role", cd.role)); }
+        if(cd.result){ kv.appendChild(el("dt", null, LB.result)); kv.appendChild(el("dd","res", cd.result)); }
+        txt.appendChild(kv);
+      } else {
+        var d = lang === "ko" ? a.sko : a.sen;
+        if(d) txt.appendChild(el("p", null, d));
+      }
       var go = el("span","go", T.detail[lang]);
       go.appendChild(icon("ic-arrow"));
       txt.appendChild(go);
@@ -1785,8 +1503,7 @@
       var i = byId(id), pj = projOf(id);
       if(i < 0 || !pj) return;
       var a = ACT[i], pics = IMG[a.id] || {}, P = L().page.projects;
-      var card = el("a", "pcard" + (n % 2 ? " rev" : ""));
-      card.href = "#a/" + a.id;
+      var card = el("article", "pcard" + (n % 2 ? " rev" : ""));
 
       var media = el("div","pmedia");
       if(pics.video && pics.video.poster){
@@ -1813,55 +1530,83 @@
       var txt = el("div","ptxt");
       var meta = el("div","pmeta");
       meta.appendChild(el("span","ptype", pj.type));
-      meta.appendChild(el("span","num", (orgOf(a) || a[lang]) + " · " + (pj.date || dateOf(a))));
+      meta.appendChild(el("span", null, orgOf(a) || a[lang]));
       txt.appendChild(meta);
-      txt.appendChild(el("h3", null, pj.name));
+      // 제목 링크를 카드 전체 크기로 늘려 카드 어디를 눌러도 상세로 (GitHub 버튼은 그 위에 따로)
+      var h3 = el("h3"), ln = el("a","pcard-link", pj.name);
+      ln.href = "#a/" + a.id;
+      h3.appendChild(ln);
+      txt.appendChild(h3);
       txt.appendChild(el("p","pwhat", pj.what));
       var dl = el("dl","pdl");
       dl.appendChild(el("dt", null, P.labels.role));
       var dd = el("dd"); pj.role.forEach(function(t){ dd.appendChild(chip(t)); }); dl.appendChild(dd);
+      if(pj.result){ dl.appendChild(el("dt", null, P.labels.result)); dl.appendChild(el("dd","txt", pj.result)); }
       dl.appendChild(el("dt", null, P.labels.stack));
       dd = el("dd"); pj.stack.forEach(function(t){ dd.appendChild(chip(t)); }); dl.appendChild(dd);
       txt.appendChild(dl);
+      var foot = el("div","pfoot");
       var go = el("span","go", P.open); go.appendChild(icon("ic-arrow"));
-      txt.appendChild(go);
+      foot.appendChild(go);
+      if(pj.links && pj.links.length){
+        var pl = el("div","plinks");
+        pj.links.forEach(function(l){
+          var la = el("a", null, l.t);
+          la.href = l.href; la.target = "_blank"; la.rel = "noopener";
+          la.insertBefore(icon("ic-code"), la.firstChild);
+          pl.appendChild(la);
+        });
+        foot.appendChild(pl);
+      }
+      txt.appendChild(foot);
       card.appendChild(txt);
       box.appendChild(card);
     });
   }
 
-  // 상세 상단 30초 요약 띠: WHAT / ROLE / TEAM / PERIOD / STACK (+ 영상·발표자료로 건너뛰기)
+  // 상세 페이지 맨 위 요약 패널: 모든 상세 페이지가 같은 형식
+  // MY ROLE · (MY TOOLS) · TEAM · SCALE · PERIOD · WHERE · RESULT · (STACK) + 링크 / 영상 · 발표자료로 건너뛰기
+  // 글자: 프로젝트는 ko/en.js 의 proj, 나머지는 panel. PERIOD 를 비우면 common.js 날짜를 씀 (상세에서 날짜가 나오는 유일한 자리)
+  function panelOf(id){ return (L().activities[id] || {}).panel || (KO.activities[id] || {}).panel || null; }
   function renderProjectStrip(view, a){
-    var pj = projOf(a.id);
-    if(!pj) return null;
-    var P = L().page.projects;
+    var pj = projOf(a.id), pn = panelOf(a.id) || {};
+    var LB = L().page.projects.labels;
     var strip = el("div","pstrip");
-    strip.setAttribute("role","group"); strip.setAttribute("aria-label", pj.name);
-    strip.appendChild(el("p","pwhat", pj.what));
+    strip.setAttribute("role","group"); strip.setAttribute("aria-label", a[lang]);
     var cells = el("div","pcells");
-    function cell(label, content){
-      var c = el("div","pcell"); c.appendChild(el("small", null, label));
-      if(typeof content === "string"){ var s = el("span", isTbd(content) ? "tbd" : null, content); c.appendChild(s); }
+    function cell(label, content, cls){
+      var c = el("div", "pcell" + (cls ? " " + cls : "")); c.appendChild(el("small", null, label));
+      if(typeof content === "string"){ c.appendChild(el("span", isTbd(content) ? "tbd" : null, content)); }
       else c.appendChild(content);
       cells.appendChild(c);
     }
-    var rc = el("div","pchips"); pj.role.forEach(function(t){ rc.appendChild(chip(t)); });
-    cell(P.labels.role, rc);
-    if(pj.tools){
-      var tc = el("div","pchips"); pj.tools.forEach(function(t){ tc.appendChild(chip(t)); });
-      cell(P.labels.tools, tc);
-    }
-    cell(P.labels.team, pj.team);
-    cell(P.labels.period, pj.period);
-    var sc = el("div","pchips"); pj.stack.forEach(function(t){ sc.appendChild(chip(t)); });
-    cell(pj.tools ? P.labels.stackTeam : P.labels.stack, sc);
-    cells.lastChild.classList.add("wide");
+    function chips(list){ var w = el("div","pchips"); list.forEach(function(t){ w.appendChild(chip(t)); }); return w; }
+    function wide(t){ return t.length > 34 ? "w2" : null; }
+    if(pj){
+      cell(LB.role, chips(pj.role));
+      if(pj.tools) cell(LB.tools, chips(pj.tools));
+    } else if(pn.role) cell(LB.role, pn.role, wide(pn.role));
+    var team = pj ? pj.team : pn.team;
+    if(team) cell(LB.team, team);
+    if(pn.scale) cell(LB.scale, pn.scale);
+    var per = pn.period || (pj && pj.period) || dateOf(a);
+    if(per) cell(LB.period, per);
+    if(pn.where) cell(LB.where, pn.where, wide(pn.where));
+    var res = (pj && pj.result) || pn.result, key = (pj && pj.key) || pn.key;
+    if(res && key){
+      var kv = el("div","kv");
+      kv.appendChild(el("b","num", key));
+      kv.appendChild(el("span", null, res));
+      cell(LB.result, kv, "res haskey" + (wide(res) ? " w2" : ""));
+    } else if(res) cell(LB.result, res, "res" + (wide(res) ? " w2" : ""));
+    if(pj) cell(pj.tools ? LB.stackTeam : LB.stack, chips(pj.stack), "wide");
     strip.appendChild(cells);
     var jumps = el("div","pjumps");
-    (pj.links || []).forEach(function(l){
+    ((pj && pj.links) || pn.links || []).forEach(function(l){
       var a2 = el("a", null, l.t);
-      a2.href = l.href; a2.target = "_blank"; a2.rel = "noopener";
-      a2.insertBefore(icon("ic-code"), a2.firstChild);
+      a2.href = l.href;
+      if(l.href.charAt(0) === "#") a2.appendChild(icon("ic-arrow"));   // 사이트 안 다른 상세 페이지
+      else { a2.target = "_blank"; a2.rel = "noopener"; a2.insertBefore(icon("ic-code"), a2.firstChild); }
       jumps.appendChild(a2);
     });
     strip.appendChild(jumps);
@@ -1875,104 +1620,21 @@
     strip.querySelector(".pjumps").appendChild(b);
   }
 
-  function renderProfile(){
-    var dl = document.getElementById("profile-dl");
-    dl.textContent = "";
-    L().profile.forEach(function(r){
-      dl.appendChild(el("dt", null, r[0]));
-      var dd = el("dd");
-      if(/^[\w.-]+\.[a-z]{2,}\/\S*$/i.test(r[1])){   // 'blog.naver.com/...' 처럼 주소를 적으면 링크가 됩니다
-        var a = el("a", null, r[1]);
-        a.href = "https://" + r[1]; a.target = "_blank"; a.rel = "noopener";
-        dd.appendChild(a);
-      } else dd.textContent = r[1];
-      dl.appendChild(dd);
-    });
-    // profileLinks: 블로그 · GitHub · LinkedIn 을 '링크' 한 줄의 버튼으로 (ko.js / en.js)
-    var PL = L().profileLinks;
-    if(PL && PL.items && PL.items.length){
-      dl.appendChild(el("dt", null, PL.label));
-      var pd = el("dd", "plk"), wrap = el("div", "lks");
-      PL.items.forEach(function(it){
-        var a = el("a", "lk");
-        a.href = it.href; a.target = "_blank"; a.rel = "noopener"; a.title = it.href.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
-        var ic = el("span", "lk-ic"); ic.appendChild(icon(it.icon)); a.appendChild(ic);
-        a.appendChild(el("span", "lk-t", it.t));
-        wrap.appendChild(a);
-      });
-      pd.appendChild(wrap);
-      dl.appendChild(pd);
-    }
-  }
-
-
-  function renderTiles(){
-    var box = document.getElementById("tiles");
+  // 소개: 네 단계 (ko.js / en.js 의 page.about.steps). more 가 있으면 '이력'으로 가는 작은 링크, em:true 면 상자로 강조
+  function renderAbout(){
+    var box = document.getElementById("about-steps");
+    if(!box) return;
     box.textContent = "";
-    var groupBoxes = {};
-    TILES.forEach(function(t){
-      // 카드 묶음(tileGroups)에 든 카드는 묶음 상자 안에 넣습니다 (상자는 첫 카드 자리에 한 번 만듦)
-      var grp = groupOf(t.id), parent = box;
-      if(grp){
-        if(!groupBoxes[grp.id]){
-          var G = (L().tileGroups || {})[grp.id] || {};
-          var gb = el("a","tgroup");
-          gb.href = "#a/" + grp.link;
-          gb.setAttribute("aria-label", (G.title || grp.id) + " · " + T.detail[lang]);
-          gb.addEventListener("click", function(e){   // 휴대폰: 첫 번째 누름은 열기, 두 번째 누름에 상세로 이동
-            if(window.matchMedia && matchMedia("(hover: none)").matches && !gb.classList.contains("on")){
-              e.preventDefault();
-              document.querySelectorAll(".tgroup.on").forEach(function(o){ o.classList.remove("on"); });
-              gb.classList.add("on");
-            }
-          });
-          var band = el("span","tg-band");
-          band.appendChild(el("b", null, G.title || ""));
-          if(G.sub) band.appendChild(el("span", null, G.sub));
-          var foot = el("span","tg-foot");
-          foot.appendChild(el("span", null, G.note || ""));
-          var go = el("b", null, T.detail[lang]);
-          go.appendChild(icon("ic-arrow"));
-          foot.appendChild(go);
-          gb._tail = [band, foot];
-          groupBoxes[grp.id] = gb;
-          box.appendChild(gb);
-        }
-        parent = groupBoxes[grp.id];
-      }
-      // '봉사시간' 카드는 누르면 전체 내역 창이 열리는 버튼입니다
-      var clickable = t.id === "volunteer" && C.volunteerLog;
-      var linked = !clickable && t.link && byId(t.link) >= 0;   // common.js 의 link: 누르면 그 활동 상세 기록으로
-      var c = el(clickable ? "button" : linked ? "a" : "div", "tile");
-      if(linked) c.href = "#a/" + t.link;
-      else if(clickable){
-        c.type = "button";
-        c.setAttribute("aria-haspopup", "dialog");
-        c.addEventListener("click", openVolunteer);
-      } else if(!grp) c.tabIndex = 0;                   // 키보드로 골라도 검게 바뀌도록 (묶음 카드는 묶음 상자가 대신 받음)
-      if(t.logo){                                   // 로고가 있는 카드 (예: 국제학교): 오른쪽 위 흰 원 안에
-        var lg = el("span","tlogo");
-        var li = document.createElement("img");
-        li.src = "img/" + t.logo; li.alt = ""; li.loading = "lazy";
-        lg.appendChild(li); c.appendChild(lg);
-      }
-      c.appendChild(valueEl("v num", t));
-      c.appendChild(el("span","k", t.k[lang]));
-      c.appendChild(rich("span","n", noteText(t)));   // <b>숫자</b> 로 강조할 수 있습니다
-      if(t.more[lang]){                              // 마우스를 올리면 아래로 펼쳐지는 설명 (휴대폰은 눌러서 열고 닫기)
-        c.classList.add("has-more");
-        c.appendChild(el("span","more", t.more[lang]));
-        c.addEventListener("click", function(){ c.classList.toggle("on"); });
-      }
-      if(clickable || linked){
-        var hint = el("span","open-hint", clickable ? L().volunteerLog.open : T.detail[lang]);
-        hint.appendChild(icon("ic-arrow"));
-        c.appendChild(hint);
-      }
-      parent.appendChild(c);
-    });
-    Object.keys(groupBoxes).forEach(function(k){   // 공통 제목 · 링크는 카드 뒤에 붙여야 :first-child / :nth-child(2) 가 카드를 가리킴
-      groupBoxes[k]._tail.forEach(function(n){ groupBoxes[k].appendChild(n); });
+    (pick(L().page, "about.steps") || []).forEach(function(st, i){
+      var li = el("li", st.em ? "em" : null);
+      var no = el("p","st-no");
+      no.appendChild(el("span","num", pad2(i + 1)));
+      no.appendChild(el("b", null, st.label));
+      no.appendChild(el("span", null, st.period || ""));
+      li.appendChild(no);
+      li.appendChild(el("p","t", st.text));
+      if(st.more){ var m = el("a","more", st.more + " →"); m.href = "#credentials"; li.appendChild(m); }
+      box.appendChild(li);
     });
   }
 
@@ -2069,153 +1731,130 @@
     x.focus();
   }
 
-  // 활동 a 가 지금 고른 구분(또는 축)에 들어가는지
-  function inFilter(a){
-    if(filter === "all") return true;
-    return view === "axes" ? a.axis === filter : a.cat === filter;
+  // 활동 기록 (ACTIVITY ARCHIVE): 구분(common.js 의 categories 순서)마다 한 칸
+  // · 접어 둔 상태: 칸마다 대표 활동 하나 (common.js 의 archiveReps, SELECTED WORK 와 겹치지 않는 활동)
+  // · '전체 활동 20개 보기': 칸 아래로 나머지 활동이 펼쳐짐 (common.js 의 activities 순서)
+  // 각 활동은 제목 + 맡은 역할 한 줄 (panel.role, 없으면 목록용 짧은 요약). SELECTED WORK 활동은 칸 맨 아래에 이름만
+  function roleOf(a){
+    var pn = (L().activities[a.id] || {}).panel || (KO.activities[a.id] || {}).panel || {};
+    return pn.role || (lang === "ko" ? a.sko : a.sen) || "";
   }
-
-  function renderFilters(){
-    var box = document.getElementById("filters");
+  function renderArchive(){
+    var box = document.getElementById("board");
+    if(!box) return;
     box.textContent = "";
-    box.className = "filters" + (view === "axes" ? " axes" : "");
-    var counts = {};
-    ACT.forEach(function(a){ var k = view === "axes" ? a.axis : a.cat; counts[k] = (counts[k]||0)+1; });
-
-    var list = [{key:"all", label:T.all[lang], n:ACT.length}];
-    if(view === "axes") AXES.forEach(function(x){ if(counts[x.id]) list.push({key:x.id, label:tr(x.name), sub:tr(x.sub), n:counts[x.id]}); });
-    else Object.keys(CAT).forEach(function(k){ if(counts[k]) list.push({key:k, label:CAT[k][lang], n:counts[k]}); });
-
-    list.forEach(function(f){
-      var b = el("button", f.key !== "all" ? "ax-" + f.key : null);   // 분야 · 활동 구분마다 색 (style.css 의 .ax-...)
-      b.type = "button";
-      b.setAttribute("aria-pressed", filter === f.key ? "true" : "false");
-      var name = el("span","nm", f.label);
-      name.appendChild(el("span","c num", String(f.n)));
-      b.appendChild(name);
-      if(f.sub) b.title = f.sub;
-      b.addEventListener("click", function(){
-        filter = f.key;
-        tlOpen = false;
-        renderFilters();
-        renderTimeline();
-      });
-      box.appendChild(b);
-    });
-
-    // 분야별 보기: 고른 분야의 설명을 버튼 아래 한 줄로
-    var desc = document.getElementById("axis-desc");
-    desc.hidden = view !== "axes";
-    desc.textContent = "";
-    if(view === "axes"){
-      var ax = axisOf(filter);
-      if(ax){
-        desc.className = "axis-desc ax-" + ax.id;
-        desc.appendChild(el("b", null, tr(ax.name)));
-        desc.appendChild(document.createTextNode(" · " + tr(ax.sub)));
-      } else {
-        desc.className = "axis-desc";
-        desc.textContent = T.axisHint[lang];
+    box.classList.toggle("open", tlOpen);
+    var reps = C.archiveReps || [];
+    Object.keys(CAT).forEach(function(k){
+      var all = ACT.filter(function(a){ return a.cat === k; });
+      if(!all.length) return;
+      var rep = all.filter(function(a){ return reps.indexOf(a.id) >= 0; })[0] || all.filter(function(a){ return !isWork(a.id); })[0];
+      var col = el("div","acol " + CAT[k].cls);
+      var h = el("h3");
+      h.appendChild(icon(CAT[k].ic));
+      h.appendChild(document.createTextNode(CAT[k][lang]));
+      h.appendChild(el("span","c num", String(all.length)));
+      col.appendChild(h);
+      if(rep){
+        var c = el("a","arep");
+        c.href = "#a/" + rep.id;
+        c.appendChild(el("b", null, rep[lang]));
+        var r = roleOf(rep);
+        if(r) c.appendChild(el("span", null, r));
+        col.appendChild(c);
       }
-    }
-
-    document.querySelectorAll("#view-toggle button").forEach(function(b){
-      b.setAttribute("aria-pressed", String(b.getAttribute("data-view") === view));
-      b.textContent = b.getAttribute("data-view") === "axes" ? T.viewAxes[lang] : T.viewTypes[lang];
+      if(tlOpen){
+        var rest = all.filter(function(a){ return a !== rep && !isWork(a.id); });
+        if(rest.length){
+          var ul = el("ul","alist");
+          rest.forEach(function(a){
+            var li = el("li"), row = el("a","arow");
+            row.href = "#a/" + a.id;
+            row.appendChild(el("b", null, a[lang]));
+            var rr = roleOf(a);
+            if(rr) row.appendChild(el("span", null, rr));
+            li.appendChild(row); ul.appendChild(li);
+          });
+          col.appendChild(ul);
+        }
+        var works = all.filter(function(a){ return isWork(a.id); });
+        if(works.length){
+          var ref = el("p","aref");
+          ref.appendChild(el("em", null, T.workRef[lang]));
+          works.forEach(function(a, n){
+            if(n) ref.appendChild(document.createTextNode(" · "));
+            var lk = el("a", null, a[lang]);
+            lk.href = "#a/" + a.id;
+            ref.appendChild(lk);
+          });
+          col.appendChild(ref);
+        }
+      }
+      box.appendChild(col);
     });
-  }
-
-  // 대외활동 목록: 한 줄에 날짜 · 구분 · 제목(+요약).
-  // '전체'를 접어 둔 상태: common.js 의 archivePicks (분야별 대표 활동)를 분야 순서대로 보여 줍니다.
-  // 다른 구분을 접어 둔 상태: 최신순 TL_SHOW 개. '모두 보기'로 펼치면 해당 구분 전체가 최신순으로 나옵니다.
-  function renderTimeline(){
-    var box = document.getElementById("timeline");
-    box.textContent = "";
-    var rows = ACT.filter(inFilter);
-    var preview;
-    if(filter === "all"){
-      var picks = C.archivePicks || {};
-      preview = AXES.map(function(x){ var i = byId(picks[x.id]); return i < 0 ? null : ACT[i]; }).filter(Boolean);
-    } else {
-      preview = rows.slice(0, TL_SHOW);
-    }
-    var shown = preview.length;
-    var total = rows.length;
-
-    (tlOpen ? rows : preview).forEach(function(a){
-      var ck = view === "axes" ? a.axis : a.cat;   // 줄의 색: 분야별이면 분야, 활동별이면 활동 구분
-      var r = el("a", ck ? "row ax-" + ck : "row");
-      r.href = "#a/" + a.id;
-      r.appendChild(el("span","d num", dateOf(a)));
-      var ax = axisOf(a.axis);
-      r.appendChild(el("span","c", view === "axes" && ax ? tr(ax.name) : CAT[a.cat][lang]));
-      var t = el("span","t");
-      var tb = el("b", null, a[lang]);
-      if(orgOf(a)) tb.appendChild(el("small","o", orgOf(a)));
-      t.appendChild(tb);
-      var d = lang === "ko" ? a.sko : a.sen;
-      if(d) t.appendChild(el("span","s", d));
-      r.appendChild(t);
-      r.appendChild(icon("ic-arrow"));
-      box.appendChild(r);
-    });
-
     var more = document.getElementById("tl-more");
-    more.hidden = total <= shown && !tlOpen;
-    more.textContent = tlOpen ? T.showLess[lang] : fill(T.showAll[lang], {n: total});
+    more.hidden = false;
+    more.textContent = tlOpen ? T.showLess[lang] : fill(T.showAll[lang], {n: ACT.length});
     more.setAttribute("aria-expanded", String(tlOpen));
   }
 
-  // 자격증: 분야별로 펼치는 목록 (첫 분야는 펼친 채로 시작)
-  function renderCerts(){
-    var box = document.getElementById("cert-groups");
+  // 이력 (RECORDS): 줄 이름 왼쪽, 항목 오른쪽. EDUCATION · LANGUAGE · CERTIFICATION · SCHOLARSHIP · VOLUNTEER
+  function certGroup(id){ for(var i=0;i<CERT_GROUPS.length;i++){ if(CERT_GROUPS[i].id === id) return CERT_GROUPS[i]; } return {items: []}; }
+  function renderCredentials(){
+    var box = document.getElementById("creds");
+    if(!box) return;
     box.textContent = "";
-
-    CERT_GROUPS.forEach(function(grp, gi){
-      var det = el("details");
-      det.open = gi === 0;
-      var sum = el("summary");
-      var label = el("span", null, grp.g[lang]);
-      label.appendChild(el("small", null, fill((grp.items.length === 1 ? T.groupCountOne : T.groupCount)[lang], {n: grp.items.length})));
-      sum.appendChild(label);
-      sum.appendChild(icon("ic-plus"));
-      det.appendChild(sum);
-
-      var ul = el("ul");
-      grp.items.forEach(function(c){
-        var li = el("li");
-        li.appendChild(el("b", null, c[lang]));
-        li.appendChild(el("span","r num", c.score[lang]));
-        // 상세 · 발급처 · 취득일 (상세가 "." 이나 "-" 이면 뺍니다)
-        var bits = [c.note[lang], c.iss[lang], c.date.replace(/-/g,".")].filter(function(x){ return x && x.length > 1; });
-        var s = el("span","s num", bits.join(" · "));
-        s.appendChild(el("span","pill " + (c.valid === "ok" ? "ok" : "exp"), c.term[lang]));
-        li.appendChild(s);
-        // 같은 시험의 이전 성적이 있으면 첫 줄과 같은 형식으로 둘째 줄: LC 485 · RC 490 · 발급처 · 2024.02.04 [만료]
-        if(c.prev){
-          var p = c.prev.txt[lang];
-          var s2 = el("span","s num", [p.detail, c.iss[lang], c.prev.date.replace(/-/g,".")].filter(function(x){ return x && x.length > 1; }).join(" · "));
-          s2.appendChild(el("span","pill " + (c.prev.valid === "ok" ? "ok" : "exp"), p.status || ""));
-          li.appendChild(s2);
-        }
-        ul.appendChild(li);
-      });
-      det.appendChild(ul);
-      box.appendChild(det);
-    });
-  }
-
-  function renderAwards(){
-    var box = document.getElementById("award-list");
-    box.textContent = "";
-    AWARDS.forEach(function(a){
-      var c = el("div", "award");
-      c.tabIndex = 0;                                   // 키보드로 골라도 파랗게 바뀌도록
-      c.appendChild(el("small", null, T.awardTerm[lang]));
-      c.appendChild(el("h3", null, a[lang]));
-      c.appendChild(el("p", null, lang === "ko" ? a.dko : a.den));
-      box.appendChild(c);
-    });
+    var CR = L().page.credentials;
+    function ym(d){ return d.slice(0,7).replace("-", "."); }
+    function rowOf(label){
+      var r = el("div","rrow");
+      r.appendChild(el("h3", null, label));
+      var items = el("div","ritems");
+      r.appendChild(items);
+      box.appendChild(r);
+      return items;
+    }
+    function item(parent, name, result, sub){
+      var it = el("div","ritem");
+      var n = el("span","n");
+      n.appendChild(el("b", null, name));
+      if(result) n.appendChild(el("span","r num", result));
+      it.appendChild(n);
+      if(sub) it.appendChild(el("small","num", sub));
+      parent.appendChild(it);
+      return it;
+    }
+    function cert(parent, c){
+      var bits = [c.note[lang], c.iss[lang], ym(c.date)].filter(function(x){ return x && x.length > 1; });
+      item(parent, c[lang], c.score[lang], bits.join(" · "));
+    }
+    // EDUCATION: 학교 + 학점
+    var gpa = findTile("gpa");
+    item(rowOf(CR.education), CR.school, gpa ? "GPA " + gpa.v + (gpa.u[lang] || "") : "", "").classList.add("wide");
+    // LANGUAGE: 어학 성적 + 국제학교
+    var lg = rowOf(CR.lang), dw = findTile("dulwich");
+    certGroup("language").items.forEach(function(c){ cert(lg, c); });
+    if(dw) item(lg, dw.k[lang], dw.v + (dw.u[lang] || ""), dw.n[lang]);
+    // CERTIFICATION
+    var ct = rowOf(CR.cert);
+    certGroup("cert").items.forEach(function(c){ cert(ct, c); });
+    // SCHOLARSHIP
+    var sc = rowOf(CR.awards);
+    AWARDS.forEach(function(a){ item(sc, a[lang], "", [lang === "ko" ? a.dko : a.den, T.awardTerm[lang]].filter(Boolean).join(" · ")); });
+    // VOLUNTEER: 합계 + 전체 내역 창 (기관별 시간은 창 안에)
+    if(C.volunteerLog){
+      var V = C.volunteerLog, total = 0, vt = findTile("volunteer");
+      V.records.forEach(function(r){ total += r.minutes; });
+      var it = item(rowOf(CR.vol), vt ? vt.k[lang] : "", Math.floor(total / 60) + (vt && vt.u[lang] ? vt.u[lang].trim() : ""),
+        fill(CR.volCount, {n: V.records.length}) + " · " + fill(CR.volTotal, {issued: V.issued.replace(/-/g,".")}));
+      var ob = el("button","btn line vbtn2", CR.volOpen);
+      ob.type = "button";
+      ob.setAttribute("aria-haspopup","dialog");
+      ob.appendChild(icon("ic-arrow"));
+      ob.addEventListener("click", openVolunteer);
+      it.appendChild(ob);
+      it.classList.add("wide");
+    }
   }
 
   /* ---------- detail renderer ---------- */
@@ -2231,10 +1870,12 @@
     }
     var a = ACT[i];
 
+    // 뒤로 가기: 들어온 곳(대표 작업 / 활동 기록)으로. 주소로 바로 들어왔으면 대표 작업이면 '대표 작업', 아니면 '활동 기록'
+    var toWork = cameFrom ? cameFrom === "work" : isWork(a.id);
     var back = el("a","back");
-    back.href = "#activities";
+    back.href = toWork ? "#work" : "#activities";
     back.appendChild(rich("span", null, '<svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-6 6 6 6"/></svg>'));
-    back.appendChild(document.createTextNode(T.back[lang]));
+    back.appendChild(document.createTextNode(T[toWork ? "backWork" : "back"][lang]));
     view.appendChild(back);
 
     var pics = IMG[a.id] || {};
@@ -2251,8 +1892,7 @@
 
     var head = el("div","dhead");
     var meta = el("div","meta");
-    meta.appendChild(catBadge(a.cat));
-    meta.appendChild(el("span","date", dateOf(a)));
+    meta.appendChild(catBadge(a.cat));   // 날짜는 아래 요약 패널의 PERIOD 한 곳에만
     head.appendChild(meta);
     head.appendChild(el("h1", null, a[lang]));
     if(orgOf(a)) head.appendChild(el("p","dorg", orgOf(a)));
@@ -2267,25 +1907,6 @@
     }
     dtop.appendChild(head);
 
-    // 요약 숫자 카드: 제목 바로 아래, 사진보다 먼저 보이도록 상단 블록 안에 둡니다
-    var nums = (L().activities[a.id] || {}).nums || (KO.activities[a.id] || {}).nums;
-    if(nums && nums.length){
-      var lay = (L().activities[a.id] || {}).numsLayout || (KO.activities[a.id] || {}).numsLayout;
-      var nm = el("div", "dnums" + (lay ? " l-" + lay : ""));
-      nm.style.setProperty("--n", nums.length);
-      nums.forEach(function(x){
-        var d = el("div", x.hi ? "hi" : null);
-        var v = el("div","nv");
-        if(x.pre) v.appendChild(el("em", null, x.pre));
-        v.appendChild(document.createTextNode(x.v));
-        if(x.u) v.appendChild(el("small", null, x.u));
-        d.appendChild(v);
-        d.appendChild(el("span","nt", x.t));
-        if(x.d) d.appendChild(el("span","nd", x.d));
-        nm.appendChild(d);
-      });
-      dtop.appendChild(nm);
-    }
     view.appendChild(dtop);
 
     var pstrip = renderProjectStrip(view, a);
@@ -2501,6 +2122,7 @@
     var listV = document.getElementById("list-view");
     var detV  = document.getElementById("detail-view");
 
+    document.documentElement.classList.toggle("in-detail", !!id);
     if(id){
       if(!listV.hidden) listScroll = window.scrollY || 0;
       renderDetail(id);
@@ -2525,9 +2147,7 @@
 
   function applyStatic(){
     // data-t="hero.intro" 처럼 표시된 곳에 지금 언어 파일(page)의 글자를 넣습니다
-    var certTotal = 0;
-    CERT_GROUPS.forEach(function(g){ certTotal += g.items.length; });
-    var counts = {"activities.count": ACT.length, "certs.count": certTotal, "awards.count": AWARDS.length};
+    var counts = {"activities.count": ACT.length};
     var nodes = document.querySelectorAll("[data-t]");
     for(var i=0;i<nodes.length;i++){
       var key = nodes[i].getAttribute("data-t");
@@ -2547,10 +2167,6 @@
         name.appendChild(s);
       });
     }
-    var tag = document.getElementById("tagline"), tl = L().tagline || "", cut = tl.indexOf(":");
-    tag.textContent = cut < 0 ? tl : tl.slice(cut);   // 캐치프레이즈: ':' 앞은 굵게
-    if(cut > 0) tag.insertBefore(el("b", null, tl.slice(0, cut)), tag.firstChild);
-    tag.hidden = !tl;
     document.documentElement.lang = lang === "ko" ? "ko" : "en";
   }
 
@@ -2558,16 +2174,11 @@
     applyStatic();
     renderChips();
     renderMarquee();
-    renderHeroStats();
-    renderStoryCerts();
     renderProjects();
     renderFeatured();
-    renderProfile();
-    renderTiles();
-    renderFilters();
-    renderTimeline();
-    renderCerts();
-    renderAwards();
+    renderAbout();
+    renderArchive();
+    renderCredentials();
     var id = currentDetailId();
     if(id) renderDetail(id);
   }
@@ -2584,20 +2195,17 @@
   try { saved = localStorage.getItem("jso-lang"); } catch(err){}
   document.getElementById("btn-ko").addEventListener("click", function(){ setLang("ko"); });
   document.getElementById("btn-en").addEventListener("click", function(){ setLang("en"); });
-  document.querySelectorAll("#view-toggle button").forEach(function(b){
-    b.addEventListener("click", function(){
-      view = b.getAttribute("data-view");
-      filter = "all";
-      tlOpen = false;
-      renderFilters();
-      renderTimeline();
-    });
-  });
-  if(!AXES.length) document.getElementById("view-toggle").hidden = true;
   document.getElementById("tl-more").addEventListener("click", function(){
     tlOpen = !tlOpen;
-    renderTimeline();
+    renderArchive();
     if(!tlOpen) document.getElementById("activities").scrollIntoView();
+  });
+  // 상세 링크를 누른 곳(대표 작업 / 활동 기록)을 기억해 두었다가 상세 맨 위 '뒤로' 링크에 씁니다
+  document.addEventListener("click", function(e){
+    var l = e.target.closest && e.target.closest('a[href^="#a/"]');
+    if(!l) return;
+    var sec = l.closest("#list-view section");
+    if(sec && (sec.id === "work" || sec.id === "activities")) cameFrom = sec.id;
   });
   window.addEventListener("hashchange", route);
 
