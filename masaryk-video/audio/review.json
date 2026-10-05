@@ -1,0 +1,182 @@
+{
+ "s01": {
+  "native_korean": 10,
+  "naturalness": 10,
+  "pace_consistency": 10,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 발음과 억양이 매우 자연스럽고, 차분하고 따뜻한 톤이 잘 유지된 훌륭한 내레이션입니다."
+ },
+ "s02": {
+  "native_korean": 10,
+  "naturalness": 10,
+  "pace_consistency": 10,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 발음과 억양이 매우 자연스러우며, 차분하고 따뜻한 톤이 다큐멘터리 내레이션에 완벽하게 어울립니다."
+ },
+ "s03": {
+  "native_korean": 10,
+  "naturalness": 10,
+  "pace_consistency": 10,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 매우 자연스럽고 차분한 톤으로, 스크립트를 완벽하게 소화했습니다."
+ },
+ "s04": {
+  "native_korean": 10,
+  "naturalness": 8,
+  "pace_consistency": 8,
+  "issues": [
+   {
+    "t": "00:34",
+    "type": "unnatural_pause",
+    "text": "비교했습니다. 세 번째는",
+    "detail": "문장 사이에 부자연스럽게 긴 공백이 있습니다."
+   },
+   {
+    "t": "00:48",
+    "type": "unnatural_pause",
+    "text": "선호했습니다. 그리고",
+    "detail": "문장 사이에 부자연스럽게 긴 공백이 있습니다."
+   },
+   {
+    "t": "01:22",
+    "type": "unnatural_pause",
+    "text": "찾았습니다. 다섯 번째는",
+    "detail": "문장 사이에 부자연스럽게 긴 공백이 있습니다."
+   },
+   {
+    "t": "01:38",
+    "type": "noise",
+    "text": "마지막은 기숙사. 해외에서",
+    "detail": "문장 사이에 눈에 띄는 숨소리(한숨)가 들립니다."
+   }
+  ],
+  "proper_nouns_ok": true,
+  "summary": "전반적으로 매우 자연스러운 원어민 발음과 톤을 유지하고 있으나, 문장 사이의 긴 공백과 숨소리가 흐름을 다소 끊습니다."
+ },
+ "s05": {
+  "native_korean": 10,
+  "naturalness": 9,
+  "pace_consistency": 10,
+  "issues": [
+   {
+    "t": "00:32",
+    "type": "mispronunciation",
+    "text": "브레이어 유니버시타이트",
+    "detail": "대본의 '유니버시테이트'를 '유니버시타이트'로 잘못 발음함"
+   }
+  ],
+  "proper_nouns_ok": false,
+  "summary": "전반적으로 매우 자연스럽고 차분한 내레이션이나, 특정 고유명사의 발음 오류가 하나 있습니다."
+ },
+ "s06": {
+  "native_korean": 10,
+  "naturalness": 9,
+  "pace_consistency": 9,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "원어민의 자연스러운 발음과 억양으로 차분하고 따뜻하게 잘 낭독되었습니다."
+ },
+ "s07": {
+  "native_korean": 10,
+  "naturalness": 10,
+  "pace_consistency": 10,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 매우 자연스럽고 차분한 톤으로, 스크립트를 완벽하게 소화한 훌륭한 내레이션입니다."
+ },
+ "s08": {
+  "native_korean": 10,
+  "naturalness": 10,
+  "pace_consistency": 10,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 차분하고 자연스러운 다큐멘터리 내레이션 톤으로, 발음과 속도 모두 훌륭합니다."
+ },
+ "s09": {
+  "native_korean": 10,
+  "naturalness": 10,
+  "pace_consistency": 10,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 발음과 억양이 매우 자연스러우며, 다큐멘터리 내레이션에 어울리는 차분하고 따뜻한 톤이 완벽하게 유지되었습니다."
+ },
+ "s10": {
+  "native_korean": 10,
+  "naturalness": 10,
+  "pace_consistency": 10,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 발음과 억양이 매우 자연스럽고, 차분하고 따뜻한 톤이 잘 유지된 훌륭한 내레이션입니다."
+ },
+ "s11": {
+  "native_korean": 10,
+  "naturalness": 10,
+  "pace_consistency": 10,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 매우 자연스럽고 차분한 톤으로 스크립트를 완벽하게 소화했습니다."
+ },
+ "s08:t23": {
+  "native_korean": 10,
+  "naturalness": 7,
+  "pace_consistency": 8,
+  "issues": [
+   {
+    "t": "00:22",
+    "type": "noise",
+    "text": "선발 인원은",
+    "detail": "대사 직후에 작위적이고 과장된 한숨 소리가 삽입됨"
+   },
+   {
+    "t": "00:26",
+    "type": "noise",
+    "text": "지원자는 약",
+    "detail": "대사 직후에 작위적이고 과장된 한숨 소리가 삽입됨"
+   }
+  ],
+  "proper_nouns_ok": true,
+  "summary": "전반적인 발음과 톤은 원어민처럼 매우 자연스러우나, 중간에 삽입된 과장된 한숨 소리가 정제된 다큐멘터리 스타일에는 다소 어색하게 들립니다."
+ },
+ "s08:t11": {
+  "native_korean": 10,
+  "naturalness": 9,
+  "pace_consistency": 10,
+  "issues": [
+   {
+    "t": "00:06",
+    "type": "wrong_word",
+    "text": "곳이",
+    "detail": "대본의 '것이'를 '곳이'로 잘못 발음했습니다."
+   }
+  ],
+  "proper_nouns_ok": true,
+  "summary": "전반적으로 차분하고 자연스러운 다큐멘터리 톤의 내레이션이나, 한 단어의 발음 오류가 있습니다."
+ },
+ "s08:q7": {
+  "native_korean": 10,
+  "naturalness": 10,
+  "pace_consistency": 10,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 발음과 억양이 매우 자연스럽고 차분한 다큐멘터리 톤을 잘 살려 녹음되었습니다."
+ },
+ "s08:q11": {
+  "native_korean": 10,
+  "naturalness": 10,
+  "pace_consistency": 10,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 발음과 억양이 매우 자연스럽고 차분한 톤이 잘 유지된 훌륭한 내레이션입니다."
+ },
+ "s08:q23": {
+  "native_korean": 10,
+  "naturalness": 9,
+  "pace_consistency": 9,
+  "issues": [],
+  "proper_nouns_ok": true,
+  "summary": "전체적으로 발음이 정확하고 차분한 다큐멘터리 톤을 잘 살린 자연스러운 내레이션입니다."
+ }
+}

@@ -1,0 +1,2136 @@
+{
+ "voice": {
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Iapetus",
+  "languageCode": "ko-KR",
+  "temperature": 1.0,
+  "seed": 7,
+  "style": "Korean native male narrator in his late 20s to early 30s. Calm, warm, natural and conversational, confident and polished, like a thoughtful young Korean man calmly telling his own exchange-student story in a well-produced documentary-style YouTube video. Moderate and consistent pace. Natural Seoul-standard Korean prosody, natural breathing, subtle emotional variation. Not an announcer voice, not an exaggerated commercial voice, no robotic rhythm, no sudden speed changes. Foreign proper nouns are pronounced naturally inside Korean sentences, without an exaggerated English accent."
+ },
+ "pauses": {
+  "C": [
+   0.08,
+   0.18,
+   0.32
+  ],
+  "S": [
+   0.18,
+   0.26,
+   0.34
+  ],
+  "M": [
+   0.42,
+   0.55,
+   0.7
+  ],
+  "L": [
+   0.85,
+   1.0,
+   1.2
+  ],
+  "P": [
+   0.62,
+   0.72,
+   0.78
+  ],
+  "Q": [
+   0.85,
+   1.0,
+   1.2
+  ],
+  "X": [
+   1.15,
+   1.25,
+   1.35
+  ]
+ },
+ "pronunciation": {
+  "Masaryk University": "마사릭 유니버시티",
+  "IELTS": "아이엘츠",
+  "Academic Calendar": "아카데믹 캘린더",
+  "QS Ranking": "큐에스 랭킹",
+  "IE University": "아이이 유니버시티",
+  "Vrije Universiteit Amsterdam": "브레이어 유니버시테이트 암스테르담",
+  "LMU": "엘엠유",
+  "Frankfurt University of Applied Sciences": "프랑크푸르트 유니버시티 오브 어플라이드 사이언스",
+  "Free University of Berlin": "프리 유니버시티 오브 베를린",
+  "Sheffield": "셰필드",
+  "Brno": "브르노",
+  "24학번": "이사 학번",
+  "2027년 1학기": "이천이십칠 년 일 학기",
+  "218개": "이백십팔 개",
+  "4.33": "사 점 삼삼",
+  "8.0": "팔 점 영",
+  "10명 → 1명": "열 명 → 한 명",
+  "2명 / 6명": "두 명 / 여섯 명",
+  "1지망": "일 지망"
+ },
+ "scenes": [
+  {
+   "id": "s01",
+   "title": "OPENING",
+   "theme": "dark",
+   "lead": 1.6,
+   "tail": 2.4,
+   "lines": [
+    {
+     "tts": "안녕하세요.",
+     "pause": "M",
+     "cues": {
+      "hello": [
+       "안녕",
+       "map drifts in from black"
+      ]
+     },
+     "id": "s01_l01"
+    },
+    {
+     "tts": "이천이십칠 년 일 학기, 저는 체코의 마사릭 유니버시티로 교환학생을 가게 됐습니다.",
+     "pause": "M",
+     "cues": {
+      "czech": [
+       "체코의",
+       "camera glides to Czechia"
+      ],
+      "brno": [
+       "마사릭",
+       "Brno pin + MASARYK UNIVERSITY label"
+      ]
+     },
+     "id": "s01_l02"
+    },
+    {
+     "tts": "그런데 사실, 처음부터 이 학교를 정해놓고 준비했던 건 아닙니다.",
+     "pause": "M",
+     "cues": {
+      "pullback": [
+       "그런데",
+       "label fades, camera pulls back to Europe"
+      ],
+      "cities": [
+       "처음부터",
+       "London→Berlin→Amsterdam→Madrid→Prague pins + arcs"
+      ]
+     },
+     "id": "s01_l03"
+    },
+    {
+     "tts": "성균관대학교에서 지원할 수 있는 교환교만, 무려 이백십팔 개.",
+     "pause": "M",
+     "cues": {
+      "skku": [
+       "성균관대학교",
+       "Seoul origin tag"
+      ],
+      "n218": [
+       "이백십팔",
+       "218 dots + counter 0→218"
+      ],
+      "n218end": [
+       "이백십팔 개|end",
+       "counter lands on 218"
+      ]
+     },
+     "id": "s01_l04"
+    },
+    {
+     "tts": "그래서 저는 일 년 넘게, 정말 많은 학교를 비교했습니다.",
+     "pause": "M",
+     "cues": {
+      "year": [
+       "일 년",
+       "1 YEAR+ tag"
+      ],
+      "compare": [
+       "비교했습니다",
+       "dots linked pairwise (comparison)"
+      ]
+     },
+     "id": "s01_l05"
+    },
+    {
+     "tts": "오늘은 그 과정에서, 어떤 기준으로 학교를 골랐는지,",
+     "pause": "S",
+     "cues": {
+      "ag1": [
+       "어떤 기준으로",
+       "agenda 01 CRITERIA"
+      ]
+     },
+     "id": "s01_l06"
+    },
+    {
+     "tts": "왜 결국 마사릭 유니버시티를 선택했는지,",
+     "pause": "S",
+     "cues": {
+      "ag2": [
+       "마사릭",
+       "agenda 02 WHY MASARYK"
+      ]
+     },
+     "id": "s01_l07"
+    },
+    {
+     "tts": "그리고 실제 지원 과정에서 느낀 팁까지 이야기해보겠습니다.",
+     "pause": "X",
+     "cues": {
+      "ag3": [
+       "팁까지",
+       "agenda 03 TIPS"
+      ],
+      "title": [
+       "이야기해보겠습니다|end",
+       "agenda clears; MASARYK UNIVERSITY / BRNO, CZECH REPUBLIC title"
+      ]
+     },
+     "id": "s01_l08"
+    }
+   ],
+   "tts_text": "안녕하세요. [medium pause]\n이천이십칠 년 일 학기, 저는 체코의 마사릭 유니버시티로 교환학생을 가게 됐습니다. [medium pause]\n그런데 사실, 처음부터 이 학교를 정해놓고 준비했던 건 아닙니다. [medium pause]\n성균관대학교에서 지원할 수 있는 교환교만, 무려 이백십팔 개. [medium pause]\n그래서 저는 일 년 넘게, 정말 많은 학교를 비교했습니다. [medium pause]\n오늘은 그 과정에서, 어떤 기준으로 학교를 골랐는지,\n왜 결국 마사릭 유니버시티를 선택했는지,\n그리고 실제 지원 과정에서 느낀 팁까지 이야기해보겠습니다."
+  },
+  {
+   "id": "s02",
+   "title": "MY SITUATION",
+   "theme": "light",
+   "lead": 1.0,
+   "tail": 1.0,
+   "lines": [
+    {
+     "tts": "저는 성균관대학교 이사 학번이고,",
+     "pause": "S",
+     "cues": {
+      "skku": [
+       "성균관대학교",
+       "node 2024 SKKU (logo)"
+      ],
+      "y2024": [
+       "이사 학번",
+       "year label 2024 · 입학"
+      ]
+     },
+     "id": "s02_l01"
+    },
+    {
+     "tts": "일 학년을 마친 뒤, 두 개 학기를 수료하고 군 입대를 했습니다.",
+     "pause": "M",
+     "cues": {
+      "sem": [
+       "두 개 학기",
+       "node 2 SEMESTERS"
+      ],
+      "mil": [
+       "군 입대",
+       "node 2025 MILITARY SERVICE"
+      ]
+     },
+     "id": "s02_l02"
+    },
+    {
+     "tts": "그리고 이천이십육 년 시월, 전역을 앞두고 있습니다.",
+     "pause": "M",
+     "cues": {
+      "dis": [
+       "이천이십육",
+       "node 2026.10 DISCHARGE"
+      ]
+     },
+     "id": "s02_l03"
+    },
+    {
+     "tts": "군 입대 전부터, 전역하고 바로 학교로 돌아가기보다는,",
+     "pause": "S",
+     "cues": {
+      "back": [
+       "바로 학교로",
+       "dashed default path → SKKU"
+      ]
+     },
+     "id": "s02_l04"
+    },
+    {
+     "tts": "한 번쯤 해외에서 살아보고 싶다는 생각이 있었습니다.",
+     "pause": "M",
+     "cues": {
+      "abroad": [
+       "해외에서",
+       "branch to 2027.01 EXCHANGE STUDENT"
+      ]
+     },
+     "id": "s02_l05"
+    },
+    {
+     "tts": "특히 군 생활을 하면서, 그 마음은 더 커졌습니다.",
+     "pause": "M",
+     "cues": {
+      "grow": [
+       "더 커졌습니다",
+       "exchange node grows"
+      ]
+     },
+     "id": "s02_l06"
+    },
+    {
+     "tts": "조금 더 넓은 세상으로 나가서,",
+     "pause": "S",
+     "cues": {
+      "wide": [
+       "넓은 세상",
+       "ripple expands outward"
+      ]
+     },
+     "id": "s02_l07"
+    },
+    {
+     "tts": "새로운 환경에서 살아보고 싶었습니다.",
+     "pause": "M",
+     "cues": {},
+     "id": "s02_l08"
+    },
+    {
+     "tts": "지원 당시 제 성적은,",
+     "pause": "S",
+     "cues": {
+      "stats": [
+       "지원 당시",
+       "timeline recedes; stat panel"
+      ]
+     },
+     "id": "s02_l09"
+    },
+    {
+     "tts": "학점 사 점 삼삼.",
+     "pause": "M",
+     "cues": {
+      "gpa": [
+       "사 점",
+       "GPA counter → 4.33"
+      ]
+     },
+     "id": "s02_l10"
+    },
+    {
+     "tts": "아이엘츠 팔 점 영.",
+     "pause": "M",
+     "cues": {
+      "ielts": [
+       "팔 점",
+       "IELTS counter → 8.0"
+      ]
+     },
+     "id": "s02_l11"
+    },
+    {
+     "tts": "이제 남은 건 하나였습니다.",
+     "pause": "M",
+     "cues": {
+      "one": [
+       "남은 건",
+       "stats recede"
+      ]
+     },
+     "id": "s02_l12"
+    },
+    {
+     "tts": "어디로 갈 것인가?",
+     "pause": "S",
+     "cues": {
+      "where": [
+       "어디로",
+       "WHERE TO? headline"
+      ]
+     },
+     "id": "s02_l13"
+    }
+   ],
+   "tts_text": "저는 성균관대학교 이사 학번이고,\n일 학년을 마친 뒤, 두 개 학기를 수료하고 군 입대를 했습니다. [medium pause]\n그리고 이천이십육 년 시월, 전역을 앞두고 있습니다. [medium pause]\n군 입대 전부터, 전역하고 바로 학교로 돌아가기보다는,\n한 번쯤 해외에서 살아보고 싶다는 생각이 있었습니다. [medium pause]\n특히 군 생활을 하면서, 그 마음은 더 커졌습니다. [medium pause]\n조금 더 넓은 세상으로 나가서,\n새로운 환경에서 살아보고 싶었습니다. [medium pause]\n지원 당시 제 성적은,\n학점 사 점 삼삼. [medium pause]\n아이엘츠 팔 점 영. [medium pause]\n이제 남은 건 하나였습니다. [medium pause]\n어디로 갈 것인가?"
+  },
+  {
+   "id": "s03",
+   "title": "WHAT DO I WANT?",
+   "theme": "light",
+   "lead": 0.9,
+   "tail": 1.0,
+   "lines": [
+    {
+     "tts": "교환학생의 목적은, 사람마다 다를 겁니다.",
+     "pause": "M",
+     "cues": {
+      "cloud": [
+       "사람마다",
+       "6 purpose keywords appear faint"
+      ]
+     },
+     "id": "s03_l01"
+    },
+    {
+     "tts": "어떤 사람은 좋은 학교에서 공부하고 싶을 수도 있고,",
+     "pause": "S",
+     "cues": {
+      "study": [
+       "공부하고",
+       "STUDY highlight"
+      ]
+     },
+     "id": "s03_l02"
+    },
+    {
+     "tts": "영어 실력을 늘리고 싶을 수도 있습니다.",
+     "pause": "M",
+     "cues": {
+      "english": [
+       "영어",
+       "ENGLISH highlight"
+      ]
+     },
+     "id": "s03_l03"
+    },
+    {
+     "tts": "저는 조금 달랐습니다.",
+     "pause": "M",
+     "cues": {
+      "dim": [
+       "저는",
+       "all keywords dim"
+      ]
+     },
+     "id": "s03_l04"
+    },
+    {
+     "tts": "저에게 더 중요했던 건,",
+     "pause": "S",
+     "cues": {},
+     "id": "s03_l05"
+    },
+    {
+     "tts": "유럽에서 실제로 살아보는 것.",
+     "pause": "M",
+     "cues": {
+      "living": [
+       "유럽에서",
+       "LIVING ABROAD comes forward"
+      ]
+     },
+     "id": "s03_l06"
+    },
+    {
+     "tts": "그리고 가능하면, 여러 나라를 여행해보는 것.",
+     "pause": "M",
+     "cues": {
+      "travel": [
+       "여러 나라를",
+       "TRAVEL comes forward"
+      ]
+     },
+     "id": "s03_l07"
+    },
+    {
+     "tts": "그래서 영미권 대학 자체를 우선순위로 두기보다는,",
+     "pause": "S",
+     "cues": {
+      "ukus": [
+       "영미권",
+       "UK · US chip"
+      ],
+      "strike": [
+       "두기보다는",
+       "strike-through on UK · US"
+      ]
+     },
+     "id": "s03_l08"
+    },
+    {
+     "tts": "유럽에서,",
+     "pause": "S",
+     "cues": {
+      "map": [
+       "유럽에서",
+       "light Europe map + city links"
+      ]
+     },
+     "id": "s03_l09"
+    },
+    {
+     "tts": "어떤 학교가 나에게 가장 잘 맞을까?",
+     "pause": "S",
+     "cues": {
+      "q": [
+       "어떤 학교가",
+       "WHICH SCHOOL FITS ME?"
+      ]
+     },
+     "id": "s03_l10"
+    },
+    {
+     "tts": "이 질문부터 시작했습니다.",
+     "pause": "S",
+     "cues": {},
+     "id": "s03_l11"
+    }
+   ],
+   "tts_text": "교환학생의 목적은, 사람마다 다를 겁니다. [medium pause]\n어떤 사람은 좋은 학교에서 공부하고 싶을 수도 있고,\n영어 실력을 늘리고 싶을 수도 있습니다. [medium pause]\n저는 조금 달랐습니다. [medium pause]\n저에게 더 중요했던 건,\n유럽에서 실제로 살아보는 것. [medium pause]\n그리고 가능하면, 여러 나라를 여행해보는 것. [medium pause]\n그래서 영미권 대학 자체를 우선순위로 두기보다는,\n유럽에서,\n어떤 학교가 나에게 가장 잘 맞을까?\n이 질문부터 시작했습니다."
+  },
+  {
+   "id": "s04",
+   "title": "MY 6 CRITERIA",
+   "theme": "light",
+   "lead": 1.8,
+   "tail": 1.2,
+   "lines": [
+    {
+     "tts": "첫 번째는 위치였습니다.",
+     "pause": "M",
+     "cues": {
+      "c1": [
+       "첫 번째",
+       "rail 01 LOCATION + map panel"
+      ]
+     },
+     "id": "s04_l01"
+    },
+    {
+     "tts": "유럽 여행을 많이 하고 싶었기 때문에,",
+     "pause": "S",
+     "cues": {
+      "c1_travel": [
+       "유럽 여행",
+       "travel arcs"
+      ]
+     },
+     "id": "s04_l02"
+    },
+    {
+     "tts": "단순히 유럽에 있는 것보다, 유럽의 중심에 가까운가를 중요하게 봤습니다.",
+     "pause": "M",
+     "cues": {
+      "c1_center": [
+       "유럽의 중심",
+       "rings around central Europe"
+      ]
+     },
+     "id": "s04_l03"
+    },
+    {
+     "tts": "체코나 독일처럼, 여러 나라와 가까운 지역에 점수를 줬고,",
+     "pause": "S",
+     "cues": {
+      "c1_czde": [
+       "체코나",
+       "Czechia + Germany highlighted"
+      ],
+      "c1_score": [
+       "점수를",
+       "+ score tags"
+      ]
+     },
+     "id": "s04_l04"
+    },
+    {
+     "tts": "공항이나 주요 기차역까지 얼마나 걸리는지도 확인했습니다.",
+     "pause": "P",
+     "cues": {
+      "c1_air": [
+       "공항",
+       "airport row"
+      ],
+      "c1_train": [
+       "기차역",
+       "train row + travel-time"
+      ]
+     },
+     "id": "s04_l05"
+    },
+    {
+     "tts": "두 번째는, 학교의 수준과 명성.",
+     "pause": "M",
+     "cues": {
+      "c2": [
+       "두 번째",
+       "rail 02 ACADEMIC QUALITY"
+      ]
+     },
+     "id": "s04_l06"
+    },
+    {
+     "tts": "교환학생으로 잠시 다니더라도, 학교 이름은 결국 이력서에 남습니다.",
+     "pause": "M",
+     "cues": {
+      "c2_cv": [
+       "이력서",
+       "CV sheet, education row highlight"
+      ]
+     },
+     "id": "s04_l07"
+    },
+    {
+     "tts": "그래서 큐에스 랭킹 같은 자료를 참고하면서,",
+     "pause": "S",
+     "cues": {
+      "c2_qs": [
+       "큐에스",
+       "QS ranking bars"
+      ]
+     },
+     "id": "s04_l08"
+    },
+    {
+     "tts": "학교의 전반적인 수준과, 전공 관련 경쟁력도 비교했습니다.",
+     "pause": "P",
+     "cues": {
+      "c2_overall": [
+       "전반적인",
+       "OVERALL tag"
+      ],
+      "c2_major": [
+       "전공 관련",
+       "BY SUBJECT tag"
+      ]
+     },
+     "id": "s04_l09"
+    },
+    {
+     "tts": "세 번째는 물가.",
+     "pause": "M",
+     "cues": {
+      "c3": [
+       "세 번째",
+       "rail 03 COST OF LIVING"
+      ]
+     },
+     "id": "s04_l10"
+    },
+    {
+     "tts": "교환학생을 가면, 여행 때문에 자연스럽게 돈을 많이 쓰게 됩니다.",
+     "pause": "M",
+     "cues": {
+      "c3_travel": [
+       "여행 때문에",
+       "TRAVEL spend bar rises"
+      ]
+     },
+     "id": "s04_l11"
+    },
+    {
+     "tts": "그래서 적어도 평소 생활하는 곳에서는,",
+     "pause": "S",
+     "cues": {
+      "c3_living": [
+       "평소 생활",
+       "LIVING spend bar"
+      ]
+     },
+     "id": "s04_l12"
+    },
+    {
+     "tts": "조금 더 여유 있게 지낼 수 있는 국가를 선호했습니다.",
+     "pause": "P",
+     "cues": {
+      "c3_country": [
+       "국가를",
+       "country cost comparison"
+      ]
+     },
+     "id": "s04_l13"
+    },
+    {
+     "tts": "그리고 정말 중요하게 본 네 번째 기준.",
+     "pause": "M",
+     "cues": {
+      "c4": [
+       "네 번째",
+       "rail 04 ACADEMIC CALENDAR (accent)"
+      ]
+     },
+     "id": "s04_l14"
+    },
+    {
+     "tts": "바로 아카데믹 캘린더, 학사 일정입니다.",
+     "pause": "M",
+     "cues": {
+      "c4_title": [
+       "아카데믹",
+       "month strip OCT 2026 → DEC 2027"
+      ]
+     },
+     "id": "s04_l15"
+    },
+    {
+     "tts": "유럽 대학은 학교마다, 학기가 시작하고 끝나는 시점이 정말 다릅니다.",
+     "pause": "M",
+     "cues": {
+      "c4_diff": [
+       "시점이",
+       "start/end ticks scatter"
+      ]
+     },
+     "id": "s04_l16"
+    },
+    {
+     "tts": "어떤 학교는 일월에 시작하고,",
+     "pause": "S",
+     "cues": {
+      "c4_jan": [
+       "일월에",
+       "school A bar from JAN"
+      ]
+     },
+     "id": "s04_l17"
+    },
+    {
+     "tts": "어떤 학교는 사월에 시작해서 구월에 끝나기도 합니다.",
+     "pause": "M",
+     "cues": {
+      "c4_apr": [
+       "사월에",
+       "school B bar starts APR"
+      ],
+      "c4_sep": [
+       "구월에",
+       "school B bar extends to SEP"
+      ]
+     },
+     "id": "s04_l18"
+    },
+    {
+     "tts": "저는 이천이십육 년 시월 전역 예정이었기 때문에,",
+     "pause": "S",
+     "cues": {
+      "c4_dis": [
+       "이천이십육",
+       "DISCHARGE marker 2026.10"
+      ]
+     },
+     "id": "s04_l19"
+    },
+    {
+     "tts": "전역 후 불필요하게 긴 공백을 만들고 싶지 않았습니다.",
+     "pause": "M",
+     "cues": {
+      "c4_gap": [
+       "긴 공백",
+       "GAP hatch"
+      ]
+     },
+     "id": "s04_l20"
+    },
+    {
+     "tts": "그래서 일월이나 이월에 시작하고,",
+     "pause": "S",
+     "cues": {
+      "c4_window": [
+       "일월이나",
+       "JAN–FEB window"
+      ]
+     },
+     "id": "s04_l21"
+    },
+    {
+     "tts": "한국 복학 일정과 충돌하지 않는 학교를 우선적으로 찾았습니다.",
+     "pause": "P",
+     "cues": {
+      "c4_skku": [
+       "한국 복학",
+       "SKKU fall semester bar"
+      ],
+      "c4_clash": [
+       "충돌하지",
+       "A ✓ / B overlap ✕"
+      ]
+     },
+     "id": "s04_l22"
+    },
+    {
+     "tts": "다섯 번째는, 합격 가능성.",
+     "pause": "M",
+     "cues": {
+      "c5": [
+       "다섯 번째",
+       "rail 05 ACCEPTANCE CHANCE"
+      ]
+     },
+     "id": "s04_l23"
+    },
+    {
+     "tts": "에브리타임에서 이전 합격자들에게 직접 물어보고,",
+     "pause": "S",
+     "cues": {
+      "c5_chat": [
+       "에브리타임",
+       "chat bubbles"
+      ]
+     },
+     "id": "s04_l24"
+    },
+    {
+     "tts": "학교 수학보고서도 확인하면서,",
+     "pause": "S",
+     "cues": {
+      "c5_report": [
+       "수학보고서",
+       "study report doc"
+      ]
+     },
+     "id": "s04_l25"
+    },
+    {
+     "tts": "제 성적으로 어느 정도 가능성이 있는지 추정했습니다.",
+     "pause": "P",
+     "cues": {
+      "c5_gauge": [
+       "가능성이",
+       "gauge needle sweeps"
+      ]
+     },
+     "id": "s04_l26"
+    },
+    {
+     "tts": "마지막은 기숙사.",
+     "pause": "M",
+     "cues": {
+      "c6": [
+       "마지막은",
+       "rail 06 DORMITORY"
+      ]
+     },
+     "id": "s04_l27"
+    },
+    {
+     "tts": "해외에서 처음 집을 구하고 계약하는 것보다는,",
+     "pause": "S",
+     "cues": {
+      "c6_house": [
+       "집을 구하고",
+       "contract + house (?)"
+      ]
+     },
+     "id": "s04_l28"
+    },
+    {
+     "tts": "교환학생에게 기숙사를 제공하는 학교를 훨씬 선호했습니다.",
+     "pause": "P",
+     "cues": {
+      "c6_dorm": [
+       "기숙사를",
+       "DORM PROVIDED ✓"
+      ]
+     },
+     "id": "s04_l29"
+    },
+    {
+     "tts": "결국 저에게 중요한 건,",
+     "pause": "S",
+     "cues": {
+      "end": [
+       "결국",
+       "rail + panel clear"
+      ]
+     },
+     "id": "s04_l30"
+    },
+    {
+     "tts": "가장 좋은 학교가 아니라,",
+     "pause": "M",
+     "cues": {
+      "best": [
+       "가장 좋은",
+       "THE BEST SCHOOL"
+      ]
+     },
+     "id": "s04_l31"
+    },
+    {
+     "tts": "나에게 가장 잘 맞는 학교였습니다.",
+     "pause": "S",
+     "cues": {
+      "forme": [
+       "나에게",
+       "≠ THE BEST SCHOOL FOR ME"
+      ]
+     },
+     "id": "s04_l32"
+    }
+   ],
+   "tts_text": "첫 번째는 위치였습니다. [medium pause]\n유럽 여행을 많이 하고 싶었기 때문에,\n단순히 유럽에 있는 것보다, 유럽의 중심에 가까운가를 중요하게 봤습니다. [medium pause]\n체코나 독일처럼, 여러 나라와 가까운 지역에 점수를 줬고,\n공항이나 주요 기차역까지 얼마나 걸리는지도 확인했습니다. [long pause]\n두 번째는, 학교의 수준과 명성. [medium pause]\n교환학생으로 잠시 다니더라도, 학교 이름은 결국 이력서에 남습니다. [medium pause]\n그래서 큐에스 랭킹 같은 자료를 참고하면서,\n학교의 전반적인 수준과, 전공 관련 경쟁력도 비교했습니다. [long pause]\n세 번째는 물가. [medium pause]\n교환학생을 가면, 여행 때문에 자연스럽게 돈을 많이 쓰게 됩니다. [medium pause]\n그래서 적어도 평소 생활하는 곳에서는,\n조금 더 여유 있게 지낼 수 있는 국가를 선호했습니다. [long pause]\n그리고 정말 중요하게 본 네 번째 기준. [medium pause]\n바로 아카데믹 캘린더, 학사 일정입니다. [medium pause]\n유럽 대학은 학교마다, 학기가 시작하고 끝나는 시점이 정말 다릅니다. [medium pause]\n어떤 학교는 일월에 시작하고,\n어떤 학교는 사월에 시작해서 구월에 끝나기도 합니다. [medium pause]\n저는 이천이십육 년 시월 전역 예정이었기 때문에,\n전역 후 불필요하게 긴 공백을 만들고 싶지 않았습니다. [medium pause]\n그래서 일월이나 이월에 시작하고,\n한국 복학 일정과 충돌하지 않는 학교를 우선적으로 찾았습니다. [long pause]\n다섯 번째는, 합격 가능성. [medium pause]\n에브리타임에서 이전 합격자들에게 직접 물어보고,\n학교 수학보고서도 확인하면서,\n제 성적으로 어느 정도 가능성이 있는지 추정했습니다. [long pause]\n마지막은 기숙사. [medium pause]\n해외에서 처음 집을 구하고 계약하는 것보다는,\n교환학생에게 기숙사를 제공하는 학교를 훨씬 선호했습니다. [long pause]\n결국 저에게 중요한 건,\n가장 좋은 학교가 아니라, [medium pause]\n나에게 가장 잘 맞는 학교였습니다."
+  },
+  {
+   "id": "s05",
+   "title": "THE SCHOOL HUNT",
+   "theme": "light",
+   "lead": 1.0,
+   "tail": 0.8,
+   "lines": [
+    {
+     "tts": "그런데 기준을 만들었다고 해서, 학교가 바로 정해진 건 아니었습니다.",
+     "pause": "M",
+     "cues": {
+      "filter": [
+       "기준을",
+       "6 criteria chips become a filter row"
+      ]
+     },
+     "id": "s05_l01"
+    },
+    {
+     "tts": "오히려 여기서부터 시작이었습니다.",
+     "pause": "M",
+     "cues": {
+      "search": [
+       "여기서부터",
+       "search bar"
+      ]
+     },
+     "id": "s05_l02"
+    },
+    {
+     "tts": "처음에는,",
+     "pause": "S",
+     "cues": {},
+     "id": "s05_l03"
+    },
+    {
+     "tts": "체코 마사릭 유니버시티가 괜찮겠는데? 라고 생각했습니다.",
+     "pause": "M",
+     "cues": {
+      "mu_map": [
+       "체코",
+       "map → Brno"
+      ],
+      "mu": [
+       "마사릭",
+       "card MASARYK"
+      ],
+      "mu_ok": [
+       "괜찮겠는데",
+       "✓ LOCATION ✓ CALENDAR"
+      ],
+      "mu_hold": [
+       "생각했습니다",
+       "ON HOLD → shelf"
+      ]
+     },
+     "id": "s05_l04"
+    },
+    {
+     "tts": "그런데 다시 찾아보니,",
+     "pause": "S",
+     "cues": {},
+     "id": "s05_l05"
+    },
+    {
+     "tts": "스페인 아이이 유니버시티도 괜찮은데?",
+     "pause": "M",
+     "cues": {
+      "ie_map": [
+       "스페인",
+       "map → Madrid"
+      ],
+      "ie": [
+       "아이이",
+       "card IE UNIVERSITY"
+      ]
+     },
+     "id": "s05_l06"
+    },
+    {
+     "tts": "마드리드에 있고, 학교 수준도 좋아 보였습니다.",
+     "pause": "M",
+     "cues": {
+      "ie_mad": [
+       "마드리드",
+       "✓ MADRID"
+      ],
+      "ie_rep": [
+       "학교 수준",
+       "✓ REPUTATION"
+      ]
+     },
+     "id": "s05_l07"
+    },
+    {
+     "tts": "그런데 경영대학 중심이라는 점이 조금 걸렸습니다.",
+     "pause": "M",
+     "cues": {
+      "ie_x": [
+       "경영대학",
+       "✕ MAJOR FIT"
+      ],
+      "ie_out": [
+       "걸렸습니다|end",
+       "card → shelf"
+      ]
+     },
+     "id": "s05_l08"
+    },
+    {
+     "tts": "그래서 이번에는, 네덜란드로 눈을 돌렸습니다.",
+     "pause": "M",
+     "cues": {
+      "nl_map": [
+       "네덜란드로",
+       "map → Netherlands"
+      ]
+     },
+     "id": "s05_l09"
+    },
+    {
+     "tts": "브레이어 유니버시테이트 암스테르담이 최고 아닌가?",
+     "pause": "M",
+     "cues": {
+      "vu": [
+       "브레이어",
+       "card VU AMSTERDAM"
+      ],
+      "vu_ok": [
+       "최고",
+       "✓ LOCATION ✓ QUALITY"
+      ]
+     },
+     "id": "s05_l10"
+    },
+    {
+     "tts": "그런데 알고 보니,",
+     "pause": "M",
+     "cues": {},
+     "id": "s05_l11"
+    },
+    {
+     "tts": "원래 열 명을 뽑던 자리를, 이번에는 한 명으로 줄였더라고요.",
+     "pause": "L",
+     "cues": {
+      "seats10": [
+       "열 명",
+       "SEATS 10"
+      ],
+      "seats1": [
+       "한 명",
+       "10 → 1"
+      ]
+     },
+     "id": "s05_l12"
+    },
+    {
+     "tts": "탈락.",
+     "pause": "L",
+     "cues": {
+      "vu_x": [
+       "탈락",
+       "REJECTED stamp"
+      ]
+     },
+     "id": "s05_l13"
+    },
+    {
+     "tts": "그래도 네덜란드가 아쉬워서, 다른 학교들도 찾아봤습니다.",
+     "pause": "M",
+     "cues": {
+      "vu_out": [
+       "그래도",
+       "VU card → shelf"
+      ],
+      "nl_more": [
+       "다른 학교들",
+       "search pings around NL"
+      ]
+     },
+     "id": "s05_l14"
+    },
+    {
+     "tts": "그리고 다시 독일.",
+     "pause": "M",
+     "cues": {
+      "de_map": [
+       "독일",
+       "map → Germany"
+      ]
+     },
+     "id": "s05_l15"
+    },
+    {
+     "tts": "엘엠유,",
+     "pause": "C",
+     "cues": {
+      "lmu": [
+       "엘엠유",
+       "card LMU"
+      ]
+     },
+     "id": "s05_l16"
+    },
+    {
+     "tts": "프랑크푸르트 유니버시티 오브 어플라이드 사이언스,",
+     "pause": "C",
+     "cues": {
+      "fra": [
+       "프랑크푸르트",
+       "card FRANKFURT UAS"
+      ]
+     },
+     "id": "s05_l17"
+    },
+    {
+     "tts": "프리 유니버시티 오브 베를린.",
+     "pause": "M",
+     "cues": {
+      "fub": [
+       "프리",
+       "card FU BERLIN"
+      ]
+     },
+     "id": "s05_l18"
+    },
+    {
+     "tts": "그런데 또 문제가 있었습니다.",
+     "pause": "M",
+     "cues": {
+      "de_prob": [
+       "문제가",
+       "cards dim"
+      ]
+     },
+     "id": "s05_l19"
+    },
+    {
+     "tts": "학사 일정.",
+     "pause": "M",
+     "cues": {
+      "de_cal": [
+       "학사",
+       "calendar strip"
+      ]
+     },
+     "id": "s05_l20"
+    },
+    {
+     "tts": "사월에 시작해서 구월에 끝나는 학교들이 많았고,",
+     "pause": "S",
+     "cues": {
+      "de_apr": [
+       "사월에",
+       "bar starts APR"
+      ],
+      "de_sep": [
+       "구월에",
+       "bar to SEP"
+      ]
+     },
+     "id": "s05_l21"
+    },
+    {
+     "tts": "그러면 한국 이학기 복학 일정과 겹칠 수 있었습니다.",
+     "pause": "L",
+     "cues": {
+      "de_skku": [
+       "한국",
+       "SKKU fall bar"
+      ],
+      "de_overlap": [
+       "겹칠",
+       "overlap flashes"
+      ]
+     },
+     "id": "s05_l22"
+    },
+    {
+     "tts": "또 탈락.",
+     "pause": "L",
+     "cues": {
+      "de_x": [
+       "탈락",
+       "✕ on all three"
+      ]
+     },
+     "id": "s05_l23"
+    },
+    {
+     "tts": "이번에는,",
+     "pause": "S",
+     "cues": {
+      "de_out": [
+       "이번에는",
+       "cards → shelf"
+      ]
+     },
+     "id": "s05_l24"
+    },
+    {
+     "tts": "성적도 괜찮은데, 영국 셰필드를 갈까? 생각했습니다.",
+     "pause": "M",
+     "cues": {
+      "uk_map": [
+       "영국",
+       "map → UK"
+      ],
+      "shf": [
+       "셰필드",
+       "card SHEFFIELD"
+      ],
+      "shf_ok": [
+       "생각했습니다",
+       "✓ ACADEMIC QUALITY"
+      ]
+     },
+     "id": "s05_l25"
+    },
+    {
+     "tts": "그런데 또 고민이 됐습니다.",
+     "pause": "M",
+     "cues": {},
+     "id": "s05_l26"
+    },
+    {
+     "tts": "비싸다.",
+     "pause": "M",
+     "cues": {
+      "shf_cost": [
+       "비싸다",
+       "✕ COST"
+      ]
+     },
+     "id": "s05_l27"
+    },
+    {
+     "tts": "그리고 여행을 많이 하고 싶은 저에게, 영국의 위치도 썩 마음에 들지 않았습니다.",
+     "pause": "S",
+     "cues": {
+      "shf_loc": [
+       "영국의 위치",
+       "✕ TRAVEL ROUTE, channel gap"
+      ]
+     },
+     "id": "s05_l28"
+    }
+   ],
+   "tts_text": "그런데 기준을 만들었다고 해서, 학교가 바로 정해진 건 아니었습니다. [medium pause]\n오히려 여기서부터 시작이었습니다. [medium pause]\n처음에는,\n체코 마사릭 유니버시티가 괜찮겠는데? 라고 생각했습니다. [medium pause]\n그런데 다시 찾아보니,\n스페인 아이이 유니버시티도 괜찮은데? [medium pause]\n마드리드에 있고, 학교 수준도 좋아 보였습니다. [medium pause]\n그런데 경영대학 중심이라는 점이 조금 걸렸습니다. [medium pause]\n그래서 이번에는, 네덜란드로 눈을 돌렸습니다. [medium pause]\n브레이어 유니버시테이트 암스테르담이 최고 아닌가? [medium pause]\n그런데 알고 보니, [medium pause]\n원래 열 명을 뽑던 자리를, 이번에는 한 명으로 줄였더라고요. [long pause]\n탈락. [long pause]\n그래도 네덜란드가 아쉬워서, 다른 학교들도 찾아봤습니다. [medium pause]\n그리고 다시 독일. [medium pause]\n엘엠유,\n프랑크푸르트 유니버시티 오브 어플라이드 사이언스,\n프리 유니버시티 오브 베를린. [medium pause]\n그런데 또 문제가 있었습니다. [medium pause]\n학사 일정. [medium pause]\n사월에 시작해서 구월에 끝나는 학교들이 많았고,\n그러면 한국 이학기 복학 일정과 겹칠 수 있었습니다. [long pause]\n또 탈락. [long pause]\n이번에는,\n성적도 괜찮은데, 영국 셰필드를 갈까? 생각했습니다. [medium pause]\n그런데 또 고민이 됐습니다. [medium pause]\n비싸다. [medium pause]\n그리고 여행을 많이 하고 싶은 저에게, 영국의 위치도 썩 마음에 들지 않았습니다."
+  },
+  {
+   "id": "s06",
+   "title": "BACK TO MASARYK",
+   "theme": "light",
+   "lead": 1.6,
+   "tail": 1.6,
+   "lines": [
+    {
+     "tts": "그리고 결국,",
+     "pause": "L",
+     "cues": {
+      "last_": [
+       "그리고",
+       "other cards gone; MASARYK left"
+      ]
+     },
+     "id": "s06_l01"
+    },
+    {
+     "tts": "처음부터 후보에 있었던, 마사릭 유니버시티로 다시 돌아왔습니다.",
+     "pause": "L",
+     "cues": {
+      "back": [
+       "마사릭",
+       "MASARYK card → center, turns blue"
+      ]
+     },
+     "id": "s06_l02"
+    },
+    {
+     "tts": "유럽 중앙에 위치해 있고,",
+     "pause": "S",
+     "cues": {
+      "center": [
+       "유럽 중앙",
+       "Brno-centred map, routes; ✓ LOCATION"
+      ]
+     },
+     "id": "s06_l03"
+    },
+    {
+     "tts": "체코의 주요 대학 중 하나이며,",
+     "pause": "S",
+     "cues": {
+      "quality": [
+       "주요 대학",
+       "✓ ACADEMIC QUALITY"
+      ]
+     },
+     "id": "s06_l04"
+    },
+    {
+     "tts": "생활비 부담도 상대적으로 적은 편.",
+     "pause": "M",
+     "cues": {
+      "cost": [
+       "생활비",
+       "✓ COST"
+      ]
+     },
+     "id": "s06_l05"
+    },
+    {
+     "tts": "무엇보다,",
+     "pause": "M",
+     "cues": {},
+     "id": "s06_l06"
+    },
+    {
+     "tts": "학사 일정,",
+     "pause": "C",
+     "cues": {
+      "cal": [
+       "학사",
+       "✓ CALENDAR"
+      ]
+     },
+     "id": "s06_l07"
+    },
+    {
+     "tts": "여행 환경,",
+     "pause": "C",
+     "cues": {
+      "trav": [
+       "여행",
+       "routes pulse"
+      ]
+     },
+     "id": "s06_l08"
+    },
+    {
+     "tts": "기숙사,",
+     "pause": "C",
+     "cues": {
+      "dorm": [
+       "기숙사",
+       "✓ DORM"
+      ]
+     },
+     "id": "s06_l09"
+    },
+    {
+     "tts": "그리고 합격 가능성까지.",
+     "pause": "M",
+     "cues": {
+      "chance": [
+       "합격",
+       "✓ CHANCE"
+      ]
+     },
+     "id": "s06_l10"
+    },
+    {
+     "tts": "제가 중요하게 생각했던 조건들을, 전체적으로 잘 만족했습니다.",
+     "pause": "L",
+     "cues": {
+      "all6": [
+       "전체적으로",
+       "6 / 6"
+      ]
+     },
+     "id": "s06_l11"
+    },
+    {
+     "tts": "그때 깨달았습니다.",
+     "pause": "M",
+     "cues": {
+      "dim": [
+       "그때",
+       "dim"
+      ]
+     },
+     "id": "s06_l12"
+    },
+    {
+     "tts": "결국 중요한 건,",
+     "pause": "S",
+     "cues": {},
+     "id": "s06_l13"
+    },
+    {
+     "tts": "가장 좋은 학교가 아니라,",
+     "pause": "M",
+     "cues": {
+      "best": [
+       "가장 좋은",
+       "THE BEST SCHOOL"
+      ]
+     },
+     "id": "s06_l14"
+    },
+    {
+     "tts": "나에게 가장 잘 맞는 학교라는 것.",
+     "pause": "S",
+     "cues": {
+      "forme": [
+       "나에게",
+       "THE BEST SCHOOL FOR ME = MASARYK"
+      ]
+     },
+     "id": "s06_l15"
+    }
+   ],
+   "tts_text": "그리고 결국, [long pause]\n처음부터 후보에 있었던, 마사릭 유니버시티로 다시 돌아왔습니다. [long pause]\n유럽 중앙에 위치해 있고,\n체코의 주요 대학 중 하나이며,\n생활비 부담도 상대적으로 적은 편. [medium pause]\n무엇보다, [medium pause]\n학사 일정,\n여행 환경,\n기숙사,\n그리고 합격 가능성까지. [medium pause]\n제가 중요하게 생각했던 조건들을, 전체적으로 잘 만족했습니다. [long pause]\n그때 깨달았습니다. [medium pause]\n결국 중요한 건,\n가장 좋은 학교가 아니라, [medium pause]\n나에게 가장 잘 맞는 학교라는 것."
+  },
+  {
+   "id": "s07",
+   "title": "DEEP DIVE",
+   "theme": "light",
+   "lead": 1.0,
+   "tail": 1.2,
+   "lines": [
+    {
+     "tts": "그래도 한 번 가는 교환학생이고,",
+     "pause": "S",
+     "cues": {
+      "browser": [
+       "그래도",
+       "browser window"
+      ]
+     },
+     "id": "s07_l01"
+    },
+    {
+     "tts": "시간과 비용도 적지 않게 들어가는 만큼, 대충 결정하고 싶지는 않았습니다.",
+     "pause": "M",
+     "cues": {
+      "time": [
+       "시간과",
+       "TIME · COST chips"
+      ]
+     },
+     "id": "s07_l02"
+    },
+    {
+     "tts": "그래서 후보에 있던 학교들의 홈페이지에 들어가서,",
+     "pause": "S",
+     "cues": {
+      "tabs": [
+       "홈페이지",
+       "tabs + URL typing"
+      ]
+     },
+     "id": "s07_l03"
+    },
+    {
+     "tts": "학사 일정,",
+     "pause": "C",
+     "cues": {
+      "p_cal": [
+       "학사",
+       "ACADEMIC CALENDAR page ✓"
+      ]
+     },
+     "id": "s07_l04"
+    },
+    {
+     "tts": "기숙사,",
+     "pause": "C",
+     "cues": {
+      "p_dorm": [
+       "기숙사",
+       "DORMITORY page ✓"
+      ]
+     },
+     "id": "s07_l05"
+    },
+    {
+     "tts": "수업,",
+     "pause": "C",
+     "cues": {
+      "p_course": [
+       "수업",
+       "COURSES page ✓"
+      ]
+     },
+     "id": "s07_l06"
+    },
+    {
+     "tts": "위치,",
+     "pause": "C",
+     "cues": {
+      "p_loc": [
+       "위치",
+       "BRNO page ✓"
+      ]
+     },
+     "id": "s07_l07"
+    },
+    {
+     "tts": "교환학생 정보까지,",
+     "pause": "S",
+     "cues": {
+      "p_ex": [
+       "교환학생",
+       "EXCHANGE STUDENTS page ✓"
+      ]
+     },
+     "id": "s07_l08"
+    },
+    {
+     "tts": "가능한 한 하나씩 직접 확인했습니다.",
+     "pause": "M",
+     "cues": {
+      "done": [
+       "하나씩",
+       "checklist complete"
+      ]
+     },
+     "id": "s07_l09"
+    },
+    {
+     "tts": "덕분에 지금은, 적어도 이렇게 말할 수 있을 것 같습니다.",
+     "pause": "M",
+     "cues": {
+      "out": [
+       "덕분에",
+       "browser recedes"
+      ]
+     },
+     "id": "s07_l10"
+    },
+    {
+     "tts": "그래도 그때의 최선은, 마사릭 유니버시티였다.",
+     "pause": "S",
+     "cues": {
+      "q1": [
+       "그때의",
+       "quote line 1"
+      ],
+      "q2": [
+       "마사릭",
+       "quote line 2 MASARYK UNIVERSITY"
+      ]
+     },
+     "id": "s07_l11"
+    }
+   ],
+   "tts_text": "그래도 한 번 가는 교환학생이고,\n시간과 비용도 적지 않게 들어가는 만큼, 대충 결정하고 싶지는 않았습니다. [medium pause]\n그래서 후보에 있던 학교들의 홈페이지에 들어가서,\n학사 일정,\n기숙사,\n수업,\n위치,\n교환학생 정보까지,\n가능한 한 하나씩 직접 확인했습니다. [medium pause]\n덕분에 지금은, 적어도 이렇게 말할 수 있을 것 같습니다. [medium pause]\n그래도 그때의 최선은, 마사릭 유니버시티였다."
+  },
+  {
+   "id": "s08",
+   "title": "APPLICATION",
+   "theme": "light",
+   "lead": 1.0,
+   "tail": 1.4,
+   "lines": [
+    {
+     "tts": "성균관대학교 교환학생 선발은, 일차와 이차로 나뉘어 진행됩니다.",
+     "pause": "M",
+     "cues": {
+      "app": [
+       "성균관대학교",
+       "APPLICATION node"
+      ],
+      "r1": [
+       "일차와",
+       "1ST ROUND"
+      ],
+      "r2": [
+       "이차로",
+       "2ND ROUND"
+      ]
+     },
+     "id": "s08_l01"
+    },
+    {
+     "tts": "가능하면 일차에서 합격하는 것이 좋다고 생각했고,",
+     "pause": "S",
+     "cues": {
+      "r1f": [
+       "일차에서",
+       "1ST ROUND focus"
+      ]
+     },
+     "id": "s08_l02"
+    },
+    {
+     "tts": "마사릭 유니버시티에 다녀온 지인과, 에브리타임의 선배들에게 직접 물어봤습니다.",
+     "pause": "M",
+     "cues": {
+      "mu": [
+       "마사릭",
+       "MASARYK target"
+      ],
+      "ask": [
+       "지인과",
+       "people / chat"
+      ]
+     },
+     "id": "s08_l03"
+    },
+    {
+     "tts": "그리고 제 성적이면, 어느 정도 안정권이라고 판단했습니다.",
+     "pause": "M",
+     "cues": {
+      "safe": [
+       "안정권",
+       "gauge → safe zone"
+      ]
+     },
+     "id": "s08_l04"
+    },
+    {
+     "tts": "하지만 선발 인원은,",
+     "pause": "Q",
+     "cues": {
+      "but": [
+       "하지만",
+       "clear for numbers"
+      ]
+     },
+     "id": "s08_l05"
+    },
+    {
+     "tts": "두 명.",
+     "pause": "M",
+     "cues": {
+      "seats": [
+       "두 명",
+       "2 SEATS"
+      ]
+     },
+     "id": "s08_l06"
+    },
+    {
+     "tts": "지원자는 약,",
+     "pause": "Q",
+     "cues": {},
+     "id": "s08_l07"
+    },
+    {
+     "tts": "여섯 명.",
+     "pause": "Q",
+     "cues": {
+      "apps": [
+       "여섯",
+       "~6 APPLICANTS"
+      ]
+     },
+     "id": "s08_l08"
+    },
+    {
+     "tts": "아무리 제 성적이 괜찮아도,",
+     "pause": "S",
+     "cues": {},
+     "id": "s08_l09"
+    },
+    {
+     "tts": "적은 인원을 뽑는 학교는, 마지막까지 긴장할 수밖에 없었습니다.",
+     "pause": "S",
+     "cues": {
+      "tense": [
+       "긴장할",
+       "tension pulse; darken"
+      ]
+     },
+     "id": "s08_l10"
+    }
+   ],
+   "tts_text": "성균관대학교 교환학생 선발은, 일차와 이차로 나뉘어 진행됩니다. [medium pause]\n가능하면 일차에서 합격하는 것이 좋다고 생각했고,\n마사릭 유니버시티에 다녀온 지인과, 에브리타임의 선배들에게 직접 물어봤습니다. [medium pause]\n그리고 제 성적이면, 어느 정도 안정권이라고 판단했습니다. [medium pause]\n하지만 선발 인원은, [medium pause]\n두 명. [medium pause]\n지원자는 약, [medium pause]\n여섯 명. [medium pause]\n아무리 제 성적이 괜찮아도,\n적은 인원을 뽑는 학교는, 마지막까지 긴장할 수밖에 없었습니다."
+  },
+  {
+   "id": "s09",
+   "title": "THE RESULT",
+   "theme": "dark",
+   "lead": 1.2,
+   "tail": 2.0,
+   "lines": [
+    {
+     "tts": "그리고 합격 발표 날.",
+     "pause": "M",
+     "cues": {
+      "day": [
+       "합격 발표",
+       "RESULT DAY"
+      ]
+     },
+     "id": "s09_l01"
+    },
+    {
+     "tts": "평일이라, 군대에서 휴대폰을 받자마자 바로 결과를 확인했습니다.",
+     "pause": "L",
+     "cues": {
+      "phone": [
+       "휴대폰을",
+       "phone slides in, screen on"
+      ],
+      "check": [
+       "결과를",
+       "EXCHANGE RESULT screen"
+      ]
+     },
+     "id": "s09_l02"
+    },
+    {
+     "tts": "그리고...",
+     "pause": "X",
+     "cues": {
+      "tap": [
+       "그리고",
+       "tap; everything freezes"
+      ]
+     },
+     "id": "s09_l03"
+    },
+    {
+     "tts": "합격.",
+     "pause": "L",
+     "cues": {
+      "pass_": [
+       "합격",
+       "1지망 합격"
+      ]
+     },
+     "id": "s09_l04"
+    },
+    {
+     "tts": "일 지망이었던 마사릭 유니버시티에 최종 합격했습니다.",
+     "pause": "M",
+     "cues": {
+      "logo": [
+       "마사릭",
+       "MASARYK UNIVERSITY logo"
+      ],
+      "final": [
+       "최종",
+       "1ST CHOICE · ACCEPTED"
+      ]
+     },
+     "id": "s09_l05"
+    },
+    {
+     "tts": "아직은 조금 실감이 안 나지만,",
+     "pause": "S",
+     "cues": {},
+     "id": "s09_l06"
+    },
+    {
+     "tts": "이천이십칠 년 일 학기.",
+     "pause": "M",
+     "cues": {
+      "y": [
+       "이천이십칠",
+       "2027-1"
+      ]
+     },
+     "id": "s09_l07"
+    },
+    {
+     "tts": "저는 체코 브르노에서 한 학기를 보내게 됩니다.",
+     "pause": "S",
+     "cues": {
+      "brno": [
+       "브르노",
+       "BRNO, CZECH REPUBLIC"
+      ]
+     },
+     "id": "s09_l08"
+    }
+   ],
+   "tts_text": "그리고 합격 발표 날. [medium pause]\n평일이라, 군대에서 휴대폰을 받자마자 바로 결과를 확인했습니다. [long pause]\n그리고... [long pause]\n합격. [long pause]\n일 지망이었던 마사릭 유니버시티에 최종 합격했습니다. [medium pause]\n아직은 조금 실감이 안 나지만,\n이천이십칠 년 일 학기. [medium pause]\n저는 체코 브르노에서 한 학기를 보내게 됩니다."
+  },
+  {
+   "id": "s10",
+   "title": "TWO TIPS",
+   "theme": "light",
+   "lead": 1.0,
+   "tail": 1.4,
+   "lines": [
+    {
+     "tts": "마지막으로, 교환학생을 준비하면서 제가 직접 느낀 팁 두 가지를 말씀드리겠습니다.",
+     "pause": "L",
+     "cues": {
+      "tips": [
+       "두 가지",
+       "2 TIPS"
+      ]
+     },
+     "id": "s10_l01"
+    },
+    {
+     "tts": "첫 번째.",
+     "pause": "M",
+     "cues": {
+      "t1": [
+       "첫 번째",
+       "01 ASK"
+      ]
+     },
+     "id": "s10_l02"
+    },
+    {
+     "tts": "정말 가고 싶은 학교라면, 직접 문의해보세요.",
+     "pause": "M",
+     "cues": {
+      "t1_sub": [
+       "직접 문의",
+       "직접 문의해보세요"
+      ]
+     },
+     "id": "s10_l03"
+    },
+    {
+     "tts": "저도 프랑크푸르트 유니버시티 오브 어플라이드 사이언스에 관심이 있었는데,",
+     "pause": "S",
+     "cues": {
+      "fra": [
+       "프랑크푸르트",
+       "FRANKFURT UAS card"
+      ]
+     },
+     "id": "s10_l04"
+    },
+    {
+     "tts": "당시에는 세 개 학기 이상 수료해야 한다고 적혀 있었습니다.",
+     "pause": "M",
+     "cues": {
+      "req": [
+       "세 개 학기",
+       "REQUIRED 3+ SEMESTERS"
+      ]
+     },
+     "id": "s10_l05"
+    },
+    {
+     "tts": "저는 두 개 학기만 수료한 상태였지만,",
+     "pause": "S",
+     "cues": {
+      "me": [
+       "두 개 학기",
+       "ME 2 SEMESTERS ✕"
+      ]
+     },
+     "id": "s10_l06"
+    },
+    {
+     "tts": "혹시나 하는 마음에 직접 이메일을 보냈습니다.",
+     "pause": "M",
+     "cues": {
+      "mail": [
+       "이메일을",
+       "email sent"
+      ]
+     },
+     "id": "s10_l07"
+    },
+    {
+     "tts": "그리고 학교에서는, 제 상황이면 지원해도 괜찮다는 답변을 받았습니다.",
+     "pause": "M",
+     "cues": {
+      "reply": [
+       "지원해도",
+       "reply ✓ OK TO APPLY"
+      ]
+     },
+     "id": "s10_l08"
+    },
+    {
+     "tts": "결국 학사 일정 때문에 실제 지원까지 하지는 않았지만,",
+     "pause": "S",
+     "cues": {
+      "noapply": [
+       "학사 일정",
+       "note: calendar"
+      ]
+     },
+     "id": "s10_l09"
+    },
+    {
+     "tts": "이 경험을 통해 한 가지를 배웠습니다.",
+     "pause": "M",
+     "cues": {},
+     "id": "s10_l10"
+    },
+    {
+     "tts": "홈페이지에 적힌 기준만 보고, 미리 포기할 필요는 없다는 것.",
+     "pause": "M",
+     "cues": {
+      "lesson": [
+       "미리 포기할",
+       "lesson line"
+      ]
+     },
+     "id": "s10_l11"
+    },
+    {
+     "tts": "물론 모든 학교가 예외를 인정해주는 것은 아닙니다.",
+     "pause": "M",
+     "cues": {
+      "caveat": [
+       "물론",
+       "caveat"
+      ]
+     },
+     "id": "s10_l12"
+    },
+    {
+     "tts": "하지만 정말 가고 싶은 학교라면, 한 번쯤 직접 물어보는 것도 좋은 방법입니다.",
+     "pause": "L",
+     "cues": {
+      "ask": [
+       "직접 물어보는",
+       "ASK."
+      ]
+     },
+     "id": "s10_l13"
+    },
+    {
+     "tts": "두 번째.",
+     "pause": "M",
+     "cues": {
+      "t2": [
+       "두 번째",
+       "02 CHECK THE CALENDAR"
+      ]
+     },
+     "id": "s10_l14"
+    },
+    {
+     "tts": "아카데믹 캘린더는 반드시 확인하세요.",
+     "pause": "M",
+     "cues": {
+      "t2_sub": [
+       "반드시",
+       "반드시 확인"
+      ]
+     },
+     "id": "s10_l15"
+    },
+    {
+     "tts": "학교 이름이나 도시만 보고 선택하지 말고,",
+     "pause": "S",
+     "cues": {
+      "names": [
+       "학교 이름",
+       "NAME · CITY chips fade"
+      ]
+     },
+     "id": "s10_l16"
+    },
+    {
+     "tts": "이 학교에서 한 학기를 마치고 돌아왔을 때,",
+     "pause": "S",
+     "cues": {
+      "ex": [
+       "한 학기를",
+       "exchange bar"
+      ],
+      "ret": [
+       "돌아왔을",
+       "return arrow"
+      ]
+     },
+     "id": "s10_l17"
+    },
+    {
+     "tts": "한국에서 정상적으로 다음 학기를 시작할 수 있는가?",
+     "pause": "M",
+     "cues": {
+      "next": [
+       "다음 학기",
+       "SKKU next semester ✓"
+      ]
+     },
+     "id": "s10_l18"
+    },
+    {
+     "tts": "여기까지 확인해야 합니다.",
+     "pause": "S",
+     "cues": {
+      "ok": [
+       "여기까지",
+       "✓"
+      ]
+     },
+     "id": "s10_l19"
+    }
+   ],
+   "tts_text": "마지막으로, 교환학생을 준비하면서 제가 직접 느낀 팁 두 가지를 말씀드리겠습니다. [long pause]\n첫 번째. [medium pause]\n정말 가고 싶은 학교라면, 직접 문의해보세요. [medium pause]\n저도 프랑크푸르트 유니버시티 오브 어플라이드 사이언스에 관심이 있었는데,\n당시에는 세 개 학기 이상 수료해야 한다고 적혀 있었습니다. [medium pause]\n저는 두 개 학기만 수료한 상태였지만,\n혹시나 하는 마음에 직접 이메일을 보냈습니다. [medium pause]\n그리고 학교에서는, 제 상황이면 지원해도 괜찮다는 답변을 받았습니다. [medium pause]\n결국 학사 일정 때문에 실제 지원까지 하지는 않았지만,\n이 경험을 통해 한 가지를 배웠습니다. [medium pause]\n홈페이지에 적힌 기준만 보고, 미리 포기할 필요는 없다는 것. [medium pause]\n물론 모든 학교가 예외를 인정해주는 것은 아닙니다. [medium pause]\n하지만 정말 가고 싶은 학교라면, 한 번쯤 직접 물어보는 것도 좋은 방법입니다. [long pause]\n두 번째. [medium pause]\n아카데믹 캘린더는 반드시 확인하세요. [medium pause]\n학교 이름이나 도시만 보고 선택하지 말고,\n이 학교에서 한 학기를 마치고 돌아왔을 때,\n한국에서 정상적으로 다음 학기를 시작할 수 있는가? [medium pause]\n여기까지 확인해야 합니다."
+  },
+  {
+   "id": "s11",
+   "title": "CLOSING",
+   "theme": "dark",
+   "lead": 1.4,
+   "tail": 3.6,
+   "lines": [
+    {
+     "tts": "결국 교환학생을 준비하면서, 제가 느낀 건 하나였습니다.",
+     "pause": "M",
+     "cues": {
+      "map": [
+       "결국",
+       "dark Europe map, Brno"
+      ]
+     },
+     "id": "s11_l01"
+    },
+    {
+     "tts": "좋은 학교를 찾는 것보다,",
+     "pause": "S",
+     "cues": {
+      "good": [
+       "좋은 학교",
+       "'좋은 학교' (faint)"
+      ]
+     },
+     "id": "s11_l02"
+    },
+    {
+     "tts": "나에게 맞는 학교를 찾는 것이 더 중요하다는 것.",
+     "pause": "L",
+     "cues": {
+      "fit": [
+       "나에게",
+       "'나에게 맞는 학교' (bright)"
+      ]
+     },
+     "id": "s11_l03"
+    },
+    {
+     "tts": "저에게는,",
+     "pause": "S",
+     "cues": {
+      "list": [
+       "저에게는",
+       "clear text"
+      ]
+     },
+     "id": "s11_l04"
+    },
+    {
+     "tts": "유럽 여행,",
+     "pause": "C",
+     "cues": {
+      "k1": [
+       "유럽",
+       "TRAVEL + routes"
+      ]
+     },
+     "id": "s11_l05"
+    },
+    {
+     "tts": "생활비,",
+     "pause": "C",
+     "cues": {
+      "k2": [
+       "생활비",
+       "COST"
+      ]
+     },
+     "id": "s11_l06"
+    },
+    {
+     "tts": "위치,",
+     "pause": "C",
+     "cues": {
+      "k3": [
+       "위치",
+       "LOCATION"
+      ]
+     },
+     "id": "s11_l07"
+    },
+    {
+     "tts": "학사 일정,",
+     "pause": "C",
+     "cues": {
+      "k4": [
+       "학사",
+       "CALENDAR"
+      ]
+     },
+     "id": "s11_l08"
+    },
+    {
+     "tts": "학교 수준,",
+     "pause": "C",
+     "cues": {
+      "k5": [
+       "학교",
+       "QUALITY"
+      ]
+     },
+     "id": "s11_l09"
+    },
+    {
+     "tts": "기숙사,",
+     "pause": "C",
+     "cues": {
+      "k6": [
+       "기숙사",
+       "DORM"
+      ]
+     },
+     "id": "s11_l10"
+    },
+    {
+     "tts": "그리고 합격 가능성까지.",
+     "pause": "M",
+     "cues": {
+      "k7": [
+       "합격",
+       "CHANCE"
+      ]
+     },
+     "id": "s11_l11"
+    },
+    {
+     "tts": "이 모든 것을 고려했을 때,",
+     "pause": "S",
+     "cues": {
+      "converge": [
+       "고려했을",
+       "tags converge into Brno"
+      ]
+     },
+     "id": "s11_l12"
+    },
+    {
+     "tts": "마사릭 유니버시티가 가장 잘 맞았습니다.",
+     "pause": "L",
+     "cues": {
+      "mu": [
+       "마사릭",
+       "MASARYK UNIVERSITY at Brno"
+      ]
+     },
+     "id": "s11_l13"
+    },
+    {
+     "tts": "이제 남은 건 하나입니다.",
+     "pause": "L",
+     "cues": {
+      "last": [
+       "남은 건",
+       "map fades"
+      ]
+     },
+     "id": "s11_l14"
+    },
+    {
+     "tts": "이천이십칠 년 일 학기.",
+     "pause": "L",
+     "cues": {
+      "y": [
+       "이천이십칠",
+       "2027-1"
+      ],
+      "lockup": [
+       "일 학기|end",
+       "MASARYK UNIVERSITY / BRNO, CZECH REPUBLIC"
+      ]
+     },
+     "id": "s11_l15"
+    },
+    {
+     "tts": "Let's go, 마사릭!",
+     "pause": "S",
+     "cues": {
+      "go": [
+       "Let",
+       "LET'S GO MASARYK!"
+      ]
+     },
+     "id": "s11_l16"
+    }
+   ],
+   "tts_text": "결국 교환학생을 준비하면서, 제가 느낀 건 하나였습니다. [medium pause]\n좋은 학교를 찾는 것보다,\n나에게 맞는 학교를 찾는 것이 더 중요하다는 것. [long pause]\n저에게는,\n유럽 여행,\n생활비,\n위치,\n학사 일정,\n학교 수준,\n기숙사,\n그리고 합격 가능성까지. [medium pause]\n이 모든 것을 고려했을 때,\n마사릭 유니버시티가 가장 잘 맞았습니다. [long pause]\n이제 남은 건 하나입니다. [long pause]\n이천이십칠 년 일 학기. [long pause]\nLet's go, 마사릭!"
+  }
+ ]
+}

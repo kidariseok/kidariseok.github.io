@@ -1,0 +1,243 @@
+{
+ "id": "s01",
+ "dur": 34.896,
+ "sr": 24000,
+ "lines": [
+  {
+   "id": "s01_l01",
+   "tts": "안녕하세요.",
+   "pause": "M",
+   "start": 0.04,
+   "end": 0.762,
+   "rate": 6.93
+  },
+  {
+   "id": "s01_l02",
+   "tts": "이천이십칠 년 일 학기, 저는 체코의 마사릭 유니버시티로 교환학생을 가게 됐습니다.",
+   "pause": "M",
+   "start": 1.357,
+   "end": 7.099,
+   "rate": 6.96
+  },
+  {
+   "id": "s01_l03",
+   "tts": "그런데 사실, 처음부터 이 학교를 정해놓고 준비했던 건 아닙니다.",
+   "pause": "M",
+   "start": 7.704,
+   "end": 13.246,
+   "rate": 6.06
+  },
+  {
+   "id": "s01_l04",
+   "tts": "성균관대학교에서 지원할 수 있는 교환교만, 무려 이백십팔 개.",
+   "pause": "M",
+   "start": 13.916,
+   "end": 18.441,
+   "rate": 5.83
+  },
+  {
+   "id": "s01_l05",
+   "tts": "그래서 저는 일 년 넘게, 정말 많은 학교를 비교했습니다.",
+   "pause": "M",
+   "start": 19.153,
+   "end": 23.585,
+   "rate": 6.04
+  },
+  {
+   "id": "s01_l06",
+   "tts": "오늘은 그 과정에서, 어떤 기준으로 학교를 골랐는지,",
+   "pause": "S",
+   "start": 24.215,
+   "end": 27.52,
+   "rate": 7.0
+  },
+  {
+   "id": "s01_l07",
+   "tts": "왜 결국 마사릭 유니버시티를 선택했는지,",
+   "pause": "S",
+   "start": 27.872,
+   "end": 30.637,
+   "rate": 6.61
+  },
+  {
+   "id": "s01_l08",
+   "tts": "그리고 실제 지원 과정에서 느낀 팁까지 이야기해보겠습니다.",
+   "pause": "X",
+   "start": 30.989,
+   "end": 34.816,
+   "rate": 7.03
+  }
+ ],
+ "cues": [
+  {
+   "id": "hello",
+   "t": 0.04,
+   "line": "s01_l01",
+   "anchor": "안녕",
+   "edge": "start",
+   "visual": "map drifts in from black"
+  },
+  {
+   "id": "czech",
+   "t": 3.644,
+   "line": "s01_l02",
+   "anchor": "체코의",
+   "edge": "start",
+   "visual": "camera glides to Czechia"
+  },
+  {
+   "id": "brno",
+   "t": 4.144,
+   "line": "s01_l02",
+   "anchor": "마사릭",
+   "edge": "start",
+   "visual": "Brno pin + MASARYK UNIVERSITY label"
+  },
+  {
+   "id": "pullback",
+   "t": 7.704,
+   "line": "s01_l03",
+   "anchor": "그런데",
+   "edge": "start",
+   "visual": "label fades, camera pulls back to Europe"
+  },
+  {
+   "id": "cities",
+   "t": 10.0,
+   "line": "s01_l03",
+   "anchor": "처음부터",
+   "edge": "start",
+   "visual": "London→Berlin→Amsterdam→Madrid→Prague pins + arcs"
+  },
+  {
+   "id": "skku",
+   "t": 13.916,
+   "line": "s01_l04",
+   "anchor": "성균관대학교",
+   "edge": "start",
+   "visual": "Seoul origin tag"
+  },
+  {
+   "id": "n218",
+   "t": 17.556,
+   "line": "s01_l04",
+   "anchor": "이백십팔",
+   "edge": "start",
+   "visual": "218 dots + counter 0→218"
+  },
+  {
+   "id": "n218end",
+   "t": 18.44,
+   "line": "s01_l04",
+   "anchor": "이백십팔 개",
+   "edge": "end",
+   "visual": "counter lands on 218"
+  },
+  {
+   "id": "year",
+   "t": 20.105,
+   "line": "s01_l05",
+   "anchor": "일 년",
+   "edge": "start",
+   "visual": "1 YEAR+ tag"
+  },
+  {
+   "id": "compare",
+   "t": 22.168,
+   "line": "s01_l05",
+   "anchor": "비교했습니다",
+   "edge": "start",
+   "visual": "dots linked pairwise (comparison)"
+  },
+  {
+   "id": "ag1",
+   "t": 25.665,
+   "line": "s01_l06",
+   "anchor": "어떤 기준으로",
+   "edge": "start",
+   "visual": "agenda 01 CRITERIA"
+  },
+  {
+   "id": "ag2",
+   "t": 28.775,
+   "line": "s01_l07",
+   "anchor": "마사릭",
+   "edge": "start",
+   "visual": "agenda 02 WHY MASARYK"
+  },
+  {
+   "id": "ag3",
+   "t": 33.139,
+   "line": "s01_l08",
+   "anchor": "팁까지",
+   "edge": "start",
+   "visual": "agenda 03 TIPS"
+  },
+  {
+   "id": "title",
+   "t": 34.805,
+   "line": "s01_l08",
+   "anchor": "이야기해보겠습니다",
+   "edge": "end",
+   "visual": "agenda clears; MASARYK UNIVERSITY / BRNO, CZECH REPUBLIC title"
+  }
+ ],
+ "qc": {
+  "raw_dur": 36.16,
+  "dur": 34.9,
+  "align_ratio": 1.0,
+  "syll": 175,
+  "speech_s": 26.98,
+  "artic_rate": 6.49,
+  "f0_median": 125.2,
+  "f0_sd_st": 4.0,
+  "lufs_raw": -16.5,
+  "transcript": "안녕하세요. 2027년 1학기 저는 체코의 마사릭 유니버시티로 교환학생을 가게 됐습니다. 그런데 사실 처음부터 이 학교를 정해 놓고 준비했던 건 아닙니다. 성균관대학교에서 지원할 수 있는 교환교만 무려 218개. 그래서 저는 1년 넘게 정말 많은 학교를 비교했습니다. 오늘은 그 과정에서 어떤 기준으로 학교를 골랐는지 왜 결국 마사릭 유니버시티를 선택했는지 그리고 실제 지원 과정에서 느낀 팁까지 이야기해 보겠습니다.",
+  "fillers_removed": [],
+  "boundaries": [
+   {
+    "after": "s01_l01",
+    "cls": "M",
+    "raw": 0.59,
+    "new": 0.59
+   },
+   {
+    "after": "s01_l02",
+    "cls": "M",
+    "raw": 0.6,
+    "new": 0.6
+   },
+   {
+    "after": "s01_l03",
+    "cls": "M",
+    "raw": 0.67,
+    "new": 0.67
+   },
+   {
+    "after": "s01_l04",
+    "cls": "M",
+    "raw": 1.0,
+    "new": 0.71
+   },
+   {
+    "after": "s01_l05",
+    "cls": "M",
+    "raw": 0.63,
+    "new": 0.63
+   },
+   {
+    "after": "s01_l06",
+    "cls": "S",
+    "raw": 0.61,
+    "new": 0.35
+   },
+   {
+    "after": "s01_l07",
+    "cls": "S",
+    "raw": 0.64,
+    "new": 0.35
+   }
+  ]
+ },
+ "take": "t11"
+}

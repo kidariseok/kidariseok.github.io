@@ -1,0 +1,247 @@
+{
+ "id": "s08",
+ "dur": 34.887,
+ "sr": 24000,
+ "lines": [
+  {
+   "id": "s08_l01",
+   "tts": "성균관대학교 교환학생 선발은, 일차와 이차로 나뉘어 진행됩니다.",
+   "pause": "M",
+   "start": 0.04,
+   "end": 4.877,
+   "rate": 6.02
+  },
+  {
+   "id": "s08_l02",
+   "tts": "가능하면 일차에서 합격하는 것이 좋다고 생각했고,",
+   "pause": "S",
+   "start": 5.589,
+   "end": 9.069,
+   "rate": 6.41
+  },
+  {
+   "id": "s08_l03",
+   "tts": "마사릭 유니버시티에 다녀온 지인과, 에브리타임의 선배들에게 직접 물어봤습니다.",
+   "pause": "M",
+   "start": 9.421,
+   "end": 14.588,
+   "rate": 7.42
+  },
+  {
+   "id": "s08_l04",
+   "tts": "그리고 제 성적이면, 어느 정도 안정권이라고 판단했습니다.",
+   "pause": "M",
+   "start": 15.3,
+   "end": 19.9,
+   "rate": 5.87
+  },
+  {
+   "id": "s08_l05",
+   "tts": "하지만 선발 인원은,",
+   "pause": "Q",
+   "start": 20.612,
+   "end": 22.407,
+   "rate": 5.19
+  },
+  {
+   "id": "s08_l06",
+   "tts": "두 명.",
+   "pause": "M",
+   "start": 23.257,
+   "end": 23.737,
+   "rate": 4.17
+  },
+  {
+   "id": "s08_l07",
+   "tts": "지원자는 약,",
+   "pause": "Q",
+   "start": 24.449,
+   "end": 25.304,
+   "rate": 5.85
+  },
+  {
+   "id": "s08_l08",
+   "tts": "여섯 명.",
+   "pause": "Q",
+   "start": 26.154,
+   "end": 27.591,
+   "rate": 3.79
+  },
+  {
+   "id": "s08_l09",
+   "tts": "아무리 제 성적이 괜찮아도,",
+   "pause": "S",
+   "start": 28.441,
+   "end": 30.161,
+   "rate": 6.4
+  },
+  {
+   "id": "s08_l10",
+   "tts": "적은 인원을 뽑는 학교는, 마지막까지 긴장할 수밖에 없었습니다.",
+   "pause": "S",
+   "start": 30.513,
+   "end": 34.807,
+   "rate": 7.21
+  }
+ ],
+ "cues": [
+  {
+   "id": "app",
+   "t": 0.04,
+   "line": "s08_l01",
+   "anchor": "성균관대학교",
+   "edge": "start",
+   "visual": "APPLICATION node"
+  },
+  {
+   "id": "r1",
+   "t": 2.63,
+   "line": "s08_l01",
+   "anchor": "일차와",
+   "edge": "start",
+   "visual": "1ST ROUND"
+  },
+  {
+   "id": "r2",
+   "t": 3.352,
+   "line": "s08_l01",
+   "anchor": "이차로",
+   "edge": "start",
+   "visual": "2ND ROUND"
+  },
+  {
+   "id": "r1f",
+   "t": 6.784,
+   "line": "s08_l02",
+   "anchor": "일차에서",
+   "edge": "start",
+   "visual": "1ST ROUND focus"
+  },
+  {
+   "id": "mu",
+   "t": 9.421,
+   "line": "s08_l03",
+   "anchor": "마사릭",
+   "edge": "start",
+   "visual": "MASARYK target"
+  },
+  {
+   "id": "ask",
+   "t": 10.836,
+   "line": "s08_l03",
+   "anchor": "지인과",
+   "edge": "start",
+   "visual": "people / chat"
+  },
+  {
+   "id": "safe",
+   "t": 18.285,
+   "line": "s08_l04",
+   "anchor": "안정권",
+   "edge": "start",
+   "visual": "gauge → safe zone"
+  },
+  {
+   "id": "but",
+   "t": 20.612,
+   "line": "s08_l05",
+   "anchor": "하지만",
+   "edge": "start",
+   "visual": "clear for numbers"
+  },
+  {
+   "id": "seats",
+   "t": 23.257,
+   "line": "s08_l06",
+   "anchor": "두 명",
+   "edge": "start",
+   "visual": "2 SEATS"
+  },
+  {
+   "id": "apps",
+   "t": 26.154,
+   "line": "s08_l08",
+   "anchor": "여섯",
+   "edge": "start",
+   "visual": "~6 APPLICANTS"
+  },
+  {
+   "id": "tense",
+   "t": 33.395,
+   "line": "s08_l10",
+   "anchor": "긴장할",
+   "edge": "start",
+   "visual": "tension pulse; darken"
+  }
+ ],
+ "qc": {
+  "raw_dur": 37.28,
+  "dur": 34.89,
+  "align_ratio": 1.0,
+  "syll": 161,
+  "speech_s": 25.45,
+  "artic_rate": 6.33,
+  "f0_median": 122.1,
+  "f0_sd_st": 3.9,
+  "lufs_raw": -16.1,
+  "transcript": "성균관대학교 교환학생 선발은 1차와 2차로 나뉘어 진행됩니다. 가능하면 1차에서 합격하는 것이 좋다고 생각했고 마사릭 유니버시티에 다녀온 지인과 에브리타임의 선배들에게 직접 물어봤습니다. 그리고 제 성적이면 어느 정도 안정권이라고 판단했습니다. 하지만 선발 인원은 두 명. 지원자는 약 여섯 명. 아무리 제 성적이 괜찮아도 적은 인원을 뽑는 학교는 마지막까지 긴장을 할 수밖에 없었습니다.",
+  "fillers_removed": [],
+  "boundaries": [
+   {
+    "after": "s08_l01",
+    "cls": "M",
+    "raw": 0.88,
+    "new": 0.71
+   },
+   {
+    "after": "s08_l02",
+    "cls": "S",
+    "raw": 0.8,
+    "new": 0.35
+   },
+   {
+    "after": "s08_l03",
+    "cls": "M",
+    "raw": 1.27,
+    "new": 0.71
+   },
+   {
+    "after": "s08_l04",
+    "cls": "M",
+    "raw": 1.23,
+    "new": 0.71
+   },
+   {
+    "after": "s08_l05",
+    "cls": "Q",
+    "raw": 0.84,
+    "new": 0.85
+   },
+   {
+    "after": "s08_l06",
+    "cls": "M",
+    "raw": 0.79,
+    "new": 0.71
+   },
+   {
+    "after": "s08_l07",
+    "cls": "Q",
+    "raw": 0.73,
+    "new": 0.85
+   },
+   {
+    "after": "s08_l08",
+    "cls": "Q",
+    "raw": 0.71,
+    "new": 0.85
+   },
+   {
+    "after": "s08_l09",
+    "cls": "S",
+    "raw": 0.71,
+    "new": 0.35
+   }
+  ]
+ },
+ "take": "q11"
+}

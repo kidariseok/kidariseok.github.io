@@ -1,0 +1,269 @@
+{
+ "id": "s07",
+ "dur": 30.092,
+ "sr": 24000,
+ "lines": [
+  {
+   "id": "s07_l01",
+   "tts": "그래도 한 번 가는 교환학생이고,",
+   "pause": "S",
+   "start": 0.04,
+   "end": 2.422,
+   "rate": 5.46
+  },
+  {
+   "id": "s07_l02",
+   "tts": "시간과 비용도 적지 않게 들어가는 만큼, 대충 결정하고 싶지는 않았습니다.",
+   "pause": "M",
+   "start": 2.762,
+   "end": 7.819,
+   "rate": 6.74
+  },
+  {
+   "id": "s07_l03",
+   "tts": "그래서 후보에 있던 학교들의 홈페이지에 들어가서,",
+   "pause": "S",
+   "start": 8.531,
+   "end": 12.253,
+   "rate": 6.68
+  },
+  {
+   "id": "s07_l04",
+   "tts": "학사 일정,",
+   "pause": "C",
+   "start": 12.605,
+   "end": 13.52,
+   "rate": 4.37
+  },
+  {
+   "id": "s07_l05",
+   "tts": "기숙사,",
+   "pause": "C",
+   "start": 13.852,
+   "end": 14.432,
+   "rate": 5.17
+  },
+  {
+   "id": "s07_l06",
+   "tts": "수업,",
+   "pause": "C",
+   "start": 14.764,
+   "end": 15.204,
+   "rate": 4.55
+  },
+  {
+   "id": "s07_l07",
+   "tts": "위치,",
+   "pause": "C",
+   "start": 15.536,
+   "end": 15.991,
+   "rate": 4.4
+  },
+  {
+   "id": "s07_l08",
+   "tts": "교환학생 정보까지,",
+   "pause": "S",
+   "start": 16.323,
+   "end": 17.683,
+   "rate": 6.58
+  },
+  {
+   "id": "s07_l09",
+   "tts": "가능한 한 하나씩 직접 확인했습니다.",
+   "pause": "M",
+   "start": 18.035,
+   "end": 20.485,
+   "rate": 6.7
+  },
+  {
+   "id": "s07_l10",
+   "tts": "덕분에 지금은, 적어도 이렇게 말할 수 있을 것 같습니다.",
+   "pause": "M",
+   "start": 21.197,
+   "end": 25.424,
+   "rate": 6.45
+  },
+  {
+   "id": "s07_l11",
+   "tts": "그래도 그때의 최선은, 마사릭 유니버시티였다.",
+   "pause": "S",
+   "start": 26.136,
+   "end": 30.012,
+   "rate": 7.06
+  }
+ ],
+ "cues": [
+  {
+   "id": "browser",
+   "t": 0.04,
+   "line": "s07_l01",
+   "anchor": "그래도",
+   "edge": "start",
+   "visual": "browser window"
+  },
+  {
+   "id": "time",
+   "t": 2.762,
+   "line": "s07_l02",
+   "anchor": "시간과",
+   "edge": "start",
+   "visual": "TIME · COST chips"
+  },
+  {
+   "id": "tabs",
+   "t": 11.073,
+   "line": "s07_l03",
+   "anchor": "홈페이지",
+   "edge": "start",
+   "visual": "tabs + URL typing"
+  },
+  {
+   "id": "p_cal",
+   "t": 12.605,
+   "line": "s07_l04",
+   "anchor": "학사",
+   "edge": "start",
+   "visual": "ACADEMIC CALENDAR page ✓"
+  },
+  {
+   "id": "p_dorm",
+   "t": 13.852,
+   "line": "s07_l05",
+   "anchor": "기숙사",
+   "edge": "start",
+   "visual": "DORMITORY page ✓"
+  },
+  {
+   "id": "p_course",
+   "t": 14.764,
+   "line": "s07_l06",
+   "anchor": "수업",
+   "edge": "start",
+   "visual": "COURSES page ✓"
+  },
+  {
+   "id": "p_loc",
+   "t": 15.536,
+   "line": "s07_l07",
+   "anchor": "위치",
+   "edge": "start",
+   "visual": "BRNO page ✓"
+  },
+  {
+   "id": "p_ex",
+   "t": 16.323,
+   "line": "s07_l08",
+   "anchor": "교환학생",
+   "edge": "start",
+   "visual": "EXCHANGE STUDENTS page ✓"
+  },
+  {
+   "id": "done",
+   "t": 18.95,
+   "line": "s07_l09",
+   "anchor": "하나씩",
+   "edge": "start",
+   "visual": "checklist complete"
+  },
+  {
+   "id": "out",
+   "t": 21.197,
+   "line": "s07_l10",
+   "anchor": "덕분에",
+   "edge": "start",
+   "visual": "browser recedes"
+  },
+  {
+   "id": "q1",
+   "t": 27.203,
+   "line": "s07_l11",
+   "anchor": "그때의",
+   "edge": "start",
+   "visual": "quote line 1"
+  },
+  {
+   "id": "q2",
+   "t": 28.73,
+   "line": "s07_l11",
+   "anchor": "마사릭",
+   "edge": "start",
+   "visual": "quote line 2 MASARYK UNIVERSITY"
+  }
+ ],
+ "qc": {
+  "raw_dur": 32.92,
+  "dur": 30.09,
+  "align_ratio": 1.0,
+  "syll": 139,
+  "speech_s": 21.92,
+  "artic_rate": 6.34,
+  "f0_median": 115.8,
+  "f0_sd_st": 5.14,
+  "lufs_raw": -17.2,
+  "transcript": "그래도 한번 가는 교환학생이고 시간과 비용도 적지 않게 들어가는 만큼 대충 결정하고 싶지는 않았습니다. 그래서 후보에 있던 학교들의 홈페이지에 들어가서 학사 일정, 기숙사, 수업, 위치, 교환학생 정보까지 가능한 한 하나씩 직접 확인했습니다. 덕분에 지금은 적어도 이렇게 말할 수 있을 것 같습니다. 그래도 그때의 최선은 마사릭 유니버시티였다.",
+  "fillers_removed": [],
+  "boundaries": [
+   {
+    "after": "s07_l01",
+    "cls": "S",
+    "raw": 0.34,
+    "new": 0.34
+   },
+   {
+    "after": "s07_l02",
+    "cls": "M",
+    "raw": 0.94,
+    "new": 0.71
+   },
+   {
+    "after": "s07_l03",
+    "cls": "S",
+    "raw": 0.46,
+    "new": 0.35
+   },
+   {
+    "after": "s07_l04",
+    "cls": "C",
+    "raw": 0.47,
+    "new": 0.33
+   },
+   {
+    "after": "s07_l05",
+    "cls": "C",
+    "raw": 0.58,
+    "new": 0.33
+   },
+   {
+    "after": "s07_l06",
+    "cls": "C",
+    "raw": 0.67,
+    "new": 0.33
+   },
+   {
+    "after": "s07_l07",
+    "cls": "C",
+    "raw": 0.62,
+    "new": 0.33
+   },
+   {
+    "after": "s07_l08",
+    "cls": "S",
+    "raw": 0.46,
+    "new": 0.35
+   },
+   {
+    "after": "s07_l09",
+    "cls": "M",
+    "raw": 0.98,
+    "new": 0.71
+   },
+   {
+    "after": "s07_l10",
+    "cls": "M",
+    "raw": 0.97,
+    "new": 0.71
+   }
+  ]
+ },
+ "take": "t7"
+}

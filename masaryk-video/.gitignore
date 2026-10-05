@@ -1,0 +1,10 @@
+node_modules/
+# regenerable / large intermediates (keep only the selected, processed narration)
+audio/raw/*.wav
+audio/raw_old/
+audio/takes/
+audio/takes_old/
+audio/*.wav
+audio/scenes/*.wav
+render/out/
+__pycache__/

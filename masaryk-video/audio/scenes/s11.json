@@ -1,0 +1,379 @@
+{
+ "id": "s11",
+ "dur": 34.625,
+ "sr": 24000,
+ "lines": [
+  {
+   "id": "s11_l01",
+   "tts": "결국 교환학생을 준비하면서, 제가 느낀 건 하나였습니다.",
+   "pause": "M",
+   "start": 0.04,
+   "end": 3.982,
+   "rate": 6.06
+  },
+  {
+   "id": "s11_l02",
+   "tts": "좋은 학교를 찾는 것보다,",
+   "pause": "S",
+   "start": 4.694,
+   "end": 6.324,
+   "rate": 6.13
+  },
+  {
+   "id": "s11_l03",
+   "tts": "나에게 맞는 학교를 찾는 것이 더 중요하다는 것.",
+   "pause": "L",
+   "start": 6.676,
+   "end": 9.696,
+   "rate": 6.79
+  },
+  {
+   "id": "s11_l04",
+   "tts": "저에게는,",
+   "pause": "S",
+   "start": 10.546,
+   "end": 11.938,
+   "rate": 4.69
+  },
+  {
+   "id": "s11_l05",
+   "tts": "유럽 여행,",
+   "pause": "C",
+   "start": 12.29,
+   "end": 12.96,
+   "rate": 5.97
+  },
+  {
+   "id": "s11_l06",
+   "tts": "생활비,",
+   "pause": "C",
+   "start": 13.292,
+   "end": 13.952,
+   "rate": 4.55
+  },
+  {
+   "id": "s11_l07",
+   "tts": "위치,",
+   "pause": "C",
+   "start": 14.284,
+   "end": 14.824,
+   "rate": 4.55
+  },
+  {
+   "id": "s11_l08",
+   "tts": "학사 일정,",
+   "pause": "C",
+   "start": 15.156,
+   "end": 15.941,
+   "rate": 5.1
+  },
+  {
+   "id": "s11_l09",
+   "tts": "학교 수준,",
+   "pause": "C",
+   "start": 16.273,
+   "end": 16.973,
+   "rate": 6.56
+  },
+  {
+   "id": "s11_l10",
+   "tts": "기숙사,",
+   "pause": "C",
+   "start": 17.305,
+   "end": 17.965,
+   "rate": 4.55
+  },
+  {
+   "id": "s11_l11",
+   "tts": "그리고 합격 가능성까지.",
+   "pause": "M",
+   "start": 18.297,
+   "end": 20.097,
+   "rate": 6.58
+  },
+  {
+   "id": "s11_l12",
+   "tts": "이 모든 것을 고려했을 때,",
+   "pause": "S",
+   "start": 20.722,
+   "end": 22.992,
+   "rate": 5.01
+  },
+  {
+   "id": "s11_l13",
+   "tts": "마사릭 유니버시티가 가장 잘 맞았습니다.",
+   "pause": "L",
+   "start": 23.344,
+   "end": 26.259,
+   "rate": 6.75
+  },
+  {
+   "id": "s11_l14",
+   "tts": "이제 남은 건 하나입니다.",
+   "pause": "L",
+   "start": 27.109,
+   "end": 29.141,
+   "rate": 6.49
+  },
+  {
+   "id": "s11_l15",
+   "tts": "이천이십칠 년 일 학기.",
+   "pause": "L",
+   "start": 30.061,
+   "end": 31.711,
+   "rate": 7.76
+  },
+  {
+   "id": "s11_l16",
+   "tts": "Let's go, 마사릭!",
+   "pause": "S",
+   "start": 32.561,
+   "end": 34.545,
+   "rate": 5.41
+  }
+ ],
+ "cues": [
+  {
+   "id": "map",
+   "t": 0.04,
+   "line": "s11_l01",
+   "anchor": "결국",
+   "edge": "start",
+   "visual": "dark Europe map, Brno"
+  },
+  {
+   "id": "good",
+   "t": 4.694,
+   "line": "s11_l02",
+   "anchor": "좋은 학교",
+   "edge": "start",
+   "visual": "'좋은 학교' (faint)"
+  },
+  {
+   "id": "fit",
+   "t": 6.676,
+   "line": "s11_l03",
+   "anchor": "나에게",
+   "edge": "start",
+   "visual": "'나에게 맞는 학교' (bright)"
+  },
+  {
+   "id": "list",
+   "t": 10.546,
+   "line": "s11_l04",
+   "anchor": "저에게는",
+   "edge": "start",
+   "visual": "clear text"
+  },
+  {
+   "id": "k1",
+   "t": 12.29,
+   "line": "s11_l05",
+   "anchor": "유럽",
+   "edge": "start",
+   "visual": "TRAVEL + routes"
+  },
+  {
+   "id": "k2",
+   "t": 13.292,
+   "line": "s11_l06",
+   "anchor": "생활비",
+   "edge": "start",
+   "visual": "COST"
+  },
+  {
+   "id": "k3",
+   "t": 14.284,
+   "line": "s11_l07",
+   "anchor": "위치",
+   "edge": "start",
+   "visual": "LOCATION"
+  },
+  {
+   "id": "k4",
+   "t": 15.156,
+   "line": "s11_l08",
+   "anchor": "학사",
+   "edge": "start",
+   "visual": "CALENDAR"
+  },
+  {
+   "id": "k5",
+   "t": 16.273,
+   "line": "s11_l09",
+   "anchor": "학교",
+   "edge": "start",
+   "visual": "QUALITY"
+  },
+  {
+   "id": "k6",
+   "t": 17.305,
+   "line": "s11_l10",
+   "anchor": "기숙사",
+   "edge": "start",
+   "visual": "DORM"
+  },
+  {
+   "id": "k7",
+   "t": 18.905,
+   "line": "s11_l11",
+   "anchor": "합격",
+   "edge": "start",
+   "visual": "CHANCE"
+  },
+  {
+   "id": "converge",
+   "t": 22.092,
+   "line": "s11_l12",
+   "anchor": "고려했을",
+   "edge": "start",
+   "visual": "tags converge into Brno"
+  },
+  {
+   "id": "mu",
+   "t": 23.344,
+   "line": "s11_l13",
+   "anchor": "마사릭",
+   "edge": "start",
+   "visual": "MASARYK UNIVERSITY at Brno"
+  },
+  {
+   "id": "last",
+   "t": 28.081,
+   "line": "s11_l14",
+   "anchor": "남은 건",
+   "edge": "start",
+   "visual": "map fades"
+  },
+  {
+   "id": "y",
+   "t": 30.061,
+   "line": "s11_l15",
+   "anchor": "이천이십칠",
+   "edge": "start",
+   "visual": "2027-1"
+  },
+  {
+   "id": "lockup",
+   "t": 31.71,
+   "line": "s11_l15",
+   "anchor": "일 학기",
+   "edge": "end",
+   "visual": "MASARYK UNIVERSITY / BRNO, CZECH REPUBLIC"
+  },
+  {
+   "id": "go",
+   "t": 32.561,
+   "line": "s11_l16",
+   "anchor": "Let",
+   "edge": "start",
+   "visual": "LET'S GO MASARYK!"
+  }
+ ],
+ "qc": {
+  "raw_dur": 36.8,
+  "dur": 34.62,
+  "align_ratio": 1.0,
+  "syll": 138,
+  "speech_s": 22.75,
+  "artic_rate": 6.07,
+  "f0_median": 124.0,
+  "f0_sd_st": 3.92,
+  "lufs_raw": -16.1,
+  "transcript": "결국 교환학생을 준비하면서 제가 느낀 건 하나였습니다. 좋은 학교를 찾는 것보다 나에게 맞는 학교를 찾는 것이 더 중요하다는 것. 저에게는 유럽 여행, 생활비, 위치, 학사 일정, 학교 수준, 기숙사, 그리고 합격 가능성까지 이 모든 것을 고려했을 때 마사릭 유니버시티가 가장 잘 맞았습니다. 이제 남은 건 하나입니다. 2027년 1학기. Let's go 마사릭.",
+  "fillers_removed": [],
+  "boundaries": [
+   {
+    "after": "s11_l01",
+    "cls": "M",
+    "raw": 0.79,
+    "new": 0.71
+   },
+   {
+    "after": "s11_l02",
+    "cls": "S",
+    "raw": 0.57,
+    "new": 0.35
+   },
+   {
+    "after": "s11_l03",
+    "cls": "L",
+    "raw": 0.73,
+    "new": 0.85
+   },
+   {
+    "after": "s11_l04",
+    "cls": "S",
+    "raw": 0.64,
+    "new": 0.35
+   },
+   {
+    "after": "s11_l05",
+    "cls": "C",
+    "raw": 0.54,
+    "new": 0.33
+   },
+   {
+    "after": "s11_l06",
+    "cls": "C",
+    "raw": 0.49,
+    "new": 0.33
+   },
+   {
+    "after": "s11_l07",
+    "cls": "C",
+    "raw": 0.57,
+    "new": 0.33
+   },
+   {
+    "after": "s11_l08",
+    "cls": "C",
+    "raw": 0.4,
+    "new": 0.33
+   },
+   {
+    "after": "s11_l09",
+    "cls": "C",
+    "raw": 0.6,
+    "new": 0.33
+   },
+   {
+    "after": "s11_l10",
+    "cls": "C",
+    "raw": 0.51,
+    "new": 0.33
+   },
+   {
+    "after": "s11_l11",
+    "cls": "M",
+    "raw": 0.62,
+    "new": 0.62
+   },
+   {
+    "after": "s11_l12",
+    "cls": "S",
+    "raw": 0.61,
+    "new": 0.35
+   },
+   {
+    "after": "s11_l13",
+    "cls": "L",
+    "raw": 0.82,
+    "new": 0.85
+   },
+   {
+    "after": "s11_l14",
+    "cls": "L",
+    "raw": 0.92,
+    "new": 0.92
+   },
+   {
+    "after": "s11_l15",
+    "cls": "L",
+    "raw": 0.59,
+    "new": 0.85
+   }
+  ]
+ },
+ "take": "t7"
+}

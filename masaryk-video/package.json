@@ -1,0 +1,20 @@
+{
+  "name": "masaryk-video",
+  "private": true,
+  "description": "Motion graphics + narration pipeline for the Masaryk University exchange video",
+  "scripts": {
+    "map": "node tools/build_map.mjs",
+    "render": "node render/render.mjs"
+  },
+  "dependencies": {
+    "@fontsource/instrument-serif": "^5.2.5",
+    "@fontsource/jetbrains-mono": "^5.2.5",
+    "d3-geo": "^3.1.1",
+    "pretendard": "^1.3.9",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}

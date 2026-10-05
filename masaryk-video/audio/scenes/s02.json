@@ -1,0 +1,313 @@
+{
+ "id": "s02",
+ "dur": 39.901,
+ "sr": 24000,
+ "lines": [
+  {
+   "id": "s02_l01",
+   "tts": "저는 성균관대학교 이사 학번이고,",
+   "pause": "S",
+   "start": 0.04,
+   "end": 2.642,
+   "rate": 5.38
+  },
+  {
+   "id": "s02_l02",
+   "tts": "일 학년을 마친 뒤, 두 개 학기를 수료하고 군 입대를 했습니다.",
+   "pause": "M",
+   "start": 2.994,
+   "end": 6.684,
+   "rate": 7.04
+  },
+  {
+   "id": "s02_l03",
+   "tts": "그리고 이천이십육 년 시월, 전역을 앞두고 있습니다.",
+   "pause": "M",
+   "start": 7.319,
+   "end": 10.969,
+   "rate": 6.95
+  },
+  {
+   "id": "s02_l04",
+   "tts": "군 입대 전부터, 전역하고 바로 학교로 돌아가기보다는,",
+   "pause": "S",
+   "start": 11.629,
+   "end": 16.204,
+   "rate": 5.49
+  },
+  {
+   "id": "s02_l05",
+   "tts": "한 번쯤 해외에서 살아보고 싶다는 생각이 있었습니다.",
+   "pause": "M",
+   "start": 16.556,
+   "end": 19.281,
+   "rate": 8.07
+  },
+  {
+   "id": "s02_l06",
+   "tts": "특히 군 생활을 하면서, 그 마음은 더 커졌습니다.",
+   "pause": "M",
+   "start": 19.993,
+   "end": 24.203,
+   "rate": 5.94
+  },
+  {
+   "id": "s02_l07",
+   "tts": "조금 더 넓은 세상으로 나가서,",
+   "pause": "S",
+   "start": 24.728,
+   "end": 27.038,
+   "rate": 5.44
+  },
+  {
+   "id": "s02_l08",
+   "tts": "새로운 환경에서 살아보고 싶었습니다.",
+   "pause": "M",
+   "start": 27.268,
+   "end": 29.158,
+   "rate": 8.47
+  },
+  {
+   "id": "s02_l09",
+   "tts": "지원 당시 제 성적은,",
+   "pause": "S",
+   "start": 29.87,
+   "end": 31.935,
+   "rate": 4.57
+  },
+  {
+   "id": "s02_l10",
+   "tts": "학점 사 점 삼삼.",
+   "pause": "M",
+   "start": 32.287,
+   "end": 33.792,
+   "rate": 4.33
+  },
+  {
+   "id": "s02_l11",
+   "tts": "아이엘츠 팔 점 영.",
+   "pause": "M",
+   "start": 34.417,
+   "end": 35.867,
+   "rate": 5.26
+  },
+  {
+   "id": "s02_l12",
+   "tts": "이제 남은 건 하나였습니다.",
+   "pause": "M",
+   "start": 36.579,
+   "end": 38.449,
+   "rate": 6.98
+  },
+  {
+   "id": "s02_l13",
+   "tts": "어디로 갈 것인가?",
+   "pause": "S",
+   "start": 38.874,
+   "end": 39.821,
+   "rate": 7.39
+  }
+ ],
+ "cues": [
+  {
+   "id": "skku",
+   "t": 0.507,
+   "line": "s02_l01",
+   "anchor": "성균관대학교",
+   "edge": "start",
+   "visual": "node 2024 SKKU (logo)"
+  },
+  {
+   "id": "y2024",
+   "t": 1.607,
+   "line": "s02_l01",
+   "anchor": "이사 학번",
+   "edge": "start",
+   "visual": "year label 2024 · 입학"
+  },
+  {
+   "id": "sem",
+   "t": 4.189,
+   "line": "s02_l02",
+   "anchor": "두 개 학기",
+   "edge": "start",
+   "visual": "node 2 SEMESTERS"
+  },
+  {
+   "id": "mil",
+   "t": 5.81,
+   "line": "s02_l02",
+   "anchor": "군 입대",
+   "edge": "start",
+   "visual": "node 2025 MILITARY SERVICE"
+  },
+  {
+   "id": "dis",
+   "t": 8.195,
+   "line": "s02_l03",
+   "anchor": "이천이십육",
+   "edge": "start",
+   "visual": "node 2026.10 DISCHARGE"
+  },
+  {
+   "id": "back",
+   "t": 14.289,
+   "line": "s02_l04",
+   "anchor": "바로 학교로",
+   "edge": "start",
+   "visual": "dashed default path → SKKU"
+  },
+  {
+   "id": "abroad",
+   "t": 17.016,
+   "line": "s02_l05",
+   "anchor": "해외에서",
+   "edge": "start",
+   "visual": "branch to 2027.01 EXCHANGE STUDENT"
+  },
+  {
+   "id": "grow",
+   "t": 22.663,
+   "line": "s02_l06",
+   "anchor": "더 커졌습니다",
+   "edge": "start",
+   "visual": "exchange node grows"
+  },
+  {
+   "id": "wide",
+   "t": 25.363,
+   "line": "s02_l07",
+   "anchor": "넓은 세상",
+   "edge": "start",
+   "visual": "ripple expands outward"
+  },
+  {
+   "id": "stats",
+   "t": 29.87,
+   "line": "s02_l09",
+   "anchor": "지원 당시",
+   "edge": "start",
+   "visual": "timeline recedes; stat panel"
+  },
+  {
+   "id": "gpa",
+   "t": 32.947,
+   "line": "s02_l10",
+   "anchor": "사 점",
+   "edge": "start",
+   "visual": "GPA counter → 4.33"
+  },
+  {
+   "id": "ielts",
+   "t": 35.28,
+   "line": "s02_l11",
+   "anchor": "팔 점",
+   "edge": "start",
+   "visual": "IELTS counter → 8.0"
+  },
+  {
+   "id": "one",
+   "t": 36.709,
+   "line": "s02_l12",
+   "anchor": "남은 건",
+   "edge": "start",
+   "visual": "stats recede"
+  },
+  {
+   "id": "where",
+   "t": 38.874,
+   "line": "s02_l13",
+   "anchor": "어디로",
+   "edge": "start",
+   "visual": "WHERE TO? headline"
+  }
+ ],
+ "qc": {
+  "raw_dur": 41.12,
+  "dur": 39.9,
+  "align_ratio": 0.974,
+  "syll": 189,
+  "speech_s": 29.9,
+  "artic_rate": 6.32,
+  "f0_median": 135.6,
+  "f0_sd_st": 5.11,
+  "lufs_raw": -15.9,
+  "transcript": "저는 성균관대학교 2사 학번이고 1학년을 마친 뒤 두 개 학기를 수료하고 군입대를 했습니다. 그리고 2026년 10월 전역을 앞두고 있습니다. 군 입대 전부터 전역하고 바로 학교로 돌아가기보다는 한 번쯤 해외에서 살아보고 싶다는 생각이 있었습니다. 특히 군 생활을 하면서 그 마음은 더 커졌습니다. 조금 더 넓은 세상으로 나가서 새로운 환경에서 살아보고 싶었습니다. 지원 당시 제 성적은 학점 4.33 IELTS 8.0 이제 남은 건 하나였습니다. 어디로 갈 것인가?",
+  "fillers_removed": [],
+  "boundaries": [
+   {
+    "after": "s02_l01",
+    "cls": "S",
+    "raw": 0.47,
+    "new": 0.35
+   },
+   {
+    "after": "s02_l02",
+    "cls": "M",
+    "raw": 0.63,
+    "new": 0.63
+   },
+   {
+    "after": "s02_l03",
+    "cls": "M",
+    "raw": 0.66,
+    "new": 0.66
+   },
+   {
+    "after": "s02_l04",
+    "cls": "S",
+    "raw": 0.43,
+    "new": 0.35
+   },
+   {
+    "after": "s02_l05",
+    "cls": "M",
+    "raw": 0.96,
+    "new": 0.71
+   },
+   {
+    "after": "s02_l06",
+    "cls": "M",
+    "raw": 0.53,
+    "new": 0.53
+   },
+   {
+    "after": "s02_l07",
+    "cls": "S",
+    "raw": 0.23,
+    "new": 0.23
+   },
+   {
+    "after": "s02_l08",
+    "cls": "M",
+    "raw": 0.79,
+    "new": 0.71
+   },
+   {
+    "after": "s02_l09",
+    "cls": "S",
+    "raw": 0.48,
+    "new": 0.35
+   },
+   {
+    "after": "s02_l10",
+    "cls": "M",
+    "raw": 0.62,
+    "new": 0.62
+   },
+   {
+    "after": "s02_l11",
+    "cls": "M",
+    "raw": 0.85,
+    "new": 0.71
+   },
+   {
+    "after": "s02_l12",
+    "cls": "M",
+    "raw": 0.43,
+    "new": 0.43
+   }
+  ]
+ },
+ "take": "t23"
+}

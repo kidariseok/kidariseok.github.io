@@ -1,0 +1,253 @@
+{
+ "id": "s03",
+ "dur": 30.706,
+ "sr": 24000,
+ "lines": [
+  {
+   "id": "s03_l01",
+   "tts": "교환학생의 목적은, 사람마다 다를 겁니다.",
+   "pause": "M",
+   "start": 0.04,
+   "end": 3.112,
+   "rate": 6.45
+  },
+  {
+   "id": "s03_l02",
+   "tts": "어떤 사람은 좋은 학교에서 공부하고 싶을 수도 있고,",
+   "pause": "S",
+   "start": 3.824,
+   "end": 7.119,
+   "rate": 6.82
+  },
+  {
+   "id": "s03_l03",
+   "tts": "영어 실력을 늘리고 싶을 수도 있습니다.",
+   "pause": "M",
+   "start": 7.471,
+   "end": 9.391,
+   "rate": 8.33
+  },
+  {
+   "id": "s03_l04",
+   "tts": "저는 조금 달랐습니다.",
+   "pause": "M",
+   "start": 9.961,
+   "end": 11.871,
+   "rate": 4.71
+  },
+  {
+   "id": "s03_l05",
+   "tts": "저에게 더 중요했던 건,",
+   "pause": "S",
+   "start": 12.506,
+   "end": 14.406,
+   "rate": 5.22
+  },
+  {
+   "id": "s03_l06",
+   "tts": "유럽에서 실제로 살아보는 것.",
+   "pause": "M",
+   "start": 14.646,
+   "end": 16.456,
+   "rate": 6.63
+  },
+  {
+   "id": "s03_l07",
+   "tts": "그리고 가능하면, 여러 나라를 여행해보는 것.",
+   "pause": "M",
+   "start": 17.026,
+   "end": 20.176,
+   "rate": 6.11
+  },
+  {
+   "id": "s03_l08",
+   "tts": "그래서 영미권 대학 자체를 우선순위로 두기보다는,",
+   "pause": "S",
+   "start": 20.888,
+   "end": 24.738,
+   "rate": 5.8
+  },
+  {
+   "id": "s03_l09",
+   "tts": "유럽에서,",
+   "pause": "S",
+   "start": 25.09,
+   "end": 25.85,
+   "rate": 6.25
+  },
+  {
+   "id": "s03_l10",
+   "tts": "어떤 학교가 나에게 가장 잘 맞을까?",
+   "pause": "S",
+   "start": 26.202,
+   "end": 28.642,
+   "rate": 5.97
+  },
+  {
+   "id": "s03_l11",
+   "tts": "이 질문부터 시작했습니다.",
+   "pause": "S",
+   "start": 28.994,
+   "end": 30.626,
+   "rate": 6.74
+  }
+ ],
+ "cues": [
+  {
+   "id": "cloud",
+   "t": 1.885,
+   "line": "s03_l01",
+   "anchor": "사람마다",
+   "edge": "start",
+   "visual": "6 purpose keywords appear faint"
+  },
+  {
+   "id": "study",
+   "t": 5.709,
+   "line": "s03_l02",
+   "anchor": "공부하고",
+   "edge": "start",
+   "visual": "STUDY highlight"
+  },
+  {
+   "id": "english",
+   "t": 7.471,
+   "line": "s03_l03",
+   "anchor": "영어",
+   "edge": "start",
+   "visual": "ENGLISH highlight"
+  },
+  {
+   "id": "dim",
+   "t": 9.961,
+   "line": "s03_l04",
+   "anchor": "저는",
+   "edge": "start",
+   "visual": "all keywords dim"
+  },
+  {
+   "id": "living",
+   "t": 14.646,
+   "line": "s03_l06",
+   "anchor": "유럽에서",
+   "edge": "start",
+   "visual": "LIVING ABROAD comes forward"
+  },
+  {
+   "id": "travel",
+   "t": 18.74,
+   "line": "s03_l07",
+   "anchor": "여러 나라를",
+   "edge": "start",
+   "visual": "TRAVEL comes forward"
+  },
+  {
+   "id": "ukus",
+   "t": 21.865,
+   "line": "s03_l08",
+   "anchor": "영미권",
+   "edge": "start",
+   "visual": "UK · US chip"
+  },
+  {
+   "id": "strike",
+   "t": 23.983,
+   "line": "s03_l08",
+   "anchor": "두기보다는",
+   "edge": "start",
+   "visual": "strike-through on UK · US"
+  },
+  {
+   "id": "map",
+   "t": 25.09,
+   "line": "s03_l09",
+   "anchor": "유럽에서",
+   "edge": "start",
+   "visual": "light Europe map + city links"
+  },
+  {
+   "id": "q",
+   "t": 26.202,
+   "line": "s03_l10",
+   "anchor": "어떤 학교가",
+   "edge": "start",
+   "visual": "WHICH SCHOOL FITS ME?"
+  }
+ ],
+ "qc": {
+  "raw_dur": 31.88,
+  "dur": 30.71,
+  "align_ratio": 1.0,
+  "syll": 152,
+  "speech_s": 24.29,
+  "artic_rate": 6.26,
+  "f0_median": 134.0,
+  "f0_sd_st": 4.76,
+  "lufs_raw": -13.4,
+  "transcript": "교환학생의 목적은 사람마다 다를 겁니다. 어떤 사람은 좋은 학교에서 공부하고 싶을 수도 있고 영어 실력을 늘리고 싶을 수도 있습니다. 저는 조금 달랐습니다. 저에게 더 중요했던 건 유럽에서 실제로 살아보는 것 그리고 가능하면 여러 나라를 여행해 보는 것 그래서 영미권 대학 자체를 우선순위로 두기보다는 유럽에서 어떤 학교가 나에게 가장 잘 맞을까 이 질문부터 시작했습니다.",
+  "fillers_removed": [],
+  "boundaries": [
+   {
+    "after": "s03_l01",
+    "cls": "M",
+    "raw": 0.9,
+    "new": 0.71
+   },
+   {
+    "after": "s03_l02",
+    "cls": "S",
+    "raw": 0.45,
+    "new": 0.35
+   },
+   {
+    "after": "s03_l03",
+    "cls": "M",
+    "raw": 0.57,
+    "new": 0.57
+   },
+   {
+    "after": "s03_l04",
+    "cls": "M",
+    "raw": 0.63,
+    "new": 0.63
+   },
+   {
+    "after": "s03_l05",
+    "cls": "S",
+    "raw": 0.24,
+    "new": 0.24
+   },
+   {
+    "after": "s03_l06",
+    "cls": "M",
+    "raw": 0.57,
+    "new": 0.57
+   },
+   {
+    "after": "s03_l07",
+    "cls": "M",
+    "raw": 0.75,
+    "new": 0.71
+   },
+   {
+    "after": "s03_l08",
+    "cls": "S",
+    "raw": 0.46,
+    "new": 0.35
+   },
+   {
+    "after": "s03_l09",
+    "cls": "S",
+    "raw": 0.5,
+    "new": 0.35
+   },
+   {
+    "after": "s03_l10",
+    "cls": "S",
+    "raw": 0.54,
+    "new": 0.35
+   }
+  ]
+ },
+ "take": "t47"
+}

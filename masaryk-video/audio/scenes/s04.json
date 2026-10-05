@@ -1,0 +1,763 @@
+{
+ "id": "s04",
+ "dur": 115.709,
+ "sr": 24000,
+ "lines": [
+  {
+   "id": "s04_l01",
+   "tts": "첫 번째는 위치였습니다.",
+   "pause": "M",
+   "start": 0.04,
+   "end": 1.757,
+   "rate": 5.82
+  },
+  {
+   "id": "s04_l02",
+   "tts": "유럽 여행을 많이 하고 싶었기 때문에,",
+   "pause": "S",
+   "start": 2.469,
+   "end": 4.334,
+   "rate": 8.04
+  },
+  {
+   "id": "s04_l03",
+   "tts": "단순히 유럽에 있는 것보다, 유럽의 중심에 가까운가를 중요하게 봤습니다.",
+   "pause": "M",
+   "start": 4.686,
+   "end": 9.326,
+   "rate": 7.33
+  },
+  {
+   "id": "s04_l04",
+   "tts": "체코나 독일처럼, 여러 나라와 가까운 지역에 점수를 줬고,",
+   "pause": "S",
+   "start": 10.038,
+   "end": 13.983,
+   "rate": 6.37
+  },
+  {
+   "id": "s04_l05",
+   "tts": "공항이나 주요 기차역까지 얼마나 걸리는지도 확인했습니다.",
+   "pause": "P",
+   "start": 14.335,
+   "end": 18.015,
+   "rate": 7.72
+  },
+  {
+   "id": "s04_l06",
+   "tts": "두 번째는, 학교의 수준과 명성.",
+   "pause": "M",
+   "start": 18.807,
+   "end": 21.457,
+   "rate": 5.35
+  },
+  {
+   "id": "s04_l07",
+   "tts": "교환학생으로 잠시 다니더라도, 학교 이름은 결국 이력서에 남습니다.",
+   "pause": "M",
+   "start": 22.169,
+   "end": 26.819,
+   "rate": 6.02
+  },
+  {
+   "id": "s04_l08",
+   "tts": "그래서 큐에스 랭킹 같은 자료를 참고하면서,",
+   "pause": "S",
+   "start": 27.254,
+   "end": 30.124,
+   "rate": 6.27
+  },
+  {
+   "id": "s04_l09",
+   "tts": "학교의 전반적인 수준과, 전공 관련 경쟁력도 비교했습니다.",
+   "pause": "P",
+   "start": 30.304,
+   "end": 35.351,
+   "rate": 5.61
+  },
+  {
+   "id": "s04_l10",
+   "tts": "세 번째는 물가.",
+   "pause": "M",
+   "start": 36.143,
+   "end": 37.323,
+   "rate": 5.77
+  },
+  {
+   "id": "s04_l11",
+   "tts": "교환학생을 가면, 여행 때문에 자연스럽게 돈을 많이 쓰게 됩니다.",
+   "pause": "M",
+   "start": 38.035,
+   "end": 41.995,
+   "rate": 6.87
+  },
+  {
+   "id": "s04_l12",
+   "tts": "그래서 적어도 평소 생활하는 곳에서는,",
+   "pause": "S",
+   "start": 42.707,
+   "end": 45.427,
+   "rate": 5.88
+  },
+  {
+   "id": "s04_l13",
+   "tts": "조금 더 여유 있게 지낼 수 있는 국가를 선호했습니다.",
+   "pause": "P",
+   "start": 45.692,
+   "end": 49.889,
+   "rate": 6.64
+  },
+  {
+   "id": "s04_l14",
+   "tts": "그리고 정말 중요하게 본 네 번째 기준.",
+   "pause": "M",
+   "start": 50.681,
+   "end": 53.151,
+   "rate": 6.59
+  },
+  {
+   "id": "s04_l15",
+   "tts": "바로 아카데믹 캘린더, 학사 일정입니다.",
+   "pause": "M",
+   "start": 53.863,
+   "end": 56.813,
+   "rate": 6.72
+  },
+  {
+   "id": "s04_l16",
+   "tts": "유럽 대학은 학교마다, 학기가 시작하고 끝나는 시점이 정말 다릅니다.",
+   "pause": "M",
+   "start": 57.525,
+   "end": 62.32,
+   "rate": 6.38
+  },
+  {
+   "id": "s04_l17",
+   "tts": "어떤 학교는 일월에 시작하고,",
+   "pause": "S",
+   "start": 63.032,
+   "end": 65.022,
+   "rate": 6.45
+  },
+  {
+   "id": "s04_l18",
+   "tts": "어떤 학교는 사월에 시작해서 구월에 끝나기도 합니다.",
+   "pause": "M",
+   "start": 65.202,
+   "end": 68.212,
+   "rate": 7.31
+  },
+  {
+   "id": "s04_l19",
+   "tts": "저는 이천이십육 년 시월 전역 예정이었기 때문에,",
+   "pause": "S",
+   "start": 68.924,
+   "end": 72.169,
+   "rate": 6.41
+  },
+  {
+   "id": "s04_l20",
+   "tts": "전역 후 불필요하게 긴 공백을 만들고 싶지 않았습니다.",
+   "pause": "M",
+   "start": 72.521,
+   "end": 75.546,
+   "rate": 7.27
+  },
+  {
+   "id": "s04_l21",
+   "tts": "그래서 일월이나 이월에 시작하고,",
+   "pause": "S",
+   "start": 76.258,
+   "end": 78.623,
+   "rate": 6.29
+  },
+  {
+   "id": "s04_l22",
+   "tts": "한국 복학 일정과 충돌하지 않는 학교를 우선적으로 찾았습니다.",
+   "pause": "P",
+   "start": 78.975,
+   "end": 83.882,
+   "rate": 6.29
+  },
+  {
+   "id": "s04_l23",
+   "tts": "다섯 번째는, 합격 가능성.",
+   "pause": "M",
+   "start": 84.674,
+   "end": 86.439,
+   "rate": 6.35
+  },
+  {
+   "id": "s04_l24",
+   "tts": "에브리타임에서 이전 합격자들에게 직접 물어보고,",
+   "pause": "S",
+   "start": 87.151,
+   "end": 90.696,
+   "rate": 6.86
+  },
+  {
+   "id": "s04_l25",
+   "tts": "학교 수학보고서도 확인하면서,",
+   "pause": "S",
+   "start": 91.048,
+   "end": 93.043,
+   "rate": 7.28
+  },
+  {
+   "id": "s04_l26",
+   "tts": "제 성적으로 어느 정도 가능성이 있는지 추정했습니다.",
+   "pause": "P",
+   "start": 93.395,
+   "end": 96.415,
+   "rate": 7.68
+  },
+  {
+   "id": "s04_l27",
+   "tts": "마지막은 기숙사.",
+   "pause": "M",
+   "start": 97.207,
+   "end": 98.297,
+   "rate": 7.91
+  },
+  {
+   "id": "s04_l28",
+   "tts": "해외에서 처음 집을 구하고 계약하는 것보다는,",
+   "pause": "S",
+   "start": 98.762,
+   "end": 103.367,
+   "rate": 4.44
+  },
+  {
+   "id": "s04_l29",
+   "tts": "교환학생에게 기숙사를 제공하는 학교를 훨씬 선호했습니다.",
+   "pause": "P",
+   "start": 103.719,
+   "end": 107.504,
+   "rate": 6.79
+  },
+  {
+   "id": "s04_l30",
+   "tts": "결국 저에게 중요한 건,",
+   "pause": "S",
+   "start": 108.296,
+   "end": 110.628,
+   "rate": 3.86
+  },
+  {
+   "id": "s04_l31",
+   "tts": "가장 좋은 학교가 아니라,",
+   "pause": "M",
+   "start": 110.98,
+   "end": 112.545,
+   "rate": 6.39
+  },
+  {
+   "id": "s04_l32",
+   "tts": "나에게 가장 잘 맞는 학교였습니다.",
+   "pause": "S",
+   "start": 113.257,
+   "end": 115.629,
+   "rate": 5.9
+  }
+ ],
+ "cues": [
+  {
+   "id": "c1",
+   "t": 0.04,
+   "line": "s04_l01",
+   "anchor": "첫 번째",
+   "edge": "start",
+   "visual": "rail 01 LOCATION + map panel"
+  },
+  {
+   "id": "c1_travel",
+   "t": 2.469,
+   "line": "s04_l02",
+   "anchor": "유럽 여행",
+   "edge": "start",
+   "visual": "travel arcs"
+  },
+  {
+   "id": "c1_center",
+   "t": 6.71,
+   "line": "s04_l03",
+   "anchor": "유럽의 중심",
+   "edge": "start",
+   "visual": "rings around central Europe"
+  },
+  {
+   "id": "c1_czde",
+   "t": 10.038,
+   "line": "s04_l04",
+   "anchor": "체코나",
+   "edge": "start",
+   "visual": "Czechia + Germany highlighted"
+  },
+  {
+   "id": "c1_score",
+   "t": 13.068,
+   "line": "s04_l04",
+   "anchor": "점수를",
+   "edge": "start",
+   "visual": "+ score tags"
+  },
+  {
+   "id": "c1_air",
+   "t": 14.335,
+   "line": "s04_l05",
+   "anchor": "공항",
+   "edge": "start",
+   "visual": "airport row"
+  },
+  {
+   "id": "c1_train",
+   "t": 15.57,
+   "line": "s04_l05",
+   "anchor": "기차역",
+   "edge": "start",
+   "visual": "train row + travel-time"
+  },
+  {
+   "id": "c2",
+   "t": 18.807,
+   "line": "s04_l06",
+   "anchor": "두 번째",
+   "edge": "start",
+   "visual": "rail 02 ACADEMIC QUALITY"
+  },
+  {
+   "id": "c2_cv",
+   "t": 25.449,
+   "line": "s04_l07",
+   "anchor": "이력서",
+   "edge": "start",
+   "visual": "CV sheet, education row highlight"
+  },
+  {
+   "id": "c2_qs",
+   "t": 27.749,
+   "line": "s04_l08",
+   "anchor": "큐에스",
+   "edge": "start",
+   "visual": "QS ranking bars"
+  },
+  {
+   "id": "c2_overall",
+   "t": 30.659,
+   "line": "s04_l09",
+   "anchor": "전반적인",
+   "edge": "start",
+   "visual": "OVERALL tag"
+  },
+  {
+   "id": "c2_major",
+   "t": 32.225,
+   "line": "s04_l09",
+   "anchor": "전공 관련",
+   "edge": "start",
+   "visual": "BY SUBJECT tag"
+  },
+  {
+   "id": "c3",
+   "t": 36.143,
+   "line": "s04_l10",
+   "anchor": "세 번째",
+   "edge": "start",
+   "visual": "rail 03 COST OF LIVING"
+  },
+  {
+   "id": "c3_travel",
+   "t": 39.625,
+   "line": "s04_l11",
+   "anchor": "여행 때문에",
+   "edge": "start",
+   "visual": "TRAVEL spend bar rises"
+  },
+  {
+   "id": "c3_living",
+   "t": 43.897,
+   "line": "s04_l12",
+   "anchor": "평소 생활",
+   "edge": "start",
+   "visual": "LIVING spend bar"
+  },
+  {
+   "id": "c3_country",
+   "t": 47.297,
+   "line": "s04_l13",
+   "anchor": "국가를",
+   "edge": "start",
+   "visual": "country cost comparison"
+  },
+  {
+   "id": "c4",
+   "t": 52.351,
+   "line": "s04_l14",
+   "anchor": "네 번째",
+   "edge": "start",
+   "visual": "rail 04 ACADEMIC CALENDAR (accent)"
+  },
+  {
+   "id": "c4_title",
+   "t": 54.353,
+   "line": "s04_l15",
+   "anchor": "아카데믹",
+   "edge": "start",
+   "visual": "month strip OCT 2026 → DEC 2027"
+  },
+  {
+   "id": "c4_diff",
+   "t": 61.28,
+   "line": "s04_l16",
+   "anchor": "시점이",
+   "edge": "start",
+   "visual": "start/end ticks scatter"
+  },
+  {
+   "id": "c4_jan",
+   "t": 63.832,
+   "line": "s04_l17",
+   "anchor": "일월에",
+   "edge": "start",
+   "visual": "school A bar from JAN"
+  },
+  {
+   "id": "c4_apr",
+   "t": 65.982,
+   "line": "s04_l18",
+   "anchor": "사월에",
+   "edge": "start",
+   "visual": "school B bar starts APR"
+  },
+  {
+   "id": "c4_sep",
+   "t": 66.982,
+   "line": "s04_l18",
+   "anchor": "구월에",
+   "edge": "start",
+   "visual": "school B bar extends to SEP"
+  },
+  {
+   "id": "c4_dis",
+   "t": 69.61,
+   "line": "s04_l19",
+   "anchor": "이천이십육",
+   "edge": "start",
+   "visual": "DISCHARGE marker 2026.10"
+  },
+  {
+   "id": "c4_gap",
+   "t": 73.671,
+   "line": "s04_l20",
+   "anchor": "긴 공백",
+   "edge": "start",
+   "visual": "GAP hatch"
+  },
+  {
+   "id": "c4_window",
+   "t": 77.045,
+   "line": "s04_l21",
+   "anchor": "일월이나",
+   "edge": "start",
+   "visual": "JAN–FEB window"
+  },
+  {
+   "id": "c4_skku",
+   "t": 78.975,
+   "line": "s04_l22",
+   "anchor": "한국 복학",
+   "edge": "start",
+   "visual": "SKKU fall semester bar"
+  },
+  {
+   "id": "c4_clash",
+   "t": 80.385,
+   "line": "s04_l22",
+   "anchor": "충돌하지",
+   "edge": "start",
+   "visual": "A ✓ / B overlap ✕"
+  },
+  {
+   "id": "c5",
+   "t": 84.674,
+   "line": "s04_l23",
+   "anchor": "다섯 번째",
+   "edge": "start",
+   "visual": "rail 05 ACCEPTANCE CHANCE"
+  },
+  {
+   "id": "c5_chat",
+   "t": 87.151,
+   "line": "s04_l24",
+   "anchor": "에브리타임",
+   "edge": "start",
+   "visual": "chat bubbles"
+  },
+  {
+   "id": "c5_report",
+   "t": 91.488,
+   "line": "s04_l25",
+   "anchor": "수학보고서",
+   "edge": "start",
+   "visual": "study report doc"
+  },
+  {
+   "id": "c5_gauge",
+   "t": 94.67,
+   "line": "s04_l26",
+   "anchor": "가능성이",
+   "edge": "start",
+   "visual": "gauge needle sweeps"
+  },
+  {
+   "id": "c6",
+   "t": 97.207,
+   "line": "s04_l27",
+   "anchor": "마지막은",
+   "edge": "start",
+   "visual": "rail 06 DORMITORY"
+  },
+  {
+   "id": "c6_house",
+   "t": 100.877,
+   "line": "s04_l28",
+   "anchor": "집을 구하고",
+   "edge": "start",
+   "visual": "contract + house (?)"
+  },
+  {
+   "id": "c6_dorm",
+   "t": 104.845,
+   "line": "s04_l29",
+   "anchor": "기숙사를",
+   "edge": "start",
+   "visual": "DORM PROVIDED ✓"
+  },
+  {
+   "id": "end",
+   "t": 108.296,
+   "line": "s04_l30",
+   "anchor": "결국",
+   "edge": "start",
+   "visual": "rail + panel clear"
+  },
+  {
+   "id": "best",
+   "t": 110.98,
+   "line": "s04_l31",
+   "anchor": "가장 좋은",
+   "edge": "start",
+   "visual": "THE BEST SCHOOL"
+  },
+  {
+   "id": "forme",
+   "t": 113.257,
+   "line": "s04_l32",
+   "anchor": "나에게",
+   "edge": "start",
+   "visual": "≠ THE BEST SCHOOL FOR ME"
+  }
+ ],
+ "qc": {
+  "raw_dur": 126.68,
+  "dur": 115.71,
+  "align_ratio": 0.984,
+  "syll": 579,
+  "speech_s": 89.18,
+  "artic_rate": 6.49,
+  "f0_median": 121.6,
+  "f0_sd_st": 4.34,
+  "lufs_raw": -16.5,
+  "transcript": "첫 번째는 위치였습니다. 유학 여행을 많이 하고 싶었기 때문에 단순히 유럽에 있는 것보다 유럽의 중심에 가까운가를 중요하게 봤습니다. 체코나 독일처럼 여러 나라와 가까운 지역에 점수를 줬고 공항이나 주요 기차역까지 얼마나 걸리는지도 확인했습니다. 두 번째는 학교의 수준과 명성. 교환 학생으로 잠시 다니더라도 학교 이름은 결국 이력서에 남습니다. 그래서 QS 랭킹 같은 자료를 참고하면서 학교의 전반적인 수준과 전공 관련 경쟁력도 비교했습니다. 세 번째는 물가. 교환 학생을 가면 여행 때문에 자연스럽게 돈을 많이 쓰게 됩니다. 그래서 적어도 평소 생활하는 곳에서는 조금 더 여유 있게 지낼 수 있는 국가를 선호했습니다. 그리고 정말 중요하게 본 네 번째 기준. 바로 아카데믹 캘린더, 학사 일정입니다. 유럽 대학은 학교마다 학기가 시작하고 끝나는 시점이 정말 다릅니다. 어떤 학교는 1월에 시작하고 어떤 학교는 4월에 시작해서 9월에 끝나기도 합니다. 저는 2026년 10월 저녁 예정이었기 때문에 저녁 후 불필요하게 긴 공백을 만들고 싶지 않았습니다. 그래서 1월이나 2월에 시작하고 한국 복학 일정과 충돌하지 않는 학교를 우선적으로 찾았습니다. 다섯 번째는 합격 가능성. 에브리타임에서 이전 합격자들에게 직접 물어보고 학교 수학 보고서도 확인하면서 제 성적으로 어느 정도 가능성이 있는지 추정했습니다. 마지막은 기숙사. 해외에서 처음 집을 구하고 계약하는 것보다는 교환 학생에게 기숙사를 제공하는 학교를 훨씬 선호했습니다. 결국 저에게 중요한 건 가장 좋은 학교가 아니라 나에게 가장 잘 맞는 학교였습니다.",
+  "fillers_removed": [],
+  "boundaries": [
+   {
+    "after": "s04_l01",
+    "cls": "M",
+    "raw": 1.02,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l02",
+    "cls": "S",
+    "raw": 0.63,
+    "new": 0.35
+   },
+   {
+    "after": "s04_l03",
+    "cls": "M",
+    "raw": 1.01,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l04",
+    "cls": "S",
+    "raw": 0.75,
+    "new": 0.35
+   },
+   {
+    "after": "s04_l05",
+    "cls": "P",
+    "raw": 1.32,
+    "new": 0.79
+   },
+   {
+    "after": "s04_l06",
+    "cls": "M",
+    "raw": 1.11,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l07",
+    "cls": "M",
+    "raw": 0.43,
+    "new": 0.43
+   },
+   {
+    "after": "s04_l08",
+    "cls": "S",
+    "raw": 0.17,
+    "new": 0.18
+   },
+   {
+    "after": "s04_l09",
+    "cls": "P",
+    "raw": 1.76,
+    "new": 0.79
+   },
+   {
+    "after": "s04_l10",
+    "cls": "M",
+    "raw": 1.02,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l11",
+    "cls": "M",
+    "raw": 0.86,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l12",
+    "cls": "S",
+    "raw": 0.27,
+    "new": 0.27
+   },
+   {
+    "after": "s04_l13",
+    "cls": "P",
+    "raw": 1.05,
+    "new": 0.79
+   },
+   {
+    "after": "s04_l14",
+    "cls": "M",
+    "raw": 0.71,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l15",
+    "cls": "M",
+    "raw": 1.09,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l16",
+    "cls": "M",
+    "raw": 1.06,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l17",
+    "cls": "S",
+    "raw": 0.13,
+    "new": 0.18
+   },
+   {
+    "after": "s04_l18",
+    "cls": "M",
+    "raw": 0.96,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l19",
+    "cls": "S",
+    "raw": 0.51,
+    "new": 0.35
+   },
+   {
+    "after": "s04_l20",
+    "cls": "M",
+    "raw": 0.72,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l21",
+    "cls": "S",
+    "raw": 0.43,
+    "new": 0.35
+   },
+   {
+    "after": "s04_l22",
+    "cls": "P",
+    "raw": 1.77,
+    "new": 0.79
+   },
+   {
+    "after": "s04_l23",
+    "cls": "M",
+    "raw": 0.73,
+    "new": 0.71
+   },
+   {
+    "after": "s04_l24",
+    "cls": "S",
+    "raw": 0.41,
+    "new": 0.35
+   },
+   {
+    "after": "s04_l25",
+    "cls": "S",
+    "raw": 0.37,
+    "new": 0.35
+   },
+   {
+    "after": "s04_l26",
+    "cls": "P",
+    "raw": 1.28,
+    "new": 0.79
+   },
+   {
+    "after": "s04_l27",
+    "cls": "M",
+    "raw": 0.47,
+    "new": 0.46
+   },
+   {
+    "after": "s04_l28",
+    "cls": "S",
+    "raw": 0.56,
+    "new": 0.35
+   },
+   {
+    "after": "s04_l29",
+    "cls": "P",
+    "raw": 1.55,
+    "new": 0.79
+   },
+   {
+    "after": "s04_l30",
+    "cls": "S",
+    "raw": 0.67,
+    "new": 0.35
+   },
+   {
+    "after": "s04_l31",
+    "cls": "M",
+    "raw": 0.92,
+    "new": 0.71
+   }
+  ]
+ },
+ "take": "t31"
+}

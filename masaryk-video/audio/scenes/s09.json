@@ -1,0 +1,203 @@
+{
+ "id": "s09",
+ "dur": 24.25,
+ "sr": 24000,
+ "lines": [
+  {
+   "id": "s09_l01",
+   "tts": "그리고 합격 발표 날.",
+   "pause": "M",
+   "start": 0.04,
+   "end": 1.372,
+   "rate": 6.68
+  },
+  {
+   "id": "s09_l02",
+   "tts": "평일이라, 군대에서 휴대폰을 받자마자 바로 결과를 확인했습니다.",
+   "pause": "L",
+   "start": 2.027,
+   "end": 6.909,
+   "rate": 6.46
+  },
+  {
+   "id": "s09_l03",
+   "tts": "그리고...",
+   "pause": "X",
+   "start": 8.121,
+   "end": 8.521,
+   "rate": 7.5
+  },
+  {
+   "id": "s09_l04",
+   "tts": "합격.",
+   "pause": "L",
+   "start": 9.883,
+   "end": 10.363,
+   "rate": 5.48
+  },
+  {
+   "id": "s09_l05",
+   "tts": "일 지망이었던 마사릭 유니버시티에 최종 합격했습니다.",
+   "pause": "M",
+   "start": 11.575,
+   "end": 15.537,
+   "rate": 6.62
+  },
+  {
+   "id": "s09_l06",
+   "tts": "아직은 조금 실감이 안 나지만,",
+   "pause": "S",
+   "start": 16.249,
+   "end": 18.844,
+   "rate": 5.12
+  },
+  {
+   "id": "s09_l07",
+   "tts": "이천이십칠 년 일 학기.",
+   "pause": "M",
+   "start": 19.196,
+   "end": 20.576,
+   "rate": 6.52
+  },
+  {
+   "id": "s09_l08",
+   "tts": "저는 체코 브르노에서 한 학기를 보내게 됩니다.",
+   "pause": "S",
+   "start": 21.288,
+   "end": 24.17,
+   "rate": 7.33
+  }
+ ],
+ "cues": [
+  {
+   "id": "day",
+   "t": 0.6,
+   "line": "s09_l01",
+   "anchor": "합격 발표",
+   "edge": "start",
+   "visual": "RESULT DAY"
+  },
+  {
+   "id": "phone",
+   "t": 4.194,
+   "line": "s09_l02",
+   "anchor": "휴대폰을",
+   "edge": "start",
+   "visual": "phone slides in, screen on"
+  },
+  {
+   "id": "check",
+   "t": 5.794,
+   "line": "s09_l02",
+   "anchor": "결과를",
+   "edge": "start",
+   "visual": "EXCHANGE RESULT screen"
+  },
+  {
+   "id": "tap",
+   "t": 8.121,
+   "line": "s09_l03",
+   "anchor": "그리고",
+   "edge": "start",
+   "visual": "tap; everything freezes"
+  },
+  {
+   "id": "pass_",
+   "t": 9.883,
+   "line": "s09_l04",
+   "anchor": "합격",
+   "edge": "start",
+   "visual": "1지망 합격"
+  },
+  {
+   "id": "logo",
+   "t": 13.227,
+   "line": "s09_l05",
+   "anchor": "마사릭",
+   "edge": "start",
+   "visual": "MASARYK UNIVERSITY logo"
+  },
+  {
+   "id": "final",
+   "t": 14.427,
+   "line": "s09_l05",
+   "anchor": "최종",
+   "edge": "start",
+   "visual": "1ST CHOICE · ACCEPTED"
+  },
+  {
+   "id": "y",
+   "t": 19.196,
+   "line": "s09_l07",
+   "anchor": "이천이십칠",
+   "edge": "start",
+   "visual": "2027-1"
+  },
+  {
+   "id": "brno",
+   "t": 22.348,
+   "line": "s09_l08",
+   "anchor": "브르노",
+   "edge": "start",
+   "visual": "BRNO, CZECH REPUBLIC"
+  }
+ ],
+ "qc": {
+  "raw_dur": 27.4,
+  "dur": 24.25,
+  "align_ratio": 0.971,
+  "syll": 103,
+  "speech_s": 15.94,
+  "artic_rate": 6.46,
+  "f0_median": 123.3,
+  "f0_sd_st": 3.85,
+  "lufs_raw": -15.4,
+  "transcript": "그리고 합격 발표날. 평일이라 군대에서 휴대폰을 받자마자 바로 결과를 확인했습니다. 그리고 합격. 1지망의 어떤 마사릭 유니버시티에 최종 합격했습니다. 아직은 조금 실감이 안 나지만 2027년 1학기 저는 체코 브르노에서 한 학기를 보내게 됩니다.",
+  "fillers_removed": [],
+  "boundaries": [
+   {
+    "after": "s09_l01",
+    "cls": "M",
+    "raw": 0.66,
+    "new": 0.66
+   },
+   {
+    "after": "s09_l02",
+    "cls": "L",
+    "raw": 1.46,
+    "new": 1.21
+   },
+   {
+    "after": "s09_l03",
+    "cls": "X",
+    "raw": 2.33,
+    "new": 1.36
+   },
+   {
+    "after": "s09_l04",
+    "cls": "L",
+    "raw": 1.4,
+    "new": 1.21
+   },
+   {
+    "after": "s09_l05",
+    "cls": "M",
+    "raw": 0.82,
+    "new": 0.71
+   },
+   {
+    "after": "s09_l06",
+    "cls": "S",
+    "raw": 0.82,
+    "new": 0.35
+   },
+   {
+    "after": "s09_l07",
+    "cls": "M",
+    "raw": 0.81,
+    "new": 0.71
+   }
+  ]
+ },
+ "take": "t23"
+}

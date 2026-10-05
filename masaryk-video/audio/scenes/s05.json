@@ -1,0 +1,707 @@
+{
+ "id": "s05",
+ "dur": 85.073,
+ "sr": 24000,
+ "lines": [
+  {
+   "id": "s05_l01",
+   "tts": "그런데 기준을 만들었다고 해서, 학교가 바로 정해진 건 아니었습니다.",
+   "pause": "M",
+   "start": 0.04,
+   "end": 4.802,
+   "rate": 6.3
+  },
+  {
+   "id": "s05_l02",
+   "tts": "오히려 여기서부터 시작이었습니다.",
+   "pause": "M",
+   "start": 5.437,
+   "end": 7.742,
+   "rate": 7.19
+  },
+  {
+   "id": "s05_l03",
+   "tts": "처음에는,",
+   "pause": "S",
+   "start": 8.454,
+   "end": 9.274,
+   "rate": 4.88
+  },
+  {
+   "id": "s05_l04",
+   "tts": "체코 마사릭 유니버시티가 괜찮겠는데? 라고 생각했습니다.",
+   "pause": "M",
+   "start": 9.626,
+   "end": 13.336,
+   "rate": 6.67
+  },
+  {
+   "id": "s05_l05",
+   "tts": "그런데 다시 찾아보니,",
+   "pause": "S",
+   "start": 13.901,
+   "end": 15.831,
+   "rate": 5.07
+  },
+  {
+   "id": "s05_l06",
+   "tts": "스페인 아이이 유니버시티도 괜찮은데?",
+   "pause": "M",
+   "start": 16.111,
+   "end": 19.231,
+   "rate": 5.55
+  },
+  {
+   "id": "s05_l07",
+   "tts": "마드리드에 있고, 학교 수준도 좋아 보였습니다.",
+   "pause": "M",
+   "start": 19.943,
+   "end": 22.973,
+   "rate": 6.88
+  },
+  {
+   "id": "s05_l08",
+   "tts": "그런데 경영대학 중심이라는 점이 조금 걸렸습니다.",
+   "pause": "M",
+   "start": 23.685,
+   "end": 27.54,
+   "rate": 5.74
+  },
+  {
+   "id": "s05_l09",
+   "tts": "그래서 이번에는, 네덜란드로 눈을 돌렸습니다.",
+   "pause": "M",
+   "start": 28.252,
+   "end": 31.062,
+   "rate": 7.24
+  },
+  {
+   "id": "s05_l10",
+   "tts": "브레이어 유니버시테이트 암스테르담이 최고 아닌가?",
+   "pause": "M",
+   "start": 31.657,
+   "end": 35.627,
+   "rate": 6.3
+  },
+  {
+   "id": "s05_l11",
+   "tts": "그런데 알고 보니,",
+   "pause": "M",
+   "start": 36.339,
+   "end": 37.689,
+   "rate": 5.65
+  },
+  {
+   "id": "s05_l12",
+   "tts": "원래 열 명을 뽑던 자리를, 이번에는 한 명으로 줄였더라고요.",
+   "pause": "L",
+   "start": 38.109,
+   "end": 42.079,
+   "rate": 6.23
+  },
+  {
+   "id": "s05_l13",
+   "tts": "탈락.",
+   "pause": "L",
+   "start": 42.929,
+   "end": 43.294,
+   "rate": 5.48
+  },
+  {
+   "id": "s05_l14",
+   "tts": "그래도 네덜란드가 아쉬워서, 다른 학교들도 찾아봤습니다.",
+   "pause": "M",
+   "start": 44.194,
+   "end": 48.044,
+   "rate": 6.23
+  },
+  {
+   "id": "s05_l15",
+   "tts": "그리고 다시 독일.",
+   "pause": "M",
+   "start": 48.734,
+   "end": 50.134,
+   "rate": 5.49
+  },
+  {
+   "id": "s05_l16",
+   "tts": "엘엠유,",
+   "pause": "C",
+   "start": 50.734,
+   "end": 51.589,
+   "rate": 3.51
+  },
+  {
+   "id": "s05_l17",
+   "tts": "프랑크푸르트 유니버시티 오브 어플라이드 사이언스,",
+   "pause": "C",
+   "start": 51.921,
+   "end": 54.646,
+   "rate": 8.07
+  },
+  {
+   "id": "s05_l18",
+   "tts": "프리 유니버시티 오브 베를린.",
+   "pause": "M",
+   "start": 54.978,
+   "end": 56.418,
+   "rate": 8.33
+  },
+  {
+   "id": "s05_l19",
+   "tts": "그런데 또 문제가 있었습니다.",
+   "pause": "M",
+   "start": 57.113,
+   "end": 59.078,
+   "rate": 6.9
+  },
+  {
+   "id": "s05_l20",
+   "tts": "학사 일정.",
+   "pause": "M",
+   "start": 59.773,
+   "end": 60.663,
+   "rate": 4.49
+  },
+  {
+   "id": "s05_l21",
+   "tts": "사월에 시작해서 구월에 끝나는 학교들이 많았고,",
+   "pause": "S",
+   "start": 61.375,
+   "end": 64.625,
+   "rate": 6.37
+  },
+  {
+   "id": "s05_l22",
+   "tts": "그러면 한국 이학기 복학 일정과 겹칠 수 있었습니다.",
+   "pause": "L",
+   "start": 64.805,
+   "end": 68.125,
+   "rate": 6.33
+  },
+  {
+   "id": "s05_l23",
+   "tts": "또 탈락.",
+   "pause": "L",
+   "start": 68.975,
+   "end": 69.435,
+   "rate": 6.52
+  },
+  {
+   "id": "s05_l24",
+   "tts": "이번에는,",
+   "pause": "S",
+   "start": 70.285,
+   "end": 71.635,
+   "rate": 3.96
+  },
+  {
+   "id": "s05_l25",
+   "tts": "성적도 괜찮은데, 영국 셰필드를 갈까? 생각했습니다.",
+   "pause": "M",
+   "start": 71.84,
+   "end": 75.56,
+   "rate": 6.03
+  },
+  {
+   "id": "s05_l26",
+   "tts": "그런데 또 고민이 됐습니다.",
+   "pause": "M",
+   "start": 76.272,
+   "end": 77.757,
+   "rate": 8.12
+  },
+  {
+   "id": "s05_l27",
+   "tts": "비싸다.",
+   "pause": "M",
+   "start": 78.469,
+   "end": 78.984,
+   "rate": 5.83
+  },
+  {
+   "id": "s05_l28",
+   "tts": "그리고 여행을 많이 하고 싶은 저에게, 영국의 위치도 썩 마음에 들지 않았습니다.",
+   "pause": "S",
+   "start": 79.696,
+   "end": 84.993,
+   "rate": 6.42
+  }
+ ],
+ "cues": [
+  {
+   "id": "filter",
+   "t": 1.21,
+   "line": "s05_l01",
+   "anchor": "기준을",
+   "edge": "start",
+   "visual": "6 criteria chips become a filter row"
+  },
+  {
+   "id": "search",
+   "t": 6.26,
+   "line": "s05_l02",
+   "anchor": "여기서부터",
+   "edge": "start",
+   "visual": "search bar"
+  },
+  {
+   "id": "mu_map",
+   "t": 9.626,
+   "line": "s05_l04",
+   "anchor": "체코",
+   "edge": "start",
+   "visual": "map → Brno"
+  },
+  {
+   "id": "mu",
+   "t": 10.226,
+   "line": "s05_l04",
+   "anchor": "마사릭",
+   "edge": "start",
+   "visual": "card MASARYK"
+  },
+  {
+   "id": "mu_ok",
+   "t": 11.426,
+   "line": "s05_l04",
+   "anchor": "괜찮겠는데",
+   "edge": "start",
+   "visual": "✓ LOCATION ✓ CALENDAR"
+  },
+  {
+   "id": "mu_hold",
+   "t": 12.526,
+   "line": "s05_l04",
+   "anchor": "생각했습니다",
+   "edge": "start",
+   "visual": "ON HOLD → shelf"
+  },
+  {
+   "id": "ie_map",
+   "t": 16.111,
+   "line": "s05_l06",
+   "anchor": "스페인",
+   "edge": "start",
+   "visual": "map → Madrid"
+  },
+  {
+   "id": "ie",
+   "t": 17.451,
+   "line": "s05_l06",
+   "anchor": "아이이",
+   "edge": "start",
+   "visual": "card IE UNIVERSITY"
+  },
+  {
+   "id": "ie_mad",
+   "t": 19.943,
+   "line": "s05_l07",
+   "anchor": "마드리드",
+   "edge": "start",
+   "visual": "✓ MADRID"
+  },
+  {
+   "id": "ie_rep",
+   "t": 21.303,
+   "line": "s05_l07",
+   "anchor": "학교 수준",
+   "edge": "start",
+   "visual": "✓ REPUTATION"
+  },
+  {
+   "id": "ie_x",
+   "t": 24.755,
+   "line": "s05_l08",
+   "anchor": "경영대학",
+   "edge": "start",
+   "visual": "✕ MAJOR FIT"
+  },
+  {
+   "id": "ie_out",
+   "t": 27.535,
+   "line": "s05_l08",
+   "anchor": "걸렸습니다",
+   "edge": "end",
+   "visual": "card → shelf"
+  },
+  {
+   "id": "nl_map",
+   "t": 29.505,
+   "line": "s05_l09",
+   "anchor": "네덜란드로",
+   "edge": "start",
+   "visual": "map → Netherlands"
+  },
+  {
+   "id": "vu",
+   "t": 31.657,
+   "line": "s05_l10",
+   "anchor": "브레이어",
+   "edge": "start",
+   "visual": "card VU AMSTERDAM"
+  },
+  {
+   "id": "vu_ok",
+   "t": 34.85,
+   "line": "s05_l10",
+   "anchor": "최고",
+   "edge": "start",
+   "visual": "✓ LOCATION ✓ QUALITY"
+  },
+  {
+   "id": "seats10",
+   "t": 38.479,
+   "line": "s05_l12",
+   "anchor": "열 명",
+   "edge": "start",
+   "visual": "SEATS 10"
+  },
+  {
+   "id": "seats1",
+   "t": 40.579,
+   "line": "s05_l12",
+   "anchor": "한 명",
+   "edge": "start",
+   "visual": "10 → 1"
+  },
+  {
+   "id": "vu_x",
+   "t": 42.929,
+   "line": "s05_l13",
+   "anchor": "탈락",
+   "edge": "start",
+   "visual": "REJECTED stamp"
+  },
+  {
+   "id": "vu_out",
+   "t": 44.194,
+   "line": "s05_l14",
+   "anchor": "그래도",
+   "edge": "start",
+   "visual": "VU card → shelf"
+  },
+  {
+   "id": "nl_more",
+   "t": 46.549,
+   "line": "s05_l14",
+   "anchor": "다른 학교들",
+   "edge": "start",
+   "visual": "search pings around NL"
+  },
+  {
+   "id": "de_map",
+   "t": 49.749,
+   "line": "s05_l15",
+   "anchor": "독일",
+   "edge": "start",
+   "visual": "map → Germany"
+  },
+  {
+   "id": "lmu",
+   "t": 50.734,
+   "line": "s05_l16",
+   "anchor": "엘엠유",
+   "edge": "start",
+   "visual": "card LMU"
+  },
+  {
+   "id": "fra",
+   "t": 51.921,
+   "line": "s05_l17",
+   "anchor": "프랑크푸르트",
+   "edge": "start",
+   "visual": "card FRANKFURT UAS"
+  },
+  {
+   "id": "fub",
+   "t": 54.978,
+   "line": "s05_l18",
+   "anchor": "프리",
+   "edge": "start",
+   "visual": "card FU BERLIN"
+  },
+  {
+   "id": "de_prob",
+   "t": 58.203,
+   "line": "s05_l19",
+   "anchor": "문제가",
+   "edge": "start",
+   "visual": "cards dim"
+  },
+  {
+   "id": "de_cal",
+   "t": 59.773,
+   "line": "s05_l20",
+   "anchor": "학사",
+   "edge": "start",
+   "visual": "calendar strip"
+  },
+  {
+   "id": "de_apr",
+   "t": 61.375,
+   "line": "s05_l21",
+   "anchor": "사월에",
+   "edge": "start",
+   "visual": "bar starts APR"
+  },
+  {
+   "id": "de_sep",
+   "t": 62.31,
+   "line": "s05_l21",
+   "anchor": "구월에",
+   "edge": "start",
+   "visual": "bar to SEP"
+  },
+  {
+   "id": "de_skku",
+   "t": 65.5,
+   "line": "s05_l22",
+   "anchor": "한국",
+   "edge": "start",
+   "visual": "SKKU fall bar"
+  },
+  {
+   "id": "de_overlap",
+   "t": 67.1,
+   "line": "s05_l22",
+   "anchor": "겹칠",
+   "edge": "start",
+   "visual": "overlap flashes"
+  },
+  {
+   "id": "de_x",
+   "t": 69.125,
+   "line": "s05_l23",
+   "anchor": "탈락",
+   "edge": "start",
+   "visual": "✕ on all three"
+  },
+  {
+   "id": "de_out",
+   "t": 70.285,
+   "line": "s05_l24",
+   "anchor": "이번에는",
+   "edge": "start",
+   "visual": "cards → shelf"
+  },
+  {
+   "id": "uk_map",
+   "t": 73.23,
+   "line": "s05_l25",
+   "anchor": "영국",
+   "edge": "start",
+   "visual": "map → UK"
+  },
+  {
+   "id": "shf",
+   "t": 73.605,
+   "line": "s05_l25",
+   "anchor": "셰필드",
+   "edge": "start",
+   "visual": "card SHEFFIELD"
+  },
+  {
+   "id": "shf_ok",
+   "t": 74.805,
+   "line": "s05_l25",
+   "anchor": "생각했습니다",
+   "edge": "start",
+   "visual": "✓ ACADEMIC QUALITY"
+  },
+  {
+   "id": "shf_cost",
+   "t": 78.469,
+   "line": "s05_l27",
+   "anchor": "비싸다",
+   "edge": "start",
+   "visual": "✕ COST"
+  },
+  {
+   "id": "shf_loc",
+   "t": 82.53,
+   "line": "s05_l28",
+   "anchor": "영국의 위치",
+   "edge": "start",
+   "visual": "✕ TRAVEL ROUTE, channel gap"
+  }
+ ],
+ "qc": {
+  "raw_dur": 86.72,
+  "dur": 85.07,
+  "align_ratio": 0.968,
+  "syll": 409,
+  "speech_s": 64.74,
+  "artic_rate": 6.32,
+  "f0_median": 130.2,
+  "f0_sd_st": 4.54,
+  "lufs_raw": -16.1,
+  "transcript": "그런데 기준을 만들었다고 해서 학교가 바로 정해진 건 아니었습니다. 오히려 여기서부터 시작이었습니다. 처음에는 체코 마사릭 유니버시티가 괜찮겠는데라고 생각했습니다. 그런데 다시 찾아보니 스페인 IE 유니버시티도 괜찮은데? 마드리드에 있고 학교 수준도 좋아 보였습니다. 그런데 경영대학 중심이라는 점이 조금 걸렸습니다. 그래서 이번에는 네덜란드 눈을 돌렸습니다. 브레예르 유니버시티트 암스테르담이 최고 아닌가? 그런데 알고 보니 원래 열 명을 뽑던 자리를 이번에는 한 명으로 줄였더라고요. 탈락. 그래도 네덜란드가 아쉬워서 다른 학교들도 찾아봤습니다. 그리고 다시 독일. LMU, 프랑크푸르트 유니버시티 오브 어플라이드 사이언스, 프리 유니버시티 오브 베를린. 그런데 또 문제가 있었습니다. 학사 일정. 4월에 시작해서 9월에 끝나는 학교들이 많았고 그러면 한국 2학기 복학 일정과 겹칠 수 있었습니다. 또 탈락. 이번에는 송족도 괜찮은데 영국 셰필드를 갈까 생각했습니다. 그런데 또 고민이 됐습니다. 비싸다. 그리고 여행을 많이 하고 싶은 저에게 영국의 위치도 썩 마음에 들지 않았습니다.",
+  "fillers_removed": [],
+  "boundaries": [
+   {
+    "after": "s05_l01",
+    "cls": "M",
+    "raw": 0.63,
+    "new": 0.64
+   },
+   {
+    "after": "s05_l02",
+    "cls": "M",
+    "raw": 1.08,
+    "new": 0.71
+   },
+   {
+    "after": "s05_l03",
+    "cls": "S",
+    "raw": 0.39,
+    "new": 0.35
+   },
+   {
+    "after": "s05_l04",
+    "cls": "M",
+    "raw": 0.56,
+    "new": 0.57
+   },
+   {
+    "after": "s05_l05",
+    "cls": "S",
+    "raw": 0.28,
+    "new": 0.28
+   },
+   {
+    "after": "s05_l06",
+    "cls": "M",
+    "raw": 0.84,
+    "new": 0.71
+   },
+   {
+    "after": "s05_l07",
+    "cls": "M",
+    "raw": 0.91,
+    "new": 0.71
+   },
+   {
+    "after": "s05_l08",
+    "cls": "M",
+    "raw": 0.98,
+    "new": 0.71
+   },
+   {
+    "after": "s05_l09",
+    "cls": "M",
+    "raw": 0.59,
+    "new": 0.6
+   },
+   {
+    "after": "s05_l10",
+    "cls": "M",
+    "raw": 0.87,
+    "new": 0.71
+   },
+   {
+    "after": "s05_l11",
+    "cls": "M",
+    "raw": 0.22,
+    "new": 0.42
+   },
+   {
+    "after": "s05_l12",
+    "cls": "L",
+    "raw": 0.78,
+    "new": 0.85
+   },
+   {
+    "after": "s05_l13",
+    "cls": "L",
+    "raw": 0.9,
+    "new": 0.9
+   },
+   {
+    "after": "s05_l14",
+    "cls": "M",
+    "raw": 0.69,
+    "new": 0.69
+   },
+   {
+    "after": "s05_l15",
+    "cls": "M",
+    "raw": 0.6,
+    "new": 0.6
+   },
+   {
+    "after": "s05_l16",
+    "cls": "C",
+    "raw": 0.34,
+    "new": 0.33
+   },
+   {
+    "after": "s05_l17",
+    "cls": "C",
+    "raw": 0.47,
+    "new": 0.33
+   },
+   {
+    "after": "s05_l18",
+    "cls": "M",
+    "raw": 0.7,
+    "new": 0.7
+   },
+   {
+    "after": "s05_l19",
+    "cls": "M",
+    "raw": 0.7,
+    "new": 0.7
+   },
+   {
+    "after": "s05_l20",
+    "cls": "M",
+    "raw": 0.8,
+    "new": 0.71
+   },
+   {
+    "after": "s05_l21",
+    "cls": "S",
+    "raw": 0.09,
+    "new": 0.18
+   },
+   {
+    "after": "s05_l22",
+    "cls": "L",
+    "raw": 0.83,
+    "new": 0.85
+   },
+   {
+    "after": "s05_l23",
+    "cls": "L",
+    "raw": 0.77,
+    "new": 0.85
+   },
+   {
+    "after": "s05_l24",
+    "cls": "S",
+    "raw": 0.2,
+    "new": 0.21
+   },
+   {
+    "after": "s05_l25",
+    "cls": "M",
+    "raw": 0.71,
+    "new": 0.71
+   },
+   {
+    "after": "s05_l26",
+    "cls": "M",
+    "raw": 0.74,
+    "new": 0.71
+   },
+   {
+    "after": "s05_l27",
+    "cls": "M",
+    "raw": 0.73,
+    "new": 0.71
+   }
+  ]
+ },
+ "take": "t7"
+}
