@@ -350,21 +350,47 @@
     .body .roles{grid-template-columns:1fr}
   }
 
-  /* 소개: 네 단계 (EXPLORE · DISCOVER · ADAPT · NEXT). 글자는 ko.js / en.js 의 page.about.steps */
-  .steps{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px}
-  .steps li{position:relative;padding-top:26px;border-top:2px solid var(--line)}
-  .steps li::before{content:"";position:absolute;left:0;top:-7px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--soft)}
+  /* 소개: 네 단계 (EXPLORE · DISCOVER · ADAPT · NEXT). 글자는 ko.js / en.js 의 page.about.steps
+     파란 테두리 상자(.hl)는 하나뿐이고, 마우스를 올린(또는 Tab 으로 옮긴) 단계 뒤로 미끄러져 갑니다.
+     가만히 있을 때는 em:true 인 단계(지금은 ADAPT)에 머뭅니다. 상자 위치는 renderAbout 의 placeAbout 이 계산.
+     --bx-* 는 상자가 단계 칸보다 바깥으로 나오는 길이 (위 · 오른쪽 · 아래 · 왼쪽) */
+  .steps{
+    --bx-t:20px;--bx-r:18px;--bx-b:24px;--bx-l:18px;
+    position:relative;list-style:none;margin:40px 0 0;padding:0;
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px;
+  }
+  .steps .hl{
+    position:absolute;left:0;top:0;width:0;height:0;z-index:0;pointer-events:none;
+    border-radius:18px;background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--accent);
+    transition:transform .55s var(--ease),width .55s var(--ease),height .55s var(--ease),box-shadow .3s;
+  }
+  .steps.live .hl{box-shadow:inset 0 0 0 1.5px var(--accent),0 18px 40px -24px rgba(28,111,224,.45)}
+  .steps .step{position:relative;z-index:1;padding-top:26px;min-width:0;outline:none}
+  .steps .step:focus-visible .st-no b{text-decoration:underline;text-underline-offset:4px}
+  /* 선: 회색 바탕선 + 파란 채움 (지나온 단계만 왼쪽부터 차례로 채워짐) */
+  .steps .track,.steps .fill{position:absolute;left:0;right:0;top:0;height:2px;border-radius:2px}
+  .steps .track{background:var(--line);transition:opacity .3s}
+  .steps .fill{background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+  .steps .step.passed .fill{transform:scaleX(1)}
+  .steps .step.on .track,.steps .step.on .fill{opacity:0}
+  /* 점: 지나온 단계와 지금 단계는 파랑, 아직 오지 않은 단계는 빈 원 */
+  .steps .dot{
+    position:absolute;left:0;top:-5px;width:12px;height:12px;border-radius:50%;
+    background:var(--paper);box-shadow:inset 0 0 0 2px var(--line),0 0 0 4px var(--soft);
+    transition:background .3s,box-shadow .3s,transform .4s var(--ease);
+  }
+  .steps .step.passed .dot,.steps .step.on .dot{background:var(--accent);box-shadow:inset 0 0 0 2px var(--accent),0 0 0 4px var(--soft)}
+  .steps .step.on .dot{box-shadow:inset 0 0 0 2px var(--accent),0 0 0 5px var(--accent-soft);transform:scale(1.08)}
   .steps .st-no{margin-bottom:10px}
-  .steps .st-no b{font-size:17px}
-  .steps .t{font-size:15.5px;line-height:1.8;color:var(--text)}
+  .steps .st-no b{font-size:17px;transition:color .3s}
+  .steps .step.on .st-no b{color:var(--accent-text)}
+  .steps .t{font-size:15.5px;line-height:1.8;color:var(--text);transition:color .3s,opacity .3s}
+  .steps .step.on .t{color:var(--ink)}
   .steps .more{display:inline-flex;margin-top:10px;font-size:13.5px;font-weight:700;color:var(--accent-text)}
   .steps .more:hover{text-decoration:underline}
-  /* 강조하는 단계 (steps 에서 em:true, 지금은 ADAPT): 흰 상자 + 얇은 파랑 테두리.
-     상자 안 글자 줄은 옆 단계와 같은 높이에서 시작하도록 위 · 옆으로 조금 넓힘 */
-  .steps li.em{margin:-20px -18px 0;padding:48px 18px 24px;border-top:0;border-radius:18px;background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--accent)}
-  .steps li.em::before{top:15px;left:18px;box-shadow:0 0 0 4px var(--accent-soft)}
-  .steps li.em .st-no b{color:var(--accent-text)}
-  .steps li.em .t{color:var(--ink)}
+  /* 마우스를 올린 동안만 나머지 단계를 흐리게 */
+  .steps.live .step:not(.on) .t{opacity:.5}
+  .steps.live .step:not(.on) .st-no b{color:var(--muted)}
 
 
   /* 활동 기록 (ACTIVITY ARCHIVE): 구분(common.js 의 categories)마다 한 칸.
@@ -707,9 +733,7 @@
     .hero-grid{grid-template-columns:1fr;gap:12px}
     .hero-art{max-width:620px}
     .feature{grid-template-columns:1fr}
-    .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:44px}
-    .steps li.em{margin-inline:-12px;padding-inline:12px}   /* 두 칸일 때 왼쪽 칸이면 화면 끝에 너무 붙지 않게 */
-    .steps li.em::before{left:12px}
+    .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:44px;--bx-r:12px;--bx-l:12px}   /* 두 칸일 때 왼쪽 칸이면 화면 끝에 너무 붙지 않게 */
     .arch{grid-template-columns:repeat(2,minmax(0,1fr))}
     .contact{grid-template-columns:1fr}
   }
@@ -732,13 +756,16 @@
     .fkv dd.res{font-weight:700;color:#fff}
     .ptxt{padding:24px 22px}
     /* 소개: 세로 타임라인 */
-    .steps{grid-template-columns:minmax(0,1fr);row-gap:0;margin-top:30px}
-    .steps li{border-top:0;border-left:2px solid var(--line);padding:0 0 26px 24px}
-    .steps li:last-child{padding-bottom:0}
-    .steps li::before{left:-7px;top:3px}
-    .steps li.em{margin:0;padding:18px 18px 20px 26px;border-left:0;border-radius:16px}
-    .steps li.em::before{left:-5px;top:21px}
-    .steps li.em + li{padding-top:26px}
+    /* 상자는 왼쪽 세로선 오른쪽에서 위아래로 움직이고, 스크롤해서 화면 가운데 온 단계(또는 탭한 단계)를 따라감 */
+    .steps{grid-template-columns:minmax(0,1fr);row-gap:0;margin-top:30px;--bx-t:-2px;--bx-r:0px;--bx-b:-8px;--bx-l:-12px}
+    .steps .hl{border-radius:16px}
+    .steps .step{padding:14px 16px 24px 28px}
+    .steps .track,.steps .fill{right:auto;bottom:0;width:2px;height:auto}
+    .steps .fill{transform:scaleY(0);transform-origin:top}
+    .steps .step.passed .fill{transform:scaleY(1)}
+    .steps .step.on .track{opacity:1}
+    .steps .dot{left:-5px;top:21px}
+    .steps.live .step:not(.on) .t{opacity:.6}
     /* 활동 기록: 처음엔 대표 네 장이 2×2, 펼치면 구분이 한 줄씩 */
     .arch{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 10px}
     .arch.open{grid-template-columns:minmax(0,1fr);gap:30px}
@@ -886,7 +913,7 @@
         </div>
       </section>
 
-      <!-- ── 소개: 위의 작업을 해석하는 네 단계 (글자는 ko.js / en.js 의 page.about.steps, em:true 인 단계를 상자로 강조) ── -->
+      <!-- ── 소개: 위의 작업을 해석하는 네 단계 (글자는 ko.js / en.js 의 page.about.steps). 마우스를 올린 단계로 파란 상자가 움직이고, 가만히 있을 땐 em:true 인 단계에 머묾 ── -->
       <section id="about" class="tint">
         <div class="wrap">
           <p class="st-kicker" data-t="about.kicker">ABOUT</p>
@@ -964,9 +991,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1791186724"></script>
-<script src="content/ko.js?v=1791186724"></script>
-<script src="content/en.js?v=1791186724"></script>
+<script src="content/common.js?v=1791190590"></script>
+<script src="content/ko.js?v=1791190590"></script>
+<script src="content/en.js?v=1791190590"></script>
 <script>
 (function(){
   "use strict";
@@ -1629,13 +1656,20 @@
     strip.querySelector(".pjumps").appendChild(b);
   }
 
-  // 소개: 네 단계 (ko.js / en.js 의 page.about.steps). more 가 있으면 '이력'으로 가는 작은 링크, em:true 면 상자로 강조
+  // 소개: 네 단계 (ko.js / en.js 의 page.about.steps). more 가 있으면 '이력'으로 가는 작은 링크, em:true 면 가만히 있을 때 상자가 머무는 단계
+  // 마우스를 올리거나 Tab 으로 옮긴 단계로 상자(.hl)가 이동하고, 그 앞 단계들의 선이 파랗게 채워짐 (휴대폰 폭에서는 스크롤 · 탭)
+  var aboutHome = 0, aboutOn = 0;
   function renderAbout(){
     var box = document.getElementById("about-steps");
     if(!box) return;
     box.textContent = "";
+    var hl = el("li","hl"); hl.setAttribute("aria-hidden","true"); box.appendChild(hl);
+    aboutHome = 0;
     (pick(L().page, "about.steps") || []).forEach(function(st, i){
-      var li = el("li", st.em ? "em" : null);
+      if(st.em) aboutHome = i;
+      var li = el("li","step");
+      li.tabIndex = 0;
+      li.appendChild(el("span","track")); li.appendChild(el("span","fill")); li.appendChild(el("span","dot"));
       var no = el("p","st-no");
       no.appendChild(el("span","num", pad2(i + 1)));
       no.appendChild(el("b", null, st.label));
@@ -1645,7 +1679,64 @@
       if(st.more){ var m = el("a","more", st.more + " →"); m.href = "#credentials"; li.appendChild(m); }
       box.appendChild(li);
     });
+    aboutGo(aboutHome, false, true);
   }
+  function aboutSteps(){ return document.querySelectorAll("#about-steps .step"); }
+  function aboutNarrow(){ return window.matchMedia("(max-width:640px)").matches; }
+  function aboutGo(i, live, instant){
+    var box = document.getElementById("about-steps");
+    aboutOn = i;
+    box.classList.toggle("live", !!live);
+    Array.prototype.forEach.call(aboutSteps(), function(li, k){
+      li.classList.toggle("on", k === i);
+      li.classList.toggle("passed", k < i);
+      li.querySelector(".fill").style.transitionDelay = (k < i ? k * 70 : 0) + "ms";
+    });
+    placeAbout(instant);
+  }
+  function placeAbout(instant){
+    var box = document.getElementById("about-steps"), hl = box && box.querySelector(".hl");
+    var li = aboutSteps()[aboutOn];
+    if(!hl || !li) return;
+    var cs = getComputedStyle(box);
+    var t = parseFloat(cs.getPropertyValue("--bx-t")), r = parseFloat(cs.getPropertyValue("--bx-r"));
+    var b = parseFloat(cs.getPropertyValue("--bx-b")), l = parseFloat(cs.getPropertyValue("--bx-l"));
+    if(instant) hl.style.transition = "none";
+    hl.style.transform = "translate(" + (li.offsetLeft - l) + "px," + (li.offsetTop - t) + "px)";
+    hl.style.width = (li.offsetWidth + l + r) + "px";
+    hl.style.height = (li.offsetHeight + t + b) + "px";
+    if(instant){ hl.offsetWidth; hl.style.transition = ""; }
+  }
+  (function(){
+    var box = document.getElementById("about-steps");
+    if(!box) return;
+    function stepOf(e){ var li = e.target.closest && e.target.closest(".step"); return li ? Array.prototype.indexOf.call(aboutSteps(), li) : -1; }
+    box.addEventListener("mouseover", function(e){ var k = stepOf(e); if(k >= 0 && !aboutNarrow() && (k !== aboutOn || !box.classList.contains("live"))) aboutGo(k, true); });
+    box.addEventListener("mouseleave", function(){ if(!aboutNarrow()) aboutGo(aboutHome, false); });
+    box.addEventListener("focusin", function(e){ var k = stepOf(e); if(k >= 0) aboutGo(k, true); });
+    box.addEventListener("focusout", function(e){ if(!box.contains(e.relatedTarget)) aboutGo(aboutHome, false); });
+    box.addEventListener("click", function(e){ var k = stepOf(e); if(k >= 0 && aboutNarrow()) aboutGo(k, false); });
+    // 휴대폰 폭: 화면 높이 45% 지점에 가장 가까운 단계를 강조
+    var ticking = false;
+    window.addEventListener("scroll", function(){
+      if(ticking || !aboutNarrow()) return;
+      ticking = true;
+      requestAnimationFrame(function(){
+        ticking = false;
+        var r = box.getBoundingClientRect(), mid = innerHeight * .45;
+        if(r.bottom < 0 || r.top > innerHeight) return;
+        var best = aboutOn, bd = Infinity;
+        Array.prototype.forEach.call(aboutSteps(), function(li, k){
+          var q = li.getBoundingClientRect(), d = Math.abs(q.top + q.height / 2 - mid);
+          if(d < bd){ bd = d; best = k; }
+        });
+        if(best !== aboutOn) aboutGo(best, false);
+      });
+    }, {passive:true});
+    if(window.ResizeObserver) new ResizeObserver(function(){ placeAbout(true); }).observe(box);
+    else window.addEventListener("resize", function(){ placeAbout(true); });
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ placeAbout(true); });
+  })();
 
   /* ---------- 봉사활동 전체 내역 창 ----------
      데이터: common.js 의 volunteerLog.records / 글자: ko.js · en.js 의 volunteerLog */
