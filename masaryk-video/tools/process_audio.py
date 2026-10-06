@@ -7,6 +7,11 @@ out: audio/scenes/<id>.wav  (pause-normalised, -18 LUFS)
 
 Speech itself is never time-stretched: only the silences between breathing
 units are lengthened or shortened into the S/M/L ranges of segments.py.
+
+Unscripted sounds (spoken pause tags such as "미디엄 포즈", hesitations such
+as "음") are DETECTED automatically but only REMOVED after the user approved
+them: approved spans live in audio/cuts_approved.json. Anything detected but
+not approved is printed as "ASK USER" and kept in the audio (qc.cuts_pending).
 """
 import json, os, sys
 import numpy as np, soundfile as sf, pyloudnorm as pyln, parselmouth
@@ -20,11 +25,25 @@ XF = 0.012              # crossfade when cutting silence
 
 
 FILLERS = {"음", "어", "아", "흠", "음음", "으음", "어어", "엄"}
+APPROVALS = os.path.join(ROOT, "audio", "cuts_approved.json")
 
 
-def remove_fillers(x, sr, words):
-    """Mute unscripted hesitation sounds (e.g. '음') the TTS sometimes adds
-    between sentences. Breaths (unvoiced) are left alone."""
+def approver(name):
+    """returns f(s, e) -> True when the user approved cutting an overlapping span"""
+    ok = json.load(open(APPROVALS)).get(name, []) if os.path.exists(APPROVALS) else []
+    return lambda s, e: any(a["start"] < e and s < a["end"] for a in ok)
+
+
+def mute(x, sr, s, e):
+    n0, n1 = int(s * sr), int(e * sr); f = int(0.008 * sr)
+    x[n0:n0 + f] *= np.linspace(1, 0, f)
+    x[n1 - f:n1] *= np.linspace(0, 1, f)
+    x[n0 + f:n1 - f] = 0
+
+
+def remove_fillers(x, sr, words, ok, pending):
+    """Unscripted hesitation sounds (e.g. '음') the TTS sometimes adds between
+    sentences: muted only if approved, otherwise reported. Breaths are never touched."""
     from audiolib import frames_db
     db, hop = frames_db(x, sr)
     real = [w for w in words if norm(w["w"]) not in FILLERS]
@@ -43,12 +62,76 @@ def remove_fillers(x, sr, words):
         s, e = i * hop - 0.01, (j + 1) * hop + 0.01
         if any(r["s"] + 0.05 < e and r["e"] - 0.05 > s for r in real):
             continue  # would touch a scripted word: leave it
-        n0, n1 = int(s * sr), int(e * sr); f = int(0.008 * sr)
-        x[n0:n0 + f] *= np.linspace(1, 0, f)
-        x[n1 - f:n1] *= np.linspace(0, 1, f)
-        x[n0 + f:n1 - f] = 0
+        if not ok(s, e):
+            pending.append((round(s, 2), round(e, 2), "filler: " + w["w"]))
+            continue
+        mute(x, sr, s, e)
         out.append((round(s, 2), round(e, 2), w["w"]))
     return out
+
+
+# pause-tag words the TTS occasionally speaks out loud ("미디엄 포즈", "롱 포즈")
+TAGS = {"미디엄", "포즈", "퍼즈", "포우즈", "롱", "쇼트", "미디엄포즈", "롱포즈", "쇼트포즈",
+        "pause", "medium", "long", "short", "mediumpause", "longpause", "shortpause"}
+
+
+def mute_islands(x, sr, spans, real, ok, pending):
+    """Mute every sound island (energy above -50 dB, dips <= 60 ms bridged)
+    that overlaps one of the spans, without ever crossing a scripted word --
+    only when approved; unapproved islands are reported in `pending`."""
+    from audiolib import frames_db
+    db, hop = frames_db(x, sr)
+    on = db > -50
+    T = len(x) / sr
+    out = []
+    for s, e, txt in spans:
+        prev_e = max([r["e"] for r in real if r["e"] <= s + 0.05], default=0.0)
+        next_s = min([r["s"] for r in real if r["s"] >= e - 0.05], default=T)
+        lo, hi = prev_e + 0.08, next_s - 0.08
+        L, H = int(lo / hop), int(hi / hop)
+        hit = [k for k in range(max(int((s - 0.15) / hop), L), min(int((e + 0.15) / hop), H)) if on[k]]
+        if not hit:
+            continue
+        i, j = hit[0], hit[-1]
+        while i > L and on[max(L, i - 12):i].any(): i -= 1
+        while j < H - 1 and on[j + 1:min(H, j + 13)].any(): j += 1
+        t0, t1 = max(lo, i * hop - 0.01), min(hi, (j + 1) * hop + 0.01)
+        if (out and t0 <= out[-1][1]) or (pending and t0 <= pending[-1][1]):
+            continue  # adjacent tag words share one island
+        if not ok(t0, t1):
+            pending.append((round(t0, 2), round(t1, 2), "pause tag: " + txt))
+            continue
+        mute(x, sr, t0, t1)
+        out.append((round(t0, 2), round(t1, 2), txt))
+    return out
+
+
+def untranscribed(x, sr, words, est):
+    """Voiced sound islands sitting between two lines that no transcribed word
+    explains (a spoken pause tag the recogniser skipped)."""
+    from audiolib import frames_db
+    db, hop = frames_db(x, sr)
+    on = db > -50
+    pitch = parselmouth.Sound(x, sampling_frequency=sr).to_pitch(time_step=0.01, pitch_floor=60, pitch_ceiling=400)
+    pv, px = pitch.selected_array["frequency"], pitch.xs()
+    spans, i, F = [], 0, len(on)
+    while i < F:
+        if not on[i]:
+            i += 1; continue
+        j = i
+        while j < F and on[j:j + 12].any(): j += 1
+        a, b = i * hop, j * hop
+        i = j
+        if b - a < 0.15:
+            continue
+        if sum(max(0, min(b, w["e"] + 0.1) - max(a, w["s"] - 0.1)) for w in words) >= 0.3 * (b - a):
+            continue
+        m = (px >= a) & (px <= b)
+        if not m.any() or (pv[m] > 0).mean() <= 0.3:
+            continue  # unvoiced = a breath, keep it
+        if any(est[k][1] + 0.1 < a and b < est[k + 1][0] - 0.1 for k in range(len(est) - 1)):
+            spans.append((a, b, "(untranscribed)"))
+    return spans
 
 
 def locate(scene):
@@ -74,13 +157,19 @@ def process(scene, take=None):
     x, sr = load(raw)
     tr = transcribe(raw, cache=os.path.join(ROOT, "audio", "raw", name + ".words.json"))
     ref, lines, cues = locate(scene)
-    removed = remove_fillers(x, sr, tr["words"])
-    words = [w for w in tr["words"] if norm(w["w"]) not in FILLERS]
+    ok, pending = approver(name), []
+    removed = remove_fillers(x, sr, tr["words"], ok, pending)
+    words = [w for w in tr["words"] if norm(w["w"]) not in FILLERS | TAGS]
     st, en, ratio, hyp = char_times(ref, words)
-    gaps, thr = silences(x, sr)
-
     # ---- speech-bounded estimates per line
     est = [(st[a], en[b - 1]) for a, b in lines]
+    # ---- spoken pause tags: transcribed ones + voiced islands nobody transcribed
+    tag_spans = [(w["s"], w["e"], w["w"]) for w in tr["words"] if norm(w["w"]) in TAGS]
+    tags = mute_islands(x, sr, sorted(tag_spans + untranscribed(x, sr, words, est)), words, ok, pending)
+    for s0, s1, what in pending:
+        ctx = " ".join(w["w"] for w in words if s0 - 2.0 < w["e"] and w["s"] < s1 + 2.0)
+        print(f"  ASK USER  {name} {s0:.2f}-{s1:.2f}s  {what}  near: {ctx}", flush=True)
+    gaps, thr = silences(x, sr)
 
     # ---- choose the boundary gap for every line break
     edits = []   # (gap_start, gap_end, new_len, kind)
@@ -205,7 +294,7 @@ def process(scene, take=None):
     qc = {"raw_dur": round(len(x) / sr, 2), "dur": round(len(y) / sr, 2), "align_ratio": round(ratio, 3),
           "syll": syl, "speech_s": round(speech, 2), "artic_rate": round(syl / speech, 2),
           "f0_median": round(float(np.median(f0)), 1), "f0_sd_st": round(float(np.std(12 * np.log2(f0 / np.median(f0)))), 2),
-          "lufs_raw": round(lufs_in, 1), "transcript": tr["text"], "fillers_removed": removed,
+          "lufs_raw": round(lufs_in, 1), "transcript": tr["text"], "fillers_removed": removed, "tags_removed": tags, "cuts_pending": pending,
           "boundaries": [{"after": scene["lines"][i]["id"], "cls": scene["lines"][i]["pause"],
                           "raw": round(g[1] - g[0], 2), "new": round(remap(g[1]) - remap(g[0]), 2)}
                          for i, g in enumerate(boundary)]}

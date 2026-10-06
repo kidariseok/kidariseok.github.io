@@ -1,0 +1,13 @@
+{
+ "_note": "Unscripted sounds the user approved for removal (scene-take raw-audio seconds). process_audio.py only mutes detected sounds that overlap an entry here; everything else is reported as ASK USER.",
+ "s04.t31": [
+  {"start": 37.69, "end": 38.24, "what": "spoken pause tag after '비교했습니다.'", "approved": "2026-10-06"},
+  {"start": 53.77, "end": 54.32, "what": "spoken pause tag after '선호했습니다.'", "approved": "2026-10-06"},
+  {"start": 90.13, "end": 90.65, "what": "spoken pause tag after '찾았습니다.'", "approved": "2026-10-06"}
+ ],
+ "s06.t47": [
+  {"start": 18.23, "end": 18.90, "what": "'미디엄 포즈' after '무엇보다'", "approved": "2026-10-06"},
+  {"start": 26.07, "end": 26.64, "what": "'미디엄 포즈' after '합격 가능성까지'", "approved": "2026-10-06"},
+  {"start": 36.27, "end": 36.88, "what": "'미디엄 포즈' after '깨달았습니다.'", "approved": "2026-10-06"}
+ ]
+}
