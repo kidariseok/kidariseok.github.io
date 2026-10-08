@@ -1,0 +1,7 @@
+/* Google Fonts (SIL Open Font License), saved locally so every render is identical.
+   Archivo is the variable version (weight 100–900, width 62–125%): the reel animates its width axis. */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:block;src:url(Archivo.woff2) format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:block;src:url(JetBrainsMono.woff2) format('woff2');}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400 900;font-display:block;src:url(PlayfairDisplay-Italic.woff2) format('woff2');}
+/* Noto Sans KR 500, cut down to the Korean characters the reel uses */
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:500;font-display:block;src:url(NotoSansKR-subset.woff2) format('woff2');}
