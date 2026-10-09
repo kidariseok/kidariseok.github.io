@@ -43,6 +43,7 @@ SITE.common = {
       video: {src:"video/2gather-promo.mp4", poster:"line4_video_poster"}
     },
     "ktng-overseas": {cover:"ktng_cover", shots:["ktng_01", "ktng_02", "ktng_03", "ktng_04"]},
+    freemed: {cover:"freemed_04", shots:["freemed_01", "freemed_03", "freemed_02", "freemed_05", "freemed_04"]},   // 얼굴 · 주소 등 개인정보는 부드러운 흐림 처리
     "edutech-expo": {cover:"edutech_02", shots:["edutech_01", "edutech_02", "edutech_03", "edutech_04", "edutech_05"]},
     creverse: {cover:"creverse_cover", shots:["creverse_01", "creverse_02", "creverse_03"]},
     "speech-mentors": {

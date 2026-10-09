@@ -1178,12 +1178,97 @@ SITE.en = {
     },
     freemed: {
       title: "FreeMed",
-      summary: "Led the part of the team providing home health-care visits to elderly residents living alone in jjokbang districts.",
-      short: "Led home health-care visits for elderly residents living alone · about a year, 17 visits.",
+      summary: "Visited an elderly resident living alone in the Donui-dong jjokbang district every other week, and as part lead planned doctor-accompanied visits and tailored programs.",
+      short: "Led home health-care visits in a jjokbang district and planned doctor-accompanied visits",
+      panel: {
+        role: "Home Health-Care Team member (cohort 30) → Donui-dong part lead · team study lead · planned doctor (MD) visits",
+        team: "Home Health-Care Team of about 14 (3 programs) · 2–3 members on the Donui-dong visits",
+        period: "2024.03 – 2025.03",
+        where: "FreeMed (non-profit) · Donui-dong jjokbang district, Jongno-gu, Seoul (partner: Saetteuljip)",
+        result: "17 visits · 24 h 10 min (1365 certificate) · wrote 12 visit records and 9 meeting minutes",
+        key: "17 visits",
+        links: [{t:"See the overseas volunteering that followed", href:"#a/ktng-overseas"}]
+      },
       body: [
-        {
-          p: "For about a year I led the home health-care visiting part of the team, working with elderly residents living alone in jjokbang districts."
-        }
+        {lead:"Visiting the same person, every other week"},
+        {p:"FreeMed is a medical volunteer non-profit founded by young people in 2008. I joined its <b>Home Health-Care Team as cohort 30</b> and, for almost a year, visited one elderly woman who lives alone in Seoul's Donui-dong jjokbang district (a neighborhood of tiny single-room dwellings) every other week."},
+        {p:"We checked her blood pressure and blood sugar, talked for an hour or two, and wrote down what we heard. In the second half of the year I became the part lead for the Donui-dong visits, ran the planning meetings, and planned visits accompanied by a doctor."},
+        {facts:["2024.03 – 2025.03", "Twice a month · Saturday afternoons", "One resident · long-term 1:1 visits", "Blood pressure · blood sugar · conversation"]},
+        {note:"Faces, addresses and other personal details in the photos are blurred."},
+
+        {k:"01 · Starting out", h:"It was not the team I asked for."},
+        {p:"I got in after two interviews: about an hour with the team, then 40 minutes with the president. My older sister had called FreeMed the most memorable activity of her university years, and I wanted to try it too."},
+        {p:"I had applied for the IT team but was placed on the <b>Home Health-Care Team</b>. Since it had nothing to do with my career plans, I honestly doubted what I would get out of it."},
+        {p:"That changed the day I first met her."},
+
+        {k:"02 · Ms. Hangyeol", toc:"02 Ms. Hangyeol", h:"The person I visited every two weeks"},
+        {note:"To protect the participant, her name is a pseudonym, and details that could identify her, such as age, medical history and address, are generalized."},
+        {cards:[
+          {n:"DAILY LIFE", t:"Living alone", d:"In her 70s. She worked from late at night until dawn, so many days she slept only three or four hours."},
+          {n:"HEALTH", t:"A body she has long looked after", d:"She sees doctors regularly for several chronic conditions, but sometimes put off hospital visits for fear of hearing the word “surgery.”"}
+        ]},
+        {cards:[
+          {n:"CHARACTER", t:"Always cheerful", d:"Though money was tight, she kept donating and passed on what she received to her neighbors."},
+          {n:"RELATIONSHIPS", t:"Loves a good talk", d:"She lives apart from her family but enjoys chatting with neighbors who pass by."}
+        ]},
+        {p:"Over the visits I learned that what she needed was <b>not to be cast as someone who receives help</b>. At a feedback meeting the doctor also advised us not to over-intervene, since her work and her giving might be the pride she had built her life on."},
+        {p:"So while I suggested she ease off on donations she could not afford, I left the decision to her, and instead of pushing her to see a doctor, I asked again at the next visit."},
+
+        {k:"03 · One visit", toc:"03 One visit", h:"Each visit began with a meeting and ended with a record."},
+        {flow:["Planning meeting the night before", "Meet at Saetteuljip", "Checks · talk, 1–2 hours", "Visit record", "Feedback meeting in week 3"]},
+        {p:"A visit started the night before with an online planning meeting. We read the previous records, decided what to ask this time, and the next day met in front of Saetteuljip, the partner center, before heading to her place."},
+        {p:"After each visit I wrote a <b>visit record</b> with five sections: vital signs, physical condition, emotional state, daily habits, and tasks for the next visit. A blood-sugar reading only means something next to the time of the last meal, so I always noted what she ate and when."},
+        {p:"A nursing student on the team usually took the measurements while I kept the record. I studied the normal blood-pressure and blood-sugar ranges myself, and on days when that member was away, I took the measurements."},
+        {cards:[
+          {n:"1365 CERTIFICATE", t:"17 visits · 24 h 10 min", d:"Recognized FreeMed home-visit hours, 2024.05 – 2025.03"},
+          {n:"VISIT RECORDS", t:"12", d:"I wrote all 12 surviving visit records for Ms. Hangyeol."},
+          {n:"MEETING MINUTES", t:"9", d:"Planning, feedback, team and study meetings."}
+        ]},
+        {p:"The records became the next visit's questions. On a day when a man working nearby made threatening remarks, I wrote down a plan: when a female member visits alone, ask Ms. Hangyeol beforehand to have him step away."},
+
+        {k:"04 · Part lead", toc:"04 Part lead", h:"In the second half, I ran the Donui-dong visits."},
+        {p:"I took over as <b>part lead</b> for Donui-dong in September 2024. I ran the planning meetings, divided roles among members, and reported on the program at the monthly team meeting."},
+        {p:"At the October orientation for cohort 31, I <b>presented the Donui-dong program</b>. I did not know everything, but I shared what I had learned from visiting one person for over six months and what to watch for on site."},
+        {p:"The new members were shy at first, and I was a little worried. So I started conversations before and after visits and kept things light. After a few visits together, they turned out to be really funny people. I believed that keeping the visits enjoyable was how the program would last."},
+        {p:"I had thought so from the first half. In my input for the recruitment plan I wrote that members need to know each other before they speak up in meetings, and in feedback on the training I suggested ice-breakers and a get-together afterward."},
+
+        {k:"05 · Doctor visits", toc:"05 Doctor visits", h:"I proposed bringing a doctor along."},
+        {p:"Most members were not medical professionals. One day in the second half, Ms. Hangyeol's blood pressure stayed high on three readings, and a month later we heard she had fallen several times in a day. We could take readings, but we could not judge what they meant or what to do next."},
+        {p:"In the first-half review I had already written that tailored programs should get expert input. So after becoming part lead I wrote <b>a plan to turn irregular doctor (MD) accompaniment into a fixed schedule</b>, and FreeMed connected us with a doctor from within the organization."},
+        {stat:[{k:"First plan (Nov)", v:"Dec · Feb, 2 visits"}, {k:"Rescheduled with the doctor (Dec)", v:"Jan · Feb"}, {k:"Actual doctor visit", v:"2025.01.25, once", hi:true}]},
+        {roles:{tl:"TEAM · MD", ml:"MY CONTRIBUTION", team:["FreeMed: connected the doctor · approved the plan", "Doctor (MD): examination, medication review, medical opinion"], mine:["Wrote the plan for regular doctor visits (revised 11.07 → 11.10 → 12.27)", "Rescheduled the dates around the doctor's availability", "Wrote a health summary for the doctor drawing on four visit records", "Ran the accompanied visit and the feedback meeting"]}},
+        {p:"On the January visit we went through her prescriptions one by one with the doctor and heard that her recent cold may have been pneumonia. By then she was sleeping on a newly bought sofa, had stopped falling, and was sleeping longer."},
+        {p:"The February visit did not happen, so only one of the two planned visits took place. It never became a fixed schedule, but it was the first time our records were read through a doctor's eyes."},
+        {q:"Part of caring for her was knowing which things we non-specialists could do and which needed a professional."},
+
+        {k:"06 · Tailored programs", toc:"06 Tailored programs", h:"We started from what she would enjoy."},
+        {cmp:[
+          {n:"FIRST HALF", t:"Neck stretches", d:"Based on the doctor's feedback we chose stretches to ease her neck pain. In September she said they felt “a bit stiff, but not hard.”"},
+          {n:"SECOND HALF", t:"Coloring book for dementia prevention", d:"I asked about her age-appropriate interests and preferences and chose a coloring book. I wrote the expense request myself and bought one with colored pencils for 13,000 won."}
+        ]},
+        {p:"We started the coloring book in December. In February I played trot music while we colored together, and she said, <b>“Next time, let's start with the drawing right away.”</b>"},
+        {p:"When I visited again on leave from military service, she had finished that book and was coloring the next one."},
+        {p:"I also suggested writing poems, but she found it a burden, so we did not push it. I thought her enjoyment mattered more than the program."},
+
+        {k:"07 · Study group", toc:"07 Study group", h:"We studied together to visit better."},
+        {p:"My one-person role on the team was <b>study lead</b>. At the April planning meeting we built a curriculum running from understanding old age, to spotting warning signs and responding, to an attitude that does not treat people as objects of help. I ran the date poll, recruited participants and booked the venue."},
+        {p:"The book was <i>The World That Care Looks After</i> (돌봄이 돌보는 세계). One passage stayed with me: deaf people born to deaf parents are called the “deaf elite.” With the right environment in place, the same person lives far more easily, so the problem can lie in the environment rather than the individual. That view was new to me."},
+        {stat:[{k:"Session 1 (June)", v:"12 attended"}, {k:"Session 2 (July)", v:"4 attended", hi:true}]},
+        {p:"With no attendance rules, only four came to the second session. So I shared the minutes, collected comments from members who could not attend, and added them to the minutes: five for the first session and three for the second."},
+
+        {k:"08 · Indonesia", h:"A cancelled plan became the next opportunity."},
+        {p:"In summer 2024 I applied for and joined, as a regular member, the <b>Indonesia outreach project</b> FreeMed was preparing as a side project. Over about three months we met on Sundays in Sinchon (four sessions, one online) to study Indonesia's health situation and learn Indonesian."},
+        {p:"As a group assignment we drafted a hand-washing and clean-water lesson for children, based on the stages-of-change model. In an assignment on program evaluation, I wrote that we should evaluate throughout the process, not just the results, and keep records for the next cohort."},
+        {p:"Then the sponsor's investment fell through, and the trip was cancelled. As a regular member I did not have much to do, but it was the first time I thought about how to deliver health education abroad."},
+        {flow:["Summer 2024 · preparing the trip", "Cancelled", "2025.01 · elementary school in Bogor"]},
+        {p:"I did not want it to end as a regret. That fall I applied to the <b>KT&G SangSang WithUS overseas volunteer corps</b>, and in January 2025 I planned and taught a tooth-brushing hygiene lesson at an elementary school in Bogor, Indonesia. The thinking behind the hand-washing lesson from the FreeMed assignment was where that class began."},
+        {link:"See KT&G SangSang WithUS", href:"#a/ktng-overseas"},
+
+        {k:"09 · Looking back", toc:"09 Looking back", h:"It became time I looked forward to."},
+        {p:"Ms. Hangyeol had very little, yet she faced life with real brightness. Watching her give while short herself, I asked whether I could care that much for a neighbor when my own life was tight."},
+        {p:"Even during exam periods I spent an hour or two chatting with her. It felt less like volunteering and more like visiting an older friend, and it stopped feeling like work and became simply a good time."},
+        {q:"On my last leave before finishing military service, I visited her again with members I used to go with, bringing bread and drinks."},
+        {p:"I was glad she was still healthy and enjoying life. I hope to keep visiting her now and then."}
       ]
     },
     likelion12: {
