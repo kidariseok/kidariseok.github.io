@@ -187,6 +187,15 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-block:22px 28px}
   .chip{font-size:13px;font-weight:700;color:#dfe6f2;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04)}
   .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+  /* 영어(EN) 첫 화면: 같은 px 이라도 영문은 글자가 크고 문장이 길어 첫 화면이 길어지므로,
+     한국어 화면과 높이·비율이 맞도록 글자 크기만 조금 줄임 */
+  html:lang(en) .eyebrow{font-size:13px;gap:6px 8px}
+  html:lang(en) .eyebrow > span:first-child{text-wrap:balance}
+  html:lang(en) .gpa-pill{font-size:12px;padding:2px 9px}
+  html:lang(en) .gpa-pill small{font-size:11px}
+  html:lang(en) .headline{font-size:clamp(17px,1.75vw,23px);letter-spacing:-.02em}
+  html:lang(en) .lede{font-size:15px;line-height:1.65;max-width:34em}
+  html:lang(en) .chip{font-size:12.5px}
   .btn:hover .i-dl{transform:translateY(2px)}
   .cv-alt{align-self:center;display:inline-flex;align-items:center;gap:5px;margin-left:6px;color:#aeb7c6;font-size:14px;font-weight:700}
   .cv-alt .i{width:15px;height:15px;transition:transform .3s var(--ease)}
