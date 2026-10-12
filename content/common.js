@@ -54,7 +54,7 @@ SITE.common = {
     audivice: {cover:"audivice_cover"},
     icists: {cover:"icists_cover", shots:["icists_01", "icists_02"]},
     goormthon: {
-      cover: "goorm_cover",
+      cover: "goorm_video_poster",
       video: {src:"video/esc-yuljeon.mp4", poster:"goorm_video_poster"}
     },
     ched: {cover:"ched_cover", shots:["ched_article_zoom", "ched_article"]},   // 교내 기사 캡처: 이름 부분 확대본 + 전체 화면 (형광펜 표시)
