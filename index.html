@@ -133,16 +133,36 @@
   @media (prefers-reduced-transparency: reduce){
     header.bar{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--paper)}
   }
+  /* 목록 화면: 첫 화면을 글과 배경만으로 채우려고 메뉴를 위로 숨겨 둡니다.
+     위로 스크롤 · 마우스를 화면 맨 위로 · Tab 으로 메뉴에 들어오면 내려오고, 이름이 로고 자리에 내려앉은 뒤에는 계속 보입니다.
+     (맨 아래 <script> 의 [첫 화면 전환]) 상세 화면에서는 예전처럼 늘 보입니다.
+     첫 화면 위에 있을 때는 어두운 유리, 흰 바탕 위로 오면(.on-paper) 원래 밝은 유리. */
+  html:not(.in-detail) header.bar{position:fixed;left:0;right:0;transform:translateY(-105%);transition:transform .5s var(--ease),background .3s,border-color .3s}
+  html.bar-show:not(.in-detail) header.bar{transform:none}
+  html:not(.in-detail):not(.on-paper) header.bar{background:rgba(8,10,14,.5);border-bottom-color:rgba(255,255,255,.1)}
+  html:not(.in-detail):not(.on-paper) .bar .mark{color:#fff}
+  html:not(.in-detail):not(.on-paper) .bar .mark span{color:var(--accent-2)}
+  html:not(.in-detail):not(.on-paper) nav.links a{color:rgba(255,255,255,.72)}
+  html:not(.in-detail):not(.on-paper) nav.links a:hover{color:#fff}
+  html:not(.in-detail):not(.on-paper) .bar .lang{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+  html:not(.in-detail):not(.on-paper) .bar .lang button{color:rgba(255,255,255,.7)}
+  html:not(.in-detail):not(.on-paper) .bar .lang button[aria-pressed="true"]{background:#fff;color:#0f1218}
 
   /* ---- 첫 화면: 살아 있는 선 지층(WebGL) 위에 큰 이름 ----
      배경은 맨 아래 <script> 의 [첫 화면 배경] 이 canvas 에 그립니다.
      WebGL 이 안 되는 브라우저에서는 --hero 검은 바탕만 보입니다.
      아래쪽 어둡게 깔린 그림자(.hero-veil)는 글씨가 배경에 묻히지 않게 하는 용도입니다. */
+  /* 첫 화면 → 다음 장 전환 (F3 · 초점 이동): 첫 화면을 1.4화면 동안 붙잡아 두고, 스크롤에 맞춰
+     배경 흐림 → 화면 전체가 흰색으로 밝아짐 → 큰 이름이 메뉴 로고 자리로 이동.
+     .hero-pin 높이(240svh) = 첫 화면 1 + 전환 1.4. 맨 아래 <script> 의 [첫 화면 전환] 이 값을 움직입니다. */
+  .hero-pin{position:relative;height:240svh}
   .hero{
-    background:var(--hero);color:var(--on-block);position:relative;overflow:hidden;
-    min-height:clamp(560px,92svh,1000px);display:flex;flex-direction:column;justify-content:flex-end;padding-block:120px 96px;
+    background:var(--hero);color:var(--on-block);position:sticky;top:0;overflow:hidden;
+    height:100svh;min-height:520px;display:flex;flex-direction:column;justify-content:flex-end;padding-block:96px;
   }
+  .hero-stage{position:absolute;inset:0;transform-origin:50% 40%}
   .hero-gl{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .hero-wash{position:absolute;inset:0;background:var(--paper);opacity:0;pointer-events:none}
   .hero-veil{
     position:absolute;inset:0;pointer-events:none;
     background:radial-gradient(120% 90% at 50% 40%,transparent 55%,rgba(3,3,8,.5) 100%),
@@ -152,23 +172,24 @@
   .hero-copy{display:grid;gap:18px}
 
   /* ---- 첫 접속 애니메이션 ----
-     배경이 어둠 속에서 천천히 밝아지고, 이름이 한 자씩 솟은 뒤 나머지가 차례로 올라옵니다. */
+     배경이 어둠 속에서 천천히 밝아지고, 이름이 한 자씩 솟은 뒤 나머지가 차례로 올라옵니다.
+     끝나면(.intro-done) 애니메이션을 떼어 내야 스크롤 전환이 글자의 투명도 · 위치를 움직일 수 있습니다. */
   .hero h1 .ch{display:inline-block}
   html.intro .hero-gl{animation:glIn 2.6s ease-out both}
   @keyframes glIn{from{opacity:0}}
   html.intro:not(.intro-done) .hero h1{overflow:hidden;padding-bottom:4px}
   html.intro:not(.intro-done) .hero h1 .ch{animation:riseCh .9s var(--ease) both;animation-delay:calc(.2s + var(--i) * .08s)}
   @keyframes riseCh{from{transform:translateY(110%)}to{transform:none}}
-  html.intro .eyebrow{animation:introUp .6s var(--ease) .1s both}
-  html.intro .headline{animation:introUp .7s var(--ease) .8s both}
-  html.intro .hero-cta{animation:introUp .8s var(--ease) 1.1s both}
+  html.intro:not(.intro-done) .eyebrow{animation:introUp .6s var(--ease) .1s both}
+  html.intro:not(.intro-done) .headline{animation:introUp .7s var(--ease) .8s both}
+  html.intro:not(.intro-done) .hero-cta{animation:introUp .8s var(--ease) 1.1s both}
   @keyframes introUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .eyebrow{font-size:14px;font-weight:700;color:var(--accent-2);display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px}
   /* 학교 줄 끝의 학점 배지 (글자는 ko.js / en.js 의 hero.gpa · hero.gpaMax) */
   .gpa-pill{display:inline-flex;align-items:baseline;gap:4px;padding:3px 10px;border-radius:999px;border:1px solid rgba(77,148,255,.45);background:rgba(28,111,224,.16);color:#fff;font:700 13px/1.4 var(--display);white-space:nowrap}
   .gpa-pill small{color:var(--accent-2);font:700 12px var(--display)}
   /* 이름: 영어는 좁고 굵은 Archivo 대문자, 한글은 Noto Sans KR 가장 굵게 */
-  .hero h1{color:#fff;font:900 clamp(56px,13.5vw,200px)/.82 var(--display);font-stretch:68%;text-transform:uppercase;letter-spacing:-.03em;white-space:nowrap;margin:0}
+  .hero h1{color:#fff;font:900 clamp(56px,13.5vw,200px)/.82 var(--display);font-stretch:68%;text-transform:uppercase;letter-spacing:-.03em;white-space:nowrap;margin:0;justify-self:start;transform-origin:0 0}
   html[lang="ko"] .hero h1{font-family:var(--sans);font-stretch:normal;font-size:clamp(76px,20vw,200px);line-height:.95;letter-spacing:-.06em}
   /* 이름 아래 한 줄: 왼쪽 핵심 문장(hero.headline), 오른쪽 버튼 */
   .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px 32px;flex-wrap:wrap}
@@ -181,7 +202,9 @@
   .cv-alt:hover .i{transform:translateY(2px)}
 
   /* ---- 첫 화면 위로 올라오는 둥근 판과 섹션 ---- */
-  .sheet{position:relative;background:var(--paper);border-radius:32px 32px 0 0;margin-top:-32px;padding-top:8px}
+  /* 다음 장은 붙잡힌 첫 화면 위로 이어 올라옵니다. 그 무렵 첫 화면은 이미 흰색이라 경계가 보이지 않음 */
+  .sheet{position:relative;margin-top:-100svh}
+  .sheet > section{background:var(--paper)}
   section{padding-block:88px}
   section.tint{background:var(--soft)}
   /* 첫 화면 아래쪽에서 SELECTED WORK 제목이 바로 보이도록 위 여백만 조금 줄임 */
@@ -711,6 +734,7 @@
     nav.links::-webkit-scrollbar{display:none}
     nav.links a{flex:none;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--soft);font-size:14px;color:var(--text)}
     html.in-detail nav.links{display:none}
+    html:not(.in-detail):not(.on-paper) nav.links a{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
     html.in-detail{scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
     .feature{grid-template-columns:1fr}
     .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:44px;--bx-r:12px;--bx-l:12px}   /* 두 칸일 때 왼쪽 칸이면 화면 끝에 너무 붙지 않게 */
@@ -720,7 +744,7 @@
   @media (max-width:640px){
     .wrap{padding-inline:16px}
     section{padding-block:64px}
-    .hero{min-height:clamp(520px,86svh,900px);padding-block:72px 72px}
+    .hero{padding-block:72px}
     .hero-copy{gap:14px}
     /* 대표 활동: 휴대폰은 사진이 위로 오는 작은 카드 2×2 (네 장이 한 화면에). 내용은 넓은 화면과 같고 라벨 · 소속 · '상세 기록 보기'만 숨김 */
     .feature{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -772,6 +796,9 @@
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     html{scroll-behavior:auto}
+    .hero-pin{height:auto}
+    .hero{position:relative}
+    .sheet{margin-top:0}
   }
 </style>
 </head>
@@ -848,9 +875,11 @@
          · headline : 이름 밑 핵심 한 줄 (ko.js · en.js 의 hero.headline)
          숫자 상자는 두지 않습니다. 숫자는 아래에서 맥락과 함께 한 번씩 나옵니다.
          ───────────────────────────────────────────────────────── -->
+    <div class="hero-pin">
     <div class="hero">
-      <canvas class="hero-gl" id="hero-gl" aria-hidden="true"></canvas>
+      <div class="hero-stage"><canvas class="hero-gl" id="hero-gl" aria-hidden="true"></canvas></div>
       <div class="hero-veil" aria-hidden="true"></div>
+      <div class="hero-wash" aria-hidden="true"></div>
       <div class="wrap">
         <div class="hero-copy">
           <p class="eyebrow"><span data-t="hero.school">성균관대학교 컴퓨터교육과 · 2024학번</span><span class="gpa-pill"><span data-t="hero.gpa">GPA 4.33</span><small data-t="hero.gpaMax">/ 4.5</small></span></p>
@@ -868,8 +897,9 @@
         </div>
       </div>
     </div>
+    </div>
 
-    <!-- 첫 화면 위로 올라오는 둥근 흰 판. 아래 섹션은 모두 이 안에 있습니다 -->
+    <!-- 첫 화면 다음에 이어지는 판. 아래 섹션은 모두 이 안에 있습니다 -->
     <div class="sheet">
       <!-- ── SELECTED WORK: 무엇을 했나 (깊이) ─────────────────────────
            프로젝트 카드는 common.js 의 projects, 대표 활동 카드는 common.js 의 featured.
@@ -2274,6 +2304,115 @@
 </script>
 <script>
 /* ══════════════════════════════════════════════════════════════
+   [첫 화면 전환] 숨은 메뉴 + 초점 이동(F3)
+   ──────────────────────────────────────────────────────────────
+   · 메뉴: 처음엔 숨김. 위로 스크롤하거나, 마우스를 화면 맨 위 80px 로 올리거나, Tab 으로 들어오면 내려옴.
+           아래로 스크롤하면 다시 숨고, 맨 위로 돌아오면 1.2초 뒤 숨어 첫 화면이 깨끗해짐.
+   · 전환: 스크롤 위치만으로 모든 값을 계산하므로(시간 기반 아님) 올리면 그대로 되감깁니다.
+           p = 0 → 1 (첫 화면이 붙잡혀 있는 1.4화면 동안)
+           0.00–0.38  학교 줄 → 핵심 문장 → 버튼 순으로 위로 사라짐
+           0.08–0.75  배경이 흐려지고(최대 14px) 살짝 다가옴
+           0.25–0.80  화면 전체가 흰색(--paper)으로 밝아짐
+           0.15–0.85  큰 이름이 메뉴 로고 자리로 날아가 작아짐 → 0.86 에서 로고와 바뀌고 메뉴가 계속 보임
+   · '동작 줄이기' 설정이면 전환은 하지 않고 메뉴 숨김/표시만 동작
+   ══════════════════════════════════════════════════════════════ */
+(function(){
+  var root = document.documentElement, bar = document.querySelector("header.bar"), mark = bar && bar.querySelector(".mark");
+  var pin = document.querySelector(".hero-pin"), sheet = document.querySelector(".sheet");
+  if(!bar || !pin || !sheet) return;
+  var hero = pin.querySelector(".hero"), stage = hero.querySelector(".hero-stage"), wash = hero.querySelector(".hero-wash");
+  var name = hero.querySelector('[data-role="name"]');
+  var fades = [hero.querySelector(".eyebrow"), hero.querySelector(".headline"), hero.querySelector(".hero-cta")];
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function inList(){ return !root.classList.contains("in-detail"); }
+
+  // ── 메뉴 숨김/표시 ──
+  var shown = false, hover = false, focusIn = false, landed = false, lastY = window.scrollY, timer = null;
+  function paint(){ root.classList.toggle("bar-show", shown || landed); }
+  function setShown(v){ shown = v; paint(); }
+  function hideSoon(ms){ clearTimeout(timer); timer = setTimeout(function(){ if(!hover && !focusIn) setShown(false); }, ms); }
+  window.addEventListener("scroll", function(){
+    var y = window.scrollY, dy = y - lastY; lastY = y;
+    if(dy < -4){ clearTimeout(timer); setShown(true); }
+    else if(dy > 4 && !hover && !focusIn) setShown(false);
+    if(y < 8 && shown) hideSoon(1200);
+  }, {passive:true});
+  document.addEventListener("pointermove", function(e){
+    if(e.pointerType === "touch") return;
+    var zone = e.clientY < 80 || (shown && e.target.closest && e.target.closest("header.bar"));
+    if(zone){ hover = true; clearTimeout(timer); setShown(true); }
+    else if(hover){ hover = false; hideSoon(600); }
+  });
+  bar.addEventListener("focusin", function(){ focusIn = true; setShown(true); });
+  bar.addEventListener("focusout", function(){ focusIn = false; hideSoon(600); });
+
+  // ── 전환 ──
+  function clamp(x){ return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function seg(p, a, b){ return clamp((p - a) / (b - a)); }
+  function out3(x){ return 1 - Math.pow(1 - x, 3); }
+  function inout(x){ return x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2; }
+  function mix(a, b, t){ return a + (b - a) * t; }
+  function rgb(v){   // '#rrggbb' → [r,g,b]
+    v = v.trim(); if(v[0] !== "#") return [15,18,24];
+    if(v.length === 4) v = "#" + v[1]+v[1]+v[2]+v[2]+v[3]+v[3];
+    return [parseInt(v.substr(1,2),16), parseInt(v.substr(3,2),16), parseInt(v.substr(5,2),16)];
+  }
+
+  var base = null;   // 이름이 제자리에 있을 때 화면 위 위치 (첫 화면이 붙잡혀 있는 동안은 변하지 않음)
+  function measure(){
+    if(!name) return;
+    var keep = name.style.transform; name.style.transform = "";
+    var r = name.getBoundingClientRect(), hr = hero.getBoundingClientRect();
+    base = {x:r.left, y:r.top - hr.top, h:r.height, fs:parseFloat(getComputedStyle(name).fontSize)};
+    name.style.transform = keep;
+  }
+  function clear(){
+    [stage, wash, name].concat(fades).forEach(function(e){ if(e) e.style.cssText = ""; });
+    window.__heroCover = 0; landed = false; paint();
+  }
+
+  var queued = false;
+  function update(){
+    queued = false;
+    if(!inList()){ root.classList.remove("on-paper"); clear(); return; }
+    var vh = window.innerHeight, top = sheet.getBoundingClientRect().top, barH = bar.offsetHeight;
+    if(reduce){ root.classList.toggle("on-paper", top <= barH); return; }
+    var p = clamp(window.scrollY / (vh * 1.4));
+
+    fades.forEach(function(e, i){
+      if(!e) return; var k = out3(seg(p, i*.04, .3 + i*.04));
+      e.style.opacity = 1 - k; e.style.transform = "translateY(" + (-24*k) + "px)";
+    });
+    var f = inout(seg(p, .08, .75));
+    stage.style.filter = f > .001 ? "blur(" + (14*f).toFixed(2) + "px)" : "";
+    stage.style.transform = "scale(" + mix(1, 1.06, f) + ")";
+    var w = inout(seg(p, .25, .8));
+    wash.style.opacity = w; window.__heroCover = w;
+
+    if(name){
+      if(!base || p < .002) measure();
+      var m = inout(seg(p, .15, .85)), mr = mark.getBoundingClientRect(), br = bar.getBoundingClientRect(), hr = hero.getBoundingClientRect();
+      var sc = mix(1, parseFloat(getComputedStyle(mark).fontSize) / base.fs, m);
+      var tx = mr.left - base.x, ty = (mr.top - br.top) + (mr.height - base.h * (parseFloat(getComputedStyle(mark).fontSize) / base.fs)) / 2 - (hr.top + base.y);
+      name.style.transform = m > 0 ? "translate(" + (tx*m).toFixed(1) + "px," + (ty*m).toFixed(1) + "px) scale(" + sc.toFixed(4) + ")" : "";
+      var c = seg(p, .4, .8), ink = rgb(getComputedStyle(root).getPropertyValue("--ink"));
+      name.style.color = c > 0 ? "rgb(" + Math.round(mix(255, ink[0], c)) + "," + Math.round(mix(255, ink[1], c)) + "," + Math.round(mix(255, ink[2], c)) + ")" : "";
+      landed = p > .86; name.style.opacity = landed ? 0 : "";
+      paint();
+    }
+    root.classList.toggle("on-paper", w > .6 || top <= barH);
+  }
+  function queue(){ if(!queued){ queued = true; requestAnimationFrame(update); } }
+  window.addEventListener("scroll", queue, {passive:true});
+  window.addEventListener("resize", function(){ base = null; queue(); });
+  window.addEventListener("hashchange", function(){ setTimeout(queue, 0); });
+  ["btn-ko","btn-en"].forEach(function(id){ var b = document.getElementById(id); if(b) b.addEventListener("click", function(){ base = null; setTimeout(queue, 0); }); });
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ base = null; queue(); });
+  queue();
+})();
+</script>
+<script>
+/* ══════════════════════════════════════════════════════════════
    [첫 화면 배경] 살아 있는 선 지층 (Wire Strata, WebGL)
    ──────────────────────────────────────────────────────────────
    이미지를 움직이는 것이 아니라, 아홉 겹의 선 띠(겹마다 60여 가닥)와 점 9만 개의
@@ -2438,7 +2577,7 @@
     if(u.uAlpha) gl.uniform1f(u.uAlpha, ALPHA); if(u.uL) gl.uniform1f(u.uL, L); if(u.uDpr) gl.uniform1f(u.uDpr, dpr);
   }
   function draw(){
-    if(!W || !B.lines) return;
+    if(!W || !B.lines || window.__heroCover >= .995) return;   // 전환으로 첫 화면이 흰색에 완전히 덮이면 그리지 않음
     gl.viewport(0, 0, cv.width, cv.height);
     gl.clearColor(.012, .012, .03, 1); gl.clear(gl.COLOR_BUFFER_BIT);
     gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
