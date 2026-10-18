@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="ko">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-73HJQMENS7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-73HJQMENS7');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="오진석(성균관대학교 컴퓨터교육과)의 프로젝트 · 활동 기록 · 이력 포트폴리오">
@@ -2206,6 +2215,8 @@
       listV.hidden = true;
       detV.hidden = false;
       window.scrollTo(0, 0);
+      // 방문 분석(GA): 프로젝트 상세를 열 때마다 어떤 프로젝트인지 기록
+      try{ if(window.gtag) gtag("event", "view_project", {project_id: id, language: lang}); }catch(e){}
     } else {
       var wasDetail = !detV.hidden;
       detV.hidden = true;
