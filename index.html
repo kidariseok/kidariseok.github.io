@@ -2215,6 +2215,8 @@
       listV.hidden = true;
       detV.hidden = false;
       window.scrollTo(0, 0);
+      // 방문 분석(GA): 프로젝트 상세를 열 때마다 어떤 프로젝트인지 기록
+      try{ if(window.gtag) gtag("event", "view_project", {project_id: id, language: lang}); }catch(e){}
     } else {
       var wasDetail = !detV.hidden;
       detV.hidden = true;
