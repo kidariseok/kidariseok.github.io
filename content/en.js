@@ -1290,7 +1290,7 @@ SITE.en = {
       title: "GDG on Campus : SKKU",
       summary: "When GDSC's reorganisation into GDG on Campus cut off the Google network we used to rely on, I booked speakers for the monthly global IT seminar through several routes - cold emails, people I had met in class, and referrals from the university program - and documented the whole outreach process in Korean and English.",
       short: "Booked monthly IT seminar speakers without an existing network; documented the process.",
-      card: {role:"Core / HR lead · monthly IT seminar speaker outreach", result:"Held regular seminars inspiring 500 students per year"},
+      card: {role:"Core / HR lead · monthly IT seminar speaker outreach", result:"Held regular seminars inspiring 300 students per year"},
       panel: {
         role: "Joined the Administration team → Core / HR lead the next semester · most speaker outreach for the monthly global IT seminar",
         team: "Administration team of 4",

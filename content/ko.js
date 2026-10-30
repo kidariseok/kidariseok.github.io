@@ -47,8 +47,8 @@ SITE.ko = {
     // featuredSub 는 대표 활동 4개를 한 줄로 요약한 글자라, featured 를 바꾸면 같이 고쳐 주세요
     work: {
       kicker: "SELECTED WORK",
-      title: "직접 만든 프로젝트와 대표 활동",
-      desc: "무엇을 했는지, 그 안에서 제가 맡은 일이 무엇이었는지부터 보여드립니다. 카드를 누르면 상세 기록으로 이어집니다.",
+      title: "프로젝트와 주요 활동",
+      desc: "대표 프로젝트들과 제 역할과 기여를 소개드립니다.",
       projects: "프로젝트",
       projectsSub: "직접 기획하고 만든 서비스",
       featured: "대표 활동",
@@ -68,11 +68,11 @@ SITE.ko = {
         {label:"EXPLORE", period:"2024", text:"성균관대학교 컴퓨터교육과에 입학한 뒤 AI와 데이터, 서비스 기획, 교육, 글로벌 활동처럼 관심이 가는 영역을 직접 경험했습니다."},
         {label:"DISCOVER", period:"2024 – 2025", text:"그 과정에서 제 관심이 기술 그 자체보다 기술이 사람과 산업을 만나는 곳에 있다는 것을 발견했습니다."},
         // 복무 중(2025년 이후) 취득: 자격 SQLD · 무역영어 1급 · ADsP · 한국사 1급, 어학 IELTS · TOEIC (common.js 의 certGroups 날짜 기준)
-        {label:"ADAPT", period:"2025 – 2026", text:"대한민국 육군 통신병 · 분대장으로 복무하는 동안에도 자격증 4개와 어학 성적 2개를 취득하며 다음 단계를 준비했습니다.", more:"자격 보기", em:true},
+        {label:"ADAPT", period:"2025 – 2026", text:"대한민국 육군 통신병 · 분대장으로 복무하는 동안에도 자격증 3개와 어학 성적 2개를 취득하며 다음 단계를 준비했습니다.", more:"자격 보기", em:true},
         {label:"NEXT", period:"앞으로", text:"기술을 실제 필요와 연결하고, 사람과 아이디어, 산업을 이어 의미 있는 가치를 만들고 싶습니다."}
       ]
     },
-    activities: {kicker:"ACTIVITY ARCHIVE", title:"활동 기록", count:"{n}", description:"구분마다 대표 활동을 하나씩 먼저 보여드립니다. 아래 버튼을 누르면 구분별로 나머지 활동이 펼쳐지고, 누르면 상세 기록으로 들어갑니다."},
+    activities: {kicker:"ACTIVITY ARCHIVE", title:"활동 기록", count:"{n}", description:"다양한 분야에서의 제 경험들을 소개드립니다."},
     // 이력: 다섯 줄 (EDUCATION · LANGUAGE · CERTIFICATION · SCHOLARSHIP · VOLUNTEER).
     // 기록은 common.js 의 tiles(gpa · dulwich) · certGroups · awards · volunteerLog
     credentials: {
@@ -257,7 +257,7 @@ SITE.ko = {
       summary: "일본 대학과의 글로벌 협업이 무산되자 방향을 바꿔, 성균관대 · 고려대 · 서강대 3개 대학 공동 AI 해커톤(50명 · 9개 팀)을 기획하고 개최함.",
       short: "일본 협업 무산 후 3개 대학 공동 AI 해커톤(50명 · 9개 팀)을 기획하고 개최함",
       // card: 메인 '대표 활동' 카드의 두 줄 (MY ROLE · RESULT)
-      card: {role:"인사총괄 · 행사 기획 · 예산 운용", result:"3개 대학 · 50명 · 9개 팀 · 약 700만 원대 지원"},
+      card: {role:"인사총괄 · 행사 기획 · 예산 운용", result:"9개 팀 50명이 참여한 무박 행사를 운영했고, 설문 응답자 37명 중 35명이 91점 이상으로 평가했습니다."},
       panel: {
         role: "GDG on Campus : SKKU 인사총괄 · 행사 전체 기획과 예산 운용",
         scale: "참가자 50명 · 9개 팀",
@@ -347,9 +347,9 @@ SITE.ko = {
         role: ["PM", "UX/UI 기획", "PRD 작성", "서비스 구조 설계"],
         tools: ["Figma"],
         team: "6인 팀 (기획·PM 1 · UI 디자인 1 · FE/BE 4)",
-        period: "2024.10.06 – 11.16 · 약 6주 (본선 11.16)",
+        period: "2024.10.06 – 11.16 · 6주 (본선 11.16)",
         date: "본선 2024.11.16",
-        result: "약 6주 만에 서비스 배포",
+        result: "6주 만에 서비스 배포",
         key: "6주",
         stack: ["React", "Spring Boot", "OpenAI API", "MySQL"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/Line4thon-Gather/gather_Front_End"}, {t:"GitHub · Back-end", href:"https://github.com/Line4thon-Gather/gather_back_end"}]
@@ -509,7 +509,7 @@ SITE.ko = {
       title: "KT&G 상상위더스 해외봉사단",
       summary: "인도네시아 보고르 지역 초등학교에 파견되어 177시간 동안 교육, 환경 개선 봉사를 함.",
       short: "인도네시아 보고르 초등학교에서 177시간 교육·환경 봉사를 함",
-      card: {role:"회계·물품 · 딱지치기 · 양치질 수업 주진행", result:"봉사 177시간 · 초등 3학년 34명 학급 담당"},
+      card: {role:"회계·물품 · 전통 놀이 딱지치기 · 양치질 수업 주진행", result:"학교에 새 건물을 짓고 실전 교육 경험을 쌓음"},
       panel: {
         role: "회계·물품팀 (1조 수업 물품 · 팀당 약 220만 원 예산) · 딱지치기 수업 · 양치질 교육 기획 및 주진행",
         team: "해외봉사단 40명 (4개 조 · 조별 10명)",
@@ -737,7 +737,7 @@ SITE.ko = {
       title: "2024/2026 에듀테크 박람회",
       summary: "기술을 보는 데서 그치지 않고, 기술이 교육의 어떤 문제를 해결하는지 관찰함. 2년 간격의 두 박람회를 비교하며 데이터·사용 경험·정책이 에듀테크를 좌우한다는 점을 확인함.",
       short: "기술이 해결하는 교육 문제를 관찰하고, 2년간 시장 변화를 비교함",
-      card: {role:"2024 · 2026 두 차례 방문해 비교", result:"교육 문제 관점의 인사이트 5가지 정리"},
+      card: {role:"2024 · 2026 두 차례 방문해 비교", result:"교육 문제 관점의 인사이트 5가지를 얻음"},
       panel: {
         role: "두 차례 방문해 2024년과 2026년을 비교",
         where: "코엑스 · Adobe 특강",
@@ -1257,7 +1257,7 @@ SITE.ko = {
       title: "GDG on Campus : SKKU",
       summary: "여러 경로로 월간 IT 세미나 연사를 섭외하고, 섭외 과정을 문서화함.",
       short: "여러 경로로 월간 IT 세미나 연사를 섭외하고, 섭외 과정을 문서화함",
-      card: {role:"인사 총괄(Core) · 월간 IT 세미나 연사 섭외", result:"세미나 회당 약 20–30명 · 섭외 과정 문서화"},
+      card: {role:"인사 총괄(Core) · 월간 IT 세미나 연사 섭외", result:"정기 세미나를 열어 한 해 동안 300명의 학생에게 강의를 제공함"},
       panel: {
         role: "Administration팀 합류 → 다음 학기 Core · 인사 총괄 · 월간 글로벌 IT 세미나 연사 섭외 대부분",
         team: "Administration팀 4명",
@@ -1454,7 +1454,7 @@ SITE.ko = {
       title: "IT전문가들이 말하는 4차 산업혁명 미래기술과정",
       summary: "대학교 입학 전 이틀간 14개 강좌(총 14시간)를 온라인으로 수강함.",
       panel: {
-        role: "입학 전 교내 홈페이지에서 찾아 자발적으로 신청 · 수강",
+        role: "입학 전에 인사이트를 얻음",
         scale: "강좌 14개 · 총 14시간 (2일 전일제 10시 – 18시)",
         period: "2024.02.13 – 02.14 · 온라인",
         where: "성균관대학교 인공지능융합원 주관 특강",
