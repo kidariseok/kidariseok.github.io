@@ -48,7 +48,7 @@ SITE.ko = {
     work: {
       kicker: "SELECTED WORK",
       title: "프로젝트와 주요 활동",
-      desc: "대표 프로젝트들과 제 역할과 기여를 소개드립니다.",
+      desc: "직접 기획하고 구현한 프로젝트를 통해 문제를 해결하고, 아이디어를 실제 서비스로 발전시킨 경험을 소개합니다.",
       projects: "프로젝트",
       projectsSub: "직접 기획하고 만든 서비스",
       featured: "대표 활동",
