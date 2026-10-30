@@ -36,11 +36,11 @@ SITE.en = {
       // 학교 줄 끝 배지. 학점은 여기와 '이력' EDUCATION 줄, 두 곳에만 나옵니다
       gpa: "GPA 4.33",
       gpaMax: "/ 4.5",
-      headline: "Connecting technology, people, and industry.",
+      headline: "Connecting Technology, People, and Industry.",
       intro: "I have explored technology, education, planning, and global experiences through diverse activities. I understand technology, but I do not stop at technology itself. I care about how it can create value for people, organizations, and industries.",
       buttonWork: "See selected work",
       buttonCv: "Download CV",
-      cvOther: "국문 CV"
+      cvOther: "Korean CV"
     },
     work: {
       kicker: "SELECTED WORK",
@@ -903,12 +903,12 @@ SITE.en = {
       ]
     },
     goormthon: {
-      title: "All of Us Are Yuljeon Now",
+      title: "ESC: ESCape SKKU",
       org: "Goormthon Univ 3rd Cohort: Campus Organiser",
       summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
       short: "Campus organiser; built club programs and ran weekly study sessions.",
       proj: {
-        name: "All of Us Are Yuljeon Now",
+        name: "ESC: ESCape SKKU",
         type: "Game · Escape room",
         what: "A web escape-room game set on the Yuljeon campus, built with the Goormthon Univ cohort for Halloween and our college night. It has five quiz stages, a final game and a ranking, and we ran it in person at a booth.",
         role: ["Planning · PM", "Storyline", "PRD", "Stage & puzzle design"],
@@ -921,7 +921,7 @@ SITE.en = {
       },
       vid: {
         k: "PROMO VIDEO",
-        t: "Promo video for \"All of Us Are Yuljeon Now\"",
+        t: "Promo video for \"ESC: ESCape SKKU\"",
         d: "A video introducing the campus escape-room game we built with the Goormthon Univ cohort for Halloween and our college night.",
         pm: "As PM, I shaped the storyline and wrote the PRD."
       },
@@ -931,7 +931,7 @@ SITE.en = {
           p: "Goorm is a Kakao subsidiary that runs coding bootcamps and builds IDEs. I got into Goormthon Univ representing SKKU, did the orientation at their Pangyo office, and met the rest of the SKKU cohort there for the first time."
         },
         {
-          p: "Then, for Halloween and our college night on 31 October, we built a campus escape-room game called \"All of Us Are Yuljeon Now\". It was my first time as PM - writing the storyline and the PRD - and it turned out to be a genuinely fun game. Thanks to a very capable designer and developers it came out exactly as imagined; we were lucky enough to get a booth and run it in person, and the students loved it."
+          p: "Then, for Halloween and our college night on 31 October, we built a campus escape-room game called \"ESC: ESCape SKKU\". It was my first time as PM - writing the storyline and the PRD - and it turned out to be a genuinely fun game. Thanks to a very capable designer and developers it came out exactly as imagined; we were lucky enough to get a booth and run it in person, and the students loved it."
         },
         {k:"01 · Project", h:"An escape room about saving Yuljeon from bug monkeys"},
         {p:"For Halloween and our college night we built <b>a web escape-room game set on the Yuljeon campus</b> with the Goormthon Univ cohort. Players pick a character, go through five quiz stages and a final game, and check the result on a ranking."},
