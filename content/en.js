@@ -1488,7 +1488,7 @@ SITE.en = {
       title: "Future Technologies of the Fourth Industrial Revolution",
       summary: "Before starting university, completed 14 online courses over two days, 14 hours in total.",
       panel: {
-        role: "Earned insights before getting into university",
+        role: "Earned technical insights",
         scale: "14 lectures · 14 hours (2 full days, 10:00–18:00)",
         period: "13–14 Feb 2024 · online",
         where: "SKKU AI Institute lecture series",
