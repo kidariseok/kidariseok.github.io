@@ -30,7 +30,7 @@ SITE.en = {
   name: "JINSEOK OH",
   page: {
     // 상단 메뉴 5개 (휴대폰에서는 상단 바 아래에 가로 한 줄로 나옵니다)
-    nav: {work:"Work", about:"About", activities:"Activities", credentials:"Credentials", contact:"Contact"},
+    nav: {work:"Work", builds:"Builds", about:"About", activities:"Activities", credentials:"Credentials", contact:"Contact"},
     hero: {
       school: "Computer Education, Sungkyunkwan University · Class of 2024",
       // 학교 줄 끝 배지. 학점은 여기와 '이력' EDUCATION 줄, 두 곳에만 나옵니다
@@ -55,6 +55,29 @@ SITE.en = {
       labels: {what:"WHAT", role:"MY ROLE", tools:"MY TOOLS", stackTeam:"STACK · built by team", team:"TEAM", scale:"SCALE", period:"PERIOD", where:"WHERE", result:"RESULT", stack:"STACK", links:"MORE"},
       jumpVideo: "Promo video", jumpDeck: "Slides",
       open: "View project", play: "Hover to play", tbd: "To confirm"
+    },
+    // SIDE PROJECTS: one-line banner on the main page (entry) + list page (#side). Numbers, screens, links: common.js → builds
+    builds: {
+      kicker: "SIDE PROJECTS",
+      title: "Things I build and ship",
+      desc: "Games I plan, direct and ship on my own, with the implementation split across a team of AI agents. Both are playable right now in a phone browser.",
+      status: {live: "Playable", wip: "In progress"},
+      platform: {web: "Mobile web", android: "Android", pwa: "PWA"},
+      nums: {commits: "Commits", prs: "Merged PRs", tests: "Automated tests"},
+      builtWith: "BUILT WITH",
+      play: "Play now",
+      open: "How it was built",
+      howTitle: "How I build",
+      howSub: "Both games follow the same loop",
+      steps: [
+        {t: "Set the direction", who: "Me", me: true, d: "Decide the game, the core fun it stands on, and what it will not do."},
+        {t: "Write tickets", who: "Me + planning agent", d: "Split work into tickets that name owned files, verification commands and stop conditions."},
+        {t: "Build in lanes", who: "Claude · Antigravity · Codex", d: "One ticket = one workspace = one PR. Combat, UI, research and content run in separate lanes."},
+        {t: "Verify automatically", who: "Hooks · tests", d: "An agent cannot finish if it breaks a rule or a test."},
+        {t: "Review and merge", who: "Me", me: true, d: "I play the build myself and merge only PRs that passed the gate review."}
+      ],
+      // One-line banner under the main project cards ({n} = number of playable games)
+      entry: {title: "Games I build and ship", live: "{n} playable"}
     },
     about: {
       kicker: "ABOUT",
@@ -93,6 +116,9 @@ SITE.en = {
     footer: {name:"Jinseok Oh · Portfolio", updated:""}
   },
   ui: {
+    backBuilds: "Back to side projects",
+    prevBuild: "Previous project",
+    nextBuild: "Next project",
     back: "Back to activity log",
     backWork: "Back to selected work",
     workRef: "Featured above",
@@ -200,6 +226,143 @@ SITE.en = {
     "co-curricular": {
       name: "Co-curricular Challenge Scholarship",
       description: "Awarded for outstanding participation in co-curricular programs"
+    }
+  },
+  // Side projects (detail #b/id). proj feeds the card and the summary panel; body uses the same blocks as activity details
+  builds: {
+    "sinbyeong-defense": {
+      title: "Sinbyeong Defense",
+      summary: "On a new recruit's first night at his unit, DEFCON 2 is declared and the guard post is breached. A portrait card-defense game: deploy fellow soldiers, merge them to rank up, and hold off ten waves.",
+      photosTitle: "Screens",
+      proj: {
+        name: "Sinbyeong Defense",
+        type: "Game · Card defense",
+        tagline: "Deploy your squad. Hold the guard post.",
+        what: "A portrait card-defense game: place soldier cards across five lanes, stack identical cards to promote them, and hold off ten waves.",
+        role: ["Solo developer", "Game design", "Agent operations", "Playtesting"],
+        tools: ["Claude Code", "Antigravity", "Codex", "Figma"],
+        team: "Solo + 4 AI agent lanes",
+        period: "Oct 17, 2026 – ongoing",
+        result: "Mobile web build live · 386 automated tests passing",
+        key: "386",
+        stack: ["TypeScript", "Phaser 4", "Vite", "Capacitor 8", "Vitest", "Vercel"],
+        links: [
+          {t: "Play now", href: "https://newbie-defense.vercel.app", play: true},
+          {t: "GitHub", href: "https://github.com/kidariseok/shoottrial"}
+        ]
+      },
+      body: [
+        {lead: "First night at the unit. The barracks speaker crackles: “This is not a drill. DEFCON 2.”"},
+        {p: "Sinbyeong (“new recruit”) Defense is a portrait card-defense game. You deploy fellow soldiers and <b>stack identical cards to promote them</b> while holding off ten waves. It runs in a phone browser with nothing to install."},
+        {k: "01 · The game", h: "Composition, rank, and when to merge"},
+        {cards: [
+          {n: "Composition", t: "A missing role breaks a wave", d: "Every card does something no other card can. Without a sniper, a column pushes through one lane; without a snow-blower, fast dogs slip past."},
+          {n: "Rank up", t: "Private to sergeant", d: "Merge two identical cards to promote. At PFC you pick one of two specialties; from corporal up, unique abilities unlock."},
+          {n: "Trade-off", t: "Spread or merge?", d: "Synergies count <b>headcount</b> per role. Merging makes a soldier stronger but can switch a synergy off."}
+        ]},
+        {flow: ["Enter name", "4-panel briefing", "Walkable barracks", "Prep: buy · place · mines", "Battle: auto combat", "10 waves"]},
+        {h3: "10 soldier roles"},
+        {facts: ["Rifleman · damage", "Sniper · pierces a lane", "Snow-blower · knockback", "Cook · healing", "Mine layer · mines", "CBRN · gas cleanup", "Medic · revive", "Mortar · area fire", "Anti-tank · ×2 vs armor", "Signals · fire support"]},
+        {p: "Enemies come from a fictional state, the “Northern Alliance”: infantry, dogs, RPG troops, assault troops, shield troops, marksmen and, in the last wave, an armored vehicle."},
+        {k: "02 · Pivot", h: "From shooter to card defense"},
+        {stat: [{k: "Oct 17 draft", v: "Side-scrolling shooter"}, {k: "Same day", v: "Top-down portrait"}, {k: "Oct 20 · M0", v: "Card defense", hi: true}]},
+        {p: "The first plan was a two-minute top-down shooter. It asked for too much input on a one-handed portrait screen, so after reverse-engineering the mechanics of five reference games I moved to a card defense built on <b>squad composition and soldier growth</b>."},
+        {p: "The setting has firm lines: no blood, no jokes at the expense of soldiers or about abuse, and a fictional enemy instead of a real country."},
+        {k: "03 · Structure", h: "Combat rules and screens meet at a fixed contract"},
+        {cmp: [
+          {t: "Lane A · Combat", d: "Board, cards, merging, synergies, waves. Rules are <b>pure functions</b> written test-first; every number lives in two data files."},
+          {t: "Lane B · Platform · UI", d: "Menus, shop, barracks, saves, audio, ads, Android. Plain DOM without React for crisp Korean text and safe-area handling."}
+        ]},
+        {p: "The two lanes meet only through agreed function signatures, so different agents can work at the same time without collisions. Platform APIs are not used in code until a research ticket has confirmed them."},
+        {k: "04 · How it was built", h: "AI agents split into lanes"},
+        {roles: {
+          tl: "What the agents did",
+          team: ["Design docs, tickets and gate reviews (Claude Code · Opus)", "Combat rules and tuning (Claude Code · Sonnet)", "Platform, UI and Android (Antigravity)", "Play Store requirements and military research (Antigravity Flash)", "Took over from the handoff doc when usage ran out (Codex)"],
+          ml: "What I did",
+          mine: ["Set the direction and the bar for fun", "Made the art and approved mockups (image AI · Figma)", "Played every build to find problems", "Approved gates and merged PRs"]
+        }},
+        {cards: [
+          {t: "Stop hook", d: "Before an agent can finish, it checks for edits outside owned paths, unapproved dependencies, missing progress notes and failing tests."},
+          {t: "Command guard", d: "Blocks agents from pushing. main changes only when I merge a PR."},
+          {t: "Autosave", d: "Commits to the branch every turn and every 5 minutes, so work survives a reinstall on a shared computer."},
+          {t: "Handoff doc", d: "When the tool changes, HANDOFF.md and the ticket's progress log are enough for the next worker to continue."}
+        ]},
+        {k: "05 · Verification", h: "Every gate was checked for real"},
+        {checks: [
+          "<b>G0</b> · On an Android emulator: portrait lock, safe area, back-button dialog, persistent saves and background mute all passed",
+          "<b>verify</b> · Type check, 386 automated tests, a 97-asset contract check and a build must pass before deploying",
+          "<b>Debug URLs</b> · Open any situation directly, such as <code>?scene=battle&amp;wave=10</code>, and check it on screen",
+          "<b>Web build</b> · Played end to end on the deployed URL, from name entry to wave 10"
+        ]},
+        {k: "06 · Next", h: "Collecting real play records"},
+        {p: "The next gate (G1) asks a friend with no military background to play three rounds and say whether composition changed the outcome and whether they want another round. A Google Play closed test with 12 testers for 14 days follows."}
+      ]
+    },
+    "live-a-life": {
+      title: "Live A Life",
+      org: "Warmth of the Alley",
+      summary: "A 2D pixel-art exploration game: wander a cozy Korean neighborhood, meet ten neighbors and their everyday choices, and look back on your days in a journal.",
+      photosTitle: "Screens",
+      proj: {
+        name: "Live A Life",
+        type: "Game · Life sim",
+        tagline: "A pocket-sized neighborhood walk",
+        what: "A 2D pixel-art game about walking a cozy Korean neighborhood, meeting ten neighbors, and looking back on your days in a journal.",
+        role: ["Solo developer", "Creative direction", "Agent operations", "Art direction"],
+        tools: ["Claude Code", "Antigravity", "Figma"],
+        team: "Solo + 6 AI agent roles",
+        period: "Oct 13, 2026 – ongoing",
+        result: "Mobile web build live · episodes for 10 neighbors",
+        key: "10",
+        stack: ["TypeScript", "Phaser 4", "React 19", "zustand", "zod", "Vite", "Playwright", "Capacitor 8"],
+        links: [{t: "Play now", href: "https://live-a-life-web.vercel.app/", play: true}]
+      },
+      body: [
+        {lead: "Who lives along the alleys we walk past every day?"},
+        {p: "In Live A Life you wander a Korean neighborhood and meet <b>ten neighbors</b>: a photo-studio grandmother, a rooftop painter, the young man at the corner store, a stray cat and more. Your conversations and choices carry into the next day and your journal."},
+        {k: "01 · The game", h: "Time instead of score, reflection instead of judgment"},
+        {boxes: [
+          "<b>Freedom to wander</b> · You can just walk; no mission is required",
+          "<b>Many kinds of life</b> · Success and failure are not ranked",
+          "<b>Choices leave traces</b> · Talk and actions shape relationships and memory",
+          "<b>Reflection without judgment</b> · The game asks questions instead of grading you"
+        ]},
+        {p: "So there are <b>no levels, affection meters or scores</b>. A day has three time slots: morning, afternoon and evening. Walking and looking around are free, but a meaningful encounter uses up a slot, so every choice costs time."},
+        {flow: ["Morning", "Afternoon", "Evening", "Journal", "Next day"]},
+        {facts: ["Jeongim · photo studio", "Haram · rooftop painter", "Eunho · corner store", "Narae · alley explorer", "Myeongja · hair salon", "Jinwoo · woodshop", "Soonbok · shady bench", "Doyun · exam student", "Sohee · flower shop", "Norang · stray cat"]},
+        {k: "02 · Pivot", h: "From 3D to 2D pixel art"},
+        {cmp: [
+          {t: "v1 · 3D", d: "Three.js (R3F), a fixed 3/4 camera, triangle and draw-call budgets"},
+          {t: "v1.1 · 2D pixel art", d: "Switched within a day after a Figma moodboard: 16px tiles, a hanok neighborhood, retro RPG-style dialogue, Phaser 4 + React"}
+        ]},
+        {p: "On day two, the Figma moodboard made it clear the look I wanted was top-down pixel art. To keep the game light, I dropped 3D and recorded the reasoning in an architecture decision record before switching."},
+        {k: "03 · Structure", h: "Rules and screens in separate layers"},
+        {flow: ["core · rules", "content · neighbors & dialogue", "app · game state", "world (Phaser) · ui (React)"]},
+        {ul: [
+          "<b>core</b> holds only the time, choice and save rules in plain TypeScript; a test stops it from importing any rendering library.",
+          "Neighbors and dialogue live in <b>JSON content</b> validated by a schema (zod), so adding a neighbor needs no code change.",
+          "The game world (Phaser) and the dialogue/journal UI (React) never import each other; they talk only through one store."
+        ]},
+        {k: "04 · How it was built", h: "One director and a team of AI workers"},
+        {roles: {
+          tl: "What the agents did",
+          team: ["Design docs and gate reviews (Claude Opus)", "Implementation (Claude Sonnet → Antigravity implementer)", "Neighbor episode drafts (narrative-designer)", "Research (quick-scout)", "Tone and sensitivity review (quality-critic)"],
+          ml: "What I did",
+          mine: ["The game's vision and experience principles", "Art direction (Figma moodboard)", "Approving tickets", "Merging to main"]
+        }},
+        {p: "Ticket prefixes decide who does the work: D (design), G (review), T (build), C (content), R (research), Q (review), A (assets). At most three sessions write at once, and quality is scored 0–5, with <b>a 5 only for features backed by real play records</b>."},
+        {k: "05 · Retrospective", h: "Keeping fast work under control"},
+        {stat: [{k: "Features added", v: "9 in two days"}, {k: "e2e smoke tests", v: "16 of 17 failing", hi: true}]},
+        {p: "During expansion, nine features (map, weather, save slots, a cat companion and more) went in over two days without design tickets. Meanwhile, one-off scripts were reported as “passing” instead of the official regression suite, and the operations review (G-5) found that 16 of 17 e2e smoke tests had been merged broken."},
+        {checks: [
+          "<b>Feature freeze</b> until the Android internal test; new ideas go into the backlog as one line",
+          "Any change to <code>src/**</code> must pass e2e, and reports must include <b>raw command output</b>",
+          "No inflated wording such as “100%” or “flawless”, and no invented numbers",
+          "Rewrote the rules to match how the team actually worked, and redefined the implementer role"
+        ]},
+        {k: "06 · Next", h: "The Android release track"},
+        {p: "Features are frozen while the game is packaged for Android with Capacitor: a landscape touch layout, pausing audio when the app is hidden, icons and splash screens, and signing. The next goal is installing it on a phone through a Google Play internal test."}
+      ]
     }
   },
   activities: {

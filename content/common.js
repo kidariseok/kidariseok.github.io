@@ -23,6 +23,27 @@ SITE.common = {
   featured: ["realthon", "gdsc", "ktng-overseas", "edutech-expo"],
   // 'SELECTED WORK'의 '프로젝트' 카드로 보여 줄 개발 프로젝트의 activities id (순서대로). 카드 · 상세 요약 패널의 글자는 ko/en.js 의 activities[id].proj
   projects: ["line4", "goormthon"],
+  /* ── 사이드 프로젝트: 메인 '프로젝트' 아래 한 줄 배너 → 목록 #side → 상세 #b/아이디 ─────
+     한 줄이 프로젝트 하나입니다. 글자(제목 · 소개 · 본문)는 ko.js / en.js 의 builds.
+     · status   : live(플레이 가능) / wip(개발 중) — 이름은 ko.js / en.js 의 page.builds.status
+     · platform : web / android / pwa — 이름은 page.builds.platform
+     · screens  : 카드 · 상세 표지에 겹쳐 놓을 게임 화면 (img/ 안 파일 이름). orient 가 portrait 면 3장, landscape 면 2장
+     · numbers  : 레포에서 센 숫자 (commits 커밋 · prs 병합한 PR · tests 자동 테스트). 갱신할 때 날짜도 같이 고치세요
+     · repo     : 공개 레포만 적습니다 (비공개면 "" → GitHub 버튼이 안 나옴) */
+  builds: [
+    {
+      id: "sinbyeong-defense", start: "2026-10-17", status: "live", platform: ["web", "android"],
+      demo: "https://newbie-defense.vercel.app", repo: "https://github.com/kidariseok/shoottrial",
+      orient: "portrait", glow: "#3a2a12", screens: ["sd_barracks", "sd_battle", "sd_wave10"],
+      numbers: {commits: 328, prs: 57, tests: 386}   // 2026-10-30 main 기준
+    },
+    {
+      id: "live-a-life", start: "2026-10-13", status: "live", platform: ["web", "android"],
+      demo: "https://live-a-life-web.vercel.app/", repo: "",
+      orient: "landscape", glow: "#1d3b2a", screens: ["lal_dialogue", "lal_world"],
+      numbers: {commits: 180, prs: 48, tests: 221}   // 2026-10-30 main 기준 (Vitest 204 + Playwright e2e 17)
+    }
+  ],
   // '활동 기록(ACTIVITY ARCHIVE)'에서 구분마다 처음 한 장씩 보여 줄 대표 활동 (구분당 하나, 위 projects · featured 와 겹치지 않게).
   // '전체 활동 20개 보기'를 누르면 각 구분 칸 아래로 나머지가 펼쳐집니다
   archiveReps: ["trade-ai", "ched", "speech-mentors", "future-tech"],
@@ -60,7 +81,10 @@ SITE.common = {
     ched: {cover:"ched_cover", shots:["ched_article_zoom", "ched_article"]},   // 교내 기사 캡처: 이름 부분 확대본 + 전체 화면 (형광펜 표시)
     gdsc: {cover:"gdsc_cover"},
     "trade-ai": {cover:"trade_cover"},
-    "ba-dive": {cover:"ba_dive_cover"}
+    "ba-dive": {cover:"ba_dive_cover"},
+    // 사이드 프로젝트 게임 화면 (상세의 사진 줄). 표지는 common.js builds 의 screens 로 따로 그림
+    "sinbyeong-defense": {shots:["sd_title", "sd_briefing", "sd_barracks", "sd_battle", "sd_wave10"]},
+    "live-a-life": {shots:["lal_title", "lal_world", "lal_dialogue", "lal_choice", "lal_map"]}
   },
   // 발표자료 슬라이드: img/ 안의 파일 이름 앞부분(file) + 01, 02 ... 번호 · count 는 전체 장 수
   // 장(챕터) 이름과 설명은 ko.js / en.js 의 해당 활동 deck 에 있습니다.

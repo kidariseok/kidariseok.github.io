@@ -305,6 +305,110 @@
   .plinks a:hover,.plinks a:focus-visible{background:#fff;color:#0a0c10;text-decoration:none}
   .pdl dd.txt{font-size:14px;font-weight:700;color:#fff}
 
+  /* SIDE PROJECTS
+     · 메인: 프로젝트 카드 아래 한 줄 배너(.se-a) → 누르면 #side 목록 페이지
+     · #side: 검은 판 안에 게임 카드(.bcard) + 만드는 방식 5단계(.bsteps)
+     · 화면 묶음(.bscreens)은 세로 게임은 휴대폰 3장, 가로 게임은 큰 화면 1장 + 작은 화면 1장 */
+  .pshow + .side-entry{margin-top:20px}
+  .side-entry + .wsub{margin-top:56px}
+  .se-kick{font:800 11.5px/1 var(--display);letter-spacing:.12em;color:var(--accent-2)}
+  .se-live{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#7ee2a8}
+  .se-live::before{content:"";width:7px;height:7px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 3px rgba(61,220,132,.22)}
+  .se-arrow{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;transition:background .25s,transform .3s var(--ease)}
+  .se-arrow .i{width:18px;height:18px}
+  .se-a{display:flex;align-items:center;gap:20px;padding:18px 22px 18px 18px;border-radius:var(--r);background:var(--block);color:var(--on-block);box-shadow:inset 0 0 0 1px var(--block-line);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+  .se-a:hover{text-decoration:none;transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--block-line),var(--shadow)}
+  .se-a:hover .se-arrow{background:var(--accent);transform:translateX(3px)}
+  .se-a:focus-visible{outline:2.5px solid var(--accent-2);outline-offset:3px}
+  .se-a .thumbs{flex:none;display:flex}
+  .se-a .thumbs img{width:64px;height:64px;border-radius:14px;object-fit:cover;box-shadow:0 0 0 3px var(--block)}
+  .se-a .thumbs img + img{margin-left:-14px}
+  .se-a .txt{min-width:0;flex:1;display:grid;gap:5px}
+  .se-a b{color:#fff;font-size:17px;font-weight:800}
+  .se-a .names{color:var(--on-block-2);font-size:13.5px}
+  .side-head{margin-top:28px;padding-bottom:28px}
+  .side-head h1{margin-top:12px;font-size:clamp(30px,4vw,44px);font-weight:900;letter-spacing:-.02em}
+  .side-head p{margin-top:12px;color:var(--muted);font-size:16px;line-height:1.7;max-width:60ch}
+  .side-band{padding:24px;border-radius:calc(var(--r) + 8px);background:var(--hero);color:var(--on-block)}
+  .bgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .bcard{position:relative;display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;background:var(--block-2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+  .bcard:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),var(--shadow)}
+  .bscreens{position:relative;aspect-ratio:16/10;max-width:100%;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,var(--bglow,#1d2a44) 0%,#06070a 70%)}
+  .bscreens img{position:absolute;display:block;border-radius:12px;box-shadow:0 18px 40px -12px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08);background:#000}
+  .bscreens.portrait img{height:84%;width:auto;top:9%;left:50%;aspect-ratio:412/839;object-fit:cover}
+  .bscreens.portrait img:nth-child(1){transform:translateX(-160%) rotate(-5deg) scale(.86);opacity:.9}
+  .bscreens.portrait img:nth-child(2){transform:translateX(-50%);z-index:2}
+  .bscreens.portrait img:nth-child(3){transform:translateX(60%) rotate(5deg) scale(.86);opacity:.9}
+  .bscreens.landscape img{width:80%;height:auto;aspect-ratio:915/412;object-fit:cover}
+  .bscreens.landscape img:nth-child(1){left:6%;top:12%}
+  .bscreens.landscape img:nth-child(2){width:46%;right:5%;bottom:9%;z-index:2}
+  .bbody{padding:26px 28px 28px;display:flex;flex-direction:column;gap:14px;flex:1}
+  .bstat-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .blive{display:inline-flex;align-items:center;gap:7px;padding:4px 11px;border-radius:999px;background:rgba(46,204,113,.14);color:#7ee2a8;font:700 12px/1.5 var(--display)}
+  .blive::before{content:"";width:7px;height:7px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 3px rgba(61,220,132,.22)}
+  .bplat{padding:3px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:var(--on-block-2);font:700 12px/1.5 var(--display)}
+  .bcard h3{color:#fff;font:800 clamp(24px,2.6vw,30px)/1.15 var(--display);letter-spacing:-.01em}
+  .bcard h3 a{color:inherit}
+  .bcard h3 a:hover{text-decoration:none}
+  .bcard h3 a::after{content:"";position:absolute;inset:0;z-index:1}
+  .bcard:has(h3 a:focus-visible){outline:2.5px solid var(--accent-2);outline-offset:3px}
+  .bcard h3 a:focus-visible{outline:none}
+  .btag{margin-top:-6px;color:var(--accent-2);font-size:14px;font-weight:700}
+  .bwhat{color:var(--on-block-2);font-size:15px;line-height:1.7}
+  .bnums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid rgba(255,255,255,.09)}
+  .bnums div{padding:12px 0;display:grid;gap:2px}
+  .bnums div + div{padding-left:16px;box-shadow:-1px 0 0 rgba(255,255,255,.09)}
+  .bnums b{font:800 24px/1.1 var(--display);color:#fff;font-variant-numeric:tabular-nums}
+  .bnums small{font-size:12px;font-weight:600;color:var(--on-block-2)}
+  .bcard .pdl dd{font-size:13.5px}
+  .bfoot{margin-top:auto;padding-top:4px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+  .bfoot a{position:relative;z-index:2;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:999px;font:700 13px var(--sans);transition:background .2s,color .2s,border-color .2s}
+  .bfoot a .i{width:14px;height:14px}
+  .bfoot .bplay{background:var(--accent);color:#fff}
+  .bfoot .bplay .i{fill:currentColor;stroke:none}
+  .bfoot .bplay:hover{background:#fff;color:#0a0c10;text-decoration:none}
+  .bfoot .bgh{border:1px solid rgba(255,255,255,.24);color:#fff}
+  .bfoot .bgh:hover{background:#fff;color:#0a0c10;text-decoration:none}
+  .bfoot .bgo{margin-left:auto;padding-inline:4px;color:#fff;display:inline-flex;align-items:center;gap:7px;font:700 13px var(--sans)}
+  .bfoot .bgo .i{width:14px;height:14px;transition:transform .3s var(--ease)}
+  .bcard:hover .bgo{color:var(--accent-2)}
+  .bcard:hover .bgo .i{transform:translateX(3px)}
+  .bhow{margin-top:24px;padding:26px 28px;border-radius:var(--r);box-shadow:inset 0 0 0 1px rgba(255,255,255,.09)}
+  .bhow-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin-bottom:18px}
+  .bhow-head h3{color:#fff;font-size:18px;font-weight:800}
+  .bhow-head span{color:var(--on-block-2);font-size:14px}
+  .bsteps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;counter-reset:bs}
+  .bsteps li{position:relative;padding:14px 16px 16px;border-radius:14px;background:rgba(255,255,255,.04);display:grid;gap:6px;align-content:start;counter-increment:bs}
+  .bsteps li::before{content:counter(bs, decimal-leading-zero);font:800 12px/1 var(--display);letter-spacing:.08em;color:var(--accent-2)}
+  .bsteps li.me{background:rgba(28,111,224,.16);box-shadow:inset 0 0 0 1px rgba(77,148,255,.35)}
+  .bsteps b{color:#fff;font-size:15px}
+  .bsteps small{display:inline-block;justify-self:start;padding:2px 8px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--on-block);font:700 11.5px/1.5 var(--sans)}
+  .bsteps li.me small{background:var(--accent);color:#fff}
+  .bsteps span{color:var(--on-block-2);font-size:13.5px;line-height:1.6}
+  @media (max-width:980px){ .bsteps{grid-template-columns:repeat(2,minmax(0,1fr))} .bsteps li:last-child{grid-column:1/-1} }
+  @media (max-width:860px){ .bgrid{grid-template-columns:1fr} }
+  @media (max-width:640px){
+    .se-a{gap:14px;padding:14px 16px 14px 14px}
+    .se-a .thumbs img{width:48px;height:48px;border-radius:11px}
+    .se-a b{font-size:15.5px}
+    .se-a .se-live{display:none}   /* 좁은 화면에서는 제목 · 게임 이름에 자리를 양보 */
+    .side-band{margin-inline:-16px;padding:16px;border-radius:0}
+    .bbody{padding:22px 20px 22px}
+    .bhow{padding:22px 18px}
+    .bsteps{grid-template-columns:1fr}
+    .bfoot .bgo{margin-left:0}
+  }
+  /* 사이드 프로젝트 상세: 게임 화면 묶음을 표지로, 사진 줄은 게임 화면 비율로 */
+  .dtop.has-cov .cov.bcov{background:#06070a}
+  .cov .bscreens{border-radius:var(--r)}
+  .shots.tall .shot{width:min(200px,46vw)}
+  .shots.tall .shot img{aspect-ratio:412/839}
+  .shots.wide .shot{width:min(460px,82vw)}
+  .shots.wide .shot img{aspect-ratio:915/412}
+  .badge.blive-b{color:#16804a;background:rgba(46,204,113,.14)}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .badge.blive-b{color:#7ee2a8} }
+  :root[data-theme="dark"] .badge.blive-b{color:#7ee2a8}
+
   /* 상세 페이지 맨 위 요약 패널: 모든 상세 페이지가 같은 형식
      (MY ROLE · TEAM · SCALE · PERIOD · WHERE · RESULT · STACK + 링크). 글자는 ko.js / en.js 활동의 panel, 프로젝트는 proj */
   .pstrip{margin-top:24px;border:1px solid var(--line);border-radius:var(--r);background:var(--soft);overflow:hidden}
@@ -863,6 +967,7 @@
     <a class="mark" href="#top">JINSEOK OH<span>.</span></a>
     <nav class="links" aria-label="섹션">
       <a href="#work" data-t="nav.work">작업</a>
+      <a href="#side" data-t="nav.builds">만드는 것</a>
       <a href="#about" data-t="nav.about">소개</a>
       <a href="#activities" data-t="nav.activities">활동</a>
       <a href="#credentials" data-t="nav.credentials">이력</a>
@@ -920,6 +1025,8 @@
           <p class="sdesc" data-t="work.desc"></p>
           <div class="wsub"><h3 data-t="work.projects">프로젝트</h3><span data-t="work.projectsSub"></span></div>
           <div class="pshow" id="project-list"></div>
+          <!-- 사이드 프로젝트로 가는 한 줄 배너 (누르면 #side 목록 페이지). common.js 의 builds -->
+          <div class="side-entry" id="side-entry"></div>
           <div class="wsub"><h3 data-t="work.featured">대표 활동</h3><span data-t="work.featuredSub"></span></div>
           <div class="feature" id="featured-list"></div>
         </div>
@@ -1047,6 +1154,21 @@
       sko: k.short || k.summary || "", sen: e.short || e.summary || "",   // short: 목록 한 줄용 짧은 요약 (없으면 summary)
       body: {ko: k.body || [], en: e.body || []}};
   });
+  // 사이드 프로젝트 (common.js 의 builds + ko/en.js 의 builds). 활동(ACT)과 따로 두어 활동 수 · 활동 기록에 섞이지 않음
+  var BUILDS = (C.builds || []).map(function(b){
+    var k = (KO.builds || {})[b.id] || {}, e = (EN.builds || {})[b.id] || {};
+    return {id: b.id, build: true, s: b.start, status: b.status, plat: b.platform || [], demo: b.demo || "", repo: b.repo || "",
+      screens: b.screens || [], orient: b.orient || "portrait", glow: b.glow || "", nums: b.numbers || {},
+      ko: k.title || b.id, en: e.title || k.title || b.id, dko: k.summary || "", den: e.summary || k.summary || "",
+      oko: k.org || "", oen: e.org || k.org || "",
+      body: {ko: k.body || [], en: e.body || k.body || []}};
+  });
+  function buildIdx(id){
+    for(var i=0;i<BUILDS.length;i++){ if(BUILDS[i].id === id) return i; }
+    return -1;
+  }
+  // 활동 · 사이드 프로젝트 둘 다에서 id 로 글자 묶음을 찾음 (id 는 서로 겹치지 않게)
+  function txtOf(Lx, id){ return (Lx.activities || {})[id] || (Lx.builds || {})[id] || {}; }
   var CERT_GROUPS = C.certGroups.map(function(g){
     return {id: g.id, g: both(function(L){ return L.certGroups[g.id] || g.id; }), items: g.items.map(function(c){
       function f(key){ return both(function(L){ return (L.certs[c.id] || {})[key] || ""; }); }
@@ -1514,7 +1636,7 @@
 
 
   // PROJECTS 쇼케이스 (common.js 의 projects). 카드에 마우스를 올리면 영상이 소리 없이 재생됩니다
-  function projOf(id){ return (L().activities[id] || {}).proj || (KO.activities[id] || {}).proj || null; }
+  function projOf(id){ return txtOf(L(), id).proj || txtOf(KO, id).proj || null; }
   function isTbd(t){ return /^\[(확인 필요|To confirm)/.test(t); }
   function chip(t){ return el("span", isTbd(t) ? "pchip tbd" : "pchip", t); }
   function renderProjects(){
@@ -1586,10 +1708,132 @@
     });
   }
 
+  // SIDE PROJECTS: 게임 화면 묶음 (카드 · 상세 표지 공용)
+  function buildScreens(b){
+    var box = el("div", "bscreens " + b.orient);
+    if(b.glow) box.style.setProperty("--bglow", b.glow);
+    b.screens.slice(0, b.orient === "portrait" ? 3 : 2).forEach(function(n){
+      var im = document.createElement("img");
+      im.src = imgSrc(n); im.alt = ""; im.loading = "lazy"; im.decoding = "async";
+      box.appendChild(im);
+    });
+    return box;
+  }
+  // 메인 '프로젝트' 카드 아래의 한 줄 배너: 썸네일 · 제목 · 게임 이름 · 플레이 가능 수 → #side
+  function renderSideEntry(){
+    var box = document.getElementById("side-entry");
+    if(!box) return;
+    box.textContent = "";
+    box.hidden = !BUILDS.length;
+    if(!BUILDS.length) return;
+    var BL = L().page.builds;
+    var a = el("a","se-a");
+    a.href = "#side";
+    var th = el("div","thumbs");
+    BUILDS.forEach(function(b){
+      var im = document.createElement("img");
+      im.src = imgSrc(b.screens[0]); im.alt = ""; im.loading = "lazy"; im.decoding = "async";
+      th.appendChild(im);
+    });
+    a.appendChild(th);
+    var tx = el("div","txt");
+    tx.appendChild(el("span","se-kick", BL.kicker));
+    tx.appendChild(el("b", null, BL.entry.title));
+    tx.appendChild(el("span","names", BUILDS.map(function(b){ return b[lang]; }).join(" · ")));
+    a.appendChild(tx);
+    var live = BUILDS.filter(function(b){ return b.status === "live"; }).length;
+    if(live) a.appendChild(el("span","se-live", fill(BL.entry.live, {n: live})));
+    var ar = el("span","se-arrow"); ar.appendChild(icon("ic-arrow"));
+    a.appendChild(ar);
+    box.appendChild(a);
+  }
+  // 사이드 프로젝트 목록 페이지 (#side): 게임 카드 + 만드는 방식
+  function renderSide(view){
+    view.textContent = "";
+    var BL = L().page.builds;
+    var back = el("a","back");
+    back.href = "#work";
+    back.appendChild(rich("span", null, '<svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-6 6 6 6"/></svg>'));
+    back.appendChild(document.createTextNode(T.backWork[lang]));
+    view.appendChild(back);
+    var hd = el("div","side-head");
+    hd.appendChild(el("p","st-kicker", BL.kicker));
+    hd.appendChild(el("h1", null, BL.title));
+    hd.appendChild(el("p", null, BL.desc));
+    view.appendChild(hd);
+    var band = el("div","side-band");
+    var grid = el("div","bgrid");
+    band.appendChild(grid);
+    var how = el("div","bhow");
+    var hh = el("div","bhow-head");
+    hh.appendChild(el("h3", null, BL.howTitle));
+    hh.appendChild(el("span", null, BL.howSub));
+    how.appendChild(hh);
+    var ol = el("ol","bsteps");
+    how.appendChild(ol);
+    band.appendChild(how);
+    view.appendChild(band);
+
+    var P = L().page.projects;
+    BUILDS.forEach(function(b){
+      var pj = projOf(b.id) || {};
+      var card = el("article", "bcard");
+      card.appendChild(buildScreens(b));
+      var bd = el("div", "bbody");
+      var row = el("div", "bstat-row");
+      row.appendChild(el("span", "blive", BL.status[b.status] || b.status));
+      b.plat.forEach(function(p){ row.appendChild(el("span", "bplat", BL.platform[p] || p)); });
+      bd.appendChild(row);
+      var h3 = el("h3"), ln = el("a", null, b[lang]);
+      ln.href = "#b/" + b.id;
+      h3.appendChild(ln);
+      bd.appendChild(h3);
+      if(pj.tagline) bd.appendChild(el("p", "btag", pj.tagline));
+      bd.appendChild(el("p", "bwhat", pj.what || ""));
+      var nums = el("div", "bnums");
+      ["commits", "prs", "tests"].forEach(function(k){
+        if(b.nums[k] == null) return;
+        var d = el("div");
+        d.appendChild(el("b", null, b.nums[k].toLocaleString()));
+        d.appendChild(el("small", null, BL.nums[k]));
+        nums.appendChild(d);
+      });
+      bd.appendChild(nums);
+      var dl = el("dl", "pdl");
+      dl.appendChild(el("dt", null, P.labels.role));
+      var dd = el("dd"); (pj.role || []).forEach(function(t){ dd.appendChild(chip(t)); }); dl.appendChild(dd);
+      if(pj.tools){ dl.appendChild(el("dt", null, BL.builtWith)); dd = el("dd"); pj.tools.forEach(function(t){ dd.appendChild(chip(t)); }); dl.appendChild(dd); }
+      dl.appendChild(el("dt", null, P.labels.stack));
+      dd = el("dd"); (pj.stack || []).slice(0, 5).forEach(function(t){ dd.appendChild(chip(t)); }); dl.appendChild(dd);
+      bd.appendChild(dl);
+      var ft = el("div", "bfoot");
+      if(b.demo){
+        var pl = el("a", "bplay", BL.play); pl.href = b.demo; pl.target = "_blank"; pl.rel = "noopener";
+        pl.insertBefore(icon("ic-play"), pl.firstChild); ft.appendChild(pl);
+      }
+      if(b.repo){
+        var gh = el("a", "bgh", "GitHub"); gh.href = b.repo; gh.target = "_blank"; gh.rel = "noopener";
+        gh.insertBefore(icon("ic-code"), gh.firstChild); ft.appendChild(gh);
+      }
+      var go = el("span", "bgo", BL.open); go.appendChild(icon("ic-arrow"));
+      ft.appendChild(go);
+      bd.appendChild(ft);
+      card.appendChild(bd);
+      grid.appendChild(card);
+    });
+    (BL.steps || []).forEach(function(st){
+      var li = el("li", st.me ? "me" : null);
+      li.appendChild(el("b", null, st.t));
+      li.appendChild(el("small", null, st.who));
+      li.appendChild(el("span", null, st.d));
+      ol.appendChild(li);
+    });
+  }
+
   // 상세 페이지 맨 위 요약 패널: 모든 상세 페이지가 같은 형식
   // MY ROLE · (MY TOOLS) · TEAM · SCALE · PERIOD · WHERE · RESULT · (STACK) + 링크 / 영상 · 발표자료로 건너뛰기
   // 글자: 프로젝트는 ko/en.js 의 proj, 나머지는 panel. PERIOD 를 비우면 common.js 날짜를 씀 (상세에서 날짜가 나오는 유일한 자리)
-  function panelOf(id){ return (L().activities[id] || {}).panel || (KO.activities[id] || {}).panel || null; }
+  function panelOf(id){ return txtOf(L(), id).panel || txtOf(KO, id).panel || null; }
   function renderProjectStrip(view, a){
     var pj = projOf(a.id), pn = panelOf(a.id) || {};
     var LB = L().page.projects.labels;
@@ -1621,14 +1865,14 @@
       kv.appendChild(el("span", null, res));
       cell(LB.result, kv, "res haskey" + (wide(res) ? " w2" : ""));
     } else if(res) cell(LB.result, res, "res" + (wide(res) ? " w2" : ""));
-    if(pj) cell(pj.tools ? LB.stackTeam : LB.stack, chips(pj.stack), "wide");
+    if(pj) cell(pj.tools && !a.build ? LB.stackTeam : LB.stack, chips(pj.stack), "wide");
     strip.appendChild(cells);
     var jumps = el("div","pjumps");
     ((pj && pj.links) || pn.links || []).forEach(function(l){
       var a2 = el("a", null, l.t);
       a2.href = l.href;
       if(l.href.charAt(0) === "#") a2.appendChild(icon("ic-arrow"));   // 사이트 안 다른 상세 페이지
-      else { a2.target = "_blank"; a2.rel = "noopener"; a2.insertBefore(icon("ic-code"), a2.firstChild); }
+      else { a2.target = "_blank"; a2.rel = "noopener"; a2.insertBefore(icon(l.play ? "ic-play" : "ic-code"), a2.firstChild); }
       jumps.appendChild(a2);
     });
     strip.appendChild(jumps);
@@ -1945,30 +2189,38 @@
 
   /* ---------- detail renderer ---------- */
 
-  function renderDetail(id){
+  // kind: "a" 활동(#a/아이디) · "b" 사이드 프로젝트(#b/아이디)
+  function renderDetail(id, kind){
     var view = document.getElementById("detail-view");
     view.textContent = "";
     tocState = null;
-    var i = byId(id);
+    var isB = kind === "b", LIST = isB ? BUILDS : ACT, pre = isB ? "#b/" : "#a/";
+    var i = isB ? buildIdx(id) : byId(id);
     if(i < 0){
       view.appendChild(el("p", null, T.notFound[lang]));
       return;
     }
-    var a = ACT[i];
+    var a = LIST[i];
 
     // 뒤로 가기: 들어온 곳(대표 작업 / 활동 기록)으로. 주소로 바로 들어왔으면 대표 작업이면 '대표 작업', 아니면 '활동 기록'
+    // 사이드 프로젝트는 늘 사이드 프로젝트 목록(#side)으로
     var toWork = cameFrom ? cameFrom === "work" : isWork(a.id);
     var back = el("a","back");
-    back.href = toWork ? "#work" : "#activities";
+    back.href = isB ? "#side" : toWork ? "#work" : "#activities";
     back.appendChild(rich("span", null, '<svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-6 6 6 6"/></svg>'));
-    back.appendChild(document.createTextNode(T[toWork ? "backWork" : "back"][lang]));
+    back.appendChild(document.createTextNode(T[isB ? "backBuilds" : toWork ? "backWork" : "back"][lang]));
     view.appendChild(back);
 
     var pics = IMG[a.id] || {};
 
-    // 표지 사진 + 제목을 나란히 놓는 상단 블록
-    var dtop = el("div", pics.cover ? "dtop has-cov" : "dtop");
-    if(pics.cover){
+    // 표지 사진 + 제목을 나란히 놓는 상단 블록 (사이드 프로젝트는 게임 화면 묶음이 표지)
+    var dtop = el("div", pics.cover || isB ? "dtop has-cov" : "dtop");
+    if(isB){
+      var bc = el("div","cov bcov");
+      bc.appendChild(buildScreens(a));
+      dtop.appendChild(bc);
+    }
+    else if(pics.cover){
       var cv = el("div","cov");
       var ci = document.createElement("img");
       ci.src = imgSrc(pics.cover); ci.alt = ""; ci.decoding = "async";
@@ -1978,7 +2230,8 @@
 
     var head = el("div","dhead");
     var meta = el("div","meta");
-    meta.appendChild(catBadge(a.cat));   // 날짜는 아래 요약 패널의 PERIOD 한 곳에만
+    if(isB) meta.appendChild(el("span", "badge blive-b", L().page.builds.status[a.status] || a.status));
+    else meta.appendChild(catBadge(a.cat));   // 날짜는 아래 요약 패널의 PERIOD 한 곳에만
     head.appendChild(meta);
     head.appendChild(el("h1", null, a[lang]));
     if(orgOf(a)) head.appendChild(el("p","dorg", orgOf(a)));
@@ -2002,12 +2255,12 @@
     if(pics.shots && pics.shots.length){
       var sh = el("div","shotshead");
       // photosTitle: 사진 줄 제목을 활동마다 바꿀 때 (기본은 '현장 사진')
-      var ptitle = (L().activities[a.id] || {}).photosTitle || T.photos[lang];
+      var ptitle = txtOf(L(), a.id).photosTitle || T.photos[lang];
       sh.appendChild(el("h2", null, ptitle + " (" + pics.shots.length + ")"));
       if(pics.shots.length > 1) sh.appendChild(el("span","hint", T.swipe[lang] + " →"));
       view.appendChild(sh);
 
-      var strip = el("div","shots");
+      var strip = el("div", "shots" + (isB ? (a.orient === "portrait" ? " tall" : " wide") : ""));
       pics.shots.forEach(function(n){
         var b = el("button","shot");
         b.type = "button";
@@ -2174,11 +2427,11 @@
 
     var pager = el("div","pager");
     function pagerLink(idx, kind){
-      if(idx < 0 || idx >= ACT.length) return null;
-      var x = ACT[idx];
+      if(idx < 0 || idx >= LIST.length) return null;
+      var x = LIST[idx];
       var l = el("a", kind === "next" ? "nx" : "pv");
-      l.href = "#a/" + x.id;
-      l.appendChild(el("span","pk", T[kind === "next" ? "next" : "prev"][lang]));
+      l.href = pre + x.id;
+      l.appendChild(el("span","pk", T[(kind === "next" ? "next" : "prev") + (isB ? "Build" : "")][lang]));
       l.appendChild(el("span","pt", x[lang]));
       return l;
     }
@@ -2202,21 +2455,26 @@
     return id;
   }
   var LEGACY_IDS = {odyvice:"audivice", premed:"freemed"};
+  function currentBuildId(){
+    var m = (location.hash || "").match(/^#b\/(.+)$/);
+    return m ? decodeURIComponent(m[1]) : null;
+  }
 
   function route(){
-    var id = currentDetailId();
+    var id = currentDetailId(), bid = currentBuildId(), side = location.hash === "#side";
     var listV = document.getElementById("list-view");
     var detV  = document.getElementById("detail-view");
 
-    document.documentElement.classList.toggle("in-detail", !!id);
-    if(id){
+    document.documentElement.classList.toggle("in-detail", !!(id || bid || side));
+    if(id || bid || side){
       if(!listV.hidden) listScroll = window.scrollY || 0;
-      renderDetail(id);
+      if(side) renderSide(detV);
+      else renderDetail(id || bid, bid ? "b" : "a");
       listV.hidden = true;
       detV.hidden = false;
       window.scrollTo(0, 0);
       // 방문 분석(GA): 프로젝트 상세를 열 때마다 어떤 프로젝트인지 기록
-      try{ if(window.gtag) gtag("event", "view_project", {project_id: id, language: lang}); }catch(e){}
+      try{ if(window.gtag) gtag("event", "view_project", {project_id: side ? "side" : (id || bid), language: lang}); }catch(e){}
     } else {
       var wasDetail = !detV.hidden;
       detV.hidden = true;
@@ -2270,12 +2528,15 @@
   function renderAll(){
     applyStatic();
     renderProjects();
+    renderSideEntry();
     renderFeatured();
     renderAbout();
     renderArchive();
     renderCredentials();
-    var id = currentDetailId();
+    var id = currentDetailId(), bid = currentBuildId();
     if(id) renderDetail(id);
+    else if(bid) renderDetail(bid, "b");
+    else if(location.hash === "#side") renderSide(document.getElementById("detail-view"));
   }
 
   function setLang(next){
@@ -2305,7 +2566,7 @@
   window.addEventListener("hashchange", route);
 
   // 첫 접속 애니메이션: 배경이 천천히 밝아지고, 이름이 한 자씩 솟음 (목록 화면으로 들어올 때 한 번, '동작 줄이기' 설정이면 생략)
-  if(!currentDetailId() && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)){
+  if(!currentDetailId() && !currentBuildId() && location.hash !== "#side" && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)){
     document.documentElement.classList.add("intro");
     setTimeout(function(){ document.documentElement.classList.add("intro-done"); }, 3200);
   }
