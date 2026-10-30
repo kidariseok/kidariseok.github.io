@@ -44,8 +44,8 @@ SITE.en = {
     },
     work: {
       kicker: "SELECTED WORK",
-      title: "Projects I built and key activities",
-      desc: "Each card starts with what it was and what I was responsible for. Open any card for the full record.",
+      title: "Projects and Key activities",
+      desc: "Explore selected projects showcasing my work, contributions, and measurable impact.",
       projects: "Projects",
       projectsSub: "Services I planned and built",
       featured: "Highlights",
@@ -62,11 +62,11 @@ SITE.en = {
       steps: [
         {label:"EXPLORE", period:"2024", text:"After entering Computer Education at Sungkyunkwan University, I tried the areas that drew me: AI and data, service planning, education, and global activities."},
         {label:"DISCOVER", period:"2024 – 2025", text:"Along the way, I found that my interest lies less in technology itself than in where it meets people and industry."},
-        {label:"ADAPT", period:"2025 – 2026", text:"While serving in the Republic of Korea Army as a network management soldier and squad leader, I earned four certifications and two English test scores to prepare for what comes next.", more:"See certifications", em:true},
+        {label:"ADAPT", period:"2025 – 2026", text:"While serving in the Republic of Korea Army as a network management soldier and squad leader, I earned three certifications and two English test scores to prepare for what comes next.", more:"See certifications", em:true},
         {label:"NEXT", period:"Next", text:"I want to connect technology with real-world needs, bridging people, ideas, and industry to create meaningful value."}
       ]
     },
-    activities: {kicker:"ACTIVITY ARCHIVE", title:"Activity archive", count:"{n}", description:"One representative activity per area comes first. Use the button below to see the rest, grouped by area, and open any item for the full record."},
+    activities: {kicker:"ACTIVITY ARCHIVE", title:"Activities", count:"{n}", description:"A collection of experiences highlighting my leadership, collaboration, and contributions across diverse fields."},
     credentials: {
       kicker: "RECORDS",
       title: "Credentials",
@@ -287,7 +287,7 @@ SITE.en = {
       org: "GDG on Campus : SKKU",
       summary: "When a planned collaboration with Japanese universities fell through, changed course and organised a joint AI hackathon across SKKU, Korea University and Sogang (50 participants, 9 teams).",
       short: "Pivoted from a failed global plan to a 3-university hackathon for 50.",
-      card: {role:"HR lead · event planning · budget management", result:"3 universities · 50 people · 9 teams · roughly KRW 7 million raised"},
+      card: {role:"HR lead · event planning · budget management", result:"Delivered the overnight event for 50 participants in 9 teams (35 of 37 survey respondents rated it 91/100 or higher)"},
       panel: {
         role: "HR lead of GDG on Campus : SKKU · overall planning and budget management",
         scale: "50 participants · 9 teams",
@@ -374,9 +374,9 @@ SITE.en = {
         role: ["PM", "UX/UI planning", "PRD writing", "Service structure design"],
         tools: ["Figma"],
         team: "Team of 6 (planning/PM 1 · UI design 1 · FE/BE 4)",
-        period: "6 Oct – 16 Nov 2024 · about 6 weeks (final 16 Nov)",
+        period: "6 Oct – 16 Nov 2024 · 6 weeks (final 16 Nov)",
         date: "Final 16 Nov 2024",
-        result: "Service deployed in about 6 weeks",
+        result: "Service deployed in 6 weeks",
         key: "6 weeks",
         stack: ["React", "Spring Boot", "OpenAI API", "MySQL"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/Line4thon-Gather/gather_Front_End"}, {t:"GitHub · Back-end", href:"https://github.com/Line4thon-Gather/gather_back_end"}]
@@ -535,7 +535,7 @@ SITE.en = {
       title: "KT&G Sangsang Withus Overseas Volunteer Corps",
       summary: "Deployed to an elementary school in Bogor, Indonesia for 177 hours of education and environmental-improvement volunteering.",
       short: "177 hours of education and environmental volunteering at an elementary school in Bogor, Indonesia.",
-      card: {role:"Accounting & supplies · led ddakji and tooth-brushing lessons", result:"177 volunteer hours · one third-grade class (34 students)"},
+      card: {role:"Accounting & supplies · led Korean traditional game, ddakji and tooth-brushing lessons", result:"Built a new building for the school and acquired teaching experiences"},
       panel: {
         role: "Accounting & supplies team (Team 1 class supplies · budget of roughly ₩2.2 million per team) · planned and led the ddakji class and tooth-brushing lesson",
         team: "40 volunteers (4 teams of 10)",
@@ -762,7 +762,7 @@ SITE.en = {
       title: "2024/2026 EduTech Expo",
       summary: "Went beyond looking at the technology to observe which education problems it solves. Comparing two expos two years apart, I saw that data, user experience and policy shape edtech.",
       short: "Observed which education problems tech solves, and compared two expos two years apart.",
-      card: {role:"Visited twice, comparing 2024 and 2026", result:"Five insights on the education problems behind the tech"},
+      card: {role:"Visited twice, comparing 2024 and 2026", result:"Gained five insights on the education problems behind the tech"},
       panel: {
         role: "Visited twice and compared 2024 with 2026",
         where: "COEX · Adobe session",
@@ -822,7 +822,7 @@ SITE.en = {
       ]
     },
     "speech-mentors": {
-      title: "KT&G Sangsang Univ Global Speech Mentors",
+      title: "KT&G Sangsang Univ Global Speech Mentoring",
       summary: "Led a team delivering speech mentoring to foreign residents in Korea. Through conversations with a Pakistani resident, prepared a speech on recognising cultural difference and raising multicultural awareness.",
       short: "Team lead mentoring foreign residents in Korea on multicultural speeches.",
       vid: {
@@ -904,7 +904,7 @@ SITE.en = {
     },
     goormthon: {
       title: "All of Us Are Yuljeon Now",
-      org: "Goormthon Univ 3rd cohort: campus organiser",
+      org: "Goormthon Univ 3rd Cohort: Campus Organiser",
       summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
       short: "Campus organiser; built club programs and ran weekly study sessions.",
       proj: {
@@ -1290,7 +1290,7 @@ SITE.en = {
       title: "GDG on Campus : SKKU",
       summary: "When GDSC's reorganisation into GDG on Campus cut off the Google network we used to rely on, I booked speakers for the monthly global IT seminar through several routes - cold emails, people I had met in class, and referrals from the university program - and documented the whole outreach process in Korean and English.",
       short: "Booked monthly IT seminar speakers without an existing network; documented the process.",
-      card: {role:"Core / HR lead · monthly IT seminar speaker outreach", result:"About 20–30 attendees per seminar · outreach process documented"},
+      card: {role:"Core / HR lead · monthly IT seminar speaker outreach", result:"Held regular seminars inspiring 500 students per year"},
       panel: {
         role: "Joined the Administration team → Core / HR lead the next semester · most speaker outreach for the monthly global IT seminar",
         team: "Administration team of 4",
@@ -1488,7 +1488,7 @@ SITE.en = {
       title: "Future Technologies of the Fourth Industrial Revolution",
       summary: "Before starting university, completed 14 online courses over two days, 14 hours in total.",
       panel: {
-        role: "Found it on the university website before enrolling and signed up on my own",
+        role: "Earned insights before getting into university",
         scale: "14 lectures · 14 hours (2 full days, 10:00–18:00)",
         period: "13–14 Feb 2024 · online",
         where: "SKKU AI Institute lecture series",
