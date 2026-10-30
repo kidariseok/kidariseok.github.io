@@ -7,7 +7,7 @@
 대학교에 다니며 참여했던 대외활동, 프로젝트, 봉사, 교내활동과 자격증 등을 한곳에 정리했습니다.
 단순히 활동 목록을 나열하기보다는, **무엇을 했고 어떤 역할을 맡았는지**를 기록해 두는 것을 목표로 만들었습니다.
 
-**Portfolio:** https://kidariseok.github.io
+**Portfolio:** https://jinseok-portfolio.vercel.app
 
 ---
 
