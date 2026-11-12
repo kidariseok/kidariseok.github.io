@@ -356,9 +356,12 @@ SITE.en = {
         {
           p: "It fell just before exams, which made recruiting hard. We wanted a year-end date, but the program budget had to be spent by early December. The survey echoed this ('too close to exams', 'not enough dev time'). Next time I would start from the budget deadline and plan backwards around the exam calendar."
         },
-        {h:"07. Looking back"},
+        {h:"07. What I learned"},
         {
-          p: "I used to think the quality of the event depended on keeping its global shape. But with several organisations involved, many variables were outside my control. What mattered was rebuilding the options from the resources and constraints we actually had, and connecting directly with the people who could help. I also felt how delaying one key decision pushes back sponsorship, venue, promotion and recruitment all at once."
+          p: "I used to think the quality of the event depended on keeping its global shape. But with several organisations involved, many variables were outside my control. What mattered was rebuilding the options from the resources and constraints we actually had, and connecting directly with the people who could help."
+        },
+        {
+          p: "I also felt how delaying one key decision pushes back sponsorship, venue, promotion and recruitment all at once."
         },
         {h:"08. What changed afterwards"},
         {
