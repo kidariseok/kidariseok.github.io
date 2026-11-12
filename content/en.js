@@ -376,7 +376,7 @@ SITE.en = {
     line4: {
       title: "2GATHER",
       org: "LIKELION Line-4 Hackathon",
-      summary: "As PM, planned 2GATHER - an AI-powered marketing solution that helps students and early-stage founders plan promotion and connect with the right people on a small budget and a limited network.",
+      summary: "As PM and UX/UI lead, planned 2GATHER, an AI promotion-strategy platform that helps students and early-stage founders plan promotion on a small budget, and shipped it in six weeks.",
       short: "PM · UX/UI for 2GATHER, an AI promotion-strategy platform shipped in 6 weeks",
       proj: {
         name: "2GATHER",
@@ -1299,7 +1299,7 @@ SITE.en = {
     },
     gdsc: {
       title: "GDG on Campus : SKKU",
-      summary: "When GDSC's reorganisation into GDG on Campus cut off the Google network we used to rely on, I booked speakers for the monthly global IT seminar through several routes - cold emails, people I had met in class, and referrals from the university program - and documented the whole outreach process in Korean and English.",
+      summary: "After GDSC became GDG on Campus and the old Google network was cut off, I booked speakers for the monthly global IT seminar through several routes and documented the outreach process in Korean and English.",
       short: "Booked monthly IT seminar speakers without an existing network; documented the process.",
       card: {role:"Core / HR lead · monthly IT seminar speaker outreach", result:"Held regular seminars inspiring 300 students per year"},
       panel: {

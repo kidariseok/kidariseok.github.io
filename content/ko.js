@@ -346,7 +346,7 @@ SITE.ko = {
     line4: {
       title: "2GATHER",
       org: "멋쟁이사자처럼 4호선톤",
-      summary: "PM · UX/UI로 AI 홍보 전략 플랫폼 2GATHER를 기획해 6주 만에 서비스를 배포함.",
+      summary: "PM · UX/UI로 AI 홍보 전략 플랫폼 2GATHER를 기획해, 학생과 초기 창업자가 적은 예산으로 홍보를 설계하도록 돕는 서비스를 6주 만에 배포함.",
       short: "PM · UX/UI로 AI 홍보 전략 플랫폼 2GATHER를 기획해 6주 만에 서비스를 배포함",
       proj: {
         name: "2GATHER",
@@ -885,7 +885,7 @@ SITE.ko = {
     goormthon: {
       title: "지금 우리 율전은",
       org: "구름톤 유니브 3기 교내 운영진",
-      summary: "교내 운영진으로 프로그램을 개발하고, 매주 스터디를 운영함.",
+      summary: "교내 소프트웨어 개발 동아리 운영진으로 동아리 취지에 맞는 프로그램을 개발하고, 매주 스터디와 강의를 운영함.",
       short: "교내 운영진으로 프로그램을 개발하고, 매주 스터디를 운영함",
       proj: {
         name: "지금 우리 율전은",
@@ -1265,7 +1265,7 @@ SITE.ko = {
     },
     gdsc: {
       title: "GDG on Campus : SKKU",
-      summary: "여러 경로로 월간 IT 세미나 연사를 섭외하고, 섭외 과정을 문서화함.",
+      summary: "GDSC가 GDG on Campus로 개편되며 기존 구글 네트워크가 끊기자, 여러 경로로 월간 글로벌 IT 세미나 연사를 섭외하고 그 과정을 한국어와 영어로 문서화함.",
       short: "여러 경로로 월간 IT 세미나 연사를 섭외하고, 섭외 과정을 문서화함",
       card: {role:"인사 총괄(Core) · 월간 IT 세미나 연사 섭외", result:"정기 세미나를 열어 한 해 동안 300명의 학생에게 강의를 제공함"},
       panel: {
