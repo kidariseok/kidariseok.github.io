@@ -456,8 +456,8 @@ SITE.en = {
 
         {k:"07 · My part", h:"I turned the idea into the structure of a service."},
         {p:"As PM, I led the planning process <b>from pitching the idea through planning, wireframes, working with developers and presenting</b>."},
-        {people:[{"role": "Planning · PM", "n": 1, "me": true, "note": "Me"}, {"role": "UI design", "n": 1, "note": "Minjeong Jang"}, {"role": "Front-end · Back-end", "n": 4, "note": "Four teammates"}]},
-        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Final UI design: Minjeong Jang", "Front-end and back-end: four teammates"], mine:[
+        {people:[{"role": "Planning · PM", "n": 1, "me": true, "note": "Me"}, {"role": "UI design", "n": 1, "note": "One teammate"}, {"role": "Front-end · Back-end", "n": 4, "note": "Four teammates"}]},
+        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Final UI design: one teammate", "Front-end and back-end: four teammates"], mine:[
           "Defined the problem from a real recruiting experience and pitched the project",
           "Planned the core features and user flow",
           "Researched six promotion channels and turned them into service rules",
@@ -495,7 +495,7 @@ SITE.en = {
             name: "Intro",
             pm: "As PM, I led the planning process from pitching the idea through wireframes, working with developers and presenting.",
             slides: [
-              {k:"INTRO", t:"2GATHER, a promotion-strategy platform", d:"An AI-powered, timeline-based marketing solution. Built by Jinseok Oh (PM), Minjeong Jang (design), Yechan Kim and Hyeonseo Choi (front-end), and Minseo Kang and Jindong Lee (back-end)."}
+              {k:"INTRO", t:"2GATHER, a promotion-strategy platform", d:"An AI-powered, timeline-based marketing solution. Built by a team of six: one PM, one designer, two front-end and two back-end developers."}
             ]
           },
           {
@@ -1113,7 +1113,7 @@ SITE.en = {
             {k:"COVER", t:"Deep Dive into E-Commerce: Explore Like a Billionaire", d:"The cover of our SKKU-BA-DIVE 2024 Summer application presentation, from the GDG on Campus : SKKU team. Student IDs have been removed."},
             {k:"CONTENTS", t:"Contents", d:"Six parts: team, motivation, pre-plan, itinerary, next steps and expected effects."},
             {k:"TEAM 01", t:"GDG on Campus : SKKU", d:"A university-based community for students interested in Google technologies. We introduced our activities, from Google tech study workshops, the EAP national policy training, the GDG on Campus Korea joint hackathon and the Google Solution Challenge to the global IT video lectures, under the keywords “convergence” and “global.”"},
-            {k:"TEAM 02", t:"Diversity of majors and years", d:"Introduces the five-person team from different majors and years. For myself, I included that I was a first-year Computer Education student who lived in China for five years. Photos of the other members are blurred."}
+            {k:"TEAM 02", t:"Diversity of majors and years", d:"Introduces the five-person team from different majors and years. For myself, I included that I was a first-year Computer Education student who lived in China for five years. Photos and names of the other members are hidden."}
           ]},
           {name: "Motivation", slides: [
             {k:"MOTIVATION 01", t:"Rapid growth of global e-commerce", d:"App ranking data shows Chinese platforms such as Temu, SHEIN and AliExpress posting high growth in the global e-commerce market."},
@@ -1415,7 +1415,7 @@ SITE.en = {
         {p:"and developed it into a single service flow."},
         {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Research on supply-chain problems and the trade environment", "Service idea and feature design", "Discussion of how to match companies", "Producing the presentation"], mine:["Developing the service idea from a software and data perspective", "Discussing the matching flow using company information and requirements", "Reviewing service features and the user flow", "Turning the team's ideas into the presentation"]}},
 
-        {k:"04 · Team Presentation", h:"We developed the project from problem to service in a 17-slide presentation."},
+        {k:"04 · Team Presentation", h:"We developed the project from problem to service in a 19-slide presentation."},
         {p:"We laid out the team's result in the presentation as a flow of <b>problem definition → service design → expected effects</b>."},
         {p:"Starting from the problem of supply-chain instability, we expressed the process of taking in a company's requirements and searching for and comparing matching partners as <b>mockups that let you imagine the actual service screens</b>."},
         {h3:"Key points covered in the presentation"},
