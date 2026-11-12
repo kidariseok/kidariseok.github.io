@@ -1006,7 +1006,7 @@ SITE.en = {
       short: "Assisted classes for adolescents with developmental disabilities.",
       panel: {
         role: "Assisting classes for adolescents with developmental disabilities",
-        scale: "7 volunteer hours (1365 certificate)"
+        result: "7 volunteer hours (1365 certificate)"
       },
       body: [
         {k:"01 · My role", h:"I supported the classes from the side."},
@@ -1194,7 +1194,7 @@ SITE.en = {
       panel: {
         role: "Home Health-Care Team member (cohort 30) → Donui-dong part lead · team study lead · planned doctor (MD) visits",
         team: "Home Health-Care Team of about 14 (3 programs) · 2–3 members on the Donui-dong visits",
-        period: "2024.03 – 2025.03",
+        period: "Mar 2024 – Mar 2025",
         where: "FreeMed (non-profit) · Donui-dong jjokbang district, Jongno-gu, Seoul (partner: Saetteuljip)",
         result: "17 visits · 24 h 10 min (1365 certificate) · wrote 12 visit records and 9 meeting minutes",
         key: "17 visits",
@@ -1499,7 +1499,7 @@ SITE.en = {
       title: "Future Technologies of the Fourth Industrial Revolution",
       summary: "Before starting university, completed 14 online courses over two days, 14 hours in total.",
       panel: {
-        role: "Earned technical insights before getting into university",
+        role: "Lecture attendee",
         scale: "14 lectures · 14 hours (2 full days, 10:00–18:00)",
         period: "13–14 Feb 2024 · online",
         where: "SKKU AI Institute lecture series",
