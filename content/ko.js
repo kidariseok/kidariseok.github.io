@@ -841,6 +841,7 @@ SITE.ko = {
     audivice: {
       title: "오디바이스 대학생 멘토",
       summary: "중고등학생 대상 학습, 멘탈 관리 등 다양한 부분에서 멘토링을 제공함.",
+      short: "중고등학생에게 학습법과 멘탈 관리를 멘토링함",
       panel: {
         role: "중·고등학생 대상 공부법 · 멘탈 관리법 조언",
         scale: "1:1 음성 상담 5회 · 총 5시간"
@@ -971,6 +972,7 @@ SITE.ko = {
     dreamon: {
       title: "드림온학교",
       summary: "발달장애청소년 수업 보조 외 활동을 진행함.",
+      short: "발달장애 청소년 수업을 보조함",
       panel: {role:"발달장애 청소년 수업 보조", scale:"봉사 7시간 (1365 확인서)"},
       body: [
         {k:"01 · 맡은 역할", h:"수업 전반을 곁에서 보조했습니다."},
@@ -1114,6 +1116,7 @@ SITE.ko = {
     "s-global": {
       title: "S-Global Challenger 도전",
       summary: "GDG on Campus : SKKU 사람들과 함께 해외 파견 교내 공모전에 도전함.",
+      short: "GDG on Campus : SKKU 팀원들과 해외 파견 교내 공모전에 도전함",
       panel: {
         role: "AI/TensorFlow 팀원 · 연구 주제 정의 · 시계열 모델링 설계 · 해외 협업 계획 · 제안서 작성 주도",
         team: "GDG on Campus : SKKU · 4인 팀",
@@ -1342,6 +1345,7 @@ SITE.ko = {
     "trade-ai": {
       title: "2024 대학생 무역 인공지능 캠프",
       summary: "무역과 AI를 접목해 공급망 불안에 대응하는 기업 매칭 서비스를 기획함.",
+      short: "공급망 불안에 대응하는 기업 매칭 서비스 CSBBMS를 5인 팀으로 기획함",
       panel: {
         role: "소프트웨어 · 데이터 관점에서 서비스 구체화 · 매칭 흐름 논의 · 발표자료 구체화",
         team: "11조 · 5인 팀",
@@ -1537,6 +1541,7 @@ SITE.ko = {
     worldvision: {
       title: "월드비전",
       summary: "월드비전 서신 영어 번역을 진행함(120회, 총 40시간).",
+      short: "월드비전 서신 120건을 영어로 번역함(40시간)",
       panel: {
         role: "해외 후원 아동과 국내 후원자 간 서신 한-영 / 영-한 번역",
         result: "번역 120건 · 총 40시간 (매주 10편)",
