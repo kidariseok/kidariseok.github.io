@@ -1684,7 +1684,8 @@ SITE.ko = {
       ktng: "KT&G 상상위더스 동계 대학생 해외봉사단",
       freemed: "사단법인 프리메드",
       redcross: "대한적십자사",
-      dreamon: "드림온학교"
+      dreamon: "드림온학교",
+      suwonGwonseon: "수원권선지역아동센터"
     },
     titles: {
       homeVisit: "쪽방촌 방문건강관리",
@@ -1698,7 +1699,8 @@ SITE.ko = {
       teachingRehearsal: "교육봉사 리허설",
       prepMeeting: "준비모임",
       bloodDonation: "헌혈",
-      classAssist: "발달장애청소년 수업 보조"
+      classAssist: "발달장애청소년 수업 보조",
+      afterSchoolTutoring: "방과 후 학습봉사 - 3분기 (2)"
     },
     fields: {other: "기타", health: "보건·의료", education: "교육"}
   }

@@ -30,63 +30,28 @@
   /* ══════════════════════════════════════════════════════════════
      [1] 색 · 글꼴  ◀ 사이트 분위기를 바꾸려면 여기
      ──────────────────────────────────────────────────────────────
-     흰 바탕 + 검은 카드 + 파란 포인트 한 가지(--accent) 로 된 디자인입니다.
+     어두운 바탕과 카드에 파란색(--accent)으로 포인트를 줍니다.
      · --accent : 포인트 파란색 (버튼, 숫자 단위, 구분 글씨)
      · --block  : 검은 카드 색 (대표 활동, 장학, 연락처, 기록 요약 카드에 마우스를 올렸을 때)
      · --hero   : 첫 화면과 맨 아래 검은 띠 색
-
-     ※ 색 정의가 세 군데 있습니다.
-        · :root{...}                          → 밝은 화면용
-        · @media (prefers-color-scheme: dark) → 어두운 화면용(자동)
-        · :root[data-theme="dark"]            → 어두운 화면용(수동)
-        어두운 모드도 쓰려면 세 곳을 같이 고쳐야 합니다.
 
      ※ 유리 효과는 Apple 'Liquid Glass'를 웹에서 흉내 낸 것입니다(공식 CSS 없음).
         흐림(backdrop-filter) + 윗면 빛 테두리로 근사했고,
         메뉴 · 언어 버튼 · 사진 닫기 버튼처럼 '떠 있는 층'에만 씁니다.
      ══════════════════════════════════════════════════════════════ */
   :root{
-    --paper:#ffffff;       /* 페이지 바탕 */
-    --soft:#f4f6f9;        /* 옅은 회색 띠 */
-    --tile:#f4f6f9;        /* 흰 띠 위 카드 */
-    --line:#e3e7ee;
-    --ink:#0f1218;         /* 제목 글자 */
-    --text:#2b313c;        /* 본문 글자 */
-    --muted:#5d6573;
-    --accent:#1c6fe0;
-    --accent-2:#4d94ff;    /* 검은 바탕 위 파란 글자 */
-    --accent-text:#1a64cc; /* 흰 바탕 위 파란 글자(대비 확보) */
-    --accent-soft:#e6effc;
-    --hero:#0a0c10;
-    --block:#0a0c10;
-    --block-2:#15181f;
-    --block-line:rgba(255,255,255,0);
-    --on-block:#f3f5f9;
-    --on-block-2:#aab2c0;
-    --bar:rgba(255,255,255,.78);
-    --shadow:0 22px 44px -22px rgba(10,12,16,.45);
+    color-scheme:dark;
+    --paper:#0b0d11; --soft:#10131a; --tile:#151922; --line:#232833;
+    --ink:#f1f3f7; --text:#c9cfd9; --muted:#939bab;
+    --accent:#1c6fe0; --accent-2:#4d94ff;
+    --accent-text:#6aa5ff; --accent-soft:#132a4f;
+    --hero:#07080b; --block:#161a22; --block-2:#1b2029; --block-line:rgba(255,255,255,.08);
+    --on-block:#f3f5f9; --on-block-2:#aab2c0;
+    --bar:rgba(11,13,17,.72); --shadow:0 22px 44px -22px rgba(0,0,0,.8);
     --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
     --display:"Archivo","Noto Sans KR",system-ui,sans-serif;
     --ease:cubic-bezier(.16,1,.3,1);
-    --r:20px;              /* 카드 모서리 */
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --paper:#0b0d11; --soft:#10131a; --tile:#151922; --line:#232833;
-      --ink:#f1f3f7; --text:#c9cfd9; --muted:#939bab;
-      --accent-text:#6aa5ff; --accent-soft:#132a4f;
-      --hero:#07080b; --block:#161a22; --block-2:#1b2029; --block-line:rgba(255,255,255,.08);
-      --bar:rgba(11,13,17,.72); --shadow:0 22px 44px -22px rgba(0,0,0,.8);
-      color-scheme:dark;
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#0b0d11; --soft:#10131a; --tile:#151922; --line:#232833;
-    --ink:#f1f3f7; --text:#c9cfd9; --muted:#939bab;
-    --accent-text:#6aa5ff; --accent-soft:#132a4f;
-    --hero:#07080b; --block:#161a22; --block-2:#1b2029; --block-line:rgba(255,255,255,.08);
-    --bar:rgba(11,13,17,.72); --shadow:0 22px 44px -22px rgba(0,0,0,.8);
-    color-scheme:dark;
+    --r:20px;
   }
 
   *{box-sizing:border-box}
@@ -145,7 +110,7 @@
   /* 목록 화면: 첫 화면을 글과 배경만으로 채우려고 메뉴를 위로 숨겨 둡니다.
      위로 스크롤 · 마우스를 화면 맨 위로 · Tab 으로 메뉴에 들어오면 내려오고, 이름이 로고 자리에 내려앉은 뒤에는 계속 보입니다.
      (맨 아래 <script> 의 [첫 화면 전환]) 상세 화면에서는 예전처럼 늘 보입니다.
-     첫 화면 위에 있을 때는 어두운 유리, 흰 바탕 위로 오면(.on-paper) 원래 밝은 유리. */
+     첫 화면과 본문(.on-paper)의 배경에 맞춰 유리 효과를 조정합니다. */
   html:not(.in-detail) header.bar{position:fixed;left:0;right:0;transform:translateY(-105%);transition:transform .5s var(--ease),background .3s,border-color .3s}
   html.bar-show:not(.in-detail) header.bar{transform:none}
   html:not(.in-detail):not(.on-paper) header.bar{background:rgba(8,10,14,.5);border-bottom-color:rgba(255,255,255,.1)}
@@ -432,13 +397,11 @@
   .aref a:hover{color:var(--ax)}
   .all{display:flex;justify-content:center;margin-top:28px}
   .all:has(> [hidden]){display:none}
-  /* 구분별 색: --ax 는 흰 바탕용, --ax-2 는 검은 바탕(마우스 올림)·어두운 화면용 */
-  .ax-project{--ax:#1a64cc;--ax-2:#6aa5ff}
-  .ax-community{--ax:#c2410c;--ax-2:#fb923c}
-  .ax-edu{--ax:#1b7f45;--ax-2:#5fd08e}
-  .ax-learn{--ax:#0e7c86;--ax-2:#4fd1db}
-  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) [class*="ax-"]{--ax:var(--ax-2)} }
-  :root[data-theme="dark"] [class*="ax-"]{--ax:var(--ax-2)}
+  /* 구분별 색 */
+  .ax-project{--ax:#6aa5ff}
+  .ax-community{--ax:#fb923c}
+  .ax-edu{--ax:#5fd08e}
+  .ax-learn{--ax:#4fd1db}
   .badge[class*="ax-"]{color:var(--ax);background:color-mix(in srgb,var(--ax) 13%,transparent)}
 
   /* 이력 (RECORDS): 증거 자료실이라 작게. 왼쪽 줄 이름, 오른쪽 항목 (EDUCATION · LANGUAGE · CERTIFICATION · SCHOLARSHIP · VOLUNTEER) */
@@ -1003,9 +966,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=20261112"></script>
-<script src="content/ko.js?v=20261112"></script>
-<script src="content/en.js?v=20261112"></script>
+<script src="content/common.js?v=20261112-2"></script>
+<script src="content/ko.js?v=20261112-2"></script>
+<script src="content/en.js?v=20261112-2"></script>
 <script>
 (function(){
   "use strict";
@@ -1726,6 +1689,10 @@
 
   /* ---------- 봉사활동 전체 내역 창 ----------
      데이터: common.js 의 volunteerLog.records / 글자: ko.js · en.js 의 volunteerLog */
+  function volunteerIssueDates(log){
+    return log.issued.map(function(date){ return date.replace(/-/g, "."); }).join(" · ");
+  }
+
   function openVolunteer(){
     var V = C.volunteerLog, W = L().volunteerLog;
     var recs = V.records.slice().sort(function(a, b){ return a.date < b.date ? 1 : -1; });
@@ -1742,7 +1709,7 @@
     var htext = el("div");
     var h = el("h2", null, W.title); h.id = "vdlg-title";
     htext.appendChild(h);
-    htext.appendChild(el("p","vsrc", fill(W.source, {issued: dot(V.issued)})));
+    htext.appendChild(el("p","vsrc", fill(W.source, {issued: volunteerIssueDates(V)})));
     head.appendChild(htext);
     var x = el("button","vclose");
     x.type = "button";
@@ -1932,7 +1899,7 @@
       var V = C.volunteerLog, total = 0, vt = findTile("volunteer");
       V.records.forEach(function(r){ total += r.minutes; });
       var it = item(rowOf(CR.vol), vt ? vt.k[lang] : "", Math.floor(total / 60) + (vt && vt.u[lang] ? vt.u[lang].trim() : ""),
-        fill(CR.volCount, {n: V.records.length}) + " · " + fill(CR.volTotal, {issued: V.issued.replace(/-/g,".")}));
+        fill(CR.volCount, {n: V.records.length}) + " · " + fill(CR.volTotal, {issued: volunteerIssueDates(V)}));
       var ob = el("button","btn line vbtn2", CR.volOpen);
       ob.type = "button";
       ob.setAttribute("aria-haspopup","dialog");

@@ -77,7 +77,7 @@ SITE.en = {
       cert: "CERTIFICATION",
       awards: "SCHOLARSHIP",
       vol: "VOLUNTEER",
-      volTotal: "1365 Volunteer Portal certificate · issued {issued}",
+      volTotal: "1365 Volunteer Portal certificates · issued {issued}",
       volOpen: "Full record",
       volCount: "{n} sessions",
       volCountOne: "{n} session"
@@ -1703,7 +1703,7 @@ SITE.en = {
     title: "Full volunteer record",
     summary: "{dur} in {n} sessions",
     period: "{from} - {to}",
-    source: "From the official 1365 Volunteer Portal certificate (issued {issued})",
+    source: "From official 1365 Volunteer Portal certificates (issued {issued})",
     more: "Show {n} more",
     less: "Show less",
     groupSummary: "{n} sessions · {dur}",
@@ -1715,7 +1715,8 @@ SITE.en = {
       ktng: "KT&G Sangsang Withus Winter Overseas Volunteer Corps",
       freemed: "FreeMed",
       redcross: "Korean Red Cross",
-      dreamon: "Dream On School"
+      dreamon: "Dream On School",
+      suwonGwonseon: "Suwon Gwonseon Community Child Center"
     },
     titles: {
       homeVisit: "Home health-care visit, jjokbang district",
@@ -1729,7 +1730,8 @@ SITE.en = {
       teachingRehearsal: "Teaching rehearsal",
       prepMeeting: "Preparation meeting",
       bloodDonation: "Blood donation",
-      classAssist: "Class assistance, adolescents with developmental disabilities"
+      classAssist: "Class assistance, adolescents with developmental disabilities",
+      afterSchoolTutoring: "After-school tutoring - Q3 (2)"
     },
     fields: {other: "Other", health: "Health", education: "Education"}
   }
