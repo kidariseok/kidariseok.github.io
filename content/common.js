@@ -250,7 +250,7 @@ SITE.common = {
     {id:"gpa", icon:"ic-cap", value:"4.33"},
     {id:"volunteer", icon:"ic-heart", value:"auto"},
     {id:"ielts", icon:"ic-lang", value:"8.0"},
-    {id:"dulwich", icon:"ic-globe", value:"5", logo:"dulwich_crest.png"},
+    {id:"dulwich", icon:"ic-globe", value:"5"},
     {id:"funding", icon:"ic-chart", value:"700", link:"realthon"}
   ],
 

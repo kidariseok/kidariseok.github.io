@@ -13,9 +13,8 @@
      page        메뉴 · 첫 화면 · SELECTED WORK · 소개 · 활동 기록 · 이력 · 연락처 · 푸터
      ui          버튼과 작은 라벨 글자
      categories  활동 구분 이름 4가지
-     keywords / interests   지금 화면에 쓰지 않음 (예전 첫 화면의 키워드 띠 · 관심사 태그. 기록으로만 둠)
      tiles       숫자 모음의 글자 (숫자 자체는 common.js)
-     certGroups / certs   자격증 (certHead 는 지금 화면에 쓰지 않음)
+     certGroups / certs   자격증
      awards      장학 · 수상 (금액은 common.js)
      activities  활동 제목 · 요약 · 상세 본문
                  card: 메인 '대표 활동' 카드의 두 줄 {role, result}
@@ -88,15 +87,11 @@ SITE.en = {
       volTotal: "1365 Volunteer Portal certificates · issued {issued}",
       volOpen: "Full record",
       volCount: "{n} sessions",
-      volCountOne: "{n} session"
     },
     contact: {
       title: "Not stopping at experience, but building what comes next.",
       description: "",
-      blog: "Naver Blog: Jinseok's Record",
       blogShort: "Blog",
-      instagram: "Instagram",
-      photos: "Photo account"
     },
     footer: {name:"Jinseok Oh · Portfolio", updated:""}
   },
@@ -120,19 +115,12 @@ SITE.en = {
     deckPm: "My part",
     toc: "Contents",
     close: "Close",
-    all: "All",
     showAll: "Show all {n} activities",
     showLess: "Show less",
-    year: "{y}",
-    groupCount: "{n} items",
-    groupCountOne: "{n} item",
-    won: " KRW",
     awardTerm: "2024 Fall term · On campus"
   },
   // 활동 구분 이름 (common.js 의 categories 와 같은 id)
   categories: {project:"Projects & Hackathons", community:"Community & Organizing", edu:"Teaching & Service", learn:"Learning & Exploring"},
-  keywords: ["AI", "Data", "Software", "Computer Education", "Education", "Mentoring", "Volunteering", "Student programs", "Service planning", "Projects", "Hackathons", "International school", "English", "Global speakers", "Overseas volunteering", "Exchange student", "GDG on Campus : SKKU", "Hackathon lead", "PM"],
-  interests: ["AI · Data", "PM", "Service planning", "Developer", "Global"],
   // 숫자 모음의 글자 (숫자 자체는 common.js 의 tiles)
   tiles: {
     gpa: {label:"GPA", unit:" / 4.5", note:"Sungkyunkwan University · Computer Education"},
@@ -142,7 +130,6 @@ SITE.en = {
     dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments and built my global perspective."},
     funding: {label:"Hackathon funding raised", value:"$5K+", unit:"", note:"From programs at <b>3</b> universities · total budget ~$5.5K"}
   },
-  certHead: ["Credential", "Result", "Detail", "Issuer", "Obtained", "Status"],
   certGroups: {language:"Language", cert:"Certification"},
   certs: {
     adsp: {

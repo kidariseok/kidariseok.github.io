@@ -7,6 +7,7 @@
 - 브랜치 `claude/eloquent-allen-9foqao`, 커밋 `57fdd45` 까지 푸시됨. **PR 은 아직 없음** (작성자가 PR 을 요청함 → 1번 작업 뒤에 `main` 대상으로 열 것).
 - 끝난 것: 문서 4종(`docs/`), `CLAUDE.md` · `AGENTS.md`, `tools/check-content.mjs`, README 수정, `index.html` 의 비시각 수정 4건(AUDIT 7장).
 - 검증 스크립트 현재 결과: 오류 0 · 경고 0. 활동 21개(`goormthon` 을 프로젝트 / `goormthon-univ` 동아리로 분리). `icists` 요약 패널은 `role` · `where` 만 채움 — `result` 는 시안 C2 로 반영함(본문 보강은 이후).
+- `warak-mentoring`(`main` 에서 온 활동)의 영어 발표자료 슬라이드 제목 · 설명 경고 72건은 작성자 결정으로 **그대로 둡니다**(영어를 채우지 않음). 검증 경고가 72건 남는 것이 정상입니다.
 - 작업 규칙은 [CLAUDE.md](../CLAUDE.md). 화면이 달라지는 CSS 수정은 3장의 목표 값대로만 하고, 그 밖의 변경은 먼저 보고.
 
 ## 1. 바로 할 일 — 작성자가 확정한 두 가지 (미적용)
@@ -102,9 +103,11 @@
 
 규칙이 바뀌면 [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)의 해당 표와 [PORTFOLIO_AUDIT.md](PORTFOLIO_AUDIT.md)의 상태 열을 **같은 커밋에서** 고칠 것.
 
-## 4. 청소 (AUDIT P4) — 지우기 전에 작성자 확인
+## 4. 청소 (AUDIT P4) — 처리함 / 보류
 
-A-10 쓰이지 않는 CSS(`.more-link` · `.plk` · `.dhead .date` · `.dtop + .vsec`) / A-12 색 정리 · `:root[data-theme="dark"]` 중복 블록 / A-16 연락처를 `common.js` 로 / T-06 쓰이지 않는 데이터 키 / T-07 쓰이지 않는 파일 12개(`goorm_01`–`07` 은 `goormthon` 사진 줄에 쓸 수 있어 보임) / T-08 영상 92MB 줄이기 / T-09 저해상도 · 큰 사진 다시 내보내기 / T-12 `docs` · `tools` 배포 제외.
+**처리함:** A-10 미사용 CSS · T-06 미사용 데이터 키(일부) · T-07 미사용 이미지 12개 · T-12 `.vercelignore` · A-12 파란 반투명(`color-mix`).
+
+**보류:** A-16 연락처를 `common.js` 로(HTML 구조 변경) · T-06 의 `tiles` · `certs` · `awards` · `proj.date` · `notion` · A-12 의 검은 반투명 · T-08 영상 용량(재인코딩은 화질 손실) · T-09 저해상도 사진(원본 필요).
 
 ## 5. 매 작업 공통 검증
 

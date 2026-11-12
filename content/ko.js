@@ -13,9 +13,8 @@
      page        메뉴 · 첫 화면 · SELECTED WORK · 소개 · 활동 기록 · 이력 · 연락처 · 푸터
      ui          버튼과 작은 라벨 글자
      categories  활동 구분 이름 4가지
-     keywords / interests   지금 화면에 쓰지 않음 (예전 첫 화면의 키워드 띠 · 관심사 태그. 기록으로만 둠)
      tiles       숫자 모음의 글자 (숫자 자체는 common.js)
-     certGroups / certs   자격증 (certHead 는 지금 화면에 쓰지 않음)
+     certGroups / certs   자격증
      awards      장학 · 수상 (금액은 common.js)
      activities  활동 제목 · 요약(summary) · 목록용 짧은 요약(short, 없으면 summary) · 상세 본문
                  card: 메인 '대표 활동' 카드의 두 줄 {role, result} (common.js 의 featured 에 든 활동만)
@@ -100,10 +99,7 @@ SITE.ko = {
     contact: {
       title: "경험에 머무르지 않고, 다음을 만들어갑니다.",
       description: "",
-      blog: "네이버 블로그 ‘진석의 기록’",
       blogShort: "블로그",
-      instagram: "인스타그램",
-      photos: "사진 계정"
     },
     footer: {name:"오진석 · Portfolio", updated:""}
   },
@@ -127,21 +123,12 @@ SITE.ko = {
     deckPm: "내가 한 일",
     toc: "목차",
     close: "닫기",
-    all: "전체",
     showAll: "전체 활동 {n}개 보기",
     showLess: "접기",
-    year: "{y}년",
-    groupCount: "{n}개",
-    groupCountOne: "{n}개",
-    won: "원",
     awardTerm: "2024년 2학기 · 교내"
   },
   // 활동 구분 이름 (common.js 의 categories 와 같은 id)
   categories: {project:"프로젝트 · 해커톤", community:"커뮤니티 · 운영", edu:"교육 · 봉사", learn:"학습 · 탐색"},
-  // 첫 화면 이름 뒤로 천천히 흘러가는 키워드 띠 (장식용 · 화면 읽기에서는 제외. 순서대로, 쉼표로 구분)
-  keywords: ["AI", "데이터", "소프트웨어", "컴퓨터교육", "교육", "멘토링", "봉사", "학생 대상 활동", "서비스 기획", "프로젝트", "해커톤", "국제학교", "영어", "해외 연사", "해외봉사", "교환학생", "GDG on Campus : SKKU", "해커톤 총괄", "PM"],
-  // 첫 화면 이름 아래 관심사 태그
-  interests: ["AI·데이터", "PM", "서비스기획", "개발자", "글로벌"],
   // 숫자 모음의 글자 (숫자 자체는 common.js 의 tiles). '이력'에서 label · unit · note 를 씁니다
   tiles: {
     gpa: {label:"학점", unit:" / 4.5", note:"성균관대학교 컴퓨터교육과"},
@@ -151,7 +138,6 @@ SITE.ko = {
     dulwich: {label:"Dulwich College Suzhou", unit:"년", note:"중국 쑤저우 국제학교", more:"다양한 문화적 배경의 친구들과 5년간 함께 배우며 낯선 환경에 빠르게 적응하는 힘과 글로벌 역량을 길렀습니다."},
     funding: {label:"해커톤 후원 유치", unit:"만원+", note:"3개 대학 · 가용 예산 약 750만원대"}
   },
-  certHead: ["자격", "결과", "상세", "발급처", "취득일", "유효"],
   certGroups: {language:"어학", cert:"자격"},
   certs: {
     adsp: {name:"ADsP", result:"합격", detail:".", issuer:"한국데이터산업진흥원", status:"영구"},

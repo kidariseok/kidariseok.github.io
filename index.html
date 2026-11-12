@@ -83,7 +83,7 @@
   .btn .i{width:17px;height:17px;transition:transform .3s var(--ease)}
   .btn:hover .i{transform:translateX(3px)}
   .btn.solid{background:var(--accent);color:#fff}
-  .btn.solid:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(28,111,224,.6)}
+  .btn.solid:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px color-mix(in srgb,var(--accent) 60%,transparent)}
   .btn.ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.16)}
   .btn.ghost:hover{background:rgba(255,255,255,.16)}
   .btn.line{background:var(--paper);color:var(--ink);border-color:var(--ink)}
@@ -161,7 +161,7 @@
   @keyframes introUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .eyebrow{font-size:14px;font-weight:700;color:var(--accent-2);display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px}
   /* 학교 줄 끝의 학점 배지 (글자는 ko.js / en.js 의 hero.gpa · hero.gpaMax) */
-  .gpa-pill{display:inline-flex;align-items:baseline;gap:4px;padding:3px 10px;border-radius:999px;border:1px solid rgba(77,148,255,.45);background:rgba(28,111,224,.16);color:#fff;font:700 13px/1.4 var(--display);white-space:nowrap}
+  .gpa-pill{display:inline-flex;align-items:baseline;gap:4px;padding:3px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent-2) 45%,transparent);background:color-mix(in srgb,var(--accent) 16%,transparent);color:#fff;font:700 13px/1.4 var(--display);white-space:nowrap}
   .gpa-pill small{color:var(--accent-2);font:700 12px var(--display)}
   /* 이름: 영어는 좁고 굵은 Archivo 대문자, 한글은 Noto Sans KR 가장 굵게 */
   .hero h1{color:#fff;font:900 clamp(56px,13.5vw,200px)/.82 var(--display);font-stretch:68%;text-transform:uppercase;letter-spacing:-.03em;white-space:nowrap;margin:0;justify-self:start;transform-origin:0 0}
@@ -188,9 +188,6 @@
   .shead h2{font-size:clamp(26px,3vw,34px);font-weight:800}
   .shead .count{font:800 clamp(26px,3vw,34px)/1.25 var(--display);color:var(--accent-text);margin-left:10px}
   .sdesc{margin:-14px 0 24px;color:var(--muted);font-size:15px;max-width:60ch}
-  .more-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--muted)}
-  .more-link:hover{color:var(--accent-text);text-decoration:none}
-  .more-link .i{width:16px;height:16px}
 
   /* SELECTED WORK 안의 작은 제목 (프로젝트 / 대표 활동) */
   .wsub{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin:0 0 16px}
@@ -244,7 +241,7 @@
   .pmedia.on .hint{opacity:0}
   .ptxt{padding:30px 32px;display:flex;flex-direction:column;gap:14px}
   .pmeta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:13px;font-weight:700;color:var(--accent-2)}
-  .ptype{padding:3px 10px;border-radius:999px;border:1px solid rgba(77,148,255,.45);background:rgba(28,111,224,.16);color:#fff;font:700 12px/1.5 var(--display)}
+  .ptype{padding:3px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent-2) 45%,transparent);background:color-mix(in srgb,var(--accent) 16%,transparent);color:#fff;font:700 12px/1.5 var(--display)}
   .ptxt h3{color:#fff;font:800 clamp(26px,3vw,34px)/1.15 var(--display);letter-spacing:-.01em}
   .ptxt .pwhat{color:var(--on-block-2);font-size:15.5px;line-height:1.7}
   .pdl{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;margin:0;align-items:baseline}
@@ -345,7 +342,7 @@
     border-radius:18px;background:var(--paper);box-shadow:inset 0 0 0 1.5px var(--accent);
     transition:transform .55s var(--ease),width .55s var(--ease),height .55s var(--ease),box-shadow .3s;
   }
-  .steps.live .hl{box-shadow:inset 0 0 0 1.5px var(--accent),0 18px 40px -24px rgba(28,111,224,.45)}
+  .steps.live .hl{box-shadow:inset 0 0 0 1.5px var(--accent),0 18px 40px -24px color-mix(in srgb,var(--accent) 45%,transparent)}
   .steps .step{position:relative;z-index:1;padding-top:26px;min-width:0;outline:none}
   .steps .step:focus-visible .st-no b{text-decoration:underline;text-underline-offset:4px}
   /* 선: 회색 바탕선 + 파란 채움 (지나온 단계만 왼쪽부터 차례로 채워짐) */
@@ -430,7 +427,7 @@
   }
   .contact::after{
     content:"";position:absolute;right:-140px;bottom:-170px;width:320px;height:320px;border-radius:50%;pointer-events:none;
-    background:radial-gradient(circle at 40% 30%,#2f86ff,#1c6fe0 35%,rgba(28,111,224,0) 70%);
+    background:radial-gradient(circle at 40% 30%,#2f86ff,var(--accent) 35%,transparent 70%);
   }
   .contact h2{color:#fff;font-size:clamp(24px,3vw,32px);max-width:12em}
   /* 넓은 화면: 제목 첫 줄 윗선을 오른쪽 메일 주소 줄 높이에 맞춰 살짝 올림 */
@@ -443,7 +440,7 @@
   .cta a:hover,.cta a:focus-visible{color:#fff;text-decoration:none}
   /* 링크 버튼 (연락처 · 기본 정보) */
   .lks{display:flex;flex-wrap:wrap}
-  .cta .lk,.plk .lk{text-decoration:none}
+  .cta .lk{text-decoration:none}
   .contact .cta .lk:hover,.contact .cta .lk:focus-visible{text-decoration:none}
   .cta .lks{gap:12px 10px;margin-top:10px}
   .cta .lk{display:grid;justify-items:center;gap:7px;min-width:50px;color:var(--on-block-2);font-size:11.5px;font-weight:600;transition:color .2s}
@@ -451,12 +448,6 @@
   .cta .lk .i{width:20px;height:20px}
   .contact .cta .lk:hover,.contact .cta .lk:focus-visible{color:#fff}
   .contact .cta .lk:hover .lk-ic,.contact .cta .lk:focus-visible .lk-ic{background:var(--accent);box-shadow:none;transform:translateY(-2px)}
-  .plk .lks{gap:12px}
-  .plk .lk{display:grid;justify-items:center;gap:5px;color:var(--muted);font-size:11.5px;font-weight:600}
-  .plk .lk .lk-ic{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--soft);box-shadow:inset 0 0 0 1px var(--line);color:var(--accent-text);transition:background .2s,color .2s}
-  .plk .lk .i{width:17px;height:17px}
-  .plk .lk:hover,.plk .lk:focus-visible{color:var(--ink)}
-  .plk .lk:hover .lk-ic,.plk .lk:focus-visible .lk-ic{background:var(--ink);color:var(--paper);box-shadow:none}
   /* 연락처 카드: 마우스를 올리거나 키보드로 안쪽 링크를 고르면
      오른쪽 아래 파란 원이 커지면서 왼쪽으로 카드를 파랗게 채움 (::before = 커지는 원, ::after = 평소의 은은한 원).
      파란 바탕에서는 링크를 흰색으로, 그중 가리킨 링크는 밑줄로 구분 */
@@ -494,7 +485,6 @@
   .cov{border-radius:var(--r);overflow:hidden;background:var(--soft)}
   .cov img{display:block;width:100%;height:auto;max-height:440px;object-fit:cover}
   .dhead .meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-  .dhead .date{font:600 14.5px var(--display);color:var(--muted)}
   .dhead h1{font-size:clamp(30px,4.6vw,46px);font-weight:800;line-height:1.22;margin-top:16px;letter-spacing:-.035em;max-width:22ch}
   .dhead .dorg{margin-top:10px;font-size:17px;font-weight:700;color:var(--muted)}
   .dhead .lede{margin-top:18px;font-size:18px;color:var(--text);line-height:1.75;max-width:60ch}
@@ -597,7 +587,6 @@
   .dstory{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:32px;margin-top:20px;align-items:start}
   .dslide{position:relative;display:block;width:100%;padding:0;border:0;border-radius:16px;overflow:hidden;cursor:zoom-in;background:var(--soft);box-shadow:inset 0 0 0 1px var(--line);touch-action:pan-y}
   .dslide img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
-  .dtop + .vsec{margin-top:32px;padding-top:0;border-top:0}
   .vbox{position:relative;border-radius:16px;overflow:hidden;background:#000;box-shadow:inset 0 0 0 1px var(--line)}
   .vbox video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
   .vbox.on video{object-fit:contain}
@@ -975,9 +964,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1794494236"></script>
-<script src="content/ko.js?v=1794494236"></script>
-<script src="content/en.js?v=1794494236"></script>
+<script src="content/common.js?v=1794494527"></script>
+<script src="content/ko.js?v=1794494527"></script>
+<script src="content/en.js?v=1794494527"></script>
 <script>
 (function(){
   "use strict";
