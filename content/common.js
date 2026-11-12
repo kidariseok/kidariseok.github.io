@@ -36,6 +36,7 @@ SITE.common = {
     learn: {icon:"ic-book"}        // 학습 · 탐색: 듣고 보고 배운 활동
   },
   photos: {
+    "warak-mentoring": {cover:"warak_classroom", shots:["warak_classroom", "warak_laptop"]},
     "intl-publication": {cover:"intl_publication_cover"},
     realthon: {cover:"realthon_cover"},
     line4: {
@@ -65,11 +66,13 @@ SITE.common = {
   // 발표자료 슬라이드: img/ 안의 파일 이름 앞부분(file) + 01, 02 ... 번호 · count 는 전체 장 수
   // 장(챕터) 이름과 설명은 ko.js / en.js 의 해당 활동 deck 에 있습니다.
   decks: {
+    "warak-mentoring": {file:"warak_slide_", count:39},
     line4: {file:"line4_slide_", count:15},
     "trade-ai": {file:"trade_slide_", count:19},
     "ba-dive": {file:"ba_dive_slide_", count:20}
   },
   activities: [
+    {id:"warak-mentoring", start:"2026-11-10", category:"edu"},
     {
       id: "intl-publication",
       start: "2026-09-03",

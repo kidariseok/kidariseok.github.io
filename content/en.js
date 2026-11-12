@@ -1365,6 +1365,110 @@ SITE.en = {
         }
       ]
     },
+    "warak-mentoring": {
+      "title": "Warak Middle School Career Mentoring",
+      "org": "Warak, Dongdaemun-gu Career and Vocational Experience Support Center",
+      "summary": "Led two career guidance sessions introducing SKKU’s Department of Computer Education and university life to middle school students.",
+      "panel": {
+        "role": "Career mentor · Prepared and led lessons on the university and major",
+        "where": "A middle school in Seoul",
+        "result": "Two career guidance sessions · 30 students per session"
+      },
+      "body": [
+        {
+          "lead": "As an SKKU Computer Education student, I introduced my major and university life to middle school students."
+        },
+        {
+          "p": "<b>Warak</b>, the Dongdaemun-gu Career and Vocational Experience Support Center, selected me as a career mentor. I led two sessions at a middle school in Seoul, with 30 students filling the classroom each time."
+        },
+        {
+          "k": "01 · Preparation",
+          "h": "I reviewed university admissions and teacher recruitment data before class."
+        },
+        {
+          "p": "To give students timely information, I reviewed <b>SKKU’s 2027 admissions guidelines</b> and <b>Seoul’s secondary-school teacher recruitment exam competition ratios</b>. In class, I introduced admission to SKKU’s College of Education and explained why high school grades matter."
+        },
+        {
+          "k": "02 · My Role",
+          "h": "I used my own experience to introduce university life and career paths."
+        },
+        {
+          "p": "I opened with an icebreaker, then introduced SKKU, what students learn in Computer Education, and the career paths the major can lead to. I shared my own experiences to give students a current student’s perspective on university life."
+        },
+        {
+          "p": "I also introduced campus programs and activities students could pursue on and off campus. I wanted them to picture what they might do at university and find a reason to stay engaged in their studies."
+        }
+      ],
+      "deck": {
+        "title": "Lesson Slides",
+        "chapters": [
+          {
+            "name": "Lesson introduction",
+            "slides": [
+              {k:"INTRO", t:"Introduction to Computer Education at SKKU", d:""},
+              {k:"INTRO", t:"Lesson outline", d:""}
+            ]
+          },
+          {
+            "name": "Icebreaker",
+            "slides": [
+              {k:"ICEBREAKER", t:"Opening icebreaker", d:""},
+              {k:"ICEBREAKER", t:"A quiz about the mentor", d:""},
+              {k:"ICEBREAKER", t:"First clue", d:""},
+              {k:"ICEBREAKER", t:"Second clue", d:""},
+              {k:"ICEBREAKER", t:"Third clue", d:""},
+              {k:"ICEBREAKER", t:"Fourth clue", d:""},
+              {k:"ICEBREAKER", t:"The answer revealed", d:""},
+              {k:"ICEBREAKER", t:"The story behind the answer", d:""}
+            ]
+          },
+          {
+            "name": "University and campus life",
+            "slides": [
+              {k:"CAMPUS", t:"SKKU introduction video", d:"A still from a video used in class."},
+              {k:"CAMPUS", t:"Introducing SKKU", d:""},
+              {k:"CAMPUS", t:"University history", d:""},
+              {k:"CAMPUS", t:"University history and campus", d:""},
+              {k:"CAMPUS", t:"History and historical figures", d:""},
+              {k:"CAMPUS", t:"Seoul and Suwon campuses", d:""},
+              {k:"CAMPUS", t:"Which campus is Computer Education on?", d:""},
+              {k:"CAMPUS", t:"Natural Sciences Campus video", d:"A still from a video used in class."},
+              {k:"CAMPUS", t:"Opportunities for students", d:""},
+              {k:"CAMPUS", t:"Exchange and short-term study abroad", d:""},
+              {k:"CAMPUS", t:"An exchange student experience", d:""},
+              {k:"CAMPUS", t:"Scholarships and career programs", d:""},
+              {k:"CAMPUS", t:"Notable SKKU alumni", d:""},
+              {k:"CAMPUS", t:"ESKARA campus festival", d:""}
+            ]
+          },
+          {
+            "name": "Computer Education and careers",
+            "slides": [
+              {k:"MAJOR", t:"Comparing three computing majors", d:""},
+              {k:"MAJOR", t:"Computing and education", d:""},
+              {k:"MAJOR", t:"What Computer Education students study", d:""},
+              {k:"MAJOR", t:"What distinguishes the major", d:""},
+              {k:"MAJOR", t:"Career paths after graduation", d:""},
+              {k:"MAJOR", t:"Early admission to Computer Education", d:""},
+              {k:"MAJOR", t:"2027 regular admission to Computer Education", d:""},
+              {k:"MAJOR", t:"Managing grades in high school", d:"I explained why it matters to keep up with grades after entering high school."},
+              {k:"MAJOR", t:"Teacher certification after graduation", d:""},
+              {k:"MAJOR", t:"Competition for secondary teaching posts in Seoul", d:""},
+              {k:"MAJOR", t:"Challenges from a current student’s perspective", d:""}
+            ]
+          },
+          {
+            "name": "Student activities and wrap-up",
+            "slides": [
+              {k:"ACTIVITIES", t:"On-campus clubs", d:""},
+              {k:"ACTIVITIES", t:"Off-campus clubs", d:""},
+              {k:"ACTIVITIES", t:"Invitation to ask questions", d:""},
+              {k:"ACTIVITIES", t:"Closing slide", d:""}
+            ]
+          }
+        ]
+      }
+    },
     "trade-ai": {
       title: "2024 Undergraduate Trade & AI Camp",
       summary: "Planned a company-matching service that responds to supply-chain instability by combining trade and AI.",
