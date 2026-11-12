@@ -14,6 +14,9 @@
      첫 화면에는 숫자 상자를 두지 않고, 숫자는 맥락이 있는 곳에서 보여 줍니다 (후원 금액 → RE:ALThon 카드, 나머지 → 이력).
    · featured 는 'SELECTED WORK'의 '대표 활동' 검은 카드로 보여 줄 activities 의 id 4개입니다 (사진이 있으면 카드 오른쪽에 나옴).
    · 상세 페이지 맨 위 요약 패널의 글자는 ko.js / en.js 활동의 panel (프로젝트는 proj) 에 있습니다.
+   · 새 활동을 추가하는 전체 순서 · 사진 규격 · 글 쓰는 기준은 docs/ 폴더의 문서에 있습니다
+     (docs/NEW_ACTIVITY_CHECKLIST.md 부터). 고친 뒤에는 node tools/check-content.mjs 로 확인하고,
+     index.html 맨 아래 content/*.js?v=숫자 세 곳을 새 숫자로 바꿔야 방문자에게 새 내용이 보입니다.
    ══════════════════════════════════════════════════════════════ */
 window.SITE = window.SITE || {};
 SITE.common = {

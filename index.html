@@ -25,7 +25,7 @@
 <title>JINSEOK OH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Noto+Sans+KR:wght@400;500;700;900&family=Gowun+Batang:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
 <style>
   /* ══════════════════════════════════════════════════════════════
      [1] 색 · 글꼴  ◀ 사이트 분위기를 바꾸려면 여기
@@ -1003,9 +1003,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1793362625"></script>
-<script src="content/ko.js?v=1793362625"></script>
-<script src="content/en.js?v=1793362625"></script>
+<script src="content/common.js?v=1794472660"></script>
+<script src="content/ko.js?v=1794472660"></script>
+<script src="content/en.js?v=1794472660"></script>
 <script>
 (function(){
   "use strict";
@@ -1109,10 +1109,14 @@
     return b;
   }
   // 사진 크게 보기 (오버레이)
-  function openShot(src){
+  function openShot(src, label){
+    var opener = document.activeElement;   // 닫으면 초점을 원래 버튼으로 돌려줍니다
     var lb = el("div","lb");
+    lb.setAttribute("role","dialog");
+    lb.setAttribute("aria-modal","true");
+    if(label) lb.setAttribute("aria-label", label);
     var im = document.createElement("img");
-    im.src = src; im.alt = "";
+    im.src = src; im.alt = label || "";
     var bt = el("button");
     bt.type = "button";
     bt.appendChild(icon("ic-x"));
@@ -1121,6 +1125,7 @@
     function close(){
       lb.remove();
       document.removeEventListener("keydown", onKey);
+      if(opener && opener.focus) opener.focus();
     }
     function onKey(e){ if(e.key === "Escape") close(); }
     lb.addEventListener("click", close);
@@ -1131,6 +1136,7 @@
   // 발표자료 크게 보기: ← → 키 · 화살표 버튼 · 밀어서 넘기기, Esc/바깥 누르면 닫힘
   function openDeck(srcs, alts, start, onMove){
     var idx = start;
+    var opener = document.activeElement;   // 닫으면 초점을 원래 버튼으로 돌려줍니다
     var lb = el("div","lb");
     lb.setAttribute("role","dialog");
     lb.setAttribute("aria-modal","true");
@@ -1167,6 +1173,7 @@
     function close(){
       lb.remove();
       document.removeEventListener("keydown", onKey);
+      if(opener && opener.focus) opener.focus();
     }
     function onKey(e){
       if(e.key === "Escape") close();
@@ -2008,13 +2015,15 @@
       view.appendChild(sh);
 
       var strip = el("div","shots");
-      pics.shots.forEach(function(n){
+      pics.shots.forEach(function(n, si){
         var b = el("button","shot");
         b.type = "button";
+        var slabel = ptitle + " " + (si + 1) + " / " + pics.shots.length;   // 화면 읽기용 이름 (사진에는 글자 설명이 따로 없음)
+        b.setAttribute("aria-label", slabel);
         var im = document.createElement("img");
         im.src = imgSrc(n); im.alt = ""; im.loading = "lazy"; im.decoding = "async";
         b.appendChild(im);
-        b.addEventListener("click", function(){ openShot(imgSrc(n)); });
+        b.addEventListener("click", function(){ openShot(imgSrc(n), slabel); });
         strip.appendChild(b);
       });
       view.appendChild(strip);
@@ -2137,7 +2146,7 @@
         var ci2 = document.createElement("img");
         ci2.src = imgSrc(b.cert.img); ci2.alt = b.cert.alt || ""; ci2.loading = "lazy"; ci2.decoding = "async";
         cb.appendChild(ci2);
-        cb.addEventListener("click", function(){ openShot(imgSrc(b.cert.img)); });
+        cb.addEventListener("click", function(){ openShot(imgSrc(b.cert.img), b.cert.alt || b.cert.cap || ""); });
         cf.appendChild(cb);
         if(b.cert.cap) cf.appendChild(el("figcaption", null, b.cert.cap));
         body.appendChild(cf);
@@ -2156,7 +2165,8 @@
       else if(b.link != null){
         var p = el("p");
         var lk = el("a", null, b.link);
-        lk.href = b.href; lk.target = "_blank"; lk.rel = "noopener";
+        lk.href = b.href;
+        if(String(b.href).charAt(0) !== "#"){ lk.target = "_blank"; lk.rel = "noopener"; }   // #a/... 는 사이트 안 이동이라 같은 탭에서 엽니다
         p.appendChild(lk);
         body.appendChild(p);
       }

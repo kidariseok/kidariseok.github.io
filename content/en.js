@@ -13,17 +13,25 @@
      page        메뉴 · 첫 화면 · SELECTED WORK · 소개 · 활동 기록 · 이력 · 연락처 · 푸터
      ui          버튼과 작은 라벨 글자
      categories  활동 구분 이름 4가지
-     keywords    첫 화면 이름 뒤 키워드 띠 (장식)
+     keywords / interests   지금 화면에 쓰지 않음 (예전 첫 화면의 키워드 띠 · 관심사 태그. 기록으로만 둠)
      tiles       숫자 모음의 글자 (숫자 자체는 common.js)
-     certHead / certGroups / certs   자격증
+     certGroups / certs   자격증 (certHead 는 지금 화면에 쓰지 않음)
      awards      장학 · 수상 (금액은 common.js)
      activities  활동 제목 · 요약 · 상세 본문
                  card: 메인 '대표 활동' 카드의 두 줄 {role, result}
-                 panel: 상세 페이지 맨 위 요약 패널 {role, team, scale, period, where, result, links} (프로젝트는 proj)
-                 본문 블록: {h:"소제목"} {p:"문단"} {ul:["항목", ...]}
-                            {note:"회색 참고 상자"} {files:["파일이름"]}
+                 panel: 상세 페이지 맨 위 요약 패널 {role, team, scale, period, where, result, key, links} (프로젝트는 proj)
+                 본문 블록 (전체 목록 · 쓰는 기준은 docs/CONTENT_GUIDELINES.md 6장):
+                            {h:"소제목", k:"01 · 작은 제목", toc:"목차 이름"} {h3:"작은 소제목"}
+                            {lead:"첫 문장"} {p:"문단"} {q:"강조 문장"} {note:"회색 참고 상자"}
+                            {ul:[...]} {checks:[...]} {facts:[...]} {flow:[...]} {boxes:[...]}
+                            {stat:[{k, v, hi}]} {cards:[{n, t, d}]} {cmp:[{n, t, d}, {n, t, d}]}
+                            {people:[{role, n, me, note}], note} {roles:{tl, ml, team:[...], mine:[...]}}
+                            {cert:{img, alt, cap}} {files:["파일이름"]}
                             {link:"링크 글자", href:"https://..."}
-                 <b>굵게</b> 를 p · ul 안에서 쓸 수 있습니다.
+                 <b>굵게</b> 를 p · ul · lead · q · note · boxes · cards 의 d 안에서 쓸 수 있습니다.
+
+   ※ 새 활동을 추가할 때는 docs/NEW_ACTIVITY_CHECKLIST.md 의 순서를 따르고,
+     고친 뒤에는 node tools/check-content.mjs 로 확인합니다.
    ══════════════════════════════════════════════════════════════ */
 window.SITE = window.SITE || {};
 SITE.en = {
