@@ -1095,11 +1095,13 @@ SITE.en = {
           {n:"01", t:"Team", d:"A five-person GDG on Campus : SKKU team from different majors and years"},
           {n:"02", t:"Motivation", d:"The growth of Chinese e-commerce platforms and changes in the Korean market"},
           {n:"03", t:"Pre-plan", d:"Contact points, and Chinese, visa and flight preparation"},
+        ]},
+        {cards:[
           {n:"04", t:"Itinerary", d:"GDG exchange, conferences, and Tencent and Pinduoduo visits"},
           {n:"05", t:"Next Steps", d:"Shopping search app, paper, Korea E-Commerce Fair"},
           {n:"06", t:"Effects", d:"Academic and international expected effects"}
         ]},
-        {note:"For publication, I removed student ID numbers and company contact details from the slides, and blurred every face except mine."},
+        {note:"For publication, I removed student ID numbers and company contact details from the slides, blurred every face except mine and hid the other members' names."},
 
         {k:"06 · Result", h:"We passed the document round and presented, but were not selected in the end."},
         {p:"The result was disappointing, but what remains is the process of working out in detail what we wanted to do in Shenzhen and Shanghai, down to schedule, cost and application requirements."},
@@ -1426,6 +1428,8 @@ SITE.en = {
           {n:"01", t:"Problem", d:"Exporters' supply-chain problems and how prepared they are for a crisis"},
           {n:"02", t:"Service", d:"Entering company information and setting requirements"},
           {n:"03", t:"Matching", d:"A list of matching companies and trust information for trading"},
+        ]},
+        {cards:[
           {n:"04", t:"Filtering", d:"Automatic exclusion of blacklisted companies, and objections"},
           {n:"05", t:"Map", d:"Map-based partner search and narrowing the range"},
           {n:"06", t:"Expected Value", d:"A stable trade supply network and more diversified partners"}
