@@ -356,7 +356,7 @@ SITE.en = {
         {
           p: "It fell just before exams, which made recruiting hard. We wanted a year-end date, but the program budget had to be spent by early December. The survey echoed this ('too close to exams', 'not enough dev time'). Next time I would start from the budget deadline and plan backwards around the exam calendar."
         },
-        {h:"07. What I learned"},
+        {h:"07. Looking back"},
         {
           p: "I used to think the quality of the event depended on keeping its global shape. But with several organisations involved, many variables were outside my control. What mattered was rebuilding the options from the resources and constraints we actually had, and connecting directly with the people who could help. I also felt how delaying one key decision pushes back sponsorship, venue, promotion and recruitment all at once."
         },
@@ -754,7 +754,7 @@ SITE.en = {
         {
           p: "Instead of merchandise with just a logo, I approached it by connecting the product's user experience with the brand, so that the program's character comes through naturally as learners actually use it."
         },
-        {h:"What I learned"},
+        {h:"Looking back"},
         {
           p: "Through three proposals, I learned that marketing is not only about creating new messages, but about discovering the strengths an existing service already has and connecting them in a form users can understand."
         },
@@ -880,7 +880,7 @@ SITE.en = {
             "<b>Closing an information gap</b> - a low-cost, high-efficiency voice-based option for students outside the capital, or otherwise cut off from the expensive in-person admissions consulting market."
           ]
         },
-        {h:"Reflection"},
+        {h:"Looking back"},
         {
           p: "As a student in a college of education I am always studying pedagogy in the abstract, but chances to actually sit with students are rare. Empathising with what these students were worried about, and giving them advice, made me more invested in my own coursework. Finding somewhere to actually apply what I have learned, rather than stopping at the lecture, is one of my strengths."
         }
@@ -907,7 +907,7 @@ SITE.en = {
             "Tech-Fair"
           ]
         },
-        {link:"[HACKAFAIR 2024] Closing video", href:"http://youtube.com/watch?v=aaZnvdajMoU"}
+        {link:"[HACKAFAIR 2024] Closing video", href:"https://youtube.com/watch?v=aaZnvdajMoU"}
       ]
     },
     goormthon: {
@@ -1101,7 +1101,7 @@ SITE.en = {
         {k:"06 · Result", h:"We passed the document round and presented, but were not selected in the end."},
         {p:"The result was disappointing, but what remains is the process of working out in detail what we wanted to do in Shenzhen and Shanghai, down to schedule, cost and application requirements."},
 
-        {k:"07 · What I Learned", h:"I found that I am someone who is drawn to how technology is applied in different environments."},
+        {k:"07 · Looking back", h:"I found that I am someone who is drawn to how technology is applied in different environments."},
         {p:"Working with my teammates and extending our plan overseas made me curious about <b>how the same technology is applied in a different environment</b>."},
         {p:"This attempt showed me that I am someone who finds that kind of question interesting."}
       ],
@@ -1175,7 +1175,7 @@ SITE.en = {
             "Combined computer-education knowledge with the business and economics domain, turning an abstract concern into a complete, defensible research plan."
           ]
         },
-        {h:"Reflection"},
+        {h:"Looking back"},
         {
           p: "With the GDG on Campus : SKKU team I found the topic - AI analysis and forecasting of business markets using Google Trends data - and led the writing of the proposal. Rather than stopping at the idea, I analysed whether an LSTM forecasting model combining the Google Trends API with economic indicators was technically feasible."
         },
@@ -1363,7 +1363,7 @@ SITE.en = {
             "<b>A documented process</b> - Korean and English templates left in a form the next organiser can pick up."
           ]
         },
-        {h:"07. What I learned"},
+        {h:"07. Looking back"},
         {
           p: "When I sent my first cold email, I had no idea whether a stranger would ever write back. Once I actually reached out, far more people than I expected were keen to share their experience with students. It showed me how warm the developer community is, and that <b>you don't need to have everything in place before you can start</b>. If something is needed, you can look for it, reach out and build the way there."
         },
@@ -1447,7 +1447,7 @@ SITE.en = {
         {p:"I also looked at AI safety principles such as <b>fairness, transparency, and reliability</b>, which are needed to apply AI in real industries."},
         {p:"I came to see that beyond the accuracy of results, we must also consider <b>whether we can explain why a result came out as it did and use it in a trustworthy way</b>."},
 
-        {k:"06 · Reflection", h:"Connecting knowledge from different fields was what made the use of the technology concrete."},
+        {k:"06 · Looking back", h:"Connecting knowledge from different fields was what made the use of the technology concrete."},
         {p:"What struck me most at this camp was that <b>learning a technology and understanding the problem it is applied to are not separate things</b>."},
         {p:"I learned perspectives on the industry and its problems from my teammates who majored in trade, and from my background in software and data I looked at those problems in the form of a service."},
         {p:"Through this I experienced that solving a problem takes <b>connecting domain knowledge with a technical perspective, and making concrete what information real users need</b>."},
@@ -1515,7 +1515,7 @@ SITE.en = {
         {p:"Over two days and 14 hours I heard experts from Microsoft, AWS, Google and NVIDIA, and got a broad look at what was moving fast at the time: generative AI, cloud, Azure AI Studio, image-generation models and digital twins."},
         {p:"Rather than going deep on any one technology, I listened with a question: <b>\u201cHow far will technology go, and what role could I play in it?\u201d</b>"},
 
-        {k:"02 · Technology doesn't grow alone", toc:"02 Technology doesn't grow alone", h:"Technology needs an ecosystem."},
+        {k:"02 · Technology doesn't grow alone", toc:"02 No tech grows alone", h:"Technology needs an ecosystem."},
         {p:"The first thing that struck me was the story of the <b>driver's licence</b>."},
         {p:"A car alone does not create a car society. Alongside the technology to build cars you need roads and traffic infrastructure, licensing rules and laws, and a society ready to accept it all."},
         {p:"Generative AI and the metaverse were the same."},
@@ -1587,7 +1587,7 @@ SITE.en = {
             "Translating for the child's feeling and context, not just the words, so the exchange with the sponsor stayed genuine."
           ]
         },
-        {h:"Reflection"},
+        {h:"Looking back"},
         {
           p: "I started before university. I was looking for volunteering that used the English I was confident in, and this one ran online - which meant I could keep it up alongside my studies."
         },
