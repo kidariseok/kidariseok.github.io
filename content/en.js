@@ -968,8 +968,8 @@ SITE.en = {
     },
     "goormthon-univ": {
       title: "Goormthon Univ 3rd Cohort: Campus Organiser",
-      summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
-      short: "Campus organiser; built club programs and ran weekly study sessions.",
+      summary: "As a campus organiser of Goormthon Univ 3rd cohort, ran study sessions and a joint PM study group with Sejong and Soongsil students.",
+      short: "Campus organiser; ran study sessions and a joint PM study group.",
       panel: {
         role: "Campus organiser · ran a joint PM study group with Sejong and Soongsil students",
         where: "Goormthon Univ 3rd Cohort · Sungkyunkwan University",
