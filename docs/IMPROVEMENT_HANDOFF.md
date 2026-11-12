@@ -6,7 +6,7 @@
 
 - 브랜치 `claude/eloquent-allen-9foqao`, 커밋 `57fdd45` 까지 푸시됨. **PR 은 아직 없음** (작성자가 PR 을 요청함 → 1번 작업 뒤에 `main` 대상으로 열 것).
 - 끝난 것: 문서 4종(`docs/`), `CLAUDE.md` · `AGENTS.md`, `tools/check-content.mjs`, README 수정, `index.html` 의 비시각 수정 4건(AUDIT 7장).
-- 검증 스크립트 현재 결과: 오류 0 · 경고 0. 활동 21개(`goormthon` 을 프로젝트 / `goormthon-univ` 동아리로 분리). `icists` 요약 패널은 `role` · `where` 만 채움 — `result` 는 작성자가 시안 3개 중 승인하면 추가.
+- 검증 스크립트 현재 결과: 오류 0 · 경고 0. 활동 21개(`goormthon` 을 프로젝트 / `goormthon-univ` 동아리로 분리). `icists` 요약 패널은 `role` · `where` 만 채움 — `result` 는 시안 C2 로 반영함(본문 보강은 이후).
 - 작업 규칙은 [CLAUDE.md](../CLAUDE.md). 화면이 달라지는 CSS 수정은 3장의 목표 값대로만 하고, 그 밖의 변경은 먼저 보고.
 
 ## 1. 바로 할 일 — 작성자가 확정한 두 가지 (미적용)

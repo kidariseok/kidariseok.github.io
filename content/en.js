@@ -893,7 +893,7 @@ SITE.en = {
       title: "KAIST ICISTS HACKAFAIR",
       summary: "Developed an idea over five days, built the materials in English and worked through mentoring sessions with overseas mentors in English.",
       short: "Developed an idea over five days, building the materials in English with overseas mentors.",
-      panel: {role:"Team leader", where:"Hosted by KAIST ICISTS"},
+      panel: {role:"Team leader", where:"Hosted by KAIST ICISTS", result:"Planned \"Joyakdol\", a service for easing generational conflict, over five days, put it into a business model canvas, customer journey map and poster, and showcased it at the Tech-Fair"},
       body: [
         {
           p: "Over five days we developed an idea, built all the materials in English, and ran our mentoring sessions with overseas mentors in English."
