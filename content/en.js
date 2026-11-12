@@ -893,6 +893,7 @@ SITE.en = {
       title: "KAIST ICISTS HACKAFAIR",
       summary: "Developed an idea over five days, built the materials in English and worked through mentoring sessions with overseas mentors in English.",
       short: "Developed an idea over five days, building the materials in English with overseas mentors.",
+      panel: {role:"Team leader", where:"Hosted by KAIST ICISTS"},
       body: [
         {
           p: "Over five days we developed an idea, built all the materials in English, and ran our mentoring sessions with overseas mentors in English."
@@ -915,9 +916,9 @@ SITE.en = {
     },
     goormthon: {
       title: "ESC: ESCape SKKU",
-      org: "Goormthon Univ 3rd Cohort: Campus Organiser",
-      summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
-      short: "Campus organiser; built club programs and ran weekly study sessions.",
+      org: "Goormthon Univ 3rd Cohort",
+      summary: "As PM, planned a web escape-room game set on the Yuljeon campus with the Goormthon Univ cohort, and ran it in person at a booth.",
+      short: "Planned a campus web escape-room game as PM and ran it in person at a booth.",
       proj: {
         name: "ESC: ESCape SKKU",
         type: "Game · Escape room",
@@ -937,10 +938,6 @@ SITE.en = {
         pm: "As PM, I shaped the storyline and wrote the PRD."
       },
       body: [
-        {h:"On campus"},
-        {
-          p: "Goorm is a Kakao subsidiary that runs coding bootcamps and builds IDEs. I got into Goormthon Univ representing SKKU, did the orientation at their Pangyo office, and met the rest of the SKKU cohort there for the first time."
-        },
         {
           p: "Then, for Halloween and our college night on 31 October, we built a campus escape-room game called \"ESC: ESCape SKKU\". It was my first time as PM - writing the storyline and the PRD - and it turned out to be a genuinely fun game. Thanks to a very capable designer and developers it came out exactly as imagined; we were lucky enough to get a booth and run it in person, and the students loved it."
         },
@@ -966,11 +963,28 @@ SITE.en = {
         {p:"I learned how the front-end and back-end connect organically to become one game."},
         {p:"The game drew students in, and I found it rewarding to watch them enjoy it."},
         {q:"I came to realise that I enjoy building something with technology and watching the effect it has on people."},
-
+        {link:"See the Goormthon Univ campus activities", href:"#a/goormthon-univ"}
+      ]
+    },
+    "goormthon-univ": {
+      title: "Goormthon Univ 3rd Cohort: Campus Organiser",
+      summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
+      short: "Campus organiser; built club programs and ran weekly study sessions.",
+      panel: {
+        role: "Campus organiser · ran a joint PM study group with Sejong and Soongsil students",
+        where: "Goormthon Univ 3rd Cohort · Sungkyunkwan University",
+        links: [{t:"See the ESC project", href:"#a/goormthon"}]
+      },
+      body: [
+        {h:"On campus"},
+        {
+          p: "Goorm is a Kakao subsidiary that runs coding bootcamps and builds IDEs. I got into Goormthon Univ representing SKKU, did the orientation at their Pangyo office, and met the rest of the SKKU cohort there for the first time."
+        },
         {h:"Inter-university work"},
         {
           p: "I ran a joint PM study group with people from Sejong and Soongsil. Over three months, meeting weekly, we worked through workflow methods, how development actually gets done, and how to use Figma. It is not an experience a first-year usually gets, so I went into it grateful - and everyone there was kind and sharp, which made it a good time."
-        }
+        },
+        {link:"See the ESC project", href:"#a/goormthon"}
       ]
     },
     ched: {

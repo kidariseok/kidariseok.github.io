@@ -139,9 +139,15 @@ SITE.common = {
     {
       id: "goormthon",
       start: "2024-07-22",
-      end: "2025-02-28",
+      end: "2024-10-31",
       category: "project",
       notion: "3bbdd7c9423e808e910cca08abc718b6"
+    },
+    {
+      id: "goormthon-univ",
+      start: "2024-07-22",
+      end: "2025-02-28",
+      category: "community"
     },
     {id:"ched", start:"2024-07-17", category:"community", notion:"3bbdd7c9423e8016946ecaf4511b8813"},
     {
