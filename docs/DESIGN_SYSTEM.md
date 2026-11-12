@@ -126,7 +126,7 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
 | 소속 한 줄 | `.dhead .dorg` | 17 / 700 | `--muted` |
 | 요약(lede) | `.dhead .lede` | 18 / 400 / 1.75 | 최대 60ch |
 | 구분 배지 | `.badge` | 13 / 700 | 알약 모양, 아이콘 14px |
-| 요약 패널 라벨 | `.pstrip .pcell small` | 11.5 / 800 `--display` | 자간 `.08em`, `--accent-text`, 영문 대문자 |
+| 요약 패널 라벨 | `.pstrip .pcell small` | 11.5 / 800 `--display` | 자간 `.08em`, `--accent-text`, 영문 대문자 |  ← 작은 라벨 K2
 | 요약 패널 값 | `.pstrip .pcell span` | 14.5 / 700 / 1.5 | `--ink` |
 | 요약 패널 큰 숫자 | `.pstrip .pcell .kv b` | 30 / 800 / 1.1 `--display` | `--accent-text` |
 | 구역 제목 (사진 · 영상 · 발표자료) | `.shotshead h2` `.deckhead h2` | 20 / 800 | |
@@ -151,7 +151,7 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
 | 이름 (영어) | `.hero h1` | `clamp(56px,13.5vw,200px)` / 900 / .82 `--display` | 폭 68%, 대문자, 자간 `-.03em` |
 | 이름 (한글) | `html[lang="ko"] .hero h1` | `clamp(76px,20vw,200px)` / 900 / .95 `--sans` | 자간 `-.06em` |
 | 핵심 한 줄 | `.headline` | `clamp(22px,2.4vw,32px)` / 900 / 1.25 | 자간 `-.04em` |
-| 섹션 위 작은 글씨 | `.st-kicker` | 13 / 800 / 1 `--display` | 자간 `.12em`, `--accent-text`, 영문 대문자 |
+| 섹션 위 작은 글씨 | `.st-kicker` | 13 / 800 / 1 `--display` | 자간 `.08em`, `--accent-text`, 영문 대문자 |
 | 섹션 제목 | `.shead h2` · `.st-title` | `clamp(26px,3vw,34px)` · `clamp(26px,3vw,36px)` / 800 | |
 | 섹션 설명 | `.sdesc` | 15 | `--muted`, 최대 60ch |
 | 묶음 제목 | `.wsub h3` | 19 / 800 | 옆 설명 14 `--muted` |
@@ -159,11 +159,11 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
 | 대표 활동 제목 | `.fcard h3` | 21 (휴대폰 15) | |
 | 카드 본문 | `.fcard p` `.fkv dd` `.pwhat` | 14.5–15.5 / 1.6–1.7 | |
 | 활동 기록 제목 · 설명 | `.arep b` · `span` / `.arow b` · `span` | 16 · 13.5 / 14.5 · 13 | 설명은 3줄 · 2줄에서 자름 |
-| 이력 줄 이름 | `.rrow h3` | 12.5 / 800 `--display` | 자간 `.1em` |
+| 이력 줄 이름 | `.rrow h3` | 13 / 800 `--display` | 자간 `.08em` (작은 라벨 K1) |
 
 **새 글자 크기를 만들지 않는 규칙** [신규]: 위 표에 있는 역할 중 하나를 고릅니다. 맞는 역할이 없으면 새 크기를 만들기 전에 그 내용이 기존 블록으로 표현되는지 먼저 확인합니다.
 
-**작은 영문 라벨(kicker)** [확인]: `--display` 800 · 11–13px · 자간 `.05–.12em` · 파란색(`--accent-text` / 검은 카드에서는 `--accent-2`). 값이 조금씩 다른 변형이 10가지 있습니다 → [AUDIT A-03](PORTFOLIO_AUDIT.md). 새로 만들 때는 새 변형을 추가하지 말고 `.body .hk`(본문) 또는 `.pstrip .pcell small`(라벨-값 쌍)과 같은 값을 씁니다.
+**작은 영문 라벨(kicker)** [확인]: 두 가지 규격만 씁니다. 모두 `--display` 800 · 자간 `.08em` · 파란색(`--accent-text` / 검은 카드에서는 `--accent-2`)입니다. **K1 섹션 · 본문용 13px**: `.st-kicker` `.body .hk` `.rrow h3` `.dcap .k` `.toc .tt`. **K2 라벨-값용 11.5px**: `.pstrip .pcell small` `.pdl dt` `.fkv dt` `.body .roles small` `.body .cards small`. 새로 만들 때는 새 변형을 추가하지 말고 둘 중 하나를 씁니다 → [AUDIT A-03](PORTFOLIO_AUDIT.md) 처리함.
 
 ### 2.4 간격 · 폭
 
@@ -280,17 +280,17 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
 | focus-visible | 전역 초점 테두리 (8.1) |
 | disabled | 발표자료 이전/다음에만: `opacity:.35`, 커서 기본 |
 
-**작은 알약 버튼** — `.btn` 을 쓰지 않고 자리마다 따로 정의되어 있습니다. 새 자리에는 아래 중 같은 역할의 것을 그대로 씁니다. [확인]
+**작은 알약 버튼** — `.btn` 을 쓰지 않고 자리마다 따로 정의되어 있지만 크기는 두 규격입니다: **작게** `8px 14px` · 13 / 700(높이 약 37px), **보통** `11px 20px` · 15 / 700(`.dpn button`). 새 자리에는 아래 중 같은 역할의 것을 그대로 씁니다. [확인] ([AUDIT A-02](PORTFOLIO_AUDIT.md) 처리함)
 
 | 선택자 | 크기 | 모양 | 역할 |
 | --- | --- | --- | --- |
 | `.pstrip .pjumps a` | `8px 14px` · 13 / 700 | `--accent` 채움 (hover: `--ink`) | 요약 패널의 바깥 · 다른 상세 링크 |
 | `.pstrip .pjumps button` | `8px 14px` · 13 / 700 | `--ink` 선 (hover: 반전) | 요약 패널에서 같은 페이지의 영상 · 발표자료로 이동 |
 | `.dpn button` | `11px 20px` · 15 / 700 · 최소 폭 104 | 이전: 선 / 다음(`.nx`): `--accent` 채움 | 슬라이드 이전 · 다음 |
-| `.dchip` | `8px 15px` · 14 / 700 | `--soft` + 선, 선택: `--ink` 채움 | 발표자료 장(챕터) 고르기 |
-| `.toc button` (980px 이하) | `7px 13px` · 13.5 | `--soft` + 선, 지금 위치: `--ink` 채움 | 목차 |
-| `.plinks a` | `7px 13px` · 12.5 / 700 | 흰색 24% 선 (hover: 흰 채움) | 프로젝트 카드의 GitHub 링크 |
-| `.vmore` | `12px` · 14.5 / 700 · 폭 100% · 모서리 14 | `--soft` + 선 | 표의 '더 보기' |
+| `.dchip` | `8px 14px` · 13 / 700 | `--soft` + 선, 선택: `--ink` 채움 | 발표자료 장(챕터) 고르기 |
+| `.toc button` (980px 이하) | `8px 14px` · 13 | `--soft` + 선, 지금 위치: `--ink` 채움 | 목차 |
+| `.plinks a` | `8px 14px` · 13 / 700 | 흰색 24% 선 (hover: 흰 채움) | 프로젝트 카드의 GitHub 링크 |
+| `.vmore` | `12px` · 14.5 / 700 · 폭 100% · 모서리 14 | `--soft` + 선 | 표의 '더 보기' (전체 폭 블록 버튼이라 두 규격 밖) |
 | `.deckall` | 글자만 · 14 / 700 `--accent-text` | hover: 밑줄 | '전체 슬라이드 N장 →', '전체화면 →' |
 
 **선택 상태의 공통 규칙** [확인]: 여러 개 중 하나를 고르는 알약(언어 버튼, 장 칩, 목차 칩)은 선택된 것이 **`--ink` 바탕 + `--paper` 글자**입니다. 파란색으로 채우지 않습니다.

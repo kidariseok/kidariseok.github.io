@@ -221,7 +221,7 @@
   .fcard .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   /* 대표 활동 카드의 두 줄: MY ROLE · RESULT (ko.js / en.js 활동의 card) */
   .fkv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px 14px;margin:8px 0 0}
-  .fkv dt{font:800 11px/1.95 var(--display);letter-spacing:.08em;color:var(--accent-2);white-space:nowrap}
+  .fkv dt{font:800 11.5px/1.95 var(--display);letter-spacing:.08em;color:var(--accent-2);white-space:nowrap}
   .fkv dd{margin:0;color:var(--on-block);font-size:14.5px;line-height:1.6}
 
 
@@ -266,7 +266,7 @@
   .pfoot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap}
   .pfoot .go{margin-top:0}
   .plinks{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:8px}
-  .plinks a{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.24);color:#fff;font:700 12.5px var(--sans);transition:background .2s,color .2s}
+  .plinks a{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.24);color:#fff;font:700 13px var(--sans);transition:background .2s,color .2s}
   .plinks a .i{width:14px;height:14px}
   .plinks a:hover,.plinks a:focus-visible{background:#fff;color:#0a0c10;text-decoration:none}
   .pdl dd.txt{font-size:14px;font-weight:700;color:#fff}
@@ -316,7 +316,7 @@
   .body .roles > div{border-radius:16px;padding:20px 22px}
   .body .roles .rt{background:var(--soft);border:1px solid var(--line)}
   .body .roles .rm{background:var(--accent-soft);border:1px solid var(--accent)}
-  .body .roles small{display:block;margin-bottom:12px;font:800 12px var(--display);letter-spacing:.08em;color:var(--muted)}
+  .body .roles small{display:block;margin-bottom:12px;font:800 11.5px var(--display);letter-spacing:.08em;color:var(--muted)}
   .body .roles .rm small{color:var(--accent-text)}
   .body .roles ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
   .body .roles li{position:relative;padding-left:22px;font-size:15px;line-height:1.6;color:var(--ink)}
@@ -409,7 +409,7 @@
   /* 이력 (RECORDS): 증거 자료실이라 작게. 왼쪽 줄 이름, 오른쪽 항목 (EDUCATION · LANGUAGE · CERTIFICATION · SCHOLARSHIP · VOLUNTEER) */
   .recs{border-top:1px solid var(--ink)}
   .rrow{display:grid;grid-template-columns:168px minmax(0,1fr);gap:8px 24px;padding:18px 0;border-bottom:1px solid var(--line)}
-  .rrow h3{font:800 12.5px/1.9 var(--display);letter-spacing:.1em;color:var(--accent-text)}
+  .rrow h3{font:800 13px/1.9 var(--display);letter-spacing:.08em;color:var(--accent-text)}
   .ritems{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px 32px}
   .ritem{display:grid;gap:2px;align-content:start}
   .ritem .n{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
@@ -521,7 +521,7 @@
   .body a:hover{text-decoration:underline}
 
   /* 본문 추가 블록: 케이스 스터디용 (content 파일의 body 에서 사용) */
-  .body .hk{margin-top:52px;font:800 13px var(--display);color:var(--accent-text);letter-spacing:.06em}
+  .body .hk{margin-top:52px;font:800 13px var(--display);color:var(--accent-text);letter-spacing:.08em}
   .body .hk + h2{margin-top:6px}
   .body .lead{margin-top:8px;font-size:20px;font-weight:800;color:var(--ink);line-height:1.5;letter-spacing:-.02em}
   .body .facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
@@ -540,7 +540,7 @@
   .body .boxes div{background:var(--soft);border-radius:14px;padding:13px 16px;font-size:15.5px;line-height:1.65}
   .body .cards{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:10px;margin-top:18px}
   .body .cards div{border:1px solid var(--line);border-radius:16px;padding:16px 17px}
-  .body .cards small{display:block;font:800 12px var(--display);color:var(--accent-text);letter-spacing:.05em;margin-bottom:4px}
+  .body .cards small{display:block;font:800 11.5px var(--display);color:var(--accent-text);letter-spacing:.08em;margin-bottom:4px}
   .body .cards b{display:block;font-size:16px}
   .body .cards span{display:block;margin-top:6px;font-size:14.5px;line-height:1.7}
   .body .cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
@@ -566,7 +566,7 @@
   /* 목차: 본문 소제목(h)이 3개 이상이면 자동으로 생김. PC 는 왼쪽 고정, 좁은 화면은 위쪽 가로 띠 */
   .dmain.has-toc{display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px;align-items:start}
   .toc{position:sticky;top:calc(64px + 28px + env(safe-area-inset-top,0px));margin-top:36px;max-height:calc(100dvh - 130px);overflow-y:auto;scrollbar-width:thin}
-  .toc .tt{font:800 12.5px var(--display);letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
+  .toc .tt{font:800 13px var(--display);letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
   .toc ol{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
   .toc button{display:block;width:100%;text-align:left;border:0;background:none;cursor:pointer;margin-left:-2px;padding:6px 0 6px 14px;border-left:2px solid transparent;font:500 14px/1.5 var(--sans);color:var(--muted);transition:color .2s,border-color .2s}
   .toc button:hover{color:var(--ink)}
@@ -577,7 +577,7 @@
     .toc::-webkit-scrollbar{display:none}
     .toc .tt{display:none}
     .toc ol{display:flex;gap:6px;border:0;width:max-content}
-    .toc button{margin:0;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--soft);font-size:13.5px;white-space:nowrap}
+    .toc button{margin:0;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--soft);font-size:13px;white-space:nowrap}
     .toc button[aria-current="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
   }
   @media (max-width:640px){ .toc{margin-inline:-16px;padding-inline:16px} }
@@ -590,7 +590,7 @@
   .deckall:hover{text-decoration:underline}
   .dchips{display:flex;gap:8px;margin-top:16px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
   .dchips::-webkit-scrollbar{display:none}
-  .dchip{flex:none;padding:8px 15px;border-radius:999px;background:var(--soft);border:1px solid var(--line);font:700 14px var(--sans);color:var(--muted);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .dchip{flex:none;padding:8px 14px;border-radius:999px;background:var(--soft);border:1px solid var(--line);font:700 13px var(--sans);color:var(--muted);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
   .dchip:hover{border-color:var(--ink);color:var(--ink)}
   .dchip small{font:600 12px var(--display);margin-left:6px;opacity:.7}
   .dchip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
@@ -606,7 +606,7 @@
   .vplay .i{width:72px;height:72px;padding:20px 18px 20px 22px;border-radius:50%;background:var(--accent);color:#fff;fill:currentColor;stroke:none;box-shadow:0 10px 30px -6px rgba(0,0,0,.5);transition:transform .25s var(--ease)}
   .vplay:hover .i{transform:scale(1.07)}
   .vbox.on .vplay{display:none}
-  .dcap .k{font:700 12.5px var(--display);color:var(--accent-text);letter-spacing:.05em}
+  .dcap .k{font:800 13px var(--display);color:var(--accent-text);letter-spacing:.08em}
   .dcap h3{margin-top:8px;font-size:22px;font-weight:800;line-height:1.4}
   .dcap .d{margin-top:10px;font-size:15.5px;line-height:1.85}
   .dcap .pm{margin-top:16px;padding:12px 15px;border-radius:12px;background:var(--accent-soft);font-size:14.5px;line-height:1.7;color:var(--ink)}
@@ -696,7 +696,7 @@
   .vmore:hover{border-color:var(--ink)}
 
   /* ---- 섹션 위 작은 파란 글씨(kicker) · 큰 제목 · 단계 번호 줄 ---- */
-  .st-kicker{font:800 13px/1 var(--display);letter-spacing:.12em;color:var(--accent-text)}
+  .st-kicker{font:800 13px/1 var(--display);letter-spacing:.08em;color:var(--accent-text)}
   .st-title{margin-top:14px;font-size:clamp(26px,3vw,36px);font-weight:800;max-width:24em}
   .st-no{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
   .st-no .num{font:800 13px/1 var(--display);color:var(--accent-text)}
@@ -975,9 +975,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1794480000"></script>
-<script src="content/ko.js?v=1794480000"></script>
-<script src="content/en.js?v=1794480000"></script>
+<script src="content/common.js?v=1794494236"></script>
+<script src="content/ko.js?v=1794494236"></script>
+<script src="content/en.js?v=1794494236"></script>
 <script>
 (function(){
   "use strict";
