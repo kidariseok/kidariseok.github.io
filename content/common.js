@@ -39,6 +39,7 @@ SITE.common = {
     learn: {icon:"ic-book"}        // 학습 · 탐색: 듣고 보고 배운 활동
   },
   photos: {
+    "warak-mentoring": {cover:"warak_classroom", shots:["warak_classroom", "warak_laptop"]},
     "intl-publication": {cover:"intl_publication_cover"},
     realthon: {cover:"realthon_cover"},
     line4: {
@@ -68,11 +69,13 @@ SITE.common = {
   // 발표자료 슬라이드: img/ 안의 파일 이름 앞부분(file) + 01, 02 ... 번호 · count 는 전체 장 수
   // 장(챕터) 이름과 설명은 ko.js / en.js 의 해당 활동 deck 에 있습니다.
   decks: {
+    "warak-mentoring": {file:"warak_slide_", count:39},
     line4: {file:"line4_slide_", count:15},
     "trade-ai": {file:"trade_slide_", count:19},
     "ba-dive": {file:"ba_dive_slide_", count:20}
   },
   activities: [
+    {id:"warak-mentoring", start:"2026-11-10", category:"edu"},
     {
       id: "intl-publication",
       start: "2026-09-03",
@@ -252,13 +255,19 @@ SITE.common = {
   ],
 
   /* 봉사활동 전체 내역 ('이력'의 봉사 칸에서 '전체 내역 보기'를 누르면 뜨는 창)
-     출처: 1365 자원봉사포털 '자원봉사활동 확인서' (2026-09-23 발급)
+     출처: 1365 자원봉사포털 '자원봉사활동 확인서'
      한 줄이 활동 1건입니다. minutes 는 분 단위 (1시간 53분 = 113).
      org · title · field 의 이름은 ko.js / en.js 의 volunteerLog 에 있습니다.
-     새 확인서를 받으면 records 를 바꾸고 issued 날짜를 고치세요. */
+     records 에 확인서의 활동을, issued 에 확인서 발급일을 기록합니다. */
   volunteerLog: {
-    issued: "2026-09-23",
+    issued: ["2026-09-23", "2026-11-12"],
     records: [
+      {date:"2026-10-14", minutes:360, org:"suwonGwonseon", title:"afterSchoolTutoring", field:"education"},
+      {date:"2026-10-13", minutes:360, org:"suwonGwonseon", title:"afterSchoolTutoring", field:"education"},
+      {date:"2026-10-01", minutes:360, org:"suwonGwonseon", title:"afterSchoolTutoring", field:"education"},
+      {date:"2026-09-30", minutes:360, org:"suwonGwonseon", title:"afterSchoolTutoring", field:"education"},
+      {date:"2026-09-29", minutes:360, org:"suwonGwonseon", title:"afterSchoolTutoring", field:"education"},
+      {date:"2026-09-04", minutes:360, org:"suwonGwonseon", title:"afterSchoolTutoring", field:"education"},
       {date:"2025-03-22", minutes:113, org:"freemed", title:"homeVisit", field:"health"},
       {date:"2025-02-28", minutes:210, org:"ktng", title:"closing", field:"other"},
       {date:"2025-02-22", minutes:120, org:"freemed", title:"homeVisit", field:"health"},
