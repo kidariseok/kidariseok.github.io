@@ -26,7 +26,7 @@ description: 포트폴리오에 새 활동 · 프로젝트를 추가한다. 사�
 node tools/add-activity.mjs <spec.json> --dry-run   # 계획만 확인
 node tools/add-activity.mjs <spec.json>             # 넣고 검증. 새 오류나 경고가 있으면 자동으로 되돌림
 ```
-출력의 메시지대로 spec 을 고쳐 다시 실행한다. 성공하면 `?v=` 갱신과 `check-content --id` 검증이 이미 끝난 것이다.
+출력의 메시지대로 spec 을 고쳐 다시 실행한다. (되돌려져도 2번의 사진은 `img/` 에 남는다. 사진을 다시 만들 때 "이미 있습니다" 가 나오면 `--force` 를 쓰거나 있는 파일 이름을 그대로 쓴다.) 성공하면 `?v=` 갱신과 `check-content --id` 검증이 이미 끝난 것이다.
 
 ## 4. 마치기
 - 사진이 있거나 사용자가 요청하면 `python3 -m http.server 8000` 으로 `#a/<id>` 를 한국어 · 영어, 1440 · 390px 에서 본다(가로 스크롤 없음).
