@@ -1,0 +1,35 @@
+{
+  "_도움말": "복사해서 채운 뒤 node tools/add-activity.mjs 파일.json . _ 로 시작하는 키는 무시됩니다. 지울 칸은 키째 지우세요. 본문 블록 모양은 tools/templates/BLOCKS.md",
+  "id": "english-lowercase-id",
+  "category": "project | community | edu | learn 중 하나",
+  "start": "2026-01-01",
+  "end": "2026-01-31 (하루짜리면 이 줄을 지움)",
+  "video": "https://www.youtube.com/watch?v=… (없으면 이 줄을 지움)",
+  "photos": {"cover": "접두어_cover", "shots": ["접두어_01", "접두어_02"]},
+  "privacy_checked": true,
+  "ko": {
+    "title": "활동 이름",
+    "org": "주최 · 소속 (title 과 다를 때만, 20자 이하)",
+    "summary": "무엇을 했는지 한 문장. 한국어는 ~함. 으로 끝냄 (110자 이하)",
+    "short": "목록용 한 줄 (70자 이하)",
+    "panel": {"role": "내가 맡은 일", "where": "장소 · 주최", "scale": "규모", "result": "결과와 근거", "key": "큰 숫자(10자 이하, 선택)"},
+    "body": [
+      {"k": "01 · 소제목 이름", "h": "문장형 소제목."},
+      {"p": "본문 문장. ~습니다 체."},
+      {"k": "02 · 돌아보며", "h": "배운 점을 한 문장으로."},
+      {"p": "배운 점."}
+    ]
+  },
+  "en": {
+    "title": "Activity name",
+    "summary": "What I did, past tense, no subject (260 chars max)",
+    "short": "One line for lists (120 chars max)",
+    "panel": {"role": "My role", "where": "Place · host", "scale": "Scale", "result": "Result and evidence", "key": "Big number (16 chars max, optional)"},
+    "body": [
+      {"k": "01 · Section name", "h": "A sentence-style heading."},
+      {"p": "Body text."},
+      {"k": "02 · Looking back", "h": "What I learned, in one sentence."},
+      {"p": "What I learned."}
+    ]
+  }
+}

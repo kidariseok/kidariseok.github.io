@@ -3,6 +3,7 @@
    콘텐츠 검증 스크립트  ◀ 활동을 추가 · 수정한 뒤, 커밋하기 전에 실행
    ──────────────────────────────────────────────────────────────
    실행:  node tools/check-content.mjs           (오류 + 경고)
+          node tools/check-content.mjs --id 활동id (그 활동의 경고만. 오류는 전부)
           node tools/check-content.mjs --strict  (경고도 실패로 처리)
           node tools/check-content.mjs --quiet   (오류만)
 
@@ -24,6 +25,9 @@ import {fileURLToPath} from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = new Set(process.argv.slice(2));
 const STRICT = args.has("--strict"), QUIET = args.has("--quiet");
+// --id <활동id>: 그 활동에 대한 경고 · 참고만 보여 줍니다 (오류는 항상 전부). 다른 활동의 알려진 경고를 가립니다
+const idArg = process.argv.indexOf("--id");
+const ONLY_ID = idArg > 0 ? process.argv[idArg + 1] : null;
 
 /* ---------- 규정 값 (docs/CONTENT_GUIDELINES.md 와 같은 숫자) ---------- */
 const LIMITS = {
@@ -323,11 +327,14 @@ else if (new Set(vers).size !== 1) E(`index.html: content/common.js · ko.js · 
 else I(`index.html: content 스크립트 버전 ?v=${vers[0]}. content/ 파일을 고쳤다면 이 숫자를 세 곳 모두 새 값으로 바꿔야 방문자 브라우저가 새 내용을 받습니다`);
 
 report();
-process.exit(out.error.length || (STRICT && out.warn.length) ? 1 : 0);
+process.exit(out.error.length || (STRICT && out.warn.filter((m) => !ONLY_ID || m.includes(ONLY_ID)).length) ? 1 : 0);
 
 function report() {
   const show = (label, list) => { if (list.length) { console.log(`\n${label} (${list.length})`); list.forEach((m) => console.log("  · " + m)); } };
+  const mine = (m) => !ONLY_ID || m.includes(ONLY_ID);
+  const warn = out.warn.filter(mine), info = out.info.filter(mine);
   show("ERROR", out.error);
-  if (!QUIET) { show("WARN", out.warn); show("INFO", out.info); }
-  console.log(`\n활동 ${C ? C.activities.length : 0}개 확인: 오류 ${out.error.length} · 경고 ${out.warn.length} · 참고 ${out.info.length}`);
+  if (!QUIET) { show("WARN", warn); show("INFO", info); }
+  const skipped = out.warn.length - warn.length;
+  console.log(`\n활동 ${C ? C.activities.length : 0}개 확인: 오류 ${out.error.length} · 경고 ${warn.length} · 참고 ${info.length}` + (ONLY_ID ? ` (--id ${ONLY_ID}: 다른 활동의 경고 ${skipped}건은 숨김)` : ""));
 }
