@@ -13,17 +13,24 @@
      page        메뉴 · 첫 화면 · SELECTED WORK · 소개 · 활동 기록 · 이력 · 연락처 · 푸터
      ui          버튼과 작은 라벨 글자
      categories  활동 구분 이름 4가지
-     keywords    첫 화면 이름 뒤 키워드 띠 (장식)
      tiles       숫자 모음의 글자 (숫자 자체는 common.js)
-     certHead / certGroups / certs   자격증
+     certGroups / certs   자격증
      awards      장학 · 수상 (금액은 common.js)
      activities  활동 제목 · 요약 · 상세 본문
                  card: 메인 '대표 활동' 카드의 두 줄 {role, result}
-                 panel: 상세 페이지 맨 위 요약 패널 {role, team, scale, period, where, result, links} (프로젝트는 proj)
-                 본문 블록: {h:"소제목"} {p:"문단"} {ul:["항목", ...]}
-                            {note:"회색 참고 상자"} {files:["파일이름"]}
+                 panel: 상세 페이지 맨 위 요약 패널 {role, team, scale, period, where, result, key, links} (프로젝트는 proj)
+                 본문 블록 (전체 목록 · 쓰는 기준은 docs/CONTENT_GUIDELINES.md 6장):
+                            {h:"소제목", k:"01 · 작은 제목", toc:"목차 이름"} {h3:"작은 소제목"}
+                            {lead:"첫 문장"} {p:"문단"} {q:"강조 문장"} {note:"회색 참고 상자"}
+                            {ul:[...]} {checks:[...]} {facts:[...]} {flow:[...]} {boxes:[...]}
+                            {stat:[{k, v, hi}]} {cards:[{n, t, d}]} {cmp:[{n, t, d}, {n, t, d}]}
+                            {people:[{role, n, me, note}], note} {roles:{tl, ml, team:[...], mine:[...]}}
+                            {cert:{img, alt, cap}} {files:["파일이름"]}
                             {link:"링크 글자", href:"https://..."}
-                 <b>굵게</b> 를 p · ul 안에서 쓸 수 있습니다.
+                 <b>굵게</b> 를 p · ul · lead · q · note · boxes · cards 의 d 안에서 쓸 수 있습니다.
+
+   ※ 새 활동을 추가할 때는 docs/NEW_ACTIVITY_CHECKLIST.md 의 순서를 따르고,
+     고친 뒤에는 node tools/check-content.mjs 로 확인합니다.
    ══════════════════════════════════════════════════════════════ */
 window.SITE = window.SITE || {};
 SITE.en = {
@@ -37,7 +44,7 @@ SITE.en = {
       gpa: "GPA 4.33",
       gpaMax: "/ 4.5",
       headline: "Connecting Technology, People, and Industry.",
-      intro: "I have explored technology, education, planning, and global experiences through diverse activities. I understand technology, but I do not stop at technology itself. I care about how it can create value for people, organizations, and industries.",
+      intro: "I have explored technology, education, planning, and global experiences through diverse activities. I understand technology, but I do not stop at technology itself. I care about how it can create value for people, organisations, and industries.",
       buttonWork: "See selected work",
       buttonCv: "Download CV",
       cvOther: "Korean CV"
@@ -80,15 +87,11 @@ SITE.en = {
       volTotal: "1365 Volunteer Portal certificates · issued {issued}",
       volOpen: "Full record",
       volCount: "{n} sessions",
-      volCountOne: "{n} session"
     },
     contact: {
       title: "Not stopping at experience, but building what comes next.",
       description: "",
-      blog: "Naver Blog: Jinseok's Record",
       blogShort: "Blog",
-      instagram: "Instagram",
-      photos: "Photo account"
     },
     footer: {name:"Jinseok Oh · Portfolio", updated:""}
   },
@@ -112,19 +115,12 @@ SITE.en = {
     deckPm: "My part",
     toc: "Contents",
     close: "Close",
-    all: "All",
     showAll: "Show all {n} activities",
     showLess: "Show less",
-    year: "{y}",
-    groupCount: "{n} items",
-    groupCountOne: "{n} item",
-    won: " KRW",
     awardTerm: "2024 Fall term · On campus"
   },
   // 활동 구분 이름 (common.js 의 categories 와 같은 id)
   categories: {project:"Projects & Hackathons", community:"Community & Organizing", edu:"Teaching & Service", learn:"Learning & Exploring"},
-  keywords: ["AI", "Data", "Software", "Computer Education", "Education", "Mentoring", "Volunteering", "Student programs", "Service planning", "Projects", "Hackathons", "International school", "English", "Global speakers", "Overseas volunteering", "Exchange student", "GDG on Campus : SKKU", "Hackathon lead", "PM"],
-  interests: ["AI · Data", "PM", "Service planning", "Developer", "Global"],
   // 숫자 모음의 글자 (숫자 자체는 common.js 의 tiles)
   tiles: {
     gpa: {label:"GPA", unit:" / 4.5", note:"Sungkyunkwan University · Computer Education"},
@@ -134,7 +130,6 @@ SITE.en = {
     dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments and built my global perspective."},
     funding: {label:"Hackathon funding raised", value:"$5K+", unit:"", note:"From programs at <b>3</b> universities · total budget ~$5.5K"}
   },
-  certHead: ["Credential", "Result", "Detail", "Issuer", "Obtained", "Status"],
   certGroups: {language:"Language", cert:"Certification"},
   certs: {
     adsp: {
@@ -350,7 +345,10 @@ SITE.en = {
         },
         {h:"07. What I learned"},
         {
-          p: "I used to think the quality of the event depended on keeping its global shape. But with several organisations involved, many variables were outside my control. What mattered was rebuilding the options from the resources and constraints we actually had, and connecting directly with the people who could help. I also felt how delaying one key decision pushes back sponsorship, venue, promotion and recruitment all at once."
+          p: "I used to think the quality of the event depended on keeping its global shape. But with several organisations involved, many variables were outside my control. What mattered was rebuilding the options from the resources and constraints we actually had, and connecting directly with the people who could help."
+        },
+        {
+          p: "I also felt how delaying one key decision pushes back sponsorship, venue, promotion and recruitment all at once."
         },
         {h:"08. What changed afterwards"},
         {
@@ -365,7 +363,7 @@ SITE.en = {
     line4: {
       title: "2GATHER",
       org: "LIKELION Line-4 Hackathon",
-      summary: "As PM, planned 2GATHER - an AI-powered marketing solution that helps students and early-stage founders plan promotion and connect with the right people on a small budget and a limited network.",
+      summary: "As PM and UX/UI lead, planned 2GATHER, an AI promotion-strategy platform that helps students and early-stage founders plan promotion on a small budget, and shipped it in six weeks.",
       short: "PM · UX/UI for 2GATHER, an AI promotion-strategy platform shipped in 6 weeks",
       proj: {
         name: "2GATHER",
@@ -433,10 +431,10 @@ SITE.en = {
 
         {k:"05 · A different take on budget", toc:"05 Budget", h:"Not everyone gets the same ratio."},
         {p:"At first we planned to apply a <b>70/20/10 budget split</b> to every user."},
-        {p:"But for very small budgets, like ₩10,000–20,000, applying the ratio as-is was unrealistic. So we split budgets into tiers."},
+        {p:"But for very small budgets, like KRW 10,000–20,000, applying the ratio as-is was unrealistic. So we split budgets into tiers."},
         {cmp:[
-          {t:"Under ₩100,000", d:"Show recommended costs and creator rates, and let the user decide"},
-          {t:"₩100,000 and up", d:"Suggest 70/20/10 as the default, and let the user adjust"}
+          {t:"Under KRW 100,000", d:"Show recommended costs and creator rates, and let the user decide"},
+          {t:"KRW 100,000 and up", d:"Suggest 70/20/10 as the default, and let the user adjust"}
         ]},
         {p:"For small budgets, we decided it was better to <b>offer choices than to force an answer</b>."},
 
@@ -448,8 +446,8 @@ SITE.en = {
 
         {k:"07 · My part", h:"I turned the idea into the structure of a service."},
         {p:"As PM, I led the planning process <b>from pitching the idea through planning, wireframes, working with developers and presenting</b>."},
-        {people:[{"role": "Planning · PM", "n": 1, "me": true, "note": "Me"}, {"role": "UI design", "n": 1, "note": "Minjeong Jang"}, {"role": "Front-end · Back-end", "n": 4, "note": "Four teammates"}]},
-        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Final UI design: Minjeong Jang", "Front-end and back-end: four teammates"], mine:[
+        {people:[{"role": "Planning · PM", "n": 1, "me": true, "note": "Me"}, {"role": "UI design", "n": 1, "note": "One teammate"}, {"role": "Front-end · Back-end", "n": 4, "note": "Four teammates"}]},
+        {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Final UI design: one teammate", "Front-end and back-end: four teammates"], mine:[
           "Defined the problem from a real recruiting experience and pitched the project",
           "Planned the core features and user flow",
           "Researched six promotion channels and turned them into service rules",
@@ -487,7 +485,7 @@ SITE.en = {
             name: "Intro",
             pm: "As PM, I led the planning process from pitching the idea through wireframes, working with developers and presenting.",
             slides: [
-              {k:"INTRO", t:"2GATHER, a promotion-strategy platform", d:"An AI-powered, timeline-based marketing solution. Built by Jinseok Oh (PM), Minjeong Jang (design), Yechan Kim and Hyeonseo Choi (front-end), and Minseo Kang and Jindong Lee (back-end)."}
+              {k:"INTRO", t:"2GATHER, a promotion-strategy platform", d:"An AI-powered, timeline-based marketing solution. Built by a team of six: one PM, one designer, two front-end and two back-end developers."}
             ]
           },
           {
@@ -495,7 +493,7 @@ SITE.en = {
             pm: "I defined the problem from recruiting for GDG on Campus : SKKU and pitched the project.",
             slides: [
               {k:"GOAL / REALITY", t:"Aimed for 30, recruited 9", d:"Recruiting for GDG on Campus : SKKU as head of people, the goal was 30 new members - only 9 joined. The project started from that gap."},
-              {k:"QUESTION", t:"Where can ₩10,000 buy promotion?", d:"We asked whether a small budget could get a message onto a platform everyone already knows."},
+              {k:"QUESTION", t:"Where can KRW 10,000 buy promotion?", d:"We asked whether a small budget could get a message onto a platform everyone already knows."},
               {k:"ANSWER", t:"In the end, only Instagram", d:"The only answer that came to mind was Instagram."},
               {k:"PAIN POINT", t:"Three limits", d:"With limited resources and networks, students and early-career people struggle to find teammates; existing channels like Everytime or department group chats reach only so far; and after graduation even those networks become hard to use."},
               {k:"OVERVIEW", t:"Why don't capable people connect?", d:"Capable people hit a ceiling when looking for opportunities and growing their networks. From that, we planned 2GATHER - a space that turns ideas into reality."}
@@ -517,7 +515,7 @@ SITE.en = {
               {k:"STEP 1", t:"Enter your conditions", d:"Just enter the campaign title, recruiting period, target headcount, budget, and your preferred channels in order."},
               {k:"STEP 2", t:"AI analysis", d:"The AI analyzes a promotion strategy based on those conditions."},
               {k:"STEP 3", t:"The optimal timeline", d:"The resulting timeline can be saved as an image, and channels with different promotion periods are managed on one screen."},
-              {k:"STRENGTH", t:"A rotating structure that lowers the barrier", d:"Users join with student or business verification. Experts leave the platform 3 years after graduating or 5 years after founding, so new users and creators keep arriving and no one monopolizes it."}
+              {k:"STRENGTH", t:"A rotating structure that lowers the barrier", d:"Users join with student or business verification. Experts leave the platform 3 years after graduating or 5 years after founding, so new users and creators keep arriving and no one monopolises it."}
             ]
           },
           {
@@ -537,7 +535,7 @@ SITE.en = {
       short: "177 hours of education and environmental volunteering at an elementary school in Bogor, Indonesia.",
       card: {role:"Accounting & supplies · led Korean traditional game, ddakji and tooth-brushing lessons", result:"Built a new building for the school and acquired teaching experiences"},
       panel: {
-        role: "Accounting & supplies team (Team 1 class supplies · budget of roughly ₩2.2 million per team) · planned and led the ddakji class and tooth-brushing lesson",
+        role: "Accounting & supplies team (Team 1 class supplies · budget of roughly KRW 2.2 million per team) · planned and led the ddakji class and tooth-brushing lesson",
         team: "40 volunteers (4 teams of 10)",
         period: "Oct 2024 – Feb 2025 · deployed 8–17 Jan 2025",
         where: "Babakan Madang Elementary School, Bogor, Indonesia",
@@ -581,7 +579,7 @@ SITE.en = {
         {p:"Rather than delivering the lesson exactly as planned, <b>watching the children's reactions and explaining or helping in the moment mattered far more.</b>"},
 
         {k:"03 · Accounting & supplies", h:"Good classes started with good preparation."},
-        {p:"I handled Team 1's class supplies within a budget of roughly <b>₩2.2 million per team</b>."},
+        {p:"I handled Team 1's class supplies within a budget of roughly <b>KRW 2.2 million per team</b>."},
         {p:"The job was more than just buying things."},
         {p:"When class leads sent me what they needed, I organised the list, checked the estimated costs, and reviewed whether each purchase was feasible within the overall budget."},
         {p:"When an item turned out more expensive than expected, I didn't just buy it."},
@@ -721,7 +719,7 @@ SITE.en = {
         },
         {h:"01. Finding answers in competitors"},
         {
-          p: "I compared competing language academies' admissions strategies, curricula, and the way their websites convey information. Rather than just listing competitors' strengths, I looked at how intuitively the values Creverse emphasizes actually reach real users."
+          p: "I compared competing language academies' admissions strategies, curricula, and the way their websites convey information. Rather than just listing competitors' strengths, I looked at how intuitively the values Creverse emphasises actually reach real users."
         },
         {
           p: "I noticed that although Creverse has strengths such as integrated thinking, skill assessment, and systematic management, the way they are shown can feel abstract. I proposed conveying the education process more clearly with quantitative information and visual content."
@@ -746,7 +744,7 @@ SITE.en = {
         {
           p: "Instead of merchandise with just a logo, I approached it by connecting the product's user experience with the brand, so that the program's character comes through naturally as learners actually use it."
         },
-        {h:"What I learned"},
+        {h:"Looking back"},
         {
           p: "Through three proposals, I learned that marketing is not only about creating new messages, but about discovering the strengths an existing service already has and connecting them in a form users can understand."
         },
@@ -840,7 +838,7 @@ SITE.en = {
         {
           p: "I led a team running speech mentoring for foreign residents in Korea. Listening to and talking with a Pakistani resident here, we prepared a speech together on recognising cultural difference and raising multicultural awareness."
         },
-        {h:"Mentor programme schedule"},
+        {h:"Mentor program schedule"},
         {
           ul: [
             "<b>Kick-off</b> - Fri 6 Sep, Sangsang Univ",
@@ -872,7 +870,7 @@ SITE.en = {
             "<b>Closing an information gap</b> - a low-cost, high-efficiency voice-based option for students outside the capital, or otherwise cut off from the expensive in-person admissions consulting market."
           ]
         },
-        {h:"Reflection"},
+        {h:"Looking back"},
         {
           p: "As a student in a college of education I am always studying pedagogy in the abstract, but chances to actually sit with students are rare. Empathising with what these students were worried about, and giving them advice, made me more invested in my own coursework. Finding somewhere to actually apply what I have learned, rather than stopping at the lecture, is one of my strengths."
         }
@@ -882,11 +880,12 @@ SITE.en = {
       title: "KAIST ICISTS HACKAFAIR",
       summary: "Developed an idea over five days, built the materials in English and worked through mentoring sessions with overseas mentors in English.",
       short: "Developed an idea over five days, building the materials in English with overseas mentors.",
+      panel: {role:"Team leader", where:"Hosted by KAIST ICISTS", result:"Planned \"Joyakdol\", a service for easing generational conflict, over five days, put it into a business model canvas, customer journey map and poster, and showcased it at the Tech-Fair"},
       body: [
         {
           p: "Over five days we developed an idea, built all the materials in English, and ran our mentoring sessions with overseas mentors in English."
         },
-        {h:"Programme"},
+        {h:"Program"},
         {
           ul: [
             "Keynote speech",
@@ -895,18 +894,18 @@ SITE.en = {
             "IDEAthon",
             "Talk concert",
             "Mentoring",
-            "Actualizing",
+            "Actualising",
             "Tech-Fair"
           ]
         },
-        {link:"[HACKAFAIR 2024] Closing video", href:"http://youtube.com/watch?v=aaZnvdajMoU"}
+        {link:"[HACKAFAIR 2024] Closing video", href:"https://youtube.com/watch?v=aaZnvdajMoU"}
       ]
     },
     goormthon: {
       title: "ESC: ESCape SKKU",
-      org: "Goormthon Univ 3rd Cohort: Campus Organiser",
-      summary: "As part of a software development club, built programs around the club's mission and ran weekly study sessions and lectures.",
-      short: "Campus organiser; built club programs and ran weekly study sessions.",
+      org: "Goormthon Univ 3rd Cohort",
+      summary: "As PM, planned a web escape-room game set on the Yuljeon campus with the Goormthon Univ cohort, and ran it in person at a booth.",
+      short: "Planned a campus web escape-room game as PM and ran it in person at a booth.",
       proj: {
         name: "ESC: ESCape SKKU",
         type: "Game · Escape room",
@@ -926,10 +925,6 @@ SITE.en = {
         pm: "As PM, I shaped the storyline and wrote the PRD."
       },
       body: [
-        {h:"On campus"},
-        {
-          p: "Goorm is a Kakao subsidiary that runs coding bootcamps and builds IDEs. I got into Goormthon Univ representing SKKU, did the orientation at their Pangyo office, and met the rest of the SKKU cohort there for the first time."
-        },
         {
           p: "Then, for Halloween and our college night on 31 October, we built a campus escape-room game called \"ESC: ESCape SKKU\". It was my first time as PM - writing the storyline and the PRD - and it turned out to be a genuinely fun game. Thanks to a very capable designer and developers it came out exactly as imagined; we were lucky enough to get a booth and run it in person, and the students loved it."
         },
@@ -955,11 +950,28 @@ SITE.en = {
         {p:"I learned how the front-end and back-end connect organically to become one game."},
         {p:"The game drew students in, and I found it rewarding to watch them enjoy it."},
         {q:"I came to realise that I enjoy building something with technology and watching the effect it has on people."},
-
+        {link:"See the Goormthon Univ campus activities", href:"#a/goormthon-univ"}
+      ]
+    },
+    "goormthon-univ": {
+      title: "Goormthon Univ 3rd Cohort: Campus Organiser",
+      summary: "As a campus organiser of Goormthon Univ 3rd cohort, ran study sessions and a joint PM study group with Sejong and Soongsil students.",
+      short: "Campus organiser; ran study sessions and a joint PM study group.",
+      panel: {
+        role: "Campus organiser · ran a joint PM study group with Sejong and Soongsil students",
+        where: "Goormthon Univ 3rd Cohort · Sungkyunkwan University",
+        links: [{t:"See the ESC project", href:"#a/goormthon"}]
+      },
+      body: [
+        {h:"On campus"},
+        {
+          p: "Goorm is a Kakao subsidiary that runs coding bootcamps and builds IDEs. I got into Goormthon Univ representing SKKU, did the orientation at their Pangyo office, and met the rest of the SKKU cohort there for the first time."
+        },
         {h:"Inter-university work"},
         {
           p: "I ran a joint PM study group with people from Sejong and Soongsil. Over three months, meeting weekly, we worked through workflow methods, how development actually gets done, and how to use Figma. It is not an experience a first-year usually gets, so I went into it grateful - and everyone there was kind and sharp, which made it a good time."
-        }
+        },
+        {link:"See the ESC project", href:"#a/goormthon"}
       ]
     },
     ched: {
@@ -995,7 +1007,7 @@ SITE.en = {
       short: "Assisted classes for adolescents with developmental disabilities.",
       panel: {
         role: "Assisting classes for adolescents with developmental disabilities",
-        scale: "7 volunteer hours (1365 certificate)"
+        result: "7 volunteer hours (1365 certificate)"
       },
       body: [
         {k:"01 · My role", h:"I supported the classes from the side."},
@@ -1067,11 +1079,11 @@ SITE.en = {
           "<b>Flights</b> - fitted the route from Incheon to Shenzhen, Shenzhen to Shanghai, and the return flight into the schedule."
         ]},
         {h3:"Conferences · Check feasibility first"},
-        {p:"While choosing conferences, I checked application periods, eligibility and costs. Because it was hard to confirm the participating companies and programme of the Shenzhen conference, I <b>also looked for substitute conferences</b> and summarized what we could learn at each event to make the plan more concrete."},
+        {p:"While choosing conferences, I checked application periods, eligibility and costs. Because it was hard to confirm the participating companies and program of the Shenzhen conference, I <b>also looked for substitute conferences</b> and summarised what we could learn at each event to make the plan more concrete."},
 
         {k:"04 · How We Built It", h:"From choosing a topic to presenting, we refined the plan as a team over about six weeks."},
         {ul:[
-          "<b>April 18</b> - Each member proposed a preferred country and topic, and we compared them: online platform development (US East Coast), mobility and daily-life support for vulnerable groups (Japan), e-commerce (China), and an AR virtual fitting system (Silicon Valley), which I proposed. We discussed them against the selection criteria (relevance to the programme's purpose, concreteness of the plan, novelty of the topic), and the team settled on China e-commerce.",
+          "<b>April 18</b> - Each member proposed a preferred country and topic, and we compared them: online platform development (US East Coast), mobility and daily-life support for vulnerable groups (Japan), e-commerce (China), and an AR virtual fitting system (Silicon Valley), which I proposed. We discussed them against the selection criteria (relevance to the program's purpose, concreteness of the plan, novelty of the topic), and the team settled on China e-commerce.",
           "<b>April 28</b> - We submitted the final application.",
           "<b>May 21 and 26</b> - We set the presentation outline and divided up the slides.",
           "<b>May 28</b> - We reviewed the presentation together in person.",
@@ -1084,16 +1096,18 @@ SITE.en = {
           {n:"01", t:"Team", d:"A five-person GDG on Campus : SKKU team from different majors and years"},
           {n:"02", t:"Motivation", d:"The growth of Chinese e-commerce platforms and changes in the Korean market"},
           {n:"03", t:"Pre-plan", d:"Contact points, and Chinese, visa and flight preparation"},
+        ]},
+        {cards:[
           {n:"04", t:"Itinerary", d:"GDG exchange, conferences, and Tencent and Pinduoduo visits"},
           {n:"05", t:"Next Steps", d:"Shopping search app, paper, Korea E-Commerce Fair"},
           {n:"06", t:"Effects", d:"Academic and international expected effects"}
         ]},
-        {note:"For publication, I removed student ID numbers and company contact details from the slides, and blurred every face except mine."},
+        {note:"For publication, I removed student ID numbers and company contact details from the slides, blurred every face except mine and hid the other members' names."},
 
         {k:"06 · Result", h:"We passed the document round and presented, but were not selected in the end."},
         {p:"The result was disappointing, but what remains is the process of working out in detail what we wanted to do in Shenzhen and Shanghai, down to schedule, cost and application requirements."},
 
-        {k:"07 · What I Learned", h:"I found that I am someone who is drawn to how technology is applied in different environments."},
+        {k:"07 · Looking back", h:"I found that I am someone who is drawn to how technology is applied in different environments."},
         {p:"Working with my teammates and extending our plan overseas made me curious about <b>how the same technology is applied in a different environment</b>."},
         {p:"This attempt showed me that I am someone who finds that kind of question interesting."}
       ],
@@ -1105,18 +1119,18 @@ SITE.en = {
             {k:"COVER", t:"Deep Dive into E-Commerce: Explore Like a Billionaire", d:"The cover of our SKKU-BA-DIVE 2024 Summer application presentation, from the GDG on Campus : SKKU team. Student IDs have been removed."},
             {k:"CONTENTS", t:"Contents", d:"Six parts: team, motivation, pre-plan, itinerary, next steps and expected effects."},
             {k:"TEAM 01", t:"GDG on Campus : SKKU", d:"A university-based community for students interested in Google technologies. We introduced our activities, from Google tech study workshops, the EAP national policy training, the GDG on Campus Korea joint hackathon and the Google Solution Challenge to the global IT video lectures, under the keywords “convergence” and “global.”"},
-            {k:"TEAM 02", t:"Diversity of majors and years", d:"Introduces the five-person team from different majors and years. For myself, I included that I was a first-year Computer Education student who lived in China for five years. Photos of the other members are blurred."}
+            {k:"TEAM 02", t:"Diversity of majors and years", d:"Introduces the five-person team from different majors and years. For myself, I included that I was a first-year Computer Education student who lived in China for five years. Photos and names of the other members are hidden."}
           ]},
           {name: "Motivation", slides: [
             {k:"MOTIVATION 01", t:"Rapid growth of global e-commerce", d:"App ranking data shows Chinese platforms such as Temu, SHEIN and AliExpress posting high growth in the global e-commerce market."},
             {k:"MOTIVATION 02", t:"A growing presence in Korea too", d:"Presents the rise in app users of Chinese platforms in the Korean e-commerce market."},
             {k:"MOTIVATION 03", t:"Why understanding the winning strategy matters", d:"From the question “Why are AliExpress and Temu investing so much in Korea?”, we framed the topic as exploring survival strategies for Korean platforms by analyzing the rapid growth of Chinese e-commerce platforms. People on screen are blurred."}
           ]},
-          {name: "Pre-plan", pm: "I took the Chinese, visa and flight part and organized the preparation items using my experience of living in China.", slides: [
-            {k:"PRE-PLAN 01", t:"Contact points and booking information", d:"Organized contact points in three groups: GDGs in China, e-commerce companies, and conferences. With the GDGs we would use a dedicated Slack channel; for companies and conferences we checked official channels and how to apply. Company contact details are removed."},
+          {name: "Pre-plan", pm: "I took the Chinese, visa and flight part and organised the preparation items using my experience of living in China.", slides: [
+            {k:"PRE-PLAN 01", t:"Contact points and booking information", d:"Organised contact points in three groups: GDGs in China, e-commerce companies, and conferences. With the GDGs we would use a dedicated Slack channel; for companies and conferences we checked official channels and how to apply. Company contact details are removed."},
             {k:"PRE-PLAN 02", t:"Chinese study, visa and flights", d:"The Chinese study covered social media that cannot be used in China, cultural differences, and signing up for a paid VPN in advance. For the visa, how to apply in person and the time and fee for regular, express and rush service; for flights, the route from Incheon to Shenzhen, Shenzhen to Shanghai, and back home."}
           ]},
-          {name: "Itinerary", pm: "I took the conference part: I checked deadlines and eligibility for candidate conferences and summarized what we could learn at each, plus backup options.", slides: [
+          {name: "Itinerary", pm: "I took the conference part: I checked deadlines and eligibility for candidate conferences and summarised what we could learn at each, plus backup options.", slides: [
             {k:"PLAN 01", t:"Overall schedule", d:"A calendar that places the GDG exchanges, conferences and company visits in a trip starting in Shenzhen and moving to Shanghai."},
             {k:"PLAN 02", t:"GDG Shenzhen exchange", d:"A technology and culture exchange: GDG Shenzhen shares Google Analytics and TensorFlow, while GDG on Campus : SKKU shares Google Workspace and SEO know-how and Sungkyunkwan culture. Event photos are blurred."},
             {k:"PLAN 03", t:"GDG Shanghai exchange", d:"GDG Shanghai shares Google Analytics and Android and Kotlin, and GDG on Campus : SKKU shares its know-how in the same way. Event photos are blurred."},
@@ -1167,7 +1181,7 @@ SITE.en = {
             "Combined computer-education knowledge with the business and economics domain, turning an abstract concern into a complete, defensible research plan."
           ]
         },
-        {h:"Reflection"},
+        {h:"Looking back"},
         {
           p: "With the GDG on Campus : SKKU team I found the topic - AI analysis and forecasting of business markets using Google Trends data - and led the writing of the proposal. Rather than stopping at the idea, I analysed whether an LSTM forecasting model combining the Google Trends API with economic indicators was technically feasible."
         },
@@ -1183,7 +1197,7 @@ SITE.en = {
       panel: {
         role: "Home Health-Care Team member (cohort 30) → Donui-dong part lead · team study lead · planned doctor (MD) visits",
         team: "Home Health-Care Team of about 14 (3 programs) · 2–3 members on the Donui-dong visits",
-        period: "2024.03 – 2025.03",
+        period: "Mar 2024 – Mar 2025",
         where: "FreeMed (non-profit) · Donui-dong jjokbang district, Jongno-gu, Seoul (partner: Saetteuljip)",
         result: "17 visits · 24 h 10 min (1365 certificate) · wrote 12 visit records and 9 meeting minutes",
         key: "17 visits",
@@ -1202,7 +1216,7 @@ SITE.en = {
         {p:"That changed the day I first met her."},
 
         {k:"02 · Ms. Hangyeol", toc:"02 Ms. Hangyeol", h:"The person I visited every two weeks"},
-        {note:"To protect the participant, her name is a pseudonym, and details that could identify her, such as age, medical history and address, are generalized."},
+        {note:"To protect the participant, her name is a pseudonym, and details that could identify her, such as age, medical history and address, are generalised."},
         {cards:[
           {n:"DAILY LIFE", t:"Living alone", d:"In her 70s. She worked from late at night until dawn, so many days she slept only three or four hours."},
           {n:"HEALTH", t:"A body she has long looked after", d:"She sees doctors regularly for several chronic conditions, but sometimes put off hospital visits for fear of hearing the word “surgery.”"}
@@ -1220,7 +1234,7 @@ SITE.en = {
         {p:"After each visit I wrote a <b>visit record</b> with five sections: vital signs, physical condition, emotional state, daily habits, and tasks for the next visit. A blood-sugar reading only means something next to the time of the last meal, so I always noted what she ate and when."},
         {p:"A nursing student on the team usually took the measurements while I kept the record. I studied the normal blood-pressure and blood-sugar ranges myself, and on days when that member was away, I took the measurements."},
         {cards:[
-          {n:"1365 CERTIFICATE", t:"17 visits · 24 h 10 min", d:"Recognized FreeMed home-visit hours, 2024.05 – 2025.03"},
+          {n:"1365 CERTIFICATE", t:"17 visits · 24 h 10 min", d:"Recognised FreeMed home-visit hours, 2024.05 – 2025.03"},
           {n:"VISIT RECORDS", t:"12", d:"I wrote all 12 surviving visit records for Ms. Hangyeol."},
           {n:"MEETING MINUTES", t:"9", d:"Planning, feedback, team and study meetings."}
         ]},
@@ -1288,7 +1302,7 @@ SITE.en = {
     },
     gdsc: {
       title: "GDG on Campus : SKKU",
-      summary: "When GDSC's reorganisation into GDG on Campus cut off the Google network we used to rely on, I booked speakers for the monthly global IT seminar through several routes - cold emails, people I had met in class, and referrals from the university program - and documented the whole outreach process in Korean and English.",
+      summary: "After GDSC became GDG on Campus and the old Google network was cut off, I booked speakers for the monthly global IT seminar through several routes and documented the outreach process in Korean and English.",
       short: "Booked monthly IT seminar speakers without an existing network; documented the process.",
       card: {role:"Core / HR lead · monthly IT seminar speaker outreach", result:"Held regular seminars inspiring 300 students per year"},
       panel: {
@@ -1355,7 +1369,7 @@ SITE.en = {
             "<b>A documented process</b> - Korean and English templates left in a form the next organiser can pick up."
           ]
         },
-        {h:"07. What I learned"},
+        {h:"07. Looking back"},
         {
           p: "When I sent my first cold email, I had no idea whether a stranger would ever write back. Once I actually reached out, far more people than I expected were keen to share their experience with students. It showed me how warm the developer community is, and that <b>you don't need to have everything in place before you can start</b>. If something is needed, you can look for it, reach out and build the way there."
         },
@@ -1511,7 +1525,7 @@ SITE.en = {
         {p:"and developed it into a single service flow."},
         {roles:{tl:"TEAM", ml:"MY CONTRIBUTION", team:["Research on supply-chain problems and the trade environment", "Service idea and feature design", "Discussion of how to match companies", "Producing the presentation"], mine:["Developing the service idea from a software and data perspective", "Discussing the matching flow using company information and requirements", "Reviewing service features and the user flow", "Turning the team's ideas into the presentation"]}},
 
-        {k:"04 · Team Presentation", h:"We developed the project from problem to service in a 17-slide presentation."},
+        {k:"04 · Team Presentation", h:"We developed the project from problem to service in a 19-slide presentation."},
         {p:"We laid out the team's result in the presentation as a flow of <b>problem definition → service design → expected effects</b>."},
         {p:"Starting from the problem of supply-chain instability, we expressed the process of taking in a company's requirements and searching for and comparing matching partners as <b>mockups that let you imagine the actual service screens</b>."},
         {h3:"Key points covered in the presentation"},
@@ -1519,6 +1533,8 @@ SITE.en = {
           {n:"01", t:"Problem", d:"Exporters' supply-chain problems and how prepared they are for a crisis"},
           {n:"02", t:"Service", d:"Entering company information and setting requirements"},
           {n:"03", t:"Matching", d:"A list of matching companies and trust information for trading"},
+        ]},
+        {cards:[
           {n:"04", t:"Filtering", d:"Automatic exclusion of blacklisted companies, and objections"},
           {n:"05", t:"Map", d:"Map-based partner search and narrowing the range"},
           {n:"06", t:"Expected Value", d:"A stable trade supply network and more diversified partners"}
@@ -1533,17 +1549,17 @@ SITE.en = {
         {h3:"INDUSTRY DX"},
         {p:"I looked at DX cases from various industries, including manufacturing, logistics, finance, and platforms."},
         {ul:[
-          "<b>Manufacturing</b> — LS Group's smart factory: AI-based process prediction and energy and cost optimization",
+          "<b>Manufacturing</b> — LS Group's smart factory: AI-based process prediction and energy and cost optimisation",
           "<b>Logistics</b> — robot automation and smart logistics processes across loading, storage, picking, packing, and delivery",
           "<b>Finance and platforms</b> — blockchain-based letter of credit (L/C) procedures and KITA's AI semantic search service"
         ]},
         {p:"From these I saw that AI is not used as a standalone technology, but <b>can create new value when combined with how each industry works</b>."},
         {h3:"XAI & AI SAFETY"},
-        {p:"I studied how <b>LRP (Layer-wise Relevance Propagation)</b> visualizes the basis of an AI's decisions, and <b>a research case on modifying neurons in a GAN generative model</b>."},
+        {p:"I studied how <b>LRP (Layer-wise Relevance Propagation)</b> visualises the basis of an AI's decisions, and <b>a research case on modifying neurons in a GAN generative model</b>."},
         {p:"I also looked at AI safety principles such as <b>fairness, transparency, and reliability</b>, which are needed to apply AI in real industries."},
         {p:"I came to see that beyond the accuracy of results, we must also consider <b>whether we can explain why a result came out as it did and use it in a trustworthy way</b>."},
 
-        {k:"06 · Reflection", h:"Connecting knowledge from different fields was what made the use of the technology concrete."},
+        {k:"06 · Looking back", h:"Connecting knowledge from different fields was what made the use of the technology concrete."},
         {p:"What struck me most at this camp was that <b>learning a technology and understanding the problem it is applied to are not separate things</b>."},
         {p:"I learned perspectives on the industry and its problems from my teammates who majored in trade, and from my background in software and data I looked at those problems in the form of a service."},
         {p:"Through this I experienced that solving a problem takes <b>connecting domain knowledge with a technical perspective, and making concrete what information real users need</b>."},
@@ -1559,11 +1575,11 @@ SITE.en = {
         title: "Team presentation",
         chapters: [
           {name: "Intro", slides: [
-            {k:"COVER", t:"A customized, situation-based company-matching service", d:"Customized Situation-Based Business Matching Service. The presentation of Team 11, 2024 Undergraduate Trade & AI Camp. The service screens that follow are improved UI mockups."},
+            {k:"COVER", t:"A customised, situation-based company-matching service", d:"Customized Situation-Based Business Matching Service. The presentation of Team 11, 2024 Undergraduate Trade & AI Camp. The service screens that follow are improved UI mockups."},
             {k:"CONTENTS", t:"Contents", d:"Four parts: the problem, the solution, expected effects, and a wrap-up."}
           ]},
           {name: "Problem", slides: [
-            {k:"PROBLEM 01", t:"85.5% of exporters had supply-chain problems", d:"Cites a KITA survey of 1,094 companies (reported by Newsis, May 2022). As the trade environment shifts from globalization to regionalization, Korean firms were not coping, so supply chains needed diversifying."},
+            {k:"PROBLEM 01", t:"85.5% of exporters had supply-chain problems", d:"Cites a KITA survey of 1,094 companies (reported by Newsis, May 2022). As the trade environment shifts from globalisation to regionalisation, Korean firms were not coping, so supply chains needed diversifying."},
             {k:"PROBLEM 02", t:"A sudden shift in the trade structure", d:"Geopolitical risk (friend-shoring, the US-China trade war) and environmental regulation (CBAM, ETS, the IRA, etc.) are reshaping trade. Only 33.5% of companies said they were somewhat prepared for a supply-chain crisis."},
             {k:"EVIDENCE 01", t:"War damage to domestic R&D companies", d:"In a survey of 333 companies by KOITA (Mar 2022), raw-material prices and supply issues (27.2%) and trade restrictions and production disruption (26.0%) were the leading damage types."},
             {k:"EVIDENCE 02", t:"Export impact of a carbon border tax", d:"A Bank of Korea estimate puts exports down 0.5% if the EU imposed the tax and 0.6% if the US did, about -1.1% in total goods annually."}
@@ -1580,7 +1596,7 @@ SITE.en = {
             {k:"STEP 06", t:"Transaction references", d:"See anonymous transactions of similarly sized companies, built around indicators, trends, and anonymous cases."}
           ]},
           {name: "Expected effects", slides: [
-            {k:"EFFECT 01", t:"A stable trade supply network", d:"Customization to a company's requirements (industry, value, size, etc.) plus AI processing that derives stable values from similar companies' precedents is expected to counter supply-chain crises."},
+            {k:"EFFECT 01", t:"A stable trade supply network", d:"Customisation to a company's requirements (industry, value, size, etc.) plus AI processing that derives stable values from similar companies' precedents is expected to counter supply-chain crises."},
             {k:"EFFECT 02", t:"Keeping a competitive edge, cutting costs", d:"A stable supply chain helps secure market competitiveness and reduces the risk of inefficient production stoppages, avoiding unnecessary costs."},
             {k:"EFFECT 03", t:"Helping companies set trade strategy", d:"Saves time and cost while giving insight to understand situations that were hard to grasp before and to choose the best option."},
             {k:"THANK YOU", t:"Thank you", d:"The end of Team 11's presentation at the 2024 Undergraduate Trade & AI Camp."}
@@ -1592,7 +1608,7 @@ SITE.en = {
       title: "Future Technologies of the Fourth Industrial Revolution",
       summary: "Before starting university, completed 14 online courses over two days, 14 hours in total.",
       panel: {
-        role: "Earned technical insights before getting into university",
+        role: "Lecture attendee",
         scale: "14 lectures · 14 hours (2 full days, 10:00–18:00)",
         period: "13–14 Feb 2024 · online",
         where: "SKKU AI Institute lecture series",
@@ -1611,7 +1627,7 @@ SITE.en = {
         {p:"Over two days and 14 hours I heard experts from Microsoft, AWS, Google and NVIDIA, and got a broad look at what was moving fast at the time: generative AI, cloud, Azure AI Studio, image-generation models and digital twins."},
         {p:"Rather than going deep on any one technology, I listened with a question: <b>\u201cHow far will technology go, and what role could I play in it?\u201d</b>"},
 
-        {k:"02 · Technology doesn't grow alone", toc:"02 Technology doesn't grow alone", h:"Technology needs an ecosystem."},
+        {k:"02 · Technology doesn't grow alone", toc:"02 No tech grows alone", h:"Technology needs an ecosystem."},
         {p:"The first thing that struck me was the story of the <b>driver's licence</b>."},
         {p:"A car alone does not create a car society. Alongside the technology to build cars you need roads and traffic infrastructure, licensing rules and laws, and a society ready to accept it all."},
         {p:"Generative AI and the metaverse were the same."},
@@ -1683,7 +1699,7 @@ SITE.en = {
             "Translating for the child's feeling and context, not just the words, so the exchange with the sponsor stayed genuine."
           ]
         },
-        {h:"Reflection"},
+        {h:"Looking back"},
         {
           p: "I started before university. I was looking for volunteering that used the English I was confident in, and this one ran online - which meant I could keep it up alongside my studies."
         },
