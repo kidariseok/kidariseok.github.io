@@ -1,11 +1,12 @@
 # 작업 안내 (코딩 에이전트용)
 
 오진석의 포트폴리오 사이트입니다. 빌드 없는 정적 사이트이고, **활동을 추가하는 일은 데이터를 더하는 일**입니다.
-이 파일은 요약입니다. 작업 전에 해당 문서를 읽으세요.
+이 파일은 요약입니다. **활동 추가는 `/add-activity` 스킬로** 합니다(스크립트가 규칙을 적용하므로 content/ · docs/ 를 읽지 않습니다). 문서는 아래 경우에만 읽으세요.
 
 | 하려는 일 | 먼저 읽을 문서 |
 | --- | --- |
-| 새 활동 · 프로젝트 추가, 기존 활동 수정 | [docs/NEW_ACTIVITY_CHECKLIST.md](docs/NEW_ACTIVITY_CHECKLIST.md) → [docs/CONTENT_GUIDELINES.md](docs/CONTENT_GUIDELINES.md) |
+| 새 활동 · 프로젝트 **추가** | `/add-activity` (`.claude/skills/add-activity/SKILL.md`). 스크립트가 실패하거나 규정이 궁금할 때만 [docs/NEW_ACTIVITY_CHECKLIST.md](docs/NEW_ACTIVITY_CHECKLIST.md) → [docs/CONTENT_GUIDELINES.md](docs/CONTENT_GUIDELINES.md) |
+| 기존 활동 수정 · 삭제 | 먼저 `grep` 으로 해당 id 의 줄만 찾고, 필요하면 위 두 문서 |
 | 화면 모양 · CSS · 컴포넌트 | [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) |
 | 알려진 문제와 승인 대기 중인 개선안 | [docs/PORTFOLIO_AUDIT.md](docs/PORTFOLIO_AUDIT.md) |
 
@@ -37,7 +38,10 @@ docs/               규정 문서          tools/check-content.mjs   콘텐츠 �
 ## 명령
 
 ```bash
-node tools/check-content.mjs          # 콘텐츠 검증. ERROR 0, 새 활동에 대한 WARN 0 이어야 함
+node tools/add-activity.mjs spec.json [--dry-run]   # 새 활동을 content/ 세 파일에 규칙대로 넣고 ?v= 갱신 · 검증 (실패 시 되돌림)
+python3 tools/prep-photo.py --prefix 접두어 --cover a.jpg --shots b.jpg   # 사진 → img/ 규격 변환
+node tools/check-content.mjs --id 활동id   # 그 활동의 결과만 (다른 활동의 알려진 경고 72건 가림). ERROR 0, WARN 0 이어야 함
+node tools/check-content.mjs          # 전체 검증
 python3 -m http.server 8000           # http://localhost:8000/#a/활동id 로 확인 (1440 · 820 · 390px, KO · EN, 어두운 화면)
 sed -i "s/\.js?v=[0-9]*/.js?v=$(date +%s)/g" index.html   # content/ 를 고쳤으면 캐시 버전 올리기
 ```

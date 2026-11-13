@@ -1,0 +1,327 @@
+<title>활동 입력 양식</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* 색 · 글꼴 토큰. 배치: 왼쪽 입력, 오른쪽에 붙어 다니는 결과 JSON (좁은 화면은 아래로) */
+:root{
+  --bg:#f5f6f8; --panel:#ffffff; --ink:#14171f; --muted:#5b6475; --line:#dfe3ea;
+  --accent:#1f5fd1; --accent-ink:#ffffff; --soft:#eaf0fb; --warn:#b4400a; --warn-soft:#fdf0e8; --ok:#17794a;
+  --code-bg:#0f1420; --code-ink:#dbe4f5;
+  --sans:"Noto Sans KR","Inter",system-ui,sans-serif; --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0c0f15; --panel:#141923; --ink:#eef1f7; --muted:#9aa4b8; --line:#262d3b;
+  --accent:#6aa5ff; --accent-ink:#0a1020; --soft:#16264a; --warn:#ff9a62; --warn-soft:#2a1a10; --ok:#58d59a;
+  --code-bg:#080b11; --code-ink:#cfd9ee; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c0f15; --panel:#141923; --ink:#eef1f7; --muted:#9aa4b8; --line:#262d3b;
+  --accent:#6aa5ff; --accent-ink:#0a1020; --soft:#16264a; --warn:#ff9a62; --warn-soft:#2a1a10; --ok:#58d59a;
+  --code-bg:#080b11; --code-ink:#cfd9ee; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--sans);padding-block:24px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:24px;align-items:start}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}}
+h1{font-size:22px;margin:0 0 4px;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0 0 20px;font-size:14px}
+section.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:16px}
+h2{font-size:15px;margin:0 0 14px;letter-spacing:.01em}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:12px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-bottom:12px}
+@media (max-width:560px){.pair{grid-template-columns:minmax(0,1fr)}}
+label{display:block;font-size:12.5px;font-weight:700;color:var(--muted);margin-bottom:4px}
+label .lg{display:inline-block;min-width:22px;color:var(--accent);margin-right:4px}
+input[type=text],input[type=date],select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:0}
+textarea{min-height:68px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.cnt{font-size:11.5px;color:var(--muted);text-align:right;margin-top:2px;font-variant-numeric:tabular-nums}
+.cnt.over{color:var(--warn);font-weight:700}
+.hint{font-size:12.5px;color:var(--muted);margin:-6px 0 12px}
+.check{display:flex;gap:8px;align-items:flex-start;font-size:14px;font-weight:500;color:var(--ink);margin:6px 0}
+.check input{margin-top:5px}
+button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:7px 12px;font-weight:600}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button.small{padding:4px 9px;font-size:12.5px}
+button:disabled{opacity:.4;cursor:default}
+.adds{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.block{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;background:var(--bg)}
+.bhead{display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+.bhead b{font-size:13px;background:var(--soft);color:var(--accent);border-radius:999px;padding:1px 10px}
+.bhead .sp{flex:1}
+.empty{color:var(--muted);font-size:14px;padding:12px;border:1px dashed var(--line);border-radius:10px;text-align:center}
+.side{position:sticky;top:max(16px,env(safe-area-inset-top,0px));display:grid;gap:12px}
+@media (max-width:900px){.side{position:static}}
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:12px;font:12px/1.55 var(--mono);max-height:52vh;overflow:auto;white-space:pre-wrap;word-break:break-word}
+.msgs{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:13px}
+.msgs li{padding:6px 10px;border-radius:8px;background:var(--warn-soft);color:var(--warn)}
+.msgs li.ok{background:var(--soft);color:var(--ok)}
+.msgs li.info{background:var(--soft);color:var(--accent)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.status{font-size:13px;color:var(--ok)}
+</style>
+
+<div class="wrap">
+<main>
+  <h1>활동 입력 양식</h1>
+  <p class="sub">여기서 채운 내용은 오른쪽 JSON 으로 바뀝니다. 복사해서 Claude Code 에 <b>/add-activity</b> 와 함께 붙여 넣으세요. 사진은 양식에 담기지 않으니 채팅에 그대로 첨부합니다.</p>
+
+  <section class="card">
+    <h2>기본 정보</h2>
+    <div class="row">
+      <div><label for="id">활동 id (영문 소문자 · 숫자 · 하이픈)</label><input type="text" id="id" placeholder="kaist-hackafair" autocomplete="off"></div>
+      <div><label for="category">구분</label>
+        <select id="category">
+          <option value="">선택</option>
+          <option value="project">프로젝트 · 해커톤 (기획하거나 만든 것)</option>
+          <option value="community">커뮤니티 · 운영 (모임을 열고 운영한 것)</option>
+          <option value="edu">교육 · 봉사 (가르치거나 봉사한 것)</option>
+          <option value="learn">학습 · 탐색 (듣고 보고 배운 것)</option>
+        </select></div>
+    </div>
+    <div class="row">
+      <div><label for="start">시작일</label><input type="date" id="start"></div>
+      <div><label for="end">끝난 날 (하루짜리면 비움)</label><input type="date" id="end"></div>
+    </div>
+    <div class="row"><div><label for="video">YouTube 주소 (없으면 비움)</label><input type="text" id="video" placeholder="https://www.youtube.com/watch?v=…" autocomplete="off"></div></div>
+    <label class="check"><input type="checkbox" id="photos"> 사진이 있습니다 (채팅에 첨부할게요)</label>
+    <div class="hint" style="margin:0 0 4px 26px">첨부한 사진은 Claude 가 직접 보고, 다른 사람의 얼굴 · 이름 · 주소가 있으면 올리기 전에 알려 줍니다.</div>
+  </section>
+
+  <section class="card">
+    <h2>제목과 요약</h2>
+    <div class="pair">
+      <div><label for="ko_title"><span class="lg">KO</span>활동 이름</label><input type="text" id="ko_title"></div>
+      <div><label for="en_title"><span class="lg">EN</span>Activity name</label><input type="text" id="en_title"></div>
+    </div>
+    <div class="pair">
+      <div><label for="ko_org"><span class="lg">KO</span>주최 · 소속 (제목과 다를 때만)</label><input type="text" id="ko_org"></div>
+      <div><label for="en_org"><span class="lg">EN</span>Host / organisation</label><input type="text" id="en_org"></div>
+    </div>
+    <div class="pair">
+      <div><label for="ko_summary"><span class="lg">KO</span>요약 한 문장 (~함.)</label><textarea id="ko_summary"></textarea><div class="cnt" data-for="ko_summary" data-max="110"></div></div>
+      <div><label for="en_summary"><span class="lg">EN</span>Summary (past tense, no subject)</label><textarea id="en_summary"></textarea><div class="cnt" data-for="en_summary" data-max="260"></div></div>
+    </div>
+    <div class="pair">
+      <div><label for="ko_short"><span class="lg">KO</span>목록용 한 줄</label><input type="text" id="ko_short"><div class="cnt" data-for="ko_short" data-max="70"></div></div>
+      <div><label for="en_short"><span class="lg">EN</span>One line for lists</label><input type="text" id="en_short"><div class="cnt" data-for="en_short" data-max="120"></div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>요약 패널</h2>
+    <p class="hint">제목 아래 표에 나옵니다. 내가 맡은 일은 필수이고, 3칸 이상 채우면 보기 좋습니다.</p>
+    <div class="pair">
+      <div><label for="ko_role"><span class="lg">KO</span>내가 맡은 일 (필수)</label><input type="text" id="ko_role"></div>
+      <div><label for="en_role"><span class="lg">EN</span>My role (required)</label><input type="text" id="en_role"></div>
+    </div>
+    <div class="pair">
+      <div><label for="ko_where"><span class="lg">KO</span>장소 · 주최</label><input type="text" id="ko_where"></div>
+      <div><label for="en_where"><span class="lg">EN</span>Place · host</label><input type="text" id="en_where"></div>
+    </div>
+    <div class="pair">
+      <div><label for="ko_scale"><span class="lg">KO</span>규모 (참가자 · 횟수 · 시간)</label><input type="text" id="ko_scale"></div>
+      <div><label for="en_scale"><span class="lg">EN</span>Scale</label><input type="text" id="en_scale"></div>
+    </div>
+    <div class="pair">
+      <div><label for="ko_result"><span class="lg">KO</span>결과와 근거</label><input type="text" id="ko_result"></div>
+      <div><label for="en_result"><span class="lg">EN</span>Result and evidence</label><input type="text" id="en_result"></div>
+    </div>
+    <div class="pair">
+      <div><label for="ko_key"><span class="lg">KO</span>큰 숫자 (선택)</label><input type="text" id="ko_key"><div class="cnt" data-for="ko_key" data-max="10"></div></div>
+      <div><label for="en_key"><span class="lg">EN</span>Big number (optional)</label><input type="text" id="en_key"><div class="cnt" data-for="en_key" data-max="16"></div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>본문</h2>
+    <p class="hint">블록을 순서대로 쌓으면 한국어와 영어가 같은 순서로 만들어집니다. 소제목이 3개 이상이면 목차가 저절로 생깁니다. 마지막 소제목은 “돌아보며”로 끝냅니다.</p>
+    <div class="adds" id="adds"></div>
+    <div id="blocks"></div>
+  </section>
+</main>
+
+<aside class="side">
+  <section class="card" style="margin:0">
+    <h2>점검</h2>
+    <ul class="msgs" id="msgs"></ul>
+  </section>
+  <section class="card" style="margin:0">
+    <h2>Claude 에게 붙여 넣을 내용</h2>
+    <div class="actions" style="margin-bottom:10px">
+      <button class="primary" id="copy" type="button">복사</button>
+      <button id="reset" type="button">모두 지우기</button>
+      <span class="status" id="status" role="status"></span>
+    </div>
+    <pre id="out" tabindex="0"></pre>
+  </section>
+</aside>
+</div>
+
+<script>
+(function(){
+  var TYPES = [
+    {t:"h",   name:"소제목",    f:"head"},
+    {t:"p",   name:"문단",      f:"text"},
+    {t:"lead",name:"도입 문장", f:"text"},
+    {t:"q",   name:"인용 · 핵심 한 줄", f:"text"},
+    {t:"ul",  name:"점 목록",   f:"lines"},
+    {t:"checks",name:"체크 목록",f:"lines"},
+    {t:"facts",name:"짧은 칩",  f:"lines"},
+    {t:"flow",name:"단계 흐름", f:"lines"},
+    {t:"note",name:"보충 상자", f:"text"},
+    {t:"link",name:"링크 버튼", f:"link"},
+    {t:"json",name:"고급: 블록 JSON", f:"json"}
+  ];
+  var FIELDS = ["id","category","start","end","video","ko_title","en_title","ko_org","en_org","ko_summary","en_summary","ko_short","en_short","ko_role","en_role","ko_where","en_where","ko_scale","en_scale","ko_result","en_result","ko_key","en_key"];
+  var S = {blocks:[]};            // 본문 블록 상태: {t, ko:{}, en:{}, href}
+  var KEY = "activity-form-draft-v1";
+  var $ = function(id){ return document.getElementById(id); };
+
+  function load(){ try{ var d = JSON.parse(localStorage.getItem(KEY) || "null"); if(d){ FIELDS.forEach(function(f){ if(d.f && d.f[f] != null) $(f).value = d.f[f]; }); $("photos").checked = !!d.photos; S.blocks = d.blocks || []; } }catch(e){} }
+  function save(){ try{ var f = {}; FIELDS.forEach(function(k){ f[k] = $(k).value; }); localStorage.setItem(KEY, JSON.stringify({f:f, photos:$("photos").checked, blocks:S.blocks})); }catch(e){} }
+
+  function mk(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+  function field(labelText, lg, value, onInput, multi, id){
+    var w = mk("div"); var l = mk("label"); var s = mk("span","lg",lg); l.appendChild(s); l.appendChild(document.createTextNode(labelText)); l.htmlFor = id; w.appendChild(l);
+    var i = multi ? mk("textarea") : mk("input"); if(!multi) i.type = "text"; i.id = id; i.value = value || "";
+    i.addEventListener("input", function(){ onInput(i.value); refresh(); }); w.appendChild(i); return w;
+  }
+  function pairRow(a,b){ var r = mk("div","pair"); r.appendChild(a); r.appendChild(b); return r; }
+
+  function renderBlocks(){
+    var host = $("blocks"); host.textContent = "";
+    if(!S.blocks.length){ host.appendChild(mk("div","empty","아직 블록이 없습니다. 위 버튼으로 소제목이나 문단을 추가하세요.")); return; }
+    S.blocks.forEach(function(b, i){
+      var def = TYPES.filter(function(x){ return x.t === b.t; })[0];
+      var box = mk("div","block"); var head = mk("div","bhead");
+      head.appendChild(mk("b",null,(i+1) + ". " + def.name)); head.appendChild(mk("span","sp"));
+      [["위로",-1],["아래로",1]].forEach(function(m){ var bt = mk("button","small",m[0]); bt.type = "button"; bt.disabled = (i + m[1] < 0 || i + m[1] >= S.blocks.length);
+        bt.addEventListener("click", function(){ var j = i + m[1]; var t = S.blocks[i]; S.blocks[i] = S.blocks[j]; S.blocks[j] = t; renderBlocks(); refresh(); }); head.appendChild(bt); });
+      var del = mk("button","small","삭제"); del.type = "button"; del.addEventListener("click", function(){ S.blocks.splice(i,1); renderBlocks(); refresh(); }); head.appendChild(del);
+      box.appendChild(head);
+      var pre = "b" + i + "_";
+      if(def.f === "head"){
+        box.appendChild(pairRow(field("작은 제목 (예: 01 · 시작)","KO",b.ko.k,function(v){b.ko.k=v;},false,pre+"kk"), field("Label (e.g. 01 · Starting out)","EN",b.en.k,function(v){b.en.k=v;},false,pre+"ek")));
+        box.appendChild(pairRow(field("소제목 문장","KO",b.ko.h,function(v){b.ko.h=v;},false,pre+"kh"), field("Heading sentence","EN",b.en.h,function(v){b.en.h=v;},false,pre+"eh")));
+        box.appendChild(pairRow(field("목차 이름 (선택, 16자 이하)","KO",b.ko.toc,function(v){b.ko.toc=v;},false,pre+"kt"), field("TOC name (optional, 24 max)","EN",b.en.toc,function(v){b.en.toc=v;},false,pre+"et")));
+      } else if(def.f === "text"){
+        box.appendChild(pairRow(field("내용","KO",b.ko.v,function(v){b.ko.v=v;},true,pre+"k"), field("Text","EN",b.en.v,function(v){b.en.v=v;},true,pre+"e")));
+      } else if(def.f === "lines"){
+        box.appendChild(pairRow(field("한 줄에 항목 하나","KO",b.ko.v,function(v){b.ko.v=v;},true,pre+"k"), field("One item per line","EN",b.en.v,function(v){b.en.v=v;},true,pre+"e")));
+      } else if(def.f === "link"){
+        box.appendChild(pairRow(field("버튼 글자","KO",b.ko.v,function(v){b.ko.v=v;},false,pre+"k"), field("Button text","EN",b.en.v,function(v){b.en.v=v;},false,pre+"e")));
+        var hw = mk("div"); var hl = mk("label","","주소 (https://… 또는 사이트 안 #a/활동id)"); hl.htmlFor = pre+"h"; hw.appendChild(hl);
+        var hi = mk("input"); hi.type = "text"; hi.id = pre+"h"; hi.value = b.href || ""; hi.addEventListener("input", function(){ b.href = hi.value; refresh(); }); hw.appendChild(hi); box.appendChild(hw);
+      } else {
+        box.appendChild(pairRow(field("블록 JSON 한 개 (예: {\"cards\":[…]}). 모양은 BLOCKS.md","KO",b.ko.v,function(v){b.ko.v=v;},true,pre+"k"), field("Same block in English","EN",b.en.v,function(v){b.en.v=v;},true,pre+"e")));
+      }
+      host.appendChild(box);
+    });
+  }
+  function addBlock(t){ S.blocks.push({t:t, ko:{}, en:{}, href:""}); renderBlocks(); refresh(); var last = $("blocks").lastChild; if(last){ var inp = last.querySelector("input,textarea"); if(inp) inp.focus(); } }
+  TYPES.forEach(function(d){ var b = mk("button","small","+ " + d.name); b.type = "button"; b.addEventListener("click", function(){ addBlock(d.t); }); $("adds").appendChild(b); });
+
+  function lines(v){ return String(v||"").split("\n").map(function(s){ return s.trim(); }).filter(Boolean); }
+  function blockOut(b, lg){
+    var o = b[lg], v = (o.v || "").trim();
+    switch(b.t){
+      case "h": var r = {}; if((o.k||"").trim()) r.k = o.k.trim(); r.h = (o.h||"").trim(); if((o.toc||"").trim()) r.toc = o.toc.trim(); return r;
+      case "p": case "lead": case "q": case "note": var x = {}; x[b.t] = v; return x;
+      case "ul": case "checks": case "facts": case "flow": var y = {}; y[b.t] = lines(o.v); return y;
+      case "link": return {link:v, href:(b.href||"").trim()};
+      default: try{ return JSON.parse(v); }catch(e){ return {__bad:true}; }
+    }
+  }
+  function panel(lg){ var p = {}; ["role","where","scale","result","key"].forEach(function(k){ var v = $(lg+"_"+k).value.trim(); if(v) p[k] = v; }); return p; }
+  function lang(lg){
+    var o = {title:$(lg+"_title").value.trim()};
+    var org = $(lg+"_org").value.trim(); if(org) o.org = org;
+    o.summary = $(lg+"_summary").value.trim();
+    var sh = $(lg+"_short").value.trim(); if(sh) o.short = sh;
+    o.panel = panel(lg);
+    o.body = S.blocks.map(function(b){ return blockOut(b, lg); });
+    return o;
+  }
+  function build(){
+    var s = {id:$("id").value.trim(), category:$("category").value, start:$("start").value};
+    if($("end").value) s.end = $("end").value;
+    if($("video").value.trim()) s.video = $("video").value.trim();
+    if($("photos").checked) s._photos_attached = true;
+    s.ko = lang("ko"); s.en = lang("en");
+    return s;
+  }
+
+  function check(s){
+    var m = [];
+    function bad(t){ m.push(["", t]); }
+    if(!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(s.id)) bad("활동 id 를 영문 소문자 · 숫자 · 하이픈으로 적어 주세요.");
+    if(!s.category) bad("구분을 선택해 주세요.");
+    if(!s.start) bad("시작일을 입력해 주세요.");
+    if(s.end && s.end < s.start) bad("끝난 날이 시작일보다 이릅니다.");
+    if(s.video && !/^https:\/\//.test(s.video)) bad("YouTube 주소는 https:// 로 시작해야 합니다.");
+    ["ko","en"].forEach(function(lg){
+      var n = lg.toUpperCase(), t = s[lg];
+      if(!t.title) bad(n + ": 활동 이름이 비어 있습니다.");
+      if(!t.summary) bad(n + ": 요약이 비어 있습니다.");
+      if(!t.panel.role) bad(n + ": 내가 맡은 일이 비어 있습니다.");
+      if(!t.body.length) bad(n + ": 본문 블록이 없습니다.");
+      if(t.body.some(function(b){ return b.__bad; })) bad(n + ": 고급 블록 JSON 을 읽지 못했습니다.");
+      if(t.body.some(function(b){ return b.h === ""; })) bad(n + ": 비어 있는 소제목이 있습니다.");
+      var lim = {ko:[110,70,10],en:[260,120,16]}[lg];
+      if(t.summary.length > lim[0]) bad(n + ": 요약이 " + lim[0] + "자를 넘습니다 (" + t.summary.length + "자).");
+      if(t.short && t.short.length > lim[1]) bad(n + ": 한 줄이 " + lim[1] + "자를 넘습니다.");
+      if(t.panel.key && t.panel.key.length > lim[2]) bad(n + ": 큰 숫자가 " + lim[2] + "자를 넘습니다.");
+      var cells = Object.keys(t.panel).length + 1; if(t.panel.role && cells < 3) bad(n + ": 요약 패널 칸이 3개 미만입니다 (날짜 칸을 합쳐 3칸 이상이 좋습니다).");
+    });
+    var ko = s.ko.body, en = s.en.body;
+    var hk = ko.filter(function(b){ return b.h != null; });
+    var closing = hk.length ? (hk[hk.length-1].h + " " + (hk[hk.length-1].k||"")) : "";
+    var closingEn = en.filter(function(b){ return b.h != null; }); closingEn = closingEn.length ? (closingEn[closingEn.length-1].h + " " + (closingEn[closingEn.length-1].k||"")) : "";
+    if(hk.length && !/돌아보며/.test(closing)) bad("한국어 마지막 소제목을 “돌아보며”로 끝내 주세요.");
+    if(hk.length && !/Looking back/.test(closingEn)) bad("영어 마지막 소제목을 “Looking back”으로 끝내 주세요.");
+    var withK = hk.filter(function(b){ return b.k; }).length;
+    if(withK && withK !== hk.length) bad("소제목에 작은 제목(k)을 쓰려면 모든 소제목에 넣어 주세요.");
+    var warn = m.slice();
+    var ok = [];
+    if(hk.length >= 3) ok.push(["info","소제목이 " + hk.length + "개라서 목차가 자동으로 생깁니다."]);
+    if(s._photos_attached) ok.push(["info","사진은 Claude 에게 채팅으로 첨부하세요. 표지는 가로형이 좋습니다."]);
+    if(!warn.length) ok.push(["ok","입력이 규칙에 맞습니다. 복사해서 붙여 넣으세요."]);
+    return warn.concat(ok);
+  }
+
+  function refresh(){
+    var s = build(); var shown = JSON.parse(JSON.stringify(s));
+    [shown.ko, shown.en].forEach(function(t){ t.body = t.body.filter(function(b){ return !b.__bad; }); });
+    var json = JSON.stringify(shown, null, 1);
+    $("out").textContent = "/add-activity\n```json\n" + json + "\n```";
+    var ul = $("msgs"); ul.textContent = "";
+    check(s).forEach(function(r){ var li = mk("li", r[0], r[1]); ul.appendChild(li); });
+    Array.prototype.forEach.call(document.querySelectorAll(".cnt"), function(c){ var v = $(c.getAttribute("data-for")).value.length, mx = +c.getAttribute("data-max"); c.textContent = v + " / " + mx; c.className = "cnt" + (v > mx ? " over" : ""); });
+    save();
+  }
+
+  FIELDS.concat(["photos"]).forEach(function(f){ $(f).addEventListener("input", refresh); $(f).addEventListener("change", refresh); });
+  $("copy").addEventListener("click", function(){
+    var txt = $("out").textContent, st = $("status");
+    function done(){ st.textContent = "복사했습니다."; setTimeout(function(){ st.textContent = ""; }, 2500); }
+    function fallback(){ var r = document.createRange(); r.selectNodeContents($("out")); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); st.textContent = "선택했습니다. Ctrl/⌘+C 로 복사하세요."; }
+    try{ navigator.clipboard.writeText(txt).then(done, fallback); }catch(e){ fallback(); }
+  });
+  var armed = false;
+  $("reset").addEventListener("click", function(){
+    var b = $("reset");
+    if(!armed){ armed = true; b.textContent = "정말 지울까요? 한 번 더 누르세요"; setTimeout(function(){ armed = false; b.textContent = "모두 지우기"; }, 3500); return; }
+    FIELDS.forEach(function(f){ $(f).value = ""; }); $("photos").checked = false; S.blocks = []; armed = false; b.textContent = "모두 지우기"; renderBlocks(); refresh();
+  });
+
+  load();
+  if(!S.blocks.length){   // 처음 열면 유형 B 의 뼈대를 예시로 깔아 둠
+    S.blocks = [
+      {t:"h", ko:{k:"01 · ",h:""}, en:{k:"01 · ",h:""}, href:""},
+      {t:"p", ko:{v:""}, en:{v:""}, href:""},
+      {t:"h", ko:{k:"02 · 돌아보며",h:""}, en:{k:"02 · Looking back",h:""}, href:""},
+      {t:"p", ko:{v:""}, en:{v:""}, href:""}
+    ];
+  }
+  renderBlocks(); refresh();
+})();
+</script>
