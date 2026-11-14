@@ -51,7 +51,7 @@ SITE.en = {
     },
     work: {
       kicker: "SELECTED WORK",
-      title: "Projects and Key activities",
+      title: "Projects and Key Activities",
       desc: "Projects and activities where I defined the problem, made the call, and carried it through with a team. Each card shows my role and the outcome; each case page shows the reasoning behind it.",
       projects: "Projects",
       projectsSub: "Services I planned and led as PM, built with developer and designer teammates",
@@ -59,7 +59,7 @@ SITE.en = {
       featuredSub: "Event organizing · Community · Overseas volunteering · Field exploration"
     },
     projects: {
-      labels: {what:"WHAT", role:"MY ROLE", tools:"MY TOOLS", stackTeam:"TEAM STACK · built by teammates", team:"TEAM", scale:"SCALE", budget:"BUDGET", period:"PERIOD", where:"WHERE", result:"OUTCOME", stack:"STACK", links:"MORE", problem:"PROBLEM", goal:"GOAL", decision:"KEY DECISION"},
+      labels: {what:"WHAT", role:"MY ROLE", tools:"MY TOOLS", stackTeam:"TEAM STACK", team:"TEAM", scale:"SCALE", budget:"BUDGET", period:"PERIOD", where:"WHERE", result:"OUTCOME", stack:"STACK", links:"MORE", problem:"PROBLEM", goal:"GOAL", decision:"KEY DECISION"},
       jumpVideo: "Promo video", jumpDeck: "Slides",
       open: "View project", play: "Hover to play", tbd: "To confirm"
     },
@@ -286,19 +286,19 @@ SITE.en = {
       short: "Pivoted from a failed global plan to a 3-university hackathon for 50.",
       card: {what:"After a plan with Japanese universities fell through, turned it into an AI hackathon co-hosted by three Korean universities.", role:"Proposed the joint event · co-planned it · managed SKKU's budget", resultLabel:"EVENT OUTCOME", result:"Overnight hackathon for 50 students in 9 teams from 3 universities · 35 of 37 survey respondents rated it 91/100+"},
       panel: {
-        role: "People lead (member recruiting · speaker outreach) at GDG on Campus : SKKU · proposed the collaboration to Korean universities · co-planned with three schools · managed the SKKU program's budget",
+        role: "Proposed the joint event to Korean universities · co-planned it with three schools · managed the SKKU program's budget (as People Lead at GDG on Campus : SKKU)",
         scale: "3 universities · 50 participants · 9 teams",
-        budget: "About KRW 7M in sponsorship from four university programs · about KRW 7.5M available including entry fees",
+        budget: "About KRW\u00a07M in sponsorship from four programs at three universities (SKKU covered over half) · SKKU's support nearly doubled from the ~KRW\u00a02M first promised · about KRW\u00a07.5M available",
         period: "6–7 Dec 2024 · overnight",
         where: "Woojung Hall of Informatics, Korea University"
       },
       glance: {
         problem: "A global hackathon with three Japanese universities fell through just before it was confirmed. The university funding had to be spent by early December, and there was no guarantee it would carry over to next year.",
-        decision: "I chose <b>holding the event this year</b> over keeping the \"global\" label. I put Japan off to a later edition and pitched Korean universities directly in the GDG on Campus leads' Slack; Korea University and Sogang signed on.",
-        result: "Co-hosted an overnight AI hackathon for 50 students in 9 teams from three universities. 35 of 37 survey respondents rated it 91/100 or higher, and the event ran again the next year.",
+        decision: "I chose to <b>hold the event this year</b> rather than keep the \"global\" label, postponed the Japan partnership, and pitched Korean universities directly in the GDG on Campus leads' Slack. Korea University and Sogang signed on.",
+        result: "35 of 37 survey respondents rated overall satisfaction 91/100 or higher. Co-hosted by three universities, the overnight hackathon ran again the next year.",
         resultLabel: "EVENT OUTCOME · PARTICIPANT FEEDBACK",
-        key: "35 / 37",
-        note: "Satisfaction is based on the 37 of 50 participants who answered the survey (out of 100)."
+        key: "35 of 37",
+        note: "Survey: 37 of the 50 participants responded."
       },
       body: [
         {k:"01 · Situation", h:"The global plan started to wobble."},
@@ -308,7 +308,7 @@ SITE.en = {
         {
           p: "Just as the line-up was about to be confirmed, the Japanese side said they could not take part: many members were not comfortable in English, the distance between Tokyo and Osaka was a burden, and realistically only 3–4 people per school would attend. Holding on to the original plan risked the event not happening at all."
         },
-        {k:"02 · Decision", h:"I chose running the event over keeping the label."},
+        {k:"02 · Decision", h:"I chose to run the event rather than keep the label."},
         {
           ul: [
             "<b>A. Keep working with Japan</b>: this would preserve the global angle, but mixing one Japanese participant into mostly Korean teams would tilt communication and put them at a disadvantage.",
@@ -329,7 +329,7 @@ SITE.en = {
           ]
         },
         {p:"Korea University arranged the venue and the faculty judges; each school took on its own part."},
-        {k:"04 · Budget and resources", h:"Sponsorship and in-kind support funded the event.", fold:"Where the ~KRW 7M came from, how the ~KRW 7.5M was spent, Korea University's free rooms, and next year's cost split"},
+        {k:"04 · Budget and resources", h:"Sponsorship and in-kind support funded the event.", fold:"How SKKU's support nearly doubled, where the sponsorship came from and how it was spent, Korea University's free rooms, and next year's cost split"},
         {
           ul: [
             "<b>Sponsorship</b>: roughly KRW 7 million from four programs at three universities, with SKKU covering more than half.",
@@ -372,8 +372,8 @@ SITE.en = {
     line4: {
       title: "2GATHER",
       org: "LIKELION Line-4 Hackathon",
-      summary: "As PM, planned an AI service that helps students and early-stage founders with little promotion experience or budget decide where, when and how much to promote. A team of six shipped it in six weeks.",
-      short: "As PM, planned an AI promotion-planning service a team of six shipped in 6 weeks",
+      summary: "As PM, planned an AI promotion-planning service that helps students and early-stage founders with little promotion experience or budget decide where, when and how much to promote. A team of six built and deployed it in about six weeks.",
+      short: "As PM, planned an AI promotion-planning service a team of six deployed in about 6 weeks",
       proj: {
         name: "2GATHER",
         type: "AI · Web service",
@@ -383,17 +383,17 @@ SITE.en = {
         team: "Team of 6 (planning/PM 1 · UI design 1 · FE/BE 4)",
         period: "6 Oct – 16 Nov 2024 · 6 weeks (final 16 Nov)",
         date: "Final 16 Nov 2024",
-        result: "Shipped by a team of six in about 6 weeks and demoed at the final",
+        result: "Built and deployed by a team of six in about 6 weeks; demoed at the final",
         resultLabel: "TEAM OUTPUT",
         stack: ["React", "Spring Boot", "OpenAI API", "MySQL"],
         links: [{t:"GitHub · Front-end", href:"https://github.com/Line4thon-Gather/gather_Front_End"}, {t:"GitHub · Back-end", href:"https://github.com/Line4thon-Gather/gather_back_end"}]
       },
       glance: {
-        problem: "Recruiting for my campus club, I aimed for 30 members and got 9. Students and early founders with a small budget and network struggle to decide <b>where, when and how much</b> to promote.",
-        decision: "Instead of asking users to pick channels they don't know, I had them <b>rank only the promotion formats</b> they want, and the system maps channels and timing. Budgets under KRW 100,000 get unit prices to decide with, not a fixed split.",
-        result: "A team of six shipped the service in about 6 weeks, with a demoable flow from sign-in to strategy generation, timeline and creator search.",
+        problem: "Recruiting for my campus club, I aimed for 30 members and got 9. From that I formed a hypothesis: students and early-stage founders struggle to decide <b>where, when and how much</b> to promote.",
+        decision: "Instead of making users pick channels they don't know, I designed the flow so they <b>rank only the promotion formats</b> they want and the system maps channels and timing. Budgets under KRW 100,000 see unit prices and choose freely.",
+        result: "Connected the core flow - sign-in, strategy generation, timeline and creator search - into one deployed service, demoed at the hackathon final.",
         resultLabel: "TEAM OUTPUT",
-        note: "This is a shipping and demo result. There is no usage data (users, promotion impact) on hand, so none is claimed."
+        note: "Covers the build and demo only. There is no verified usage data (users, promotion impact), so none is reported."
       },
       vid: {
         k: "PROMO VIDEO",
@@ -401,7 +401,7 @@ SITE.en = {
         d: "A 75-second video that tells the service as a single line: scattered ideas and people gather, connect, act, and loop back. It walks through the real Figma screens, from entering a promotion brief to the channel timeline, the budget, and matching with creators."
       },
       body: [
-        {lead:"2GATHER · An AI promotion-strategy platform connecting students and early-stage founders with early-career creators"},
+        {lead:"2GATHER · An AI promotion-planning service connecting students and early-stage founders with early-career creators"},
         {p:"An AI-powered marketing solution built so that students and early-stage founders can <b>plan their promotion and connect with the people they need - even with a small budget and a limited network</b>."},
         {p:"At the LIKELION Line-4 Hackathon, a team of six planned, built and deployed the service in about six weeks."},
 
@@ -435,7 +435,7 @@ SITE.en = {
         {flow:["Input", "AI Analysis", "Marketing Timeline"]},
         {p:"This simple flow reduces the choices users have to think about."},
 
-        {k:"04 · Core design", h:"We turned each channel's quirks into rules.", fold:"Examples: posting rules for CampusPick, Everytime, Yozm and Linkareer turned into scheduling rules"},
+        {k:"04 · Core design", h:"We turned each channel's quirks into rules."},
         {p:"I researched how each platform handles promotion and turned it into rules that could shape a real schedule. For example:"},
         {cards:[
           {t:"CampusPick", d:"Allow for an approval period of up to 48 hours"},
@@ -444,6 +444,7 @@ SITE.en = {
           {t:"Linkareer", d:"Limit to startups where business verification is required"}
         ]},
         {p:"The aim was not to stop at “AI recommends a promotion plan,” but to <b>build real platform constraints into the service logic</b>."},
+        {p:"On top of these rules, the team implemented the OpenAI API (gpt-4o-mini) to generate the promotion timeline and budget results as JSON from a system prompt and example exchanges. (Per the public repositories · see 08 Build)"},
 
         {k:"05 · A different take on budget", toc:"05 Budget", h:"Not everyone gets the same ratio."},
         {p:"At first we planned to apply a <b>70/20/10 budget split</b> to every user."},
@@ -477,7 +478,7 @@ SITE.en = {
         ]}},
         {p:"I did not write any of the code. Instead I focused on preparing the <b>PRD, detailed planning documents, wireframes and mock data</b> the developers needed, and on working through the logic with them."},
 
-        {k:"08 · Build", h:"The structure the team built is open in the repositories.", fold:"Front-end, back-end and AI setup built by the developer teammates, with GitHub links"},
+        {k:"08 · Build", h:"The structure the team built is open in the repositories.", fold:"Built by the developer teammates: React front end, Spring Boot back end, OpenAI API (gpt-4o-mini) and university email verification, with GitHub links"},
         {p:"Front-end and back-end teammates did the development. Below is what the public repositories show. I did not write code; I worked out the logic and requirements for this service and aligned them with the developers."},
         {cards:[{"n": "BACK-END", "t": "Java 21 · Spring Boot 3.3", "d": "JPA · MySQL, Spring Security · OAuth2 · JWT, springdoc (Swagger) API docs"}, {"n": "AI", "t": "OpenAI API · gpt-4o-mini", "d": "Generates the promotion timeline and budget results as JSON from a system prompt and example exchanges"}, {"n": "FRONT-END", "t": "React 18 · Vite", "d": "styled-components, TanStack Query, Zustand, visx for charts"}, {"n": "ETC", "t": "University verification · file storage", "d": "UnivCert-based university email verification, Oracle Cloud Object Storage SDK"}]},
         {link:"GitHub · Front-end", href:"https://github.com/Line4thon-Gather/gather_Front_End"},
@@ -547,27 +548,27 @@ SITE.en = {
     },
     "ktng-overseas": {
       title: "KT&G Sangsang Withus Overseas Volunteer Corps",
-      summary: "Deployed for 10 days to an elementary school in Bogor, Indonesia with KT&G's university volunteer corps; planned and led the ddakji and tooth-brushing lessons and managed Team 1's class-supply budget.",
+      summary: "Deployed for 10 days to an elementary school in Bogor, Indonesia with KT&G's university volunteer corps; planned and led the ddakji (a Korean paper-tile flipping game) and tooth-brushing lessons and managed Team 1's class-supply budget.",
       short: "Planned and led lessons and managed class supplies at an elementary school in Bogor, Indonesia.",
-      card: {what:"Taught for 10 days at an elementary school in Bogor, Indonesia, with KT&G's university overseas volunteer corps.", role:"Accounting & supplies · led the ddakji and tooth-brushing lessons", resultLabel:"SCOPE", result:"Managed Team 1's ~KRW 2.2M supply budget · my team's class of 34 third-graders · 177 volunteer hours"},
+      card: {what:"Taught for 10 days at an elementary school in Bogor, Indonesia, with KT&G's university overseas volunteer corps.", role:"Accounting & supplies · led the ddakji and tooth-brushing lessons", resultLabel:"OUTCOME", result:"Taught two lessons to my team's class of 34 third-graders · 177 volunteer hours incl. pre-departure prep"},
       panel: {
         role: "Accounting & supplies team (Team 1 class supplies) · planned and led the ddakji class and tooth-brushing lesson",
         team: "40 volunteers (4 teams of 10)",
-        budget: "Team 1 class supplies · about KRW 2.2M",
+        budget: "Team 1 class supplies · about KRW\u00a02.2M",
         period: "Oct 2024 – Feb 2025 · deployed 8–17 Jan 2025",
         where: "Babakan Madang Elementary School, Bogor, Indonesia"
       },
       glance: {
         goal: "Prepare lessons that third-graders who don't share our language can follow and join, and get my team's class supplies within a fixed budget.",
-        decision: "When an item cost more than planned, I didn't just buy it: I found <b>a cheaper substitute that kept the lesson's purpose</b> and swapped it with the lesson owner's OK. Lessons ran as make-and-try, not explanation alone.",
-        result: "Planned and led the ddakji and tooth-brushing lessons; my team taught one third-grade class (34 students). Purchases went to KT&G as an Excel list with links, ready to buy.",
+        decision: "When an item cost more than planned, I didn't just buy it: I found <b>a cheaper substitute that kept the lesson's purpose</b> and swapped it in once the class lead agreed. Lessons were hands-on (make it, then play), not lecture-only.",
+        result: "My team taught one third-grade class (34 students), and I led two of its lessons. Purchases went to KT&G as a ready-to-buy Excel list with links.",
         resultLabel: "OUTCOME",
-        note: "177 volunteer hours on certificates from 1365, Korea's national volunteer portal = 58.5 h of pre-departure prep + 115 h in Indonesia + 3.5 h closing ceremony."
+        note: "177 certified volunteer hours (1365, Korea's national volunteer portal): 58.5 h pre-departure prep + 115 h in Indonesia + 3.5 h closing ceremony."
       },
       body: [
         {lead:"Ten days with children in Indonesia"},
         {p:"A volunteering trip spent teaching, running around and laughing with the children of <b>Babakan Madang Elementary School</b> in Bogor, Indonesia."},
-        {p:"I had once prepared an Indonesia volunteering trip myself with FreeMed, only for it to fall through. Before enlisting, I wanted one last chance to actually go - so I applied."},
+        {p:"I had once prepared an Indonesia volunteering trip myself with <a href=\"#a/freemed\">FreeMed</a> (a medical volunteer nonprofit), only for it to fall through. Before enlisting, I wanted one last chance to actually go - so I applied."},
         {p:"I didn't just volunteer on site. <b>I went through the whole process: designing and preparing classes, managing the supplies they needed, and working with the students in the classroom.</b>"},
 
         {k:"01 · Why Indonesia", h:"I wanted to finish a plan that had once fallen through."},
@@ -766,11 +767,11 @@ SITE.en = {
       title: "2024/2026 EduTech Expo",
       summary: "Went beyond looking at the technology to observe which education problems it solves. Comparing two expos two years apart, I saw that data, user experience and policy shape edtech.",
       short: "Observed which education problems tech solves, and compared two expos two years apart.",
-      card: {what:"Visited in 2024 and 2026 to look past the technology at the education problems it targets.", roleLabel:"ACTIVITY", role:"Visited on my own · compared two years · attended an Adobe session", resultLabel:"KEY INSIGHTS", result:"Saw a policy change reshape the expo floor within two years · five insights noted"},
+      card: {what:"Visited in 2024 and 2026 to look past the technology at the education problems it targets.", roleLabel:"ACTIVITY", role:"Visited on my own · compared two years · attended an Adobe session", resultLabel:"KEY INSIGHTS", result:"Watched a policy change reshape the expo floor in two years · five insights noted"},
       panel: {
         roleLabel: "ACTIVITY",
         role: "Visited on my own and compared 2024 with 2026 · attended the 2026 Adobe session",
-        where: "COEX, Seoul · Adobe session (2026)"
+        where: "COEX, Seoul"
       },
       glance: {
         goal: "See which education problems edtech actually targets, and compare how the market changed over two years.",
@@ -791,7 +792,7 @@ SITE.en = {
           {n:"Before", t:"Textbook (must-have)", d:"Mandatory purchase with national funds · quality assured by review and approval · price controlled"},
           {n:"After", t:"Educational material (nice-to-have)", d:"Chosen at the principal's discretion · deprioritized when budgets are tight · excluded from textbook review"}
         ]},
-        {p:"On 18 Nov 2025 the Ministry of Education passed an amendment to the Regulations on Textbooks that removed AIDT from the scope of textbooks. With a local education finance burden of up to KRW 6.6 trillion expected for 2025-2028, AIDT budgets that no longer carry legal force are likely to be the first cut. For companies, a stable barrier to entry and a guaranteed market vanished at the same time."},
+        {p:"On 18 Nov 2025 the Ministry of Education approved an amendment to the Regulations on Textbooks that removed AIDT from the scope of textbooks. With a local education finance burden of up to KRW 6.6 trillion expected for 2025-2028, AIDT budgets that no longer carry legal force are likely to be the first cut. For companies, a stable barrier to entry and a guaranteed market vanished at the same time."},
         {q:"I realized that a field companies were investing in aggressively two years ago can turn on a single policy change."},
 
         {k:"02 · Problems before technology", h:"What matters is not the technology itself, but which problem it solves."},
@@ -934,11 +935,11 @@ SITE.en = {
       },
       glance: {
         goal: "Make a web escape-room game students could play together on SKKU's Yuljeon campus for Halloween and the College of Computing and Informatics night.",
-        decision: "Pitched the original idea and designed the play flow as <b>character select → five quiz stages → final game → ranking</b>, handed to the developers as a storyline and PRD.",
+        decision: "Pitched the original idea and designed the play flow (<b>character select → five quiz stages → final game → ranking</b>), then handed it to the developers as a storyline and PRD.",
         decisionLabel: "WHAT I PLANNED",
         result: "The team of six finished the game and ran it in person at a campus booth on 31 Oct 2024.",
         resultLabel: "OUTCOME",
-        note: "There is no player count or feedback data on hand, so none is claimed."
+        note: "No player count was recorded, so no numbers are reported."
       },
       vid: {
         k: "PROMO VIDEO",
@@ -948,7 +949,7 @@ SITE.en = {
       },
       body: [
         {
-          p: "For Halloween and SKKU's College of Computing and Informatics night on October 31, our Goormthon Univ team built a campus web escape-room game called \"ESC: ESCape SKKU\" (Korean title: \"지금 우리 율전은\"). As a first-time PM, I wrote the storyline and PRD, and worked with developer teammates (one also handled design) to bring the game to life as planned. We secured a campus booth and ran the game in person, drawing an enthusiastic response from students."
+          p: "For Halloween and SKKU's College of Computing and Informatics night on October 31, our Goormthon Univ team built a campus web escape-room game called \"ESC: ESCape SKKU\" (Korean title: \"지금 우리 율전은\"). As a first-time PM, I wrote the storyline and PRD, and worked with developer teammates (one also handled design) to bring the game to life as planned. We secured a campus booth and ran the game in person on the night."
         },
         {k:"01 · Project", h:"An escape room about saving Yuljeon from bug monkeys"},
         {p:"For Halloween and the College of Computing and Informatics night we built <b>a web escape-room game set on the Yuljeon campus</b> with the Goormthon Univ cohort. Players pick a character, go through five quiz stages and a final game, and check the result on a ranking."},
@@ -970,7 +971,7 @@ SITE.en = {
         {k:"05 · Looking back", h:"My first time as PM"},
         {p:"After proposing the first idea, I took on planning end to end: the storyline, the PRD, stage and puzzle design, and researching material. I did not develop, but we refined the idea and made the basic design together before development began, and I refined the plan as it went."},
         {p:"I learned how the front-end and back-end connect organically to become one game."},
-        {p:"The game drew students in, and I found it rewarding to watch them enjoy it."},
+        {p:"Watching students play it at the booth was the most rewarding part for me."},
         {q:"I came to realize that I enjoy building something with technology and watching the effect it has on people."},
         {link:"See the Goormthon Univ campus activities", href:"#a/goormthon-univ"}
       ]
@@ -1324,19 +1325,19 @@ SITE.en = {
     },
     gdsc: {
       title: "GDG on Campus : SKKU",
+      org: "formerly GDSC Sungkyunkwan University",
       summary: "After GDSC became GDG on Campus and the old Google network was cut off, booked most second-half speakers for the monthly global IT seminar through several routes and documented the outreach process in Korean and English.",
       short: "Booked monthly IT seminar speakers without an existing network; documented the process.",
-      card: {what:"When GDSC became GDG on Campus and the speaker network dropped away, rebuilt it through several outreach routes.", role:"Core team · people lead · monthly IT seminar speaker outreach", resultLabel:"OUTCOME · ARTIFACT", result:"Booked most second-half seminar speakers · about 20–30 attendees per session · bilingual outreach templates"},
+      card: {what:"When GDSC became GDG on Campus and the speaker network dropped away, rebuilt it through several outreach routes.", role:"Core team · People Lead · monthly IT seminar speaker outreach", resultLabel:"OUTCOME · ARTIFACT", result:"Booked most second-half seminar speakers · about 20–30 attendees per session · bilingual outreach templates"},
       panel: {
-        role: "Joined the Administration team → Core team people lead (member recruiting · speaker outreach) the next semester · most second-half speaker outreach for the monthly global IT seminar",
+        role: "Administration team → Core team People Lead the following semester (member recruiting and more) · handled most second-half speaker outreach for the monthly global IT seminar",
         team: "Administration team of 4",
-        scale: "Monthly seminar · about 20–30 attendees per session (online and offline)",
-        where: "Google Developer Group on Campus : SKKU (formerly GDSC Sungkyunkwan University)"
+        scale: "Monthly seminar · about 20–30 attendees per session (online and offline)"
       },
       glance: {
         problem: "When GDSC became GDG on Campus, the old internal Google network for speakers was gone. The October seminar was six weeks away, and the university program's speaker fees had to be put to use.",
         decision: "I stopped relying on a single route and used <b>cold emails, experts I had met in class and program referrals</b> at the same time. I also moved conversations to whatever channel the speaker actually answered (WhatsApp, for example).",
-        result: "Booked most second-half speakers for the monthly seminar, supporting a regular talk series, and left Korean and English outreach templates and a speaker brief that were reused for later bookings.",
+        result: "Brought in speakers from very different fields - Computer Vision · Robotics, NVIDIA-related work, a former teen TED speaker - and left Korean and English outreach templates and a speaker brief that were reused for later bookings.",
         resultLabel: "OUTCOME · ARTIFACT"
       },
       body: [
@@ -1383,7 +1384,7 @@ SITE.en = {
         {
           p: "At the former TED speaker's seminar, what stood out was that the talk covered not only technology but the speaker's own path - careers and taking on challenges - for the students in the room. A Google Korea engineer who couldn't give a talk under company policy kept the conversation going with me and ended up offering a coffee chat."
         },
-        {k:"05 · Running and settling", h:"I handled fee paperwork and even gift shipping.", fold:"Speaker fees, the paperwork the program required, and gifts for speakers who declined a fee"},
+        {k:"05 · Running talks and paying speakers", toc:"05 Running talks", h:"I also handled fee paperwork and arranged thank-you gifts.", fold:"Speaker fees, the paperwork the program required, and gifts for speakers who declined a fee"},
         {
           p: "Seminars ran online and offline with about 20–30 attendees each. The speaker fee was KRW 300,000 per talk, and I walked speakers through the paperwork the program required, collected it and passed it on. Some speakers said sharing knowledge was reason enough and declined the fee; for them I worked out with the program office to offer a school gift - a mascot plush or a book - and handled the follow-up and shipping details."
         },

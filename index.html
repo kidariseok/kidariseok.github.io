@@ -992,9 +992,9 @@
     <p class="num" data-t="footer.updated" hidden></p>
   </div>
 </footer>
-<script src="content/common.js?v=1794631526"></script>
-<script src="content/ko.js?v=1794631526"></script>
-<script src="content/en.js?v=1794631526"></script>
+<script src="content/common.js?v=1794632604"></script>
+<script src="content/ko.js?v=1794632604"></script>
+<script src="content/en.js?v=1794632604"></script>
 <script>
 (function(){
   "use strict";
@@ -1682,6 +1682,19 @@
         if(firstInRow && lastInRow && cells.children.length > 1) keyCell.classList.add("solo");
       };
       new ResizeObserver(fitKey).observe(cells);
+    }
+    // 마지막 칸 뒤에 빈 칸이 남으면 마지막 칸이 줄 끝까지 넓어지게 (빈 상자가 '값이 빠진 칸'처럼 보이지 않도록)
+    if(window.ResizeObserver){
+      var fillLast = function(){
+        var last = cells.lastElementChild;
+        if(!last || cells.children.length < 2) return;
+        last.style.gridColumn = "";
+        var cols = getComputedStyle(cells).gridTemplateColumns.split(" ").filter(Boolean).length;
+        if(cols < 2 || last.classList.contains("solo") || last.classList.contains("wide")) return;
+        var box = cells.getBoundingClientRect(), r = last.getBoundingClientRect(), colW = box.width / cols;
+        if(box.right - r.right > colW / 2) last.style.gridColumn = (Math.round((r.left - box.left) / colW) + 1) + " / -1";
+      };
+      new ResizeObserver(fillLast).observe(cells);
     }
     var jumps = el("div","pjumps");
     ((pj && pj.links) || pn.links || []).forEach(function(l){
