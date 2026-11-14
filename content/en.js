@@ -222,8 +222,8 @@ SITE.en = {
           {n:"SPEAKING", t:"A partner that never tires", d:"Role-play, debate, presentation practice, pronunciation feedback. Limits: less human interaction, accent bias."},
           {n:"LISTENING", t:"Speed, captions, replays", d:"Adjustable speed, captions, comprehension questions, accent comparison. Limits: caption dependence, unnatural synthetic speech."}
         ]},
-        {p:"The strengths were shared across all four skills: personalisation, immediate feedback, unlimited practice and learner autonomy. So were the limits: <b>overreliance, hallucination and bias</b>. The prescription was the same too: use AI as a <b>scaffold</b>, not an answer machine. For writing, the gains were larger when AI was built into the whole process, from planning to revision and reflection, than when it was used only for proofreading or text generation."},
-        {note:"<b>Remarks from the lecture</b><br>· For writing, hallucinated references were cited as a major limitation.<br>· A tendency to rely too heavily on summarisation led to a cautious view of its educational suitability.<br>· Reduced Foreign Language Anxiety has been reported, but it was noted that whether less anxiety is always a positive outcome calls for examination.<br>· For speaking, its use in pronunciation practice was described as especially high."},
+        {p:"The strengths were shared across all four skills: personalization, immediate feedback, unlimited practice and learner autonomy. So were the limits: <b>overreliance, hallucination and bias</b>. The prescription was the same too: use AI as a <b>scaffold</b>, not an answer machine. For writing, the gains were larger when AI was built into the whole process, from planning to revision and reflection, than when it was used only for proofreading or text generation."},
+        {note:"<b>Remarks from the lecture</b><br>· For writing, hallucinated references were cited as a major limitation.<br>· A tendency to rely too heavily on summarization led to a cautious view of its educational suitability.<br>· Reduced Foreign Language Anxiety has been reported, but it was noted that whether less anxiety is always a positive outcome calls for examination.<br>· For speaking, its use in pronunciation practice was described as especially high."},
 
         {k:"Part 1 · 02", toc:"Part 1 Theory", h:"Why it works: six theories"},
         {p:"One question came at the end of the skills section: if AI helps with every skill, what explains the benefit? The answer was not the technology itself, but the way AI lines up with the learning principles of existing second language acquisition (SLA) theories."},
@@ -240,7 +240,7 @@ SITE.en = {
         {q:"Aim for the learner's output rather than AI's, for noticing rather than error removal, and for gradual independence rather than dependence. All six theories pointed the same way."},
 
         {k:"Part 1 · 03", toc:"Part 1 Directions", h:"What to study next, and how"},
-        {p:"Research so far has mostly compared AI-assisted teaching with traditional teaching, and that good results appear is already established. What stuck with me is that analysing the <b>process</b> behind those results is becoming the material for papers. Six research directions were proposed."},
+        {p:"Research so far has mostly compared AI-assisted teaching with traditional teaching, and that good results appear is already established. What stuck with me is that analyzing the <b>process</b> behind those results is becoming the material for papers. Six research directions were proposed."},
         {ul:[
           "<b>Learning mechanisms</b>: how does AI help learning?",
           "<b>Teacher-AI collaboration</b>: how should teachers and AI work together?",
@@ -253,8 +253,8 @@ SITE.en = {
         {p:"It was easiest to group the methods by what they try to see."},
         {cards:[
           {n:"PROCESS", t:"Follow the process", d:"<strong>PTA</strong>: reconstruct the learning path from prompts and revisions.<br><strong>Idiodynamic</strong>: rate confidence and anxiety second by second while watching a recording."},
-          {n:"TIME", t:"Follow time", d:"<strong>LGCM</strong>: estimate each learner's starting point and growth rate.<br><strong>TSA</strong>: analyse trends and swings in a long run of observations.<br><strong>EMA/ESM</strong>: record motivation and emotion in real time with short repeated surveys."},
-          {n:"CONTEXT", t:"Explain paths and context", d:"<strong>RM</strong>: work backwards from outcomes to reconstruct different paths.<br><strong>ABM</strong>: simulate behavioural rules.<br><strong>NEM</strong>: look at individual, classroom, institution and society together."},
+          {n:"TIME", t:"Follow time", d:"<strong>LGCM</strong>: estimate each learner's starting point and growth rate.<br><strong>TSA</strong>: analyze trends and swings in a long run of observations.<br><strong>EMA/ESM</strong>: record motivation and emotion in real time with short repeated surveys."},
+          {n:"CONTEXT", t:"Explain paths and context", d:"<strong>RM</strong>: work backwards from outcomes to reconstruct different paths.<br><strong>ABM</strong>: simulate behavioral rules.<br><strong>NEM</strong>: look at individual, classroom, institution and society together."},
           {n:"PERSPECTIVE", t:"Cluster viewpoints", d:"<strong>Q Methodology</strong>: have people rank statements to find distinct types of viewpoint on AI."}
         ]},
         {p:"What they share is a wish to see what pre/post averages cannot: <b>process, individual differences and time</b>. A mean of 82 against 74 hides that some learners improved a lot while others declined."},
@@ -265,7 +265,7 @@ SITE.en = {
         {ul:[
           "<b>Research development (the most important)</b>: publishable research is novel, significant and relevant. Gaps come in five types: theoretical, methodological, contextual, population and temporal. Find them in recent reviews, limitations sections, contradictory findings, scholarly debates and bibliometric tools such as VOSviewer. A good question is clear, focused, original and researchable.",
           "<b>Manuscript</b>: titles, abstracts and keywords, the IMRaD structure, and Swales' CARS model (establish a territory, establish a niche, occupy the niche). Keep interpretation out of the results, and report unexpected findings too.",
-          "<b>Journal and submission</b>: SSCI, AHCI, SCIE and ESCI; Impact Factor, CiteScore, SJR and SNIP; what Q1 to Q4 mean. Metrics inform judgement, they do not replace it. Promises of acceptance within days, excessive solicitation emails and fake metrics are warning signs of predatory journals. Check the journal's AI-use disclosure policy before submitting.",
+          "<b>Journal and submission</b>: SSCI, AHCI, SCIE and ESCI; Impact Factor, CiteScore, SJR and SNIP; what Q1 to Q4 mean. Metrics inform judgment, they do not replace it. Promises of acceptance within days, excessive solicitation emails and fake metrics are warning signs of predatory journals. Check the journal's AI-use disclosure policy before submitting.",
           "<b>Peer review</b>: administrative screening, the editor's desk review (scope, novelty, significance, method, writing), reviewer selection, review, decision. Answer every reviewer comment, and say in the response letter what you changed, why, and where.",
           "<b>Scholarly impact</b>: publication is a beginning, not an end. Good titles and keywords, steady publishing and international collaboration make a paper more likely to be read and cited."
         ]},
@@ -280,7 +280,7 @@ SITE.en = {
     realthon: {
       title: "RE:ALThon",
       org: "GDG on Campus : SKKU",
-      summary: "When a planned collaboration with Japanese universities fell through, changed course and organised a joint AI hackathon across SKKU, Korea University and Sogang (50 participants, 9 teams).",
+      summary: "When a planned collaboration with Japanese universities fell through, changed course and organized a joint AI hackathon across SKKU, Korea University and Sogang (50 participants, 9 teams).",
       short: "Pivoted from a failed global plan to a 3-university hackathon for 50.",
       card: {role:"HR lead · event planning · budget management", result:"Delivered the overnight event for 50 participants in 9 teams (35 of 37 survey respondents rated it 91/100 or higher)"},
       panel: {
@@ -345,7 +345,7 @@ SITE.en = {
         },
         {h:"07. What I learned"},
         {
-          p: "I used to think the quality of the event depended on keeping its global shape. But with several organisations involved, many variables were outside my control. What mattered was rebuilding the options from the resources and constraints we actually had, and connecting directly with the people who could help."
+          p: "I used to think the quality of the event depended on keeping its global shape. But with several organizations involved, many variables were outside my control. What mattered was rebuilding the options from the resources and constraints we actually had, and connecting directly with the people who could help."
         },
         {
           p: "I also felt how delaying one key decision pushes back sponsorship, venue, promotion and recruitment all at once."
@@ -515,7 +515,7 @@ SITE.en = {
               {k:"STEP 1", t:"Enter your conditions", d:"Just enter the campaign title, recruiting period, target headcount, budget, and your preferred channels in order."},
               {k:"STEP 2", t:"AI analysis", d:"The AI analyzes a promotion strategy based on those conditions."},
               {k:"STEP 3", t:"The optimal timeline", d:"The resulting timeline can be saved as an image, and channels with different promotion periods are managed on one screen."},
-              {k:"STRENGTH", t:"A rotating structure that lowers the barrier", d:"Users join with student or business verification. Experts leave the platform 3 years after graduating or 5 years after founding, so new users and creators keep arriving and no one monopolises it."}
+              {k:"STRENGTH", t:"A rotating structure that lowers the barrier", d:"Users join with student or business verification. Experts leave the platform 3 years after graduating or 5 years after founding, so new users and creators keep arriving and no one monopolizes it."}
             ]
           },
           {
@@ -550,7 +550,7 @@ SITE.en = {
 
         {k:"01 · Why Indonesia", h:"I wanted to finish a plan that had once fallen through."},
         {p:"I had been interested in overseas volunteering for a long time."},
-        {p:"With FreeMed I prepared a deployment to Indonesia myself - running an Indonesian-language study group and planning programs tailored to the local context - but the project was cancelled when the sponsor pulled out."},
+        {p:"With FreeMed I prepared a deployment to Indonesia myself - running an Indonesian-language study group and planning programs tailored to the local context - but the project was canceled when the sponsor pulled out."},
         {p:"I regretted all the time I had put in."},
         {p:"So I saw this not as just another extracurricular, but as <b>a chance to finally experience the volunteering I couldn't finish back then</b>."},
         {p:"As a Computer Education major, I also wanted to find out first-hand what preparing and teaching real classes for children would mean to me."},
@@ -581,12 +581,12 @@ SITE.en = {
         {k:"03 · Accounting & supplies", h:"Good classes started with good preparation."},
         {p:"I handled Team 1's class supplies within a budget of roughly <b>KRW 2.2 million per team</b>."},
         {p:"The job was more than just buying things."},
-        {p:"When class leads sent me what they needed, I organised the list, checked the estimated costs, and reviewed whether each purchase was feasible within the overall budget."},
+        {p:"When class leads sent me what they needed, I organized the list, checked the estimated costs, and reviewed whether each purchase was feasible within the overall budget."},
         {p:"When an item turned out more expensive than expected, I didn't just buy it."},
         {p:"I looked for products that did the same job, compared prices, asked the lead whether a substitute would work, and revised the purchase plan."},
         {p:"If I could find something cheaper that didn't compromise the purpose of the class, I proposed it and switched once the lead agreed."},
         {p:"Through this I learned <b>how to find a workable path within a limited budget while keeping the educational goal intact</b>."},
-        {p:"I organised every purchase in Excel, with links, so KT&G could buy the items directly - using the spreadsheet functions I had studied for my Computer Specialist in Spreadsheet & Database certificate."},
+        {p:"I organized every purchase in Excel, with links, so KT&G could buy the items directly - using the spreadsheet functions I had studied for my Computer Specialist in Spreadsheet & Database certificate."},
 
         {k:"04 · Teaching materials I made", toc:"04 Teaching materials", h:"Every class started with making the materials."},
         {p:"I brought the lesson-design experience from my Computer Education major into the field."},
@@ -703,7 +703,7 @@ SITE.en = {
         },
         {h:"01. Finding answers in competitors"},
         {
-          p: "I compared competing language academies' admissions strategies, curricula, and the way their websites convey information. Rather than just listing competitors' strengths, I looked at how intuitively the values Creverse emphasises actually reach real users."
+          p: "I compared competing language academies' admissions strategies, curricula, and the way their websites convey information. Rather than just listing competitors' strengths, I looked at how intuitively the values Creverse emphasizes actually reach real users."
         },
         {
           p: "I noticed that although Creverse has strengths such as integrated thinking, skill assessment, and systematic management, the way they are shown can feel abstract. I proposed conveying the education process more clearly with quantitative information and visual content."
@@ -760,10 +760,10 @@ SITE.en = {
         {p:"Adobe's participation read as a sign that the market is growing. I wondered why the textbook companies had disappeared, and found the cause: the <b>legal downgrade of AI Digital Textbooks (AIDT)</b>. (Source: <a href=\"https://edumorning.com/articles/1452\" target=\"_blank\" rel=\"noopener\">Edumorning article</a>)"},
         {cmp:[
           {n:"Before", t:"Textbook (must-have)", d:"Mandatory purchase with national funds · quality assured by review and approval · price controlled"},
-          {n:"After", t:"Educational material (nice-to-have)", d:"Chosen at the principal's discretion · deprioritised when budgets are tight · excluded from textbook review"}
+          {n:"After", t:"Educational material (nice-to-have)", d:"Chosen at the principal's discretion · deprioritized when budgets are tight · excluded from textbook review"}
         ]},
         {p:"On 18 Nov 2025 the Ministry of Education passed an amendment to the Regulations on Textbooks that removed AIDT from the scope of textbooks. With a local education finance burden of up to KRW 6.6 trillion expected for 2025-2028, AIDT budgets that no longer carry legal force are likely to be the first cut. For companies, a stable barrier to entry and a guaranteed market vanished at the same time."},
-        {q:"I realised that a field companies were investing in aggressively two years ago can turn on a single policy change."},
+        {q:"I realized that a field companies were investing in aggressively two years ago can turn on a single policy change."},
 
         {k:"02 · Problems before technology", h:"What matters is not the technology itself, but which problem it solves."},
         {p:"I saw AI tutors, in-house coding IDEs and digital textbooks, but the question that stayed with me was <b>\"which education problem does this technology solve?\"</b>"},
@@ -771,9 +771,9 @@ SITE.en = {
         {p:"As a computer-education major who designs lessons, looking at technology as <b>\"what does it solve\" rather than \"what can it do\"</b> felt natural."},
         {p:"For example, Adobe wanted to cut the burden of filing a separate official request for every photo used in textbook writing, so it trained Firefly only on photos free of copyright disputes, making them free to use."},
 
-        {k:"03 · Data-driven personalisation", h:"What separates personalised education is learning data."},
+        {k:"03 · Data-driven personalization", h:"What separates personalized education is learning data."},
         {p:"Most companies used similar AI: <b>CAT</b>, which picks the next question by student level; <b>STT</b>, which turns speech into text; and <b>OCR</b>, which reads text from images. With similar technology, I thought the differentiator would be <b>the quantity and quality of data</b>."},
-        {p:"A good example was the AI feedback at Haebeop Reading & Essay. It recognises even messy handwriting and analyses typos, structure and grammar, with over 10 million student records that keep improving its accuracy in real time. Seeing personalised learning built on each student's level and wrong-answer data, I felt that data is the core of personalising education."},
+        {p:"A good example was the AI feedback at Haebeop Reading & Essay. It recognizes even messy handwriting and analyses typos, structure and grammar, with over 10 million student records that keep improving its accuracy in real time. Seeing personalized learning built on each student's level and wrong-answer data, I felt that data is the core of personalizing education."},
 
         {k:"04 · Experience over performance", h:"Even good technology doesn't last if teachers and students can't use it easily."},
         {p:"Even for the same coding IDE, the demos showed a clear difference. <b>Goorm IDE</b>, which Chunjae Education worked with, handled real-time teacher-student feedback more smoothly, while Elice School's in-house IDE felt limited in what it could do."},
@@ -791,21 +791,21 @@ SITE.en = {
         {ul:[
           "<b>Photoshop · Illustrator</b>: extend landscape photos to portrait, and convert 2D images to vector-based 3D naturally",
           "<b>Premiere Pro</b>: auto-captions in 30+ languages, and an object mask that tracks and masks moving objects",
-          "<b>Firefly</b>: image, video and avatar generation with partner models such as GPT Image, Gemini and Veo; useful for visualising maths and academic concepts and making class-role icons",
+          "<b>Firefly</b>: image, video and avatar generation with partner models such as GPT Image, Gemini and Veo; useful for visualizing math and academic concepts and making class-role icons",
           "<b>Copyright</b>: trained on stock images, so it is comparatively safe for educational and commercial use such as teaching materials"
         ]},
         {p:"AI, data, content creation and UX all gathered around one problem: education. I felt the importance of <b>convergent thinking</b> - applying technology from one field to another industry's problem."},
 
         {k:"07 · Looking back", h:"I learned to define the problem and connect the right technology."},
         {p:"At the EduTech Expo, I observed where technology meets real education problems rather than just learning about the technology."},
-        {p:"I learned that learning data matters for personalising education, and that designing an experience teachers and students can really use matters as much as technical performance."},
+        {p:"I learned that learning data matters for personalizing education, and that designing an experience teachers and students can really use matters as much as technical performance."},
         {q:"Between classroom problems and technology, a connection is needed."},
         {p:"I'll keep thinking about the role of a <b>Connector</b>: someone who understands classroom problems and connects data and other technology to them as solutions."}
       ]
     },
     "speech-mentors": {
       title: "KT&G Sangsang Univ Global Speech Mentoring",
-      summary: "Led a team delivering speech mentoring to foreign residents in Korea. Through conversations with a Pakistani resident, prepared a speech on recognising cultural difference and raising multicultural awareness.",
+      summary: "Led a team delivering speech mentoring to foreign residents in Korea. Through conversations with a Pakistani resident, prepared a speech on recognizing cultural difference and raising multicultural awareness.",
       short: "Team lead mentoring foreign residents in Korea on multicultural speeches.",
       vid: {
         k: "SKETCH VIDEO",
@@ -820,7 +820,7 @@ SITE.en = {
       },
       body: [
         {
-          p: "I led a team running speech mentoring for foreign residents in Korea. Listening to and talking with a Pakistani resident here, we prepared a speech together on recognising cultural difference and raising multicultural awareness."
+          p: "I led a team running speech mentoring for foreign residents in Korea. Listening to and talking with a Pakistani resident here, we prepared a speech together on recognizing cultural difference and raising multicultural awareness."
         },
         {h:"Mentor program schedule"},
         {
@@ -856,7 +856,7 @@ SITE.en = {
         },
         {h:"Looking back"},
         {
-          p: "As a student in a college of education I am always studying pedagogy in the abstract, but chances to actually sit with students are rare. Empathising with what these students were worried about, and giving them advice, made me more invested in my own coursework. Finding somewhere to actually apply what I have learned, rather than stopping at the lecture, is one of my strengths."
+          p: "As a student in a college of education I am always studying pedagogy in the abstract, but chances to actually sit with students are rare. Empathizing with what these students were worried about, and giving them advice, made me more invested in my own coursework. Finding somewhere to actually apply what I have learned, rather than stopping at the lecture, is one of my strengths."
         }
       ]
     },
@@ -878,7 +878,7 @@ SITE.en = {
             "IDEAthon",
             "Talk concert",
             "Mentoring",
-            "Actualising",
+            "Actualizing",
             "Tech-Fair"
           ]
         },
@@ -933,16 +933,16 @@ SITE.en = {
         {p:"After proposing the first idea, I took on planning end to end: the storyline, the PRD, stage and puzzle design, and researching material. I did not develop, but we refined the idea and made the basic design together before development began, and I refined the plan as it went."},
         {p:"I learned how the front-end and back-end connect organically to become one game."},
         {p:"The game drew students in, and I found it rewarding to watch them enjoy it."},
-        {q:"I came to realise that I enjoy building something with technology and watching the effect it has on people."},
+        {q:"I came to realize that I enjoy building something with technology and watching the effect it has on people."},
         {link:"See the Goormthon Univ campus activities", href:"#a/goormthon-univ"}
       ]
     },
     "goormthon-univ": {
-      title: "Goormthon Univ 3rd Cohort: Campus Organiser",
-      summary: "As a campus organiser of Goormthon Univ 3rd cohort, ran study sessions and a joint PM study group with Sejong and Soongsil students.",
-      short: "Campus organiser; ran study sessions and a joint PM study group.",
+      title: "Goormthon Univ 3rd Cohort: Campus Organizer",
+      summary: "As a campus organizer of Goormthon Univ 3rd cohort, ran study sessions and a joint PM study group with Sejong and Soongsil students.",
+      short: "Campus organizer; ran study sessions and a joint PM study group.",
       panel: {
-        role: "Campus organiser · ran a joint PM study group with Sejong and Soongsil students",
+        role: "Campus organizer · ran a joint PM study group with Sejong and Soongsil students",
         where: "Goormthon Univ 3rd Cohort · Sungkyunkwan University",
         links: [{t:"See the ESC project", href:"#a/goormthon"}]
       },
@@ -997,24 +997,24 @@ SITE.en = {
         {k:"01 · My role", h:"I supported the classes from the side."},
         {
           ul: [
-            "I assisted across the whole class day. The centre split the day into three periods - art therapy, Korean traditional music, and vocal musical - each with its own instructor.",
+            "I assisted across the whole class day. The center split the day into three periods - art therapy, Korean traditional music, and vocal musical - each with its own instructor.",
             "My role was to step in firmly when a student was about to act out, saying \"No - please calm down.\" The resident assistant teachers showed me how.",
             "When we walked to an outside janggu studio for the traditional-music class, one of us went ahead and one behind, keeping the group on route.",
             "In the vocal musical class I ran the computer at the front, putting the lyrics up for the students - which let me watch the students and the teaching method closely.",
-            "During breaks I talked with the students. The centre asked us not to initiate, so I didn't - but when a student started a conversation we'd trade ordinary things: where we lived, what we liked doing."
+            "During breaks I talked with the students. The center asked us not to initiate, so I didn't - but when a student started a conversation we'd trade ordinary things: where we lived, what we liked doing."
           ]
         },
         {k:"02 · One person at a time", h:"I felt first-hand that every person is singular."},
         {
-          p: "Being close to it, I read up on borderline personality disorder, schizophrenia and the autism spectrum. There is no shortage of material organising traits by diagnosis - but I could not find a classification that matched the students I actually met. People are singular, and spending time with these students made that far more concrete to me."
+          p: "Being close to it, I read up on borderline personality disorder, schizophrenia and the autism spectrum. There is no shortage of material organizing traits by diagnosis - but I could not find a classification that matched the students I actually met. People are singular, and spending time with these students made that far more concrete to me."
         },
         {k:"03 · Education and technology", toc:"03 Education & tech", h:"What matters most is teaching to each student's traits."},
         {
-          p: "A teacher meeting a student with a disability will reach first for the per-diagnosis teaching guide. That matters - but what matters more is looking at the student with real attention and teaching to their individual traits. As information technology brings individualised education closer, I expect an integrated classroom to become possible before long."
+          p: "A teacher meeting a student with a disability will reach first for the per-diagnosis teaching guide. That matters - but what matters more is looking at the student with real attention and teaching to their individual traits. As information technology brings individualized education closer, I expect an integrated classroom to become possible before long."
         },
         {k:"04 · The bus ride home", h:"People I thought of as distant were right here."},
         {
-          p: "The centre was about an hour from home, and on the bus back I ended up riding with the students from that day's class. It landed differently than anything else had: people I had thought of as distant were in fact right here. If we want an integrated society, integrated classrooms have to come first."
+          p: "The center was about an hour from home, and on the bus back I ended up riding with the students from that day's class. It landed differently than anything else had: people I had thought of as distant were in fact right here. If we want an integrated society, integrated classrooms have to come first."
         }
       ]
     },
@@ -1059,11 +1059,11 @@ SITE.en = {
         {h3:"Pre-plan · So we would not get stuck on site"},
         {ul:[
           "<b>Chinese and the local environment</b> - listed social media that cannot be used in China and cultural differences, including signing up for a paid VPN in advance.",
-          "<b>Visa</b> - compared how to apply (in person at a visa application centre), the required documents, and the processing time and fee for regular, express and rush service.",
+          "<b>Visa</b> - compared how to apply (in person at a visa application center), the required documents, and the processing time and fee for regular, express and rush service.",
           "<b>Flights</b> - fitted the route from Incheon to Shenzhen, Shenzhen to Shanghai, and the return flight into the schedule."
         ]},
         {h3:"Conferences · Check feasibility first"},
-        {p:"While choosing conferences, I checked application periods, eligibility and costs. Because it was hard to confirm the participating companies and program of the Shenzhen conference, I <b>also looked for substitute conferences</b> and summarised what we could learn at each event to make the plan more concrete."},
+        {p:"While choosing conferences, I checked application periods, eligibility and costs. Because it was hard to confirm the participating companies and program of the Shenzhen conference, I <b>also looked for substitute conferences</b> and summarized what we could learn at each event to make the plan more concrete."},
 
         {k:"04 · How We Built It", h:"From choosing a topic to presenting, we refined the plan as a team over about six weeks."},
         {ul:[
@@ -1110,11 +1110,11 @@ SITE.en = {
             {k:"MOTIVATION 02", t:"A growing presence in Korea too", d:"Presents the rise in app users of Chinese platforms in the Korean e-commerce market."},
             {k:"MOTIVATION 03", t:"Why understanding the winning strategy matters", d:"From the question “Why are AliExpress and Temu investing so much in Korea?”, we framed the topic as exploring survival strategies for Korean platforms by analyzing the rapid growth of Chinese e-commerce platforms. People on screen are blurred."}
           ]},
-          {name: "Pre-plan", pm: "I took the Chinese, visa and flight part and organised the preparation items using my experience of living in China.", slides: [
-            {k:"PRE-PLAN 01", t:"Contact points and booking information", d:"Organised contact points in three groups: GDGs in China, e-commerce companies, and conferences. With the GDGs we would use a dedicated Slack channel; for companies and conferences we checked official channels and how to apply. Company contact details are removed."},
+          {name: "Pre-plan", pm: "I took the Chinese, visa and flight part and organized the preparation items using my experience of living in China.", slides: [
+            {k:"PRE-PLAN 01", t:"Contact points and booking information", d:"Organized contact points in three groups: GDGs in China, e-commerce companies, and conferences. With the GDGs we would use a dedicated Slack channel; for companies and conferences we checked official channels and how to apply. Company contact details are removed."},
             {k:"PRE-PLAN 02", t:"Chinese study, visa and flights", d:"The Chinese study covered social media that cannot be used in China, cultural differences, and signing up for a paid VPN in advance. For the visa, how to apply in person and the time and fee for regular, express and rush service; for flights, the route from Incheon to Shenzhen, Shenzhen to Shanghai, and back home."}
           ]},
-          {name: "Itinerary", pm: "I took the conference part: I checked deadlines and eligibility for candidate conferences and summarised what we could learn at each, plus backup options.", slides: [
+          {name: "Itinerary", pm: "I took the conference part: I checked deadlines and eligibility for candidate conferences and summarized what we could learn at each, plus backup options.", slides: [
             {k:"PLAN 01", t:"Overall schedule", d:"A calendar that places the GDG exchanges, conferences and company visits in a trip starting in Shenzhen and moving to Shanghai."},
             {k:"PLAN 02", t:"GDG Shenzhen exchange", d:"A technology and culture exchange: GDG Shenzhen shares Google Analytics and TensorFlow, while GDG on Campus : SKKU shares Google Workspace and SEO know-how and Sungkyunkwan culture. Event photos are blurred."},
             {k:"PLAN 03", t:"GDG Shanghai exchange", d:"GDG Shanghai shares Google Analytics and Android and Kotlin, and GDG on Campus : SKKU shares its know-how in the same way. Event photos are blurred."},
@@ -1139,7 +1139,7 @@ SITE.en = {
       summary: "Entered the university's overseas-dispatch competition together with fellow GDG on Campus : SKKU members.",
       short: "Entered SKKU's overseas-dispatch competition with GDG on Campus : SKKU peers.",
       panel: {
-        role: "AI/TensorFlow team member · defined the research topic · designed the time-series modelling · planned overseas collaboration · led the proposal writing",
+        role: "AI/TensorFlow team member · defined the research topic · designed the time-series modeling · planned overseas collaboration · led the proposal writing",
         team: "GDG on Campus : SKKU · team of 4",
         where: "2024 S-Global Challenger (SKKU overseas-dispatch competition) · overseas R&D visit and research proposal"
       },
@@ -1200,7 +1200,7 @@ SITE.en = {
         {p:"That changed the day I first met her."},
 
         {k:"02 · Ms. Hangyeol", toc:"02 Ms. Hangyeol", h:"The person I visited every two weeks"},
-        {note:"To protect the participant, her name is a pseudonym, and details that could identify her, such as age, medical history and address, are generalised."},
+        {note:"To protect the participant, her name is a pseudonym, and details that could identify her, such as age, medical history and address, are generalized."},
         {cards:[
           {n:"DAILY LIFE", t:"Living alone", d:"In her 70s. She worked from late at night until dawn, so many days she slept only three or four hours."},
           {n:"HEALTH", t:"A body she has long looked after", d:"She sees doctors regularly for several chronic conditions, but sometimes put off hospital visits for fear of hearing the word “surgery.”"}
@@ -1218,7 +1218,7 @@ SITE.en = {
         {p:"After each visit I wrote a <b>visit record</b> with five sections: vital signs, physical condition, emotional state, daily habits, and tasks for the next visit. A blood-sugar reading only means something next to the time of the last meal, so I always noted what she ate and when."},
         {p:"A nursing student on the team usually took the measurements while I kept the record. I studied the normal blood-pressure and blood-sugar ranges myself, and on days when that member was away, I took the measurements."},
         {cards:[
-          {n:"1365 CERTIFICATE", t:"17 visits · 24 h 10 min", d:"Recognised FreeMed home-visit hours, 2024.05 – 2025.03"},
+          {n:"1365 CERTIFICATE", t:"17 visits · 24 h 10 min", d:"Recognized FreeMed home-visit hours, 2024.05 – 2025.03"},
           {n:"VISIT RECORDS", t:"12", d:"I wrote all 12 surviving visit records for Ms. Hangyeol."},
           {n:"MEETING MINUTES", t:"9", d:"Planning, feedback, team and study meetings."}
         ]},
@@ -1254,11 +1254,11 @@ SITE.en = {
         {stat:[{k:"Session 1 (June)", v:"12 attended"}, {k:"Session 2 (July)", v:"4 attended", hi:true}]},
         {p:"With no attendance rules, only four came to the second session. So I shared the minutes, collected comments from members who could not attend, and added them to the minutes: five for the first session and three for the second."},
 
-        {k:"08 · Indonesia", h:"A cancelled plan became the next opportunity."},
+        {k:"08 · Indonesia", h:"A canceled plan became the next opportunity."},
         {p:"In summer 2024 I applied for and joined, as a regular member, the <b>Indonesia outreach project</b> FreeMed was preparing as a side project. Over about three months we met on Sundays in Sinchon (four sessions, one online) to study Indonesia's health situation and learn Indonesian."},
         {p:"As a group assignment we drafted a hand-washing and clean-water lesson for children, based on the stages-of-change model. In an assignment on program evaluation, I wrote that we should evaluate throughout the process, not just the results, and keep records for the next cohort."},
-        {p:"Then the sponsor's investment fell through, and the trip was cancelled. As a regular member I did not have much to do, but it was the first time I thought about how to deliver health education abroad."},
-        {flow:["Summer 2024 · preparing the trip", "Cancelled", "2025.01 · elementary school in Bogor"]},
+        {p:"Then the sponsor's investment fell through, and the trip was canceled. As a regular member I did not have much to do, but it was the first time I thought about how to deliver health education abroad."},
+        {flow:["Summer 2024 · preparing the trip", "Canceled", "2025.01 · elementary school in Bogor"]},
         {p:"I did not want it to end as a regret. That fall I applied to the <b>KT&G SangSang WithUS overseas volunteer corps</b>, and in January 2025 I planned and taught a tooth-brushing hygiene lesson at an elementary school in Bogor, Indonesia. The thinking behind the hand-washing lesson from the FreeMed assignment was where that class began."},
         {link:"See KT&G SangSang WithUS", href:"#a/ktng-overseas"},
 
@@ -1271,7 +1271,7 @@ SITE.en = {
     },
     likelion12: {
       title: "LIKELION SKKU 12th",
-      summary: "Practised React and REST API communication in a fortnightly campus study group, and planned 2GATHER at the LIKELION Line-4 Hackathon.",
+      summary: "Practiced React and REST API communication in a fortnightly campus study group, and planned 2GATHER at the LIKELION Line-4 Hackathon.",
       short: "React and REST API practice in a campus study group; planned 2GATHER at the Line-4 Hackathon.",
       panel: {
         role: "Fortnightly campus study group (React · REST API practice) · planned 2GATHER at the LIKELION Line-4 Hackathon",
@@ -1317,7 +1317,7 @@ SITE.en = {
           ]
         },
         {
-          p: "I didn't lock the contact channel either. Rather than insisting on the Google organisation's official platform, I decided that <b>actually being able to talk with a speaker mattered more for getting the talk to happen</b>."
+          p: "I didn't lock the contact channel either. Rather than insisting on the Google organization's official platform, I decided that <b>actually being able to talk with a speaker mattered more for getting the talk to happen</b>."
         },
         {h:"03. Action: turning outreach into a repeatable process"},
         {
@@ -1350,7 +1350,7 @@ SITE.en = {
             "<b>Monthly IT seminar</b> - handled most second-half speaker outreach and supported a year of regular talks.",
             "<b>About 20-30 per session</b> - online and offline seminars for SKKU students.",
             "<b>A range of experts</b> - brought in speakers from computer vision and robotics, NVIDIA, Google and more.",
-            "<b>A documented process</b> - Korean and English templates left in a form the next organiser can pick up."
+            "<b>A documented process</b> - Korean and English templates left in a form the next organizer can pick up."
           ]
         },
         {h:"07. Looking back"},
@@ -1533,13 +1533,13 @@ SITE.en = {
         {h3:"INDUSTRY DX"},
         {p:"I looked at DX cases from various industries, including manufacturing, logistics, finance, and platforms."},
         {ul:[
-          "<b>Manufacturing</b> — LS Group's smart factory: AI-based process prediction and energy and cost optimisation",
+          "<b>Manufacturing</b> — LS Group's smart factory: AI-based process prediction and energy and cost optimization",
           "<b>Logistics</b> — robot automation and smart logistics processes across loading, storage, picking, packing, and delivery",
           "<b>Finance and platforms</b> — blockchain-based letter of credit (L/C) procedures and KITA's AI semantic search service"
         ]},
         {p:"From these I saw that AI is not used as a standalone technology, but <b>can create new value when combined with how each industry works</b>."},
         {h3:"XAI & AI SAFETY"},
-        {p:"I studied how <b>LRP (Layer-wise Relevance Propagation)</b> visualises the basis of an AI's decisions, and <b>a research case on modifying neurons in a GAN generative model</b>."},
+        {p:"I studied how <b>LRP (Layer-wise Relevance Propagation)</b> visualizes the basis of an AI's decisions, and <b>a research case on modifying neurons in a GAN generative model</b>."},
         {p:"I also looked at AI safety principles such as <b>fairness, transparency, and reliability</b>, which are needed to apply AI in real industries."},
         {p:"I came to see that beyond the accuracy of results, we must also consider <b>whether we can explain why a result came out as it did and use it in a trustworthy way</b>."},
 
@@ -1559,11 +1559,11 @@ SITE.en = {
         title: "Team presentation",
         chapters: [
           {name: "Intro", slides: [
-            {k:"COVER", t:"A customised, situation-based company-matching service", d:"Customized Situation-Based Business Matching Service. The presentation of Team 11, 2024 Undergraduate Trade & AI Camp. The service screens that follow are improved UI mockups."},
+            {k:"COVER", t:"A customized, situation-based company-matching service", d:"Customized Situation-Based Business Matching Service. The presentation of Team 11, 2024 Undergraduate Trade & AI Camp. The service screens that follow are improved UI mockups."},
             {k:"CONTENTS", t:"Contents", d:"Four parts: the problem, the solution, expected effects, and a wrap-up."}
           ]},
           {name: "Problem", slides: [
-            {k:"PROBLEM 01", t:"85.5% of exporters had supply-chain problems", d:"Cites a KITA survey of 1,094 companies (reported by Newsis, May 2022). As the trade environment shifts from globalisation to regionalisation, Korean firms were not coping, so supply chains needed diversifying."},
+            {k:"PROBLEM 01", t:"85.5% of exporters had supply-chain problems", d:"Cites a KITA survey of 1,094 companies (reported by Newsis, May 2022). As the trade environment shifts from globalization to regionalization, Korean firms were not coping, so supply chains needed diversifying."},
             {k:"PROBLEM 02", t:"A sudden shift in the trade structure", d:"Geopolitical risk (friend-shoring, the US-China trade war) and environmental regulation (CBAM, ETS, the IRA, etc.) are reshaping trade. Only 33.5% of companies said they were somewhat prepared for a supply-chain crisis."},
             {k:"EVIDENCE 01", t:"War damage to domestic R&D companies", d:"In a survey of 333 companies by KOITA (Mar 2022), raw-material prices and supply issues (27.2%) and trade restrictions and production disruption (26.0%) were the leading damage types."},
             {k:"EVIDENCE 02", t:"Export impact of a carbon border tax", d:"A Bank of Korea estimate puts exports down 0.5% if the EU imposed the tax and 0.6% if the US did, about -1.1% in total goods annually."}
@@ -1580,7 +1580,7 @@ SITE.en = {
             {k:"STEP 06", t:"Transaction references", d:"See anonymous transactions of similarly sized companies, built around indicators, trends, and anonymous cases."}
           ]},
           {name: "Expected effects", slides: [
-            {k:"EFFECT 01", t:"A stable trade supply network", d:"Customisation to a company's requirements (industry, value, size, etc.) plus AI processing that derives stable values from similar companies' precedents is expected to counter supply-chain crises."},
+            {k:"EFFECT 01", t:"A stable trade supply network", d:"Customization to a company's requirements (industry, value, size, etc.) plus AI processing that derives stable values from similar companies' precedents is expected to counter supply-chain crises."},
             {k:"EFFECT 02", t:"Keeping a competitive edge, cutting costs", d:"A stable supply chain helps secure market competitiveness and reduces the risk of inefficient production stoppages, avoiding unnecessary costs."},
             {k:"EFFECT 03", t:"Helping companies set trade strategy", d:"Saves time and cost while giving insight to understand situations that were hard to grasp before and to choose the best option."},
             {k:"THANK YOU", t:"Thank you", d:"The end of Team 11's presentation at the 2024 Undergraduate Trade & AI Camp."}
@@ -1612,7 +1612,7 @@ SITE.en = {
         {p:"Rather than going deep on any one technology, I listened with a question: <b>\u201cHow far will technology go, and what role could I play in it?\u201d</b>"},
 
         {k:"02 · Technology doesn't grow alone", toc:"02 No tech grows alone", h:"Technology needs an ecosystem."},
-        {p:"The first thing that struck me was the story of the <b>driver's licence</b>."},
+        {p:"The first thing that struck me was the story of the <b>driver's license</b>."},
         {p:"A car alone does not create a car society. Alongside the technology to build cars you need roads and traffic infrastructure, licensing rules and laws, and a society ready to accept it all."},
         {p:"Generative AI and the metaverse were the same."},
         {p:"A new model or platform appearing is not enough to change an industry. Real change needs people to use it, services built on it, infrastructure to handle the data, and a new culture around it."},
@@ -1624,7 +1624,7 @@ SITE.en = {
         {q:"Between building AI and using AI, which kind of person will I become?"},
         {p:"The lectures covered how AI models are made, along with the path of using them:"},
         {flow:["Train", "Fine-tune", "Prompt Engineering", "Add your data"]},
-        {p:"I also saw many examples of AI assisting existing work through Microsoft Copilot: summarising documents, organising PDFs and analysing data."},
+        {p:"I also saw many examples of AI assisting existing work through Microsoft Copilot: summarizing documents, organizing PDFs and analyzing data."},
         {p:"It made me think the key skill in the AI era may not be building models alone, but being able to"},
         {flow:["Define the problem", "Choose the right technology", "Describe the result precisely", "Judge and improve it"]},
         {p:"As AI advances, people's role does not disappear. <b>The role of the person who defines what to solve and uses AI well may become even more important.</b>"},
