@@ -953,7 +953,7 @@ SITE.en = {
         },
         {h:"Inter-university work"},
         {
-          p: "I ran a joint PM study group with people from Sejong and Soongsil. Over three months, meeting weekly, we worked through workflow methods, how development actually gets done, and how to use Figma. It is not an experience a first-year usually gets, so I went into it grateful - and everyone there was kind and sharp, which made it a good time."
+          p: "I ran a joint PM study group with people from Sejong and Soongsil. Over three months, meeting weekly, we worked through workflow methods, how development actually gets done, and how to use Figma. It is not an experience a first-year usually gets, so I approached it gratefully - and working alongside sharp, supportive peers made the experience genuinely rewarding."
         },
         {link:"See the ESC project", href:"#a/goormthon"}
       ]
@@ -969,15 +969,15 @@ SITE.en = {
         result: "Covered by the campus paper S-PRESS"
       },
       body: [
-        {h:"Representing the school in front of an international delegation"},
+        {h:"Representing the university before an international delegation"},
         {
-          p: "When the Philippine Commission on Higher Education (CHED) visited campus, I was chosen as the GDG on Campus : SKKU speaker representing the university's software program, and presented our work to the delegation. I wore the yusaengbok - the scholar's robe that stands for the school's identity - and went in carrying the school and the club on my shoulders."
+          p: "When the Philippine Commission on Higher Education (CHED) visited campus, I was chosen as the GDG on Campus : SKKU speaker representing the university's software program. I wore the yusaengbok - the traditional scholar's robe representing SKKU's identity - and presented on behalf of the university and our community."
         },
         {
-          p: "Rather than leaning on a memorised script, I read the room and ran a flexible English talk built around live questions and answers. That let me convey the IT work and interdisciplinary results GDG on Campus : SKKU had been driving with some energy, and the delegation responded warmly."
+          p: "Rather than reading from a memorized script, I read the room and led a flexible English talk centered on live Q&A. That helped me convey the IT initiatives and interdisciplinary work GDG on Campus : SKKU had been driving, drawing active interest and questions from the delegation."
         },
         {
-          p: "The campus paper S-PRESS covered it, recording that - alongside students from software engineering and the Culture & Technology convergence major - I introduced the CHED officials to the college's interdisciplinary work, as a first-year in computer education."
+          p: "The campus paper S-PRESS covered the visit, noting that alongside students from Software and Culture & Technology, I introduced CHED officials to the College of Computing and Informatics' interdisciplinary work as a first-year Computer Education student."
         },
         {
           link: "Press coverage - S-PRESS",
@@ -1144,33 +1144,33 @@ SITE.en = {
         where: "2024 S-Global Challenger (SKKU overseas-dispatch competition) · overseas R&D visit and research proposal"
       },
       body: [
-        {h:"Framing the research question"},
+        {h:"Research topic and model design"},
         {
           ul: [
-            "Designed an LSTM- and ARIMA-based time-series framework that links Google Trends search data with macroeconomic and demographic indicators to forecast future business demand.",
-            "Read the overseas literature first to understand where time-series models break down, then worked out a TensorFlow-based hyperparameter optimisation plan."
+            "Designed an LSTM- and ARIMA-based time-series framework combining Google Trends search data with macroeconomic and demographic indicators to forecast business demand.",
+            "Reviewed prior international studies to identify limits of existing time-series models and outlined a TensorFlow-based hyperparameter tuning plan."
           ]
         },
-        {h:"Global R&D collaboration roadmap"},
+        {h:"Global R&D collaboration plan"},
         {
           ul: [
-            "Planned development-exchange workshops with the University of Toronto and TMU GDG on Campus chapters, plus technical interviews and lab visits at the Vector Institute, BlueDot and Google Canada's AI Research Lab.",
-            "Tied the plan to global business and data-science conferences (ICMABEBR, ICSDS) to give the industry-academia direction some structure."
+            "Planned developer workshops with the University of Toronto and TMU GDG on Campus chapters, along with lab visits and technical interviews at the Vector Institute, BlueDot, and Google Canada's AI Research Lab.",
+            "Connected the plan to international business and data-science conferences (ICMABEBR, ICSDS) to ground its research direction."
           ]
         },
-        {h:"Execution and dissemination"},
+        {h:"Execution and sharing plan"},
         {
           ul: [
-            "Laid out a staged plan to turn the research model into an actual web/app product, plus a dissemination process - journal write-up, visualisation posters, technical explainer videos.",
-            "Combined computer-education knowledge with the business and economics domain, turning an abstract concern into a complete, defensible research plan."
+            "Outlined a phased plan to build the model into a web/app product, alongside sharing outputs through journal submissions, data posters, and technical explainer videos.",
+            "Combined my Computer Education background with business and economics to turn an initial idea into a structured research proposal."
           ]
         },
         {h:"Looking back"},
         {
-          p: "With the GDG on Campus : SKKU team I found the topic - AI analysis and forecasting of business markets using Google Trends data - and led the writing of the proposal. Rather than stopping at the idea, I analysed whether an LSTM forecasting model combining the Google Trends API with economic indicators was technically feasible."
+          p: "With my GDG on Campus : SKKU teammates, I defined the topic - AI-based market analysis and demand forecasting using Google Trends data - and led the proposal writing. Rather than stopping at an idea, I checked whether an LSTM model combining the Google Trends API and economic indicators was technically feasible."
         },
         {
-          p: "Pulling a large body of technical documentation and overseas research into one coherent proposal was where I grew most. As a computer-education major I learned to connect complex AI work to business problems, and - by taking on something well above my level - built the habit of structuring an idea until it holds together."
+          p: "Pulling extensive technical docs and overseas papers into a single coherent proposal was challenging, and that is where I grew most. As a Computer Education student, I practiced connecting AI techniques to business problems and structuring an ambitious idea until it held together."
         }
       ]
     },
@@ -1278,9 +1278,9 @@ SITE.en = {
         links: [{t:"See the 2GATHER project", href:"#a/line4"}]
       },
       body: [
-        {h:"Campus study group - front-end foundations and how API communication works"},
+        {h:"Campus study group - front-end basics and API practice"},
         {
-          p: "We ran a fortnightly study group covering React state management and the core front-end concepts. Rather than stopping at theory, we used Postman to make requests against Hugging Face's GPT-2 model API and handle the JSON responses. That made the client-server exchange concrete, and taught me CRUD over HTTP methods and standard REST design from a practical angle."
+          p: "In a biweekly campus study group, I learned React state management and core front-end concepts. Rather than stopping at theory, we used Postman to send requests to Hugging Face's GPT-2 API and handle JSON responses. That gave me hands-on practice with client-server data exchange, HTTP-based CRUD, and standard REST API design."
         }
       ]
     },
