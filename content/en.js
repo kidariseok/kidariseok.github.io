@@ -288,7 +288,7 @@ SITE.en = {
       panel: {
         role: "Proposed the joint event to Korean universities · co-planned it with three schools · managed the SKKU program's budget (as People Lead at GDG on Campus : SKKU)",
         scale: "3 universities · 50 participants · 9 teams",
-        budget: "About KRW\u00a07M in sponsorship from four programs at three universities (SKKU covered over half) · SKKU's support nearly doubled from the ~KRW\u00a02M first promised · about KRW\u00a07.5M available",
+        budget: "About KRW\u00a07M in sponsorship, over half from SKKU, whose program nearly doubled its ~KRW\u00a02M pledge after seeing my Japan outreach · about KRW\u00a07.5M incl. entry fees",
         period: "6–7 Dec 2024 · overnight",
         where: "Woojung Hall of Informatics, Korea University"
       },
@@ -372,7 +372,7 @@ SITE.en = {
     line4: {
       title: "2GATHER",
       org: "LIKELION Line-4 Hackathon",
-      summary: "As PM, planned an AI promotion-planning service that helps students and early-stage founders with little promotion experience or budget decide where, when and how much to promote. A team of six built and deployed it in about six weeks.",
+      summary: "As PM, planned an AI promotion-planning service for students and early-stage founders with little promotion experience or budget. A team of six built and deployed it in about six weeks.",
       short: "As PM, planned an AI promotion-planning service a team of six deployed in about 6 weeks",
       proj: {
         name: "2GATHER",
@@ -390,8 +390,8 @@ SITE.en = {
       },
       glance: {
         problem: "Recruiting for my campus club, I aimed for 30 members and got 9. From that I formed a hypothesis: students and early-stage founders struggle to decide <b>where, when and how much</b> to promote.",
-        decision: "Instead of making users pick channels they don't know, I designed the flow so they <b>rank only the promotion formats</b> they want and the system maps channels and timing. Budgets under KRW 100,000 see unit prices and choose freely.",
-        result: "Connected the core flow - sign-in, strategy generation, timeline and creator search - into one deployed service, demoed at the hackathon final.",
+        decision: "Instead of making users pick channels they don't know, I designed the flow so they <b>rank only the promotion formats</b> they want and the system maps channels and timing. Under KRW 100,000, users see unit prices and choose freely.",
+        result: "Connected the core flow (sign-in, strategy generation, timeline and creator search) into one deployed service, demoed at the hackathon final.",
         resultLabel: "TEAM OUTPUT",
         note: "Covers the build and demo only. There is no verified usage data (users, promotion impact), so none is reported."
       },
@@ -402,7 +402,7 @@ SITE.en = {
       },
       body: [
         {lead:"2GATHER · An AI promotion-planning service connecting students and early-stage founders with early-career creators"},
-        {p:"An AI-powered marketing solution built so that students and early-stage founders can <b>plan their promotion and connect with the people they need - even with a small budget and a limited network</b>."},
+        {p:"An AI promotion-planning service built so that students and early-stage founders can <b>plan their promotion and connect with the people they need - even with a small budget and a limited network</b>."},
         {p:"At the LIKELION Line-4 Hackathon, a team of six planned, built and deployed the service in about six weeks."},
 
         {k:"01 · Problem", h:"A good idea is not enough if you can't get the word out."},
@@ -444,7 +444,7 @@ SITE.en = {
           {t:"Linkareer", d:"Limit to startups where business verification is required"}
         ]},
         {p:"The aim was not to stop at “AI recommends a promotion plan,” but to <b>build real platform constraints into the service logic</b>."},
-        {p:"On top of these rules, the team implemented the OpenAI API (gpt-4o-mini) to generate the promotion timeline and budget results as JSON from a system prompt and example exchanges. (Per the public repositories · see 08 Build)"},
+        {p:"On top of these rules, the team implemented the OpenAI API (gpt-4o-mini) to generate the promotion timeline and budget results as JSON from a system prompt and example exchanges. The build details are in 08 Build below."},
 
         {k:"05 · A different take on budget", toc:"05 Budget", h:"Not everyone gets the same ratio."},
         {p:"At first we planned to apply a <b>70/20/10 budget split</b> to every user."},
@@ -550,7 +550,7 @@ SITE.en = {
       title: "KT&G Sangsang Withus Overseas Volunteer Corps",
       summary: "Deployed for 10 days to an elementary school in Bogor, Indonesia with KT&G's university volunteer corps; planned and led the ddakji (a Korean paper-tile flipping game) and tooth-brushing lessons and managed Team 1's class-supply budget.",
       short: "Planned and led lessons and managed class supplies at an elementary school in Bogor, Indonesia.",
-      card: {what:"Taught for 10 days at an elementary school in Bogor, Indonesia, with KT&G's university overseas volunteer corps.", role:"Accounting & supplies · led the ddakji and tooth-brushing lessons", resultLabel:"OUTCOME", result:"Taught two lessons to my team's class of 34 third-graders · 177 volunteer hours incl. pre-departure prep"},
+      card: {what:"Taught for 10 days at an elementary school in Bogor, Indonesia, with KT&G's university overseas volunteer corps.", role:"Accounting & supplies · led the ddakji (Korean paper-tile game) and tooth-brushing lessons", resultLabel:"OUTCOME", result:"My team's class of 34 third-graders · ready-to-buy supply list · 177 volunteer hours incl. pre-departure prep"},
       panel: {
         role: "Accounting & supplies team (Team 1 class supplies) · planned and led the ddakji class and tooth-brushing lesson",
         team: "40 volunteers (4 teams of 10)",
@@ -806,7 +806,7 @@ SITE.en = {
         {p:"A good example was the AI feedback at Haebeop Reading & Essay. It recognizes even messy handwriting and analyzes typos, structure and grammar; according to the exhibitor, it draws on over 10 million student records that keep improving its accuracy in real time. Seeing personalized learning built on each student's level and wrong-answer data, I felt that data is the core of personalizing education."},
 
         {k:"04 · Experience over performance", h:"Even good technology doesn't last if teachers and students can't use it easily."},
-        {p:"Even for the same coding IDE, the demos showed a clear difference. <b>Goorm IDE</b>, which Chunjae Education worked with, handled real-time teacher-student feedback more smoothly, while Elice School's in-house IDE felt limited in what it could do."},
+        {p:"Even for the same coding IDE, my impression from the demos was that they differed. <b>Goorm IDE</b>, which Chunjae Education worked with, handled real-time teacher-student feedback more smoothly, while Elice School's in-house IDE felt limited in what it could do."},
         {p:"The Chunjae booth split the teacher and student screens to show how interaction happens in class. Showing <b>user experience inside a real lesson</b> rather than a feature list made it far easier to understand."},
         {p:"The 2026 Adobe session made the same point. Firefly's AI Assistant builds results from plain-language requests, so even people who find the tools hard can use it easily. It also automatically refuses inappropriate requests, so it was designed to suit classrooms."},
         {p:"Teacher workload, student accessibility and an intuitive UX seemed key to whether an edtech service lasts. So does parental acceptance. An Adobe representative told us that Korean parents are still quite resistant to AI in class. Since education involves social context that only people understand, I think <b>showing parents educational value and evidence they can accept</b> is part of the user experience too."},
@@ -1328,16 +1328,16 @@ SITE.en = {
       org: "formerly GDSC Sungkyunkwan University",
       summary: "After GDSC became GDG on Campus and the old Google network was cut off, booked most second-half speakers for the monthly global IT seminar through several routes and documented the outreach process in Korean and English.",
       short: "Booked monthly IT seminar speakers without an existing network; documented the process.",
-      card: {what:"When GDSC became GDG on Campus and the speaker network dropped away, rebuilt it through several outreach routes.", role:"Core team · People Lead · monthly IT seminar speaker outreach", resultLabel:"OUTCOME · ARTIFACT", result:"Booked most second-half seminar speakers · about 20–30 attendees per session · bilingual outreach templates"},
+      card: {what:"When GDSC became GDG on Campus and the speaker network dropped away, rebuilt it through several outreach routes.", role:"Core team · People Lead · monthly IT seminar speaker outreach", resultLabel:"OUTCOME · ARTIFACT", result:"Speakers from Computer Vision to a former TED speaker · ~20–30 attendees per session · bilingual outreach templates"},
       panel: {
-        role: "Administration team → Core team People Lead the following semester (member recruiting and more) · handled most second-half speaker outreach for the monthly global IT seminar",
+        role: "Core team People Lead · most second-half speaker outreach for the monthly IT seminar",
         team: "Administration team of 4",
         scale: "Monthly seminar · about 20–30 attendees per session (online and offline)"
       },
       glance: {
         problem: "When GDSC became GDG on Campus, the old internal Google network for speakers was gone. The October seminar was six weeks away, and the university program's speaker fees had to be put to use.",
         decision: "I stopped relying on a single route and used <b>cold emails, experts I had met in class and program referrals</b> at the same time. I also moved conversations to whatever channel the speaker actually answered (WhatsApp, for example).",
-        result: "Brought in speakers from very different fields - Computer Vision · Robotics, NVIDIA-related work, a former teen TED speaker - and left Korean and English outreach templates and a speaker brief that were reused for later bookings.",
+        result: "Booked speakers including a Computer Vision · Robotics expert, an NVIDIA-related expert and a former teen TED speaker turned adviser, and left Korean and English outreach templates that were reused later.",
         resultLabel: "OUTCOME · ARTIFACT"
       },
       body: [
