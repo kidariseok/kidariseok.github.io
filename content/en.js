@@ -127,7 +127,7 @@ SITE.en = {
     volunteer: {label:"Volunteer hours", unit:"h+", note:"1365 certificate · {n} sessions"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     // more 는 지금 화면에 쓰지 않음 (예전 기록 요약 카드의 펼침 설명)
-    dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments."},
+    dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments and built my global perspective."},
     funding: {label:"Hackathon funding raised", value:"$5K+", unit:"", note:"From programs at <b>3</b> universities · total budget ~$5.5K"}
   },
   certGroups: {language:"Language", cert:"Certification"},
@@ -961,7 +961,7 @@ SITE.en = {
     ched: {
       title: "Campus briefing for the Philippine CHED delegation",
       photosTitle: "Campus news screenshot",
-      summary: "Introduced CHED officials to the interdisciplinary work of SKKU's College of Computing and Informatics in English and took their questions.",
+      summary: "Introduced CHED officials to the interdisciplinary work of SKKU's College of Computing and Informatics in English.",
       short: "Presented SKKU computing's interdisciplinary work to CHED officials.",
       panel: {
         role: "GDG on Campus : SKKU speaker representing the university's software program · English talk with live Q&A",

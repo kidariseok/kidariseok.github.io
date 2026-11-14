@@ -135,7 +135,7 @@ SITE.ko = {
     volunteer: {label:"봉사시간", unit:"시간+", note:"1365 확인서 · {n}회"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     // more 는 지금 화면에 쓰지 않음 (예전 기록 요약 카드의 펼침 설명)
-    dulwich: {label:"Dulwich College Suzhou", unit:"년", note:"중국 쑤저우 국제학교", more:"다양한 문화적 배경의 친구들과 5년간 함께 배우며 낯선 환경에 빠르게 적응하는 법을 익혔습니다."},
+    dulwich: {label:"Dulwich College Suzhou", unit:"년", note:"중국 쑤저우 국제학교", more:"다양한 문화적 배경의 친구들과 5년간 함께 배우며 낯선 환경에 빠르게 적응하는 힘과 글로벌 역량을 길렀습니다."},
     funding: {label:"해커톤 후원 유치", unit:"만원+", note:"3개 대학 · 가용 예산 약 750만원대"}
   },
   certGroups: {language:"어학", cert:"자격"},
@@ -929,7 +929,7 @@ SITE.ko = {
     ched: {
       title: "필리핀 대통령실 고등교육위원회 방문단 학교 소개",
       photosTitle: "교내 기사 화면 캡처",
-      summary: "CHED 관계자들에게 SKKU 소프트웨어융합대학의 학제 간 융합 활동을 영어로 소개하고 질의응답을 진행함.",
+      summary: "CHED 관계자들에게 SKKU 소프트웨어융합대학의 학제 간 융합 활동을 영어로 소개함.",
       short: "SKKU 소프트웨어융합대학의 융합 활동을 소개함",
       panel: {
         role: "SW중심대학사업단을 대표하는 GDG on Campus : SKKU 연사 · 영어 발표와 질의응답",
