@@ -969,7 +969,7 @@ SITE.en = {
         result: "Covered by the campus paper S-PRESS"
       },
       body: [
-        {h:"Representing the university before an international delegation"},
+        {h:"Representing the university in front of an international delegation"},
         {
           p: "When the Philippine Commission on Higher Education (CHED) visited campus, I was chosen as the GDG on Campus : SKKU speaker representing the university's software program. I wore the yusaengbok - the traditional scholar's robe representing SKKU's identity - and presented on behalf of the university and our community."
         },
