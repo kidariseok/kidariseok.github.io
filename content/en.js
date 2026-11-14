@@ -840,18 +840,18 @@ SITE.en = {
     },
     audivice: {
       title: "Audivice Undergraduate Mentor",
-      summary: "Mentored middle and high school students on study methods, mental wellbeing and more.",
-      short: "Mentored secondary students on study habits and wellbeing.",
+      summary: "Provided 1:1 live audio mentoring (5 sessions, 5 hours) to middle and high school students on study habits, admissions, and mental wellbeing.",
+      short: "Led 1:1 audio mentoring for secondary students on study habits and admissions (5 sessions).",
       panel: {
         role: "Advising middle and high school students on study methods and managing their state of mind",
         scale: "5 one-on-one audio sessions · 5 hours"
       },
       body: [
-        {h:"What it produced"},
+        {h:"What I did"},
         {
           ul: [
-            "<b>One-to-one audio mentoring on paths and admissions</b> - live voice sessions with middle and high school students, coaching them on the comprehensive admissions track, school records, interview strategy and study worries, from the point of view of someone who had recently been through it.",
-            "<b>Closing an information gap</b> - a low-cost, high-efficiency voice-based option for students outside the capital, or otherwise cut off from the expensive in-person admissions consulting market."
+            "<b>1:1 audio mentoring on academics and admissions</b>: Held live voice sessions with middle and high school students, advising on holistic admissions, school records, interview prep, and study stress from the perspective of someone who had recently gone through it.",
+            "<b>Bridging the information gap</b>: Shared practical admissions guidance over voice calls with students outside Seoul or without access to expensive in-person consulting."
           ]
         },
         {h:"Looking back"},
@@ -987,8 +987,8 @@ SITE.en = {
     },
     dreamon: {
       title: "Dream On School",
-      summary: "Assisted classes for adolescents with developmental disabilities, among other activities.",
-      short: "Assisted classes for adolescents with developmental disabilities.",
+      summary: "Assisted art therapy, Korean traditional music, and vocal musical classes for adolescents with developmental disabilities (7 hours).",
+      short: "Assisted classes and safety for adolescents with developmental disabilities (7 hours).",
       panel: {
         role: "Assisting classes for adolescents with developmental disabilities",
         result: "7 volunteer hours (1365 certificate)"
@@ -1227,7 +1227,7 @@ SITE.en = {
         {k:"04 · Part lead", toc:"04 Part lead", h:"In the second half, I ran the Donui-dong visits."},
         {p:"I took over as <b>part lead</b> for Donui-dong in September 2024. I ran the planning meetings, divided roles among members, and reported on the program at the monthly team meeting."},
         {p:"At the October orientation for cohort 31, I <b>presented the Donui-dong program</b>. I did not know everything, but I shared what I had learned from visiting one person for over six months and what to watch for on site."},
-        {p:"The new members were shy at first, and I was a little worried. So I started conversations before and after visits and kept things light. After a few visits together, they turned out to be really funny people. I believed that keeping the visits enjoyable was how the program would last."},
+        {p:"The new members were shy at first, and I was a little worried. So I started conversations before and after visits and kept things light. After a few visits together, they turned out to be warm, fun teammates. I believed that keeping the visits enjoyable was how the program would last."},
         {p:"I had thought so from the first half. In my input for the recruitment plan I wrote that members need to know each other before they speak up in meetings, and in feedback on the training I suggested ice-breakers and a get-together afterward."},
 
         {k:"05 · Doctor visits", toc:"05 Doctor visits", h:"I proposed bringing a doctor along."},
@@ -1667,7 +1667,7 @@ SITE.en = {
     },
     worldvision: {
       title: "World Vision",
-      summary: "Translated World Vision sponsor letters into English: 120 letters, 40 hours in total.",
+      summary: "Translated 120 sponsorship letters between Korean sponsors and overseas children for World Vision (40 hours total).",
       short: "Translated 120 World Vision letters into English (40 hours).",
       panel: {
         role: "Translating letters between sponsored children overseas and sponsors in Korea, both directions",
@@ -1675,12 +1675,12 @@ SITE.en = {
         key: "120 letters"
       },
       body: [
-        {h:"What it produced"},
+        {h:"What I did"},
         {
           ul: [
-            "Ten letters a week, accurate and on deadline, to 120 completed (paused during exam periods).",
-            "Working to the given template and systematising my routine raised both speed and accuracy.",
-            "Translating for the child's feeling and context, not just the words, so the exchange with the sponsor stayed genuine."
+            "Translated 10 letters a week on deadline, completing 120 letters in total (paused during exam periods).",
+            "Built a steady routine around the provided template, improving both speed and accuracy.",
+            "Focused on carrying over each child's tone and daily context - not just literal words - so exchanges with sponsors felt genuine."
           ]
         },
         {h:"Looking back"},
