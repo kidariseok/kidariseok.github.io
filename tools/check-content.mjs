@@ -35,16 +35,21 @@ const LIMITS = {
   short:   {ko: 70,  en: 120},   // 목록용 한 줄
   cardRole:   {ko: 45, en: 90},  // 대표 활동 카드 MY ROLE
   cardResult: {ko: 60, en: 130}, // 대표 활동 카드 RESULT
+  cardWhat: {ko: 60, en: 130},   // 대표 활동 카드의 목적 한 문장
+  glance: {ko: 110, en: 230},    // 핵심 요약 한 칸
   key: {ko: 10, en: 16},         // 요약 패널의 큰 숫자
   toc: {ko: 16, en: 24},         // 목차 이름
   shotsMax: 8                    // 사진 줄에 넣는 사진 수
 };
 // index.html 의 renderDetail 이 그릴 수 있는 본문 블록 (여기에 없는 키는 화면에 나오지 않습니다)
 const BLOCKS = ["h", "p", "lead", "q", "facts", "stat", "flow", "boxes", "cards", "cmp", "people", "roles", "h3", "checks", "ul", "note", "cert", "files", "link"];
-const BLOCK_EXTRA = {h: ["k", "toc"], link: ["href"], people: ["note"]};
-const PANEL_KEYS = ["role", "team", "scale", "period", "where", "result", "key", "links"];
-const PROJ_KEYS = ["name", "type", "what", "role", "tools", "team", "period", "date", "result", "key", "stack", "links"];
-const ACT_KEYS = ["title", "org", "summary", "short", "card", "panel", "proj", "vid", "deck", "photosTitle", "body"];
+const BLOCK_EXTRA = {h: ["k", "toc", "fold"], link: ["href"], people: ["note"]};
+const PANEL_KEYS = ["role", "roleLabel", "team", "scale", "scaleLabel", "budget", "period", "where", "result", "resultLabel", "key", "links"];
+const PROJ_KEYS = ["name", "type", "what", "role", "roleLabel", "tools", "team", "period", "date", "result", "resultLabel", "key", "stack", "links"];
+// 핵심 요약: 문제(problem) 또는 목적(goal) · 핵심 판단(decision) · 결과(result, resultLabel, key) · 측정 범위나 한계(note)
+const GLANCE_KEYS = ["problem", "goal", "decision", "decisionLabel", "result", "resultLabel", "key", "note"];
+const CARD_KEYS = ["what", "role", "roleLabel", "result", "resultLabel"];
+const ACT_KEYS = ["title", "org", "summary", "short", "card", "panel", "proj", "glance", "vid", "deck", "photosTitle", "body"];
 const COMMON_ACT_KEYS = ["id", "start", "end", "dates", "noDate", "category", "notion", "video"];
 
 /* ---------- 파일 읽기 ---------- */
@@ -128,7 +133,18 @@ for (const a of C.activities) {
       checkLinks(at + ".proj", t.proj.links);
     }
     if (!t.panel && !t.proj) W(`${at}: panel 이 없습니다. 상세 페이지 요약 패널에 PERIOD 한 칸만 나옵니다 (최소 panel.role 필요)`);
+    if (t.glance) {
+      Object.keys(t.glance).forEach((key) => { if (!GLANCE_KEYS.includes(key)) W(`${at}.glance: 알 수 없는 키 "${key}"`); });
+      if (!t.glance.problem && !t.glance.goal) W(`${at}.glance: problem(문제) 또는 goal(목적) 중 하나가 있어야 합니다`);
+      if (!t.glance.result && !(t.proj || {}).result && !(t.panel || {}).result) W(`${at}.glance: result 가 없습니다 (결과 칸이 비어요)`);
+      for (const key of ["problem", "goal", "decision", "result"]) {
+        const v = t.glance[key];
+        if (v && v.replace(/<[^>]+>/g, "").length > LIMITS.glance[lg]) W(`${at}.glance.${key}: ${v.replace(/<[^>]+>/g, "").length}자 (권장 ${LIMITS.glance[lg]}자 이하, 한두 문장)`);
+      }
+    }
     if (t.card) {
+      Object.keys(t.card).forEach((key) => { if (!CARD_KEYS.includes(key)) W(`${at}.card: 알 수 없는 키 "${key}"`); });
+      if (t.card.what && t.card.what.length > LIMITS.cardWhat[lg]) W(`${at}.card.what: ${t.card.what.length}자 (권장 ${LIMITS.cardWhat[lg]}자 이하)`);
       if (!t.card.role || !t.card.result) W(`${at}.card: role 과 result 두 줄이 모두 있어야 합니다`);
       if (t.card.role && t.card.role.length > LIMITS.cardRole[lg]) W(`${at}.card.role: ${t.card.role.length}자 (권장 ${LIMITS.cardRole[lg]}자 이하)`);
       if (t.card.result && t.card.result.length > LIMITS.cardResult[lg]) W(`${at}.card.result: ${t.card.result.length}자 (권장 ${LIMITS.cardResult[lg]}자 이하)`);
@@ -138,15 +154,17 @@ for (const a of C.activities) {
   }
   if (k && e) {
     // 한국어 · 영어 구조 비교
-    for (const key of ["org", "short", "card", "panel", "proj", "vid", "deck", "photosTitle"]) {
+    for (const key of ["org", "short", "card", "panel", "proj", "glance", "vid", "deck", "photosTitle"]) {
       if (!!k[key] !== !!e[key]) W(`${a.id}: "${key}" 가 ${k[key] ? "ko.js 에만" : "en.js 에만"} 있습니다 (두 언어 파일은 같은 모양으로 유지)`);
     }
-    for (const key of ["panel", "proj", "card", "vid"]) {
+    for (const key of ["panel", "proj", "glance", "card", "vid"]) {
       if (k[key] && e[key]) {
         const a1 = Object.keys(k[key]).sort().join(","), b1 = Object.keys(e[key]).sort().join(",");
         if (a1 !== b1) W(`${a.id}.${key}: ko 와 en 의 항목이 다릅니다 (ko: ${a1} / en: ${b1})`);
       }
     }
+    const fk = (k.body || []).filter((x) => x.h != null).map((x) => (x.fold ? 1 : 0)).join(""), fe = (e.body || []).filter((x) => x.h != null).map((x) => (x.fold ? 1 : 0)).join("");
+    if (fk !== fe) W(`${a.id}.body: 접어 둔 소제목(fold)의 위치가 ko 와 en 에서 다릅니다`);
     const sk = (k.body || []).map(typeOf), se = (e.body || []).map(typeOf);
     if (sk.join(" ") !== se.join(" ")) {
       let at = 0;

@@ -9,6 +9,7 @@
 | 기존 활동 수정 · 삭제 | 먼저 `grep` 으로 해당 id 의 줄만 찾고, 필요하면 위 두 문서 |
 | 화면 모양 · CSS · 컴포넌트 | [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) |
 | 알려진 문제와 승인 대기 중인 개선안 | [docs/PORTFOLIO_AUDIT.md](docs/PORTFOLIO_AUDIT.md) |
+| 채용 담당자 관점으로 점검 · 개선 (페르소나 서브에이전트 반복 점검) | [docs/RECRUITER_REVIEW.md](docs/RECRUITER_REVIEW.md) · 기록은 [docs/review-log/](docs/review-log/) |
 
 ## 구조
 
@@ -28,7 +29,7 @@ docs/               규정 문서          tools/check-content.mjs   콘텐츠 �
 2. 본문은 정해진 블록 19종으로만 씁니다 (`h` `h3` `lead` `p` `q` `note` `ul` `checks` `facts` `flow` `boxes` `stat` `cards` `cmp` `people` `roles` `cert` `files` `link`). 새 블록 · 새 색 · 새 글자 크기 · 새 구분을 만들지 않습니다. 필요하면 만들지 말고 제안합니다.
 3. **한국어와 영어를 같은 커밋에서 같은 구조로** 씁니다. 영어 `summary` · `body` 가 없으면 영어 화면이 빕니다.
 4. 유형(A 프로젝트 / B 기록 / C 간단 기록)을 먼저 정하고, 소제목은 유형 A · B 는 `{k:"01 · 이름", h:"문장형 제목."}`, 유형 C 는 번호 없이 1–2개. 마지막 소제목은 `돌아보며` / `Looking back`.
-5. 요약 패널(`panel` 또는 `proj`)에는 `role` 을 반드시 쓰고 칸이 3개 이상 나오게 합니다. 날짜는 요약 패널 `PERIOD` 한 곳에만 나옵니다.
+5. 요약 패널(`panel` 또는 `proj`)에는 `role` 을 반드시 쓰고 칸이 3개 이상 나오게 합니다. 날짜는 요약 패널 `PERIOD` 한 곳에만 나옵니다. 대표 활동(`projects` · `featured`)에는 핵심 요약 `glance`(문제 · 핵심 판단 · 결과)를 씁니다. 결과는 종류를 라벨로 밝히고(`resultLabel`), 기간 · 투입 시간 · 후원금을 결과 숫자(`key`)로 쓰지 않습니다.
 6. `summary` 는 한국어 `~함.` / 영어 주어 없는 과거형, 본문은 `~습니다` 체. 팀의 일과 내 일을 구분해 씁니다.
 7. **받지 않은 사실 · 숫자 · 사진을 만들어 넣지 않습니다.** 확인 안 된 값은 빼거나 `[확인 필요] …` 로 적고 보고합니다.
 8. 사진은 `.webp`(긴 변 1400px · 250KB 이하), 이름은 `접두어_cover` / `접두어_01` / `접두어_slide_01` / `접두어_video_poster`. 다른 사람의 얼굴 · 주소 · 문서 번호가 보이면 올리지 않고 먼저 알립니다.
