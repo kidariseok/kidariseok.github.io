@@ -352,7 +352,7 @@ SITE.en = {
         },
         {h:"08. What changed afterwards"},
         {
-          p: "When something gets stuck, I now look for alternative people, channels and methods first, rather than holding on to a blocked route. I used this experience as my example of decisiveness when applying to the KT&G overseas volunteer corps. Using Slack, LinkedIn, Discord, Notion, Figma and Google Forms/Sheets intensively also made working with outside organisations feel natural."
+          p: "When something gets stuck, I now look for alternative people, channels and methods first, rather than holding on to a blocked route. I used this experience as my example of decisiveness when applying to the KT&G overseas volunteer corps. Using Slack, LinkedIn, Discord, Notion, Figma, and Google Forms/Sheets intensively also made coordinating and sharing information with outside organizations feel natural."
         },
         {h:"Looking back"},
         {
@@ -533,7 +533,7 @@ SITE.en = {
       title: "KT&G Sangsang Withus Overseas Volunteer Corps",
       summary: "Deployed to an elementary school in Bogor, Indonesia for 177 hours of education and environmental-improvement volunteering.",
       short: "177 hours of education and environmental volunteering at an elementary school in Bogor, Indonesia.",
-      card: {role:"Accounting & supplies · led Korean traditional game, ddakji and tooth-brushing lessons", result:"Built a new building for the school and acquired teaching experiences"},
+      card: {role:"Accounting & supplies · led Korean traditional game, ddakji and tooth-brushing lessons", result:"Managed a KRW 2.2M team supply budget and led classes for 34 third-graders (177 volunteer hours)"},
       panel: {
         role: "Accounting & supplies team (Team 1 class supplies · budget of roughly KRW 2.2 million per team) · planned and led the ddakji class and tooth-brushing lesson",
         team: "40 volunteers (4 teams of 10)",
@@ -686,23 +686,7 @@ SITE.en = {
         {p:"What I first learned from volunteering abroad was, surprisingly, nothing grand."},
         {q:"Preparing well and responding well are different skills."},
         {p:"And both are ultimately completed with other people."},
-
-        {k:"11", toc:"11 The scene that stayed", h:"The scene that stayed with me longest"},
-        {p:"Whenever I think of Indonesia, the sports day is still the first thing that comes to mind."},
-        {p:"The hot playground.<br>Children running around.<br>Soap bubbles sparkling in the sunlight.<br>Forty volunteers dancing at the front.<br>And the children laughing as they watched."},
-        {p:"I was simply happy then."},
-        {p:"Which is why I was sad to see the moment pass."},
-        {p:"<b>\"Will I still remember this scene later?\"</b>"},
-        {p:"I think that's when it started -"},
-        {p:"when I meet a special moment, trying to remember not just a photo but the air, the sounds and the feelings of it."},
-        {p:"Even now, when I think back to that day, I remember sitting in the shade looking out over the playground."},
-        {p:"And the words I heard then come back too."},
-        {q:"\"The moment a window becomes a frame.\""},
-        {p:"For me, those ten days in Indonesia were a time of discovering moments like that."},
-        {p:"The first time I met the children,<br>the first class I led,<br>becoming a talking tree and making them laugh,<br>and watching the bubbles over the playground."},
-        {p:"Back then they were just passing days,<br>but looking back, they are all scenes that will never come again."},
-        {p:"So I don't want to remember this experience simply as <b>\"I went volunteering abroad.\"</b>"},
-        {p:"I want to remember it as <b>ten days that taught me how to remember a once-in-a-lifetime moment</b>."}
+        {p:"Rather than remembering this simply as a volunteer trip, I want to remember it as <b>ten days that taught me how to work with people and hold on to a once-in-a-lifetime moment</b>."}
       ]
     },
     creverse: {
@@ -789,10 +773,10 @@ SITE.en = {
 
         {k:"03 · Data-driven personalisation", h:"What separates personalised education is learning data."},
         {p:"Most companies used similar AI: <b>CAT</b>, which picks the next question by student level; <b>STT</b>, which turns speech into text; and <b>OCR</b>, which reads text from images. With similar technology, I thought the differentiator would be <b>the quantity and quality of data</b>."},
-        {p:"A good example was the AI feedback at Haeppop Reading & Essay. It recognises even messy handwriting and analyses typos, structure and grammar, with over 10 million student records that keep improving its accuracy in real time. Seeing personalised learning built on each student's level and wrong-answer data, I felt that data is the core of personalising education."},
+        {p:"A good example was the AI feedback at Haebeop Reading & Essay. It recognises even messy handwriting and analyses typos, structure and grammar, with over 10 million student records that keep improving its accuracy in real time. Seeing personalised learning built on each student's level and wrong-answer data, I felt that data is the core of personalising education."},
 
         {k:"04 · Experience over performance", h:"Even good technology doesn't last if teachers and students can't use it easily."},
-        {p:"Even for the same coding IDE, the demos showed a clear difference. <b>Goorm IDE</b>, which Chunjae Education worked with, handled real-time teacher-student feedback more smoothly, while Alice School's in-house IDE felt limited in what it could do."},
+        {p:"Even for the same coding IDE, the demos showed a clear difference. <b>Goorm IDE</b>, which Chunjae Education worked with, handled real-time teacher-student feedback more smoothly, while Elice School's in-house IDE felt limited in what it could do."},
         {p:"The Chunjae booth split the teacher and student screens to show how interaction happens in class. Showing <b>user experience inside a real lesson</b> rather than a feature list made it far easier to understand."},
         {p:"The 2026 Adobe session made the same point. Firefly's AI Assistant builds results from plain-language requests, so even people who find the tools hard can use it easily. It also automatically refuses inappropriate requests, so it was designed to suit classrooms."},
         {p:"Teacher workload, student accessibility and an intuitive UX seemed key to whether an edtech service lasts. So does parental acceptance. An Adobe representative told us that Korean parents are still quite resistant to AI in class. Since education involves social context that only people understand, I think <b>showing parents educational value and evidence they can accept</b> is part of the user experience too."},
@@ -926,7 +910,7 @@ SITE.en = {
       },
       body: [
         {
-          p: "Then, for Halloween and our college night on 31 October, we built a campus escape-room game called \"ESC: ESCape SKKU\". It was my first time as PM - writing the storyline and the PRD - and it turned out to be a genuinely fun game. Thanks to a very capable designer and developers it came out exactly as imagined; we were lucky enough to get a booth and run it in person, and the students loved it."
+          p: "For Halloween and our College of Computing and Informatics night on October 31, our Goormthon Univ team built a campus web escape-room game called \"ESC: ESCape SKKU.\" As a first-time PM, I wrote the storyline and PRD, and worked with a capable designer and developers to bring the game to life as planned. We secured a campus booth and ran the game in person, drawing an enthusiastic response from students."
         },
         {k:"01 · Project", h:"An escape room about saving Yuljeon from bug monkeys"},
         {p:"For Halloween and our college night we built <b>a web escape-room game set on the Yuljeon campus</b> with the Goormthon Univ cohort. Players pick a character, go through five quiz stages and a final game, and check the result on a ranking."},
@@ -1304,7 +1288,7 @@ SITE.en = {
       title: "GDG on Campus : SKKU",
       summary: "After GDSC became GDG on Campus and the old Google network was cut off, I booked speakers for the monthly global IT seminar through several routes and documented the outreach process in Korean and English.",
       short: "Booked monthly IT seminar speakers without an existing network; documented the process.",
-      card: {role:"Core / HR lead · monthly IT seminar speaker outreach", result:"Held regular seminars inspiring 300 students per year"},
+      card: {role:"Core / HR lead · monthly IT seminar speaker outreach", result:"Ran monthly seminars reaching roughly 300 cumulative student attendees over the year"},
       panel: {
         role: "Joined the Administration team → Core / HR lead the next semester · most speaker outreach for the monthly global IT seminar",
         team: "Administration team of 4",
