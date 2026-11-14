@@ -70,7 +70,7 @@ SITE.en = {
         {label:"EXPLORE", period:"2024", text:"After entering Computer Education at Sungkyunkwan University, I tried the areas that drew me: AI and data, service planning, education, and global activities."},
         {label:"DISCOVER", period:"2024 – 2025", text:"Along the way, I found that my interest lies less in technology itself than in where it meets people and industry."},
         {label:"ADAPT", period:"2025 – 2026", text:"While serving in the Republic of Korea Army as a network management soldier and squad leader, I earned three certifications and two English test scores to prepare for what comes next.", more:"See certifications", em:true},
-        {label:"NEXT", period:"Next", text:"I want to connect technology with real-world needs, bridging people, ideas, and industry to create meaningful value."}
+        {label:"NEXT", period:"Next", text:"I want to connect technology with real-world needs, bridging people, ideas, and industry to build things that are actually useful."}
       ]
     },
     activities: {kicker:"ACTIVITY ARCHIVE", title:"Activities", count:"{n}", description:"A record of experiences across service planning, community leadership, teaching, and continuous learning."},
@@ -127,7 +127,7 @@ SITE.en = {
     volunteer: {label:"Volunteer hours", unit:"h+", note:"1365 certificate · {n} sessions"},
     ielts: {label:"IELTS Overall", unit:"", note:"Listening 9.0 · Reading 8.5"},
     // more 는 지금 화면에 쓰지 않음 (예전 기록 요약 카드의 펼침 설명)
-    dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments and built my global perspective."},
+    dulwich: {label:"Dulwich College Suzhou", unit:" yrs", note:"International school in Suzhou, China", more:"Five years of learning alongside classmates from many cultural backgrounds taught me to adapt quickly to new environments."},
     funding: {label:"Hackathon funding raised", value:"$5K+", unit:"", note:"From programs at <b>3</b> universities · total budget ~$5.5K"}
   },
   certGroups: {language:"Language", cert:"Certification"},
@@ -961,7 +961,7 @@ SITE.en = {
     ched: {
       title: "Campus briefing for the Philippine CHED delegation",
       photosTitle: "Campus news screenshot",
-      summary: "Introduced CHED officials to the interdisciplinary work of SKKU's College of Computing and Informatics, drawing strong interest.",
+      summary: "Introduced CHED officials to the interdisciplinary work of SKKU's College of Computing and Informatics in English and took their questions.",
       short: "Presented SKKU computing's interdisciplinary work to CHED officials.",
       panel: {
         role: "GDG on Campus : SKKU speaker representing the university's software program · English talk with live Q&A",
@@ -1271,7 +1271,7 @@ SITE.en = {
     },
     likelion12: {
       title: "LIKELION SKKU 12th",
-      summary: "Practiced React and REST API communication in a fortnightly campus study group, and planned 2GATHER at the LIKELION Line-4 Hackathon.",
+      summary: "Practiced React and REST API communication in a biweekly campus study group, and planned 2GATHER at the LIKELION Line-4 Hackathon.",
       short: "React and REST API practice in a campus study group; planned 2GATHER at the Line-4 Hackathon.",
       panel: {
         role: "Fortnightly campus study group (React · REST API practice) · planned 2GATHER at the LIKELION Line-4 Hackathon",
