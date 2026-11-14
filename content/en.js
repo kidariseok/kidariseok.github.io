@@ -44,7 +44,7 @@ SITE.en = {
       gpa: "GPA 4.33",
       gpaMax: "/ 4.5",
       headline: "Connecting Technology, People, and Industry.",
-      intro: "I have explored technology, education, planning, and global experiences through diverse activities. I understand technology, but I do not stop at technology itself. I care about how it can create value for people, organisations, and industries.",
+      intro: "I have explored technology, education, planning, and global initiatives through hands-on work. Beyond understanding technology itself, I focus on how service planning and field execution make it useful to people and organizations.",
       buttonWork: "See selected work",
       buttonCv: "Download CV",
       cvOther: "Korean CV"
@@ -52,7 +52,7 @@ SITE.en = {
     work: {
       kicker: "SELECTED WORK",
       title: "Projects and Key activities",
-      desc: "Explore selected projects showcasing my work, contributions, and measurable impact.",
+      desc: "Selected projects and key activities showing how I defined problems, led execution, and turned ideas into real outcomes.",
       projects: "Projects",
       projectsSub: "Services I planned and built",
       featured: "Highlights",
@@ -73,7 +73,7 @@ SITE.en = {
         {label:"NEXT", period:"Next", text:"I want to connect technology with real-world needs, bridging people, ideas, and industry to create meaningful value."}
       ]
     },
-    activities: {kicker:"ACTIVITY ARCHIVE", title:"Activities", count:"{n}", description:"A collection of experiences highlighting my leadership, collaboration, and contributions across diverse fields."},
+    activities: {kicker:"ACTIVITY ARCHIVE", title:"Activities", count:"{n}", description:"A record of experiences across service planning, community leadership, teaching, and continuous learning."},
     credentials: {
       kicker: "RECORDS",
       title: "Credentials",
@@ -89,7 +89,7 @@ SITE.en = {
       volCount: "{n} sessions",
     },
     contact: {
-      title: "Not stopping at experience, but building what comes next.",
+      title: "Moving beyond past experiences to build what comes next.",
       description: "",
       blogShort: "Blog",
     },
@@ -135,14 +135,14 @@ SITE.en = {
     adsp: {
       name: "ADsP (Advanced Data Semi-Professional)",
       result: "Pass",
-      detail: ".",
+      detail: "-",
       issuer: "Korea Data Agency",
       status: "Permanent"
     },
     sqld: {
       name: "SQLD (SQL Developer)",
       result: "Pass",
-      detail: ".",
+      detail: "-",
       issuer: "Korea Data Agency",
       status: "Permanent"
     },

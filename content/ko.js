@@ -45,7 +45,7 @@ SITE.ko = {
       gpa: "GPA 4.33",
       gpaMax: "/ 4.5",
       headline: "기술과 사람, 산업을 연결합니다.",
-      intro: "다양한 경험을 통해 기술, 교육, 기획, 글로벌 활동을 탐색해 왔습니다. 기술을 이해하지만 기술 자체에 머무르지 않고, 그것이 실제 사람과 조직, 산업에서 어떻게 쓰일 수 있는지를 고민합니다.",
+      intro: "다양한 경험을 통해 기술, 교육, 기획, 글로벌 활동을 탐색해 왔습니다. 기술을 이해하는 데 그치지 않고, 서비스 기획과 현장 운영을 통해 기술이 사람과 조직에 실제로 쓰이는 방식을 고민합니다.",
       buttonWork: "대표 작업 보기",
       buttonCv: "CV 다운로드",
       cvOther: "English CV"
@@ -55,7 +55,7 @@ SITE.ko = {
     work: {
       kicker: "SELECTED WORK",
       title: "프로젝트와 주요 활동",
-      desc: "직접 기획하고 구현한 프로젝트를 통해 문제를 해결하고, 아이디어를 실제 서비스로 발전시킨 경험을 소개합니다.",
+      desc: "직접 기획하고 구현한 프로젝트와 주요 활동을 통해 문제를 정의하고 실제 결과로 연결한 경험을 소개합니다.",
       projects: "프로젝트",
       projectsSub: "직접 기획하고 만든 서비스",
       featured: "대표 활동",
@@ -79,7 +79,7 @@ SITE.ko = {
         {label:"NEXT", period:"앞으로", text:"기술을 실제 필요와 연결하고, 사람과 아이디어, 산업을 이어 의미 있는 가치를 만들고 싶습니다."}
       ]
     },
-    activities: {kicker:"ACTIVITY ARCHIVE", title:"활동 기록", count:"{n}", description:"다양한 분야에서의 제 경험들을 소개드립니다."},
+    activities: {kicker:"ACTIVITY ARCHIVE", title:"활동 기록", count:"{n}", description:"기획, 커뮤니티 운영, 교육과 봉사, 학습을 아우르는 다양한 경험의 기록입니다."},
     // 이력: 다섯 줄 (EDUCATION · LANGUAGE · CERTIFICATION · SCHOLARSHIP · VOLUNTEER).
     // 기록은 common.js 의 tiles(gpa · dulwich) · certGroups · awards · volunteerLog
     credentials: {
@@ -140,8 +140,8 @@ SITE.ko = {
   },
   certGroups: {language:"어학", cert:"자격"},
   certs: {
-    adsp: {name:"ADsP", result:"합격", detail:".", issuer:"한국데이터산업진흥원", status:"영구"},
-    sqld: {name:"SQLD", result:"합격", detail:".", issuer:"한국데이터산업진흥원", status:"영구"},
+    adsp: {name:"ADsP", result:"합격", detail:"-", issuer:"한국데이터산업진흥원", status:"영구"},
+    sqld: {name:"SQLD", result:"합격", detail:"-", issuer:"한국데이터산업진흥원", status:"영구"},
     "computer-proficiency-2": {name:"컴퓨터활용능력 2급", result:"합격", detail:"-", issuer:"대한상공회의소", status:"영구"},
     "trade-english-1": {
       name: "무역영어 1급",
