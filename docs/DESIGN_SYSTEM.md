@@ -5,7 +5,7 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
 
 - 값의 원본은 항상 `index.html` 의 `<style>` 입니다. 이 문서와 코드가 다르면 **코드가 맞고**, 문서를 고칩니다.
 - 줄 번호는 이 문서를 쓴 시점 기준입니다. 줄이 밀렸으면 선택자 이름(`.pstrip` 등)으로 찾으세요.
-- 글 쓰는 규칙은 [CONTENT_GUIDELINES.md](CONTENT_GUIDELINES.md), 활동을 추가하는 순서는 [NEW_ACTIVITY_CHECKLIST.md](NEW_ACTIVITY_CHECKLIST.md), 지금 코드가 이 규칙에서 벗어난 곳은 [PORTFOLIO_AUDIT.md](PORTFOLIO_AUDIT.md)에 있습니다.
+- 글 쓰는 규칙은 [CONTENT_GUIDELINES.md](CONTENT_GUIDELINES.md), 활동을 추가하는 순서는 [NEW_ACTIVITY_CHECKLIST.md](NEW_ACTIVITY_CHECKLIST.md), 지금 코드가 이 규칙에서 벗어난 곳은 비공개 점검 기록(`kidariseok/portfolio-source` 의 `internal/docs/PORTFOLIO_AUDIT.md`)에 있습니다.
 
 ## 규칙 표기
 
@@ -99,8 +99,8 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
 | 흰 글자 / `--accent` (채운 버튼) | 4.8 | 4.8 | AA |
 | `--accent-2` / `--block` | 6.5 | 5.8 | AA |
 | `--on-block-2` / `--block` · `--block-2` | 9.2 · 8.3 | 8.2 · 7.7 | AAA |
-| 구분 배지 (글자 `--ax` / 같은 색 13% 바탕) | — | 6.5–8.6 | AA. 밝은 화면 제거로 [AUDIT A-07](PORTFOLIO_AUDIT.md) 해당 없음 |
-| `--warn` / `--soft` | — | 6.5 | AA ([AUDIT A-08](PORTFOLIO_AUDIT.md) 처리함, 밝은 화면 제거로 어두운 값만) |
+| 구분 배지 (글자 `--ax` / 같은 색 13% 바탕) | — | 6.5–8.6 | AA. 밝은 화면 제거로 AUDIT A-07 해당 없음 |
+| `--warn` / `--soft` | — | 6.5 | AA (AUDIT A-08 처리함, 밝은 화면 제거로 어두운 값만) |
 
 ### 2.2 글꼴
 
@@ -163,7 +163,7 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
 
 **새 글자 크기를 만들지 않는 규칙** [신규]: 위 표에 있는 역할 중 하나를 고릅니다. 맞는 역할이 없으면 새 크기를 만들기 전에 그 내용이 기존 블록으로 표현되는지 먼저 확인합니다.
 
-**작은 영문 라벨(kicker)** [확인]: 두 가지 규격만 씁니다. 모두 `--display` 800 · 자간 `.08em` · 파란색(`--accent-text` / 검은 카드에서는 `--accent-2`)입니다. **K1 섹션 · 본문용 13px**: `.st-kicker` `.body .hk` `.rrow h3` `.dcap .k` `.toc .tt`. **K2 라벨-값용 11.5px**: `.pstrip .pcell small` `.pdl dt` `.fkv dt` `.body .roles small` `.body .cards small`. 새로 만들 때는 새 변형을 추가하지 말고 둘 중 하나를 씁니다 → [AUDIT A-03](PORTFOLIO_AUDIT.md) 처리함.
+**작은 영문 라벨(kicker)** [확인]: 두 가지 규격만 씁니다. 모두 `--display` 800 · 자간 `.08em` · 파란색(`--accent-text` / 검은 카드에서는 `--accent-2`)입니다. **K1 섹션 · 본문용 13px**: `.st-kicker` `.body .hk` `.rrow h3` `.dcap .k` `.toc .tt`. **K2 라벨-값용 11.5px**: `.pstrip .pcell small` `.pdl dt` `.fkv dt` `.body .roles small` `.body .cards small`. 새로 만들 때는 새 변형을 추가하지 말고 둘 중 하나를 씁니다 → AUDIT A-03 처리함.
 
 ### 2.4 간격 · 폭
 
@@ -280,7 +280,7 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
 | focus-visible | 전역 초점 테두리 (8.1) |
 | disabled | 발표자료 이전/다음에만: `opacity:.35`, 커서 기본 |
 
-**작은 알약 버튼** — `.btn` 을 쓰지 않고 자리마다 따로 정의되어 있지만 크기는 두 규격입니다: **작게** `8px 14px` · 13 / 700(높이 약 37px), **보통** `11px 20px` · 15 / 700(`.dpn button`). 새 자리에는 아래 중 같은 역할의 것을 그대로 씁니다. [확인] ([AUDIT A-02](PORTFOLIO_AUDIT.md) 처리함)
+**작은 알약 버튼** — `.btn` 을 쓰지 않고 자리마다 따로 정의되어 있지만 크기는 두 규격입니다: **작게** `8px 14px` · 13 / 700(높이 약 37px), **보통** `11px 20px` · 15 / 700(`.dpn button`). 새 자리에는 아래 중 같은 역할의 것을 그대로 씁니다. [확인] (AUDIT A-02 처리함)
 
 | 선택자 | 크기 | 모양 | 역할 |
 | --- | --- | --- | --- |
@@ -422,7 +422,7 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
 - 화면 전체를 덮는 `rgba(5,6,9,.86)` + `blur(10px)`, 가운데 사진(모서리 16, 화면 안에 맞춤, 원본 비율 그대로).
 - 닫기: 오른쪽 위 유리 원형 버튼(46px) · Esc · 바깥을 누름. 닫으면 초점이 눌렀던 버튼으로 돌아갑니다.
 - 슬라이드(`openDeck`)는 여기에 좌우 화살표 버튼, `02 / 15` 카운터, ← → 키, 좌우로 밀기(40px 이상)가 더해집니다.
-- 사진 줄의 사진은 한 장씩만 열립니다(넘기기 없음). → [AUDIT A-04](PORTFOLIO_AUDIT.md)
+- 사진 줄의 사진은 한 장씩만 열립니다(넘기기 없음). → AUDIT A-04
 
 ### 4.12 영상 구역과 발표자료 구역 (615–664행 · `renderVideo` / `renderDeck`)
 
@@ -560,7 +560,7 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
 
 ### 6.3 알려진 한계
 
-터치 기기(`pointer:coarse`)에서는 버튼 · 링크 주변에 보이지 않는 44px 높이의 터치 영역을 둡니다(`::after`). 크게 보기는 열려 있는 동안 Tab 초점을 안에 가두고 뒤 페이지 스크롤을 막습니다(`html.modal-open`). 알려진 한계: 작은 라벨 · 알약 버튼의 변형이 많음([AUDIT A-02 · A-03](PORTFOLIO_AUDIT.md), 승인 대기).
+터치 기기(`pointer:coarse`)에서는 버튼 · 링크 주변에 보이지 않는 44px 높이의 터치 영역을 둡니다(`::after`). 크게 보기는 열려 있는 동안 Tab 초점을 안에 가두고 뒤 페이지 스크롤을 막습니다(`html.modal-open`). 알려진 한계: 작은 라벨 · 알약 버튼의 변형이 많음(AUDIT A-02 · A-03, 승인 대기).
 
 ---
 
@@ -576,4 +576,4 @@ JINSEOK OH 포트폴리오의 시각 규칙을 **코드에 구현된 값 그대�
    - `tools/check-content.mjs` 의 `BLOCKS` 목록.
    - 이 문서 4.14 표와 [CONTENT_GUIDELINES.md 6장](CONTENT_GUIDELINES.md#6-본문-블록-사전).
    - 640px 이하 · 어두운 화면 · 영어에서의 모양 확인.
-4. 기존 컴포넌트의 수치를 바꾸는 것은 모든 페이지에 영향을 줍니다. 바꾸기 전에 [PORTFOLIO_AUDIT.md](PORTFOLIO_AUDIT.md)에 안건으로 올리고 승인을 받습니다.
+4. 기존 컴포넌트의 수치를 바꾸는 것은 모든 페이지에 영향을 줍니다. 바꾸기 전에 비공개 점검 기록(`kidariseok/portfolio-source` 의 `internal/docs/PORTFOLIO_AUDIT.md`)에 안건으로 올리고 승인을 받습니다.

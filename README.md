@@ -141,7 +141,6 @@ Vercel로 배포하고 있습니다.
 | [docs/NEW_ACTIVITY_CHECKLIST.md](docs/NEW_ACTIVITY_CHECKLIST.md) | **새 활동을 추가하는 순서.** 필요한 정보 · 사진 규격 · 복사해 쓰는 템플릿 · 배포 전 확인 목록 |
 | [docs/CONTENT_GUIDELINES.md](docs/CONTENT_GUIDELINES.md) | 무엇을 어떤 순서 · 말투로 쓰는지. 활동 구분 기준, 항목 형식, 본문 블록, 한 · 영 규칙, 개인정보 보호 |
 | [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) | 색 · 글자 · 간격 값과 컴포넌트별 규칙, 반응형 · 어두운 화면 · 모션 · 접근성 |
-| [docs/PORTFOLIO_AUDIT.md](docs/PORTFOLIO_AUDIT.md) | 현재 상태 점검 결과와 우선순위별 개선안 |
 
 내용을 고친 뒤에는 아래 명령으로 빠진 항목이나 형식 오류가 없는지 확인합니다.
 

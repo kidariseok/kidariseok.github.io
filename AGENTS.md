@@ -5,5 +5,5 @@
 - 새 활동 추가: [docs/NEW_ACTIVITY_CHECKLIST.md](docs/NEW_ACTIVITY_CHECKLIST.md)
 - 글 쓰는 규칙과 데이터 형식: [docs/CONTENT_GUIDELINES.md](docs/CONTENT_GUIDELINES.md)
 - 화면 규칙: [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md)
-- 알려진 문제: [docs/PORTFOLIO_AUDIT.md](docs/PORTFOLIO_AUDIT.md)
+- 알려진 문제와 점검 기록: 비공개 저장소 `kidariseok/portfolio-source` 의 `internal/docs/PORTFOLIO_AUDIT.md`
 - 커밋 전: `node tools/check-content.mjs`

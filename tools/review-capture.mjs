@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* 채용 담당자 페르소나 점검용 화면 캡처 (docs/RECRUITER_REVIEW.md 1장 0단계)
+/* 채용 담당자 페르소나 점검용 화면 캡처 (비공개 저장소 portfolio-source 의 internal/docs/RECRUITER_REVIEW.md 1장 0단계)
    ──────────────────────────────────────────────────────────────
    메인 'SELECTED WORK' 화면과 대표 활동 상세의 첫 두 화면을 KO/EN · 1440/390px 로 찍고,
    본문 텍스트(.txt)와 페이지 높이 · 가로 넘침을 함께 남깁니다. 사이트 파일은 건드리지 않습니다.
@@ -11,7 +11,7 @@
    출력: main_<ko|en>_<desk|mob>_work<N>.png · main_<ko|en>.txt
          <id>_<ko|en>_<desk|mob>_<1|2>.png (1 = 스크롤 없는 첫 화면) · <id>_<ko|en>.txt
          heights.txt · overflow.txt(가로 넘침이 있을 때만)
-   출력 폴더는 저장소 밖(임시 폴더)에 두세요. 보고서만 docs/review-log/ 에 남깁니다. */
+   출력 폴더는 저장소 밖(임시 폴더)에 두세요. 보고서는 portfolio-source 의 internal/docs/review-log/ 에 남깁니다. */
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
