@@ -11,7 +11,7 @@
    docs/CONTENT_GUIDELINES.md 의 스키마와 맞는지 확인합니다.
    · ERROR  : 화면이 깨지거나 내용이 빠지는 문제. 반드시 고칩니다 (종료 코드 1).
    · WARN   : 규정에서 벗어난 부분. 새로 추가한 활동에서는 0건이어야 합니다.
-              (기존 활동의 알려진 경고는 docs/PORTFOLIO_AUDIT.md 에 정리되어 있습니다)
+              (기존 활동의 알려진 경고는 비공개 저장소 portfolio-source 의 internal/docs/PORTFOLIO_AUDIT.md 에 정리되어 있습니다)
    · INFO   : 참고 사항.
 
    설치할 것이 없습니다 (Node.js 18 이상, 외부 패키지 없음).

@@ -85,7 +85,7 @@
 | 유형 C · 짧은 기록 | `audivice`, `worldvision` |
 | 유형 C · 사진과 영상이 있는 짧은 기록 | `speech-mentors` |
 
-> 본보기는 **구조와 분량**을 보려는 것입니다. 소제목 표기는 기존 페이지마다 조금씩 다르므로([AUDIT C-01](PORTFOLIO_AUDIT.md)) 표기는 [CONTENT_GUIDELINES 7.2](CONTENT_GUIDELINES.md#72-소제목-쓰는-법)를 따릅니다.
+> 본보기는 **구조와 분량**을 보려는 것입니다. 소제목 표기는 기존 페이지마다 조금씩 다르므로(AUDIT C-01) 표기는 [CONTENT_GUIDELINES 7.2](CONTENT_GUIDELINES.md#72-소제목-쓰는-법)를 따릅니다.
 
 ---
 
@@ -328,7 +328,7 @@ node tools/check-content.mjs
 ```
 
 - [ ] **ERROR 0건.**
-- [ ] 새로 추가한 활동 id 가 들어간 **WARN 이 0건.** (기존 활동의 알려진 경고는 [PORTFOLIO_AUDIT.md](PORTFOLIO_AUDIT.md)에 있습니다. 새 활동이 경고를 늘리면 안 됩니다)
+- [ ] 새로 추가한 활동 id 가 들어간 **WARN 이 0건.** (기존 활동의 알려진 경고는 비공개 점검 기록(`kidariseok/portfolio-source` 의 `internal/docs/PORTFOLIO_AUDIT.md`)에 있습니다. 새 활동이 경고를 늘리면 안 됩니다)
 
 ### 5.2 눈으로 확인
 
