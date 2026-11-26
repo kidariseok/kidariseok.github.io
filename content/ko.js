@@ -38,7 +38,7 @@ SITE.ko = {
   name: "오진석",
   page: {
     // 상단 메뉴 5개 (휴대폰에서는 상단 바 아래에 가로 한 줄로 나옵니다)
-    nav: {work:"작업", about:"소개", activities:"활동", credentials:"이력", contact:"연락"},
+    nav: {work:"작업", side:"사이드 프로젝트", about:"소개", activities:"활동", credentials:"이력", contact:"연락"},
     hero: {
       school: "성균관대학교 컴퓨터교육과 · 2024학번",
       // 학교 줄 끝 배지. 학점은 여기와 '이력' EDUCATION 줄, 두 곳에만 나옵니다
@@ -66,6 +66,64 @@ SITE.ko = {
       labels: {what:"무엇", role:"내 역할", tools:"내가 쓴 도구", stackTeam:"팀 기술 스택", team:"팀 구성", scale:"규모", budget:"예산 · 자원", period:"기간", where:"장소", result:"결과", stack:"기술 스택", links:"링크", problem:"문제", goal:"목적", decision:"핵심 판단"},
       jumpVideo: "프로모션 영상", jumpDeck: "발표자료",
       open: "프로젝트 보기", play: "마우스를 올리면 재생", tbd: "확인 필요"
+    },
+    // 사이드 프로젝트(#side): docs/SIDE_PROJECTS.md. 대표 카드 글자는 activities 의 해당 id 가 아니라 아래 cards 에 짧게 따로 둠
+    side: {
+      kicker: "SIDE PROJECTS",
+      title: "사이드 프로젝트",
+      desc: "2026년 가을, AI를 팀원처럼 쓰며 만든 것들입니다. 기획 · 결정 · 검수는 제가 하고 구현은 AI 에이전트에게 맡겼습니다. 일부는 출시했고, 일부는 멈췄습니다. 멈춘 것은 왜 멈췄는지 함께 적었습니다.",
+      statHead: "ACTIVITY",
+      statRange: "첫 커밋 이후 {span}일 ({from} – {updated})",
+      stat: {commits: "커밋 · 저장소 {repos}개", days: "커밋한 날", hours: "{month}, 작업한 날의 하루 평균 AI 작업", tools: "직접 써 본 AI 도구"},
+      unitDays: "/{span}일", unitHours: "h", unitTools: "개",
+      statNote: "커밋은 GitHub 저장소 {repos}개의 기본 브랜치 기준이며 AI 에이전트가 남긴 커밋을 포함합니다. 작업 시간은 Claude Code · Codex 로컬 기록에서 15분 넘게 멈춘 구간을 뺀 값이라 실제보다 적을 수 있습니다.",
+      less: "적음", more: "많음", commitsOn: "{date} · {n}커밋",
+      flow: [
+        {k: "SEP · PROTOTYPE", t: "한 장짜리 프로토타입", p: "떠오른 아이디어를 Claude 아티팩트로 바로 화면에 띄워 봤습니다.", chips: ["COMMET 연말 편지", "handchord"]},
+        {k: "OCT · DELEGATE", t: "여러 AI에게 일 나누기", p: "일을 티켓으로 쪼개 Claude Code · Codex · Antigravity에 나눠 맡기고, 승인은 제가 했습니다.", chips: ["FIGHTSHOOT", "Live A Life", "HELLCORD"]},
+        {k: "NOV · SHIP & OPERATE", t: "출시하고 운영하기", p: "스토어에 출시하고, 여러 AI가 같은 기억을 읽고 일하는 운영 체계를 만들었습니다.", chips: ["SWIRLD", "올해 저는 당신에게", "Orca + 볼트"]}
+      ],
+      cardsHead: "대표 프로젝트", cardsSub: "막힌 지점과 해결 과정을 상세 기록으로 남긴 것",
+      labels: {why: "WHY", meai: "ME vs AI", stuck: "STUCK → FIX", me: "나", ai: "AI", go: "상세 기록 보기"},
+      cards: {
+        swirld: {meta: "NOV · iOS · 웹 앱", what: "교환학생을 위한 다중통화 가계부. App Store에 출시했습니다.", why: "여러 통화로 쓰는 돈을 한곳에서 보고 싶었습니다.", me: "문제 정의 · 금액 저장 방식 결정 · 출시 검수", ai: "앱 구현", stuck: "“3,000코루나를 바꿔 300을 썼다면 원화로 얼마?”", fix: "첫 설계부터 금액은 정수, 환전 묶음마다 원화 원가 저장"}
+      },
+      listHead: "그 밖의 시도", listSub: "상세 기록은 차례로 올립니다",
+      list: {
+        endofyear: {name: "올해 저는 당신에게", d: "친구들이 고른 장면으로 2027년 양 캐릭터를 받는 연말 웹서비스. 11.19 운영 배포, 12.03 정식 출시 예정"},
+        orca: {name: "Orca 봇 팀 + 공용 볼트", d: "여러 AI 에이전트에 역할을 나누고, 모두 같은 기억을 먼저 읽게 하는 작업 환경"},
+        fightshoot: {name: "FIGHTSHOOT", d: "군 생활을 소재로 한 카드 디펜스 게임. 자동 플레이 봇으로 규칙 구멍을 찾아 고침. 웹 체험판 공개"},
+        trendnow: {name: "trend.now", d: "AI · 테크 행사 큐레이션 블로그. 임시저장까지만 자동, 검수와 발행은 직접"},
+        hellcord: {name: "HELLCORD", d: "빠르게 기록하는 운동 기록 앱(PWA)"},
+        editor: {name: "로컬 영상 편집기", d: "AI가 조작하고 사람은 미세 수정만 하는 개인용 편집기. SWIRLD 광고 영상을 여기서 만듦"},
+        liveallife: {name: "Live A Life", d: "골목길 픽셀아트 힐링 게임. 3D에서 2D로 바꾼 뒤 출시 전 회귀를 발견해 멈춤"}
+      },
+      status: {live: "운영 중", prep: "출시 준비", exp: "실험", paused: "보류"},
+      toolsHead: "써 본 AI 도구", toolsSub: "로고를 누르면 어떻게 썼는지 보여 드립니다", usedIn: "USED IN",
+      tools: {
+        claude: {name: "Claude", plan: "Max · 11.16부터", role: "주력 — 기획과 개발", uses: ["Claude Code로 SWIRLD · 올해 저는 당신에게 · 이 포트폴리오를 구현", "아티팩트로 아이디어를 한 장짜리 프로토타입으로 먼저 확인", "사용량이 늘어 11.16에 Pro에서 Max로 올림"], used: ["SWIRLD", "올해 저는 당신에게", "포트폴리오"]},
+        chatgpt: {name: "ChatGPT · Codex", plan: "Plus", role: "기획 검토 · 이미지 · 인계", uses: ["게임 기획안을 따로 받아 Claude · Gemini 안과 비교", "양 캐릭터 48프레임, 게임 캐릭터 그림 생성", "Claude 사용량이 바닥났을 때 인계 문서로 Codex가 이어받아 개발"], used: ["FIGHTSHOOT", "올해 저는 당신에게"]},
+        gemini: {name: "Gemini", plan: "Google AI Pro", role: "고증 조사 · 게임 아트", uses: ["Deep Research로 남북한 지상군 공개자료 조사 — 게임 고증 문서 3건", "Argon 모델로 게임 캐릭터 · 배경 그림 생성"], used: ["FIGHTSHOOT"]},
+        antigravity: {name: "Antigravity", plan: "IDE 에이전트", role: "외부 감사 · 도구 제작", uses: ["다른 AI가 만든 연말 서비스 코드를 외부 감사관으로 점검(23건)", "AI 도구 사용량 로컬 대시보드 제작", "Google Drive 자료 색인"], used: ["올해 저는 당신에게", "공용 볼트"]},
+        aside: {name: "Aside", plan: "AI 브라우저", role: "리서치 · 자동화 루틴", uses: ["이 사이드 프로젝트 영역의 사례 조사와 사실 교차 검증", "블로그 파이프라인 — 임시저장까지만 자동, 발행은 직접", "아침 브리핑 · 항공권 특가 · 공연 취소표 추적 루틴"], used: ["trend.now", "포트폴리오"]},
+        orca: {name: "Orca", plan: "오케스트레이션", role: "AI 봇 팀 운영", uses: ["대장 봇이 Claude · Codex · Antigravity 워커에게 일을 나눔", "Slack 봇으로 PR과 할 일을 매일 점검", "푸시 · 병합 · 배포는 실행 전에 승인 요청"], used: ["FIGHTSHOOT", "Orca + 볼트"]},
+        pickle: {name: "Pickle", plan: "개인화 에이전트", role: "일정 · 생활 관리", uses: ["일정 조율과 캘린더 관리, 공연 빈자리 추적", "블로그 자동화를 먼저 시범 운영 → Orca 봇이 생긴 뒤 넘김"], used: ["trend.now"]},
+        figma: {name: "Figma", plan: "디자인", role: "화면 설계", uses: ["연말 서비스 유저 플로우와 UI 1차 디자인", "글꼴 변수로 텍스트 스타일 일괄 전환 — AI가 Figma를 직접 조작"], used: ["올해 저는 당신에게"]},
+        obsidian: {name: "Obsidian", plan: "공용 기억", role: "AI가 먼저 읽는 볼트", uses: ["흩어진 AI 대화 · 작업 기록 925건을 한 볼트로 모음(11.25)", "매일 밤 기록을 모아 목차를 다시 만듦"], used: ["Orca + 볼트"]},
+        notion: {name: "Notion", plan: "오래 써 온 기록", role: "개인 워크스페이스", uses: ["자격증 · 졸업요건 · 장학금 · 교환학생 일정 관리", "활동 20개의 원본 기록 — 이 포트폴리오의 활동 상세와 CV가 여기서 나옴"], used: ["포트폴리오"]}
+      },
+      logHead: "빌드 로그", logSub: "새로 시작한 것은 여기에 먼저 적습니다",
+      log: [
+        {d: "2026-11-22", t: "공용 지식 볼트", p: "모든 AI 세션이 같은 기록을 읽도록 정리"},
+        {d: "2026-11-19", t: "올해 저는 당신에게", p: "운영 배포 (12.03 정식 출시 예정)"},
+        {d: "2026-11-18", t: "SWIRLD", p: "App Store 출시"},
+        {d: "2026-11-16", t: "Claude Max", p: "사용량이 늘어 Pro에서 올림"},
+        {d: "2026-11-02", t: "SWIRLD", p: "코드보다 먼저 24쪽 AI 운영 매뉴얼 작성, 같은 날 첫 커밋"},
+        {d: "2026-10-20", t: "FIGHTSHOOT", p: "슈터에서 세로형 카드 디펜스로 전환"},
+        {d: "2026-10-17", t: "FIGHTSHOOT", p: "《출동! 5분대기조》로 시작, 고증 조사 3건"},
+        {d: "2026-09-23", t: "첫 커밋", p: "이 기록의 시작"},
+        {d: "2026-09-16", t: "COMMET", p: "연말 편지 프로토타입 (‘올해 저는 당신에게’의 원형)"}
+      ]
     },
     // 소개: 네 단계 (label 영어 이름 · period 기간 · text 한두 문장 · more 가 있으면 단계 끝에 #credentials 로 가는 작은 링크 · em:true 면 상자로 강조)
     about: {
@@ -106,6 +164,7 @@ SITE.ko = {
   ui: {
     back: "활동 기록으로",
     backWork: "대표 작업으로",
+    backSide: "사이드 프로젝트로",
     workRef: "위에서 소개",
     prev: "이전 활동",
     next: "다음 활동",
@@ -171,6 +230,33 @@ SITE.ko = {
     "co-curricular": {name:"비교과챌린지장학금", description:"교내 비교과 참여 우수 인원에게 수여"}
   },
   activities: {
+    "swirld": {
+      "title": "SWIRLD",
+      "org": "사이드 프로젝트 · iOS 앱",
+      "summary": "교환학생을 위한 다중통화 가계부를 기획하고 구현은 AI 에이전트에게 맡겨 16일 만에 App Store에 출시함.",
+      "short": "교환학생 다중통화 가계부를 기획해 AI 에이전트와 16일 만에 App Store에 출시함",
+      "panel": {"role":"기획 · 설계 결정 · 출시 검수 (구현은 AI 에이전트)","where":"iOS App Store · 웹 베타","scale":"Expo · React Native · Supabase","result":"2026.11.18 대한민국 App Store 무료 출시","key":"16일"},
+      "body": [
+        {"lead":"SWIRLD · 교환학생을 위한 다중통화 가계부"},
+        {"p":"여러 통화로 쓰는 생활비와 여행비를 <b>실제로 환전한 환율 그대로</b> 기록하고 돌아볼 수 있는 가계부입니다. 기획 · 결정 · 검수는 제가 하고, 구현은 AI 에이전트(Claude Code · Codex · Antigravity)에게 맡겼습니다."},
+        {"k":"01 · 계기","h":"여러 통화로 쓴 돈이 한곳에 모이지 않았습니다."},
+        {"p":"체코 교환학생을 준비하며 떠올린 장면 하나에서 시작했습니다. <b>“3,000코루나를 환전하고 마트에서 300코루나를 썼다면, 쓴 300코루나는 원화로 얼마였을까? 내가 실제로 바꾼 환율로.”</b> 대부분의 가계부는 오늘 환율로 다시 계산해 이 질문에 답하지 못했습니다."},
+        {"k":"02 · 처음 시도","h":"코드보다 먼저, AI 조직도와 금액 규칙을 정했습니다."},
+        {"p":"첫날(11.02) 코드 대신 24쪽짜리 <b>1인 AI 기업 운영 매뉴얼</b>을 썼습니다. 제가 방향을 정하고 AI가 부서처럼 일하는 구조, 누가 결정하고 누가 검토하는지, 인계와 PR 양식까지 정했습니다. 이틀 뒤 첫 데이터 구조에는 “금액은 모두 정수, 소수점 금지”와 환전 묶음마다 원화 원가를 남기는 규칙이 들어갔습니다."},
+        {"k":"03 · 막힌 지점","h":"출시 직전에는 코드 밖의 문제가 막았습니다."},
+        {"boxes":["iCloud 동기화 폴더 안에서는 iOS 빌드가 멈췄습니다.","심사용 데모 계정과 그럴듯한 데이터가 필요했습니다.","데이터는 작았지만 백업이 없다는 위험이 남아 있었습니다."]},
+        {"k":"04 · 해결과 버린 안","h":"처음 정한 금액 규칙을 조사로 다시 검증했습니다."},
+        {"cmp":[{"t":"버린 안 · 소수점 금액, 오늘 환율로 다시 계산","d":"반올림 오차가 쌓이고 과거 지출이 환율에 따라 바뀜"},{"t":"고른 안 · 정수 최소 단위, 환전 묶음별 원화 원가","d":"기록한 그날의 금액이 그대로 남음"}]},
+        {"p":"11.16에는 12개 분야 앱 120개의 데이터 구조를 비교해 지금 구조(Supabase + 정수 금액)를 <b>바꾸지 않고 유지</b>하기로 확인했고, 진짜 위험은 용량이 아니라 백업 부재라는 결론을 얻었습니다. 빌드는 iCloud 밖 폴더에서 같은 커밋으로 다시 돌려 해결했고, 데모 계정에는 지갑 · 지출 · 여행 데이터를 넣어 심사를 통과했습니다."},
+        {"k":"05 · AI와 나의 분업","h":"결정은 제가, 구현은 AI가 했습니다."},
+        {"roles":{"tl":"AI 에이전트","ml":"MY CONTRIBUTION","team":["앱 화면 · 서버 구현","테스트 작성과 실행","스토어 제출 준비 자료"],"mine":["문제 정의와 제품 명세서 작성","금액 · 환율 저장 방식 결정","AI 역할 · 인계 규칙 설계","심사용 데모 계정과 출시 검수"]}},
+        {"p":"코드는 직접 작성하지 않았습니다."},
+        {"k":"06 · 돌아보며","h":"좋은 질문 하나가 데이터 구조가 됐습니다."},
+        {"p":"‘3,000코루나’라는 구체적인 장면이 있었기 때문에 AI에게 구현을 맡겨도 금액 규칙이 흔들리지 않았습니다. 다음 단계는 공개 베타와 백업입니다."},
+        {"link":"App Store에서 보기","href":"https://apps.apple.com/kr/app/id6835462190"},
+        {"link":"서비스 소개 페이지","href":"https://swirld.vercel.app/about.html"}
+      ]
+    },
     "intl-publication": {
       title: "AI 시대의 제2언어 교육과 국제학술지 출판",
       summary: "영어영문학과 특강 1·2부를 같은 날 들으며, AI가 제2언어 교육에서 하는 역할과 그 효과를 설명하는 이론·연구 방법론, 그리고 국제학술지에 논문이 실리기까지의 과정을 정리함.",

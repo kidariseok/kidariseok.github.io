@@ -37,7 +37,7 @@ SITE.en = {
   name: "JINSEOK OH",
   page: {
     // 상단 메뉴 5개 (휴대폰에서는 상단 바 아래에 가로 한 줄로 나옵니다)
-    nav: {work:"Work", about:"About", activities:"Activities", credentials:"Credentials", contact:"Contact"},
+    nav: {work:"Work", side:"Side projects", about:"About", activities:"Activities", credentials:"Credentials", contact:"Contact"},
     hero: {
       school: "Computer Education, Sungkyunkwan University · Entered 2024",
       // 학교 줄 끝 배지. 학점은 여기와 '이력' EDUCATION 줄, 두 곳에만 나옵니다
@@ -62,6 +62,63 @@ SITE.en = {
       labels: {what:"WHAT", role:"MY ROLE", tools:"MY TOOLS", stackTeam:"TEAM STACK", team:"TEAM", scale:"SCALE", budget:"BUDGET", period:"PERIOD", where:"WHERE", result:"OUTCOME", stack:"STACK", links:"MORE", problem:"PROBLEM", goal:"GOAL", decision:"KEY DECISION"},
       jumpVideo: "Promo video", jumpDeck: "Slides",
       open: "View project", play: "Hover to play", tbd: "To confirm"
+    },
+    side: {
+      kicker: "SIDE PROJECTS",
+      title: "Side projects",
+      desc: "What I built in autumn 2026, working with AI like teammates. I planned, decided and reviewed; AI agents wrote the code. Some shipped, some stopped — and where they stopped, I wrote down why.",
+      statHead: "ACTIVITY",
+      statRange: "{span} days since the first commit ({from} – {updated})",
+      stat: {commits: "commits · {repos} repos", days: "days with commits", hours: "average AI work per working day, {month}", tools: "AI tools used hands-on"},
+      unitDays: "/{span}", unitHours: "h", unitTools: "",
+      statNote: "Commits are counted on the default branch of {repos} GitHub repos and include commits made by AI agents. Work time comes from local Claude Code · Codex logs, excluding gaps over 15 minutes, so it may be an undercount.",
+      less: "Less", more: "More", commitsOn: "{date} · {n} commits",
+      flow: [
+        {k: "SEP · PROTOTYPE", t: "One-page prototypes", p: "Put ideas on screen straight away as Claude artifacts.", chips: ["COMMET year-end letter", "handchord"]},
+        {k: "OCT · DELEGATE", t: "Splitting work across AIs", p: "Broke work into tickets for Claude Code · Codex · Antigravity, and approved the results myself.", chips: ["FIGHTSHOOT", "Live A Life", "HELLCORD"]},
+        {k: "NOV · SHIP & OPERATE", t: "Shipping and operating", p: "Released to the App Store and built a setup where several AIs read the same memory before working.", chips: ["SWIRLD", "Who Was I to You This Year", "Orca + vault"]}
+      ],
+      cardsHead: "Featured projects", cardsSub: "With a detailed record of where it got stuck and how I fixed it",
+      labels: {why: "WHY", meai: "ME vs AI", stuck: "STUCK → FIX", me: "Me", ai: "AI", go: "Read the full record"},
+      cards: {
+        swirld: {meta: "NOV · iOS · web app", what: "A multi-currency budget app for exchange students, released on the App Store.", why: "I wanted to see money spent in several currencies in one place.", me: "problem definition · how money is stored · release QA", ai: "building the app", stuck: "“I exchanged 3,000 koruna and spent 300 — how much was that in won?”", fix: "integer amounts from the first schema, with the won cost of each exchange batch"}
+      },
+      listHead: "Other experiments", listSub: "Detailed records are coming one by one",
+      list: {
+        endofyear: {name: "Who Was I to You This Year", d: "A year-end web service where friends' picks give you a 2027 sheep character. Live since 19 Nov, official launch on 3 Dec"},
+        orca: {name: "Orca bot team + shared vault", d: "A setup where several AI agents split roles and all read the same memory first"},
+        fightshoot: {name: "FIGHTSHOOT", d: "A card defense game about military life. An auto-play bot exposed a rule loophole that I then fixed. Web demo is live"},
+        trendnow: {name: "trend.now", d: "An AI · tech event curation blog. Automated up to drafts; I review and publish"},
+        hellcord: {name: "HELLCORD", d: "A fast workout logging app (PWA)"},
+        editor: {name: "Local video editor", d: "A personal editor that AI operates while I make fine adjustments. Made the SWIRLD ad with it"},
+        liveallife: {name: "Live A Life", d: "A pixel-art healing game set in Korean alleys. Paused after a pre-launch regression"}
+      },
+      status: {live: "Live", prep: "Pre-launch", exp: "Experiment", paused: "Paused"},
+      toolsHead: "AI tools I've used", toolsSub: "Tap a logo to see how I used it", usedIn: "USED IN",
+      tools: {
+        claude: {name: "Claude", plan: "Max · since 16 Nov", role: "Main tool — planning and building", uses: ["Built SWIRLD, the year-end service and this portfolio with Claude Code", "Checked ideas first as one-page artifact prototypes", "Upgraded from Pro to Max on 16 Nov as usage grew"], used: ["SWIRLD", "Year-end service", "Portfolio"]},
+        chatgpt: {name: "ChatGPT · Codex", plan: "Plus", role: "Plan review · images · hand-off", uses: ["Got a separate game plan to compare with Claude's and Gemini's", "Generated the 48 sheep frames and game character art", "Codex took over development via a hand-off doc when Claude usage ran out"], used: ["FIGHTSHOOT", "Year-end service"]},
+        gemini: {name: "Gemini", plan: "Google AI Pro", role: "Research · game art", uses: ["Deep Research on public sources about ground forces — 3 reference docs for the game", "Game character and background art with the Argon model"], used: ["FIGHTSHOOT"]},
+        antigravity: {name: "Antigravity", plan: "IDE agent", role: "External audit · internal tools", uses: ["Audited the year-end service built by other AIs (23 findings)", "Built a local dashboard of AI tool usage", "Indexed my Google Drive"], used: ["Year-end service", "Shared vault"]},
+        aside: {name: "Aside", plan: "AI browser", role: "Research · automated routines", uses: ["Case research and fact cross-checks for this section", "Blog pipeline — automated up to drafts, published by me", "Morning briefing, flight deals and ticket-cancellation tracking"], used: ["trend.now", "Portfolio"]},
+        orca: {name: "Orca", plan: "Orchestration", role: "Running an AI bot team", uses: ["A lead bot hands work to Claude · Codex · Antigravity workers", "Slack bots check PRs and to-dos every day", "Push, merge and deploy ask for my approval first"], used: ["FIGHTSHOOT", "Orca + vault"]},
+        pickle: {name: "Pickle", plan: "Personal agent", role: "Schedule and daily life", uses: ["Scheduling, calendar management and tracking open concert seats", "Piloted blog automation, then handed it to the Orca bots"], used: ["trend.now"]},
+        figma: {name: "Figma", plan: "Design", role: "Screen design", uses: ["User flow and first UI for the year-end service", "Switched text styles via font variables — with AI driving Figma"], used: ["Year-end service"]},
+        obsidian: {name: "Obsidian", plan: "Shared memory", role: "The vault every AI reads first", uses: ["Gathered 925 scattered AI chats and work logs into one vault (25 Nov)", "Rebuilds the index from each day's logs every night"], used: ["Orca + vault"]},
+        notion: {name: "Notion", plan: "Long-time notebook", role: "Personal workspace", uses: ["Certificates, graduation requirements, scholarships and exchange schedule", "Source records of 20 activities — this portfolio's details and CV come from here"], used: ["Portfolio"]}
+      },
+      logHead: "Build log", logSub: "Anything new starts here",
+      log: [
+        {d: "2026-11-22", t: "Shared knowledge vault", p: "Organised so every AI session reads the same records"},
+        {d: "2026-11-19", t: "Who Was I to You This Year", p: "Live in production (official launch 3 Dec)"},
+        {d: "2026-11-18", t: "SWIRLD", p: "Released on the App Store"},
+        {d: "2026-11-16", t: "Claude Max", p: "Upgraded from Pro as usage grew"},
+        {d: "2026-11-02", t: "SWIRLD", p: "Wrote a 24-page AI operating manual before any code; first commit the same day"},
+        {d: "2026-10-20", t: "FIGHTSHOOT", p: "Switched from a shooter to a vertical card defense"},
+        {d: "2026-10-17", t: "FIGHTSHOOT", p: "Started as ‘QRF: 5-Minute Standby’, with 3 research docs"},
+        {d: "2026-09-23", t: "First commit", p: "Where this record begins"},
+        {d: "2026-09-16", t: "COMMET", p: "Year-end letter prototype (the origin of the year-end service)"}
+      ]
     },
     about: {
       kicker: "ABOUT",
@@ -98,6 +155,7 @@ SITE.en = {
   ui: {
     back: "Back to activity log",
     backWork: "Back to selected work",
+    backSide: "Back to side projects",
     workRef: "Featured above",
     prev: "Previous",
     next: "Next",
@@ -200,6 +258,33 @@ SITE.en = {
     }
   },
   activities: {
+    "swirld": {
+      "title": "SWIRLD",
+      "org": "Side project · iOS app",
+      "summary": "Planned a multi-currency expense tracker for exchange students and shipped it to the App Store in 16 days, with AI agents writing the code.",
+      "short": "Planned a multi-currency budget app for exchange students and shipped it with AI agents in 16 days",
+      "panel": {"role":"Planning · design decisions · release QA (AI agents wrote the code)","where":"iOS App Store · web beta","scale":"Expo · React Native · Supabase","result":"Released free on the Korean App Store, 18 Nov 2026","key":"16 days"},
+      "body": [
+        {"lead":"SWIRLD · a multi-currency budget app for exchange students"},
+        {"p":"A budget app that records living and travel spending across currencies <b>at the rate you actually exchanged at</b>. I planned, decided and reviewed; AI agents (Claude Code · Codex · Antigravity) wrote the code."},
+        {"k":"01 · Why","h":"Money spent in several currencies never added up in one place."},
+        {"p":"It started with one scene while preparing for my exchange in Czechia: <b>“If I exchange 3,000 koruna and spend 300 at the supermarket, how much was that 300 in won, at the rate I actually got?”</b> Most budget apps recalculate with today's rate, so they can't answer that."},
+        {"k":"02 · First attempt","h":"Before any code, I set the AI org chart and the money rules."},
+        {"p":"On day one (2 Nov) I wrote a 24-page <b>operating manual for a one-person AI company</b> instead of code: I set direction, AI agents work like departments, with clear owners, reviewers, hand-off and PR templates. Two days later the first schema fixed “all amounts are integers, no floats” and stored the won cost of every exchange batch."},
+        {"k":"03 · Where it got stuck","h":"Right before launch, the blockers were outside the code."},
+        {"boxes":["iOS builds froze inside the iCloud-synced folder.","App review needed a demo account with realistic data.","The data was small, but there was no backup."]},
+        {"k":"04 · Fix and what I dropped","h":"I re-validated the original money rules with research."},
+        {"cmp":[{"t":"Dropped · float amounts, recalculated at today's rate","d":"Rounding errors pile up and past spending changes with the rate"},{"t":"Chosen · integer minor units, won cost per exchange batch","d":"The amount recorded that day stays exactly as it was"}]},
+        {"p":"On 16 Nov I compared the data structures of 120 apps across 12 categories and confirmed we should <b>keep</b> the current setup (Supabase + integer amounts); the real risk was the missing backup, not size. Builds were fixed by running the same commit outside iCloud, and a demo account filled with wallets, expenses and trips got the app through review."},
+        {"k":"05 · How I worked with AI","h":"I made the decisions; AI wrote the code."},
+        {"roles":{"tl":"AI agents","ml":"MY CONTRIBUTION","team":["App screens and server","Writing and running tests","Store submission materials"],"mine":["Problem definition and product spec","How money and rates are stored","AI roles and hand-off rules","Review demo account and release QA"]}},
+        {"p":"I did not write the code myself."},
+        {"k":"06 · Looking back","h":"One good question became the data model."},
+        {"p":"Because the ‘3,000 koruna’ scene was concrete, the money rules held even with AI writing the code. Next: a public beta and backups."},
+        {"link":"View on the App Store","href":"https://apps.apple.com/kr/app/id6835462190"},
+        {"link":"Product page","href":"https://swirld.vercel.app/about.html"}
+      ]
+    },
     "intl-publication": {
       title: "AI in Second-Language Education and International Publication",
       summary: "Attended both parts of a Department of English lecture on the same day, and wrote up how AI is used across the four language skills, the theories and research methods that explain why it works, and the path a paper takes to an international journal.",

@@ -256,6 +256,52 @@ if (featured.length !== 4) W(`common.js featured: ${featured.length}개 (대표 
 
 /* ---------- 4. 사진 · 영상 · 발표자료 파일 ---------- */
 const usedImages = new Set(["hero"]);   // hero.webp 는 index.html 의 og:image
+
+/* ---------- 4-1. 사이드 프로젝트 (#side) — 규칙: docs/SIDE_PROJECTS.md ---------- */
+{
+  const SD = C.side, STATUS = ["live", "prep", "exp", "paused"];
+  if (SD) {
+    const at = "common.js side", kp = (KO.page || {}).side || {}, ep = (EN.page || {}).side || {};
+    if (!KO.page.side) E("ko.js page.side 가 없습니다");
+    if (!EN.page.side) E("en.js page.side 가 없습니다");
+    const useImg = (name, where) => { if (!name) return; usedImages.add(name); if (!exists(img(name))) E(`${at}.${where}: ${img(name)} 파일이 없습니다`); };
+    const cards = SD.cards || [];
+    if (cards.length > 4) W(`${at}.cards: ${cards.length}개 (대표 카드는 최대 4개 — 가장 오래된 카드를 list 로 내립니다)`);
+    cards.forEach((c, i) => {
+      const w = `cards[${i}] ${c.id}`;
+      if (!ids.includes(c.id)) E(`${at}.${w}: activities 에 없는 id 입니다 (대표 카드는 상세 페이지가 있어야 함)`);
+      if (!STATUS.includes(c.status)) E(`${at}.${w}: status "${c.status}" (live / prep / exp / paused 중 하나)`);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(c.updated || "")) E(`${at}.${w}: updated 를 YYYY-MM-DD 로 적습니다`);
+      if ((c.shots || []).length < 2) W(`${at}.${w}: 실제 화면(shots)은 2장 이상 (docs/SIDE_PROJECTS.md 2장)`);
+      useImg(c.icon, w + ".icon"); (c.shots || []).forEach((n) => useImg(n, w + ".shots"));
+      for (const [lc, P] of [["ko", kp], ["en", ep]]) {
+        const t = (P.cards || {})[c.id];
+        if (!t) E(`${lc}.js page.side.cards.${c.id}: 카드 문구가 없습니다`);
+        else for (const f of ["meta", "what", "why", "me", "ai", "stuck", "fix"]) if (!t[f]) E(`${lc}.js page.side.cards.${c.id}.${f}: 비어 있습니다`);
+      }
+    });
+    (SD.list || []).forEach((it, i) => {
+      const w = `list[${i}] ${it.key}`;
+      if (!STATUS.includes(it.status)) E(`${at}.${w}: status "${it.status}" (live / prep / exp / paused 중 하나)`);
+      if (cards.some((c) => c.id === it.key)) W(`${at}.${w}: 대표 카드와 목록에 같은 프로젝트가 있습니다`);
+      useImg(it.icon, w + ".icon");
+      for (const [lc, P] of [["ko", kp], ["en", ep]]) { const t = (P.list || {})[it.key]; if (!t || !t.name || !t.d) E(`${lc}.js page.side.list.${it.key}: name · d 가 필요합니다`); }
+      if (it.status === "paused" && !/멈춤|보류|중단/.test(((kp.list || {})[it.key] || {}).d || "")) W(`ko.js page.side.list.${it.key}: 보류는 멈춘 이유를 한 줄 적습니다`);
+    });
+    (SD.tools || []).forEach((tl) => {
+      useImg(tl.icon, `tools.${tl.key}.icon`);
+      for (const [lc, P] of [["ko", kp], ["en", ep]]) { const t = (P.tools || {})[tl.key]; if (!t || !t.name || !(t.uses || []).length) E(`${lc}.js page.side.tools.${tl.key}: name · uses 가 필요합니다`); }
+    });
+    const st = SD.stats;
+    if (st) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(st.updated || "")) E(`${at}.stats.updated: YYYY-MM-DD 가 필요합니다`);
+      if (st.daily && st.daily.reduce((a, b) => a + b, 0) !== st.commits) W(`${at}.stats: daily 합계(${st.daily.reduce((a, b) => a + b, 0)})와 commits(${st.commits})가 다릅니다 — tools/side-stats.mjs 로 다시 계산`);
+      const age = (Date.now() - Date.parse(st.updated)) / 86400000;
+      if (age > 45) I(`${at}.stats: ${Math.round(age)}일 전 숫자입니다 (월 1회 갱신 권장)`);
+    }
+    for (const lc of ["ko", "en"]) for (const e of ((lc === "ko" ? kp : ep).log || [])) if (!/^\d{4}-\d{2}-\d{2}$/.test(e.d || "")) E(`${lc}.js page.side.log: 날짜 "${e.d}" 는 YYYY-MM-DD 로 적습니다`);
+  }
+}
 for (const [id, p] of Object.entries(C.photos || {})) {
   const at = `common.js photos["${id}"]`;
   if (!ids.includes(id)) { E(`${at}: 해당하는 활동이 없습니다`); continue; }
