@@ -7,6 +7,7 @@
 | --- | --- |
 | 새 활동 · 프로젝트 **추가** | `/add-activity` (`.claude/skills/add-activity/SKILL.md`). 스크립트가 실패하거나 규정이 궁금할 때만 [docs/NEW_ACTIVITY_CHECKLIST.md](docs/NEW_ACTIVITY_CHECKLIST.md) → [docs/CONTENT_GUIDELINES.md](docs/CONTENT_GUIDELINES.md) |
 | 기존 활동 수정 · 삭제 | 먼저 `grep` 으로 해당 id 의 줄만 찾고, 필요하면 위 두 문서 |
+| 사이드 프로젝트 추가 · 상태 · 통계 갱신 | [docs/SIDE_PROJECTS.md](docs/SIDE_PROJECTS.md) (단계 · 상태 배지 · 숫자 · 이미지 · 역할 문구 규칙) |
 | 화면 모양 · CSS · 컴포넌트 | [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) |
 | 알려진 문제와 승인 대기 중인 개선안 | 비공개 저장소 `kidariseok/portfolio-source` 의 `internal/docs/PORTFOLIO_AUDIT.md` |
 | 채용 담당자 관점으로 점검 · 개선 (페르소나 서브에이전트 반복 점검) | 비공개 저장소 `kidariseok/portfolio-source` 의 `internal/docs/RECRUITER_REVIEW.md` (페르소나 에이전트 · 라운드 기록도 같은 곳) |

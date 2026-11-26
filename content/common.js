@@ -29,6 +29,31 @@ SITE.common = {
   // '활동 기록(ACTIVITY ARCHIVE)'에서 구분마다 처음 한 장씩 보여 줄 대표 활동 (구분당 하나, 위 projects · featured 와 겹치지 않게).
   // '전체 활동 20개 보기'를 누르면 각 구분 칸 아래로 나머지가 펼쳐집니다
   archiveReps: ["trade-ai", "ched", "speech-mentors", "future-tech"],
+  // 사이드 프로젝트(#side). 규칙(단계 · 상태 · 숫자 · 이미지): docs/SIDE_PROJECTS.md. 글자는 ko.js / en.js 의 page.side
+  // · cards: 대표 카드(최대 4, activities 의 id · 상세 페이지 있음). status: live / prep / exp / paused · updated: 마지막 의미 있는 업데이트
+  // · list: 한 줄 목록(상세 없음, key 로 page.side.list 글자와 연결). icon 이 "" 이면 이름 첫 글자
+  // · stats: node tools/side-stats.mjs 출력값. daily 는 dailyFrom 부터 날짜별 커밋 수(AI 에이전트 커밋 포함)
+  side: {
+    cards: [
+      {id: "swirld", status: "live", updated: "2026-11-18", icon: "side_icon_swirld", shots: ["swirld_01", "swirld_02", "swirld_03"]}
+    ],
+    list: [
+      {key: "endofyear", status: "prep", icon: "side_icon_endofyear", href: "https://endofyear-2026.vercel.app/"},
+      {key: "orca", status: "live", icon: "side_tool_orca", href: ""},
+      {key: "fightshoot", status: "prep", icon: "", href: "https://newbie-defense.vercel.app/"},
+      {key: "trendnow", status: "live", icon: "side_icon_trendnow", href: "https://blog.naver.com/trendai"},
+      {key: "hellcord", status: "live", icon: "side_icon_hellcord", href: "https://hellcord-app.vercel.app/"},
+      {key: "editor", status: "exp", icon: "side_icon_editor", href: ""},
+      {key: "liveallife", status: "paused", icon: "side_icon_liveallife", href: ""}
+    ],
+    tools: [
+      {key: "claude", icon: "side_tool_claude"}, {key: "chatgpt", icon: "side_tool_chatgpt"}, {key: "gemini", icon: "side_tool_gemini"},
+      {key: "antigravity", icon: "side_tool_antigravity"}, {key: "aside", icon: "side_tool_aside"}, {key: "orca", icon: "side_tool_orca"},
+      {key: "pickle", icon: ""}, {key: "figma", icon: "side_tool_figma"}, {key: "obsidian", icon: "side_tool_obsidian"}, {key: "notion", icon: "side_tool_notion"}
+    ],
+    stats: {updated: "2026-11-26", from: "2026-09-23", span: 65, commits: 1267, repos: 11, days: 54, avgHours: 3.8, avgMonth: "2026-11",
+      dailyFrom: "2026-09-01", daily: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,16,50,12,19,0,14,0,2,10,12,18,5,0,0,0,2,2,16,1,6,54,35,3,8,1,0,76,54,59,27,46,55,31,41,22,14,45,13,63,4,1,57,21,36,28,13,13,0,2,35,27,37,9,19,33,24,26,17,13,0,0,0,5,0]}
+  },
   // 활동 구분 4가지. 기준은 한 가지: '그 활동에서 내가 주로 한 일'.
   // '활동 기록'의 칸이 이 순서대로 나옵니다 (projects · featured 에 든 활동은 칸 맨 아래에 이름만).
   // 이름은 ko.js / en.js 의 categories, 색은 index.html 의 .ax-이름
@@ -39,6 +64,7 @@ SITE.common = {
     learn: {icon:"ic-book"}        // 학습 · 탐색: 듣고 보고 배운 활동
   },
   photos: {
+    "swirld": {cover:"swirld_cover", shots:["swirld_01", "swirld_02", "swirld_03", "swirld_04"]},
     "warak-mentoring": {cover:"warak_classroom", shots:["warak_classroom", "warak_laptop"]},
     "intl-publication": {cover:"intl_publication_cover"},
     realthon: {cover:"realthon_cover"},
@@ -76,6 +102,12 @@ SITE.common = {
   },
   activities: [
     {id:"warak-mentoring", start:"2026-11-10", category:"edu"},
+    {
+      id: "swirld",
+      start: "2026-11-02",
+      end: "2026-11-18",
+      category: "project"
+    },
     {
       id: "intl-publication",
       start: "2026-09-03",
